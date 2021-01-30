@@ -1,0 +1,345 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/ressat-full.xml
+name:                    ressat-full
+run sets:                minimize-BDD.RandomExist, bare-BDD.RandomExist, minimize-Cachet.RandomExist, bare-Cachet.RandomExist
+date:                    Thu, 2021-01-28 17:40:12 CST
+tool:                    ABC
+tool executable:         bin/abc
+options:                 
+parallel runs:           12
+resource limits:
+- memory:                8000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                8000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-0A
+os:                      Linux-5.4.0-26-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon CPU E5-2630 0 @ 2.30GHz
+- cores:                 24
+- max frequency:         2800.0 MHz
+- turbo boost enabled:   False
+ram:                     219679.203328 MB
+------------------------------------------------------------
+
+
+
+minimize-BDD.RandomExist
+Run set 1 of 4 with options '-c ssat -vt' and propertyfile 'None'
+
+inputfile                              status                       cpu time   wall time        host
+----------------------------------------------------------------------------------------------------
+re-PEC/c1355_re.sdimacs                TIMEOUT                       1001.03     1001.05        None
+re-PEC/c1908_re.sdimacs                TIMEOUT (ERROR (1))            901.06      901.08        None
+re-PEC/c3540_re.sdimacs                done                            21.76       21.76        None
+re-PEC/c432_re.sdimacs                 TIMEOUT (ERROR (1))            901.05      901.09        None
+re-PEC/c499_re.sdimacs                 done                             0.06        0.06        None
+re-PEC/c5315_re.sdimacs                TIMEOUT (ERROR (1))            901.08      901.10        None
+re-PEC/c7552_re.sdimacs                TIMEOUT (ERROR (1))            901.27      901.29        None
+re-PEC/c880_re.sdimacs                 TIMEOUT (ERROR (1))            903.26      903.30        None
+re-strategic-company/x10.14.sdimacs    done                             0.05        0.05        None
+re-strategic-company/x10.19.sdimacs    done                             0.06        0.06        None
+re-strategic-company/x10.4.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x10.9.sdimacs     done                             0.06        0.06        None
+re-strategic-company/x15.14.sdimacs    done                             0.06        0.07        None
+re-strategic-company/x15.19.sdimacs    done                             0.06        0.06        None
+re-strategic-company/x15.4.sdimacs     done                             0.07        0.07        None
+re-strategic-company/x15.9.sdimacs     done                             0.06        0.06        None
+re-strategic-company/x20.14.sdimacs    done                             0.06        0.06        None
+re-strategic-company/x20.19.sdimacs    done                             0.08        0.08        None
+re-strategic-company/x20.4.sdimacs     done                             0.09        0.10        None
+re-strategic-company/x20.9.sdimacs     done                             0.07        0.07        None
+re-strategic-company/x25.14.sdimacs    done                             0.09        0.09        None
+re-strategic-company/x25.19.sdimacs    done                             0.13        0.13        None
+re-strategic-company/x25.4.sdimacs     done                             0.12        0.12        None
+re-strategic-company/x25.9.sdimacs     done                             0.13        0.13        None
+re-strategic-company/x30.14.sdimacs    done                             0.15        0.15        None
+re-strategic-company/x30.19.sdimacs    done                             0.09        0.10        None
+re-strategic-company/x30.4.sdimacs     done                             0.10        0.10        None
+re-strategic-company/x30.9.sdimacs     done                             0.18        0.18        None
+re-strategic-company/x35.14.sdimacs    done                             0.12        0.12        None
+re-strategic-company/x35.19.sdimacs    done                             0.31        0.31        None
+re-strategic-company/x35.4.sdimacs     done                             0.14        0.14        None
+re-strategic-company/x35.9.sdimacs     done                             0.30        0.30        None
+re-strategic-company/x40.14.sdimacs    done                             0.25        0.25        None
+re-strategic-company/x40.19.sdimacs    done                             0.32        0.32        None
+re-strategic-company/x40.4.sdimacs     done                             0.35        0.35        None
+re-strategic-company/x40.9.sdimacs     done                             0.20        0.20        None
+re-strategic-company/x45.14.sdimacs    done                             1.69        1.69        None
+re-strategic-company/x45.19.sdimacs    done                             1.80        1.80        None
+re-strategic-company/x45.4.sdimacs     done                             1.26        1.26        None
+re-strategic-company/x45.9.sdimacs     done                             0.80        0.80        None
+re-strategic-company/x5.14.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.19.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.4.sdimacs      done                             0.05        0.06        None
+re-strategic-company/x5.9.sdimacs      done                             0.06        0.06        None
+re-strategic-company/x50.14.sdimacs    done                             1.95        1.95        None
+re-strategic-company/x50.19.sdimacs    done                             1.19        1.19        None
+re-strategic-company/x50.4.sdimacs     done                             0.87        0.87        None
+re-strategic-company/x50.9.sdimacs     done                             0.66        0.66        None
+re-strategic-company/x55.14.sdimacs    done                             1.44        1.44        None
+re-strategic-company/x55.19.sdimacs    done                             0.85        0.85        None
+re-strategic-company/x55.4.sdimacs     done                             2.34        2.34        None
+re-strategic-company/x55.9.sdimacs     done                             1.35        1.36        None
+re-strategic-company/x60.14.sdimacs    done                            12.47       12.47        None
+re-strategic-company/x60.19.sdimacs    done                             4.50        4.50        None
+re-strategic-company/x60.4.sdimacs     done                            11.75       11.75        None
+re-strategic-company/x60.9.sdimacs     done                            13.96       13.96        None
+re-strategic-company/x65.14.sdimacs    done                            11.53       11.53        None
+re-strategic-company/x65.19.sdimacs    done                            73.29       73.30        None
+re-strategic-company/x65.4.sdimacs     done                             6.57        6.57        None
+re-strategic-company/x65.9.sdimacs     done                            18.81       18.81        None
+re-strategic-company/x70.14.sdimacs    done                           204.50      204.50        None
+re-strategic-company/x70.19.sdimacs    done                            20.11       20.11        None
+re-strategic-company/x70.4.sdimacs     done                            36.30       36.30        None
+re-strategic-company/x70.9.sdimacs     done                            43.88       43.88        None
+re-strategic-company/x75.14.sdimacs    done                           162.91      162.91        None
+re-strategic-company/x75.19.sdimacs    done                           233.14      233.15        None
+re-strategic-company/x75.4.sdimacs     done                           228.46      228.47        None
+re-strategic-company/x75.9.sdimacs     done                           302.14      302.15        None
+----------------------------------------------------------------------------------------------------
+Run set 1                              done                          6937.36     1001.32           -
+
+
+bare-BDD.RandomExist
+Run set 2 of 4 with options '-c ssat -mvt' and propertyfile 'None'
+
+inputfile                              status                       cpu time   wall time        host
+----------------------------------------------------------------------------------------------------
+re-PEC/c1355_re.sdimacs                TIMEOUT (ERROR (1))            915.33      915.37        None
+re-PEC/c1908_re.sdimacs                TIMEOUT (ERROR (1))            901.90      901.94        None
+re-PEC/c3540_re.sdimacs                TIMEOUT (ERROR (1))            901.04      901.06        None
+re-PEC/c432_re.sdimacs                 TIMEOUT (ERROR (1))            902.02      902.08        None
+re-PEC/c499_re.sdimacs                 done                             0.06        0.06        None
+re-PEC/c5315_re.sdimacs                TIMEOUT (ERROR (1))            901.35      901.40        None
+re-PEC/c7552_re.sdimacs                TIMEOUT (ERROR (1))            901.14      901.16        None
+re-PEC/c880_re.sdimacs                 TIMEOUT (ERROR (1))            901.03      901.07        None
+re-strategic-company/x10.14.sdimacs    done                             0.10        0.10        None
+re-strategic-company/x10.19.sdimacs    done                             0.12        0.12        None
+re-strategic-company/x10.4.sdimacs     done                             0.09        0.09        None
+re-strategic-company/x10.9.sdimacs     done                             0.11        0.11        None
+re-strategic-company/x15.14.sdimacs    done                             7.27        7.28        None
+re-strategic-company/x15.19.sdimacs    done                             6.38        6.38        None
+re-strategic-company/x15.4.sdimacs     done                             7.07        7.07        None
+re-strategic-company/x15.9.sdimacs     done                             7.20        7.20        None
+re-strategic-company/x20.14.sdimacs    TIMEOUT (ERROR (1))            901.00      901.04        None
+re-strategic-company/x20.19.sdimacs    TIMEOUT (ERROR (1))            901.00      901.04        None
+re-strategic-company/x20.4.sdimacs     TIMEOUT (ERROR (1))            900.99      901.05        None
+re-strategic-company/x20.9.sdimacs     TIMEOUT (ERROR (1))            901.03      901.04        None
+re-strategic-company/x25.14.sdimacs    TIMEOUT (ERROR (1))            900.96      901.03        None
+re-strategic-company/x25.19.sdimacs    TIMEOUT (ERROR (1))            901.02      901.04        None
+re-strategic-company/x25.4.sdimacs     TIMEOUT (ERROR (1))            901.00      901.04        None
+re-strategic-company/x25.9.sdimacs     TIMEOUT (ERROR (1))            901.01      901.03        None
+re-strategic-company/x30.14.sdimacs    TIMEOUT (ERROR (1))            900.99      901.04        None
+re-strategic-company/x30.19.sdimacs    TIMEOUT (ERROR (1))            901.00      901.03        None
+re-strategic-company/x30.4.sdimacs     TIMEOUT (ERROR (1))            901.00      901.03        None
+re-strategic-company/x30.9.sdimacs     TIMEOUT (ERROR (1))            900.97      901.03        None
+re-strategic-company/x35.14.sdimacs    TIMEOUT (ERROR (1))            900.99      901.04        None
+re-strategic-company/x35.19.sdimacs    TIMEOUT (ERROR (1))            900.97      901.04        None
+re-strategic-company/x35.4.sdimacs     TIMEOUT (ERROR (1))            901.02      901.03        None
+re-strategic-company/x35.9.sdimacs     TIMEOUT (ERROR (1))            900.96      901.03        None
+re-strategic-company/x40.14.sdimacs    TIMEOUT (ERROR (1))            901.00      901.04        None
+re-strategic-company/x40.19.sdimacs    TIMEOUT (ERROR (1))            901.02      901.04        None
+re-strategic-company/x40.4.sdimacs     TIMEOUT (ERROR (1))            900.99      901.04        None
+re-strategic-company/x40.9.sdimacs     TIMEOUT (ERROR (1))            901.00      901.04        None
+re-strategic-company/x45.14.sdimacs    TIMEOUT (ERROR (1))            901.00      901.05        None
+re-strategic-company/x45.19.sdimacs    TIMEOUT (ERROR (1))            901.00      901.05        None
+re-strategic-company/x45.4.sdimacs     TIMEOUT (ERROR (1))            901.01      901.05        None
+re-strategic-company/x45.9.sdimacs     TIMEOUT (ERROR (1))            900.99      901.04        None
+re-strategic-company/x5.14.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.19.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.4.sdimacs      done                             0.06        0.06        None
+re-strategic-company/x5.9.sdimacs      done                             0.06        0.06        None
+re-strategic-company/x50.14.sdimacs    TIMEOUT (ERROR (1))            900.98      901.04        None
+re-strategic-company/x50.19.sdimacs    TIMEOUT (ERROR (1))            901.01      901.05        None
+re-strategic-company/x50.4.sdimacs     TIMEOUT (ERROR (1))            900.97      901.05        None
+re-strategic-company/x50.9.sdimacs     TIMEOUT (ERROR (1))            901.03      901.05        None
+re-strategic-company/x55.14.sdimacs    TIMEOUT (ERROR (1))            901.01      901.05        None
+re-strategic-company/x55.19.sdimacs    TIMEOUT (ERROR (1))            901.03      901.06        None
+re-strategic-company/x55.4.sdimacs     TIMEOUT (ERROR (1))            901.04      901.06        None
+re-strategic-company/x55.9.sdimacs     TIMEOUT (ERROR (1))            901.03      901.06        None
+re-strategic-company/x60.14.sdimacs    TIMEOUT (ERROR (1))            901.02      901.06        None
+re-strategic-company/x60.19.sdimacs    TIMEOUT (ERROR (1))            901.03      901.06        None
+re-strategic-company/x60.4.sdimacs     TIMEOUT (ERROR (1))            901.04      901.06        None
+re-strategic-company/x60.9.sdimacs     TIMEOUT (ERROR (1))            901.00      901.05        None
+re-strategic-company/x65.14.sdimacs    TIMEOUT (ERROR (1))            901.00      901.05        None
+re-strategic-company/x65.19.sdimacs    TIMEOUT (ERROR (1))            901.01      901.06        None
+re-strategic-company/x65.4.sdimacs     TIMEOUT (ERROR (1))            901.04      901.06        None
+re-strategic-company/x65.9.sdimacs     TIMEOUT (ERROR (1))            900.99      901.06        None
+re-strategic-company/x70.14.sdimacs    TIMEOUT (ERROR (1))            901.02      901.05        None
+re-strategic-company/x70.19.sdimacs    TIMEOUT (ERROR (1))            901.04      901.06        None
+re-strategic-company/x70.4.sdimacs     TIMEOUT (ERROR (1))            901.01      901.07        None
+re-strategic-company/x70.9.sdimacs     TIMEOUT (ERROR (1))            901.03      901.06        None
+re-strategic-company/x75.14.sdimacs    TIMEOUT (ERROR (1))            901.04      901.07        None
+re-strategic-company/x75.19.sdimacs    TIMEOUT (ERROR (1))            901.05      901.07        None
+re-strategic-company/x75.4.sdimacs     TIMEOUT (ERROR (1))            901.04      901.07        None
+re-strategic-company/x75.9.sdimacs     TIMEOUT (ERROR (1))            901.02      901.06        None
+----------------------------------------------------------------------------------------------------
+Run set 2                              done                         49603.54     4507.87           -
+
+
+minimize-Cachet.RandomExist
+Run set 3 of 4 with options '-c ssat -bvt' and propertyfile 'None'
+
+inputfile                              status                       cpu time   wall time        host
+----------------------------------------------------------------------------------------------------
+re-PEC/c1355_re.sdimacs                TIMEOUT                       1001.03     1001.06        None
+re-PEC/c1908_re.sdimacs                TIMEOUT                       1001.17     1001.16        None
+re-PEC/c3540_re.sdimacs                done                            21.83       21.83        None
+re-PEC/c432_re.sdimacs                 TIMEOUT                       1001.16     1001.14        None
+re-PEC/c499_re.sdimacs                 done                             0.09        0.16        None
+re-PEC/c5315_re.sdimacs                TIMEOUT                       1001.19     1001.16        None
+re-PEC/c7552_re.sdimacs                TIMEOUT                       1001.36     1001.21        None
+re-PEC/c880_re.sdimacs                 TIMEOUT                       1001.12     1001.10        None
+re-strategic-company/x10.14.sdimacs    done                             0.05        0.05        None
+re-strategic-company/x10.19.sdimacs    done                             0.09        0.09        None
+re-strategic-company/x10.4.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x10.9.sdimacs     done                             0.09        0.09        None
+re-strategic-company/x15.14.sdimacs    done                             0.10        0.11        None
+re-strategic-company/x15.19.sdimacs    done                             0.06        0.06        None
+re-strategic-company/x15.4.sdimacs     done                             0.10        0.11        None
+re-strategic-company/x15.9.sdimacs     done                             0.10        0.10        None
+re-strategic-company/x20.14.sdimacs    done                             0.06        0.06        None
+re-strategic-company/x20.19.sdimacs    done                             0.07        0.07        None
+re-strategic-company/x20.4.sdimacs     done                             0.12        0.12        None
+re-strategic-company/x20.9.sdimacs     done                             0.07        0.07        None
+re-strategic-company/x25.14.sdimacs    done                             0.09        0.09        None
+re-strategic-company/x25.19.sdimacs    done                             0.16        0.16        None
+re-strategic-company/x25.4.sdimacs     done                             0.16        0.16        None
+re-strategic-company/x25.9.sdimacs     done                             0.16        0.16        None
+re-strategic-company/x30.14.sdimacs    done                             0.18        0.18        None
+re-strategic-company/x30.19.sdimacs    done                             0.10        0.10        None
+re-strategic-company/x30.4.sdimacs     done                             0.10        0.11        None
+re-strategic-company/x30.9.sdimacs     done                             0.21        0.21        None
+re-strategic-company/x35.14.sdimacs    done                             0.12        0.13        None
+re-strategic-company/x35.19.sdimacs    done                             0.34        0.34        None
+re-strategic-company/x35.4.sdimacs     done                             0.17        0.18        None
+re-strategic-company/x35.9.sdimacs     done                             0.30        0.30        None
+re-strategic-company/x40.14.sdimacs    done                             0.28        0.28        None
+re-strategic-company/x40.19.sdimacs    done                             0.35        0.35        None
+re-strategic-company/x40.4.sdimacs     done                             0.37        0.37        None
+re-strategic-company/x40.9.sdimacs     done                             0.22        0.23        None
+re-strategic-company/x45.14.sdimacs    done                             1.72        1.73        None
+re-strategic-company/x45.19.sdimacs    done                             1.84        1.84        None
+re-strategic-company/x45.4.sdimacs     done                             1.28        1.28        None
+re-strategic-company/x45.9.sdimacs     done                             0.82        0.82        None
+re-strategic-company/x5.14.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.19.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.4.sdimacs      done                             0.09        0.09        None
+re-strategic-company/x5.9.sdimacs      done                             0.09        0.09        None
+re-strategic-company/x50.14.sdimacs    done                             1.98        1.98        None
+re-strategic-company/x50.19.sdimacs    done                             1.21        1.21        None
+re-strategic-company/x50.4.sdimacs     done                             0.89        0.89        None
+re-strategic-company/x50.9.sdimacs     done                             0.67        0.67        None
+re-strategic-company/x55.14.sdimacs    done                             1.47        1.47        None
+re-strategic-company/x55.19.sdimacs    done                             0.89        0.90        None
+re-strategic-company/x55.4.sdimacs     done                             2.37        2.37        None
+re-strategic-company/x55.9.sdimacs     done                             1.38        1.39        None
+re-strategic-company/x60.14.sdimacs    done                            12.42       12.42        None
+re-strategic-company/x60.19.sdimacs    done                             4.50        4.50        None
+re-strategic-company/x60.4.sdimacs     done                            11.71       11.72        None
+re-strategic-company/x60.9.sdimacs     done                            13.94       13.94        None
+re-strategic-company/x65.14.sdimacs    done                            11.51       11.51        None
+re-strategic-company/x65.19.sdimacs    done                            72.95       72.96        None
+re-strategic-company/x65.4.sdimacs     done                             6.59        6.59        None
+re-strategic-company/x65.9.sdimacs     done                            18.76       18.76        None
+re-strategic-company/x70.14.sdimacs    done                           202.90      202.91        None
+re-strategic-company/x70.19.sdimacs    done                            20.18       20.19        None
+re-strategic-company/x70.4.sdimacs     done                            36.28       36.28        None
+re-strategic-company/x70.9.sdimacs     done                            43.78       43.78        None
+re-strategic-company/x75.14.sdimacs    done                           163.28      163.30        None
+re-strategic-company/x75.19.sdimacs    done                           232.01      232.02        None
+re-strategic-company/x75.4.sdimacs     done                           227.97      227.97        None
+re-strategic-company/x75.9.sdimacs     done                           302.74      302.74        None
+----------------------------------------------------------------------------------------------------
+Run set 3                              done                          7434.34     1002.27           -
+
+
+bare-Cachet.RandomExist
+Run set 4 of 4 with options '-c ssat -bmvt' and propertyfile 'None'
+
+inputfile                              status                       cpu time   wall time        host
+----------------------------------------------------------------------------------------------------
+re-PEC/c1355_re.sdimacs                TIMEOUT                       1001.09     1001.13        None
+re-PEC/c1908_re.sdimacs                TIMEOUT                       1001.08     1001.07        None
+re-PEC/c3540_re.sdimacs                TIMEOUT                       1001.16     1001.10        None
+re-PEC/c432_re.sdimacs                 TIMEOUT                       1001.16     1001.16        None
+re-PEC/c499_re.sdimacs                 done                             0.09        0.09        None
+re-PEC/c5315_re.sdimacs                TIMEOUT                       1001.57     1001.42        None
+re-PEC/c7552_re.sdimacs                TIMEOUT                       1001.54     1001.38        None
+re-PEC/c880_re.sdimacs                 TIMEOUT                       1001.13     1001.12        None
+re-strategic-company/x10.14.sdimacs    done                             0.10        0.10        None
+re-strategic-company/x10.19.sdimacs    done                             0.15        0.16        None
+re-strategic-company/x10.4.sdimacs     done                             0.09        0.09        None
+re-strategic-company/x10.9.sdimacs     done                             0.14        0.15        None
+re-strategic-company/x15.14.sdimacs    done                             7.30        7.30        None
+re-strategic-company/x15.19.sdimacs    done                             6.40        6.40        None
+re-strategic-company/x15.4.sdimacs     done                             7.08        7.08        None
+re-strategic-company/x15.9.sdimacs     done                             7.24        7.24        None
+re-strategic-company/x20.14.sdimacs    TIMEOUT                       1001.05     1001.07        None
+re-strategic-company/x20.19.sdimacs    TIMEOUT                       1001.07     1001.13        None
+re-strategic-company/x20.4.sdimacs     TIMEOUT                       1001.05     1001.07        None
+re-strategic-company/x20.9.sdimacs     TIMEOUT                       1001.05     1001.05        None
+re-strategic-company/x25.14.sdimacs    TIMEOUT                       1001.01     1001.06        None
+re-strategic-company/x25.19.sdimacs    TIMEOUT                       1001.10     1001.07        None
+re-strategic-company/x25.4.sdimacs     TIMEOUT                       1001.11     1001.10        None
+re-strategic-company/x25.9.sdimacs     TIMEOUT                       1001.11     1001.09        None
+re-strategic-company/x30.14.sdimacs    TIMEOUT                       1001.09     1001.09        None
+re-strategic-company/x30.19.sdimacs    TIMEOUT                       1001.10     1001.09        None
+re-strategic-company/x30.4.sdimacs     TIMEOUT                       1001.08     1001.08        None
+re-strategic-company/x30.9.sdimacs     TIMEOUT                       1001.06     1001.07        None
+re-strategic-company/x35.14.sdimacs    TIMEOUT                       1001.05     1001.08        None
+re-strategic-company/x35.19.sdimacs    TIMEOUT                       1001.08     1001.12        None
+re-strategic-company/x35.4.sdimacs     TIMEOUT                       1001.05     1001.08        None
+re-strategic-company/x35.9.sdimacs     TIMEOUT                       1001.06     1001.05        None
+re-strategic-company/x40.14.sdimacs    TIMEOUT                       1001.03     1001.07        None
+re-strategic-company/x40.19.sdimacs    TIMEOUT                       1001.15     1001.11        None
+re-strategic-company/x40.4.sdimacs     TIMEOUT                       1001.16     1001.13        None
+re-strategic-company/x40.9.sdimacs     TIMEOUT                       1001.13     1001.13        None
+re-strategic-company/x45.14.sdimacs    TIMEOUT                       1001.16     1001.11        None
+re-strategic-company/x45.19.sdimacs    TIMEOUT                       1001.16     1001.12        None
+re-strategic-company/x45.4.sdimacs     TIMEOUT                       1001.14     1001.10        None
+re-strategic-company/x45.9.sdimacs     TIMEOUT                       1001.10     1001.10        None
+re-strategic-company/x5.14.sdimacs     done                             0.05        0.05        None
+re-strategic-company/x5.19.sdimacs     done                             0.05        0.06        None
+re-strategic-company/x5.4.sdimacs      done                             0.10        0.10        None
+re-strategic-company/x5.9.sdimacs      done                             0.10        0.11        None
+re-strategic-company/x50.14.sdimacs    TIMEOUT                       1001.06     1001.09        None
+re-strategic-company/x50.19.sdimacs    TIMEOUT                       1001.10     1001.12        None
+re-strategic-company/x50.4.sdimacs     TIMEOUT                       1001.07     1001.06        None
+re-strategic-company/x50.9.sdimacs     TIMEOUT                       1001.06     1001.09        None
+re-strategic-company/x55.14.sdimacs    TIMEOUT                       1001.06     1001.09        None
+re-strategic-company/x55.19.sdimacs    TIMEOUT                       1001.20     1001.15        None
+re-strategic-company/x55.4.sdimacs     TIMEOUT                       1001.19     1001.14        None
+re-strategic-company/x55.9.sdimacs     TIMEOUT                       1001.18     1001.17        None
+re-strategic-company/x60.14.sdimacs    TIMEOUT                       1001.16     1001.10        None
+re-strategic-company/x60.19.sdimacs    TIMEOUT                       1001.20     1001.15        None
+re-strategic-company/x60.4.sdimacs     TIMEOUT                       1001.14     1001.12        None
+re-strategic-company/x60.9.sdimacs     TIMEOUT                       1001.12     1001.12        None
+re-strategic-company/x65.14.sdimacs    TIMEOUT                       1001.10     1001.12        None
+re-strategic-company/x65.19.sdimacs    TIMEOUT                       1001.12     1001.14        None
+re-strategic-company/x65.4.sdimacs     TIMEOUT                       1001.09     1001.06        None
+re-strategic-company/x65.9.sdimacs     TIMEOUT                       1001.08     1001.08        None
+re-strategic-company/x70.14.sdimacs    TIMEOUT                       1001.07     1001.09        None
+re-strategic-company/x70.19.sdimacs    TIMEOUT                       1001.14     1001.09        None
+re-strategic-company/x70.4.sdimacs     TIMEOUT                       1001.19     1001.15        None
+re-strategic-company/x70.9.sdimacs     TIMEOUT                       1001.13     1001.12        None
+re-strategic-company/x75.14.sdimacs    TIMEOUT                       1001.20     1001.18        None
+re-strategic-company/x75.19.sdimacs    TIMEOUT                       1001.21     1001.15        None
+re-strategic-company/x75.4.sdimacs     TIMEOUT                       1001.10     1001.10        None
+re-strategic-company/x75.9.sdimacs     TIMEOUT                       1001.11     1001.08        None
+----------------------------------------------------------------------------------------------------
+Run set 4                              done                         55094.92     5010.60           -
+
+Statistics:            272 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:             122

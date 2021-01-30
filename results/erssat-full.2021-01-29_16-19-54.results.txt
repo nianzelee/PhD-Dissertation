@@ -1,0 +1,1727 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/erssat-full.xml
+name:                    erssat-full
+run sets:                default-BDD.ExistRandomExist, bare-BDD.ExistRandomExist, greedy-BDD.ExistRandomExist, subsume-BDD.ExistRandomExist, partial-BDD.ExistRandomExist, default-Cachet.ExistRandomExist, bare-Cachet.ExistRandomExist, greedy-Cachet.ExistRandomExist, subsume-Cachet.ExistRandomExist, partial-Cachet.ExistRandomExist
+date:                    Fri, 2021-01-29 16:19:54 CST
+tool:                    ABC
+tool executable:         bin/abc
+options:                 
+parallel runs:           15
+resource limits:
+- memory:                8000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                8000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default-BDD.ExistRandomExist
+Run set 1 of 10 with options '-c ssat -vt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.03      901.13        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.94      901.04        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.07      901.09        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            901.08      901.09        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            901.06      901.08        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                             1.96        1.96        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.05        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.02      901.06        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            900.98      901.03        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.94      901.03        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.79      901.03        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             done                           476.62      477.35        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.03      901.06        None
+ere-conformant/ring_r6_ser---16_.sdimacs               SEGMENTATION FAULT             313.13      314.51        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            SEGMENTATION FAULT             312.62      312.82        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            901.06      902.40        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            900.06      901.07        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      done                             0.14        0.15        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ABORTED)              900.99      901.26        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 done                             2.32        2.36        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT (ERROR (1))            901.69      901.71        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               TIMEOUT (ERROR (1))            901.01      902.09        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.05        0.05        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.10        None
+ere-MaxCount/QIF-reverse.sdimacs                       TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/QIF-reverse2.sdimacs                      TIMEOUT (ERROR (1))            900.81      901.01        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ABORTED)              901.01      901.22        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            900.95      901.02        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            900.94      901.02        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ABORTED)              901.02      901.22        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ABORTED)              901.01      901.32        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ABORTED)              901.02      901.22        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ABORTED)              901.04      901.25        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.03      901.05        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ABORTED)              901.00      901.21        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MPEC/c1355-er.sdimacs                              TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            901.09      901.13        None
+ere-MPEC/c3540-er.sdimacs                              done                             8.98        8.98        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            900.97      901.08        None
+ere-MPEC/c499-er.sdimacs                               done                             0.05        0.05        None
+ere-MPEC/c5315-er.sdimacs                              TIMEOUT (ERROR (1))            901.02      901.04        None
+ere-MPEC/c7552-er.sdimacs                              TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MPEC/c880-er.sdimacs                               TIMEOUT (ERROR (1))            901.12      901.15        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.04        0.05        None
+ere-sand-castle/SC-10.sdimacs                          done                             7.74        7.74        None
+ere-sand-castle/SC-11.sdimacs                          done                            31.83       31.84        None
+ere-sand-castle/SC-12.sdimacs                          done                           134.46      134.47        None
+ere-sand-castle/SC-13.sdimacs                          done                           521.60      521.62        None
+ere-sand-castle/SC-14.sdimacs                          TIMEOUT (ERROR (1))            901.01      901.05        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.02      901.04        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.92      901.02        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.03        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.07        0.07        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.10        0.10        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.21        0.22        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.58        0.58        None
+ere-sand-castle/SC-9.sdimacs                           done                             1.71        1.71        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.06        0.07        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.17        0.17        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.41        0.41        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             1.39        1.39        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             3.45        3.45        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             1.84        1.84        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.16        0.16        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  done                           531.59      531.61        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  done                            45.99       45.99        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.09        0.09        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.20        0.20        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             1.22        1.22        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             4.82        4.82        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            13.96       13.96        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            56.76       56.76        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           117.61      117.63        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.12      901.14        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                           153.36      153.36        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   done                           541.51      541.53        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.22      901.25        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.22      901.24        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.14      901.25        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.15      901.19        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.15      901.18        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.66        0.67        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.79        1.79        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                            11.96       11.96        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            37.55       37.55        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                           239.26      239.27        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.26        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.27        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.24      901.27        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.18      901.29        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.26        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.25        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.26      901.28        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.15      901.27        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.26        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.32        0.32        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.23        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.23        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.21        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.22        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            901.12      901.23        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                            13.50       13.50        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            32.95       32.95        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                           225.05      225.05        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           696.47      696.49        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            901.15      901.25        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.25        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.21      901.25        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.25        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.26      901.29        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.27      901.29        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.29        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             4.46        4.46        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 1                                              done                         95567.96     6841.53           -
+
+
+bare-BDD.ExistRandomExist
+Run set 2 of 10 with options '-c ssat -gspvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            900.97      901.09        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.92      901.02        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ABORTED)              901.02      901.21        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                            16.53       16.53        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.01      901.04        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.92      901.02        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.91      901.02        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.06      901.09        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.02      901.05        None
+ere-conformant/ring_r6_ser---16_.sdimacs               SEGMENTATION FAULT               0.78        0.97        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            SEGMENTATION FAULT               0.76        0.97        None
+ere-conformant/ring_r7_ser---19_.sdimacs               SEGMENTATION FAULT               1.45        1.64        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            SEGMENTATION FAULT               1.62        1.81        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ABORTED)              901.00      901.20        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.14      901.16        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT (ERROR (1))            901.64      901.66        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.05        0.05        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.09      901.11        None
+ere-MaxCount/QIF-reverse.sdimacs                       TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-reverse2.sdimacs                      TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ABORTED)              900.93      901.21        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            900.94      901.02        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ABORTED)              901.00      901.20        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ABORTED)              901.02      901.27        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ABORTED)              901.01      901.31        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            901.01      901.08        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ABORTED)              901.03      901.23        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                TIMEOUT (ABORTED)              901.00      901.28        None
+ere-MPEC/c1355-er.sdimacs                              TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            900.99      901.12        None
+ere-MPEC/c3540-er.sdimacs                              TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.01      901.13        None
+ere-MPEC/c499-er.sdimacs                               done                             0.05        0.05        None
+ere-MPEC/c5315-er.sdimacs                              TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-MPEC/c7552-er.sdimacs                              TIMEOUT (ERROR (1))            901.12      901.15        None
+ere-MPEC/c880-er.sdimacs                               TIMEOUT (ERROR (1))            901.09      901.12        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.04        0.04        None
+ere-sand-castle/SC-10.sdimacs                          done                             4.06        4.07        None
+ere-sand-castle/SC-11.sdimacs                          done                            14.17       14.18        None
+ere-sand-castle/SC-12.sdimacs                          done                            61.89       61.90        None
+ere-sand-castle/SC-13.sdimacs                          done                           182.69      182.70        None
+ere-sand-castle/SC-14.sdimacs                          done                           486.68      486.70        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ABORTED)              901.00      901.21        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ABORTED)              901.01      901.22        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.06        0.06        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.08        0.08        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.14        0.14        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.35        0.35        None
+ere-sand-castle/SC-9.sdimacs                           done                             0.92        0.92        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.06        0.06        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.27        0.27        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             0.99        0.99        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             3.87        3.87        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             1.18        1.18        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.06        0.06        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.12      901.14        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.11      901.14        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  done                           265.03      265.07        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.14        0.14        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             0.53        0.53        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             2.49        2.50        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                             6.57        6.57        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            27.44       27.44        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           142.35      142.36        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.11      901.14        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                            40.38       40.38        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.10      901.13        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   done                             0.84        0.84        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.26        0.26        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.23        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.21      901.23        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.22        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.20        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  done                            74.21       74.22        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.30        0.31        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.10        1.10        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             4.96        4.96        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            18.97       18.97        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            80.49       80.50        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           483.78      483.79        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.12      901.24        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.24        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  done                             4.98        4.98        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.28        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.18      901.29        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   done                            48.80       48.80        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   done                            11.79       11.80        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   done                             4.94        4.94        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   done                             8.55        8.55        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   done                             4.22        4.22        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   done                            12.08       12.08        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             5.16        5.16        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.21      901.23        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.16      901.19        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.16        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             4.95        4.95        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            16.14       16.15        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                            86.41       86.43        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           323.47      323.51        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.23        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.24        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.12      901.23        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.15      901.24        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.27      901.29        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.26        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                            38.67       38.67        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 2                                              done                         87206.29     6327.52           -
+
+
+greedy-BDD.ExistRandomExist
+Run set 3 of 10 with options '-c ssat -spvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.03      901.16        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.94      901.03        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                             1.46        1.47        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.03      901.07        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.90      901.02        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.01      901.13        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.07        None
+ere-conformant/ring_r6_ser---16_.sdimacs               SEGMENTATION FAULT               0.75        1.02        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            SEGMENTATION FAULT               0.74        0.96        None
+ere-conformant/ring_r7_ser---19_.sdimacs               SEGMENTATION FAULT               1.35        1.61        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            SEGMENTATION FAULT               1.34        1.53        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT (ERROR (1))            901.61      901.64        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.04        0.05        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            901.03      901.05        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ABORTED)              901.01      901.20        None
+ere-MaxCount/QIF-reverse.sdimacs                       TIMEOUT (ERROR (1))            901.02      901.04        None
+ere-MaxCount/QIF-reverse2.sdimacs                      TIMEOUT (ERROR (1))            901.07      901.09        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ABORTED)              900.95      901.22        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ABORTED)              900.93      901.25        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ABORTED)              901.01      901.22        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ABORTED)              901.02      901.32        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ABORTED)              901.03      901.35        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ABORTED)              901.04      901.24        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.04      901.05        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                TIMEOUT (ABORTED)              901.00      901.28        None
+ere-MPEC/c1355-er.sdimacs                              TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            901.08      901.12        None
+ere-MPEC/c3540-er.sdimacs                              TIMEOUT (ERROR (1))            901.10      901.13        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.00      901.14        None
+ere-MPEC/c499-er.sdimacs                               done                             0.05        0.05        None
+ere-MPEC/c5315-er.sdimacs                              TIMEOUT (ERROR (1))            901.02      901.04        None
+ere-MPEC/c7552-er.sdimacs                              TIMEOUT (ERROR (1))            901.03      901.16        None
+ere-MPEC/c880-er.sdimacs                               TIMEOUT (ERROR (1))            901.07      901.11        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.04        0.04        None
+ere-sand-castle/SC-10.sdimacs                          done                             4.08        4.08        None
+ere-sand-castle/SC-11.sdimacs                          done                            15.43       15.43        None
+ere-sand-castle/SC-12.sdimacs                          done                            53.54       53.54        None
+ere-sand-castle/SC-13.sdimacs                          done                           200.47      200.48        None
+ere-sand-castle/SC-14.sdimacs                          done                           753.09      753.11        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.04        0.05        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.04        0.05        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.06        0.06        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.08        0.08        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.14        0.14        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.33        0.33        None
+ere-sand-castle/SC-9.sdimacs                           done                             0.96        0.97        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.06        0.06        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.28        0.29        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             1.03        1.03        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             4.00        4.01        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             3.03        3.04        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.13        0.13        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.16        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.03      901.16        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.13        0.13        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             0.54        0.54        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             2.46        2.46        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                             6.65        6.65        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            29.56       29.56        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           151.20      151.20        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.10      901.14        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                            38.94       38.95        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.10      901.12        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.22        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.09      901.23        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.22        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.21      901.23        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.22        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.22        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.31        0.31        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.05        1.06        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             4.71        4.71        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            18.15       18.15        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            81.06       81.07        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           492.18      492.20        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.21      901.25        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.21      901.24        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.28        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.18      901.21        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.07      901.21        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.25        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.09      901.21        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.21        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.21        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.21        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.21        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.21        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             5.00        5.00        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            15.60       15.60        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                            80.21       80.22        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           310.81      310.82        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.23        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.13      901.23        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.12      901.23        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.21      901.23        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.26        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.27        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             0.44        0.44        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 3                                              done                         96001.52     6805.25           -
+
+
+subsume-BDD.ExistRandomExist
+Run set 4 of 10 with options '-c ssat -gpvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.00      901.09        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.92      901.02        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.08      901.09        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ABORTED)              901.02      901.22        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            901.08      901.08        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                            16.05       16.05        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            901.03      901.04        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.03      901.05        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.00      901.04        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            901.02      901.02        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.94      901.03        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.93      901.03        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.06      901.09        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.03      901.05        None
+ere-conformant/ring_r6_ser---16_.sdimacs               SEGMENTATION FAULT             312.24      312.44        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            SEGMENTATION FAULT             312.11      312.31        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            901.03      901.06        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      done                             0.15        0.15        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT (ERROR (1))            901.60      901.63        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.05        0.05        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            901.03      901.03        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.10      901.12        None
+ere-MaxCount/QIF-reverse.sdimacs                       TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-reverse2.sdimacs                      TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ABORTED)              901.01      901.21        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            900.94      901.02        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ABORTED)              900.94      901.21        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ABORTED)              901.00      901.22        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            901.03      901.05        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ABORTED)              901.02      901.24        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MPEC/c1355-er.sdimacs                              TIMEOUT (ERROR (1))            901.06      901.17        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            901.09      901.12        None
+ere-MPEC/c3540-er.sdimacs                              TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.03      901.14        None
+ere-MPEC/c499-er.sdimacs                               done                             0.05        0.06        None
+ere-MPEC/c5315-er.sdimacs                              TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-MPEC/c7552-er.sdimacs                              TIMEOUT (ERROR (1))            901.11      901.16        None
+ere-MPEC/c880-er.sdimacs                               TIMEOUT (ERROR (1))            901.10      901.13        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.04        0.04        None
+ere-sand-castle/SC-10.sdimacs                          done                             4.10        4.10        None
+ere-sand-castle/SC-11.sdimacs                          done                            14.36       14.36        None
+ere-sand-castle/SC-12.sdimacs                          done                            59.85       59.86        None
+ere-sand-castle/SC-13.sdimacs                          done                           171.19      171.20        None
+ere-sand-castle/SC-14.sdimacs                          done                           532.27      532.29        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ABORTED)              900.99      901.21        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ABORTED)              900.92      901.21        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.06        0.06        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.08        0.08        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.14        0.14        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.35        0.35        None
+ere-sand-castle/SC-9.sdimacs                           done                             1.00        1.00        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.06        0.06        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.28        0.28        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             1.00        1.01        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             3.79        3.79        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             1.24        1.24        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.12      901.15        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.12      901.14        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  done                           250.88      250.89        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.14        0.14        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             0.56        0.56        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             2.50        2.50        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                             6.62        6.63        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            28.40       28.40        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           145.97      145.98        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.12      901.15        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                            39.39       39.40        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.01      901.13        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   done                             0.83        0.83        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.27        0.27        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.21        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.20        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  done                            67.56       67.57        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.44        0.44        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.22        1.22        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             4.95        4.95        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            18.41       18.41        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            77.64       77.64        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           448.50      448.51        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.21      901.24        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.24        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  done                             5.31        5.31        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.17      901.29        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.26      901.29        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   done                            50.12       50.12        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   done                            12.31       12.31        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   done                             5.21        5.21        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   done                             8.85        8.85        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   done                             4.68        4.68        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   done                            12.89       12.89        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             5.53        5.53        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.09      901.20        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.16      901.18        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            901.14      901.16        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            901.14      901.16        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.16        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             8.87        8.88        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            20.44       20.44        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                            93.52       93.52        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           333.51      333.52        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.24        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.13      901.23        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.20      901.23        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.25      901.27        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.17      901.27        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.25        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                            44.37       44.37        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 4                                              done                         88739.43     6349.44           -
+
+
+partial-BDD.ExistRandomExist
+Run set 5 of 10 with options '-c ssat -gsvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            900.97      901.09        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.93      901.02        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ABORTED)              901.02      901.21        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                            75.04       75.05        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.03        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            900.99      901.02        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            901.01      901.06        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            901.01      901.06        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.02      901.05        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.93      901.02        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             done                           362.38      362.39        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-conformant/ring_r6_ser---16_.sdimacs               SEGMENTATION FAULT               0.75        0.94        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            SEGMENTATION FAULT               0.75        0.94        None
+ere-conformant/ring_r7_ser---19_.sdimacs               SEGMENTATION FAULT               1.45        1.64        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            SEGMENTATION FAULT               1.68        1.86        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 done                             1.88        1.88        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT (ERROR (1))            901.61      901.63        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.12        0.12        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-reverse.sdimacs                       TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/QIF-reverse2.sdimacs                      TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ABORTED)              901.02      901.21        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            901.02      901.02        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            900.94      901.03        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ABORTED)              900.93      901.22        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            901.01      901.02        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            901.02      901.02        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            901.02      901.03        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ABORTED)              901.03      901.23        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            901.02      901.02        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ABORTED)              901.00      901.21        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                TIMEOUT (ABORTED)              901.01      901.21        None
+ere-MPEC/c1355-er.sdimacs                              TIMEOUT (ERROR (1))            901.13      901.15        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-MPEC/c3540-er.sdimacs                              done                           520.22      520.23        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.10      901.12        None
+ere-MPEC/c499-er.sdimacs                               done                             0.05        0.06        None
+ere-MPEC/c5315-er.sdimacs                              TIMEOUT (ERROR (1))            901.01      901.04        None
+ere-MPEC/c7552-er.sdimacs                              TIMEOUT (ERROR (1))            900.84      901.03        None
+ere-MPEC/c880-er.sdimacs                               TIMEOUT (ERROR (1))            901.04      901.15        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-10.sdimacs                          done                             7.86        7.86        None
+ere-sand-castle/SC-11.sdimacs                          done                            31.09       31.10        None
+ere-sand-castle/SC-12.sdimacs                          done                           141.90      141.90        None
+ere-sand-castle/SC-13.sdimacs                          done                           489.00      489.02        None
+ere-sand-castle/SC-14.sdimacs                          TIMEOUT (ERROR (1))            901.03      901.05        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.02      901.04        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            901.01      901.03        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.98      901.03        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.02        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.98      901.01        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ABORTED)              901.00      901.22        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.05        0.05        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.06        0.06        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.06        0.07        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.10        0.11        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.22        0.22        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.61        0.61        None
+ere-sand-castle/SC-9.sdimacs                           done                             1.78        1.78        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.05        0.05        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.06        0.07        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.13        0.14        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.39        0.39        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             0.90        0.90        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             3.07        3.07        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             1.36        1.36        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.06        0.06        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  done                           555.37      555.38        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.10      901.13        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  done                           233.57      233.60        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.09        0.09        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.20        0.20        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             1.13        1.13        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             4.60        4.61        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            12.56       12.56        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            50.68       50.68        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           123.38      123.39        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.04      901.14        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                           132.62      132.63        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.11      901.13        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   done                             1.65        1.65        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.33        0.33        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.21      901.26        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.22        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.16      901.18        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.14      901.18        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.14      901.16        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.15      901.17        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.10      901.12        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.57        0.57        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.73        1.73        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                            11.01       11.01        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            35.02       35.03        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                           200.86      200.86        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.16      901.27        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.26        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.26        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  done                           170.79      170.79        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.27      901.29        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.26      901.29        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   done                           274.12      274.12        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   done                            53.49       53.49        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   done                           775.23      775.25        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   done                            62.34       62.35        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   done                            17.77       17.77        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   done                            68.37       68.37        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                           263.19      263.20        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.20      901.23        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.11      901.21        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.23        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.19      901.21        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            901.12      901.21        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            901.18      901.20        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                            10.73       10.73        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            901.17      901.19        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            30.98       30.98        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                           214.05      214.06        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           659.26      659.28        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            901.24      901.26        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.26        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.22      901.27        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.23      901.26        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT (ERROR (1))            901.21      901.29        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.27      901.30        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.26      901.28        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                           277.03      277.04        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 5                                              done                         89692.83     6386.00           -
+
+
+default-Cachet.ExistRandomExist
+Run set 6 of 10 with options '-c ssat -bvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.00      903.72        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.56      901.01        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.11      901.14        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            901.09      901.13        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            901.04      901.07        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                           712.50      714.48        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.01      902.27        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.01      902.13        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            900.84      901.01        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            900.84      901.01        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            900.97      901.05        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.96      901.04        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.01      902.54        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.00      902.22        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.01      902.07        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            900.89      901.02        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.75      901.02        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.94      901.03        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.00      902.26        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.77      901.01        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT (ERROR (1))            901.10      901.11        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT (ERROR (1))            901.09      901.11        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      done                             0.17        0.17        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           done                             0.45        0.45        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.00      903.31        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT                       1001.27     1001.30        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                             0.55        0.58        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.11        0.11        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  done                             2.57        2.58        None
+ere-MaxCount/QIF-reverse.sdimacs                       done                             4.01        4.03        None
+ere-MaxCount/QIF-reverse2.sdimacs                      done                             4.00        4.02        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            900.97      901.00        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ERROR (1))            900.88      901.00        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            900.94      901.00        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ERROR (1))            900.86      901.01        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.00      901.00        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            900.97      901.00        None
+ere-MaxCount/SyGuS-sign.sdimacs                        done                             0.19        0.20        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                done                             0.18        0.19        None
+ere-MPEC/c1355-er.sdimacs                              done                             0.17        0.17        None
+ere-MPEC/c1908-er.sdimacs                              ABORTED                         34.32       34.60        None
+ere-MPEC/c3540-er.sdimacs                              ABORTED                         34.88       35.16        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.00      904.25        None
+ere-MPEC/c499-er.sdimacs                               done                             0.18        0.18        None
+ere-MPEC/c5315-er.sdimacs                              done                             0.13        0.13        None
+ere-MPEC/c7552-er.sdimacs                              done                             0.10        0.10        None
+ere-MPEC/c880-er.sdimacs                               done                             0.09        0.09        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.07        0.07        None
+ere-sand-castle/SC-10.sdimacs                          done                            88.55       88.86        None
+ere-sand-castle/SC-11.sdimacs                          done                           193.60      194.09        None
+ere-sand-castle/SC-12.sdimacs                          done                           417.47      418.48        None
+ere-sand-castle/SC-13.sdimacs                          done                           861.24      864.77        None
+ere-sand-castle/SC-14.sdimacs                          TIMEOUT (ERROR (1))            900.99      903.74        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.00      903.85        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.53        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.97      905.62        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            900.97      906.97        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      906.01        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.25        0.25        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.98      906.58        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.44        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            900.96      906.83        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.98      905.91        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.16        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            901.00      905.24        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.59        0.59        None
+ere-sand-castle/SC-4.sdimacs                           done                             1.15        1.16        None
+ere-sand-castle/SC-5.sdimacs                           done                             2.36        2.37        None
+ere-sand-castle/SC-6.sdimacs                           done                             4.83        4.85        None
+ere-sand-castle/SC-7.sdimacs                           done                             9.75        9.80        None
+ere-sand-castle/SC-8.sdimacs                           done                            19.40       19.49        None
+ere-sand-castle/SC-9.sdimacs                           done                            39.59       39.82        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.07        0.08        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.52        0.53        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.41        0.42        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             4.60        4.62        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                            11.49       11.56        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                            31.64       31.78        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                            79.51       80.05        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                           135.60      136.21        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.08        0.09        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.99      904.90        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.98      906.02        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.99      905.05        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.60        0.60        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                            10.07       10.10        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                            28.01       28.09        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            79.54       79.79        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                           178.55      179.12        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           490.99      492.52        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.99      904.37        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.08        0.09        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   done                             2.65        2.67        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.00      904.10        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.53        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.66        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.72        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.55        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.44        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.64        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.58        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.24        0.24        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.26        1.26        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                            27.35       27.38        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            73.20       73.30        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                           193.17      193.49        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           600.19      601.09        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.42        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.16        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.84        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                             0.26        0.26        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   done                             5.30        5.31        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.42        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.38        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.46        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.21        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.31        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.24        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.31        0.31        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.89      901.01        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            900.81      901.01        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            900.85      901.01        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             3.99        3.99        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            10.40       10.40        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                           213.29      213.31        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           488.42      488.47        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            900.87      901.01        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   done                             4.13        4.13        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   done                            34.40       34.41        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.84      901.01        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             4.38        4.38        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 6                                              done                         86342.92     6320.09           -
+
+
+bare-Cachet.ExistRandomExist
+Run set 7 of 10 with options '-c ssat -bgspvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.00      904.21        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.58      901.01        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            900.96      901.00        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            900.96      901.00        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            900.97      901.01        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                           213.10      213.62        None
+ere-conformant/cube_c5_ser---14_.sdimacs               done                           777.53      778.63        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.01      902.19        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            900.82      901.00        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            900.81      901.00        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.00      903.06        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.00      902.32        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.01      902.17        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            900.79      901.00        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.80      901.00        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.74      901.01        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.01      902.63        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.74      901.00        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT (ERROR (1))            900.97      901.00        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT (ERROR (1))            901.00      902.13        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ERROR (1))            900.61      901.00        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.01      902.92        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT                       1001.26     1001.28        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                           478.70      480.20        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             1.82        1.83        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.53        None
+ere-MaxCount/QIF-reverse.sdimacs                       done                             1.14        1.15        None
+ere-MaxCount/QIF-reverse2.sdimacs                      done                             1.14        1.15        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            900.97      901.01        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ERROR (1))            900.86      901.01        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             done                             2.35        2.36        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            done                             2.35        2.36        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ERROR (1))            901.01      902.23        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            900.89      901.00        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            900.96      901.00        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.00        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.01      901.00        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            900.60      901.00        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ERROR (1))            900.99      904.15        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                done                             0.65        0.65        None
+ere-MPEC/c1355-er.sdimacs                              done                             0.09        0.09        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            900.99      903.81        None
+ere-MPEC/c3540-er.sdimacs                              done                             0.07        0.08        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.00      903.82        None
+ere-MPEC/c499-er.sdimacs                               done                             0.11        0.11        None
+ere-MPEC/c5315-er.sdimacs                              done                             0.08        0.08        None
+ere-MPEC/c7552-er.sdimacs                              done                             0.07        0.08        None
+ere-MPEC/c880-er.sdimacs                               done                             0.09        0.09        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.07        0.08        None
+ere-sand-castle/SC-10.sdimacs                          done                            35.91       36.03        None
+ere-sand-castle/SC-11.sdimacs                          done                            71.85       72.07        None
+ere-sand-castle/SC-12.sdimacs                          done                           143.49      143.95        None
+ere-sand-castle/SC-13.sdimacs                          done                           300.60      301.80        None
+ere-sand-castle/SC-14.sdimacs                          done                           616.99      619.68        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.00      905.06        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.19        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.98      905.37        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.10        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.64        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.15        0.15        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.46        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.98      906.47        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            900.98      905.27        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.91        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            901.00      904.10        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.90        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.30        0.30        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.59        0.59        None
+ere-sand-castle/SC-5.sdimacs                           done                             1.18        1.18        None
+ere-sand-castle/SC-6.sdimacs                           done                             2.35        2.36        None
+ere-sand-castle/SC-7.sdimacs                           done                             4.71        4.73        None
+ere-sand-castle/SC-8.sdimacs                           done                             9.45        9.48        None
+ere-sand-castle/SC-9.sdimacs                           done                            18.98       19.05        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.07        0.08        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.11        0.12        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.54        0.54        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             1.43        1.44        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             3.83        3.85        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                            10.10       10.15        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                            25.23       25.33        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                            62.77       63.09        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      904.58        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.00      904.65        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.99      904.60        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.80        0.80        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             2.75        2.76        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             8.58        8.62        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            27.01       27.12        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            82.63       82.92        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           245.97      246.95        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   done                           689.60      692.28        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            900.99      904.38        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.99      904.79        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.58        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.48        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.50        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.55        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.19        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.44        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.55        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.58        1.59        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             6.61        6.62        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            22.95       23.00        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            83.37       83.50        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           291.29      291.81        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.43        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.38        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.31        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.47        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.63        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.33        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.16        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.31        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.19        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.40        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.82      901.00        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            900.85      901.00        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             0.35        0.36        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                             9.60        9.60        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                            47.31       47.32        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           175.09      175.11        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   done                           713.54      713.62        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            900.83      901.00        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   done                             0.36        0.36        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.87      901.00        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             0.35        0.35        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 7                                              done                         88195.22     6322.09           -
+
+
+greedy-Cachet.ExistRandomExist
+Run set 8 of 10 with options '-c ssat -bspvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            900.88      904.06        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.78      901.02        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            900.94      901.01        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            900.95      901.01        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            900.97      901.01        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                           212.51      213.02        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            900.87      902.27        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            900.96      902.32        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            900.76      901.01        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            900.79      901.01        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            900.85      902.99        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            900.86      902.37        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            900.89      902.13        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            900.81      901.00        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.64      901.01        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.87      901.01        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.00      902.40        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.72      901.01        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT (ERROR (1))            900.95      901.00        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT (ERROR (1))            901.00      902.38        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ERROR (1))            900.63      901.01        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.00      902.73        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT                       1001.26     1001.28        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                           306.40      307.23        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             1.25        1.26        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.50        None
+ere-MaxCount/QIF-reverse.sdimacs                       TIMEOUT (ERROR (1))            901.00      903.52        None
+ere-MaxCount/QIF-reverse2.sdimacs                      TIMEOUT (ERROR (1))            901.01      904.21        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            900.97      901.00        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ERROR (1))            900.95      901.00        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT (ERROR (1))            900.95      901.00        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT (ERROR (1))            900.97      901.00        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ERROR (1))            900.83      901.00        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            900.98      901.01        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            900.98      901.01        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            900.99      901.01        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.01      901.00        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            900.96      901.00        None
+ere-MaxCount/SyGuS-sign.sdimacs                        TIMEOUT (ERROR (1))            900.98      905.88        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                TIMEOUT (ERROR (1))            900.98      905.35        None
+ere-MPEC/c1355-er.sdimacs                              done                             0.13        0.14        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            900.99      905.66        None
+ere-MPEC/c3540-er.sdimacs                              TIMEOUT (ERROR (1))            900.99      905.83        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            900.99      905.23        None
+ere-MPEC/c499-er.sdimacs                               done                             0.11        0.11        None
+ere-MPEC/c5315-er.sdimacs                              done                             0.08        0.09        None
+ere-MPEC/c7552-er.sdimacs                              done                             0.08        0.08        None
+ere-MPEC/c880-er.sdimacs                               done                             0.08        0.08        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.08        0.08        None
+ere-sand-castle/SC-10.sdimacs                          done                            37.43       37.62        None
+ere-sand-castle/SC-11.sdimacs                          done                            74.69       75.03        None
+ere-sand-castle/SC-12.sdimacs                          done                           150.18      150.86        None
+ere-sand-castle/SC-13.sdimacs                          done                           305.48      306.83        None
+ere-sand-castle/SC-14.sdimacs                          done                           625.88      628.94        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            901.00      904.20        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            900.98      906.90        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.01        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            900.98      906.33        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.87        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.14        0.15        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.42        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.65        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.43        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.87        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.19        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.94        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.30        0.30        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.61        0.62        None
+ere-sand-castle/SC-5.sdimacs                           done                             1.20        1.21        None
+ere-sand-castle/SC-6.sdimacs                           done                             2.36        2.37        None
+ere-sand-castle/SC-7.sdimacs                           done                             4.80        4.81        None
+ere-sand-castle/SC-8.sdimacs                           done                             9.63        9.71        None
+ere-sand-castle/SC-9.sdimacs                           done                            19.40       19.51        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.07        0.08        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.15        0.15        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.07        0.07        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.07        0.08        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.07        0.08        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.52        0.52        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             1.44        1.44        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             3.81        3.83        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                            10.18       10.29        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                            25.72       25.89        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                            63.02       63.30        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.99      904.47        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.00      903.66        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.00      905.18        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.80        0.81        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             2.77        2.78        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             8.66        8.69        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            26.99       27.10        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            82.98       83.33        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           243.46      244.34        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   done                           714.49      717.48        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.00      904.70        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.00      904.10        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.36        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.58        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.28        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.43        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.55        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.56        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.89        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.58        1.58        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             6.67        6.68        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            23.10       23.14        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            83.91       84.08        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           292.22      292.71        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.48        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.60        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.33        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.14        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.85        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.57        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.49        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.18        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.48        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.53        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.88      901.00        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            900.88      901.00        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            900.87      901.01        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             0.36        0.36        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                             9.59        9.59        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                            47.58       47.59        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           175.68      175.70        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   done                           716.47      716.55        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            900.83      901.00        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   done                             0.36        0.36        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             0.35        0.35        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 8                                              done                         93599.16     6597.51           -
+
+
+subsume-Cachet.ExistRandomExist
+Run set 9 of 10 with options '-c ssat -bgpvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.00      903.90        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.60      901.01        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            901.08      901.13        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            901.11      901.14        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            901.11      901.14        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                           210.86      211.43        None
+ere-conformant/cube_c5_ser---14_.sdimacs               done                           788.60      789.82        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            901.00      902.22        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            900.84      901.01        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            900.85      901.01        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            900.97      901.04        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.97      901.04        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.00      903.06        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.01      902.39        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.00      902.10        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            900.86      901.02        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.86      901.03        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.80      901.02        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.00      902.25        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.79      901.01        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT (ERROR (1))            901.10      901.11        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            901.04      901.06        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      done                             0.18        0.18        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           done                             0.43        0.43        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.00      903.26        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT                       1001.26     1001.28        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                           463.89      465.32        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             1.76        1.77        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.00        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.63        None
+ere-MaxCount/QIF-reverse.sdimacs                       done                             1.12        1.12        None
+ere-MaxCount/QIF-reverse2.sdimacs                      done                             1.11        1.12        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ERROR (1))            900.95      901.00        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             done                             3.76        3.76        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            done                             3.77        3.77        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ERROR (1))            901.01      902.34        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            900.89      901.00        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.00      901.00        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            900.45      901.01        None
+ere-MaxCount/SyGuS-sign.sdimacs                        done                             0.12        0.12        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                done                             0.11        0.11        None
+ere-MPEC/c1355-er.sdimacs                              done                             0.13        0.13        None
+ere-MPEC/c1908-er.sdimacs                              TIMEOUT (ERROR (1))            900.98      904.80        None
+ere-MPEC/c3540-er.sdimacs                              done                             0.08        0.08        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            901.00      904.18        None
+ere-MPEC/c499-er.sdimacs                               done                             0.11        0.11        None
+ere-MPEC/c5315-er.sdimacs                              done                             0.11        0.11        None
+ere-MPEC/c7552-er.sdimacs                              done                             0.09        0.09        None
+ere-MPEC/c880-er.sdimacs                               done                             0.10        0.10        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.07        0.08        None
+ere-sand-castle/SC-10.sdimacs                          done                            35.62       35.71        None
+ere-sand-castle/SC-11.sdimacs                          done                            72.21       72.42        None
+ere-sand-castle/SC-12.sdimacs                          done                           146.89      147.27        None
+ere-sand-castle/SC-13.sdimacs                          done                           295.16      296.00        None
+ere-sand-castle/SC-14.sdimacs                          done                           594.99      596.92        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            900.99      903.40        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.79        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.55        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.80        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.35        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.14        0.14        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.38        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.15        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.13        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.72        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            901.00      904.90        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.74        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.30        0.31        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.60        0.60        None
+ere-sand-castle/SC-5.sdimacs                           done                             1.21        1.21        None
+ere-sand-castle/SC-6.sdimacs                           done                             2.43        2.44        None
+ere-sand-castle/SC-7.sdimacs                           done                             4.84        4.86        None
+ere-sand-castle/SC-8.sdimacs                           done                             9.72        9.76        None
+ere-sand-castle/SC-9.sdimacs                           done                            18.99       19.06        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.11        0.12        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.54        0.54        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             1.45        1.46        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             3.90        3.92        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                            10.22       10.27        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                            25.83       25.95        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                            63.19       63.50        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.99      905.74        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.99      904.03        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.99      904.90        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.09        0.09        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.81        0.81        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             2.77        2.78        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             8.69        8.73        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            27.21       27.33        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                            83.25       83.63        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           249.38      250.53        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   done                           717.15      719.48        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.09        0.09        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.00      903.91        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.99      904.69        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.51        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.57        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.33        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.38        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.69        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.57        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.62        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.23        0.24        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.74        1.74        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             6.83        6.84        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            23.36       23.40        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            84.35       84.50        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           296.39      297.04        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.33        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.45        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.62        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                             0.25        0.26        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.13        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.56        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.93        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.63        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.58        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.26        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.63        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.31        0.31        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.01        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            900.84      901.01        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             3.99        3.99        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            900.85      901.01        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            13.98       13.98        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                            54.66       54.66        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           192.67      192.70        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   done                           772.07      772.15        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            900.89      901.01        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.91      901.01        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   done                             4.12        4.12        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT (ERROR (1))            900.93      901.01        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.89      901.01        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             4.38        4.39        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 9                                              done                         85607.63     6317.47           -
+
+
+partial-Cachet.ExistRandomExist
+Run set 10 of 10 with options '-c ssat -bgsvt' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT (ERROR (1))            901.00      903.81        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT (ERROR (1))            900.60      901.01        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT (ERROR (1))            900.95      901.00        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT (ERROR (1))            900.97      901.00        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT (ERROR (1))            900.97      901.01        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                           654.75      656.88        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT (ERROR (1))            901.00      902.21        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT (ERROR (1))            900.99      902.08        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT (ERROR (1))            900.85      901.01        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT (ERROR (1))            900.87      901.00        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.94      901.01        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT (ERROR (1))            901.00      902.45        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT (ERROR (1))            901.01      902.13        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT (ERROR (1))            901.00      902.10        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT (ERROR (1))            900.86      901.00        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT (ERROR (1))            900.86      901.00        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT (ERROR (1))            900.92      901.01        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT (ERROR (1))            901.00      902.52        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT (ERROR (1))            900.75      901.00        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT (ERROR (1))            900.98      901.01        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT (ERROR (1))            901.00      901.01        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT (ERROR (1))            901.01      902.34        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT (ERROR (1))            900.54      901.00        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 TIMEOUT (ERROR (1))            901.00      902.92        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 TIMEOUT                       1001.29     1001.32        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                             0.88        0.88        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.68        0.68        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT (ERROR (1))            901.00      901.00        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  done                             2.57        2.58        None
+ere-MaxCount/QIF-reverse.sdimacs                       done                             3.20        3.21        None
+ere-MaxCount/QIF-reverse2.sdimacs                      done                             3.19        3.21        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT (ERROR (1))            900.93      901.00        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             done                             3.81        3.81        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            done                             3.80        3.80        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT (ERROR (1))            900.96      902.21        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT (ERROR (1))            900.98      901.00        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT (ERROR (1))            900.83      901.00        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT (ERROR (1))            900.99      901.00        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT (ERROR (1))            901.02      901.00        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             TIMEOUT (ERROR (1))            901.01      902.04        None
+ere-MaxCount/SyGuS-sign.sdimacs                        done                            34.75       34.87        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                done                            30.69       30.81        None
+ere-MPEC/c1355-er.sdimacs                              done                             0.09        0.09        None
+ere-MPEC/c1908-er.sdimacs                              ABORTED                         33.55       33.94        None
+ere-MPEC/c3540-er.sdimacs                              done                             0.07        0.08        None
+ere-MPEC/c432-er.sdimacs                               TIMEOUT (ERROR (1))            900.99      904.24        None
+ere-MPEC/c499-er.sdimacs                               done                             0.18        0.19        None
+ere-MPEC/c5315-er.sdimacs                              done                             0.08        0.08        None
+ere-MPEC/c7552-er.sdimacs                              done                             0.08        0.08        None
+ere-MPEC/c880-er.sdimacs                               done                             0.08        0.08        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.07        0.07        None
+ere-sand-castle/SC-10.sdimacs                          done                            89.75       90.11        None
+ere-sand-castle/SC-11.sdimacs                          done                           200.45      201.42        None
+ere-sand-castle/SC-12.sdimacs                          done                           423.83      425.05        None
+ere-sand-castle/SC-13.sdimacs                          done                           878.30      882.01        None
+ere-sand-castle/SC-14.sdimacs                          TIMEOUT (ERROR (1))            900.98      905.53        None
+ere-sand-castle/SC-15.sdimacs                          TIMEOUT (ERROR (1))            900.99      903.91        None
+ere-sand-castle/SC-16.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.31        None
+ere-sand-castle/SC-17.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.26        None
+ere-sand-castle/SC-18.sdimacs                          TIMEOUT (ERROR (1))            900.96      906.03        None
+ere-sand-castle/SC-19.sdimacs                          TIMEOUT (ERROR (1))            900.99      905.43        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.25        0.25        None
+ere-sand-castle/SC-20.sdimacs                          TIMEOUT (ERROR (1))            900.99      904.74        None
+ere-sand-castle/SC-21.sdimacs                          TIMEOUT (ERROR (1))            900.96      905.25        None
+ere-sand-castle/SC-22.sdimacs                          TIMEOUT (ERROR (1))            901.00      905.04        None
+ere-sand-castle/SC-23.sdimacs                          TIMEOUT (ERROR (1))            900.96      905.02        None
+ere-sand-castle/SC-24.sdimacs                          TIMEOUT (ERROR (1))            900.96      904.89        None
+ere-sand-castle/SC-25.sdimacs                          TIMEOUT (ERROR (1))            900.97      904.51        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.56        0.57        None
+ere-sand-castle/SC-4.sdimacs                           done                             1.19        1.19        None
+ere-sand-castle/SC-5.sdimacs                           done                             2.39        2.41        None
+ere-sand-castle/SC-6.sdimacs                           done                             4.78        4.80        None
+ere-sand-castle/SC-7.sdimacs                           done                             9.62        9.66        None
+ere-sand-castle/SC-8.sdimacs                           done                            19.37       19.44        None
+ere-sand-castle/SC-9.sdimacs                           done                            39.79       40.03        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.26        0.26        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.30        0.30        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.07        0.08        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.42        0.42        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             4.62        4.65        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                            11.56       11.63        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                            31.59       31.77        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                            80.24       80.71        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                           137.20      137.96        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.98      905.77        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.98      905.85        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.99      905.85        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.60        0.60        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                            10.20       10.25        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                            28.36       28.49        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                            83.27       83.62        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                           186.45      187.34        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                           488.04      489.73        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.98      905.75        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   done                             2.63        2.64        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.99      904.50        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.08        0.08        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.70        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.71        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.51        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.51        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.35        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT (ERROR (1))            901.01      902.73        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.61        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.10        0.11        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.13        1.13        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                            26.80       26.84        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            76.55       76.65        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                           214.62      214.96        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           571.56      572.38        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.16        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.66        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT (ERROR (1))            901.00      902.48        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                             0.10        0.10        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   done                             5.21        5.22        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.48        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.22        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.47        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.30        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT (ERROR (1))            901.01      902.35        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT (ERROR (1))            901.00      902.27        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                             0.10        0.11        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT (ERROR (1))            900.89      901.00        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT (ERROR (1))            900.83      901.00        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT (ERROR (1))            900.89      901.00        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                             0.35        0.36        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT (ERROR (1))            900.92      901.00        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                             6.74        6.74        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                           207.20      207.24        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           479.45      479.50        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT (ERROR (1))            900.88      901.00        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT (ERROR (1))            900.84      901.00        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT (ERROR (1))            900.91      901.00        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   done                             0.36        0.36        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   done                            32.00       32.00        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT (ERROR (1))            900.90      901.00        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   done                             0.35        0.36        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 10                                             done                         86325.40     6320.27           -
+
+Statistics:           1600 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:             966

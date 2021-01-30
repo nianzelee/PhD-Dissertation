@@ -1,0 +1,274 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dcssat-full.xml
+name:                    dcssat-full
+run sets:                default
+date:                    Fri, 2021-01-29 19:06:55 CST
+tool:                    DC-SSAT
+tool executable:         bin/dcssat
+options:                 
+parallel runs:           12
+resource limits:
+- memory:                8000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                8000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-0A
+os:                      Linux-5.4.0-26-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon CPU E5-2630 0 @ 2.30GHz
+- cores:                 24
+- max frequency:         2800.0 MHz
+- turbo boost enabled:   False
+ram:                     219679.203328 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT                        901.37      901.42        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    OUT OF MEMORY                  854.52      854.55        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT                        901.04      901.06        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT                        901.01      901.05        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT                        901.05      901.07        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                            20.99       20.99        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT                        901.09      901.11        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT                        901.07      901.11        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT                        901.00      901.07        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT                        901.04      901.07        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT                        901.02      901.04        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT                        901.00      901.04        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT                        901.03      901.05        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT                        901.07      901.09        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT                        901.07      901.10        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT                        900.99      901.03        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT                        901.00      901.03        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT                        901.02      901.05        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT                        901.16      901.19        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT                        901.03      901.05        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT                        901.06      901.08        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT                        900.99      901.08        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT                        901.19      901.22        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT                        901.15      901.20        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT                        901.00      901.04        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT                        901.00      901.02        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 OUT OF MEMORY                  391.72      391.74        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 ERROR (255)                      0.01        0.01        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                             0.01        0.01        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.01        0.01        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT                        901.01      901.04        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  OUT OF MEMORY                  576.41      576.46        None
+ere-MaxCount/QIF-reverse.sdimacs                       OUT OF MEMORY                  228.07      228.08        None
+ere-MaxCount/QIF-reverse2.sdimacs                      OUT OF MEMORY                  240.21      240.23        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT                        901.37      901.42        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT                        901.42      901.45        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     OUT OF MEMORY                  732.02      732.04        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             OUT OF MEMORY                  863.72      863.75        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            OUT OF MEMORY                  859.13      859.15        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            OUT OF MEMORY                  833.05      833.06        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT                        901.43      901.46        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT                        901.34      901.37        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT                        900.98      901.02        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT                        901.39      901.47        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT                        901.42      901.46        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT                        901.03      901.04        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT                        901.36      901.38        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             OUT OF MEMORY                  525.86      525.89        None
+ere-MaxCount/SyGuS-sign.sdimacs                        OUT OF MEMORY                  312.87      312.88        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                OUT OF MEMORY                  311.94      311.95        None
+ere-MPEC/c1355-er.sdimacs                              OUT OF MEMORY                  443.78      443.80        None
+ere-MPEC/c1908-er.sdimacs                              done                           130.51      130.52        None
+ere-MPEC/c3540-er.sdimacs                              done                           149.79      149.79        None
+ere-MPEC/c432-er.sdimacs                               OUT OF MEMORY                  439.09      439.10        None
+ere-MPEC/c499-er.sdimacs                               done                             0.01        0.02        None
+ere-MPEC/c5315-er.sdimacs                              TIMEOUT                        901.06      901.07        None
+ere-MPEC/c7552-er.sdimacs                              OUT OF MEMORY                  362.36      362.38        None
+ere-MPEC/c880-er.sdimacs                               TIMEOUT                        901.04      901.08        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-10.sdimacs                          done                             0.05        0.06        None
+ere-sand-castle/SC-11.sdimacs                          done                             0.11        0.12        None
+ere-sand-castle/SC-12.sdimacs                          done                             0.23        0.23        None
+ere-sand-castle/SC-13.sdimacs                          done                             0.51        0.51        None
+ere-sand-castle/SC-14.sdimacs                          done                             1.08        1.08        None
+ere-sand-castle/SC-15.sdimacs                          done                             2.21        2.21        None
+ere-sand-castle/SC-16.sdimacs                          done                             4.95        4.95        None
+ere-sand-castle/SC-17.sdimacs                          done                            10.35       10.35        None
+ere-sand-castle/SC-18.sdimacs                          done                            21.91       21.91        None
+ere-sand-castle/SC-19.sdimacs                          done                            50.77       50.77        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-20.sdimacs                          done                           113.60      113.60        None
+ere-sand-castle/SC-21.sdimacs                          done                           218.99      218.99        None
+ere-sand-castle/SC-22.sdimacs                          OUT OF MEMORY                  361.81      361.83        None
+ere-sand-castle/SC-23.sdimacs                          OUT OF MEMORY                  359.26      359.26        None
+ere-sand-castle/SC-24.sdimacs                          OUT OF MEMORY                  370.38      370.39        None
+ere-sand-castle/SC-25.sdimacs                          OUT OF MEMORY                  357.22      357.25        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.01        0.02        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.02        0.02        None
+ere-sand-castle/SC-9.sdimacs                           done                             0.03        0.03        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.01        0.02        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             0.02        0.03        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             0.04        0.05        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             0.09        0.09        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.02        0.02        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  done                            28.87       28.87        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  done                            74.25       74.25        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  done                           174.16      174.16        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.03        0.03        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.04        0.04        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             0.11        0.11        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             0.24        0.24        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                             0.69        0.69        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                             1.75        1.75        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                             4.67        4.67        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   done                            11.79       11.79        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.15        0.15        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   done                             2.78        2.78        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   done                            57.11       57.11        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.43        0.43        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT                        901.04      901.05        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT                        901.05      901.07        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT                        901.04      901.09        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT                        901.10      901.12        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT                        901.09      901.14        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT                        901.13      901.15        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.71        0.71        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             1.37        1.37        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             6.14        6.14        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                            15.72       15.73        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            56.44       56.44        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                           147.02      147.02        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   done                           478.32      478.33        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   TIMEOUT                        900.96      901.04        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT                        901.02      901.03        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                            15.07       15.07        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   done                           275.83      275.83        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT                        901.08      901.10        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT                        901.10      901.12        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT                        901.01      901.04        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT                        901.02      901.04        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT                        901.01      901.03        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                            32.13       32.14        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT                        900.99      901.02        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT                        901.01      901.03        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT                        901.01      901.03        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT                        900.96      901.03        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT                        901.02      901.04        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT                        901.01      901.04        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT                        901.00      901.04        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT                        901.01      901.04        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                            33.43       33.43        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT                        901.02      901.05        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            63.88       63.88        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                           366.54      366.54        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   TIMEOUT                        900.97      901.02        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT                        900.99      901.01        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT                        900.94      901.02        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT                        900.96      901.02        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT                        900.99      901.04        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   TIMEOUT                        901.05      901.08        None
+re-PEC/c1355_re.sdimacs                                TIMEOUT                        901.10      901.14        None
+re-PEC/c1908_re.sdimacs                                done                           199.70      199.71        None
+re-PEC/c3540_re.sdimacs                                TIMEOUT                        901.04      901.05        None
+re-PEC/c432_re.sdimacs                                 TIMEOUT                        901.16      901.24        None
+re-PEC/c499_re.sdimacs                                 done                             0.02        0.02        None
+re-PEC/c5315_re.sdimacs                                TIMEOUT                        901.02      901.08        None
+re-PEC/c7552_re.sdimacs                                OUT OF MEMORY                  359.23      359.27        None
+re-PEC/c880_re.sdimacs                                 TIMEOUT                        901.03      901.05        None
+re-strategic-company/x10.14.sdimacs                    done                             0.03        0.03        None
+re-strategic-company/x10.19.sdimacs                    done                             0.03        0.03        None
+re-strategic-company/x10.4.sdimacs                     done                             0.03        0.03        None
+re-strategic-company/x10.9.sdimacs                     done                             0.03        0.03        None
+re-strategic-company/x15.14.sdimacs                    done                             0.09        0.09        None
+re-strategic-company/x15.19.sdimacs                    done                             0.18        0.18        None
+re-strategic-company/x15.4.sdimacs                     done                             0.15        0.15        None
+re-strategic-company/x15.9.sdimacs                     done                             0.17        0.17        None
+re-strategic-company/x20.14.sdimacs                    done                             0.56        0.57        None
+re-strategic-company/x20.19.sdimacs                    done                             1.00        1.00        None
+re-strategic-company/x20.4.sdimacs                     done                             0.51        0.51        None
+re-strategic-company/x20.9.sdimacs                     done                             0.80        0.80        None
+re-strategic-company/x25.14.sdimacs                    done                            11.86       11.86        None
+re-strategic-company/x25.19.sdimacs                    done                             9.08        9.08        None
+re-strategic-company/x25.4.sdimacs                     done                             7.55        7.55        None
+re-strategic-company/x25.9.sdimacs                     done                             6.17        6.17        None
+re-strategic-company/x30.14.sdimacs                    done                            49.20       49.21        None
+re-strategic-company/x30.19.sdimacs                    done                            33.57       33.57        None
+re-strategic-company/x30.4.sdimacs                     done                            17.49       17.49        None
+re-strategic-company/x30.9.sdimacs                     done                            43.37       43.38        None
+re-strategic-company/x35.14.sdimacs                    OUT OF MEMORY                  256.32      256.33        None
+re-strategic-company/x35.19.sdimacs                    OUT OF MEMORY                  275.58      275.59        None
+re-strategic-company/x35.4.sdimacs                     OUT OF MEMORY                  268.14      268.21        None
+re-strategic-company/x35.9.sdimacs                     OUT OF MEMORY                  269.03      269.13        None
+re-strategic-company/x40.14.sdimacs                    TIMEOUT                        901.44      901.45        None
+re-strategic-company/x40.19.sdimacs                    OUT OF MEMORY                  892.04      892.09        None
+re-strategic-company/x40.4.sdimacs                     OUT OF MEMORY                  891.88      891.90        None
+re-strategic-company/x40.9.sdimacs                     OUT OF MEMORY                  889.84      889.85        None
+re-strategic-company/x45.14.sdimacs                    TIMEOUT                        901.33      901.39        None
+re-strategic-company/x45.19.sdimacs                    TIMEOUT                        901.35      901.39        None
+re-strategic-company/x45.4.sdimacs                     TIMEOUT                        901.38      901.41        None
+re-strategic-company/x45.9.sdimacs                     TIMEOUT                        901.38      901.42        None
+re-strategic-company/x5.14.sdimacs                     done                             0.01        0.02        None
+re-strategic-company/x5.19.sdimacs                     done                             0.01        0.01        None
+re-strategic-company/x5.4.sdimacs                      done                             0.01        0.01        None
+re-strategic-company/x5.9.sdimacs                      done                             0.01        0.02        None
+re-strategic-company/x50.14.sdimacs                    TIMEOUT                        901.33      901.37        None
+re-strategic-company/x50.19.sdimacs                    TIMEOUT                        901.40      901.46        None
+re-strategic-company/x50.4.sdimacs                     TIMEOUT                        901.37      901.40        None
+re-strategic-company/x50.9.sdimacs                     TIMEOUT                        901.35      901.37        None
+re-strategic-company/x55.14.sdimacs                    TIMEOUT                        901.35      901.36        None
+re-strategic-company/x55.19.sdimacs                    TIMEOUT                        901.33      901.33        None
+re-strategic-company/x55.4.sdimacs                     TIMEOUT                        901.34      901.35        None
+re-strategic-company/x55.9.sdimacs                     TIMEOUT                        901.32      901.33        None
+re-strategic-company/x60.14.sdimacs                    TIMEOUT                        901.27      901.33        None
+re-strategic-company/x60.19.sdimacs                    TIMEOUT                        901.25      901.29        None
+re-strategic-company/x60.4.sdimacs                     TIMEOUT                        901.28      901.31        None
+re-strategic-company/x60.9.sdimacs                     TIMEOUT                        901.26      901.31        None
+re-strategic-company/x65.14.sdimacs                    TIMEOUT                        901.25      901.26        None
+re-strategic-company/x65.19.sdimacs                    TIMEOUT                        901.26      901.31        None
+re-strategic-company/x65.4.sdimacs                     TIMEOUT                        901.31      901.31        None
+re-strategic-company/x65.9.sdimacs                     TIMEOUT                        901.25      901.28        None
+re-strategic-company/x70.14.sdimacs                    TIMEOUT                        901.24      901.26        None
+re-strategic-company/x70.19.sdimacs                    TIMEOUT                        901.25      901.27        None
+re-strategic-company/x70.4.sdimacs                     TIMEOUT                        901.28      901.30        None
+re-strategic-company/x70.9.sdimacs                     TIMEOUT                        901.25      901.28        None
+re-strategic-company/x75.14.sdimacs                    TIMEOUT                        901.20      901.27        None
+re-strategic-company/x75.19.sdimacs                    TIMEOUT                        901.21      901.24        None
+re-strategic-company/x75.4.sdimacs                     TIMEOUT                        901.23      901.25        None
+re-strategic-company/x75.9.sdimacs                     TIMEOUT                        901.28      901.30        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 1                                              done                        111115.66     9567.37           -
+
+Statistics:            228 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:             133
