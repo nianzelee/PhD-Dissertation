@@ -1,0 +1,323 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     This is format.tex file needed for the dmathesis.cls file.  You    %
+%  have to  put this file in the same directory with your thesis files.  %
+%                Written by M. Imran 2001/06/18                          %
+%                 No Copyright for this file                             %
+%                 Save your time and enjoy it                            %
+%                                                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  Put packages you want to use here and 'fancyhdr' is required   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{epic}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{CJK}
+\usepackage{xwatermark}
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                 Set line spacing = 1.5 here                   %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\baselinestretch}{2.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                      Your fancy heading                       %%%%%%
+%%%%% For the final copy you need to remove '\bfseries\today' below %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}{}}
+\lhead[\fancyplain{}{}]%
+{\fancyplain{}{\bfseries\rightmark}}
+\chead[\fancyplain{}{}]%
+{\fancyplain{}{}}
+\rhead[\fancyplain{}{}]%
+{\fancyplain{}{\bfseries}}
+\lfoot[\fancyplain{}{}]%
+{\fancyplain{}{}}
+\cfoot[\fancyplain{}{}]%
+{\fancyplain{}{\thepage}}
+\rfoot[\fancyplain{}{}]%
+{\fancyplain{}{}}%{\bfseries\today}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%Here you set the space between the main text%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%and the start of the footnote%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtolength{\skip\footins}{5mm}
+\addtolength{\footskip}{5mm}
+\addtolength{\headsep}{10mm}
+\addtolength{\textheight}{-15mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%      Define new counter so you can have the equation           %%%%%
+%%%%%    number 4.2.1a for example, this a gift from J.F.Blowey      %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{ind}
+\def\eqlabon{
+  \setcounter{ind}{\value{equation}}\addtocounter{ind}{1}
+  \setcounter{equation}{0}
+  \renewcommand{\theequation}{\arabic{chapter}%
+    .\arabic{section}.\arabic{ind}\alph{equation}}}
+\def\eqlaboff{
+  \renewcommand{\theequation}{\arabic{chapter}%
+    .\arabic{section}.\arabic{equation}}
+  \setcounter{equation}{\value{ind}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%           New theorem you want to use              %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\theorembodyfont{\rmfamily}\newtheorem{Pro}{{\textbf Proposition}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{The}{{\textbf Theorem}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{Def}{{\textbf Definition}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{Cor}{{\textbf Corollary}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{Lem}{{\textbf Lemma}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{Exp}{{\textbf Example}}[chapter]}
+
+{\theorembodyfont{\rmfamily}\newtheorem{proposition}{{\textbf Proposition}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{theorem}{{\textbf Theorem}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{definition}{{\textbf Definition}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{lemma}{{\textbf Lemma}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{corollary}{{\textbf Corollary}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{example}{{\textbf Example}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{fact}{{\textbf Fact}}[chapter]}
+{\theorembodyfont{\rmfamily}\newtheorem{proof}{{\textbf Proof}}[chapter]}
+
+%{\theorembodyfont{\rmfamily}\newtheorem{Def}[Pro]{{\textbf Definition}}}
+%{\theorembodyfont{\rmfamily}\newtheorem{Cor}[Pro]{{\textbf Corollary}}}
+%{\theorembodyfont{\rmfamily}\newtheorem{Lem}[Pro]{{\textbf Lemma}}}
+%{\theorembodyfont{\rmfamily}\newtheorem{Exp}{{\textbf Example}}[section]}
+\def\remark{\textbf{Remark}:}
+\def\remarks{\textbf{Remarks}:}
+\def\bproof{\textbf{Proof}. }
+\def\eproof{\hfill$\Box$}
+
+%\def\begin{proof}\textbf{Proof}. }
+%\def\end{proof}{\hfill$\Box$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%    Bold font in math mode, a gift from J.F.Blowey       %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\bv#1{\mbox{\boldmath$#1$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%        New symbol which is not defined in Latex         %%%%%%%%%%
+%%%%%%%                 a gift from J.F.Blowey                  %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Mean INTegral
+% to be used in displaystyle
+\def\mint{\textstyle\mints\displaystyle}
+% to be used in textstyle
+\def\mints{\int\!\!\!\!\!\!{\rm-}\ }
+%
+% The Mean SUM
+% to be used in displaystyle
+\def\msum{\textstyle\msums\displaystyle}
+% to be used in textstyle
+\def\msums{\sum\!\!\!\!\!\!\!{\rm-}\ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%            Define your short cut here              %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\poincare{Poincar\'e }
+\def\holder{H\"older }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Added by Flotisable base on senior's template    %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\cjk}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
+
+% defaults
+\newcommand{\title@zh}{}
+\newcommand{\title@en}{}
+\newcommand{\student@zh}{}
+\newcommand{\student@en}{}
+\newcommand{\advisor@zh}{}
+\newcommand{\advisor@en}{}
+\newcommand{\school@zh}{\cjk{國立臺灣大學}}
+\newcommand{\school@en}{National Taiwan University}
+\newcommand{\institute@zh}{\cjk{電子工程學研究所}}
+\newcommand{\institute@en}{Graduate Institute of Electronics Engineering}
+\newcommand{\time@en}{June 2021}
+\newcommand{\watermark@file}{fig/watermark.pdf}
+\newcommand{\doi}{DOI}
+\newcommand{\ackname@toc}{Acknowledgements}
+\newcommand{\ackname@title}{Acknowledgements}
+\newcommand{\abstractzhname}{\cjk{摘要}}
+% end defaults
+
+% name settings commands
+\newcommand{\settitle}[2]
+{
+  \renewcommand{\title@zh}{\cjk{#1}}
+  \renewcommand{\title@en}{#2}
+}
+\newcommand{\setstudent}[2]
+{
+  \renewcommand{\student@zh}{\cjk{#1}}
+  \renewcommand{\student@en}{#2}
+}
+\newcommand{\setadvisor}[2]
+{
+  \renewcommand{\advisor@zh}{\cjk{#1}}
+  \renewcommand{\advisor@en}{#2}
+}
+\newcommand{\setschool}[2]
+{
+  \renewcommand{\school@zh}{\cjk{#1}}
+  \renewcommand{\school@en}{#2}
+}
+\newcommand{\setinstitute}[2]
+{
+  \renewcommand{\institute@zh}{\cjk{#1}}
+  \renewcommand{\institute@en}{#2}
+}
+\newcommand{\setwatermarkfile}[1]
+{
+  \renewcommand{\watermark@file}{#1}
+}
+\newcommand{\setdoi}[1]
+{
+  \renewcommand{\doi}{#1}
+}
+\newcommand{\ackname}[2][Acknowledgements]
+{
+  \renewcommand{\ackname@toc}{#1}
+  \renewcommand{\ackname@title}{#2}
+}
+% end name settings commands
+
+% watermark and doi
+\newlength{\watermark@x@shift}
+\newlength{\watermark@y@shift}
+\newlength{\doi@width}
+\setlength{\watermark@x@shift}{26mm}
+\setlength{\watermark@y@shift}{-24mm}
+\newcommand{\addwatermark}
+{
+  \settowidth{\doi@width}{\doi}
+  \newwatermark
+  [
+    scale=0.5,
+    xpos=\watermark@x@shift+0.5\paperwidth-73mm/2-2.5cm,
+    ypos=\watermark@y@shift+0.5\paperheight-73mm/2-2.5cm,
+    allpages
+  ]
+  {\tikz[opacity=0.5]{\node{\includegraphics{\watermark@file}}}}
+  \newwatermark
+  [
+    fontsize=12pt,
+    fontseries=m,
+    color=black,
+    xpos=\watermark@x@shift+0.5\paperwidth-0.5\doi@width-1cm,
+    ypos=\watermark@y@shift-0.5\paperheight+6pt+1cm,
+    allpages
+  ]{\doi}
+}
+% end watermark and doi
+
+% frontmatter environments
+\newenvironment{acknowledgements}
+{
+  \addcontentsline{toc}{chapter}{\numberline{}\ackname@toc}
+
+  \begin{center}
+    {\Large\bf \ackname@title}
+  \end{center}
+
+  \begin{CJK}{UTF8}{bkai}
+    }
+    {
+  \end{CJK}
+
+  \begin{flushright}
+    \student@zh{}\\
+    \student@en{}\\
+  \end{flushright}
+  \emph{\school@en}\\
+  \emph{\time@en}
+
+  \newpage
+}
+
+\newcommand{\abstract@zh@keywords}{}
+\newenvironment{abstractzh}[1]
+{
+  \addcontentsline{toc}{chapter}{\numberline{}Chinese Abstract}
+  \renewcommand{\abstract@zh@keywords}{#1}
+
+  \begin{CJK}{UTF8}{bkai}
+    \begin{center}\Large \bf
+      \title@zh{}
+    \end{center}
+    \begin{center}\large \bf
+      研究生: \student@zh{} \hspace{1cm} 指導教授: \advisor@zh{} \hspace{1cm} 博士 \\
+    \end{center}
+    \begin{center}\large \bf
+      \school@zh{}\institute@zh{}
+    \end{center}
+    \vspace{3mm}
+    \begin{center} \large \bf
+      \abstractzhname{}
+    \end{center}
+    }
+    {
+    \vspace{4mm}
+
+    \vspace{8pt}
+    \textbf{\emph{關鍵字: \abstract@zh@keywords}}
+    \vspace{8pt}
+
+  \end{CJK}
+
+  \newpage
+}
+
+\newcommand{\abstract@en@keywords}{}
+\newenvironment{abstracten}[1]
+{
+  \addcontentsline{toc}{chapter}{\numberline{}Abstract}
+  \renewcommand{\abstract@en@keywords}{#1}
+
+  \begin{center}\Large\bf
+    \title@en{}
+  \end{center}
+  \begin{center}\large
+    Student: \student@en{} \hspace{1cm} Advisor: Dr. \advisor@en{}\\
+  \end{center}
+  \begin{center}\large
+    \institute@en{}\\
+    \school@en
+  \end{center}
+  \vspace{3mm}
+
+  \begin{center}
+    {\large\bf \abstractname}
+  \end{center}
+}
+{
+  \vspace{4mm}
+
+  \vspace{8pt}
+  \textbf{\emph{Keywords: \abstract@en@keywords}}
+  \vspace{8pt}
+
+  \newpage
+}
+% end frontmatter environments
+\makeatother
+
+% structure related commands
+\newcommand{\frontmatter}
+{
+  \pagenumbering{roman}
+}
+\newcommand{\mainmatter}
+{
+  \newpage
+  \pagenumbering{arabic}
+  \parskip=12pt
+}
+% end structure related commands
