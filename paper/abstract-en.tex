@@ -1,1 +1,44 @@
-My awesome abstract in English.
+\textit{Stochastic Boolean Satisfiability} (SSAT) is an expressive language to formulate decision problems with randomness, such as the inference of Bayesian networks, propositional probabilistic planning, and \textit{Partially Observable Markov Decision Process} (POMDP).
+Solving an SSAT formula lies in the same PSPACE-complete complexity class as solving a \textit{Quantified Boolean Formula} (QBF).
+Despite its broad applications and profound theoretical values, SSAT has received relatively little attention compared to QBF.
+We propose novel algorithms to solve random-exist and exist-random quantified SSAT formulas.
+Modern techniques for SAT/QBF solving and model counting are explored to improve the computational efficiency.
+Unlike the prior DPLL-based exact algorithms for SSAT solving, the proposed algorithms are able to solve an SSAT formula approximately by deriving upper or lower bounds of its satisfying probability.
+The proposed algorithms are implemented in the open-source SSAT solvers \texttt{reSSAT} and \texttt{erSSAT}, respectively.
+Our evaluation shows that \texttt{reSSAT} and \texttt{erSSAT} solvers outperform the state-of-the-art SSAT solver on various formulas in both runtime and memory usage.
+They also provide useful bounds for cases where the state-of-the-art solver fails to compute exact answers.
+
+Furthermore, we identify relevant applications of random-exist and exist-random SSAT solving to the analysis of \textit{Probabilistic Design}.
+Probabilistic design is an emerging computational paradigm to accept device variability in the nanometer regime of VLSI circuit fabrication as a resource for certain applications.
+We establish the connection between the evaluation and verification of probabilistic design and SSAT solving.
+
+Nevertheless, SSAT is limited by its descriptive power within the PSPACE complexity class.
+More complex problems, such as the NEXPTIME-complete \textit{Decentralized POMDP} (Dec-POMDP), cannot be succinctly encoded with SSAT.
+To provide a logical formalism of such problems, we extend the \textit{Dependency Quantified Boolean Formula} (DQBF),
+a representative problem in the NEXPTIME-complete class, to its stochastic variant,
+named \textit{Dependency SSAT} (DSSAT), and show that DSSAT is also NEXPTIME-complete.
+We demonstrate the potential applications of DSSAT to the synthesis of probabilistic and approximate design and the encoding of Dec-POMDP problems.
+
+%%% Abstract of the IJCAI '17 paper
+\iffalse
+    Stochastic Boolean Satisfiability (SSAT) is a powerful formalism to represent computational problems with uncertainty, such as belief network inference and propositional probabilistic planning. Solving SSAT formulas lies in the PSPACE-complete complexity class same as solving Quantified Boolean Formulas (QBFs). While many endeavors have been made to enhance QBF solving in recent years, SSAT has drawn relatively less attention. This paper focuses on random-exist quantified SSAT formulas, and proposes an algorithm combining modern satisfiability (SAT) techniques and model counting to improve computational efficiency. Unlike prior exact SSAT algorithms, the proposed method can be easily modified to solve approximate SSAT by deriving upper and lower bounds of satisfying probability. Experimental results show that our method outperforms the state-of-the-art algorithm on random $k$-CNF and AI-related formulas in both runtime and memory usage, and has effective application to approximate SSAT on VLSI circuit benchmarks.
+\fi
+%%% Abstract of the IJCAI '18 paper
+\iffalse
+    Stochastic Boolean satisfiability (SSAT) is an expressive language to formulate decision problems with randomness. Solving SSAT formulas has the same PSPACE-complete computational complexity as solving quantified Boolean formulas (QBFs). Despite its broad applications and profound theoretical values, SSAT has received relatively little attention compared to QBF. In this paper, we focus on exist-random quantified SSAT formulas, also known as E-MAJSAT, which is a special fragment of SSAT commonly applied in probabilistic conformant planning, posteriori hypothesis, and maximum expected utility. Based on clause selection, a recently proposed QBF technique, we propose an algorithm to solve E-MAJSAT. %Several enhancement techniques are also devised to improve the computational efficiency.
+    Moreover, our method can provide an approximate solution to E-MAJSAT with a lower bound when an exact answer is too expensive to compute.
+    Experiments show that the proposed algorithm achieves significant performance gains and memory savings over the state-of-the-art SSAT solvers on a number of benchmark formulas, and provides useful lower bounds for cases where prior methods fail to compute exact answers.
+\fi
+%%% Abstract of the TC '18 paper
+\iffalse
+    In the nanometer regime of integrated circuit fabrication, device variability imposes serious challenges to the design and manufacturing of reliable systems. A new computation paradigm of approximate and probabilistic design has been proposed recently to accept design imperfection as a resource for certain applications. Despite recent intensive study on approximate design, probabilistic design receives relatively few attentions. This paper provides a general formulation for the evaluation and verification of probabilistic design. We establish their connection to stochastic Boolean satisfiability (SSAT), (weighted) model counting, and probabilistic model checking. Moreover, a novel SSAT solver based on binary decision diagram (BDD) is proposed, and a comparative experimental study is performed to contrast the strengths and weaknesses of different solutions. The proposed BDD-based SSAT solver obtains the best scalability among all techniques in our experiments. We also compare the BDD-based SSAT solver to a prior method based on Bayesian network modeling. Experimental results show that our method outperforms the prior method by orders of magnitude in both runtime and memory usage. Our work can be an essential step towards automated synthesis of probabilistic design.
+\fi
+%%% Abstract of the AAAI '21 paper
+\iffalse
+    \textit{Stochastic Boolean Satisfiability} (SSAT) is a logical formalism to model decision problems with uncertainty, such as \textit{Partially Observable Markov Decision Process} (POMDP) for verification of probabilistic systems.
+    SSAT, however, is limited by its descriptive power within the PSPACE complexity class.
+    More complex problems, such as the NEXPTIME-complete \textit{Decentralized POMDP} (Dec-POMDP), cannot be succinctly encoded with SSAT.
+    To provide a logical formalism of such problems, we extend the \textit{Dependency Quantified Boolean Formula} (DQBF), a representative problem in the NEXPTIME-complete class, to its stochastic variant, named \textit{Dependency SSAT} (DSSAT), and show that DSSAT is also NEXPTIME-complete. We demonstrate the potential applications of DSSAT to circuit synthesis of probabilistic and approximate design.
+    Furthermore, to study the descriptive power of DSSAT, we establish a polynomial-time reduction from Dec-POMDP to DSSAT.
+    With the theoretical foundations paved in this work, we hope to encourage the development of DSSAT solvers for potential broad applications.
+\fi
