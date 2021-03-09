@@ -1,22 +1,32 @@
-\textit{Stochastic Boolean Satisfiability} (SSAT) is an expressive language to formulate decision problems with randomness, such as the inference of Bayesian networks, propositional probabilistic planning, and \textit{Partially Observable Markov Decision Process} (POMDP).
-Solving an SSAT formula lies in the same PSPACE-complete complexity class as solving a \textit{Quantified Boolean Formula} (QBF).
-Despite its broad applications and profound theoretical values, SSAT has received relatively little attention compared to QBF.
-We propose novel algorithms to solve random-exist and exist-random quantified SSAT formulas.
-Modern techniques for SAT/QBF solving and model counting are explored to improve the computational efficiency.
-Unlike the prior DPLL-based exact algorithms for SSAT solving, the proposed algorithms are able to solve an SSAT formula approximately by deriving upper or lower bounds of its satisfying probability.
-The proposed algorithms are implemented in the open-source SSAT solvers \texttt{reSSAT} and \texttt{erSSAT}, respectively.
-Our evaluation shows that \texttt{reSSAT} and \texttt{erSSAT} solvers outperform the state-of-the-art SSAT solver on various formulas in both runtime and memory usage.
+\textit{Stochastic Boolean satisfiability} (SSAT) is an expressive language to formulate computational problems with randomness,
+such as the inference of Bayesian networks, propositional probabilistic planning, and partially observable Markov decision process (POMDP).
+Solving an SSAT formula lies in the PSPACE-complete complexity class, the same as solving a \textit{quantified Boolean formula} (QBF).
+Despite its broad applications and profound theoretical values,
+SSAT has drawn relatively less attention compared to SAT or QBF.
+
+In this dissertation, we propose novel algorithms to solve random-exist and exist-random quantified SSAT formulas.
+These two fragments of SSAT have important AI applications in the reasoning of Bayesian networks and the search of an optimal strategy for probabilistic conformant planning.
+In contrast to the conventional SSAT-solving approaches based on Davis-Putnam-Logemann-Loveland (DPLL) search,
+we exploit modern techniques for SAT/QBF solving and model counting to improve the computational efficiency.
+Moreover, unlike the prior DPLL-based exact algorithms for SSAT solving,
+the proposed algorithms are able to solve an SSAT formula approximately by deriving bounds of its satisfying probability.
+
+The proposed algorithms are implemented in the open-source SSAT solvers \ressat and \erssat.
+Our evaluation shows that \ressat and \erssat solvers outperform the state-of-the-art SSAT solver on various formulas in both runtime and memory usage.
 They also provide useful bounds for cases where the state-of-the-art solver fails to compute exact answers.
 
-Furthermore, we identify relevant applications of random-exist and exist-random SSAT solving to the analysis of \textit{Probabilistic Design}.
+Furthermore, we identify relevant applications of random-exist and exist-random SSAT solving to the analysis of \textit{probabilistic design}.
 Probabilistic design is an emerging computational paradigm to accept device variability in the nanometer regime of VLSI circuit fabrication as a resource for certain applications.
-We establish the connection between the evaluation and verification of probabilistic design and SSAT solving.
+We establish the connection between the analysis of probabilistic design and SSAT solving.
 
-Nevertheless, SSAT is limited by its descriptive power within the PSPACE complexity class.
-More complex problems, such as the NEXPTIME-complete \textit{Decentralized POMDP} (Dec-POMDP), cannot be succinctly encoded with SSAT.
-To provide a logical formalism of such problems, we extend the \textit{Dependency Quantified Boolean Formula} (DQBF),
-a representative problem in the NEXPTIME-complete class, to its stochastic variant,
-named \textit{Dependency SSAT} (DSSAT), and show that DSSAT is also NEXPTIME-complete.
+In spite of its various applications,
+SSAT is limited by its descriptive power within the PSPACE complexity class.
+More complex problems, such as the NEXPTIME-complete decentralized POMDP (Dec-POMDP), cannot be succinctly encoded with SSAT.
+To provide a logical formalism for such problems,
+we extend the \textit{dependency quantified Boolean formula} (DQBF),
+a representative problem in the NEXPTIME-complete class,
+to its stochastic variant, named \textit{dependency SSAT} (DSSAT),
+and show that DSSAT is also NEXPTIME-complete.
 We demonstrate the potential applications of DSSAT to the synthesis of probabilistic and approximate design and the encoding of Dec-POMDP problems.
 
 %%% Abstract of the IJCAI '17 paper
