@@ -10,11 +10,11 @@
 \usepackage{syntax}
 \usepackage{listings}
 \usepackage{graphicx}
-%\usepackage{chemmacros}
 \usepackage{subfig}
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{rotating}
+\usepackage{xspace}
 % end packages
 
 %%% nzlee: This thesis combines the following four papers
@@ -60,50 +60,21 @@
 % self-defined commands
 \newcommand{\random}[1]{\rotatebox[origin=c]{180}{$\mathsf{R}$}^{#1}}
 
+% tools
+\newcommand{\tool}[1]{\texttt{#1}\xspace}
+\newcommand{\definetool}[2]{\newcommand{#1}{\tool{#2}}\xspace}
+\definetool{\ressat}{reSSAT}
+\definetool{\erssat}{erSSAT}
+\definetool{\maxplan}{MAXPLAN}
+\definetool{\zander}{ZANDER}
+\definetool{\dcssat}{DC-SSAT}
+
 % constant words
-\newcommand{\biocham}{Biocham}
-\newcommand{\zeroultra}{zero-order ultrasensitivity}
-\newcommand{\prolog}{Prolog}
-\newcommand{\boolT}{\lit{true}}
-\newcommand{\boolF}{\lit{false}}
-\newcommand{\mm}{Michaelis-Menten}
-\newcommand{\gk}{Goldbeter-Koshland}
-\makeatletter
-\newcommand{\ma}{\@ifstar{\ma@star}{\ma@nostar}}
-\newcommand{\ma@star}{Mass-action}
-\newcommand{\ma@nostar}{mass-action}
-\makeatother
+\newcommand{\word}[1]{\textsc{#1}\xspace}
+\newcommand{\defineword}[2]{\newcommand{#1}{\word{#2}}\xspace}
+\defineword{\true}{true}
+\defineword{\false}{false}
 % end constant words
-
-% chemical related commands
-\newcommand{\species}[1]{\ensuremath{\ce{\uppercase{#1}}}}
-\newcommand{\conc}[2]{[\ensuremath{\species{#1}_{#2}}]}
-\newcommand{\catconst}[1]{k_{#1}}
-% end chemical related commands
-
-% math noun
-\newcommand{\tuple}[1]{(#1)}
-\newcommand{\set}[1]{\{#1\}}
-% end math noun
-
-% expression related commands
-\newcommand{\posvar}[1]{\ensuremath{#1^+}}
-\newcommand{\negvar}[1]{\ensuremath{#1^-}}
-\newcommand{\expr}[1]{\texttt{#1}}
-\newcommand{\mathterm}[1]{\mathit{#1}}
-\newcommand{\var}[1]{\ensuremath{\mathterm{\lowercase{#1}}}}
-\newcommand{\modified}[1]{\textcolor{red}{#1}}
-% end expression related commands
-
-% typeset for different semantics
-\newcommand{\term}[1]{\emph{#1}}
-\newcommand{\op}[1]{\emph{#1}}
-\newcommand{\biochamcmd}[1]{\texttt{#1}}
-\newcommand{\code}[1]{\lstinline!#1!}
-\newcommand{\block}[1]{\emph{#1}}
-\newcommand{\signal}[1]{\texttt{#1}}
-\newcommand{\switchstate}[1]{\ensuremath{#1}}
-% end typeset for different semantics
 
 % cross reference related commands
 \makeatletter
@@ -143,5 +114,5 @@
 \newcommand{\subfigref@nostar}[1]{\subfig@name{}~\subref{fig:#1}}
 \makeatother
 % end cross reference related commands
-% end self defined commands
+% end self-defined commands
 % end preamble
