@@ -5,17 +5,13 @@
 
 % preamble
 % packages
-%%% nzlee: use input instead if you don't need to compile a chapter alone
+%%% nzlee: use command \input if you don't need to compile a chapter alone
 %\usepackage{subfiles}
-\usepackage{syntax}
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{subfig}
-\usepackage{hyperref}
-\usepackage{float}
 \usepackage{rotating}
 \usepackage{xspace}
 \usepackage{dsfont}
+\usepackage{hyperref}
+\usepackage{cleveref}
 % end packages
 
 %%% nzlee: This thesis combines the following four papers
@@ -31,34 +27,12 @@
 \setadvisor{江介宏}{Jie-Hong Roland Jiang}
 \setwatermarkfile{./fig/watermark.pdf}
 %%% TODO: update the DOI
-\setdoi{doi:10.6342/NTU201902986}
+%\setdoi{doi:10.6342/NTU201902986}
 \ackname{\cjk{致謝}}
 
-%\addwatermark
+\addwatermark
 
-% package settings
-\setlength{\grammarparsep}{4pt}
-\renewcommand{\lstlistingname}{Program}
-\lstset
-{
-  basicstyle=\ttfamily,
-  captionpos=b,
-  lineskip=-1pt
-}
-\iffalse
-  \chemsetup
-  {
-    modules=reactions,
-    formula=mhchem,
-    mhchem/version=4,
-    reactions/tag-open=(,
-    reactions/tag-close=)
-  }
-  \numberwithin{reaction}{chapter}
-\fi
-% end package settings
-
-% self-defined commands
+% symbols
 \newcommand{\random}[1]{\rotatebox[origin=c]{180}{$\mathsf{R}$}^{#1}}
 
 % tools
@@ -69,51 +43,14 @@
 \definetool{\maxplan}{MAXPLAN}
 \definetool{\zander}{ZANDER}
 \definetool{\dcssat}{DC-SSAT}
+\definetool{\minisat}{MiniSat}
 
 % constant words
 \newcommand{\word}[1]{\textsc{#1}\xspace}
 \newcommand{\defineword}[2]{\newcommand{#1}{\word{#2}}\xspace}
 \defineword{\true}{true}
 \defineword{\false}{false}
-% end constant words
 
-% cross reference related commands
-\makeatletter
-\newcommand{\sec@name}{\chaptername}
-\newcommand{\eq@name}{Equation}
-\newcommand{\fig@name}{\figurename}
-\newcommand{\lst@name}{\lstlistingname}
-\newcommand{\tab@name}{\tablename}
-\newcommand{\re@name}{Reaction}
-\newcommand{\subfig@name}{\figurename}
-\newcommand{\secref}{\@ifstar{\secref@star}{\secref@nostar}}
-\newcommand{\secref@star}[1]{\ref{sec:#1}}
-\newcommand{\secref@nostar}[1]{\sec@name{}~\ref{sec:#1}}
-\newcommand{\seclabel}[1]{\label{sec:#1}}
-\renewcommand{\eqref}{\@ifstar{\eqref@star}{\eqref@nostar}}
-\newcommand{\eqref@star}[1]{(\ref{eq:#1})}
-\newcommand{\eqref@nostar}[1]{\eq@name{}~(\ref{eq:#1})}
-\newcommand{\eqlabel}[1]{\label{eq:#1}}
-\newcommand{\figref}{\@ifstar{\figref@star}{\figref@nostar}}
-\newcommand{\figref@star}[1]{\ref{fig:#1}}
-\newcommand{\figref@nostar}[1]{\fig@name{}~\ref{fig:#1}}
-\newcommand{\figlabel}[1]{\label{fig:#1}}
-\newcommand{\lstref}{\@ifstar{\lstref@star}{\lstref@nostar}}
-\newcommand{\lstref@star}[1]{\ref{lst:#1}}
-\newcommand{\lstref@nostar}[1]{\lstlistingname{}~\ref{lst:#1}}
-\newcommand{\lstlabel}[1]{\label{lst:#1}}
-\newcommand{\tabref}{\@ifstar{\tabref@star}{\tabref@nostar}}
-\newcommand{\tabref@star}[1]{\ref{tab:#1}}
-\newcommand{\tabref@nostar}[1]{\tab@name{}~\ref{tab:#1}}
-\newcommand{\tablabel}[1]{\label{tab:#1}}
-\newcommand{\reref}{\@ifstar{\reref@star}{\reref@nostar}}
-\newcommand{\reref@star}[1]{(\ref{re:#1})}
-\newcommand{\reref@nostar}[1]{\re@name{}~(\ref{re:#1})}
-\newcommand{\relabel}[1]{\label{re:#1}}
-\newcommand{\subfigref}{\@ifstar{\subfigref@star}{\subfigref@nostar}}
-\newcommand{\subfigref@star}[1]{\subref{fig:#1}}
-\newcommand{\subfigref@nostar}[1]{\subfig@name{}~\subref{fig:#1}}
-\makeatother
-% end cross reference related commands
-% end self-defined commands
-% end preamble
+% customize cref names
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{equation}{Eq.}{Eqs.}
