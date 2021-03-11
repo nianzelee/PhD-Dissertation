@@ -2,34 +2,23 @@
 
 \begin{document}
 
-%===========================================================================================
+%---------------------------------------------------
 
 \frontmatter
+\begin{abstracten}{Stochastic Satisfiability, Probabilistic Reasoning}
+  \input{abstract-en.tex}
+\end{abstracten}
+\begin{abstractzh}{隨機布林可滿足性問題, 機率性推論}
+  \input{abstract-zh.tex}
+\end{abstractzh}
 \begin{acknowledgements}
   \input{acknowledge.tex}
 \end{acknowledgements}
 
-\begin{abstractzh}{隨機布林可滿足性問題, 機率性推論}
-  \input{abstract-zh.tex}
-\end{abstractzh}
-
-\begin{abstracten}{Stochastic Satisfiability, Probabilistic Reasoning}
-  \input{abstract-en.tex}
-\end{abstracten}
-
-%------------------------------------------------
-\tableofcontents
-\clearpage
-\addcontentsline{toc}{chapter}{\numberline{}List of Figures}
-\listoffigures
-\clearpage
-\addcontentsline{toc}{chapter}{\numberline{}List of Tables}
-\listoftables
-
-
 %---------------------------------------------------
-\mainmatter
 
+\tableofcontents
+\mainmatter
 \input{introduction.tex}
 \input{related-work.tex}
 \input{background.tex}
@@ -39,7 +28,15 @@
 \input{dependency-ssat.tex}
 \input{conclusion-future-work.tex}
 
+%---------------------------------------------------
+
+\clearpage
+\addcontentsline{toc}{chapter}{\numberline{}List of Figures}
+\listoffigures
+\clearpage
+\addcontentsline{toc}{chapter}{\numberline{}List of Tables}
+\listoftables
+
 \bibliographystyle{acm}
-\footnotesize
 \bibliography{nzlee,prob}
 \end{document}
