@@ -1,0 +1,26 @@
+\section{Dependency quantified Boolean formula}
+\label{sect:dqbf}
+
+In contrast to the \textit{linearly ordered} prefix used in QBF, i.e., an existentially quantified variable will depend on all of its preceding universally quantified variables,
+the quantification structure in DQBF is extended with Henkin quantifiers,
+where the dependency of an existentially quantified variable on the universally quantified variables can be explicitly specified.
+
+A DQBF $\Phi$ over a set $V=\{x_1,\ldots,x_n,y_1,\ldots,y_m\}$ of variables is of the form:
+\begin{align}
+    \forall x_1, \ldots, \forall x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}). \phi,
+\end{align}
+where each $D_{y_j}\subseteq \{x_1,\ldots,x_n\}$ denotes the set of variables that variable $y_j$ can depend on,
+and Boolean formula $\phi$ over $V$ is quantifier-free.
+We denote the set $\{x_1,\ldots,x_n\}$ (resp. $\{y_1,\ldots,y_m\}$) of universally (resp. existentially) quantified variables of $\Phi$ by $V_{\Phi}^\forall$ (resp. $V_{\Phi}^\exists$).
+
+Given a DQBF $\Phi$, it is satisfied if for each variable $y_j$, there exists a function $f_j:\mathcal{A}(D_{y_j})\rightarrow \mathbb{B}$, such that after substituting variables in $V_{\Phi}^\exists$ with their corresponding functions respectively, matrix $\phi$ yields a tautology over $V_{\Phi}^\forall$.
+The set of functions $\mathcal{F}=\{f_1,\ldots,f_m\}$ is called a set of \textit{Skolem} functions for $\Phi$.
+In other words, $\Phi$ is satisfied by $\mathcal{F}$ if
+\begin{align}\label{eq:dqbf-min}
+    \min_{\beta \in \mathcal{A}(V_{\Phi}^{\forall})}\mathds{1}_{\phi|_{\mathcal{F}}}(\beta)=1,
+\end{align}
+where $\mathds{1}_{\phi|_{\mathcal{F}}}(\cdot)$ is an indicator function to indicate whether an assignment over $V_{\Phi}^{\forall}$ belongs to the set of satisfying assignments of matrix $\phi$,
+when variables in $V_{\Phi}^{\exists}$ are substituted by their Skolem functions in $\mathcal{F}$.
+That is, $\phi|_{\mathcal{F}} = \{\beta\ |\ \phi(\beta(x_1), \ldots, \beta(x_n)$, $f_1|_{\beta}$, $\ldots, f_m|_{\beta})\equiv \top\}$,
+where $f_j|_{\beta}$ is the logical value derived by substituting every $x_i\in D_{y_j}$ with $\beta(x_i)$ in function $f_j$.
+The satisfiability problem of DQBF was shown to be NEXPTIME-complete~\cite{Peterson2001}.

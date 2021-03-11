@@ -1,0 +1,28 @@
+\section{Boolean-logic circuit}
+\label{sect:circuit}
+
+A Boolean-logic circuit, defined below, will be extended to model a probabilistic design in~\cref{chap:prob-eval}.
+
+\begin{definition}[Boolean Network]\label{def:Boolean network}
+    A \emph{(combinational) Boolean network} is a directed acyclic
+    graph $G=(V,E)$, with vertices $V$ and edges $E \subseteq V \times
+        V$. Two non-empty disjoint subsets $V_I$ and $V_O$ of $V$ are
+    identified; a vertex $v \in V_I$ (resp. $V_O$) is referred to as a
+    \emph{primary input} (PI) (resp. \emph{primary output} (PO)). Each
+    vertex $v \in V$ is associated with a Boolean variable $b_v$; each
+    vertex $v \in V \backslash V_I$ is associated with a Boolean
+    function $f_v$ letting $b_v \leftrightarrow f_v$. An edge $(u,v)
+        \in E$ indicates $f_v$ refers to $b_u$ as an input variable; $u$
+    is called a \emph{fanin} of $v$, and $v$ a \emph{fanout} of $u$.
+\end{definition}
+To ease readability, in the sequel we shall not distinguish a
+vertex $v$ and its corresponding Boolean variable $b_v$, and
+simply denote $b_v$ with $v$.
+
+For satisfiability (SAT) testing, a Boolean network (circuit) can
+be converted in linear time to a \emph{conjunctive normal form}
+(CNF) formula through Tseitin transformation~\cite{Tseitin1983},
+which will be used in our development of stochastic SAT and model
+counting methods.
+
+\subsection{And-inverter graph}

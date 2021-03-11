@@ -1,0 +1,30 @@
+\section{Stochastic Boolean satisfiability}
+\label{sect:ssat}
+
+An SSAT formula $\Phi$ over variables $V=\{x_1,\ldots,x_n\}$ has the form:
+$Q_1 x_1, \ldots, Q_n x_n. \phi$, where each $Q_i \in \{\exists, \random{p}\}$ and Boolean formula $\phi$ over $V$ is quantifier-free.
+Symbol $\exists$ denotes an existential quantifier, and $\random{p}$ denotes a randomized quantifier, which requires the probability that the quantified variable equals $\top$ to be $p\in[0,1]$.
+Given an SSAT formula $\Phi$, the quantification structure $Q_1 x_1, \ldots, Q_n x_n$ is called the \emph{prefix},
+and the quantifier-free Boolean formula $\phi$ is called the \emph{matrix}.
+
+Let $x$ be the outermost variable in the prefix of an SSAT formula $\Phi$.
+The satisfying probability of $\Phi$, denoted by $\Pr[\Phi]$, is defined recursively by the following four rules:
+\begin{enumerate}
+    \item[a)] $\Pr[\top]=1$,
+    \item[b)] $\Pr[\bot]=0$,
+    \item[c)] $\Pr[\Phi]=\max\{\Pr[\Phi|_{\neg x}], \Pr[\Phi|_{x}]\}$, if $x$ is existentially quantified,
+    \item[d)] $\Pr[\Phi]=(1-p)\Pr[\Phi|_{\neg x}] + p\Pr[\Phi|_{x}]$, if $x$ is randomly quantified by $\random{p}$,
+\end{enumerate}
+where $\Phi|_{\neg x}$ and $\Phi|_{x}$ denote the SSAT formulas obtained by eliminating the outermost quantifier of $x$ via substituting the value of $x$ in the matrix with $\bot$ and $\top$, respectively.
+
+The \textit{decision version} of SSAT is stated as follows.
+Given an SSAT formula $\Phi$ and a threshold $\theta \in [0,1]$, decide whether $\Pr[\Phi]\geq \theta$.
+On the other hand, the \textit{optimization version} asks to compute $\Pr[\Phi]$.
+The decision version of SSAT was shown to be PSPACE-complete~\cite{Papadimitriou1985}.
+
+\iffalse
+    \subsection{Reduction from E-MAJSAT to Model Counting}
+    Given an E-MAJSAT formula $\Phi=\exists X \invR Y. \phi(X,Y)$, our goal is to evaluate $Pr[\Phi]$. By the rules of SSAT formula, it's to find $\max\{Pr[\Phi|_{\tau}]:\forall \tau \in X \rightarrow \mathbb{B}\}$. Each $\Phi|_{\tau} = \invR Y.\phi (Y)$ is merely random quantified SSAT formula since all $X$ variables have been eliminated. If we assign each random quantified variable $r_i$ a weight $p_i$ corresponding to randomized quantifier $\invR^{p_i} r_i$, $Pr[\Phi|_{\tau}]$ can be seen as a Boolean formula $\phi$ with a weight function. So we can use any model counting algorithm to find the value for it.
+
+    When we are trying all the assignments on $X$, it is common for two assignments $\tau_1$, $\tau_2$ such that $\phi|_{\tau_1} \supseteq \phi|_{\tau_2}$. The implication $\phi|_{\tau_1} \rightarrow \phi|_{\tau_2}$ can be induced, so if there is an assignment $\alpha_1$ such that $\phi|_{\tau_1 \wedge \alpha_1} = \top$ then $\phi|_{\tau_2 \wedge \alpha_1} = \top$. Take the weight function	into consideration, the weights of all satisfying assignments of $\phi|_{\tau_2}$ must be great equal then $\phi|_{\tau_1}$. It gives us the propositions below:
+\fi
