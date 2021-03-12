@@ -33,6 +33,16 @@
 \addwatermark
 
 % symbols
+\newcommand{\booldom}{\mathbb{B}} % Boolean domain
+\newcommand{\limply}{\rightarrow} % logical implication
+\newcommand{\vl}[1]{\mathtt{var}(#1)} % variable of a literal
+\newcommand{\as}{\tau} % an assignment
+\newcommand{\av}[1]{\mathcal{A}(#1)} % all assignments over a variable set
+\newcommand{\pf}{\phi} % propositional formula (quantifier-free)
+\newcommand{\vf}[1]{\mathtt{vars}(#1)} % variable of a formula
+\newcommand{\pcf}[2]{#1|_{#2}} % positive cofactor
+\newcommand{\ncf}[2]{#1|_{\lnot#2}} % negative cofactor
+\newcommand{\qf}{\Phi} % quantified formula
 \newcommand{\random}[1]{\rotatebox[origin=c]{180}{$\mathsf{R}$}^{#1}}
 
 % tools
@@ -54,3 +64,4 @@
 % customize cref names
 \crefname{chapter}{Chapter}{Chapters}
 \crefname{equation}{Eq.}{Eqs.}
+\crefname{table}{Table}{Tables}
