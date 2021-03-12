@@ -12,6 +12,22 @@ such as propositional probabilistic planning~\cite{Littman1998},
 Bayesian-network inference~\cite{Cooper1990,Jensen1996,Bacchus2003},
 and the analysis of partially observable Markov decision process~\cite{Majercik2003}.
 
+In addition to the above AI applications,
+we further identify new use-cases of random-exist and exist-random quantified SSAT formulas in the regime of emerging computational paradigm of VLSI systems.
+Conventionally, uncertain system behavior is undesirable and would be mitigated by employing techniques such as error detection~\cite{Constantinescu2003} and error correction~\cite{Mitra2006}.
+Nevertheless, in the post-Moore's era,
+the variability and uncertainty of manufacturing at the atomic level make devices under miniaturization sensitive to process variation and environmental fluctuation.
+As a result, the manufactured ICs may exhibit uncertain probabilistic behavior,
+which imposes serious challenges to the design of reliable systems.
+
+Recent research efforts have been made to accept the inevitable imperfection of devices based on the notions of \textit{approximate design} and \textit{probabilistic design}.
+In both notions, a system's behavior may deviate from its expected specification;
+however, this deviation is deterministic in the former case but probabilistic in the latter case.
+Despite the advancements made by prior endeavors,
+the analysis and synthesis of probabilistic design has gained relatively less attention.
+We address the analysis of probabilistic design by formalizing the problem of probabilistic property evaluation.
+The average-case and worst-case analyses are encoded into random-exist and exist-random SSAT formulas, respectively.
+
 SSAT is closely related to two generalizations of Boolean satisfiability:
 \textit{model counting} of propositional formulas and \textit{quantified Boolean formulas} (QBFs).
 Given a propositional formula $\phi(x_1,\ldots,x_n)$, model counting asks to compute the number of satisfying assignments of $\phi$ over Boolean variables $x_1,\ldots,x_n$.
@@ -35,9 +51,10 @@ For example, \maxplan~\cite{Majercik1998} improves the DPLL-based search by cons
 \zander~\cite{Majercik2003} incorporates several threshold pruning heuristics to reduce the search space;
 \dcssat~\cite{Majercik2005} divides the SSAT formulas into many subproblems and conquer them separately.
 
+
 In contrast to the previous DPLL-based SSAT algorithms with pruning heuristics and subproblem memorization,
 our goal is to utilize modern techniques of SAT/QBF solving and model counting to improve SSAT solving.
-We focus on random-exist and exist-random quantified fragments of SSAT formulas, which have important AI applications.
+Motivated by the new VLSI applications, we focus on random-exist and exist-random quantified fragments of SSAT formulas.
 
 The random-exist quantified SSAT formula is of the form $\Phi=\random{} X \exists Y.\phi$, which is the counterpart of the forall-exist QBF.
 It has applications in Bayesian-network inference~\cite{Cooper1990,Bacchus2003}.
@@ -54,21 +71,6 @@ can be formulated with E-MAJSAT.
 Inspired by the \textit{clause-selection} technique,
 we propose a learning method based on the \textit{clause-containment principle} to solve E-MAJSAT.
 To the best of our knowledge, this is the first attempt to adopt QBF approaches for SSAT solving.
-
-In addition to devising new algorithms, we further identify important applications of random-exist and exist-random quantified SSAT formulas in the regime of emerging computational paradigm of VLSI systems.
-Conventionally, uncertain system behavior is undesirable and would be mitigated by employing techniques such as error detection~\cite{Constantinescu2003} and error correction~\cite{Mitra2006}.
-Nevertheless, in the post-Moore's era,
-the variability and uncertainty of manufacturing at the atomic level make devices under miniaturization sensitive to process variation and environmental fluctuation.
-As a result, the manufactured ICs may exhibit uncertain probabilistic behavior,
-which imposes serious challenges to the design of reliable systems.
-
-Recent research efforts have been made to accept the inevitable imperfection of devices based on the notions of \textit{approximate design} and \textit{probabilistic design}.
-In both notions, a system's behavior may deviate from its expected specification;
-however, this deviation is deterministic in the former case but probabilistic in the latter case.
-Despite the advancements made by prior endeavors,
-the analysis and synthesis of probabilistic design has gained relatively less attention.
-We address the analysis of probabilistic design by formalizing the problem of probabilistic property evaluation.
-The average-case and worst-case analyses are encoded into random-exist and exist-random SSAT formulas, respectively.
 
 In spite of its various applications ranging from AI to VLSI,
 SSAT is limited by its descriptive power within the PSPACE complexity class.
