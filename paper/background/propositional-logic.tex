@@ -36,9 +36,12 @@ Given a Boolean formula $\pf$, an assignment $\as$ over $\vf{\pf}$ \textit{satis
 denoted as $\as\models\pf$,
 if substituting the occurrences of every $x\in\vf{\pf}$ with its assigned value $\as(x)$ yields $\top$
 after simplifying $\pf$ under the semantics of Boolean connectives.
-Formula $\pf$ is \textit{satisfiable} if $\exists\as\in\av{\vf{\pf}}.\as\models\pf$.
+Such assignment $\as$ is called a \textit{satisfying assignment},
+and formula $\pf$ is \textit{satisfiable} if it has a satisfying assignment.
 Otherwise, $\pf$ is \textit{unsatisfiable}.
 A Boolean formula $\pf$ is a \textit{tautology} if $\forall\as\in\av{\vf{\pf}}.\as\models\pf$.
-The satisfiability problem of Boolean formulas in CNF is NP-complete~\cite{Cook1971}.
+The Boolean satisfiability problem asks to decide whether a Boolean formula is satisfiable or not.
+It is a well-known NP-complete~\cite{Cook1971} problem.
 
-\subsection{Binary decision diagram}
+An $n$-variable \textit{Boolean function} is a mapping from $\booldom^n$ to $\booldom$.
+Note that a Boolean formula $\pf$ induces a Boolean function with a domain $\av{\vf{\pf}}$.

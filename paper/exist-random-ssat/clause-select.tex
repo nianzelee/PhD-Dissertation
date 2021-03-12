@@ -1,7 +1,6 @@
-\section{Quantified Boolean formula}
-\label{sect:qbf}
+\section{Clause selection}
+\label{sect:clause-select}
 
-\subsection{Clause selection}
 \textit{Clause selection}~\cite{Janota2015,Rabe2015} is a recently proposed technique for QBF solving.
 Given a CNF formula $\phi(X,Y)$ over a set of variables $X \cup Y$ with $X \cap Y = \emptyset$, we divide each clause $C \in \phi$ into two sub-clauses $C^X$ and $C^Y$, where $C^X$ (resp. $C^Y$) consists of the literals whose variables are in $X$ (resp. $Y$). For example, for $C=(x_1 \vee x_2 \vee y_1 \vee y_2)$, we have $C^X=(x_1 \vee x_2)$ and $C^Y=(y_1 \vee y_2)$. Clearly, $C=C^X \vee C^Y$.
 
@@ -22,7 +21,7 @@ The formula $\psi(X,S)=\bigwedge_{C \in \phi}(s_C \equiv \neg C^X)$ is called th
     \end{itemize}
     A selection variable $s_i$ is introduced for each clause, and $S=\{s_1,s_2,s_3,s_4\}$. The selection relation $\psi(X,S)$ of $\phi(X,Y)$ equals
     \begin{eqnarray*}
-        \psi(X,S) = (s_1 \equiv \neg e_1)\wedge(s_2 \equiv \neg e_1 \wedge \neg e_2) \wedge (s_3 \equiv e_2 \wedge e_3) \\ \wedge(s_4 \equiv e_1 \wedge \neg e_3).
+        \psi(X,S) = (s_1 \equiv \neg e_1)\wedge(s_2 \equiv \neg e_1 \wedge \neg e_2) \wedge (s_3 \equiv e_2 \wedge e_3) \wedge(s_4 \equiv e_1 \wedge \neg e_3).
     \end{eqnarray*}
     Consider the complete assignment $\tau_1=\neg e_1 \neg e_2 \neg e_3$ over $X$. It selects $C_1$ and $C_2$, and deselects $C_3$ and $C_4$, as can be seen from the selection relation cofactored by $\tau_1$, which results in $\psi(X,S)|_{\tau_1}=s_1s_2\neg s_3 \neg s_4$.
     Consider the partial assignment $\tau_2=\neg e_1 e_3$ over $X$.

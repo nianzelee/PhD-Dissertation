@@ -1,34 +1,15 @@
 \section{Model counting}
 \label{sect:model-counting}
 
-The \textit{model counting} problem of a Boolean formula $\phi$ asks to find the number of satisfying assignments of $\phi$.
-Model counting algorithms can be classified into two categories: \textit{exact model counting} and \textit{approximate model counting}.
-The former computes the exact number of satisfying assignments of a formula; the latter computes an upper or a lower bound of the number of satisfying assignments with some confidence level.
-In its weighted version, a weight function $\omega$ is defined to map each variable $x \in \mathtt{vars}(\phi)$ to some \emph{weight} $\omega(x) \in [0,1]$, which can be seen as the probability $\Pr[x=\top]$.
-The weight of a positive literal $x$ (resp. negative literal $\neg x$) of variable $x$ is defined to be $\omega(x)$ (resp. $1-\omega(x)$).
-The weight of an assignment is defined to be the product of the weights of its individual literals.
-The weight of a formula equals the summation of weights of its satisfying assignments.
-
-Given an E-MAJSAT formula $\Phi=\exists X \random{} Y. \phi(X,Y)$ and an assignment $\tau$ on $X$, cofactoring the matrix with $\tau$ results in a formula $\phi|_{\tau}$ referring only to variables in $Y$.
-The prefix $\random{} Y$ induces a weight function $\omega: Y \rightarrow [0,1]$ for each variable $y \in Y$, where $\omega(y)$ equals the probability annotated on the randomized quantifier of $y$.
-As a result, the conditional satisfying probability $\Pr[\Phi|_{\tau}]$, which equals the weight of the formula $\phi|_{\tau}$ under the weight function $\omega$, can be obtained by invoking a weighted model counter on the formula $\phi|_{\tau}$ with the weight function $\omega$.
-In the sequel, the invocation of a weighted model counter is expressed by $\mathtt{WeightModelCount}(\random{} Y. \phi|_{\tau})$, which returns the conditional satisfying probability $\Pr[\random{} Y. \phi|_{\tau}]$.
-
-Given a CNF formula $\phi$, the \textit{model counting} problem finds the number of satisfying assignments of $\phi$.
-In its weighted version, a weight function $\omega$ maps each Boolean variable $x \in \mathtt{vars}(\phi)$ to a \textit{weight} $\omega(x) \in [0,1]$, which represents $\mathrm{Pr}[x=\top]$.
-The weight of a negative literal $\neg x$ is defined to be $1-\omega(x)$.
-The weight of an assignment equals the product of the weights of its individual literals.
-The weight of a Boolean formula equals the summation of weights of its satisfying assignments.
-There are two categories of model counting algorithms: \textit{Exact model counting} computes the precise number of satisfying assignments of a formula; \textit{approximate model counting} computes the upper or lower bounds of the number of satisfying assignments of a formula with some confidence level.
-\iffalse
-    \begin{example}
-        Consider the same matrix $\phi$ as in Example~\ref{ex:assign}.
-        Given a weight function where $\omega(x_1) = 0.2$, $\omega(x_2) = 0.3$, $\omega(x_3) = 0.5$. The SAT mintern $x_1x_2\neg x_3$ has weight of $0.03$ and the UNSAT cube $\neg x_1$ has weight of $0.2$. Total weight of $\phi$ is sum of the weight of two satisfying assignments: $\tau_1 = x_1x_2$, $\tau_2 = x_1x_3$, which is $0.16$.
-    \end{example}
-\fi
-
 \subsection{Exact/Approximate model counting}
+The \textit{model counting}~\cite{SATHandbook-ModelCounting} problem asks to find the number of the satisfying assignments of a Boolean formula $\pf$.
+Model-counting algorithms can be classified into two categories:
+\textit{exact} algorithms and \textit{approximate} algorithms.
+The former computes the exact number of the satisfying assignments of a formula;
+the latter computes upper or lower bounds of the number of the satisfying assignments with a confidence level.
+
 \subsection{Weighted model counting}
-\subsection{Other variations of model counting}
-\subsubsection{Projected model counting}
-\subsubsection{Maximum model counting}
+The \textit{weighted model counting} problem asks to compute the weight of a formula $\pf$ given a weighting function $\wt:\vf{\pf}\mapsto[0,1]$.
+The weight of a positive literal $x$ (resp. a negative literal $\lnot x$) is defined to be $\wt(x)$ (resp. $1-\wt(x)$).
+The weight of an assignment equals the product of the weights of its individual literals.
+The weight of a formula is the summation of the weights of its satisfying assignments.

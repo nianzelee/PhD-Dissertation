@@ -1,0 +1,17 @@
+\section{Boolean network}
+\label{sect:boolean-network}
+
+A \textit{(combinational) Boolean network} is a directed acyclic graph $G=(V,E)$,
+with a set $V$ of vertices and a set $E\subseteq V \times V$ of edges.
+Two non-empty disjoint subsets $V_I$ and $V_O$ of $V$ are identified:
+a vertex $v \in V_I$ (resp. $V_O$) is referred to as a \textit{primary input} (PI) (resp. \textit{primary output} (PO)).
+Each vertex $v \in V$ is associated with a Boolean variable $b_v$.
+Each vertex $v \in V \setminus V_I$ is associated with a Boolean function $f_v$.
+An edge $(u,v)\in E$ indicates $f_v$ refers to $b_u$ as an input variable;
+$u$ is called a \textit{fanin} of $v$, and $v$ a \textit{fanout} of $u$.
+The valuation of the Boolean variable $b_v$ of vertex $v$ is as follows:
+if $v$ is a PI, $b_v$ is given by external signals; otherwise, $b_v$ equals the value of $f_v$.
+To ease readability, we will not distinguish a vertex $v$ and its corresponding Boolean variable $b_v$.
+We will simply denote $b_v$ with $v$.
+
+Note that a Boolean network can be converted in linear time to a Boolean formula in CNF through Tseitin transformation~\cite{Tseitin1983}.
