@@ -11,7 +11,7 @@
 \usepackage{xspace}
 \usepackage{dsfont}
 \usepackage{hyperref}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
 % end packages
 
 %%% nzlee: This thesis combines the following four papers
@@ -49,6 +49,7 @@
 \newcommand{\sat}[1]{\mathtt{SAT}(#1)} % formula is satisfiable
 \newcommand{\unsat}[1]{\mathtt{UNSAT}(#1)} % formula is unsatisfiable
 \newcommand{\model}[1]{#1.\mathrm{model}} % formula is unsatisfiable
+\newcommand{\select}{\psi} % selection formula
 
 % tools
 \newcommand{\tool}[1]{\texttt{#1}\xspace}
@@ -59,6 +60,8 @@
 \definetool{\zander}{ZANDER}
 \definetool{\dcssat}{DC-SSAT}
 \definetool{\minisat}{MiniSat}
+\definetool{\timeout}{TO}
+\definetool{\memout}{MO}
 
 % constant words
 \newcommand{\word}[1]{\textsc{#1}\xspace}
@@ -66,7 +69,10 @@
 \defineword{\true}{true}
 \defineword{\false}{false}
 
-% customize cref names
-\crefname{chapter}{Chapter}{Chapters}
+% customize package "cleveref"
 \crefname{equation}{Eq.}{Eqs.}
-\crefname{table}{Table}{Tables}
+\crefname{algorithm}{Alg.}{Algs.}
+
+% customize package "algorithmic"
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}

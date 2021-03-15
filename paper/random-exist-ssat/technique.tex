@@ -1,0 +1,214 @@
+\section{Solving Random-Exist Quantified SSAT}
+\label{sect:ressat-technique}
+
+Consider a random-exist quantified SSAT formula $\Qf=\random{} X \exists Y.\pf(X,Y)$.
+The satisfying probability of $\Qf$ equals the summation of weight of all SAT minterms over $X$, or, equivalently,
+$1$ minus the summation of weight of all UNSAT minterms over $X$.
+To identify an assignment $\as$ over $X$ as a SAT or an UNSAT minterm,
+it suffices to check whether $\pcf{\pf(X,Y)}{\as}$ is satisfiable or not.
+A naive solution to computing the satisfying probability of $\Qf$ is to exhaustively examine all assignments over $X$, classify them as SAT or UNSAT minterms, and aggregate the weight of collected minterms.
+
+The above naive idea can be improved by exploiting the minterm-generalization techniques discussed in~\cref{sect:ressat-generalize}.
+For instance, in~\cref{ex:ressat-assign},
+$\as=x_1x_2$ is a SAT minterm over $\{x_1,x_2\}$ for $\pf(x_1,x_2,y_1,y_2)=x_1 \land (\lnot x_2 \lor y_1 \lor y_2)$.
+Observe that $\pf(x_1,x_2,y_1,y_2)$ is satisfiable under the partial assignment $\as^+=x_1$.
+In other words, the SAT minterm $\as$ can be generalized into the SAT cube $\as^+$, which contains two minterms.
+Through the generalization analysis, multiple minterms can be collected in a single SAT-solving run,
+enhancing the efficiency to enumerate all possible assignments over $X$.
+As will be shown in Section~\ref{sect:ressat-evaluation},
+the minterm-generalization techniques are essential to the efficiency of the proposed algorithm.
+However, the weight of each collected cube cannot be summed up directly due to the potential overlapping between generalized cubes.
+This difficulty will be overcome by applying weighted model counting to evaluate the weight of the collected cubes.
+
+\begin{algorithm}[ht]
+    \caption{Solving random-exist quantified SSAT formulas}
+    \label{alg:ressat}
+    \begin{algorithmic}[1]
+        \REQUIRE
+        $\Qf=\random{} X \exists Y. \pf(X,Y)$ and a runtime limit \timeout
+        \ENSURE
+        Lower and upper bounds $(P_L,P_U)$ of $\spb{\Qf}$
+        \STATE $\select(X) := \top$
+        \STATE $C_\top := \emptyset$
+        \STATE $C_\bot := \emptyset$
+        \WHILE{($\sat{\select}$ \textbf{and} $\texttt{runtime} < \timeout$)}
+        \STATE $\as := \model{\select}$
+        \IF{($\sat{\pcf{\pf}{\as}}$)}
+        \STATE $\as^+ := \texttt{MinimalSatisfying}(\pf,\as)$
+        \STATE $C_\top := C_\top \cup \{\as^+\}$
+        \ELSE
+        \STATE $\as^+ := \texttt{MinimalConflicting}(\pf,\as)$
+        \STATE $C_\bot := C_\bot \cup \{\as^+\}$
+        \ENDIF
+        \STATE $\select := \select \land \lnot\as^+$
+        \ENDWHILE
+        \RETURN $(\texttt{ComputeWeight}(C_\top),1-\texttt{ComputeWeight}(C_\bot))$
+    \end{algorithmic}
+\end{algorithm}
+
+The above thoughts give rise to the proposed algorithm in~\cref{alg:ressat} to compute the satisfying probability of $\Qf=\random{} X \exists Y.\pf(X,Y)$.
+The proposed algorithm works as follows.
+Fow now, assume the runtime limit \timeout to be infinity.
+The effect of imposing a runtime limit on~\cref{alg:ressat} will be explained in~\cref{sect:ressat-approximate}.
+Two SAT solvers are used in~\cref{alg:ressat}.
+In addition to the SAT solver that holds the matrix CNF $\pf(X,Y)$,
+the other SAT solver $\select(X)$, named the selector in the following,
+is initialized as a tautology, i.e., without clauses.
+The selector $\select(X)$ is in charge of selecting an assignment $\as$ over $X$.
+After $\as$ is chosen, the matrix solver $\pf(X,Y)$ will check whether $\pcf{\pf(X,Y)}{\as}$ is satisfiable or not.
+If $\pcf{\pf(X,Y)}{\as}$ is satisfiable,
+$\as$ will be generalized into a SAT cube by the subroutine \texttt{MinimalSatisfying};
+if $\pcf{\pf(X,Y)}{\as}$ is unsatisfiable,
+$\as$ will be generalized into an UNSAT cube by the subroutine \texttt{MinimalConflicting}.
+
+Instead of finding a \textit{minimum} satisfying or conflicting assignment,
+which is computationally expensive,
+we resort to finding a \textit{minimal} satisfying or conflicting assignment,
+i.e., an assignment that has no literals removable without affecting the (un)satisfiability,
+to leverage the efficient UNSAT-core computation for effective generalization.
+After $\as$ is generalized to $\as^+$ and enlisted in $C_\bot$ or $C_\top$,
+the negation of $\as^+$, which becomes a blocking clause,
+will be conjoined with $\select$ to prune the assignments contained by $\as^+$.
+
+The above process is repeated until $\select$ becomes unsatisfiable,
+which signifies the Boolean space spanned by $X$ has been exhaustively searched.
+The subroutine \texttt{ComputeWeight} is then invoked to evaluate the weight of the collected cubes.
+The subroutines \texttt{MinimalConflicting}, \texttt{MinimalSatisfying}, and \texttt{ComputeWeight} will be detailed below.
+
+\subsection{Minimal Satisfying Assignment}
+Given a SAT minterm $\as$ over $X$,
+let $\mu$ be a satisfying assignment over $Y$ for $\pcf{\pf(X,Y)}{\as}$.
+The subroutine \texttt{MinimalSatisfying} generalizes $\as$ to $\as^+$ by the following steps.
+\begin{itemize}
+    \item[a)] Remove every clause $C$ in $\pcf{\pf(X,Y)}{\as}$ that contains some true literal from $\mu$.
+    \item[b)] For each literal $l$ in $\as$, drop $l$ and examine whether the rest of clauses remain satisfied
+          by scanning these clauses and checking if each of them still contains some true literal.
+          If the rest of clauses are still satisfied, discard $l$; otherwise, put $l$ in $\as^+$.
+\end{itemize}
+After the above steps, the SAT minterm $\as$ will be generalized into a minimal satisfying assignment $\as^+$.
+
+\subsection{Minimal Conflicting Assignment}
+Let $\as$ be an UNSAT minterm over $X$ for $\pf(X,Y)$.
+The analysis of unsatisfiability can be done with a modern SAT solver (e.g., using function \texttt{analyzeFinal()} in \minisat) to find a conjunction of literals from $\as$ responsible for the conflict.
+However, in general this conjunction of literals might not be minimal,
+and some of the literals could be dropped.
+The subroutine \texttt{MinimalConflicting} takes the conjunction of literals responsible for the conflict computed by a SAT solver and makes it minimal as follows.
+For each literal $l$ in the conjunction,
+drop $l$ and examine whether $\pf(X,Y)$ remains unsatisfiable by invoking a SAT call.
+If it is unsatisfiable, discard $l$; otherwise, put $l$ in $\as^+$.
+After the above steps, the UNSAT minterm $\as$ will be generalized into a minimal conflicting assignment $\as^+$.
+
+\subsection{Weight Computation}
+The subroutine \texttt{ComputeWeight} aggregates the weight of collected cubes by invoking a weighted model counter.
+Because a weighted model counter takes CNF formulas as input,
+\texttt{ComputeWeight} first negates each collected cube to turn it into a clause,
+and conjoins the resulting clauses into a CNF formula.
+As the CNF formula is the negation of the disjunction of the cubes,
+the weight of the cubes equals one minus the weight of the CNF formula,
+which is computed by a weighted model counter.
+
+\subsection{Modification for Approximate SSAT}
+\label{sect:ressat-approximate}
+
+The proposed algorithm can be easily modified to solve \textit{approximate SSAT},
+where upper and lower bounds of the satisfying probability of an SSAT formula are computed.
+Suppose~\cref{alg:ressat} is forced to terminate before the selector $\select$ becomes unsatisfiable.
+The weights of the collected SAT and UNSAT cubes are still valid and can be aggregated by \texttt{ComputeWeight},
+and the resulted weights reflect the lower and upper bounds of the satisfying probability, respectively.
+The early termination can be triggered by imposing a runtime limit for~\cref{alg:ressat}.
+Compared to previous DPLL-based approaches that branch on a single variable,
+the proposed algorithm considers all randomly quantified variables together and exploits the concept of SAT and UNSAT cubes over the Boolean space spanned by randomly quantified variables,
+making the intermediate collected SAT and UNSAT cubes convey useful information about the upper and lower bounds of the exact satisfying probability.
+As will be seen in our experiments over formulas arising from VLSI circuit analysis,
+the proposed algorithm is able to find tight bounds even with a short runtime limit.
+Compared to the DPLL-based state-of-the-art methods,
+which cannot be easily modified for approximate SSAT,
+the proposed method enjoys the flexibility of solving SSAT approximately or exactly,
+depending on the imposed runtime constraint.
+
+We note that the proposed algorithm is more efficient in memory consumption than previous DPLL-based algorithms.
+Prior DPLL-based algorithms mostly apply subproblem memorization to avoid repeated computation on the same subproblem.
+However, without special treatment, such memorization may result in rapid growth in memory usage.
+On the other hand, in the proposed algorithm,
+the numbers of collected cubes are greatly reduced by the minterm-generalization techniques,
+which gives rise to the memory efficiency.
+In our empirical evaluation,
+the proposed algorithm consumed two orders of magnitude less memory than the state-of-the-art DPLL-based solver.
+
+The following example illustrates how~\cref{alg:ressat} solves a random-exist quantified SSAT formula.
+\begin{example}
+    Consider a random-exist quantified SSAT formula
+    \begin{align*}
+        \Qf=\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf,
+    \end{align*}
+    with $\pf$ consisting of the following clauses:
+    \begin{itemize}
+        \item[] $C_1: (r_1 \lor r_2 \lor e_1)$
+        \item[] $C_2: (r_1 \lor \lnot r_3 \lor e_2)$
+        \item[] $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
+        \item[] $C_4: (r_3 \lor e_3)$
+        \item[] $C_5: (r_3 \lor \lnot e_3)$
+    \end{itemize}
+    In the beginning, the selector $\select(r_1,r_2,r_3)$ is initialized without clauses,
+    and the sets $C_\top$ and $C_\bot$ to collect SAT and UNSAT cubes are empty.
+    Suppose $\select$ first selects an assignment $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$.
+    Since $\pcf{\pf}{\as_0}$ is unsatisfiable due to the conflict between $C_4$ and $C_5$,
+    the subroutine \texttt{MinimalConflicting} returns $\as_0^+=\lnot r_3$,
+    which is the minimal conflicting assignment responsible for this conflict.
+    Note that this minimal conflicting assignment $\as_0^+$ reflects an upper bound of $0.5$ for $\spb{\Qf}$.
+    The selector $\select$ is then strengthened through conjunction with the negation of $\as_0^+$ to block the searched subspace.
+    Next, suppose $\as_1=\lnot r_1 \lnot r_2 r_3$ is selected.
+    Under $\as_1$,
+    formula $\pcf{\pf}{\as_1}$ is unsatisfiable due to the conflict among clauses $C_1$, $C_2$, and $C_3$,
+    and the minimal conflicting assignment $\as_1^+$ equals $\lnot r_1 \lnot r_2$.
+    After conjoining $\select$ with $\lnot \as_1^+$, suppose $\as_2=\lnot r_1 r_2 r_3$ is chosen.
+    Formula $\pcf{\pf}{\as_2}$ is satisfiable through the assignment $\mu_2=\lnot e_1 e_2 \lnot e_3$.
+    The subroutine \texttt{MinimalSatisfying} is invoked to generalize $\as_2$ to $\as_2^+=r_2r_3$,
+    which reflects a lower bound of $0.25$ for $\spb{\Qf}$.
+    Similarly, the negation of $\as_2^+$ is conjoined with $\select$.
+    Next, let the assignment chosen by $\select$ be $\as_3=r_1 \lnot r_2 r_3$.
+    Since $\pcf{\pf}{\as_3}$ is satisfiable through the assignment $\mu_3=\lnot e_1 \lnot e_2 \lnot e_3$,
+    assignment $\as_3$ is generalized to $\as_3^+=r_1r_3$ by \texttt{MinimalSatisfying}.
+    After conjoined with $\lnot \as_3^+$,
+    formula $\select$ becomes unsatisfiable,
+    which indicates the Boolean space over $\{r_1,r_2,r_3\}$ has been explored exhaustively.
+    At the end, we have
+    $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$ and
+    $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$.
+    The subroutine \texttt{ComputeWeight} is finally invoked and returns $0.375$ as the satisfying probability of $\Qf$.
+
+    For approximate SSAT solving, suppose the procedure is forced to terminate right after $\as_2^+$ is collected.
+    The subroutine \texttt{ComputeWeight} will be invoked over $C_\top=\{r_2r_3\}$ and $C_\bot=\{\lnot r_3,\lnot r_1 \lnot r_2\}$.
+    The cubes in $C_\top$ or $C_\bot$ are negated into CNF formulas for weighted model counting.
+    To compute an upper bound,
+    the UNSAT cubes $\lnot r_3$ and $\lnot r_1 \lnot r_2$ are rewritten into a CNF formula $(r_3)\land(r_1 \lor r_2)$ and yields a probability of $0.375$ with respect to the weights specified by the prefix.
+    This probability is the satisfying probability of the negation of the UNSAT cubes,
+    which gives an upper bound of $0.375$ for $\spb{\Qf}$.
+    Similarly, we can obtain a lower bound of $0.25$ for $\spb{\Qf}$ from the SAT cube $r_2 r_3$.
+\end{example}
+
+\section{Applications}
+In this section, we discuss several applications of random-exist quantified SSAT formulas.
+
+\subsection{Probability of Success in Planning}
+Many planning problems can be formulated in terms of forall-exist quantified QBFs,
+i.e., QBFs of the form $\Qf=\forall X \exists Y. \pf(X,Y)$.
+By changing universal quantifiers to randomized ones, random-exist quantified SSAT formulas are obtained.
+In essence, under the game interpretation of QBFs,
+the satisfying probability of these formulas corresponds to the likelihood for the existential player to win when the universal player decides its strategy at random.
+In Section~\cref{sect:ressat-evaluation},
+we take the \textit{strategic companies} problem~\cite{Cadoli1997}
+as an example to evaluate the performance of SSAT algorithms on planning applications.
+
+\subsection{Probabilistic Circuit Verification}
+The second application is the formal verification of \textit{probabilistic design}.
+As probabilistic errors are becoming more common in advanced nanometer technology,
+the \textit{probabilistic equivalence checking} (PEC) problem asks to compute the probability for a probabilistic circuit to produce different outputs from its faultless specification.
+PEC can be encoded into a random-exist quantified SSAT formula~\cite{LeeTC18ProbDesign}.
+
+\iffalse
+    \subsection{Circuit Power Optimization}
+    SSAT is potentially capable of analyzing and optimizing the power dissipation in VLSI circuits. This argument is supported by the following observation for power estimation techniques in VLSI circuits~\cite{Najm94}. One estimate for power dissipation relies on the computation of \textit{signal probability}~\cite{cirit1987estimating}. Let $x$ denote a signal in a logic circuit. Its signal probability $\mathrm{P_s}[x]$ is defined to be the probability of $v$ valuating to logic \textsc{true}. Under the \textit{temporal independence assumption} in~\cite{Najm94}, which states that the values of one signal in two consecutive clock periods are independent, the \textit{transition probability} $\mathrm{P_t}[v]$ of $v$ can be derived easily from the signal probability by the equation $\mathrm{P_t}[v]=2\mathrm{P_s}[v](1-\mathrm{P_s}[v])$. Since the transition probability is positively correlated with the dynamic power dissipation in VLSI circuits, the computation of signal probability is essential to the estimation of power consumption. As pointed out in~\cite{Lee14}, signal probability can be computed by solving SSAT formulas.
+
+    For the optimization of power dissipation, we illustrate the idea by the following scenario. Suppose we have a block of circuits in a large VLSI system which would stay idle during some period of its operation. In its idle period, we would like to minimize the power dissipation of this block of circuits by minimizing the transition probability of signals in it, while the other parts of the system might still inject signals into this block. Suppose the block of circuits has a set of \textit{controlling inputs} designed to control the reaction of the signals in it under the environment of the system. Let the CNF formula for a signal $v$ be $\phi_v$. The minimization of transition probability of the signal $v$ under environmental inputs $X$ (from other parts of circuits) using the controlling inputs $Y$ can be encoded into the random-exist quantified SSAT formula $\invR X \exists Y. \phi_v$, where environmental inputs are randomly quantified to model the average situation in the system. Note that the transition probability $\mathrm{P_t}[v]$ is minimized when $\mathrm{P_s}[v]=1$. This can be achieved by the operation of the existentially quantified controlling inputs, which tries to maximize the signal probability of $\mathrm{P_s}[v]$ under the fluctuating environment.
+\fi
