@@ -1,0 +1,43 @@
+\section{Preliminaries}
+\label{sect:ressat-preliminaries}
+
+A random-exist quantified SSAT formula $\Qf$ has the form $\random{} X \exists Y.\pf(X,Y)$,
+where $X$ and $Y$ are two disjoint sets of Boolean variables,
+and $\pf(X,Y)$ is a CNF formula.
+
+\subsection{Generalization of SAT/UNSAT Minterms}
+\label{sect:ressat-generalize}
+
+Given an assignment $\as$ over $X$,
+if $\pcf{\pf(X,Y)}{\as}$ is satisfiable (resp. unsatisfiable),
+$\as$ is called a SAT (resp. an UNSAT) minterm of $\pf$ over $X$.
+The generalization process of a SAT or an UNSAT minterm $\as$ aims at expanding it to a cube $\as^+$,
+while maintaining the satisfiability of $\pcf{\pf(X,Y)}{\as^+}$ the same as $\pcf{\pf(X,Y)}{\as}$.
+\begin{example}
+    \label{ex:ressat-assign}
+    Consider formula $\pf(x_1,x_2,y_1,y_2)=x_1 \land (\lnot x_2 \lor y_1 \lor y_2)$.
+    The complete assignment $\as = x_1 x_2$ over $X$, i.e., $\as(x_1)=\top, \as(x_2)=\top$,
+    is a SAT minterm of $\pf$ over $X$ because $\pcf{\pf}{\as}$ is satisfiable by the assignment $\mu = y_1y_2$.
+    On the other hand, the partial assignment $\as^+ = \lnot x_1$, i.e., $\as^+(x_1)=\bot$,
+    is an UNSAT cube of $\pf$ as $\pcf{\pf}{\as^+}$ is unsatisfiable.
+\end{example}
+
+\subsubsection{Minimum Satisfying Assignment}
+For a CNF formula $\pf(X,Y)$,
+let $\as$ be a SAT minterm over $X$ and let $\mu$ be a satisfying complete assignment for the induced formula $\pcf{\pf(X,Y)}{\as}$ over $Y$.
+To generalize $\as$ into a cube, one can find a subset of literals from $\as$ and $\mu$ that are able to satisfy all clauses in $\pf$ while the number of literals taken from $\as$ is as few as possible.
+If some literals in $\as$ are irrelevant to the satisfiability,
+they can be dropped from $\as$, thus expanding $\as$ to a SAT cube $\as^+$.
+The generalized cube $\as^+$ is called a \textit{minimum satisfying assignment} if the number of literals taken from $\as$ is minimized.
+The process of finding a minimum satisfying assignment is also known as finding a \textit{minimum hitting set}.
+
+\subsubsection{Minimum Conflicting Assignment}
+Given an UNSAT minterm $\as$ of a formula $\pf$,
+modern SAT solvers, e.g., \minisat~\cite{Een2003Solver,Een2003Incremental},
+are able to compute a conjunction of literals from $\as$ that is responsible for the conflict.
+If some literals in $\as$ are irrelevant to the conflict,
+they are dropped from $\as$,
+thus expanding $\as$ to an UNSAT cube $\as^+$.
+If the number of literals in an UNSAT cube $\as^+$ is minimized,
+$\as^+$ is called a \textit{minimum conflicting assignment}.
+The process of finding a minimum conflicting assignment is also known as finding a \textit{minimum UNSAT core}.
