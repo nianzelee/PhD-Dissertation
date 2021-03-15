@@ -4,10 +4,10 @@
 We denote Boolean constants \false and \true by symbols $\bot$ and $\top$, respectively.
 In arithmetic expressions, $\bot$ is interpreted as integer $0$ and $\top$ as integer $1$.
 A variable $x$ that takes values from the Boolean domain $\booldom=\{\bot,\top\}$ is called a Boolean variable.
-A \textit{literal} is a variable itself (called a \textit{positive} literal) or the negation of a variable (called a \textit{negative} literal).
+A \textit{literal} is a variable itself (a \textit{positive} literal) or the negation of a variable (a \textit{negative} literal).
 For a literal $l$, let $\vl{l}$ denote the variable of $l$.
 Boolean connectives $\lnot, \lor, \land, \limply, \equiv$ are used under their conventional semantics.
-Over a finite set $V=\{x_1,\ldots,x_n\}$ of Boolean variables,
+Over a finite set $V$ of Boolean variables,
 we define a \textit{well-formed formula} $\pf$ with the following Backus-Naur-form (BNF) grammar:
 \begin{align}
     \pf ::= x\in V | \lnot\pf | (\pf\lor\pf) | (\pf\land\pf) | (\pf\limply\pf) | (\pf\equiv\pf).
@@ -32,16 +32,33 @@ In the rest of the dissertation, a Boolean formula is assumed to be given in CNF
 \subsection{Boolean satisfiability}
 An \textit{assignment} $\as$ over a variable set $V$ is a mapping from $V$ to $\booldom$.
 We denote the set of all assignments over $V$ by $\av{V}$.
-Given a Boolean formula $\pf$, an assignment $\as$ over $\vf{\pf}$ \textit{satisfies} $\pf$,
-denoted as $\as\models\pf$,
-if substituting the occurrences of every $x\in\vf{\pf}$ with its assigned value $\as(x)$ yields $\top$
-after simplifying $\pf$ under the semantics of Boolean connectives.
-Such assignment $\as$ is called a \textit{satisfying assignment},
-and formula $\pf$ is \textit{satisfiable} if it has a satisfying assignment.
+Given a Boolean formula $\pf$,
+an assignment $\as$ over $\vf{\pf}$ is called a \textit{complete} assignment for $\pf$.
+If $\as$ is over a proper subset of $\vf{\pf}$, it is called a \textit{partial} assignment.
+The resultant formula of $\pf$ induced by an assignment $\as$ over a variable set $V$,
+denoted as $\pcf{\pf}{\as}$,
+is obtained via substituting the occurrences of every $x\in V$ in $\pf$ with its assigned value $\as(x)$.
+Such substitution is called \textit{cofactoring} $\pf$ with $\as$.
+If $V=\{x\}$, we write $\pcf{\pf}{x}$ (resp. $\ncf{\pf}{x}$) to denote the resultant formula of $\pf$ under an assignment that maps $x$ to $\top$ (resp. $\bot$),
+and call this formula the \textit{positive} (resp. \textit{negative}) \textit{cofactor} of $\pf$ with respect to variable $x$.
+
+A complete assignment $\as$ \textit{satisfies} $\pf$, denoted as $\as\models\pf$, if $\pcf{\pf}{\as}=\top$.
+Such complete assignment $\as$ is called a \textit{satisfying complete assignment} for $\pf$.
+On the other hand, if $\pcf{\pf}{\as}=\bot$, $\as$ is called an \textit{unsatisfying complete assignment}.
+Similarly, a partial assignment $\as^+$ over $X\subset\vf{\pf}$ is called a \textit{satisfying} (resp. an \textit{unsatisfying}) \textit{partial assignment} for $\pf$
+if for some (resp. every) assignment $\mu$ over $\vf{\pf}\setminus X$,
+$\pf$ valuates to $\top$ (resp. $\bot$) under the complete assignment that combines $\as$ and $\mu$.
+We alternatively represent an assignment $\as$ for $\pf$ as a cube.
+A cube is called a \textit{minterm} of formula $\pf$ when it corresponds to a complete assignment over $\vf{\pf}$.
+
+A Boolean formula $\pf$ is \textit{satisfiable} if it has a satisfying complete assignment.
 Otherwise, $\pf$ is \textit{unsatisfiable}.
-A Boolean formula $\pf$ is a \textit{tautology} if $\forall\as\in\av{\vf{\pf}}.\as\models\pf$.
+A Boolean formula $\pf$ is a \textit{tautology} if the following condition holds:
+$\forall\as\in\av{\vf{\pf}}.\as\models\pf$.
 The Boolean satisfiability problem asks to decide whether a Boolean formula is satisfiable or not.
 It is a well-known NP-complete~\cite{Cook1971} problem.
+We write $\sat{\pf}$ (resp. $\unsat{\pf}$) to indicate $\pf$ is satisfiable (resp. unsatisfiable).
+A satisfying complete assignment of $\pf$ is also called a \textit{model} of $\pf$, which is denoted by $\model{\pf}$.
 
 An $n$-variable \textit{Boolean function} is a mapping from $\booldom^n$ to $\booldom$.
 Note that a Boolean formula $\pf$ induces a Boolean function with a domain $\av{\vf{\pf}}$.
