@@ -1,7 +1,7 @@
 \section{Solving Random-Exist Quantified SSAT}
 \label{sect:ressat-technique}
 
-Consider a random-exist quantified SSAT formula $\Qf=\random{} X \exists Y.\pf(X,Y)$.
+Consider a random-exist quantified SSAT formula $\Qf=\random{} X,\exists Y.\pf(X,Y)$.
 The satisfying probability of $\Qf$ equals the summation of weight of all SAT minterms over $X$, or, equivalently,
 $1$ minus the summation of weight of all UNSAT minterms over $X$.
 To identify an assignment $\as$ over $X$ as a SAT or an UNSAT minterm,
@@ -25,7 +25,7 @@ This difficulty will be overcome by applying weighted model counting to evaluate
     \label{alg:ressat}
     \begin{algorithmic}[1]
         \REQUIRE
-        $\Qf=\random{} X \exists Y. \pf(X,Y)$ and a runtime limit \timeout
+        $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and a runtime limit \timeout
         \ENSURE
         Lower and upper bounds $(P_L,P_U)$ of $\spb{\Qf}$
         \STATE $\select(X) := \top$
@@ -46,7 +46,7 @@ This difficulty will be overcome by applying weighted model counting to evaluate
     \end{algorithmic}
 \end{algorithm}
 
-The above thoughts give rise to the proposed algorithm in~\cref{alg:ressat} to compute the satisfying probability of $\Qf=\random{} X \exists Y.\pf(X,Y)$.
+The above thoughts give rise to the proposed algorithm in~\cref{alg:ressat} to compute the satisfying probability of $\Qf=\random{} X,\exists Y.\pf(X,Y)$.
 The proposed algorithm works as follows.
 Fow now, assume the runtime limit \timeout to be infinity.
 The effect of imposing a runtime limit on~\cref{alg:ressat} will be explained in~\cref{sect:ressat-approximate}.

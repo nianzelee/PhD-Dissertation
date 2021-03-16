@@ -56,14 +56,14 @@ In contrast to the previous DPLL-based SSAT algorithms with pruning heuristics a
 our goal is to utilize modern techniques of SAT/QBF solving and model counting to improve SSAT solving.
 Motivated by the new VLSI applications, we focus on random-exist and exist-random quantified fragments of SSAT formulas.
 
-The random-exist quantified SSAT formula is of the form $\Phi=\random{} X \exists Y.\phi$, which is the counterpart of the forall-exist QBF.
+The random-exist quantified SSAT formula is of the form $\Qf=\random{} X,\exists Y.\pf$, which is the counterpart of the forall-exist QBF.
 It has applications in Bayesian-network inference~\cite{Cooper1990,Bacchus2003}.
 We propose an algorithm that uses modern SAT solvers~\cite{Een2003Solver,Een2003Incremental} as plug-in engines.
 In addition to SAT solving, we also incorporate weighted model counting, which has been widely used in probabilistic inference~\cite{Sang2005BayesianInference,Chavira2008}, to tackle randomized quantifiers.
 The proposed algorithm uses an SAT solver and a model counter in a \textit{stand-alone} manner, leaving the internal structures of these solvers intact.
 Due to the stand-alone usage of these solvers, the proposed algorithm may directly benefit from the advancement of the solvers without any modification.
 
-The exist-random quantified SSAT formulas has the form $\Phi=\exists X \random{} Y.\phi$,
+The exist-random quantified SSAT formulas has the form $\Qf=\exists X,\random{} Y.\pf$,
 which is also known as \textit{E-MAJSAT}~\cite{Littman1998}.
 Computational problems, such as computing a maximum-a-posteriori (MAP) hypothesis or a maximum expected utility (MEU) solution~\cite{Dechter1998} in Bayesian networks,
 and searching an optimal plan for probabilistic conformant planning domains~\cite{Littman1998},
