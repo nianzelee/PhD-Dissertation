@@ -137,3 +137,271 @@ We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following 
     The unsatisfiability of the selection relation reveals that the space spanned by variables $X$ has been exhaustively searched,
     and the algorithm returns the satisfying probability, which equals $1$, of the E-MAJSAT instance.
 \end{example}
+
+\subsection{Enhancement techniques}
+The efficiency of~\cref{alg:erssat} is greatly affected by the strength of learnt clauses.
+We introduce three enhancement methods,
+\textit{minimal clause selection},
+\textit{clause subsumption}, and
+\textit{partial assignment pruning},
+to strengthen the learnt clauses deduced by the proposed learning technique.
+In~\cref{alg:erssat},
+the enhancement techniques are executed by subroutines
+$\texttt{SelectMinimalClauses}$ (in~\cref{code:erssat-minimal-clauses}),
+$\texttt{RemoveSubsumedClauses}$ (in~\cref{code:erssat-subsume-clauses}), and
+$\texttt{DiscardLiterals}$ (in~\cref{code:erssat-discard-literals}),
+to be detailed in the following three parts, respectively.
+%Examples~\ref{ex:minimal},~\ref{ex:subsume}, and ~\ref{ex:partial} will be used to explain the three techniques.
+%(Please refer to Examples~\ref{ex:minimal},~\ref{ex:subsume},~\ref{ex:partial} in the supplement.)
+
+\subsubsection{Minimal clause selection}
+As discussed before,
+the selection relation $\select(X,S)$ is in charge of choosing an assignment $\as$ over variables $X$ and thus selects a set of clauses from the matrix $\pf(X,Y)$.
+However, the set of selected clauses may not be minimal,
+meaning that it is possible for another assignment $\as'$ to select a set of clauses contained in that selected by $\as$, i.e., $\pcf{\pf}{\as'}\subset\pcf{\pf}{\as}$.
+Notice that the length of a learnt clause equals the number of selected clauses.
+Therefore, selecting fewer clauses gives a stronger learnt clause,
+as well as a higher conditional satisfying probability.
+
+Starting from a set of initially selected clauses $\pcf{\pf}{\as}$,
+the first enhancement technique \textit{minimal clause selection} decreases the number of selected clauses by making the set of initially selected clauses minimal as follows.
+A learnt clause $C_L=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}$ is conjoined with the selection relation $\select(X,S)$ to avoid clauses in $\pcf{\pf}{\as}$ being selected simultaneously again.
+A SAT solver is invoked to solve $\select\land C_L$ under the assumption $\mu=\bigwedge\limits_{C\notin\pcf{\pf}{\as}}\lnot\sv{C}$.
+The assumption $\mu$ prevents originally deselected clauses being selected.
+If $\select\land C_L$ under the assumption $\mu$ is satisfied by some assignment $\as'$ on $X$,
+the set of clauses selected by $\as'$ must be a proper subset of that selected by $\as$.
+On the other hand, if $\select\land C_L$ under the assumption $\mu$ is unsatisfiable,
+then the set of selected clauses is minimal.
+To make the set of initially selected clauses minimal,
+the above operation is repeated until the selection relation becomes unsatisfiable.
+
+\iffalse
+    The subroutine $\mathtt{SelectMinimalClauses}$ for the technique is outlined in Figure~\ref{fig:minimal}.
+    \begin{figure}[h]
+        \mbox{}\hrulefill \vspace{-.6em}
+        \small
+        \begin{program}
+            \>  {\bf \textit{SelectMinimalClauses}}\\
+            \> \> \INPUT: The matrix $\phi(X,Y)$ and selection relation $\psi(X,S)$\\
+            \> \> \OUTPUT: An assignment $\tau'$ selecting a minimal set of clauses\\
+            \> \> \BEGIN\\
+            \> \> 01 \> \> \DO\\
+            \> \> 02 \> \> \> $\tau'$ := $\psi.\mathrm{model}$ for variables in $X$;\\
+            \> \> 03 \> \> \> $C_L$ := $\bigvee_{C \in \phi|_{\tau'}}\neg s_C$;\\
+            \> \> 04 \> \> \> $\mu$ := $\bigwedge_{C \notin \phi|_{\tau'}}\neg s_C$;\\
+            \> \> 05 \> \> \> $\psi$ := $\psi \wedge C_L$;\\
+            \> \> 06 \> \> \WHILE $\mathtt{SAT}(\psi|_{\mu}) = \top$;\\
+            \> \> 07 \> \> \RETURN $\tau'$; \\
+            \> \> \END
+        \end{program}
+        \vspace{-1.2em} \mbox{}\hrulefill \caption{\small Subroutine: Selecting a minimal set of clauses.}
+        \label{fig:minimal}
+    \end{figure}
+\fi
+
+\iffalse
+    \begin{example}\label{ex:minimal}
+        Continue Example~\ref{ex:basic}.
+        The first tried assignment $\tau_1=\neg e_1 \neg e_2 \neg e_3$ selects $C_1$, $C_2$.
+        The set of selected clauses is made minimal as follows.
+        The subroutine $\mathtt{SelectMinimalClauses}$ conjoins the selection relation with a learnt clause $(\neg s_1 \vee \neg s_2)$, which prevents clauses $C_1$ and $C_2$ being simultaneously selected again.
+        The satisfiability of the selection relation $\psi \wedge (\neg s_1 \vee \neg s_2)$ is tested under the assumption $\neg s_3 \neg s_4$, which avoids the originally deselected clause $C_3$ and $C_4$ being selected.
+        The formula is satisfied by the assignment $\tau_2=\neg e_1 e_2 \neg e_3$, which only selects $C_1$.
+        By repeating the above operation again, the assignment $\tau_5=e_1 \neg e_2 e_3$ is found, since it selects no clause.
+        The conditional satisfying probability under $\tau_5$, which equals $1$, is derived without invoking the weighted model counter.
+        Compared to Example~\ref{ex:basic} where five assignments over $X$ were explored, the algorithm with the minimal clause selection technique finds the optimal assignment $\tau_5$ with at most two SAT calls, thus greatly improves the computation efficiency.
+    \end{example}
+\fi
+
+\subsubsection{Clause subsumption}
+The second enhancement technique, named \textit{clause subsumption},
+decreases the length of a learnt clause via examining the subsumption relation among the selected clauses.
+Recall that clause $C_1$ \textit{subsumes} clause $C_2$ if every literal appears in $C_1$ also appears in $C_2$.
+Consider a CNF formula $C_1 \land C_2$ with $C_2$ subsumed by $C_1$.
+It can be simplified to $C_1$ because $C_2$ is implied by $C_1$ due to the subsumption relation.
+
+The subsumption relation among sub-clauses consisting of variables in $Y$ is constructed as a lookup table by the subroutine $\mathtt{BuildSubsumeTable}$.
+The subroutine $\texttt{RemoveSubsumedClauses}$ simplifies the set of selected clauses $\pcf{\pf}{\as}$ by removing subsumed clauses.
+A clause $C$ is removed from the set of selected clauses $\pcf{\pf}{\as}$ if $C^Y$ is subsumed by other selected sub-clauses.
+We emphasize that, without cofactoring $\pf$ with the assignment $\as$,
+the original clauses may not have the subsumption relation.
+Cofactoring $\pf$ with the assignment $\as$ over variables in $X$ induces the subsumption relation between sub-clauses consisting of variables in $Y$.
+
+\iffalse
+    The procedure $\mathtt{RemoveSubsumedClauses}$ for the technique is outlined in Figure~\ref{fig:subsume}.
+    It takes the set of selected clauses and the lookup table of subsumption relation as input, and removes every subsumed clause via subroutine $\mathtt{CheckSubsumption}$.
+    \begin{figure}[h]
+        \mbox{}\hrulefill \vspace{-.6em}
+        \small
+        \begin{program}
+            \>  {\bf \textit{RemoveSubsumedClauses}}\\
+            \> \> \INPUT: The selected clauses $\phi|_{\tau}$ and a lookup table \texttt{s-table}\\ \> \> \> \> \> for subsumption\\
+            \> \> \OUTPUT: A simplified set of clauses $\varphi$ without subsumed clasues\\
+            \> \> \BEGIN\\
+            \> \> 01 \> \> $\varphi$ := $\top$;\\
+            \> \> 02 \> \> \FOREACH $C \in \phi|_{\tau}$\\
+            \> \> 03 \> \> \> \IF \> $\mathtt{CheckSubsumption}(C,\texttt{s-table})$\\
+            \> \> 04 \> \> \> \> \CONTI;\\
+            \> \> 05 \> \> \> \ELSE\texttt{//$C^Y$ is not subsumed}\\
+            \> \> 06 \> \> \> \> $\varphi$ := $\varphi \wedge C$;\\
+            \> \> 07 \> \> \RETURN $\varphi$;\\
+            \> \> \END
+        \end{program}
+        \vspace{-1.2em} \mbox{}\hrulefill \caption{\small Subroutine: Removing subsumed clauses from the set of selected clauses.}
+        \label{fig:subsume}
+    \end{figure}
+\fi
+
+\iffalse
+    \begin{example}\label{ex:subsume}
+        Continue Example~\ref{ex:basic}.
+        Let the first tried assignment be $\tau_1=\neg e_1 \neg e_2 \neg e_3$.
+        It selects $C_1$ and $C_2$.
+        Because $C_1^Y$ subsumes $C_2^Y$, $C_2$ is removed from $\phi|_{\tau_1}$, yielding $\varphi=C_1$.
+        The weighted model counter gives $\Pr[\invR^{0.5}Y.\varphi]=0.75$, and the learnt clause $C_L=(\neg s_1)$ is conjoined with $\psi$ to prevent $C_1$ being selected again.
+        Compared to Example~\ref{ex:basic}, with the help of clause subsumption, the learnt clause $(\neg s_1)$ deduced from $\tau_1$ is stronger than its counterpart $(\neg s_1 \vee \neg s_2)$ in Example~\ref{ex:basic}, and therefore avoids a fruitless trail of the assignment $\tau_2=\neg e_1 e_2 \neg e_3$.
+    \end{example}
+\fi
+
+\subsubsection{Partial assignment pruning}
+To illustrate the third enhancement technique \textit{partial assignment pruning},
+we first take a closer look at the learnt clause deduced by the proposed clause containment learning.
+Given a matrix $\pf(X,Y)$ and an assignment $\as$ over $X$,
+a learnt clause consists of the negation of the selection variables of the selected clauses.
+For each selected clause $C$,
+if the selection variable $\sv{C}$ is substituted by its definition $\sv{C}\equiv\lnot\cx$,
+the learnt clause $C_L$ becomes the disjunction of the sub-clauses $\cx$,
+i.e., $C_L=\bigvee\limits_{C\in\pcf{\pf}{\as}}\cx$.
+
+For instance, in~\cref{ex:erssat-basic},
+the learnt clause deduced from the assignment $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$,
+which selects clauses $C_1$ and $C_2$,
+is $(\lnot s_1 \lor \lnot s_2)=(e_1 \lor e_2)$,
+and the current maximum satisfying probability equals $0.75$.
+This learnt clause blocks two assignments, $\as_1$ and $\lnot e_1 \lnot e_2 e_3$.
+The assignment $\lnot e_1 \lnot e_2 e_3$ selects clauses $C_1$, $C_2$, and $C_4$,
+containing previously selected clauses $C_1$ and $C_2$, and thus is blocked.
+
+A learnt clause is strengthened if some literal in the clause is discarded.
+In the above example,
+the learnt clause $(e_1 \lor e_2)$ can be strengthened by discarding literal $e_2$.
+The resulted learnt clause $(e_1)$ blocks any assignment assigning $e_1$ to $\bot$.
+To see why these assignments are blocked,
+observe that assigning $e_1$ to $\bot$ selects clause $C_1$.
+Although the set $\{C_1\}$ does not contain the previously selected set of clauses $\{C_1,C_2\}$,
+the conditional satisfying probability is bounded from above by the probability of the sub-clause $(r_1 \lor r_2)$,
+which equals $0.75$.
+Since the current maximum satisfying probability equals $0.75$ already,
+it is fruitless to explore assignments whose conditional satisfying probabilities are no greater than $0.75$. Therefore, $e_1$ is forced to be $\top$.
+
+On the other hand,
+literal $e_1$ cannot be discarded from the learnt clause $(e_1 \lor e_2)$.
+If $e_1$ is discarded,
+the resulted learnt clause $(e_2)$ blocks any assignment assigning $e_2$ to $\bot$.
+However, assigning $e_2$ to $\bot$ selects no clause,
+and hence the upper bound of the conditional satisfying probability equals $1$.
+Since $1$ is greater than the current maximum satisfying probability $0.75$,
+we have to explore assignments assigning $e_2$ to $\bot$.
+In fact, there exists an assignment $e_1 \lnot e_2 \lnot e_3$ whose conditional satisfying probability equals $1$,
+greater than the current maximum satisfying probability.
+As a result, $e_1$ cannot be discarded.
+
+From the above illustration,
+we observe that the learnt clause can be strengthened as follows.
+First, temporarily discard some literal $l$ in the learnt clause.
+Second, invoke a weighted model counter to compute the conditional satisfying probability contributed by the selected clauses.
+Third, compare the probability to the current maximum satisfying probability.
+If the probability is no greater, literal $l$ is discarded; otherwise, it is kept in the clause.
+Fourth, repeat the above steps for other literals.
+
+\iffalse
+    The subroutine $\mathtt{DiscardLiterals}$ of the technique to discard literals from a learnt clause is outlined in Figure~\ref{fig:partial}.
+    \begin{figure}[h]
+        \mbox{}\hrulefill \vspace{-.6em}
+        \small
+        \begin{program}
+            \>  {\bf \textit{DiscardLiterals}}\\
+            \> \> \INPUT: The matrix $\phi$, the learnt clause $C_S$,\\
+            \> \> \> \> \> and the current max. sat. \texttt{prob}\\
+            \> \> \OUTPUT: A strengthened learnt clause $C_L$\\
+            \> \> \BEGIN\\
+            \> \> 01 \> \> $C_L$ := $\bot$;\\
+            \> \> 02 \> \> \FOREACH $s_C \in C_S$\\
+            \> \> 03 \> \> \> $C_L$ := $C_L \vee C^X$;\\
+            \> \> 04 \> \> \FOREACH $l \in C_L$\\
+            \> \> 05 \> \> \> $\nu$ := $\bigwedge_{k \in C_L \setminus \{l\}}\neg k$;\\
+            \> \> 06 \> \> \> \IF \> $\mathtt{WeightModelCount}(\invR Y.\phi|_{\nu}) \leq \texttt{prob}$\\
+            \> \> 07 \> \> \> \> $C_L$ := $C_L \setminus \{l\}$;\\
+            \> \> 08 \> \> \RETURN $C_L$;\\
+            \> \> \END
+        \end{program}
+        \vspace{-1.2em} \mbox{}\hrulefill \caption{\small Subroutine: Discarding literals from a learnt clause.}
+        \label{fig:partial}
+    \end{figure}
+
+    The subroutine $\mathtt{DiscardLiterals}$ works as follows.
+    It substitutes selection variables in the learnt clause $C_S$ by their definitions in lines~\texttt{02-03}.
+    Then it iterates through each literal $l \in C_L$, and invokes the weighted model counter to check whether literal $l$ can be discarded in lines~\texttt{04-07}.
+    Notice that the current maximum satisfying probability is \emph{not} updated by the value returned from the weighted model counter, because the value only reflects an upper bound for satisfying probabilities under the partial assignment $\nu$.
+\fi
+
+\iffalse
+    \begin{example}\label{ex:partial}
+        Continue Example~\ref{ex:basic}. As discussed above, the learnt clause $(e_1 \vee e_2)$ deduced from the assignment $\tau_1=\neg e_1 \neg e_2 \neg e_3$ is strengthen to $(e_1)$ by the partial assignment pruning technique, and thus prevents a fruitless trail of the assignment $\tau_2=\neg e_1 e_2 \neg e_3$.
+    \end{example}
+\fi
+
+To summarize, the above three enhancement techniques are designed based on different reasoning strategies:
+the minimal clause selection technique strengthens the learnt clause by invoking additional SAT calls to solve the selection relation to select a minimal set of clauses;
+the clause subsumption technique builds a lookup table to record the subsumption relation and removes subsumed clauses;
+the partial assignment pruning technique utilizes the current maximum conditional satisfying probability,
+and invokes extra calls to a weighted model counter to test whether it is feasible to discard some literal in a learnt clause.
+Benefiting from the three enhancement techniques,
+the efficiency of the proposed algorithm is greatly improved,
+as will be shown in our experiments.
+
+We emphasize two more strengths of the proposed algorithm.
+First, during the computation,
+the proposed algorithm keeps deriving lower bounds for the satisfying probability,
+and the bounds gradually converge to the final answer.
+Therefore, in contrast to previous DPLL-based methods~\cite{Majercik1998,Majercik2003,Majercik2005},
+the proposed algorithm can be easily modified to solve \textit{approximate SSAT} by returning the greatest encountered lower bound upon timeout.
+Second, the proposed algorithm is efficient in memory usage,
+since it stores the learnt information compactly via selection variables,
+and the weighted model counting is invoked on selected clauses,
+whose sizes are typically much smaller than that of original matrix.
+%In our empirical evaluation, the selected clauses on average account for less than $20\%$ of the entire CNF formula.
+%As will be clear from our experimental data, the proposed algorithm improves memory efficiency by more than one order of magnitude compared to previous approaches.
+
+%We emphasize that, the proposed three enhancement techniques are orthogonal to each other. Simultaneously enabling all of them gives the enhanced algorithm in Figure~\ref{fig:enhance}.
+
+\subsection{Implementation details}
+We discuss some details about our implementation of the proposed algorithm.
+\Cref{alg:erssat} involves satisfiability testing and weighted model counting.
+In principle, any SAT solver and exact weighted model counter can be plugged into the procedure.
+Therefore, \cref{alg:erssat} may benefit directly from the advancement of SAT solving and model counting.
+
+Specifically in our implementation,
+we adopt \texttt{Minisat-2.2}~\cite{Een2003Solver} for SAT solving.
+We experimented with \cachet~\cite{Sang2004,Sang2005ModelCounting} for weighted model counting,
+but the overall performance was not satisfactory.
+Because the clauses selected by different assignments typically share a portion of identical sub-formulas,
+the results of these sub-formulas should be cached to avoid repeated computations.
+Ideally, this improvement can be achieved by tightly integrating \cachet into our implementation,
+instead of treating it as a black box.
+However, we resort to \textit{binary decision diagram} (BDD) for our weighted model counting to achieve the \textit{formula caching} effect.
+
+The selected clauses in a formula are first transformed into a two-level circuit by \disjoin-ing literals in each clause and \conjoin-ing the outputs of each \disjoin gate.
+A BDD is then constructed based on the resulted circuit.
+Weighted model counting of the original formula is done by traversing the BDD~\cite{LeeTC18ProbDesign}.
+We use the well-developed BDD package \texttt{CUDD}~\cite{CUDD},
+which caches BDD nodes during building BDDs for different formulas.
+Thus the formula caching effect,
+as well as garbage collection which removes unreferenced nodes,
+is automatically achieved by \cudd.
+
+%In our empirical evaluation,
+%the formula caching effect improves the runtime by an average of $14\%$ over random CNF formulas,
+%and in some cases it improves the efficiency by one order of magnitude.
+Our implementation was integrated in the \abc~\cite{ABC}environment,
+which provides all the facilities including SAT solving, circuit construction, and BDD computation mentioned above.
