@@ -1,0 +1,139 @@
+\section{Clause-containment learning for E-MAJSAT}
+\label{sect:erssat-technique}
+
+Consider an E-MAJSAT formula $\Qf = \exists X,\random{} Y.\pf$.
+To obtain the satisfying probability of $\Qf$,
+it suffices to enumerate every assignment $\as$ over $X$ and calculate the corresponding conditional satisfying probability $\spb{\pcf{\Qf}{\as}}$.
+Clearly, the above brute-force approach is computationally expensive.
+Motivated by the idea of clause selection discussed above,
+we propose \textit{clause-containment learning} to prune the search space.
+The proposed learning technique deduces useful information after each trial of an assignment $\as$ over $X$.
+The learnt information is recorded as blocking clauses to avoid wasteful exploration and thus accelerates the search process.
+The proposed learning technique is based on the following key observation.
+
+\begin{proposition}
+    \label{prop:erssat-contain}
+    Given an E-MAJSAT formula $\Qf=\exists X,\random{} Y.\pf(X,Y)$ and two assignments $\as_1,\as_2$ over $X$,
+    we have:
+    \begin{align*}
+        (\pcf{\pf}{\as_2}\models\pcf{\pf}{\as_1})\limply\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}.
+    \end{align*}
+\end{proposition}
+
+Inspired by~\cref{prop:erssat-contain},
+we propose clause-containment learning based on clause selection.
+After cofactoring $\pf$ with an arbitrary assignment $\as_1$ over $X$,
+a set of clauses $\pcf{\pf}{\as_1}$ is selected.
+For any other assignment $\as_2$ selecting all clauses from $\pcf{\pf}{\as_1}$,
+i.e., $\pcf{\pf}{\as_1}\subseteq\pcf{\pf}{\as_2}$,
+we have $\pcf{\pf}{\as_2} \models \pcf{\pf}{\as_1}$.
+Therefore, $\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}$ holds according to~\cref{prop:erssat-contain}.
+Since the satisfying probability $\spb{\pcf{\Qf}{\as_2}}$ is not greater than $\spb{\pcf{\Qf}{\as_1}}$,
+the assignment $\as_2$ is not worth trying.
+For all such assignments,
+they should be blocked after $\as_1$ has been explored.
+
+The core concept of the clause-containment learning is to avoid every unexplored assignment $\as_2$ that selects a clause set $\pcf{\pf}{\as_2}$ containing another clause set $\pcf{\pf}{\as_1}$ selected by an explored assignment $\as_1$.
+To block the assignment $\as_2$,
+we enforce at least one of the clauses in $\pcf{\pf}{\as_1}$ to be deselected.
+Recall that the selection variable $\sv{C}$ of clause $C$ valuates to $\bot$ if and only if $C$ is deselected.
+Therefore, the disjunction of the negation of the selection variables for the clauses in $\pcf{\pf}{\as_1}$ is deduced as a learnt clause to record this information.
+The above idea gives rise to~\cref{alg:erssat} for E-MAJSAT formulas.
+(\Cref{code:erssat-subsume-table,code:erssat-minimal-clauses,code:erssat-subsume-clauses,code:erssat-discard-literals} describe the enhancement techniques of the proposed algorithm, which will be discussed later.)
+
+\begin{algorithm}[p]
+    \caption{Solving E-MAJSAT formulas}
+    \label{alg:erssat}
+    \begin{algorithmic}[1]
+        \REQUIRE $\Qf=\exists X,\random{} Y.\pf(X,Y)$
+        \ENSURE $\spb{\Qf}$
+        \STATE $\select(X,S) := \bigwedge\limits_{C\in\pf}(\sv{C}\equiv\lnot\cx)\land\bigwedge\limits_{\text{pure }l: \vl{l}\in X}l$\label{code:erssat-init-select}
+        \STATE $prob := 0$
+        \STATE $\texttt{s-table} := \texttt{BuildSubsumptionTable}(\pf)$\label{code:erssat-subsume-table}
+        \WHILE{($\sat{\select}$)}
+        \STATE $\as := \model{\select}$ (discarding the selection variables)
+        \IF{($\sat{\pcf{\pf}{\as}}$)}
+        \STATE $\as' := \texttt{SelectMinimalClauses}(\pf,\select)$\label{code:erssat-minimal-clauses}
+        \STATE $\varphi := \texttt{RemoveSubsumedClauses}(\pcf{\pf}{\as'},\texttt{s-table})$\label{code:erssat-subsume-clauses}
+        \STATE $prob := \max\{prob,\texttt{ComputeWeight}(\random{} Y.\varphi)\}$\label{code:erssat-wmc}
+        \STATE $C_S := \bigvee\limits_{C\in\varphi}\lnot\sv{C}$
+        \STATE $C_L := \texttt{DiscardLiterals}(\pf,C_S,prob)$\label{code:erssat-discard-literals}
+        \ELSE
+        \STATE $C_L := \texttt{MinimalConflicting}(\pf,\as)$
+        \ENDIF
+        \STATE $\select := \select \land C_L$
+        \ENDWHILE
+        \RETURN $prob$
+    \end{algorithmic}
+\end{algorithm}
+
+The algorithm employs two SAT solvers:
+one works on the matrix $\pf(X,Y)$ of the input formula,
+and the other works on the selection relation $\select(X,S)$ for clauses in $\pf(X,Y)$.
+Using the definition of selection variables,
+we initialize the selection relation and assert the literals of pure $X$ variables in~\cref{code:erssat-init-select}.
+If a variable $e$ in $X$ is pure in $\pf$,
+assigning the literals of $e$ to $\top$ deselects the clauses containing $e$,
+and does not affect other clauses.
+Because the conditional satisfying probability is greater if less clauses are selected,
+we can safely assert pure $X$ variables without missing the optimizing solution.
+
+The selection relation is used to select different assignments $\as$ over $X$.
+If $\pcf{\pf}{\as}$ is satisfiable,
+a weighted model counter is called to compute the conditional satisfying probability $\spb{\random{} Y.\pcf{\pf}{\as}}$.
+The blocking clause $C_L$ derived from the containment-learning technique is then conjoined with $\select$ to prevent clauses in $\pcf{\pf}{\as}$ being simultaneously selected again.
+
+On the other hand, suppose $\pcf{\pf}{\as}$ is unsatisfiable.
+We can deduce a conjunction of literals from $\as$ responsible for the conflict by using a SAT solver to analyze the conflict~\cite{Een2003Solver,Een2003Incremental}.
+In general, the conjunction of literals may not be minimal,
+meaning that some literals can be discarded and the conflict remains unaffected.
+The subroutine $\texttt{MinimalConflicting}$ makes the conjunction of literals responsible for the conflict minimal as follows.
+For each literal $l$ in the conjunction,
+temporarily drop $l$ and check whether $\pf(X,Y)$ is still unsatisfiable.
+If it is unsatisfiable, discard $l$; otherwise, keep $l$ in the conjunction.
+Repeating the above process for every literal makes the conjunction minimal.
+Complementing the minimal conjunction of literals yields a learnt clause,
+which is then conjoined with the selection relation to block assignments that make $\pf$ unsatisfiable.
+
+When the selection relation becomes unsatisfiable,
+it indicates that the space spanned by variables $X$ has been completely searched.
+The algorithm will return the encountered maximum conditional satisfying probability,
+which equals the satisfying probability of the input E-MAJSAT formula.
+
+We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following example.
+\begin{example}\label{ex:erssat-basic}
+    Continuing~\cref{ex:erssat-select},
+    we show how~\cref{alg:erssat} (without the enhancement techniques) solves the E-MAJSAT instance
+    \begin{align*}
+        \Qf=\exists e_1,\exists e_2,\exists e_3,\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pf.
+    \end{align*}
+
+    Let the first explored assignment $\as_1$ be $\lnot e_1 \lnot e_2 \lnot e_3$,
+    which selects $C_1$ and $C_2$.
+    The algorithm derives $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_1}}=0.75$ by invoking a weighted model counter in~\cref{code:erssat-wmc}.
+    The learnt clause $C_L=(\lnot s_1 \lor \lnot s_2)$ is conjoined with $\select$ to prevent $C_1$ and $C_2$ being selected simultaneously again.
+
+    Suppose the second explored assignment $\as_2$ is $\lnot e_1 e_2 \lnot e_3$,
+    which selects $C_1$.
+    The weighted model counter returns $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_2}}=0.75$,
+    and the learnt clause $C_L=(\lnot s_1)$ is conjoined with $\select$ to prevent $C_1$ being selected again.
+
+    Let the third tried assignment $\as_3$ be $e_1 e_2 \lnot e_3$,
+    which selects $C_4$.
+    The weighted model counter gives $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_3}}=0.5$,
+    and the learnt clause $C_L=(\lnot s_4)$ is conjoined with $\select$ to prevent $C_4$ being selected again.
+
+    Let the fourth tried assignment $\as_4$ be $e_1 e_2 e_3$,
+    which selects $C_3$.
+    The conditional satisfying probability $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_4}}$ equals $0.75$,
+    and the learnt clause $C_L=(\lnot s_3)$ is conjoined with $\select$ to prevent $C_3$ being selected again.
+
+    Suppose the fifth tried assignment $\as_5$ is $e_1 \lnot e_2 e_3$,
+    which deselects every clause, making $\pcf{\pf}{\as_5}=\top$ and
+    $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_5}}=1$.
+    Since there is no selected clause,
+    the learnt clause $C_L$ is empty,
+    and the selection relation becomes unsatisfiable after being conjoined with an empty clause.
+    The unsatisfiability of the selection relation reveals that the space spanned by variables $X$ has been exhaustively searched,
+    and the algorithm returns the satisfying probability, which equals $1$, of the E-MAJSAT instance.
+\end{example}
