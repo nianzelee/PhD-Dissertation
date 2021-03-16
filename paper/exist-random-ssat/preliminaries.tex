@@ -1,0 +1,68 @@
+\section{Preliminaries}
+\label{sect:erssat-preliminaries}
+
+An E-MAJSAT formula $\Qf$ has the form $\exists X,\random{} Y.\pf(X,Y)$,
+where $X$ and $Y$ are two disjoint sets of Boolean variables,
+and $\pf(X,Y)$ is a CNF formula.
+
+\subsection{Solving E-MAJSAT with weighted model counting}
+Given an E-MAJSAT formula $\Qf=\exists X,\random{} Y.\pf(X,Y)$ and an assignment $\as$ over $X$,
+cofactoring the matrix with $\as$ results in a formula $\pcf{\pf}{\as}$ referring only to variables in $Y$.
+The prefix $\random{} Y$ induces a weighting function $\wt: Y \mapsto [0,1]$ for each variable $y \in Y$,
+where $\wt(y)$ equals the probability annotated on the randomized quantifier of $y$.
+As a result, the conditional satisfying probability $\spb{\random{} Y.\pcf{\pf}{\as}}$,
+which equals the weight of the formula $\pcf{\pf}{\as}$ under the weighting function $\wt$,
+can be obtained by invoking a weighted model counter.
+In the following,
+the invocation to a weighted model counter is expressed by $\mathtt{ComputeWeight}(\random{} Y.\pcf{\pf}{\as})$, which returns the conditional satisfying probability $\spb{\random{} Y.\pcf{\pf}{\as}}$.
+
+\subsection{Clause selection}
+\label{sect:erssat-clause-select}
+
+\textit{Clause selection}~\cite{Janota2015,Rabe2015} is a novel technique for QBF solving.
+Given a CNF formula $\pf(X,Y)$ over are two disjoint variable sets $X$ and $Y$,
+we divide each clause $C\in\pf$ into two sub-clauses $\cx$ and $\cy$,
+where $\cx$ (resp. $\cy$) consists of the literals whose variables are from $X$ (resp. $Y$).
+For example, given a clause $C=(x_1 \lor x_2 \lor y_1 \lor y_2)$,
+we have $\cx=(x_1 \lor x_2)$ and $\cy=(y_1 \lor y_2)$.
+Clearly, $C=\cx\lor\cy$.
+
+A clause $C$ is said to be \textit{selected} by an assignment $\as$ over $X$ if $\as$ falsifies every literal in $\cx$;
+$C$ is said to be \textit{deselected} if $\as$ assigns some literal in $\cx$ to $\top$;
+$C$ is said to be \textit{undecided} if it is neither selected nor deselected.
+We also use $\pcf{\pf}{\as}$ to denote the set of clauses selected by an assignment $\as$ over $X$.
+
+A \textit{selection variable} $\sv{C}$ is introduced for each clause $C$ and defined by $\sv{C}\equiv\lnot\cx$.
+Hence, $\sv{C}$ is an indicator of the selection of clause $C$.
+That is, $\sv{C}=\top$ (resp. $\sv{C}=\bot$) indicates $C$ is selected (resp. deselected).
+Let $S$ be the set of selection variables for clauses in $\pf(X,Y)$.
+The formula $\select(X,S)=\bigwedge\limits_{C\in\pf}(\sv{C}\equiv\lnot\cx)$ is called a \textit{selection relation} of $\pf(X,Y)$.
+
+\begin{example}
+    \label{ex:erssat-select}
+    Consider a formula $\pf(X,Y)$ over two variable sets $X=\{e_1,e_2,e_3\}$ and $Y=\{r_1,r_2,r_3\}$.
+    $\pf(X,Y)$ consists of four clauses:
+    \begin{itemize}
+        \item[] $C_1: (e_1 \lor r_1 \lor r_2)$
+        \item[] $C_2: (e_1 \lor e_2 \lor r_1 \lor r_2 \lor \lnot r_3)$
+        \item[] $C_3: (\lnot e_2 \lor \lnot e_3 \lor r_2 \lor \lnot r_3)$
+        \item[] $C_4: (\lnot e_1 \lor e_3 \lor r_3)$
+    \end{itemize}
+    A set $S$ of selection variables $\{\sv{1},\sv{2},\sv{3},\sv{4}\}$ is introduced for each clause, respectively.
+    The selection relation $\select(X,S)$ of $\pf(X,Y)$ equals
+    \begin{align*}
+        \select(X,S)=
+        (\sv{1} \equiv \lnot e_1) \land
+        (\sv{2} \equiv \lnot e_1 \land \lnot e_2) \land
+        (\sv{3} \equiv e_2 \land e_3) \land
+        (\sv{4} \equiv e_1 \land \lnot e_3).
+    \end{align*}
+    Consider a complete assignment $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ over $X$.
+    $C_1$ and $C_2$ are selected while $C_3$ and $C_4$ are deselected,
+    as can be seen from the selection relation cofactored with $\as_1$,
+    which results in $\pcf{\select(X,S)}{\as_1}=s_1s_2\neg s_3 \neg s_4$.
+    Consider a partial assignment $\as_2=\lnot e_1 e_3$ over $X$.
+    It selects $C_1$, deselects $C_4$, and leaves $C_2$ and $C_3$ undecided.
+    Notice that the two complete assignments $\lnot e_1 \lnot e_2 e_3$ and $\lnot e_1 e_2 e_3$ consistent with $\as_2$ select $\{C_1, C_2\}$ and $\{C_1, C_3\}$, respectively.
+    The clause $C_1$ selected by the partial assignment $\as_2$ lies in the intersection of the sets of clauses selected by the two complete assignments consistent with $\as_2$.
+\end{example}

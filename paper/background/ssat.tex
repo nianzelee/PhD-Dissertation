@@ -24,15 +24,3 @@ The \textit{decision version} of SSAT is stated as follows.
 Given an SSAT formula $\Qf$ and a threshold $\theta\in[0,1]$, decide whether $\spb{\Qf}\geq\theta$.
 On the other hand, the \textit{optimization version} asks to compute the exact value of $\spb{\Qf}$.
 The decision version of SSAT is PSPACE-complete~\cite{Papadimitriou1985}.
-
-\iffalse
-    \subsection{Reduction from E-MAJSAT to Model Counting}
-    Given an E-MAJSAT formula $\Phi=\exists X \invR Y. \phi(X,Y)$, our goal is to evaluate $Pr[\Phi]$. By the rules of SSAT formula, it's to find $\max\{Pr[\Phi|_{\tau}]:\forall \tau \in X \rightarrow \mathbb{B}\}$. Each $\Phi|_{\tau} = \invR Y.\phi (Y)$ is merely random quantified SSAT formula since all $X$ variables have been eliminated. If we assign each random quantified variable $r_i$ a weight $p_i$ corresponding to randomized quantifier $\invR^{p_i} r_i$, $Pr[\Phi|_{\tau}]$ can be seen as a Boolean formula $\phi$ with a weight function. So we can use any model counting algorithm to find the value for it.
-
-    When we are trying all the assignments on $X$, it is common for two assignments $\tau_1$, $\tau_2$ such that $\phi|_{\tau_1} \supseteq \phi|_{\tau_2}$. The implication $\phi|_{\tau_1} \rightarrow \phi|_{\tau_2}$ can be induced, so if there is an assignment $\alpha_1$ such that $\phi|_{\tau_1 \wedge \alpha_1} = \top$ then $\phi|_{\tau_2 \wedge \alpha_1} = \top$. Take the weight function	into consideration, the weights of all satisfying assignments of $\phi|_{\tau_2}$ must be great equal then $\phi|_{\tau_1}$. It gives us the propositions below:
-
-    Given an E-MAJSAT formula $\Phi=\exists X \random{} Y. \phi(X,Y)$ and an assignment $\tau$ on $X$, cofactoring the matrix with $\tau$ results in a formula $\phi|_{\tau}$ referring only to variables in $Y$.
-    The prefix $\random{} Y$ induces a weight function $\omega: Y \rightarrow [0,1]$ for each variable $y \in Y$, where $\omega(y)$ equals the probability annotated on the randomized quantifier of $y$.
-    As a result, the conditional satisfying probability $\Pr[\Phi|_{\tau}]$, which equals the weight of the formula $\phi|_{\tau}$ under the weight function $\omega$, can be obtained by invoking a weighted model counter on the formula $\phi|_{\tau}$ with the weight function $\omega$.
-    In the sequel, the invocation of a weighted model counter is expressed by $\mathtt{WeightModelCount}(\random{} Y. \phi|_{\tau})$, which returns the conditional satisfying probability $\Pr[\random{} Y. \phi|_{\tau}]$.
-\fi
