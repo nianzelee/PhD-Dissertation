@@ -11,7 +11,7 @@
 \usepackage{xspace}
 \usepackage{dsfont}
 \usepackage{hyperref}
-\usepackage[capitalise]{cleveref}
+\usepackage[capitalise,nosort,nameinlink]{cleveref}
 % end packages
 
 %%% nzlee: This thesis combines the following four papers
@@ -73,9 +73,19 @@
 \defineword{\false}{false}
 
 % customize package "cleveref"
+\newcommand{\creflastconjunction}{, and~}
 \crefname{equation}{Eq.}{Eqs.}
 \crefname{algorithm}{Alg.}{Algs.}
+\crefname{line}{line}{lines}
+\crefalias{ALC@unique}{line}
+\crefalias{ALC@line}{line}
 
 % customize package "algorithmic"
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+% Fix line counters if multiple algorithms exist
+\makeatletter % Make '@' a normal letter so that it can be used in *.tex files
+\@addtoreset{ALC@line}{algorithm}
+\@addtoreset{ALC@unique}{algorithm}
+\makeatother % Undo the change to '@'
