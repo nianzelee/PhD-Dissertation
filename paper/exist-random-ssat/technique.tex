@@ -139,7 +139,7 @@ We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following 
 \end{example}
 
 \subsection{Enhancement techniques}
-The efficiency of~\cref{alg:erssat} is greatly affected by the strength of learnt clauses.
+The efficiency of~\cref{alg:erssat} is greatly affected by the strength of the learnt clauses.
 We introduce three enhancement methods,
 \textit{minimal clause selection},
 \textit{clause subsumption}, and
@@ -165,53 +165,54 @@ as well as a higher conditional satisfying probability.
 
 Starting from a set of initially selected clauses $\pcf{\pf}{\as}$,
 the first enhancement technique \textit{minimal clause selection} decreases the number of selected clauses by making the set of initially selected clauses minimal as follows.
-A learnt clause $C_L=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}$ is conjoined with the selection relation $\select(X,S)$ to avoid clauses in $\pcf{\pf}{\as}$ being selected simultaneously again.
-A SAT solver is invoked to solve $\select\land C_L$ under the assumption $\mu=\bigwedge\limits_{C\notin\pcf{\pf}{\as}}\lnot\sv{C}$.
+A learnt clause $C_S=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}$ is conjoined with the selection relation $\select(X,S)$ to avoid clauses in $\pcf{\pf}{\as}$ being selected simultaneously again.
+A SAT solver is invoked to solve $\select\land C_S$ under an assumption $\mu=\bigwedge\limits_{C\notin\pcf{\pf}{\as}}\lnot\sv{C}$.
 The assumption $\mu$ prevents originally deselected clauses being selected.
-If $\select\land C_L$ under the assumption $\mu$ is satisfied by some assignment $\as'$ on $X$,
+If $\select\land C_S$ under the assumption $\mu$ is satisfied by some assignment $\as'$ over $X$,
 the set of clauses selected by $\as'$ must be a proper subset of that selected by $\as$.
-On the other hand, if $\select\land C_L$ under the assumption $\mu$ is unsatisfiable,
+On the other hand, if $\select\land C_S$ under the assumption $\mu$ is unsatisfiable,
 then the set of selected clauses is minimal.
 To make the set of initially selected clauses minimal,
 the above operation is repeated until the selection relation becomes unsatisfiable.
 
-\iffalse
-    The subroutine $\mathtt{SelectMinimalClauses}$ for the technique is outlined in Figure~\ref{fig:minimal}.
-    \begin{figure}[h]
-        \mbox{}\hrulefill \vspace{-.6em}
-        \small
-        \begin{program}
-            \>  {\bf \textit{SelectMinimalClauses}}\\
-            \> \> \INPUT: The matrix $\phi(X,Y)$ and selection relation $\psi(X,S)$\\
-            \> \> \OUTPUT: An assignment $\tau'$ selecting a minimal set of clauses\\
-            \> \> \BEGIN\\
-            \> \> 01 \> \> \DO\\
-            \> \> 02 \> \> \> $\tau'$ := $\psi.\mathrm{model}$ for variables in $X$;\\
-            \> \> 03 \> \> \> $C_L$ := $\bigvee_{C \in \phi|_{\tau'}}\neg s_C$;\\
-            \> \> 04 \> \> \> $\mu$ := $\bigwedge_{C \notin \phi|_{\tau'}}\neg s_C$;\\
-            \> \> 05 \> \> \> $\psi$ := $\psi \wedge C_L$;\\
-            \> \> 06 \> \> \WHILE $\mathtt{SAT}(\psi|_{\mu}) = \top$;\\
-            \> \> 07 \> \> \RETURN $\tau'$; \\
-            \> \> \END
-        \end{program}
-        \vspace{-1.2em} \mbox{}\hrulefill \caption{\small Subroutine: Selecting a minimal set of clauses.}
-        \label{fig:minimal}
-    \end{figure}
-\fi
+The subroutine $\texttt{SelectMinimalClauses}$ for the technique is described in~\cref{alg:erssat-minimal}.
+The following example illustrates how this technique improves the solving efficiency.
 
-\iffalse
-    \begin{example}\label{ex:minimal}
-        Continue Example~\ref{ex:basic}.
-        The first tried assignment $\tau_1=\neg e_1 \neg e_2 \neg e_3$ selects $C_1$, $C_2$.
-        The set of selected clauses is made minimal as follows.
-        The subroutine $\mathtt{SelectMinimalClauses}$ conjoins the selection relation with a learnt clause $(\neg s_1 \vee \neg s_2)$, which prevents clauses $C_1$ and $C_2$ being simultaneously selected again.
-        The satisfiability of the selection relation $\psi \wedge (\neg s_1 \vee \neg s_2)$ is tested under the assumption $\neg s_3 \neg s_4$, which avoids the originally deselected clause $C_3$ and $C_4$ being selected.
-        The formula is satisfied by the assignment $\tau_2=\neg e_1 e_2 \neg e_3$, which only selects $C_1$.
-        By repeating the above operation again, the assignment $\tau_5=e_1 \neg e_2 e_3$ is found, since it selects no clause.
-        The conditional satisfying probability under $\tau_5$, which equals $1$, is derived without invoking the weighted model counter.
-        Compared to Example~\ref{ex:basic} where five assignments over $X$ were explored, the algorithm with the minimal clause selection technique finds the optimal assignment $\tau_5$ with at most two SAT calls, thus greatly improves the computation efficiency.
-    \end{example}
-\fi
+\begin{algorithm}[p]
+    \caption{\texttt{SelectMinimalClauses}}
+    \label{alg:erssat-minimal}
+    \begin{algorithmic}[1]
+        \REQUIRE The matrix $\pf(X,Y)$ and selection relation $\select(X,S)$
+        \ENSURE An assignment $\as'$ that selects a minimal set of clauses from $\pf$
+        \REPEAT
+        \STATE $\as' := \model{\select}$ (discarding the selection variables)
+        \STATE $C_S := \bigvee\limits_{C\in\pcf{\pf}{\as'}}\lnot\sv{C}$
+        \STATE $\select := \select \land C_S$
+        \STATE $\mu := \bigwedge\limits_{C\notin\pcf{\pf}{\as'}}\lnot\sv{C}$
+        \UNTIL{($\unsat{\pcf{\select}{\mu}}$)}
+        \RETURN $\as'$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{example}
+    \label{ex:erssat-minimal}
+    Continue~\cref{ex:erssat-basic}.
+    The first tried assignment $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ selects $C_1$ and $C_2$.
+    The set of selected clauses is made minimal as follows.
+    The subroutine $\texttt{SelectMinimalClauses}$ conjoins the selection relation with a learnt clause $(\lnot \sv{1} \lor \lnot \sv{2})$,
+    which prevents clauses $C_1$ and $C_2$ being simultaneously selected again.
+    The satisfiability of the selection relation $\select\land(\lnot \sv{1} \lor \lnot \sv{2})$ is tested under an assumption $\lnot \sv{3} \lnot \sv{4}$,
+    which avoids the originally deselected clause $C_3$ and $C_4$ being selected.
+    The formula is satisfied by the assignment $\as_2=\lnot e_1 e_2 \lnot e_3$, which only selects $C_1$.
+    By repeating the above operation again,
+    the assignment $\as_5=e_1 \lnot e_2 e_3$ is found,
+    since it selects no clause.
+    The conditional satisfying probability under $\as_5$, which equals $1$,
+    is derived without invoking a weighted model counter.
+    Compared to~\ref{ex:erssat-basic} where five assignments over $X$ were explored,
+    the algorithm with the minimal clause selection technique finds the optimal assignment $\as_5$ with at most two SAT calls,
+    thus greatly improves the computation efficiency.
+\end{example}
 
 \subsubsection{Clause subsumption}
 The second enhancement technique, named \textit{clause subsumption},
