@@ -178,7 +178,7 @@ the above operation is repeated until the selection relation becomes unsatisfiab
 The subroutine $\texttt{SelectMinimalClauses}$ for the technique is described in~\cref{alg:erssat-minimal}.
 The following example illustrates how this technique improves the solving efficiency.
 
-\begin{algorithm}[p]
+\begin{algorithm}[ht]
     \caption{\texttt{SelectMinimalClauses}}
     \label{alg:erssat-minimal}
     \begin{algorithmic}[1]
@@ -233,7 +233,7 @@ It takes a set of selected clauses and a lookup table of subsumption relation as
 and removes every subsumed clause via subroutine $\texttt{CheckNotSubsumed}$.
 The following example explains how the subsumption relation shortens a learnt clause.
 
-\begin{algorithm}[p]
+\begin{algorithm}[ht]
     \caption{\texttt{RemoveSubsumedClauses}}
     \label{alg:erssat-subsume}
     \begin{algorithmic}[1]
@@ -322,7 +322,7 @@ Then it iterates through each literal $l \in C_L$ and invokes a weighted model c
 Notice that the current maximum satisfying probability is \textit{not} updated by the value obtained by weighted model counting,
 because the value only reflects an upper bound for satisfying probabilities under the partial assignment $\nu$.
 
-\begin{algorithm}[p]
+\begin{algorithm}[ht]
     \caption{\texttt{DiscardLiterals}}
     \label{alg:erssat-partial}
     \begin{algorithmic}[1]
