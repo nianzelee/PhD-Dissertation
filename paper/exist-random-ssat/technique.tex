@@ -228,41 +228,40 @@ We emphasize that, without cofactoring $\pf$ with the assignment $\as$,
 the original clauses may not have the subsumption relation.
 Cofactoring $\pf$ with the assignment $\as$ over variables in $X$ induces the subsumption relation between sub-clauses consisting of variables in $Y$.
 
-\iffalse
-    The procedure $\mathtt{RemoveSubsumedClauses}$ for the technique is outlined in Figure~\ref{fig:subsume}.
-    It takes the set of selected clauses and the lookup table of subsumption relation as input, and removes every subsumed clause via subroutine $\mathtt{CheckSubsumption}$.
-    \begin{figure}[h]
-        \mbox{}\hrulefill \vspace{-.6em}
-        \small
-        \begin{program}
-            \>  {\bf \textit{RemoveSubsumedClauses}}\\
-            \> \> \INPUT: The selected clauses $\phi|_{\tau}$ and a lookup table \texttt{s-table}\\ \> \> \> \> \> for subsumption\\
-            \> \> \OUTPUT: A simplified set of clauses $\varphi$ without subsumed clasues\\
-            \> \> \BEGIN\\
-            \> \> 01 \> \> $\varphi$ := $\top$;\\
-            \> \> 02 \> \> \FOREACH $C \in \phi|_{\tau}$\\
-            \> \> 03 \> \> \> \IF \> $\mathtt{CheckSubsumption}(C,\texttt{s-table})$\\
-            \> \> 04 \> \> \> \> \CONTI;\\
-            \> \> 05 \> \> \> \ELSE\texttt{//$C^Y$ is not subsumed}\\
-            \> \> 06 \> \> \> \> $\varphi$ := $\varphi \wedge C$;\\
-            \> \> 07 \> \> \RETURN $\varphi$;\\
-            \> \> \END
-        \end{program}
-        \vspace{-1.2em} \mbox{}\hrulefill \caption{\small Subroutine: Removing subsumed clauses from the set of selected clauses.}
-        \label{fig:subsume}
-    \end{figure}
-\fi
+The procedure $\texttt{RemoveSubsumedClauses}$ for the technique is outlined in~\cref{alg:erssat-subsume}.
+It takes a set of selected clauses and a lookup table of subsumption relation as input,
+and removes every subsumed clause via subroutine $\texttt{CheckNotSubsumed}$.
+The following example explains how the subsumption relation shortens a learnt clause.
 
-\iffalse
-    \begin{example}\label{ex:subsume}
-        Continue Example~\ref{ex:basic}.
-        Let the first tried assignment be $\tau_1=\neg e_1 \neg e_2 \neg e_3$.
-        It selects $C_1$ and $C_2$.
-        Because $C_1^Y$ subsumes $C_2^Y$, $C_2$ is removed from $\phi|_{\tau_1}$, yielding $\varphi=C_1$.
-        The weighted model counter gives $\Pr[\invR^{0.5}Y.\varphi]=0.75$, and the learnt clause $C_L=(\neg s_1)$ is conjoined with $\psi$ to prevent $C_1$ being selected again.
-        Compared to Example~\ref{ex:basic}, with the help of clause subsumption, the learnt clause $(\neg s_1)$ deduced from $\tau_1$ is stronger than its counterpart $(\neg s_1 \vee \neg s_2)$ in Example~\ref{ex:basic}, and therefore avoids a fruitless trail of the assignment $\tau_2=\neg e_1 e_2 \neg e_3$.
-    \end{example}
-\fi
+\begin{algorithm}[p]
+    \caption{\texttt{RemoveSubsumedClauses}}
+    \label{alg:erssat-subsume}
+    \begin{algorithmic}[1]
+        \REQUIRE The selected clauses $\pcf{\pf}{\as}$ and a subsumption table \texttt{s-table}
+        \ENSURE A simplified clause set $\varphi$ without subsumed clauses
+        \STATE $\varphi := \top$
+        \FOR{($C\in\pcf{\pf}{\as}$)}
+        \IF{($\texttt{CheckNotSubsumed}(C,\texttt{s-table})$)}
+        \STATE $\varphi := \varphi \land C$
+        \ENDIF
+        \ENDFOR
+        \RETURN $\varphi$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{example}
+    \label{ex:erssat-subsume}
+    Continue~\cref{ex:erssat-basic}.
+    Recall that the first tried assignment is $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$.
+    It selects $C_1$ and $C_2$.
+    Because $C_1^Y$ subsumes $C_2^Y$,
+    $C_2$ is removed from $\pcf{\pf}{\as_1}$, yielding $\varphi=C_1$.
+    A weighted model counter computes $\spb{\random{0.5}Y.\varphi}=0.75$,
+    and the learnt clause $C_L=(\lnot \sv{1})$ is conjoined with $\select$ to prevent $C_1$ being selected again.
+    Compared to~\cref{ex:erssat-basic}, with the help of clause subsumption,
+    the learnt clause $(\lnot s_1)$ deduced from $\as_1$ is stronger than its counterpart $(\lnot s_1 \lor \lnot s_2)$ in~\cref{ex:erssat-basic},
+    and therefore avoids a fruitless trail of the assignment $\as_2=\lnot e_1 e_2 \lnot e_3$.
+\end{example}
 
 \subsubsection{Partial assignment pruning}
 To illustrate the third enhancement technique \textit{partial assignment pruning},
