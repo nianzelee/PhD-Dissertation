@@ -265,12 +265,12 @@ The following example explains how the subsumption relation shortens a learnt cl
 
 \subsubsection{Partial assignment pruning}
 To illustrate the third enhancement technique \textit{partial assignment pruning},
-we first take a closer look at the learnt clause deduced by the proposed clause containment learning.
+we first take a closer look at a learnt clause deduced by the proposed clause-containment learning.
 Given a matrix $\pf(X,Y)$ and an assignment $\as$ over $X$,
-a learnt clause consists of the negation of the selection variables of the selected clauses.
+a learnt clause is a disjunction of the negated selection variables of the selected clauses.
 For each selected clause $C$,
 if the selection variable $\sv{C}$ is substituted by its definition $\sv{C}\equiv\lnot\cx$,
-the learnt clause $C_L$ becomes the disjunction of the sub-clauses $\cx$,
+the learnt clause $C_L$ becomes a disjunction of the sub-clauses $\cx$,
 i.e., $C_L=\bigvee\limits_{C\in\pcf{\pf}{\as}}\cx$.
 
 For instance, in~\cref{ex:erssat-basic},
@@ -279,16 +279,17 @@ which selects clauses $C_1$ and $C_2$,
 is $(\lnot s_1 \lor \lnot s_2)=(e_1 \lor e_2)$,
 and the current maximum satisfying probability equals $0.75$.
 This learnt clause blocks two assignments, $\as_1$ and $\lnot e_1 \lnot e_2 e_3$.
-The assignment $\lnot e_1 \lnot e_2 e_3$ selects clauses $C_1$, $C_2$, and $C_4$,
-containing previously selected clauses $C_1$ and $C_2$, and thus is blocked.
+The assignment $\lnot e_1 \lnot e_2 e_3$ is blocked
+because it selects clauses $C_1$, $C_2$, and $C_4$,
+and clauses $C_1$ and $C_2$ have been selected previously.
 
-A learnt clause is strengthened if some literal in the clause is discarded.
+A learnt clause can be strengthened if some literal in the clause is discarded.
 In the above example,
 the learnt clause $(e_1 \lor e_2)$ can be strengthened by discarding literal $e_2$.
 The resulted learnt clause $(e_1)$ blocks any assignment assigning $e_1$ to $\bot$.
 To see why these assignments are blocked,
 observe that assigning $e_1$ to $\bot$ selects clause $C_1$.
-Although the set $\{C_1\}$ does not contain the previously selected set of clauses $\{C_1,C_2\}$,
+Although the set $\{C_1\}$ does not contain the set $\{C_1,C_2\}$,
 the conditional satisfying probability is bounded from above by the probability of the sub-clause $(r_1 \lor r_2)$,
 which equals $0.75$.
 Since the current maximum satisfying probability equals $0.75$ already,
@@ -301,55 +302,49 @@ the resulted learnt clause $(e_2)$ blocks any assignment assigning $e_2$ to $\bo
 However, assigning $e_2$ to $\bot$ selects no clause,
 and hence the upper bound of the conditional satisfying probability equals $1$.
 Since $1$ is greater than the current maximum satisfying probability $0.75$,
-we have to explore assignments assigning $e_2$ to $\bot$.
+we have to explore assignments that map $e_2$ to $\bot$.
 In fact, there exists an assignment $e_1 \lnot e_2 \lnot e_3$ whose conditional satisfying probability equals $1$,
 greater than the current maximum satisfying probability.
 As a result, $e_1$ cannot be discarded.
 
 From the above illustration,
-we observe that the learnt clause can be strengthened as follows.
-First, temporarily discard some literal $l$ in the learnt clause.
+we observe that a learnt clause can be strengthened as follows.
+First, temporarily discard some literal $l$ from a learnt clause.
 Second, invoke a weighted model counter to compute the conditional satisfying probability contributed by the selected clauses.
 Third, compare the probability to the current maximum satisfying probability.
-If the probability is no greater, literal $l$ is discarded; otherwise, it is kept in the clause.
+If the probability is no greater, discard literal $l$;
+otherwise, keep $l$ in the learnt clause.
 Fourth, repeat the above steps for other literals.
 
-\iffalse
-    The subroutine $\mathtt{DiscardLiterals}$ of the technique to discard literals from a learnt clause is outlined in Figure~\ref{fig:partial}.
-    \begin{figure}[h]
-        \mbox{}\hrulefill \vspace{-.6em}
-        \small
-        \begin{program}
-            \>  {\bf \textit{DiscardLiterals}}\\
-            \> \> \INPUT: The matrix $\phi$, the learnt clause $C_S$,\\
-            \> \> \> \> \> and the current max. sat. \texttt{prob}\\
-            \> \> \OUTPUT: A strengthened learnt clause $C_L$\\
-            \> \> \BEGIN\\
-            \> \> 01 \> \> $C_L$ := $\bot$;\\
-            \> \> 02 \> \> \FOREACH $s_C \in C_S$\\
-            \> \> 03 \> \> \> $C_L$ := $C_L \vee C^X$;\\
-            \> \> 04 \> \> \FOREACH $l \in C_L$\\
-            \> \> 05 \> \> \> $\nu$ := $\bigwedge_{k \in C_L \setminus \{l\}}\neg k$;\\
-            \> \> 06 \> \> \> \IF \> $\mathtt{WeightModelCount}(\invR Y.\phi|_{\nu}) \leq \texttt{prob}$\\
-            \> \> 07 \> \> \> \> $C_L$ := $C_L \setminus \{l\}$;\\
-            \> \> 08 \> \> \RETURN $C_L$;\\
-            \> \> \END
-        \end{program}
-        \vspace{-1.2em} \mbox{}\hrulefill \caption{\small Subroutine: Discarding literals from a learnt clause.}
-        \label{fig:partial}
-    \end{figure}
+The subroutine $\texttt{DiscardLiterals}$ of the technique to discard literals from a learnt clause is outlined in~\cref{alg:erssat-partial}.
+It substitutes selection variables in a learnt clause $C_S$ by their definitions in~\cref{code:erssat-partial-replace}.
+Then it iterates through each literal $l \in C_L$ and invokes a weighted model counter to check whether literal $l$ can be discarded in~\crefrange{code:erssat-partial-drop-start}{code:erssat-partial-drop-end}.
+Notice that the current maximum satisfying probability is \textit{not} updated by the value obtained by weighted model counting,
+because the value only reflects an upper bound for satisfying probabilities under the partial assignment $\nu$.
 
-    The subroutine $\mathtt{DiscardLiterals}$ works as follows.
-    It substitutes selection variables in the learnt clause $C_S$ by their definitions in lines~\texttt{02-03}.
-    Then it iterates through each literal $l \in C_L$, and invokes the weighted model counter to check whether literal $l$ can be discarded in lines~\texttt{04-07}.
-    Notice that the current maximum satisfying probability is \emph{not} updated by the value returned from the weighted model counter, because the value only reflects an upper bound for satisfying probabilities under the partial assignment $\nu$.
-\fi
+\begin{algorithm}[p]
+    \caption{\texttt{DiscardLiterals}}
+    \label{alg:erssat-partial}
+    \begin{algorithmic}[1]
+        \REQUIRE The matrix $\phi$, a learnt clause $C_S$, and the current maximum $prob$
+        \ENSURE A strengthened learnt clause $C_L$
+        \STATE $C_L := \bigvee\limits_{\sv{C}\in C_S}\cx$\label{code:erssat-partial-replace}
+        \FOR{($l\in C_L$)}\label{code:erssat-partial-drop-start}
+        \STATE $\nu := \bigwedge\limits_{k\in C_L\setminus\{l\}}\lnot k$
+        \IF{($\texttt{ComputeWeight}(\random{}Y.\pcf{\pf}{\nu})\leq prob$)}
+        \STATE $C_L := C_L \setminus \{l\}$\label{code:erssat-partial-drop-end}
+        \ENDIF
+        \ENDFOR
+        \RETURN $C_L$
+    \end{algorithmic}
+\end{algorithm}
 
-\iffalse
-    \begin{example}\label{ex:partial}
-        Continue Example~\ref{ex:basic}. As discussed above, the learnt clause $(e_1 \vee e_2)$ deduced from the assignment $\tau_1=\neg e_1 \neg e_2 \neg e_3$ is strengthen to $(e_1)$ by the partial assignment pruning technique, and thus prevents a fruitless trail of the assignment $\tau_2=\neg e_1 e_2 \neg e_3$.
-    \end{example}
-\fi
+\begin{example}
+    \label{ex:erssat-partial}
+    Continue~\cref{ex:erssat-basic}.
+    As discussed above, the learnt clause $(e_1 \lor e_2)$ deduced from the assignment $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ is strengthen to $(e_1)$ by the partial assignment pruning technique,
+    and thus prevents a fruitless trail of the assignment $\as_2=\lnot e_1 e_2 \lnot e_3$.
+\end{example}
 
 To summarize, the above three enhancement techniques are designed based on different reasoning strategies:
 the minimal clause selection technique strengthens the learnt clause by invoking additional SAT calls to solve the selection relation to select a minimal set of clauses;
