@@ -1,0 +1,115 @@
+\section{Lifting SSAT to NEXPTIME-completeness}
+\label{sect:dssat-technique}
+
+\subsection{Formulation}
+In the following, we extend DQBF to its stochastic variant,
+named \textit{dependency stochastic Boolean satisfiability} (DSSAT).
+
+A DSSAT formula $\Qf$ over $V=\{x_1,\ldots,x_n,y_1,\ldots,y_m\}$ is of the form:
+\begin{align}
+    \label{eq:dssat}
+    \random{p_1}x_1,\ldots,\random{p_n}x_n,\exists y_1(\dep{y_1}),\ldots,\exists y_m(\dep{y_m}).\pf(x_1,\ldots,x_n,y_1,\ldots,y_m),
+\end{align}
+where each $\dep{y_j}\subseteq\{x_1,\ldots,x_n\}$ denotes the set of variables that variable $y_j$ depends on,
+and Boolean formula $\pf$ over $V$ is quantifier-free.
+We denote the set $\{x_1,\ldots,x_n\}$ (resp. $\{y_1,\ldots,y_m\}$) of randomly (resp. existentially) quantified variables of $\Qf$ by $\rvs$ (resp. $\evs$).
+
+Given a DSSAT formula $\Qf$ and a set of Skolem functions
+$\skf=\{f_j:\av{\dep{y_j}}\mapsto\booldom\ |\ j=1,\ldots,m\}$,
+the satisfying probability $\spb{\pcf{\Qf}{\skf}}$ of $\Qf$ with respect to $\skf$ is defined as follows:
+\begin{align}\label{eq:dssat-probability}
+    \spb{\pcf{\Qf}{\skf}}=\spb{\random{p_1}x_1,\ldots,\random{p_n}x_n.\pcf{\pf}{\skf}},
+\end{align}
+where $\pcf{\pf}{\skf}$ denotes the formula obtained by substituting existentially quantified variables in $\pf$ with their respective Skolem functions, as defined in~\cref{sect:dssat-dqbf}.
+In other words, the satisfying probability of $\Qf$ with respect to $\skf$ equals
+the satisfying probability of the SSAT formula $\random{p_1}x_1,\ldots,\random{p_n}x_n.\pcf{\pf}{\skf}$.
+
+The \textit{decision version} of DSSAT is stated as follows.
+Given a DSSAT formula $\Qf$ and a threshold $\theta\in[0,1]$,
+decide whether there exists a set $\skf$ of Skolem functions such that $\spb{\pcf{\Qf}{\skf}}\geq\theta$.
+On the other hand, the \textit{optimization version} asks to find a set of Skolem functions to maximize the satisfying probability of $\Qf$.
+
+The formulation of SSAT can be extended by incorporating universal quantifiers,
+resulting in a unified framework named \textit{extended} SSAT (XSSAT)~\cite{SATHandbook-SSAT},
+which subsumes both QBF and SSAT.
+In the extended SSAT,
+besides the four rules discussed in~\cref{sect:background-ssat} to calculate the satisfying probability of an SSAT formula $\Qf$,
+the following rule is added:
+$\spb{\Qf}=\min\{\spb{\ncf{\Qf}{x}},\spb{\pcf{\Qf}{x}}\}$, if $x$ is universally quantified.
+
+Similarly, an \textit{extended} DSSAT (XDSSAT) formula $\Qf$ over a set of variables
+$\{x_1,\ldots,x_n,y_1,\ldots,y_m,z_1,\ldots,z_l\}$ is of the form:
+\begin{align}\label{eq:dssat-xdssat}
+    Q_1 v_1,\ldots,Q_{n+l} v_{n+l},\exists y_1(\dep{y_1}),\ldots,\exists y_m(\dep{y_m}).\pf,
+\end{align}
+where $Q_i v_i$ equals either $\random{p_k} x_k$ or $\forall z_k$ for some $k$ with $v_i \neq v_j$ for $i \neq j$,
+and each $\dep{y_j}\subseteq\{x_1,\ldots,x_n,z_1,\ldots,z_l\}$ denotes the set of randomly and universally quantified variables that variable $y_j$ depends on.
+
+The satisfying probability of an XDSSAT formula $\Qf$ with respect to a set of Skolem functions
+$\skf=\{f_j:\av{\dep{y_j}}\mapsto\booldom\ |\ j=1,\ldots,m\}$,
+denoted by $\spb{\pcf{\Qf}{\skf}}$,
+equals the satisfying probability of the XSSAT formula $Q_1 v_1,\ldots,Q_{n+l} v_{n+l}.\pcf{\pf}{\skf}$.
+This satisfiability definition subsumes those for DQBF (\cref{eq:dssat-dqbf-satisfiable}) and DSSAT (\cref{eq:dssat-probability}),
+where the variables preceding the existential quantifiers in the prefixes are solely universally or randomly quantified.
+
+Note that in the above extension the Henkin-type quantifiers are only defined for the existential variables.
+Although the extended formulation increases practical expressive succinctness,
+the computational complexity is not changed as to be shown in the next section.
+
+\subsection{Complexity proof}
+In the following, we show that the decision version of DSSAT is NEXPTIME-complete.
+
+\begin{theorem}
+    The decision version of DSSAT is NEXPTIME-complete.
+\end{theorem}
+\begin{proof}
+    To show that DSSAT is NEXPTIME-complete,
+    we have to show that it belongs to the NEXPTIME complexity class and that it is NEXPTIME-hard.
+
+    First, to see why DSSAT belongs to the NEXPTIME complexity class,
+    observe that a Skolem function for an existentially quantified variable can be guessed and constructed in nondeterministic exponential time with respect to the number of randomly quantified variables.
+    Given the guessed Skolem functions,
+    the evaluation of the matrix,
+    summation of weights of satisfying assignments,
+    and comparison against the threshold $\theta$ can also be performed in exponential time.
+    Overall, the whole procedure is done in nondeterministic exponential time with respect to the input size,
+    and hence DSSAT belongs to the NEXPTIME complexity class.
+
+    Second, to see why DSSAT is NEXPTIME-hard,
+    we reduce the NEXPTIME-complete problem DQBF to DSSAT as follows.
+    Given an arbitrary DQBF:
+    \begin{align*}
+        \Qf_Q=\forall x_1,\ldots,\forall x_n,\exists y_1(\dep{y_1}),\ldots,\exists y_m(\dep{y_m}).\pf,
+    \end{align*}
+    we construct a DSSAT formula:
+    \begin{align*}
+        \Qf_S=\random{0.5} x_1,\ldots,\random{0.5} x_n,\exists y_1(\dep{y_1}),\ldots,\exists y_m(\dep{y_m}).\pf
+    \end{align*}
+    by changing every universal quantifier to a randomized quantifier with probability $0.5$.
+    The reduction can be done in polynomial time with respect to the size of $\Qf_Q$.
+    We will show that $\Qf_Q$ is satisfiable if and only if there exists a set $\skf$ of Skolem functions such that $\spb{\pcf{\Qf_S}{\skf}}\geq 1$.
+
+    The ``only if'' direction:
+    As $\Qf_Q$ is satisfiable,
+    there exists a set $\skf$ of Skolem functions such that
+    substituting the existentially quantified variables with the respective Skolem functions
+    makes $\pf$ a tautology over variables $\{x_1,\ldots,x_n\}$.
+    Therefore, $\spb{\pcf{\Qf_S}{\skf}}=\spb{\random{0.5}x_1,\ldots,\random{0.5}x_n.\top}=1\geq 1$.
+
+    The ``if'' direction:
+    As there exists a set $\skf$ of Skolem functions such that $\spb{\pcf{\Qf_S}{\skf}}\geq 1$,
+    after substituting the existentially quantified variables with the corresponding Skolem functions,
+    each assignment $\as\in\av{\{x_1,\ldots,x_n\}}$ must satisfy $\pf$,
+    i.e., $\pf$ becomes a tautology over variables $\{x_1,\ldots,x_n\}$.
+    Otherwise, the satisfying probability $\spb{\pcf{\Qf_S}{\skf}}$ must be less than $1$
+    as the weight $2^{-n}$ of some unsatisfying assignment is missing from the summation.
+    Therefore, $\Qf_Q$ is satisfiable due to the existence of the set $\skf$.
+\end{proof}
+
+When DSSAT is extended with universal quantifiers,
+its complexity remains in the NEXPTIME complexity class
+as the fifth rule of the satisfying probability calculation does not incur any complexity overhead.
+Therefore the following corollary is immediate.
+\begin{corollary}
+    The decision problem of XDSSAT is NEXPTIME-complete.
+\end{corollary}
