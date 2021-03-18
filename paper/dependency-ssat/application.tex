@@ -1,0 +1,94 @@
+\section{Applications of DSSAT}
+\label{sect:dssat-application}
+
+In this section, we demonstrate two applications of DSSAT.
+
+\subsection{Analyzing probabilistic/approximate partial design}
+After formulating DSSAT and proving its NEXPTIME-completeness,
+we show its application to the analysis of probabilistic design and approximate design.
+Specifically, we consider the probabilistic version of the \textit{topologically constrained logic synthesis problem}~\cite{Sinha2002,Balabanov2014},
+or equivalently the \textit{partial design problem}~\cite{Gitina2013}.
+
+In the \textit{(deterministic) partial design problem},
+we are given a specification function $G(X)$ over primary input variables $X$ and
+a \textit{partial design} $C_F$ with black boxes to be synthesized.
+The Boolean functions induced at the primary outputs of $C_F$ can be described by $F(X,T)$,
+where $T$ corresponds to the variables of the black box outputs.
+Each black box output $t_i$ is specified with its input variables (i.e., dependency set) $\dep{i}\subseteq X \cup Y$ in $C_F$,
+where $Y$ represents the variables for intermediate gates in $C_F$ referred to by the black boxes.
+The partial design problem aims at deriving the black box functions $\{h_1(\dep{1}),\ldots,h_{|T|}(\dep{|T|})\}$
+such that substituting $t_i$ with $h_i$ in $C_F$ makes the resultant circuit function equal $G(X)$.
+The above partial design problem can be encoded as a DQBF problem;
+moreover, the partial equivalence checking problem is shown to be NEXPTIME-complete~\cite{Gitina2013}.
+
+Specifically, the DQBF that encodes the partial equivalence checking problem is of the form:
+\begin{align}
+    \label{eq:dssat-dqbf-partial-design}
+    \forall X,\forall Y,\exists T(D).(Y \equiv E(X)) \limply (F(X,T)\equiv G(X)),
+\end{align}
+where $D$ consists of $(\dep{1},\ldots,\dep{|T|})$,
+$E$ corresponds to the defining functions of $Y$ in $C_F$,
+and the operator ``$\equiv$'' denotes element-wise equivalence between its two operands.
+
+The above partial design problem can be extended to its probabilistic variant,
+which is illustrated by the circuit shown in \textbf{TODO}.
+The \textit{probabilistic partial design problem} is the same as the deterministic partial design problem except that
+$C_F$ is a distilled probabilistic design~\cite{LeeTC18ProbDesign} with black boxes,
+whose functions at the primary outputs can be described by $F(X,Z,T)$,
+where $Z$ represents the variables for the auxiliary inputs that trigger errors in $C_F$
+(including the errors of the black boxes) and
+$T$ corresponds to the variables of the black box outputs.
+Each black box output $t_i$ is specified with its input variables (i.e., dependency set)
+$\dep{i} \subseteq X \cup Y$ in $C_F$.
+When $t_i$ is substituted with $h_i$ in $C_F$,
+the function of the resultant circuit is required to be sufficiently close to the specification with respect to some expected probability.
+
+\begin{theorem}
+    The probabilistic partial design problem is NEXPTIME-complete.
+\end{theorem}
+\begin{proof}
+    To show that the probabilistic partial design problem is in the NEXPTIME complexity class,
+    we note that the black box functions can be guessed and validated in time exponential to the number of black box inputs.
+
+    To show completeness in the NEXPTIME complexity class,
+    we reduce the known NEXPTIME-complete DSSAT problem to the probabilistic partial design problem,
+    similar to the construction used in the previous work~\cite{Gitina2013}.
+    Given a DSSAT instance,
+    it can be reduced to a probabilistic partial design instance in polynomial time as follows.
+    Without loss of generality,
+    consider the DSSAT formula~\cref{eq:dssat}.
+    We create a probabilistic partial design instance by letting the specification $G$ be a tautology and
+    letting $C_F$ be a probabilistic design with black boxes,
+    which involves primary inputs $x_1,\ldots,x_n$ and black box outputs $y_1,\ldots,y_m$ to compute the matrix $\pf$.
+    The driving inputs of the black box output $y_j$ is specified by the dependency set $\dep{y_j}$ in~\cref{eq:dssat},
+    and the probability for primary input $x_i$ to evaluate to $\top$ is set to $p_i$.
+    The original DSSAT formula is satisfiable with respect to a target satisfying probability $\theta$ if and only if
+    there exist implementations of the black boxes such that the resultant circuit composed with the black box implementations behaves like a tautology with respect to the required expectation $\theta$.
+\end{proof}
+
+On the other hand,
+the probabilistic partial design problem can be encoded with the following XDSSAT formula:
+\begin{align}
+    \label{eq:dssat-partial-design}
+    \random{} X,\random{} Z,\forall Y,\exists T(D).(Y \equiv E(X)) \limply (F(X,Z,T)\equiv G(X)),
+\end{align}
+where the primary input variables are randomly quantified with probability $p_{x_i}$ of $x_i \in X$ to reflect their weights,
+and the error-triggering auxiliary input variables $Z$ are randomly quantified according to the pre-specified error rates of the erroneous gates in $C_F$.
+Notice that the above formula takes advantage of the extension with universal quantifiers as discussed previously.
+
+In approximate design,
+a circuit implementation may deviate from its specification by a certain extent.
+The amount of deviation can be characterized in a way similar to the error probability calculation in probabilistic design.
+For approximate partial design,
+the equivalence checking problem can be expressed by the XDSSAT formula:
+\begin{align}
+    \label{eq:dssat-approximate-design}
+    \random{} X,\forall Y,\exists T(D).(Y \equiv E(X)) \limply (F(X,T)\equiv G(X)),
+\end{align}
+which differs from~\cref{eq:dssat-partial-design} only in requiring no auxiliary inputs.
+The probabilities of the randomly quantified primary input variables are determined by the approximation criteria in measuring the deviation.
+For example, when all the input assignments are of equal weight,
+the probabilities of the primary inputs are all set to 0.5.
+
+We note that as the engineering change order (ECO) problem~\cite{JiangDATE20ECOSurvey} heavily relies on partial design equivalence checking,
+the above DSSAT formulations provide fundamental bases for ECOs of probabilistic and approximate designs.
