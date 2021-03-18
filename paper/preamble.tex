@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{dmathesis}
+\documentclass[12pt,a4paper]{dmathesis}
 
 %% The following is to control the format of your thesis
 \input{format_Imran}
@@ -9,7 +9,6 @@
 %\usepackage{subfiles}
 \usepackage{rotating}
 \usepackage{xspace}
-\usepackage{dsfont}
 \usepackage{hyperref}
 \usepackage[capitalise,nosort,nameinlink]{cleveref}
 % end packages
@@ -81,6 +80,9 @@
 \defineword{\false}{false}
 \defineword{\disjoin}{or}
 \defineword{\conjoin}{and}
+
+% customize package "amsthm"
+\renewcommand\qedsymbol{$\blacksquare$}
 
 % customize package "cleveref"
 \newcommand{\creflastconjunction}{, and~}

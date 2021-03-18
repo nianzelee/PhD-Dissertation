@@ -13,7 +13,7 @@
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{theorem}
+\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{latexsym}
 \usepackage{epic}
@@ -70,34 +70,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%           New theorem you want to use              %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\theorembodyfont{\rmfamily}\newtheorem{Pro}{{\textbf Proposition}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{The}{{\textbf Theorem}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{Def}{{\textbf Definition}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{Cor}{{\textbf Corollary}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{Lem}{{\textbf Lemma}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{Exp}{{\textbf Example}}[chapter]}
-
-{\theorembodyfont{\rmfamily}\newtheorem{proposition}{{\textbf Proposition}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{theorem}{{\textbf Theorem}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{definition}{{\textbf Definition}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{lemma}{{\textbf Lemma}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{corollary}{{\textbf Corollary}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{example}{{\textbf Example}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{fact}{{\textbf Fact}}[chapter]}
-{\theorembodyfont{\rmfamily}\newtheorem{proof}{{\textbf Proof}}[chapter]}
-
-%{\theorembodyfont{\rmfamily}\newtheorem{Def}[Pro]{{\textbf Definition}}}
-%{\theorembodyfont{\rmfamily}\newtheorem{Cor}[Pro]{{\textbf Corollary}}}
-%{\theorembodyfont{\rmfamily}\newtheorem{Lem}[Pro]{{\textbf Lemma}}}
-%{\theorembodyfont{\rmfamily}\newtheorem{Exp}{{\textbf Example}}[section]}
-\def\remark{\textbf{Remark}:}
-\def\remarks{\textbf{Remarks}:}
-\def\bproof{\textbf{Proof}. }
-\def\eproof{\hfill$\Box$}
-
-%\def\begin{proof}\textbf{Proof}. }
-%\def\end{proof}{\hfill$\Box$}
-
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%    Bold font in math mode, a gift from J.F.Blowey       %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
