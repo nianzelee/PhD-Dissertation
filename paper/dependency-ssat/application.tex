@@ -30,8 +30,15 @@ where $D$ consists of $(\dep{1},\ldots,\dep{|T|})$,
 $E$ corresponds to the defining functions of $Y$ in $C_F$,
 and the operator ``$\equiv$'' denotes element-wise equivalence between its two operands.
 
+\begin{figure}[t]
+    \centering
+    \input{fig/dssat-prob-miter.tex}
+    \caption{A miter for the equivalence checking of probabilistic partial design.}
+    \label{fig:dssat-prob-miter}
+\end{figure}
+
 The above partial design problem can be extended to its probabilistic variant,
-which is illustrated by the circuit shown in \textbf{TODO}.
+which is illustrated by the circuit shown in~\cref{fig:dssat-prob-miter}.
 The \textit{probabilistic partial design problem} is the same as the deterministic partial design problem except that
 $C_F$ is a distilled probabilistic design~\cite{LeeTC18ProbDesign} with black boxes,
 whose functions at the primary outputs can be described by $F(X,Z,T)$,
