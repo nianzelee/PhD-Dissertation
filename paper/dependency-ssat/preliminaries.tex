@@ -55,7 +55,7 @@ the probability for the initial state $s^0$ being state $s$,
 and $h$ is a planning horizon, which we assume finite in this work.
 
 Given a Dec-POMDP $\mathcal{M}$,
-we aim at maximizing the expected total reward $\mathbb{E}[\sum_{t=0}^{h-1}\rho(s^t,\vec{a}^t)]$ through searching an optimal \textit{joint policy} for a team of agents.
+we aim at maximizing the expected cumulative reward $\mathbb{E}[\sum_{t=0}^{h-1}\rho(s^t,\vec{a}^t)]$ through searching an optimal \textit{joint policy} for a team of agents.
 Specifically, a \textit{policy} $\pi_i$ of Agent $i$ is a mapping from the agent's \textit{observation history},
 i.e., a sequence of observations $\underline{o_i^t}=o_i^0,\ldots,o_i^t$ received by Agent $i$,
 to an action $a_i^{t+1}\in A_i$.
@@ -63,13 +63,19 @@ A joint policy for the team of agents $\vec{\pi}=(\pi_1,\ldots,\pi_n)$ maps the 
 We shall focus on deterministic policies only,
 as it is shown that every Dec-POMDP with a finite planning horizon has a deterministic optimal joint policy~\cite{Oliehoek2008}.
 
-The quality of a joint policy $\vec{\pi}$ is measured by the expected reward it brings assuming the agents follow the policy.
+The quality of a joint policy $\vec{\pi}$ is measured by its expected cumulative reward.
 The \textit{value} of a joint policy is hence defined to be $\mathbb{E}[\sum_{t=0}^{h-1}\rho(s^t,\vec{a}^t)|\Delta_0,\vec{\pi}]$.
-The \textit{value function} $V^\pi$ can be computed in a recursive manner, where for $t=h-1$, $V^\pi(s^{h-1},\vec{\underline{o}}^{h-2})=\rho(s^{h-1},\vec{\pi}(\vec{\underline{o}}^{h-2}))$, and for $t<h-1$,
+The \textit{value function} $V^\pi$ can be computed in a recursive manner, where for $t=h-1$,
+\begin{align*}
+    V^\pi(s^{h-1},\vec{\underline{o}}^{h-2})=\rho(s^{h-1},\vec{\pi}(\vec{\underline{o}}^{h-2})),
+\end{align*}
+and for $t<h-1$,
 \begin{align}\label{eq:dssat-bellman}
-    V^\pi(s^t,\vec{\underline{o}}^{t-1})=\rho(s^t,\vec{\pi}(\vec{\underline{o}}^{t-1}))+\sum_{s^{t+1}\in S}\sum_{\vec{o}^t\in\vec{O}}\Pr[s^{t+1},\vec{o}^t|s^t,\vec{\pi}(\vec{\underline{o}}^t)]V^\pi(s^{t+1},\vec{\underline{o}}^{t}).
+    V^\pi(s^t,\vec{\underline{o}}^{t-1})=\rho(s^t,\vec{\pi}(\vec{\underline{o}}^{t-1}))+
+    \sum_{s^{t+1}\in S}\sum_{\vec{o}^t\in\vec{O}}\Pr[s^{t+1},\vec{o}^t|s^t,\vec{\pi}(\vec{\underline{o}}^{t-1})]V^\pi(s^{t+1},\vec{\underline{o}}^{t}).
 \end{align}
-The probability $\Pr[s^{t+1},\vec{o}^{t}|s^t,\vec{\pi}(\vec{\underline{o}}^t)]$ in the above equation is the product of the transition probability $T(s^t,\vec{\pi}(\vec{\underline{o}}^t),s^{t+1})$ and
-the observation probability $\Omega(s^{t+1},\vec{\pi}(\vec{\underline{o}}^t),\vec{o}^{t})$.
+The probability $\Pr[s^{t+1},\vec{o}^{t}|s^t,\vec{\pi}(\vec{\underline{o}}^{t-1})]$ is the product of
+the transition probability $T(s^t,\vec{\pi}(\vec{\underline{o}}^{t-1}),s^{t+1})$ and
+the observation probability $\Omega(s^{t+1},\vec{\pi}(\vec{\underline{o}}^{t-1}),\vec{o}^{t})$.
 \Cref{eq:dssat-bellman} is also called the \textit{Bellman equation} of Dec-POMDP.
 Denoting the empty observation history at the first stage (i.e., $t=0$) with the symbol $\vec{\underline{o}}^{-1}$, the value $V(\vec{\pi})$ of a joint policy equals $\sum_{s^0\in S}\Delta_0(s^0)V^\pi(s^0,\vec{\underline{o}}^{-1})$.
