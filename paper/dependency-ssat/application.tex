@@ -101,14 +101,8 @@ We note that as the engineering change order (ECO) problem~\cite{JiangDATE20ECOS
 the above DSSAT formulations provide fundamental bases for ECOs of probabilistic and approximate designs.
 
 \subsection{Modeling Dec-POMDP}
-\begin{figure*}[t]
-    \centering
-    \input{fig/formulas}
-    \caption{The formulas used to encode a Dec-POMDP $\mathcal{M}$.}\label{fig:formula}
-    \vspace{-0.5cm}
-\end{figure*}
 
-In this section we demonstrate the descriptive power of DSSAT to model NEXPTIME-complete problems by constructing a polynomial-time reduction from Dec-POMDP to DSSAT.
+We demonstrate the descriptive power of DSSAT to model NEXPTIME-complete problems by constructing a polynomial-time reduction from Dec-POMDP to DSSAT.
 Our reduction is an extension of that from POMDP to SSAT proposed in the previous work~\cite{Salmon2020}.
 
 In essence, given a Dec-POMDP $\mathcal{M}$, we will construct in polynomial time a DSSAT formula $\Phi$ such that there is a joint policy $\vec{\pi}$ for $\mathcal{M}$ with value $V(\vec{\pi})$ if and only if there is a set of Skolem functions $\mathcal{F}$ for $\Phi$ with satisfying probability $\Pr[\Phi|_{\mathcal{F}}]$, and $V(\vec{\pi})=\Pr[\Phi|_{\mathcal{F}}]$.
@@ -131,13 +125,6 @@ We will use the following variables:
     \item $x_\Omega^t\in O_1\times\ldots\times O_n$: observation distribution at stage $t$,
     \item $x_p^t\in \mathbb{B}$: used to sum up rewards across stages.
 \end{itemize}
-
-\begin{figure*}[t]
-    \centering
-    \input{fig/derivation}
-    \caption{The derivation of the induction case in the proof of Theorem~\ref{thm:reduction}.}
-    \label{fig:derivation}
-\end{figure*}
 
 We represent elements in the sets $S$, $A_i$, and $O_i$ by integers, i.e., $S=\{0,1,\ldots,|S|-1\}$, etc., and use indices $s$, $a_i$, and $o_i$ to iterate through them, respectively.
 On the other hand, a special treatment is required for variables $x_r^t$ and $x_\Omega^t$, as they range over Cartesian products of several sets.
@@ -175,7 +162,7 @@ Note that variables $\{x_p^t\}$ are shared across all agents.
 With the help of variable $x_p^t$, rewards earned at different stages are summed up with an equal weight $2^{-h}$.
 Variable $x_o^{i,t}$ also follows a uniform distribution $\Pr[x_o^{i,t} \equiv o_i]=|O_i|^{-1}$, which scales the satisfying probability by $|O_i|^{-1}$ at each stage.
 Therefore, we need to re-scale the satisfying probability accordingly in order to obtain the correct satisfying probability corresponding to the value of a joint policy.
-The scaling factor will be derived in the proof of Theorem~\ref{thm:reduction}.
+The scaling factor will be derived in the proof of~\cref{thm:dssat-dec-pomdp-reduction}.
 
 As the actions of the agents can only depend on their own observation history, for the selection of a joint policy it is not obvious how to combine the quantification, i.e., the selection of a policy, of each agent into a linearly ordered prefix required by SSAT, without suffering an exponential translation cost.
 On the other hand, DSSAT allows to specify the dependency of an existentially quantified variable freely and is suitable to encode the selection of a joint policy.
@@ -191,23 +178,29 @@ Variables $x_s^t$ follow a uniform distribution $\Pr[x_s^t \equiv s]=|S|^{-1}$ e
 Note that these variables encode the random mechanism of a Dec-POMDP and are hidden from agents.
 That is, variables $x_a^{i,t}$ do not depend on the above variables.
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
-    \input{fig/example}
-    \caption{The decision tree of a Dec-POMDP example with two agents and $h=2$.}
-    \label{fig:example}
-    \vspace{-0.5cm}
-\end{figure*}
+    \input{fig/dssat-dec-pomdp-formulas}
+    \caption{The formulas used to encode a Dec-POMDP $\mathcal{M}$.}
+    \label{fig:dssat-dec-pomdp-formula}
+\end{figure}
 
-The formulas to encode $\mathcal{M}$ are listed in Figure~\ref{fig:formula}.
-Formula~\eqref{eq:xp_next} encodes that when $x_p^t \equiv \bot$, i.e., the process is stopped, the observation $x_o^{i,t}$ and next state $x_s^{t+1}$ are set to a preserved value $0$, and $x_p^{t+1} \equiv \bot$.
-Formula~\eqref{eq:xp_stop} ensures the process is stopped at the last stage.
-Formula~\eqref{eq:xr_0} ensures the reward at the first stage is earned when the process is stopped, i.e., $x_p^0 \equiv \bot$.
-Formula~\eqref{eq:xr_t} requires the reward at stage $t>0$ is earned when $x_p^{t-1} \equiv \top$ and $x_p^t \equiv \bot$.
-Formula~\eqref{eq:x_T} encodes the transition distribution from state $s$ to state $s'$ given actions $\vec{a}$ are taken.
-Formula~\eqref{eq:x_omega} encodes the observation distribution to receive observation $\vec{o}$ under the situation that state $s'$ is reached after actions $\vec{a}$ are taken.
+The formulas to encode $\mathcal{M}$ are listed in~\cref{fig:dssat-dec-pomdp-formula}.
+\Cref{eq:dssat-dec-pomdp-formulas-xp-next} encodes that when $x_p^t \equiv \bot$, i.e., the process is stopped, the observation $x_o^{i,t}$ and next state $x_s^{t+1}$ are set to a preserved value $0$, and $x_p^{t+1} \equiv \bot$.
+\Cref{eq:dssat-dec-pomdp-formulas-xp-stop} ensures the process is stopped at the last stage.
+\Cref{eq:dssat-dec-pomdp-formulas-xr-0} ensures the reward at the first stage is earned when the process is stopped, i.e., $x_p^0 \equiv \bot$.
+\Cref{eq:dssat-dec-pomdp-formulas-xr-t} requires the reward at stage $t>0$ is earned when $x_p^{t-1} \equiv \top$ and $x_p^t \equiv \bot$.
+\Cref{eq:dssat-dec-pomdp-formulas-x-T} encodes the transition distribution from state $s$ to state $s'$ given actions $\vec{a}$ are taken.
+\Cref{eq:dssat-dec-pomdp-formulas-x-omega} encodes the observation distribution to receive observation $\vec{o}$ under the situation that state $s'$ is reached after actions $\vec{a}$ are taken.
 
-\begin{theorem}\label{thm:reduction}
+\begin{figure}[t]
+    \centering
+    \input{fig/dssat-dec-pomdp-derivation}
+    \caption{The derivation of the induction case in the proof of~\cref{thm:dssat-dec-pomdp-reduction}.}
+    \label{fig:dssat-dec-pomdp-derivation}
+\end{figure}
+
+\begin{theorem}\label{thm:dssat-dec-pomdp-reduction}
     The above reduction maps a Dec-POMDP $\mathcal{M}$ to a DSSAT formula $\Phi$, such that a joint policy $\vec{\pi}$ exists for $\mathcal{M}$ if and only if a set of Skolem functions $\mathcal{F}$ exists for $\Phi$, with $V(\vec{\pi})=\Pr[\Phi|_{\mathcal{F}}]$.
 \end{theorem}
 \begin{proof}
@@ -225,9 +218,9 @@ Formula~\eqref{eq:x_omega} encodes the observation distribution to receive obser
 
     Note in the above argument, only equalities are involved, and hence can be reversed to prove the ``if'' direction.
 
-    For the induction case $h>1$, first assume that the statement holds. For a planning horizon of $h+1$, consider a joint policy $\vec{\pi}_{h+1}$ with value $V(\vec{\pi}_{h+1})$. Note that as a joint policy is a mapping from observation histories to actions, we can build a corresponding set of Skolem functions $\mathcal{F}_{h+1}$ to simulate joint policy $\vec{\pi}_{h+1}$ for the DSSAT formula. The derivation of satisfying probability with respect to $\mathcal{F}_{h+1}$ is shown in Figure~\ref{fig:derivation}. Note that to obtain the correct value of the joint policy, we need to re-scale the satisfying probability by a scaling factor $\kappa_{h+1}=2^{h+1}(|\vec{O}||S|)^{h}$.
+    For the induction case $h>1$, first assume that the statement holds. For a planning horizon of $h+1$, consider a joint policy $\vec{\pi}_{h+1}$ with value $V(\vec{\pi}_{h+1})$. Note that as a joint policy is a mapping from observation histories to actions, we can build a corresponding set of Skolem functions $\mathcal{F}_{h+1}$ to simulate joint policy $\vec{\pi}_{h+1}$ for the DSSAT formula. The derivation of satisfying probability with respect to $\mathcal{F}_{h+1}$ is shown in~\cref{fig:dssat-dec-pomdp-derivation}. Note that to obtain the correct value of the joint policy, we need to re-scale the satisfying probability by a scaling factor $\kappa_{h+1}=2^{h+1}(|\vec{O}||S|)^{h}$.
 
-    Once again, as only equalities are involved in the derivation in Figure~\ref{fig:derivation}, the ``if'' direction is also proved.
+    Once again, as only equalities are involved in the derivation in~\cref{fig:dssat-dec-pomdp-derivation}, the ``if'' direction is also proved.
 
     As $\Pr[\Phi|_{\mathcal{F}_{h+1}}]=V(\vec{\pi}_{h+1})$, the theorem is proved according to the principle of mathematical induction.
 \end{proof}
@@ -240,6 +233,13 @@ Overall, we show that the proposed reduction is polynomial-time with respect to 
 
 Below we demonstrate the reduction with an example.
 
+\begin{figure}[t]
+    \centering
+    \input{fig/dssat-dec-pomdp-example}
+    \caption{The decision tree of a Dec-POMDP example with two agents and $h=2$.}
+    \label{fig:dssat-dec-pomdp-example}
+\end{figure}
+
 \begin{example}
     Consider a Dec-POMDP with two agents and planning horizon $h=2$.
     Given a joint policy $(\pi_1,\pi_2)$ for Agent $1$ and Agent $2$, let the actions taken at $t=0$ be $\vec{a}^0=(a_1^0,a_2^0)$ and the actions taken at $t=1$ under certain observations $\vec{o}^0=(o_1^0,o_2^0)$ be $\vec{a}^1=(a_1^1,a_2^1)$.
@@ -249,10 +249,10 @@ Below we demonstrate the reduction with an example.
                & +\sum_{\vec{o}^0\in\vec{O}}\sum_{s^1\in S}T(s^0,\vec{a}^0,s^1)\Omega(s^1,\vec{a}^0,\vec{o}^0)r(s^1,\vec{a}^1)].
     \end{align*}
 
-    The decision tree of the converted DSSAT formula is shown in Figure~\ref{fig:example}.
+    The decision tree of the converted DSSAT formula is shown in~\cref{fig:dssat-dec-pomdp-example}.
     At $t=0$, after taking actions $\vec{a}^0$, variable $x_p^0$ splits into two cases: when $x_p^0\equiv \bot$ (left branch), the expected reward $\Delta_0(s^0)r(s^0,\vec{a}^0)$ will be earned for $t=0$; on the other hand, when $x_p^0\equiv \top$ (right branch), observation $\vec{o}^0$ is received, based on which the agents will select their actions $\vec{a}^1$ at $t=1$.
     Again, variable $x_p^1$ will split into two cases, but this time $x_p^1$ is forced to be $\bot$ as it is the last stage.
     The expected reward $\Delta_0(s^0)T(s^0,\vec{a}^0,s^1)\Omega(s^1,\vec{a}^0,\vec{o}^0)r(s^1,\vec{a}^1)$ will be earned under the branch of $x_p^1\equiv\bot$ for $t=1$.
     Note that the randomized quantifiers over variables $x_p^t$, $x_s^t$, and $x_o^t$ will scale the satisfying probability by the factors labelled on the edges, respectively.
-    Therefore, we have to re-scale the satisfying probability by $2^2|S||O_1\times O_2|$, which is predicted by the scaling factor $\kappa_{h}=2^h(|\vec{O}||S|)^{h-1}$ calculated in the proof of Theorem~\ref{thm:reduction}.
+    Therefore, we have to re-scale the satisfying probability by $2^2|S||O_1\times O_2|$, which is predicted by the scaling factor $\kappa_{h}=2^h(|\vec{O}||S|)^{h-1}$ calculated in the proof of~\cref{thm:dssat-dec-pomdp-reduction}.
 \end{example}

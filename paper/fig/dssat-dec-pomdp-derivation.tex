@@ -1,4 +1,5 @@
 \begin{tcolorbox}[colback=white]
+    \scriptsize
     \begin{align*}
         \Pr[\Phi|_{\mathcal{F}_{h+1}}] & =\sum_{v^0,\ldots,v^h}^{2}\sum_{\vec{o}^0,\ldots,\vec{o}^{h-1}}^{|\vec{O}|}\sum_{s^0,\ldots,s^h}^{|S|}\prod_{t=0}^h\Pr[x_p^t \equiv v^t,x_s^t \equiv s^t,\vec{x_o^t} \equiv \vec{o}^t,x_r^t]\prod_{t=0}^{h-1}\Pr[x_T^t,x_\Omega^t|x_p^t \equiv v^t,x_s^t \equiv s^t,\vec{x_o^t}\equiv \vec{o}^t] \\
                                        & =2^{-(h+1)}\sum_{\hat{t}=1}^{h+1}\sum_{\vec{o}^0,\ldots,\vec{o}^{\hat{t}-2}}^{|\vec{O}|}\sum_{s^0,\ldots,s^{\hat{t}-1}}^{|S|}\prod_{t=0}^{\hat{t}-1}\Pr[x_s^t \equiv s^t,\vec{x_o^t}\equiv\vec{o}^t,x_r^t]\prod_{t=0}^{\hat{t}-2}\Pr[x_T^t,x_\Omega^t|v^t,s^t,\vec{o}^t]                         \\
