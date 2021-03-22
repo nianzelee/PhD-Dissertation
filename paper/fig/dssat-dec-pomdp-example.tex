@@ -1,6 +1,8 @@
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.9,level distance=1.5cm]
+  \scriptsize
   \begin{scope}
-    \Tree [.$\exists x_a^{1,0}x_a^{2,0}$
+    \Tree
+    [.$\exists x_a^{1,0}x_a^{2,0}$
     \edge node[auto=right]{$\vec{a}^0=(a_1^0,a_2^0)$}; [.${\random{}x_p^0}$
     \edge node[auto=right]{0.5}; [.${\random{}x_o^{1,0},\random{}x_o^{2,0}}$
     \edge node[auto=right]{$\frac{1}{|O_1\times O_2|}$}; [.$\exists x_a^{1,1}x_a^{2,1}$
@@ -10,10 +12,15 @@
     [.... ]
     [.... ]
     [.... ]
-    [.... ] ]
-    \edge node[auto=left]{0.5}; [.$0$ ] ] ]
-    [.$0\cdots$ ]
-    [.$\cdots 0$ ] ]
+    [.... ]
+    ]
+    \edge node[auto=left]{0.5}; [.$0$ ]
+    ]
+    ]
+    [.$0$ ]
+    [.$\cdots$ ]
+    [.$0$ ]
+    ]
     \edge node[auto=left]{0.5}; [.${\random{}x_o^{1,0},\random{}x_o^{2,0}}$
     \edge node[auto=right]{$\frac{1}{|O_1\times O_2|}$}; [.$\exists x_a^{1,1}x_a^{2,1}$ ]
     [.... ]

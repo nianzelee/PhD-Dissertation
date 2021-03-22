@@ -101,72 +101,102 @@ We note that as the engineering change order (ECO) problem~\cite{JiangDATE20ECOS
 the above DSSAT formulations provide fundamental bases for ECOs of probabilistic and approximate designs.
 
 \subsection{Modeling Dec-POMDP}
+We demonstrate the descriptive power of DSSAT by constructing a polynomial-time reduction from Dec-POMDP to DSSAT.
+Our reduction is an extension of that from POMDP to SSAT proposed by Salmon and Poupart~\cite{Salmon2020}.
 
-We demonstrate the descriptive power of DSSAT to model NEXPTIME-complete problems by constructing a polynomial-time reduction from Dec-POMDP to DSSAT.
-Our reduction is an extension of that from POMDP to SSAT proposed in the previous work~\cite{Salmon2020}.
-
-In essence, given a Dec-POMDP $\mathcal{M}$, we will construct in polynomial time a DSSAT formula $\Phi$ such that there is a joint policy $\vec{\pi}$ for $\mathcal{M}$ with value $V(\vec{\pi})$ if and only if there is a set of Skolem functions $\mathcal{F}$ for $\Phi$ with satisfying probability $\Pr[\Phi|_{\mathcal{F}}]$, and $V(\vec{\pi})=\Pr[\Phi|_{\mathcal{F}}]$.
+In essence, given a Dec-POMDP $\mathcal{M}$,
+we will construct in polynomial time a DSSAT formula $\Qf$
+such that there is a joint policy $\vec{\pi}$ for $\mathcal{M}$ with value $V(\vec{\pi})$
+if and only if there is a set of Skolem functions $\skf$ for $\Qf$
+with satisfying probability $\spb{\pcf{\Qf}{\skf}}$, and $V(\vec{\pi})=\spb{\pcf{\Qf}{\skf}}$.
 
 First we introduce the variables used in construction of the DSSAT formula and their domains.
-To improve readability, we allow a variable $x$ to take values from a finite set $U=\{x_1,\ldots,x_K\}$~\cite{Salmon2020}.
-Under this setting, a randomized quantifier $\random{}$ over variable $x$ specifies a distribution $\Pr[x\equiv x_i]$ for each $x_i\in U$.
+To improve readability, we allow a variable $x$ to take values from a finite set $U=\{x_1,\ldots,x_K\}$.
+Under this setting,
+a randomized quantifier $\random{}$ over variable $x$ specifies a distribution $\Pr[x\equiv x_i]$ for each $x_i\in U$.
 We also define a scaled reward function:
-\[
-    r(s,\vec{a})=\frac{\rho(s,\vec{a})-\min_{s',\vec{a}'}\rho(s',\vec{a}')}{\sum_{s'',\vec{a}''}[\rho(s'',\vec{a}'')-\min_{s',\vec{a}'}\rho(s',\vec{a}')]}
-\]
-such that $r(s,\vec{a})$ forms a distribution over all pairs of $s$ and $\vec{a}$, i.e., $\forall s,\vec{a}.r(s,\vec{a})\geq 0$ and $\sum_{s,\vec{a}}r(s,\vec{a})=1$.
+\begin{align*}
+    r(s,\vec{a})=\frac{\rho(s,\vec{a})-\min\limits_{s',\vec{a}'}\rho(s',\vec{a}')}{\sum\limits_{s'',\vec{a}''}[\rho(s'',\vec{a}'')-\min\limits_{s',\vec{a}'}\rho(s',\vec{a}')]}
+\end{align*}
+such that $r(s,\vec{a})$ forms a distribution over all pairs of $s$ and $\vec{a}$,
+i.e., $\forall s,\vec{a}.r(s,\vec{a})\geq 0$ and $\sum\limits_{s,\vec{a}}r(s,\vec{a})=1$.
 We will use the following variables:
 \begin{itemize}
     \item $x_s^t\in S$: the state at stage $t$,
-    \item $x_a^{i,t}\in A_i$: the action taken by Agent $i$ at stage $t$,
-    \item $x_o^{i,t}\in O_i$: the observation received by Agent $i$ at stage $t$,
+    \item $x_a^{i,t}\in A_i$: the action taken by Agent~$i$ at stage $t$,
+    \item $x_o^{i,t}\in O_i$: the observation received by Agent~$i$ at stage $t$,
     \item $x_r^t\in S\times (A_1\times\ldots\times A_n)$: the reward earned at stage $t$,
     \item $x_T^t\in S$: transition distribution at stage $t$,
     \item $x_\Omega^t\in O_1\times\ldots\times O_n$: observation distribution at stage $t$,
     \item $x_p^t\in \mathbb{B}$: used to sum up rewards across stages.
 \end{itemize}
 
-We represent elements in the sets $S$, $A_i$, and $O_i$ by integers, i.e., $S=\{0,1,\ldots,|S|-1\}$, etc., and use indices $s$, $a_i$, and $o_i$ to iterate through them, respectively.
-On the other hand, a special treatment is required for variables $x_r^t$ and $x_\Omega^t$, as they range over Cartesian products of several sets.
-We will give a unique number to an element in a product set as follows.
+We encode elements in sets $S$, $A_i$, and $O_i$ by integers,
+i.e., $S=\{0,1,\ldots,|S|-1\}$, etc.,
+and use indices $s$, $a_i$, and $o_i$ to iterate through them, respectively.
+On the other hand, a special treatment is required for variables $x_r^t$ and $x_\Omega^t$,
+as they range over Cartesian products of multiple sets.
+We assign a unique number to an element in a product set as follows.
 Consider $\vec{Q}=Q_1\times\ldots\times Q_n$, where each $Q_i$ is a finite set.
 An element $\vec{q}=(q_1,\ldots,q_n)\in \vec{Q}$ is numbered by $N(q_1,\ldots,q_n)=\sum_{i=1}^n q_i(\prod_{j=1}^{i-1}|Q_j|)$.
-In the following construction, variables $x_r^t$ and $x_\Omega^t$ will take values from the numbers given to the elements in $S\times\vec{A}$ and $\vec{O}$ by $N_r(s,\vec{a})$ and $N_\Omega(\vec{o})$, respectively.
+In the following construction,
+variables $x_r^t$ and $x_\Omega^t$ will take values from the numbers given to the elements in $S\times\vec{A}$ and $\vec{O}$ by $N_r(s,\vec{a})$ and $N_\Omega(\vec{o})$, respectively.
 
 We begin by constructing a DSSAT formula for a Dec-POMDP with $h=1$.
-Under this setting, the derivation of the optimal joint policy is simplified to finding an action for each agent such that the expectation value of the reward function is maximized, i.e.,
-\[
-    \vec{a}^*=\argmax_{\vec{a}\in \vec{A}}\sum_{s\in S}\Delta_0(s)r(s,\vec{a})
-\]
-The DSSAT formula below encodes the above equation:
-\[
-    \random{} x_s^0,\random{} x_r^0,\exists x_a^{1,0}(D_{x_a^{1,0}}),\ldots,\exists x_a^{n,0}(D_{x_a^{n,0}}).\phi,
-\]
-where the distribution of $x_s^0$ follows $\Pr[x_s^0 \equiv s]=\Delta_0(s)$, the distribution of $x_r^0$ follows $\Pr[x_r^0 \equiv N_r(s,\vec{a})]=r(s,\vec{a})$, each $D_{x_a^{i,0}}=\emptyset$, and the matrix:
-\[
-    \phi=\bigwedge_{s\in S}\bigwedge_{\vec{a}\in\vec{A}}[x_s^0\equiv s\wedge\bigwedge_{i\in I} x_a^{i,0}\equiv a_i\rightarrow x_r^0\equiv N_r(s,\vec{a})].
-\]
-As the existentially quantified variables have no dependency on randomly quantified variable, the DSSAT formula is effectively an exist-random quantified SSAT formula.
+Under this setting,
+the derivation of an optimal joint policy is simply finding an action for each agent to maximize the expectation value of the reward function, i.e.,
+\begin{align*}
+    \vec{a}^*=\argmax_{\vec{a}\in \vec{A}}\sum_{s\in S}\Delta_0(s)r(s,\vec{a}).
+\end{align*}
 
-For an arbitrary Dec-POMDP with $h>1$, we follow the two steps proposed in the previous work~\cite{Salmon2020}, namely \textit{policy selection} and \textit{policy evaluation}, and adapt the policy selection step for the multi-agent setting in Dec-POMDP.
+The following DSSAT formula encodes the above optimization problem:
+\begin{align*}
+    \random{} x_s^0,\random{} x_r^0,\exists x_a^{1,0}(D_{x_a^{1,0}}),\ldots,\exists x_a^{n,0}(D_{x_a^{n,0}}).\pf,
+\end{align*}
+where the distribution of $x_s^0$ follows $\Pr[x_s^0 \equiv s]=\Delta_0(s)$,
+the distribution of $x_r^0$ follows $\Pr[x_r^0 \equiv N_r(s,\vec{a})]=r(s,\vec{a})$,
+each $D_{x_a^{i,0}}=\emptyset$, and the matrix:
+\begin{align*}
+    \pf=\bigwedge_{s\in S}\bigwedge_{\vec{a}\in\vec{A}}[x_s^0\equiv s\wedge\bigwedge_{i\in I} x_a^{i,0}\equiv a_i\rightarrow x_r^0\equiv N_r(s,\vec{a})].
+\end{align*}
+As the existentially quantified variables have no dependency on randomly quantified variable,
+the DSSAT formula is effectively an exist-random quantified SSAT formula.
 
-In the previous work~\cite{Salmon2020}, an agent's policy selection is encoded by the following prefix (use Agent $i$ as an example):
-\[
-    %\exists x_a^{i,0},\random{} x_p^0,\random{} x_o^{i,0},\ldots,\exists x_a^{i,h-2},\random{} x_p^{h-2},\random{} x_o^{i,h-2},\exists x_a^{i,h-1},\random{} x_p^{h-1}.
-    \exists x_a^{i,0},\random{} x_p^0,\random{} x_o^{i,0},\ldots,\random{} x_p^{h-2},\random{} x_o^{i,h-2},\exists x_a^{i,h-1},\random{} x_p^{h-1}.
-\]
-In the above quantification, variable $x_p^t$ is introduced to sum up rewards earned at different stages.
-It takes values from $\mathbb{B}$, and follows a uniform distribution, i.e., $\Pr[x_p^t \equiv \top]=\Pr[x_p^t \equiv \bot]=0.5$.
-When $x_p^t \equiv \bot$, the process is stopped and the reward at stage $t$ is earned; when $x_p^t \equiv \top$, the process is continued to stage $t+1$.
+For an arbitrary Dec-POMDP with $h>1$,
+we follow the two steps proposed in the previous work~\cite{Salmon2020},
+namely \textit{policy selection} and \textit{policy evaluation},
+and adapt the policy selection step for the multi-agent setting in Dec-POMDP.
+
+In the previous work~\cite{Salmon2020},
+an agent's policy selection is encoded by the following prefix (use Agent~$i$ as an example):
+\begin{align*}
+    \exists x_a^{i,0},\random{} x_p^0,\random{} x_o^{i,0},\ldots,\exists x_a^{i,h-2},\random{} x_p^{h-2},\random{} x_o^{i,h-2},\exists x_a^{i,h-1},\random{} x_p^{h-1}.
+\end{align*}
+In the above quantification,
+variable $x_p^t$ is introduced to sum up rewards earned at different stages.
+It takes values from $\booldom$,
+and follows a uniform distribution,
+i.e., $\Pr[x_p^t\equiv\top]=\Pr[x_p^t\equiv\bot]=0.5$.
+When $x_p^t\equiv\bot$,
+the process is stopped and the reward at stage $t$ is earned;
+when $x_p^t\equiv\top$,
+the process is continued to stage $t+1$.
 Note that variables $\{x_p^t\}$ are shared across all agents.
-With the help of variable $x_p^t$, rewards earned at different stages are summed up with an equal weight $2^{-h}$.
-Variable $x_o^{i,t}$ also follows a uniform distribution $\Pr[x_o^{i,t} \equiv o_i]=|O_i|^{-1}$, which scales the satisfying probability by $|O_i|^{-1}$ at each stage.
+With the help of variable $x_p^t$,
+rewards earned at different stages are summed up with an equal weight $2^{-h}$.
+Variable $x_o^{i,t}$ also follows a uniform distribution $\Pr[x_o^{i,t} \equiv o_i]=|O_i|^{-1}$,
+which scales the satisfying probability by $|O_i|^{-1}$ at each stage.
 Therefore, we need to re-scale the satisfying probability accordingly in order to obtain the correct satisfying probability corresponding to the value of a joint policy.
 The scaling factor will be derived in the proof of~\cref{thm:dssat-dec-pomdp-reduction}.
 
-As the actions of the agents can only depend on their own observation history, for the selection of a joint policy it is not obvious how to combine the quantification, i.e., the selection of a policy, of each agent into a linearly ordered prefix required by SSAT, without suffering an exponential translation cost.
+As the actions of the agents can only depend on their own observation history,
+for the selection of a joint policy it is not obvious how to combine the quantification of each agent,
+i.e., the selection of an individual policy,
+into a linearly ordered prefix required by SSAT,
+without suffering an exponential translation cost.
 On the other hand, DSSAT allows to specify the dependency of an existentially quantified variable freely and is suitable to encode the selection of a joint policy.
-In the prefix of the DSSAT formula, variable $x_a^{i,t}$ depends on $D_{x_a^{i,t}}=\{x_o^{i,0},\ldots,x_o^{i,t-1},x_p^0,\ldots,x_p^{t-1}\}$.
+In the prefix of the DSSAT formula,
+variable $x_a^{i,t}$ depends on $D_{x_a^{i,t}}=\{x_o^{i,0},\ldots,x_o^{i,t-1},x_p^0,\ldots,x_p^{t-1}\}$.
 
 Next, the policy evaluation step is exactly the same as that in the previous work~\cite{Salmon2020}.
 The following quantification computes the value of a joint policy:
@@ -174,8 +204,12 @@ The following quantification computes the value of a joint policy:
     \random{} x_s^t, \random{} x_r^t, t=0,\ldots,h-1 \\
     \random{} x_T^t, \random{} x_\Omega^t, t=0,\ldots,h-2
 \end{align*}
-Variables $x_s^t$ follow a uniform distribution $\Pr[x_s^t \equiv s]=|S|^{-1}$ except for variable $x_s^0$, which follows the initial distribution specified by $\Pr[x_s^0 \equiv s]=\Delta_0(s)$; variables $x_r^t$ follow the distribution of the reward function $\Pr[x_r^t \equiv N_r(s,\vec{a})]=r(s,\vec{a})$; variables $x_T^t$ follow the state transition distribution $\Pr[x_{T_{s,\vec{a}}}^t \equiv s']=T(s,\vec{a},s')$; variables $x_\Omega^t$ follow the observation distribution $\Pr[x_{\Omega_{s',\vec{a}}}^t \equiv N_\Omega(\vec{o})]=\Omega(s',\vec{a},\vec{o})$.
-Note that these variables encode the random mechanism of a Dec-POMDP and are hidden from agents.
+Variables $x_s^t$ follow a uniform distribution $\Pr[x_s^t \equiv s]=|S|^{-1}$ except for variable $x_s^0$,
+which follows the initial distribution specified by $\Pr[x_s^0 \equiv s]=\Delta_0(s)$;
+variables $x_r^t$ follow the distribution of the reward function $\Pr[x_r^t \equiv N_r(s,\vec{a})]=r(s,\vec{a})$;
+variables $x_T^t$ follow the state transition distribution $\Pr[x_{T_{s,\vec{a}}}^t \equiv s']=T(s,\vec{a},s')$;
+variables $x_\Omega^t$ follow the observation distribution $\Pr[x_{\Omega_{s',\vec{a}}}^t \equiv N_\Omega(\vec{o})]=\Omega(s',\vec{a},\vec{o})$.
+Note that these variables encode the random mechanism of a Dec-POMDP and are hidden from the agents.
 That is, variables $x_a^{i,t}$ do not depend on the above variables.
 
 \begin{figure}[t]
@@ -200,35 +234,62 @@ The formulas to encode $\mathcal{M}$ are listed in~\cref{fig:dssat-dec-pomdp-for
     \label{fig:dssat-dec-pomdp-derivation}
 \end{figure}
 
+The following theorem states the correctness of the reduction.
 \begin{theorem}\label{thm:dssat-dec-pomdp-reduction}
-    The above reduction maps a Dec-POMDP $\mathcal{M}$ to a DSSAT formula $\Phi$, such that a joint policy $\vec{\pi}$ exists for $\mathcal{M}$ if and only if a set of Skolem functions $\mathcal{F}$ exists for $\Phi$, with $V(\vec{\pi})=\Pr[\Phi|_{\mathcal{F}}]$.
+    The above reduction maps a Dec-POMDP $\mathcal{M}$ to a DSSAT formula $\Phi$,
+    such that a joint policy $\vec{\pi}$ exists for $\mathcal{M}$ if and only if
+    a set of Skolem functions $\skf$ exists for $\Qf$, with $V(\vec{\pi})=\spb{\pcf{\Qf}{\skf}}$.
 \end{theorem}
 \begin{proof}
-    Given an arbitrary Dec-POMDP $\mathcal{M}$, a proof using mathematical induction over its planning horizon $h$ is as follows.
+    Given an arbitrary Dec-POMDP $\mathcal{M}$,
+    we prove the statement via mathematical induction over the planning horizon $h$ as follows.
 
-    For the base case $h=1$, to prove the ``only if'' direction, consider a joint policy $\vec{\pi}$ for $\mathcal{M}$ which specifies $\vec{a}=(a_1,\ldots,a_n)$ where agent $i$ will take action $a_i$. For this joint policy, the value is computed as $V(\vec{\pi})=\sum_{s \in S}\Delta_0(s)r(s,\vec{a})$. Based on $\vec{\pi}$, we construct a set of Skolem functions $\mathcal{F}$ where $x_a^{i,0}=a_i$ for each $i\in I$. To compute $\Pr[\Phi|_{\mathcal{F}}]$, we cofactor the matrix with $\mathcal{F}$ and arrive at the following CNF formula:
-    \[
-        \bigwedge_{s\in S}[x_s^0\neq s \vee x_r^0 \equiv N_r(s,\vec{a})],
-    \]
-    and the satisfying probability of $\Phi$ with respect to $\mathcal{F}$ is
+    For the base case $h=1$,
+    to prove the ``only if'' direction,
+    consider a joint policy $\vec{\pi}$ for $\mathcal{M}$ that specifies $\vec{a}=(a_1,\ldots,a_n)$
+    where Agent~$i$ takes action $a_i$.
+    For this joint policy,
+    the value is computed as $V(\vec{\pi})=\sum_{s \in S}\Delta_0(s)r(s,\vec{a})$.
+    Based on $\vec{\pi}$,
+    we construct a set of Skolem functions $\skf$ where $x_a^{i,0}=a_i$ for each $i\in I$.
+    To compute $\spb{\pcf{\Qf}{\skf}}$,
+    we cofactor the matrix with $\skf$ and arrive at the following CNF formula:
     \begin{align*}
-        \Pr[\Phi|_{\mathcal{F}}] & =\sum_{s\in S}\Pr[x_s^0 \equiv s]\Pr[x_r^0 \equiv N_r(s,\vec{a})] \\
-                                 & =\sum_{s\in S}\Delta_0(s)r(s,\vec{a})=V(\vec{\pi})
+        \bigwedge_{s\in S}[x_s^0\neq s \vee x_r^0 \equiv N_r(s,\vec{a})],
     \end{align*}
+    and the satisfying probability of $\Qf$ with respect to $\skf$ is
+    \begin{align*}
+        \spb{\pcf{\Qf}{\skf}}=
+        \sum_{s\in S}\Pr[x_s^0 \equiv s]\Pr[x_r^0 \equiv N_r(s,\vec{a})]=
+        \sum_{s\in S}\Delta_0(s)r(s,\vec{a})=V(\vec{\pi}).
+    \end{align*}
+    Note that only equalities are involved in the above argument.
+    The reasoning steps can hence be reversed to prove the ``if'' direction.
 
-    Note in the above argument, only equalities are involved, and hence can be reversed to prove the ``if'' direction.
+    For the induction step,
+    first assume that the statement holds for a planning horizon $h>1$.
+    For a planning horizon of $h+1$,
+    consider a joint policy $\vec{\pi}_{h+1}$ with value $V(\vec{\pi}_{h+1})$.
+    Note that as a joint policy is a mapping from observation histories to actions,
+    we can build a corresponding set of Skolem functions $\skf_{h+1}$ to simulate joint policy $\vec{\pi}_{h+1}$ for the DSSAT formula.
+    The derivation of satisfying probability with respect to $\skf_{h+1}$ is shown in~\cref{fig:dssat-dec-pomdp-derivation}.
+    Note that to obtain the correct value of the joint policy,
+    we need to re-scale the satisfying probability by a scaling factor $\kappa_{h+1}=2^{h+1}(|\vec{O}||S|)^{h}$.
+    As only equalities are involved in the derivation in~\cref{fig:dssat-dec-pomdp-derivation},
+    the ``if'' direction is also proved.
 
-    For the induction case $h>1$, first assume that the statement holds. For a planning horizon of $h+1$, consider a joint policy $\vec{\pi}_{h+1}$ with value $V(\vec{\pi}_{h+1})$. Note that as a joint policy is a mapping from observation histories to actions, we can build a corresponding set of Skolem functions $\mathcal{F}_{h+1}$ to simulate joint policy $\vec{\pi}_{h+1}$ for the DSSAT formula. The derivation of satisfying probability with respect to $\mathcal{F}_{h+1}$ is shown in~\cref{fig:dssat-dec-pomdp-derivation}. Note that to obtain the correct value of the joint policy, we need to re-scale the satisfying probability by a scaling factor $\kappa_{h+1}=2^{h+1}(|\vec{O}||S|)^{h}$.
-
-    Once again, as only equalities are involved in the derivation in~\cref{fig:dssat-dec-pomdp-derivation}, the ``if'' direction is also proved.
-
-    As $\Pr[\Phi|_{\mathcal{F}_{h+1}}]=V(\vec{\pi}_{h+1})$, the theorem is proved according to the principle of mathematical induction.
+    Because $\spb{\pcf{\Qf}{\skf_{h+1}}}=V(\vec{\pi}_{h+1})$ is established,
+    the theorem is proved according to the principle of mathematical induction.
 \end{proof}
 
-\subsection{Discussion}
+\subsubsection{Discussion}
 Below we count the numbers of variables and clauses in the resulting DSSAT formula with respect to the input size of the given Dec-POMDP.
-For one stage, there are $3+2(|I|+|S||\vec{A}|)$ variables, and therefore in total the number of variables is $O(h(|I|+|S||A|))$ asymptotically.
-On the other hand, the number of clauses per stage is $2+|I|+|S||\vec{A}|+|S|^2|\vec{A}|+|S||\vec{A}||\vec{O}|$, and hence the total number of clauses is $O(h(|I|+|S||\vec{A}|(|S|+|\vec{O}|))$.
+For a stage,
+there are $3+2(|I|+|S||\vec{A}|)$ variables,
+and therefore in total the number of variables is $O(h(|I|+|S||A|))$ asymptotically.
+On the other hand,
+the number of clauses per stage is $2+|I|+|S||\vec{A}|+|S|^2|\vec{A}|+|S||\vec{A}||\vec{O}|$,
+and hence the total number of clauses is $O(h(|I|+|S||\vec{A}|(|S|+|\vec{O}|))$.
 Overall, we show that the proposed reduction is polynomial-time with respect to the input size of the Dec-POMDP.
 
 Below we demonstrate the reduction with an example.
@@ -242,17 +303,30 @@ Below we demonstrate the reduction with an example.
 
 \begin{example}
     Consider a Dec-POMDP with two agents and planning horizon $h=2$.
-    Given a joint policy $(\pi_1,\pi_2)$ for Agent $1$ and Agent $2$, let the actions taken at $t=0$ be $\vec{a}^0=(a_1^0,a_2^0)$ and the actions taken at $t=1$ under certain observations $\vec{o}^0=(o_1^0,o_2^0)$ be $\vec{a}^1=(a_1^1,a_2^1)$.
-    The value of this joint policy is computed by~\cref{eq:dssat-bellman} as
+    Given a joint policy $(\pi_1,\pi_2)$ for Agent~$1$ and Agent~$2$,
+    let the actions taken at $t=0$ be $\vec{a}^0=(a_1^0,a_2^0)$ and
+    the actions taken at $t=1$ under observations $\vec{o}^0=(o_1^0,o_2^0)$ be $\vec{a}^1=(a_1^1,a_2^1)$.
+    The value of this joint policy is computed by~\cref{eq:dssat-bellman} as:
     \begin{align*}
-        V(\pi) & =\sum_{s^0\in S}\Delta_0(s^0)[r(s^0,\vec{a}^0)                                                                  \\
-               & +\sum_{\vec{o}^0\in\vec{O}}\sum_{s^1\in S}T(s^0,\vec{a}^0,s^1)\Omega(s^1,\vec{a}^0,\vec{o}^0)r(s^1,\vec{a}^1)].
+        V(\pi)=
+        \sum_{s^0\in S}\Delta_0(s^0)[r(s^0,\vec{a}^0)+
+            \sum_{\vec{o}^0\in\vec{O}}\sum_{s^1\in S}T(s^0,\vec{a}^0,s^1)\Omega(s^1,\vec{a}^0,\vec{o}^0)r(s^1,\vec{a}^1)].
     \end{align*}
 
     The decision tree of the converted DSSAT formula is shown in~\cref{fig:dssat-dec-pomdp-example}.
-    At $t=0$, after taking actions $\vec{a}^0$, variable $x_p^0$ splits into two cases: when $x_p^0\equiv \bot$ (left branch), the expected reward $\Delta_0(s^0)r(s^0,\vec{a}^0)$ will be earned for $t=0$; on the other hand, when $x_p^0\equiv \top$ (right branch), observation $\vec{o}^0$ is received, based on which the agents will select their actions $\vec{a}^1$ at $t=1$.
-    Again, variable $x_p^1$ will split into two cases, but this time $x_p^1$ is forced to be $\bot$ as it is the last stage.
+    At $t=0$,
+    after taking actions $\vec{a}^0$,
+    variable $x_p^0$ splits into two cases:
+    when $x_p^0\equiv\bot$ (left branch),
+    the expected reward $\Delta_0(s^0)r(s^0,\vec{a}^0)$ will be earned for $t=0$;
+    on the other hand,
+    when $x_p^0\equiv\top$ (right branch),
+    observation $\vec{o}^0$ is received,
+    based on which the agents will select their actions $\vec{a}^1$ at $t=1$.
+    Again, variable $x_p^1$ will split into two cases,
+    but this time $x_p^1$ is forced to be $\bot$ as it is the last stage.
     The expected reward $\Delta_0(s^0)T(s^0,\vec{a}^0,s^1)\Omega(s^1,\vec{a}^0,\vec{o}^0)r(s^1,\vec{a}^1)$ will be earned under the branch of $x_p^1\equiv\bot$ for $t=1$.
     Note that the randomized quantifiers over variables $x_p^t$, $x_s^t$, and $x_o^t$ will scale the satisfying probability by the factors labelled on the edges, respectively.
-    Therefore, we have to re-scale the satisfying probability by $2^2|S||O_1\times O_2|$, which is predicted by the scaling factor $\kappa_{h}=2^h(|\vec{O}||S|)^{h-1}$ calculated in the proof of~\cref{thm:dssat-dec-pomdp-reduction}.
+    Therefore, we have to re-scale the satisfying probability by $2^2|S||O_1\times O_2|$,
+    which is predicted by the scaling factor $\kappa_{h}=2^h(|\vec{O}||S|)^{h-1}$ calculated in the proof of~\cref{thm:dssat-dec-pomdp-reduction}.
 \end{example}
