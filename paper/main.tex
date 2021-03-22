@@ -30,13 +30,17 @@
 
 %---------------------------------------------------
 
-\clearpage
-\addcontentsline{toc}{chapter}{\numberline{}List of Figures}
+% Add list of figures (handled by package tocbibind)
 \listoffigures
-\clearpage
-\addcontentsline{toc}{chapter}{\numberline{}List of Tables}
+% Add list of tables (handled by package tocbibind)
 \listoftables
-
+% Add list of algorithms (manually register this list to ToC)
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+% Add bibliography (handled by package tocbibind)
 \bibliographystyle{acm}
 \bibliography{nzlee,prob}
+
 \end{document}

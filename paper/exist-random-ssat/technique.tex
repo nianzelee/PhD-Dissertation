@@ -42,7 +42,7 @@ The above idea gives rise to~\cref{alg:erssat} for E-MAJSAT formulas.
 (\Cref{code:erssat-subsume-table,code:erssat-minimal-clauses,code:erssat-subsume-clauses,code:erssat-discard-literals} describe the enhancement techniques of the proposed algorithm, which will be discussed later.)
 
 \begin{algorithm}[p]
-    \caption{Solving E-MAJSAT formulas}
+    \caption{Solving exist-random quantified SSAT (E-MAJSAT) formulas}
     \label{alg:erssat}
     \begin{algorithmic}[1]
         \REQUIRE $\Qf=\exists X,\random{} Y.\pf(X,Y)$
@@ -179,7 +179,7 @@ The subroutine $\texttt{SelectMinimalClauses}$ for the technique is described in
 The following example illustrates how this technique improves the solving efficiency.
 
 \begin{algorithm}[ht]
-    \caption{\texttt{SelectMinimalClauses}}
+    \caption{Subroutine of~\cref{alg:erssat}: \texttt{SelectMinimalClauses}}
     \label{alg:erssat-minimal}
     \begin{algorithmic}[1]
         \REQUIRE The matrix $\pf(X,Y)$ and selection relation $\select(X,S)$
@@ -234,7 +234,7 @@ and removes every subsumed clause via subroutine $\texttt{CheckNotSubsumed}$.
 The following example explains how the subsumption relation shortens a learnt clause.
 
 \begin{algorithm}[ht]
-    \caption{\texttt{RemoveSubsumedClauses}}
+    \caption{Subroutine of~\cref{alg:erssat}: \texttt{RemoveSubsumedClauses}}
     \label{alg:erssat-subsume}
     \begin{algorithmic}[1]
         \REQUIRE The selected clauses $\pcf{\pf}{\as}$ and a subsumption table \texttt{s-table}
@@ -323,7 +323,7 @@ Notice that the current maximum satisfying probability is \textit{not} updated b
 because the value only reflects an upper bound for satisfying probabilities under the partial assignment $\nu$.
 
 \begin{algorithm}[ht]
-    \caption{\texttt{DiscardLiterals}}
+    \caption{Subroutine of~\cref{alg:erssat}: \texttt{DiscardLiterals}}
     \label{alg:erssat-partial}
     \begin{algorithmic}[1]
         \REQUIRE The matrix $\phi$, a learnt clause $C_S$, and the current maximum $prob$
