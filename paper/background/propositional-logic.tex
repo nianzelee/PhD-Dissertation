@@ -54,7 +54,6 @@ Given two Boolean formulas $\pf_1$ and $\pf_2$ over a same set $V$ of variables,
 we write $\pf_1\models\pf_2$ if the following condition holds:
 $\forall\as\in\av{V}.\as\models\pf_1\limply\as\models\pf_2$.
 
-
 A Boolean formula $\pf$ is \textit{satisfiable} if it has a satisfying complete assignment.
 Otherwise, $\pf$ is \textit{unsatisfiable}.
 A Boolean formula $\pf$ is a \textit{tautology} if the following condition holds:
@@ -64,5 +63,19 @@ It is a well-known NP-complete~\cite{Cook1971} problem.
 We write $\sat{\pf}$ (resp. $\unsat{\pf}$) to indicate $\pf$ is satisfiable (resp. unsatisfiable).
 A satisfying complete assignment of $\pf$ is also called a \textit{model} of $\pf$, which is denoted by $\model{\pf}$.
 
+A set $\base\subseteq\vf{\pf}$ is a \textit{base set} for $\pf$ if
+for any (partial) assignment $\as^+$ over $\base$,
+there exists at most one assignment $\mu$ over $\vf{\pf}\setminus\base$
+such that $\pf$ is satisfied by the combined assignment of $\as^+$ and $\mu$ over $\vf{\pf}$.
+Observe that, given any Boolean formula $\pf$,
+a base set must exist ($\vf{\pf}$ is a trivial base set of $\pf$) but may not be unique.
+Let $\as^+$ be an assignment over a base set $\base\subseteq\vf{\pf}$.
+If there exists an assignment $\mu$ over $\vf{\pf}\setminus\base$
+such that the combined assignment $\nu$ satisfies $\pf$,
+then we say that $\pf$ is satisfiable under $\as^+$ and write $\as^+\models\pf$ to mean $\nu\models\pf$.
+If there does not exist such an assignment $\mu$ over $\vf{\pf}\setminus\base$,
+then $\pf$ is unsatisfiable under $\as^+$, denoted by $\as^+\not\models\pf$.
+
 An $n$-variable \textit{Boolean function} is a mapping from $\booldom^n$ to $\booldom$.
 Note that a Boolean formula $\pf$ induces a Boolean function with a domain $\av{\vf{\pf}}$.
+We shall not distinguish between a Boolean formula and its induced Boolean function.

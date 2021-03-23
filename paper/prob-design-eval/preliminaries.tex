@@ -1,0 +1,67 @@
+\section{Preliminaries}
+\label{sect:prob-preliminaries}
+
+\subsection{Boolean network}
+\label{sect:prob-preliminaries-boolean-network}
+
+A \textit{(combinational) Boolean network} is a directed acyclic graph $G=(V,E)$,
+with a set $V$ of vertices and a set $E\subseteq V \times V$ of edges.
+Two non-empty disjoint subsets $V_I$ and $V_O$ of $V$ are identified:
+a vertex $v \in V_I$ (resp. $V_O$) is referred to as a \textit{primary input} (PI) (resp. \textit{primary output} (PO)).
+Each vertex $v \in V$ is associated with a Boolean variable $b_v$.
+Each vertex $v \in V \setminus V_I$ is associated with a Boolean function $f_v$.
+An edge $(u,v)\in E$ indicates $f_v$ refers to $b_u$ as an input variable;
+$u$ is called a \textit{fanin} of $v$, and $v$ a \textit{fanout} of $u$.
+The valuation of the Boolean variable $b_v$ of vertex $v$ is as follows:
+if $v$ is a PI, $b_v$ is given by external signals; otherwise, $b_v$ equals the value of $f_v$.
+To ease readability, we will not distinguish a vertex $v$ and its corresponding Boolean variable $b_v$.
+We will simply denote $b_v$ with $v$.
+
+Note that a Boolean network can be converted in linear time to a CNF formula through Tseitin transformation~\cite{Tseitin1983}.
+Consider a Boolean network $G$,
+and let $X$ denote the set of PI variables of $G$.
+During Tseitin transformation,
+new variables will be introduced for every vertex $v\in V\setminus V_I$.
+Let $Z$ denote the set of these fresh variables.
+The resultant formula $\pf_G(X,Z)$ obtained from Tseitin transformation encodes the behavior of the Boolean network $G$.
+Observe that $X$ is a base set for $\pf_G$.
+This is because once the PI variables are decided by an assignment $\as^+$ over $X$,
+the values for the other variables will be propagated according to the behavior of the Boolean network.
+Therefore, at most one assignment $\mu$ over $Z$ (the one with the consistent variable evaluation to the Boolean network) is able to satisfy $\pf_G$.
+
+\subsection{Probability and random variables}
+\label{sect:prob-preliminaries-random-variable}
+To characterize the behavior of a probabilistic design,
+we take advantage of Bernoulli random variables.
+In the following, we provide basic definitions of random variables.
+
+Consider an experiment with a sample space $S$ and a probability measure $\Pr[\cdot]$.
+A \textit{random variable} $X$ is a mapping from an outcome in $S$ to a real number.
+The \textit{probability mass function} (PMF) $P_X$ of $X$
+is defined by $P_X(x)=\Pr[\{s \mid X(s)=x\}]$.
+
+A random variable $X$ is called a $\textit{Bernoulli}(p)$ \textit{random variable} with parameter $p\in[0,1]$,
+denoted by $X\sim\textit{Bernoulli}(p)$,
+if the PMF of $X$ has the form:
+\begin{align*}
+    P_X(x)=
+    \left\{
+    \begin{array}{ll}
+        p,   & \mbox{ if } x = 1,      \\
+        1-p, & \mbox{ else if } x = 0, \\
+        0,   & \mbox{ otherwise. }
+    \end{array}
+    \right.
+\end{align*}
+Note that a Bernoulli random variable maps every outcome in a sample space to either $0$ or $1$.
+Therefore, it is suitable to characterize experiments with binary outcomes.
+
+For a wire (an edge) of a circuit (Boolean network),
+its value is either \true or \false.
+A Bernoulli random variable in this context maps \true and \false to real numbers $1$ and $0$, respectively.
+The corresponding parameter $p$ of the random variable is the probability for the wire to valuate to \true.
+On the other hand, for a gate (a vertex) of a circuit,
+its operation has two outcomes: correct and erroneous.
+A Bernoulli random variable in this context maps erroneous and correct operations to real numbers $1$ and $0$, respectively.
+The corresponding parameter $p$ of the random variable is the probability of erroneous operation,
+i.e., the error rate, of the gate.
