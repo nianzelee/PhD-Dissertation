@@ -1,0 +1,17 @@
+\begin{circuitikz}
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+    %\draw[step=1cm,gray,very thin] (-6,-6) grid (6,6); % For finding coordinates
+    % Logic gates
+    \node[nand port] (erroneous-nand) at (-3,0) {$p$};
+    \node[nand port,right = 4cm of erroneous-nand] (error-free-nand) {};
+    \node[xor port,right = of error-free-nand, anchor=in 1] (xor) {};
+    % Inputs
+    \draw (xor.in 2) -- ++(left:0.5cm) node{};
+    % Wires
+    \draw (error-free-nand.out) -- (xor.in 1);
+    % Labels
+    \node at (3,-0.6) {$z$};
+    \node at (3,-1.5) {$B_z\sim\textit{Bernoulli(p)}$};
+    % Arrows
+    \draw[arrow] (-2,0) -- (0,0);
+\end{circuitikz}
