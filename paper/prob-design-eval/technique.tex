@@ -1,2 +1,230 @@
-\section{Solutions}
+\section{Solving probabilistic property evaluation}
 \label{sect:prob-solutions}
+
+We propose different solutions to the MPPE and PPE problems.
+For the former, we resort to SSAT solving.
+For the latter, in addition to SSAT solving,
+we present solutions based on signal probability calculation,
+weighted model counting,
+and probabilistic model checking.
+
+\subsection{Solving MPPE and PPE via SSAT}
+Note that the entire miter SPBN can be directly converted to a CNF formula by Tseitin transformation~\cite{Tseitin1983}
+since all vertices except for those in $X,Z,W$ are error-free after the standardization.
+In the following,
+let $\pf_M$ be the CNF formula converted from the miter SPBN $G_M$,
+which contains vertex sets
+$X=\{x_1,\ldots,x_n\}$,
+$Y=\{y_1,\ldots,y_m\}$,
+$Z=\{z_1,\ldots,z_l\}$, and
+$W=\{w_1,\ldots,w_q\}$ as shown in~\cref{fig:prob-spbn-miter}.
+Observe that $X \cup Z \cup W$ is a base set for $\pf_M$.
+Given a parameter assignment $\pi$ to $X$,
+we define the corresponding weighting function $\wt:X\cup Z\cup W\mapsto[0,1]$ for $\pf_M$ as
+$\wt(x_i)=\pi(x_i)$,
+$\wt(y_j)=p_{y_j}$, and
+$\wt(w_k)=p_{w_k}$ for all
+$x_i \in X$,
+$y_j \in Y$, and
+$w_k \in W$.
+The weight assignment $\wt$ will be used throughout our discussion.
+
+\begin{theorem}
+    \label{thm:prob-ppe-ssat}
+    The probabilistic property evaluation (PPE) of $\pf_M$ under a parameter assignment $\pi$ can be expressed
+    by the following SSAT formula $\Qf_\mathrm{PPE}(\pi)$:
+    \begin{align}
+        \label{eq:prob-ppe-ssat}
+        \random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n,
+        \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+        \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+        \exists y_1,\ldots,\exists y_m.
+        \pf_M.
+    \end{align}
+\end{theorem}
+\begin{proof}
+    Let $A$ be the event $\pf_M=\top$ and $\Lambda=\av{X \cup Z \cup W}$.
+    By the law of total probability,
+    $\Pr[A]=\sum\limits_{\as\in\Lambda}\Pr[\as]\Pr[A\mid\as]$,
+    where $\Pr[\as]=\wt(\as)$ ($\wt$ is the weighting function defined previously) and
+    $\Pr[A\mid\as]$ is the conditional probability of event $A$ under the assignment $\as$.
+    Notice that $\Pr[A\mid\as]=\pcf{\pf_M}{\as}$ since
+    $X \cup Z \cup W$ is a base set for $\pf_M$.
+    As a result,
+    $\Pr[A]=\sum\limits_{\as\in\Lambda}\wt(\as)\pcf{\pf_M}{\as}$,
+    which equals the satisfying probability of the SSAT formula $\Qf_\mathrm{PPE}(\pi)$.
+\end{proof}
+
+\begin{theorem}
+    \label{thm:prob-mppe-ssat}
+    The maximum probabilistic property evaluation (MPPE) of $\pf_M$ can be expressed
+    by the following SSAT formula $\Qf_\mathrm{MPPE}$:
+    \begin{align}
+        \label{eq:prob-mppe-ssat}
+        \exists x_1,\ldots,\exists x_n,
+        \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+        \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+        \exists y_1,\ldots,\exists y_m.
+        \pf_M.
+    \end{align}
+\end{theorem}
+\begin{proof}
+    By the same argument in the proof of~\cref{thm:prob-ppe-ssat},
+    given an assignment $\as_X$ over $X$,
+    the SSAT formula:
+    \begin{align*}
+        \Qf_\mathrm{MPPE}(\as_X)=
+        \random{p_{z_1}}{z_1},\ldots,\random{p_{z_l}}{z_l},
+        \random{p_{w_1}}{w_1},\ldots,\random{p_{w_q}}{w_q},
+        \exists y_1,\ldots,\exists y_m.
+        \pcf{\pf_M}{\as_X}
+    \end{align*}
+    computes the satisfying probability of the miter under the assignment $\as_X$.
+    According to the SSAT semantics,
+    the outermost existential quantification of primary inputs $X$
+    ensures to find an optimum assignment $\as_X^*$
+    such that the satisfying probability of $\Qf_\mathrm{MPPE}(\as_X^*)$ is maximized.
+    Hence the SSAT formula $\Qf_\mathrm{MPPE}$ computes the maximum satisfying probability of the miter.
+\end{proof}
+
+Note that the only difference between $\Qf_\mathrm{MPPE}$ and $\Qf_\mathrm{PPE}$
+lies in the quantification for the primary inputs $X$.
+Although SSAT provides a convenient language for expressing both MPPE and PPE problems,
+its solvers to date remain immature to handle formulas of practical sizes in our considered application.
+One of the main inefficiencies can be attributed to representing $\pf_M$ in CNF,
+which results in the additional quantification of the intermediate circuit variables $Y=\{y_1,\ldots,y_m\}$.
+It motivates the development of a new SSAT solver as we present below.
+
+\subsubsection{BDD-based SSAT solving}
+
+\begin{algorithm}[t]
+    \caption{BDD-based SSAT solving: \texttt{BddSsatSolve}}
+    \label{alg:bddssat}
+    \begin{algorithmic}[1]
+        \REQUIRE $\Qf=Q_1 v_1,\ldots,Q_n v_n.\pf$
+        \ENSURE $\spb{\Qf}$
+        \STATE $N := \texttt{BuildReducedOrderedBdd}(\pf,(v_1,\ldots,v_n))$\label{code:bddssat-build-bdd}
+        \STATE $Q := Q_1 v_1,\ldots,Q_n v_n$
+        \RETURN $\texttt{BddSsatRecur}(N,Q)$\label{code:bddssat-recursive}
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+    \caption{The recursive step of \texttt{BddSsatSolve}: \texttt{BddSsatRecur}}
+    \label{alg:bddssat-recursive}
+    \begin{algorithmic}[1]
+        \REQUIRE An ROBDD node $N$ and a prefix $Q$
+        \ENSURE $\spb{N=\top}$ under $Q$
+        \IF{($N$ is a terminal node)}\label{code:bddssat-recursive-constant-start}
+        \RETURN $\nodesp{N}$\label{code:bddssat-recursive-constant-end}
+        \ENDIF
+        \IF{($\nodevisit{N}=\false$)}
+        \IF{($Q(\nodevar{N})=\random{p}$)}
+        \STATE $\nodesp{N}:=(1-p)\cdot\texttt{BddSsatRecur}(\nodeelse{N},Q)+p\cdot\texttt{BddSsatRecur}(\nodethen{N},Q)$
+        \label{code:bddssat-recursive-random}
+        \ELSE
+        \STATE $\nodesp{N}:=\max\{\texttt{BddSsatRecur}(\nodeelse{N},Q),\texttt{BddSsatRecur}(\nodethen{N},Q)\}$
+        \label{code:bddssat-recursive-exist}
+        \ENDIF
+        \STATE $\nodevisit{N} := \true$
+        \ENDIF
+        \RETURN $\nodesp{N}$
+    \end{algorithmic}
+\end{algorithm}
+
+We propose a BDD-based solver to enhance the scalability of SSAT solving.
+The procedure \texttt{BddSsatSolve} is outlined in~\cref{alg:bddssat},
+which takes as input an SSAT formula $\Qf=Q_1 v_1,\ldots,Q_n v_n.\pf$.
+At~\cref{code:bddssat-build-bdd},
+a \textit{reduced ordered BDD} (ROBDD) of $\pf$ is built with a variable ordering following the quantification order.
+At~\cref{code:bddssat-recursive},
+a recursive procedure \texttt{BddSsatRecur},
+sketched in~\cref{alg:bddssat-recursive},
+is called to calculate the satisfying probability of $\Qf$.
+In the pseudo code, for an ROBDD node $N$,
+$\nodethen{N}$ and $\nodeelse{N}$ denote its $\mathrm{then}$- and $\mathrm{else}$-child, respectively;
+$\nodeval{N}$ equals 0 (resp. 1) if $N$ is a 0-terminal (resp. 1-terminal) node;
+$\nodevisit{N}$ is a flag initialized to \false and records whether $N$ has been processed;
+$\nodevar{N}$ and $\nodesp{N}$ denote the control variable and the satisfying probability of node $N$, respectively.
+In~\cref{alg:bddssat-recursive},
+\crefrange{code:bddssat-recursive-constant-start}{code:bddssat-recursive-constant-end} implement the first and second computation rules of SSAT in~\cref{sect:background-ssat};
+\Cref{code:bddssat-recursive-random} and \cref{code:bddssat-recursive-exist} implement the third and fourth rules corresponding to the random and existential quantification of the variable, respectively.
+
+Note that \texttt{BddSsatSolve} runs in time linear to the number of BDD nodes (as each node is processed only once).
+Therefore the computation complexity is dominated by constructing the ROBDD of $\pf$.
+Note also that if the outermost variables in the quantification order are existentially quantified, e.g.,
+those in $\Qf_\mathrm{MPPE}$ of~\cref{thm:prob-mppe-ssat},
+the corresponding assignments to the existentially quantified variables
+to maximize the satisfying probability of $\pf$ can be obtained.
+Specifically,
+the assignment to an outermost existential variable $\nodevar{N}$ can be derived by recording which of
+\texttt{BddSsatRecur}($\nodeelse{N},Q$) and
+\texttt{BddSsatRecur}($\nodethen{N},Q$)
+contributes to the maximum probability in~\cref{code:bddssat-recursive-exist} of~\cref{alg:bddssat-recursive}.
+
+\subsubsection{Signal Probability with BDD-based SSAT}
+We exploit the developed BDD-based SSAT solver to compute signal probabilities as defined in~\cref{def:prob-signal-prob,def:prob-signal-prob-max}.
+Given an SPBN $G=(V,E)$,
+the satisfying probability of any $v \in V$ can be obtained by first encoding the problem into an SSAT instance
+and then solving the SSAT formula by \texttt{BddSsatSolve}.
+
+Notice that formula $\pf$ needs not be represented in CNF for \texttt{BddSsatSolve}.
+In the application of circuit verification,
+formula $\pf$ can be directly input to \texttt{BddSsatSolve} as a circuit.
+Without Tseitin transformation from circuit to CNF formula,
+the algorithm avoids introducing extra variables.
+Consequently, the innermost existential quantification $\exists y_1,\ldots,\exists y_m$
+in~\cref{eq:prob-ppe-ssat} of~\cref{thm:prob-ppe-ssat}
+and~\cref{eq:prob-mppe-ssat} of~\cref{thm:prob-mppe-ssat} is removed.
+The utilization of circuit structures makes the calculation of signal probability
+(and therefore the computation of PPE and MPPE) on an SPBN more efficient and scalable
+using the proposed BDD-based SSAT solver.
+Empirical evidence suggests our proposed SSAT solver outperforms and is much scalable than other CNF-based SSAT solvers.
+
+We note that the signal probability calculation via BDD is used for power estimation of integrated circuits~\cite{Najm1994}.
+As we formulate PPE as a signal probability problem on SPBN,
+any prior method for signal probability calculation can be used to solve PPE.
+However, it is worth emphasizing that prior methods for signal probability calculation,
+such as Monte Carlo simulation, cannot solve MPPE.
+The BDD-based method has its unique value over other previous endeavors for signal probability calculation
+because of its generality of solving both PPE and MPPE.
+On the other hand,
+since we established the connections of MPPE and PPE to SSAT formulations,
+SSAT solvers can also be applied to calculate the maximum signal probability as well as signal probability.
+
+BDD is a well-studied data structure,
+but known for its memory limitation.
+Techniques have been highly developed in the 1990s to extend its scalability.
+Practical experience suggests that BDD-based computation remains competitive to other formulations
+due to the fact that other tools,
+such as SSAT and model counting,
+are still in their early development.
+In our experiments over \texttt{ISCAS} and \texttt{ITC} benchmark suits,
+the BDD-based approach stands as the most scalable one over other formulations to be discussed.
+
+\subsubsection{Generalization to dependent random variables}
+The proposed BDD-based SSAT solver is advantageous over other SSAT solvers for its ability to handle randomly quantified variables whose probability distributions are mutually dependent.
+Note that according to the SSAT syntax,
+there is no support to describe the joint behavior among randomly quantified variables.
+That is, every randomly quantified variable acts independently of each other.
+This assumption limits the expressiveness of SSAT.
+In this paper, we combine our BDD-based SSAT solver with previous methods~\cite{Marculescu1998,Miskov-Zivanov2006}
+to represent joint probability distribution of random variables,
+and propose a novel SSAT solver that is capable of expressing mutual dependence among randomly quantified variables.
+A joint probability distribution of random variables is represented as an algebraic decision diagram (ADD)~\cite{Marculescu1998,Miskov-Zivanov2006}.
+After such an ADD representing joint probability distribution is constructed,
+the original BDD (which is also an ADD) of the Boolean formula $\pf$ is conjoined with the ADD.
+Finally, the value of the SSAT formula can be calculated by traversing the merged ADD similar to the prior independent counterpart.
+
+Following the above strategy,
+now we explain how to extend the proposed PPE and MPPE framework to approach PBNs whose random variables are mutually dependent.
+After the distillation operation,
+the mutually dependent random variables on erroneous vertices are converted to correlated AIs.
+Given the joint probability distribution of random variables,
+an ADD is built to represent the mutual dependence among AIs.
+Similarly, if PIs are correlated,
+another ADD can be built to describe their correlation.
+After multiplying the ADDs with the BDD of the circuit under evaluation,
+the average (PPE) or the maximum (MPPE) violating probability can be computed through traversing the product ADD.
+Therefore, the proposed PPE framework is generalized to dependent PBNs,
+whose random variables have mutual dependent probability distribution.
