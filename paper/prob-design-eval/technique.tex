@@ -228,3 +228,227 @@ After multiplying the ADDs with the BDD of the circuit under evaluation,
 the average (PPE) or the maximum (MPPE) violating probability can be computed through traversing the product ADD.
 Therefore, the proposed PPE framework is generalized to dependent PBNs,
 whose random variables have mutual dependent probability distribution.
+
+\subsection{Solving PPE via weighted model counting}
+The following theorem states that an SSAT formula of the form
+in~\cref{thm:prob-ppe-ssat} is equivalent to a weighted model counting instance.
+\begin{theorem}
+    The SSAT formula:
+    \begin{align*}
+        \Qf=
+        \random{p_{x_1}}x_1,\ldots,\random{p_{x_n}}x_n,
+        \exists y_1,\ldots,\exists y_m.\pf,
+    \end{align*}
+    where $X=\{x_1,\ldots,x_n\}$ is a base set for $\pf$,
+    is equivalent to a weighted model counting instance of $\pf$
+    under a weighting function $\wt$ such that
+    $\wt(x_i)=p_{x_i}$ for every $x_i\in X$.
+\end{theorem}
+\begin{proof}
+    Let $A$ be the event that $\pf=\top$.
+    According to~\cref{thm:prob-ppe-ssat},
+    we have $\Pr[A]=\sum\limits_{\as\in\av{X}}\wt(\as)\pcf{\pf}{\as}$.
+    Since $X$ is a base set for $\pf$,
+    $\Pr[A]$ can be simplified to $\sum\limits_{\as\models\pf}\wt(\as)$,
+    which is the weight of $\pf$.
+\end{proof}
+By the above theorem, weighted model counting is clearly applicable to PPE.
+
+\begin{algorithm}[p]
+    \caption{Formula rewriting for unweighted model counting: \texttt{WmcRewriting}}
+    \label{alg:wmcrewriting}
+    \begin{algorithmic}[1]
+        \REQUIRE A formula $\pf$, a base set $\base$ for $\pf$,
+        a wt. func. $\wt$ s.t. $\forall x\in\base.\wt(x)=\frac{k}{2^n}$
+        \ENSURE A formula $\pf'$, a base set $\base'$ for $\pf'$,
+        a wt. func. $\wt'$ s.t. $\forall x\in\base'.\wt'(x)=\frac{1}{2}$
+        \STATE $\pf':=\pf,\base':=\base$
+        \FORALL{($x\in\base$)}
+        \STATE $var:=x,wt:=\wt(x)$
+        \WHILE{($wt\neq\frac{1}{2}$)}
+        \STATE $inv:=\bot$
+        \IF{($wt>\frac{1}{2}$)}
+        \STATE $wt:=1-wt,inv:=\top$
+        \ENDIF
+        \STATE $\pf':=\pf'\land((inv \oplus var) \equiv (y_{var} \land z_{var}))$
+        \STATE $\base':=\base'\setminus\{var\}\cup\{y_{var}\}$
+        \STATE $\wt'(y_{var})=\frac{1}{2}$
+        \STATE $var=z_{var},wt=2 \cdot wt$
+        \ENDWHILE
+        \STATE $\base':=\base'\cup\{var\},\wt'(var)=\frac{1}{2}$
+        \ENDFOR
+        \RETURN $(\pf',\base',\wt')$
+    \end{algorithmic}
+\end{algorithm}
+
+While exact model counting can be extended to the weighted version at little extra cost,
+more effort is required to achieve approximate weighted model counting~\cite{SATHandbook-ModelCounting}.
+To enhance the scalability of solving PPE via model counting,
+we show how to rewrite a weighted model counting instance into an equivalent unweighted formula.
+The rewriting procedure \texttt{WmcRewriting} is outlined in~\cref{alg:wmcrewriting}.
+
+The following lemma explains the rationale behind \texttt{WmcRewriting}.
+\begin{lemma}
+    \label{lemma:prob-rewrite}
+    Let $\pf$ be a Boolean formula with a base set $\base$ and
+    a weighting function $\wt$ over $\base$.
+    Given an arbitrary variable $x\in\base$,
+    we construct $\base'$, $\pf'$, and $\wt'$ as follows.
+    Let $\base'=\base\setminus\{x\}\cup\{y_x,z_x\}$ with
+    $y_x,z_x$ being newly introduced fresh variables.
+    Let $\pf'=\pf \land ((inv \oplus x) \equiv (y_x \land z_x))$,
+    where $inv$ is either $\top$ or $\bot$ to determine the sign of $x$.
+    If $inv=\bot$, let $\wt'(y_x)\wt'(z_x)=\wt(x)$;
+    else, let $\wt'(y_x)\wt'(z_x)=1-\wt(x)$.
+    For any other variable $v\in\base'$,
+    $\wt'(v)=\wt(v)$.
+    After this construction, $\base'$ is a base set for $\pf'$, and $\wt'(\pf')=\wt(\pf)$.
+\end{lemma}
+\begin{proof}
+    First, we show that $\base'$ is a base set for $\pf'$.
+    Clearly any assignment $\as'$ over $\base'$ can be transformed into
+    an assignment $\as$ over $\base$ by substituting $\as'(y_x),\as'(z_x)$ into the formula
+    $((inv \oplus x) \equiv y_x \land z_x)$ to derive the truth value of $x$.
+    The fact that $\base$ being a base set for $\pf$ implies $\base'$ being a base set for $\pf'$.
+
+    Second, we prove that $\wt'(\pf')=\wt(\pf)$.
+    We only show the case for $inv=\bot$,
+    since the other case can be established similarly.
+    Consider any $\as$ over $\base$.
+    There are two cases: $\as(x)=1$ and $\as(x) = 0$.
+    In both cases, we derive corresponding assignments $\as'$ such that
+    $\pcf{\pf}{\as}=\pcf{\pf'}{\as'}$ and
+    $\wt(\as)=\sum\wt'(\as')$.
+    In the first case $\as(x)=1$,
+    the corresponding $\as'$ over $\base'$ is obtained by assigning
+    $(\as'(y_x),\as'(z_x))$ to $(1,1)$ and
+    $\as'(v)=\as(v)$ for any other $v\in\base'$.
+    Obviously $\pcf{\pf}{\as}=\pcf{\pf'}{\as'}$,
+    and $\wt(\as)=\wt'(\as')$ because $\wt(x)=\wt'(y_x)\wt'(z_x)$.
+    In the second case $\as(x)=0$,
+    there are three possible assignments $\as'$ over $\base'$,
+    namely $(\as'(y_x),\as'(z_x))=(0,0),(0,1),(1,0)$,
+    and $\as'(v)=\as(v)$ for any other $v\in\base'$.
+    Denote the three assignments by $\as_1',\as_2',\as_3'$.
+    Note that $\pcf{\pf}{\as}=\pcf{\pf'}{\as_1'}=\pcf{\pf'}{\as_2'}=\pcf{\pf'}{\as_2'}$,
+    and $\wt(\as)=\wt'(\as_1')+\wt'(\as_2')+\wt'(\as_3')$.
+
+    The above analysis shows that any $\as\models\pf$ can be transformed into one or multiple $\as'$
+    such that $\as'\models\pf'$ and $\wt(\as)=\sum\wt'(\as')$.
+    As a result, $\wt'(\pf')=\wt(\pf)$.
+\end{proof}
+
+\begin{theorem}
+    \label{thm:prob-rewrite}
+    Given a weighted model counting instance $\pf$ and
+    a weighting function $\wt$ over a base set $\base$ of $\pf$ such that
+    for any $x\in\base$, $\wt(x)$ has the form of $k/2^n$
+    for some $n\in\mathbb{N}$,
+    $k$ an odd integer,
+    and $k < 2^n$,
+    \texttt{WmcRewriting} in~\cref{alg:wmcrewriting} derives
+    $\pf'$ and $\wt'$ over $\base'$ such that $\base'$ is a base set for $\pf'$,
+    $\wt'(\pf')=\wt(\pf)$,
+    and $\wt'(x)=\frac{1}{2}$ for every $x\in\base'$.
+\end{theorem}
+\begin{proof}
+    To show the correctness of \texttt{WmcRewriting},
+    we divide the task into two parts.
+    First, we show that \texttt{WmcRewriting} always terminates.
+    Second, we prove that when it terminates, the claimed properties hold.
+
+    Consider a variable $x\in\base$ with $\wt(x)=\frac{k}{2^n}$.
+    Observe that the loop invariant of the \textsc{while} loop is $wt=\frac{h}{2^m}$,
+    for some $m\in\mathbb{N}$, $h$ an odd integer, and $h<2^m$.
+    Moreover, after an iteration, the denominator of $wt$ will be halved,
+    while the numerator remains an odd integer.
+    As a result, $wt$ equals $1/2$ after $n-1$ iterations and the \textsc{while} loop terminates.
+
+    Inside the \textsc{while} loop,
+    the truth value of $inv$ is decided by comparing $wt$ with $\frac{1}{2}$,
+    and the corresponding formula rewriting and weight assignments are made as described in~\cref{lemma:prob-rewrite}.
+    According to~\cref{lemma:prob-rewrite},
+    $\base'$ is a base set for $\pf'$ and $\wt'(\pf')=\wt(\pf)$.
+    Furthermore, $\wt'(x)=\frac{1}{2}$ for every $x\in\base'$ as assigned in the algorithm.
+\end{proof}
+By the above theorem,
+a weighted model counting instance whose weighting function is specialized as above
+can be rewritten and solved by any (either exact or approximate) unweighted model counting engine,
+since $\wt(\pf)=\wt'(\pf')=\sum\limits_{\as\models\pf'}\wt'(\as)=\#\pf'/2^{|\base'|}$,
+where $|\base'|$ is the cardinality of the set $\base'$.
+We remark that, given a variable $x$ and its weight $p=k/2^n$,
+the cost, in terms of the number of added variables and clauses,
+of \texttt{WmcRewriting} is linear to $n$.
+In a way, $n$ can be interpreted as the degree of precision
+if we attempt to apply \texttt{WmcRewriting} to approximate any arbitrary probability.
+
+\subsection{Solving PPE via probabilistic model checking}
+Probabilistic model checking (PMC) verifies stochastic systems modeled by the variants of Markov chains, e.g.,
+discrete-time Markov chains (DTMCs),
+continuous-time Markov chains,
+and Markov decision processes,
+against properties specified in probabilistic temporal logics.
+We show how to calculate signal probability with the probabilistic model checker \prism~\cite{Kwiatkowska2002PRISM},
+which provides a high level modeling language to specify probabilistic systems.
+
+We convert an SPBN to a DTMC and encode the calculation of signal probabilities
+by probabilistic computation tree logic (PCTL)~\cite{Hansson1989}.
+To illustrate, we briefly introduce the syntax of \prism.
+The basic components in \prism are \texttt{modules}.
+A module consists of two parts: \texttt{variables} and \texttt{commands}.
+Variables describe possible states of a module,
+while commands describe its state transitions.
+A command is composed of a \texttt{guard} and some \texttt{updates}.
+For example, ``$x=0 \rightarrow 0.8:(x'=0) + 0.2:(x'=1);$''
+is a command with a guard ``$x=0$'' and an update rule ``$0.8:(x'=0) + 0.2:(x'=1)$''.
+When the guard is met, i.e., $x=0$ at the current time slot,
+$x$ will remain at value $0$ with probability $0.8$ or change to $1$ with probability $0.2$ at the next time slot.
+
+If the guards of multiple commands are met simultaneously at the same time slot,
+\prism will choose exactly one of them to execute uniformly at random.
+However, the vertices of an SPBN $G=(V,E)$ operate concurrently.
+That is, at one time slot, multiple vertices have to be executed,
+provided that every fanin of those vertices is evaluated.
+Without proper control, \prism will randomly choose one of these vertices to execute,
+and may bias the probabilities specified by the SPBN.
+To prevent such bias, we introduce a fresh variable for each vertex
+to enforce an topological execution order of logic gates in the SPBN.
+This construction eliminates the possibility of the multi-vertex execution at one time slot,
+and thus preserving the probability specified in the update rules.
+Since $G$ is a combinational design,
+this enforcement of ordering will not affect the system behavior.
+
+Given an SPBN $G=(V,E)$ with a parameter assignment $\pi$ to $V_I$,
+the procedure to compute the signal probability of an arbitrary vertex with \prism is as follows.
+\begin{enumerate}
+    \item Sort $V$ into a topological order.
+    \item For each vertex $v\in V$, create a module with two Boolean variables:
+          $x_v$ represents the output variable of vertex $v$,
+          and $y_v$ enforces the execution order in the DTMC.
+          Both variables are initialized to $0$.
+          Let $u$ be the vertex preceding $v$ in the topological order.
+    \item If $v\in V_I$, add a command:
+          ``$(y_u=1 \enskip\&\enskip y_v=0) \rightarrow
+              \pi(v):(x_v'=1 \enskip\&\enskip y_v'=1)+
+              1-\pi(v):(x_v'=0 \enskip\&\enskip y_v'=1)$''
+          to the module of $v$.
+    \item If $v\in V\setminus V_I$, add command:
+          ``$(y_u=1 \enskip\&\enskip y_v=0) \rightarrow
+              p_v:(x_v'=\neg f_v \enskip\&\enskip y_v'=1)+
+              1-p_v:(x_v'=f_v \enskip\&\enskip y_v'=1)$''
+          to the module of $v$.
+    \item Compute the signal probability of any $v\in V$ by specifying a PCTL formula $P_{=?}(F(x_v=1))$.
+\end{enumerate}
+
+The added commands describe the probabilistic behavior of a vertex.
+Observe that in both commands,
+a vertex $v$ is executed only after its preceding vertex $u$ is executed,
+and this order in enforced by the variable $y_v$.
+After the execution of $v$,
+$y_v$ is set to 1 to trigger its successive executions.
+The PCTL formula $P_{=?}(F(x_v=1))$ computes the probability of $x_v=1$ in the future.
+Since in our DTMC, each node is executed only once,
+the PCTL formula computes the signal probability of $v$.
+
+We remark that this transformation brutally encodes each gate into a module in the DTMC and suffers from the state-space explosion problem.
+It remains future investigation to search for better encoding.
