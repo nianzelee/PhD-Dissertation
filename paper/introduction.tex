@@ -51,7 +51,6 @@ For example, \maxplan~\cite{Majercik1998} improves the DPLL-based search by cons
 \zander~\cite{Majercik2003} incorporates several threshold pruning heuristics to reduce the search space;
 \dcssat~\cite{Majercik2005} divides the SSAT formulas into many subproblems and conquer them separately.
 
-
 In contrast to the previous DPLL-based SSAT algorithms with pruning heuristics and subproblem memorization,
 our goal is to utilize modern techniques of SAT/QBF solving and model counting to improve SSAT solving.
 Motivated by the new VLSI applications, we focus on random-exist and exist-random quantified fragments of SSAT formulas.
@@ -82,6 +81,35 @@ We formalize the \emph{dependency SSAT} (DSSAT) as the answer to the question.
 We prove that DSSAT has the same NEXPTIME-complete complexity as DQBF,
 and therefore it can succinctly encode decision problems with uncertainty in the NEXPTIME complexity class.
 We demonstrate the potential applications of DSSAT to the synthesis of probabilistic and approximate design and the encoding of decentralized POMDP (Dec-POMDP)~\cite{Oliehoek2016} problems.
+
+\section{Our contributions}
+The following are the key achievements in this dissertation.
+
+\section{Dissertation structure}
+The structure of this dissertation is outlined as follows.
+\begin{itemize}
+    \item
+          In~\cref{chap:related-work}, a brief survey of the literature is provided to highlight the advancements made in this dissertation.
+    \item
+          In~\cref{chap:background}, background knowledge required throughout the dissertation is discussed.
+          Specific material for an individual chapter will be introduced when it is needed.
+    \item
+          In~\cref{chap:prob-design-eval}, a formal framework to evaluate properties of probabilistic design is proposed.
+          Especially, random-exist and exist-random quantified SSAT formulas are exploited to solve the formulation.
+          This chapter is based on our journal paper~\cite{LeeTC18ProbDesign} published in IEEE Transaction on Computers.
+    \item
+          In~\cref{chap:random-exist-ssat}, modern SAT-solving and model-counting techniques are combined to solve random-exist quantified SSAT formulas.
+          This chapter is based on our conference paper~\cite{LeeIJCAI17RESSAT} published at IJCAI '17.
+    \item
+          In~\cref{chap:exist-random-ssat}, a clause-learning technique inspired by \textit{clause selection}, a prevailing method recently invented for QBF, is devised to solve exist-random quantified SSAT formulas.
+          This chapter is based on our conference paper~\cite{LeeIJCAI18ERSSAT} published at IJCAI '18.
+    \item
+          In~\cref{chap:dependency-ssat}, SSAT is lifted from the PSPACE-complete complexity class to the NEXPTIME-completeness.
+          We show the applicability of the lifted formalism to the analysis of probabilistic design and decentralized POMDP.
+          This chapter is based on our conference paper~\cite{LeeAAAI21DSSAT} published at AAAI '21.
+    \item
+          In~\cref{chap:conclusion-future-work}, we give concluding remarks and point out some potential directions for future investigation.
+\end{itemize}
 
 \iffalse
     \section{Introduction of the AAAI '21 paper}
