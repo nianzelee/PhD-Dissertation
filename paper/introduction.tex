@@ -84,6 +84,28 @@ We demonstrate the potential applications of DSSAT to the synthesis of probabili
 
 \section{Our contributions}
 The following are the key achievements in this dissertation.
+\begin{itemize}
+    \item
+          We formalize the property evaluation of probabilistic design and provide different computational solutions.
+          Particularly, SSAT is exploited to approach both average-case and worst-case analyses.
+          To the best of our knowledge, this is the first attempt that applies SSAT to the analyze VLSI systems.
+    \item
+          Motivated by the emerging applications,
+          we devise new algorithms for random-exist and exist-random SSAT formulas.
+          Compared to the conventional DPLL-based SSAT solvers,
+          modern techniques from SAT/QBF solving and model counting are combined to improve the scalability.
+          Moreover, the proposed algorithms solve an SSAT formula in a gradual manner
+          that converges from approximate bounds of the satisfying probability to the exact answer.
+          Therefore, they are able to provide useful information even if the exact answer is unavailable.
+    \item
+          Furthermore, we formulate the dependency SSAT problem as a generalization for PSPACE-complete SSAT to the NEXPTIME-completeness.
+          Applications of the new formalism in the analysis of probabilistic design and modeling of decentralized POMDP are demonstrated.
+          Our theoretical results would encourage the solver development.
+    \item
+          Our implementation of the proposed SSAT algorithms is open-source,
+          which helps other researchers to understand the details of the approaches and
+          serves as a reference for the empirical evaluation of different algorithms.
+\end{itemize}
 
 \section{Dissertation structure}
 The structure of this dissertation is outlined as follows.
