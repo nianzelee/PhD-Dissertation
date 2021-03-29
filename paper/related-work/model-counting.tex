@@ -1,2 +1,41 @@
 \section{Model counting}
 \label{sect:related-work-model-counting}
+
+Model-counting~\cite{SATHandbook-ModelCounting} algorithms can be classified into two categories:
+exact counting and approximate counting.
+The former adopts DPLL-based search with additional techniques,
+such as component analysis and caching, to improve the counting efficiency\cite{Sang2004,Sang2005ModelCounting}.
+The latter takes a different strategy,
+aiming at providing lower and/or upper bounds with guarantee on confidence level.
+Ideas from statistics~\cite{Chakraborty2016} have been adopted to increase the capacity limit of model counting.
+
+There are many variants of model counting.
+For example,
+weighted model counting asks to aggregate the weight of every satisfying assignment.
+It has been widely adopted in probabilistic inference~\cite{Sang2005BayesianInference,Chavira2008}.
+\textit{Projected model counting}~\cite{Aziz2015} computes the numbers of satisfying assignments
+projected on a subset of original variables.
+\textit{Maximum model counting}~\cite{Fremont2017} finds an assignment to a subset of variables in a formula
+such that the number of satisfying assignments of the residual formula cofactored with the assignment is maximized.
+
+The above variants of model counting can be expressed via SSAT,
+because the randomized quantifiers of SSAT essentially aggregate the results from different branches with weights.
+\Cref{tbl:related-work-model-counting} shows the variants of model-counting problems and their respective SSAT encodings.
+Note that projected weighted model counting and maximum weighted model counting are equivalent to
+random-exist quantified SSAT and exist-random quantified SSAT, respectively.
+
+\begin{table}[t]
+    \centering
+    \caption{Model-counting variants and their corresponding SSAT formulas}
+    \label{tbl:related-work-model-counting}
+    \begin{tabular}{c|c}
+        Model-counting variant & SSAT encoding                                                                                              \\
+        \hline
+        Unweighted             & $\random{0.5}x_1,\ldots,\random{0.5}x_n.\pf(x_1,\ldots,x_n)$                                               \\
+        Weighted               & $\random{p_1}x_1,\ldots,\random{p_n}x_n.\pf(x_1,\ldots,x_n)$                                               \\
+        Projected              & $\random{0.5}x_1,\ldots,\random{0.5}x_n,\exists y_1,\ldots,\exists y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
+        Maximum                & $\exists x_1,\ldots,\exists x_n,\random{0.5}y_1,\ldots,\random{0.5}y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
+        Projected weighted     & $\random{p_1}x_1,\ldots,\random{p_n}x_n,\exists y_1,\ldots,\exists y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
+        Maximum weighted       & $\exists x_1,\ldots,\exists x_n,\random{p_1}y_1,\ldots,\random{p_m}y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
+    \end{tabular}
+\end{table}
