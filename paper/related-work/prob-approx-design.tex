@@ -1,2 +1,58 @@
 \section{Probabilistic/Approximate design}
 \label{sect:related-work-prob-approx}
+
+While the shrinkage of device's feature size according to Moore's law~\cite{Moore1965}
+has driven the prosperity of microelectronic industry,
+the variability and uncertainty of devices at the atomic level
+pose serious challenges on the continuation of the law.
+
+New computational paradigms are proposed in response to the challenges in the post-Moore's era.
+Among many other efforts,
+along the direction of \textit{approximate design},
+circuit architectures for
+reconfigurable adders whose accuracy can be adjusted based on application scenarios~\cite{Kahng2012,Ye2013}
+and energy-efficient adders with a moderate error rate~\cite{Kim2013} are proposed.
+The automatic synthesis and analysis of approximate circuits have also been studied~\cite{Venkatesan2011ApproxDesign,Venkataramani2012,Miao2013,Miao2014,Li2014,Mrazek2016,Rehman2016}.
+On the other hand, for \textit{probabilistic design},
+Chakrapani et al.~\cite{Chakrapani2006ProbDesign} consider CMOS devices with probabilistic behavior,
+establish the relation between energy consumption and probability of correct switching,
+and exploit it to trade energy against correctness.
+
+Despite the advancements made by prior endeavors, most of them focus on approximate design.
+The analysis and synthesis of probabilistic design have gained relatively less attention.
+Nevertheless, the study of probabilistic design is important in the following respects.
+First, randomness is a valuable resource to trade for computation efficiency.
+For example, there exist problems that can be solved efficiently by randomized algorithms
+but not deterministic algorithms.
+Second, there are applications, such as data mining, compressive sensing, etc.,
+that may not be sensitive to minor random fluctuations.
+Third, devices at their quantum foundation or systems in their biological nature are intrinsically probabilistic.
+We aim at providing a formalism for the analysis and verification of probabilistic design.
+Notice that in the design automation process,
+verification is essential to the entire design flow.
+For example, equivalence checking~\cite{Kuehlmann1997,Mishchenko2006}
+should be applied to validate the correctness of synthesized circuits.
+Hence, establishing a verification framework is a crucial step in automated synthesis of probabilistic design.
+
+Probabilistic behavior of a design has also been studied along the research of circuit reliability analysis,
+which focuses on analyzing the robustness of a circuit against permanent defects or transient faults.
+The reliability of a circuit is characterized by the probability of the occurrence of an error at the primary outputs.
+Therefore, the study of circuit reliability is very related to the evaluation of probabilistic design.
+
+Classical approaches to reliability analysis apply fault injection and Monte Carlo simulation~\cite{Mohanram2003}.
+Symbolic analysis methods exploiting mathematical tools,
+such as Markov random fields~\cite{Bahar2003},
+probability transfer matrices~\cite{Krishnaswamy2005},
+Bayesian networks~\cite{Rejimon2005},
+and algebraic decision diagrams~\cite{Miskov-Zivanov2006},
+have also been investigated.
+Choudhury and Mohanram~\cite{Choudhury2009} propose three accurate and scalable algorithms to address the scalability issue of symbolic methods.
+However, prior methods for circuit reliability analysis are inadequate to probabilistic circuits
+for the following two reasons.
+First, most prior approaches assume single-gate failures.
+This assumption makes prior methods inapplicable to probabilistic design,
+where multiple probabilistic gates may be commonly present.
+Second, most prior efforts consider only the average error rate of a design.
+The necessity of analyzing the maximum error rate comes from the increasing demand of safety-centric systems,
+e.g., utilized in health care or automotive industries~\cite{Lingasubramanian2007,Lingasubramanian2011}.
+However, its computational scalability is much limited due to the underlying symbolic modeling via Bayesian network~\cite{Jensen1996}.
