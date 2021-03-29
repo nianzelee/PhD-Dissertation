@@ -8,6 +8,13 @@ electronic design automation~\cite{Marques2000,Wang2009},
 software verification~\cite{Jhala2009, Berard2013}, etc.
 The tremendous benefits have encouraged the development of more advanced decision procedures
 for satisfiability with respect to more complex logics beyond pure propositional.
+For example,
+solvers of the satisfiability modulo theories (SMT)~\cite{Moura2011,HBMC-SMT} accommodate first order logic fragments;
+quantified Boolean formula (QBF)~\cite{Narizzano2006,SATHandbook-QBF} allows both existential and universal quantifiers;
+stochastic Boolean satisfiability (SSAT)~\cite{Littman2001,SATHandbook-SSAT} models uncertainty with random quantification;
+and dependency QBF (DQBF)~\cite{Balabanov2014,Scholl2018} equips Henkin quantifiers to describe multi-player games with partial information.
+Due to their simplicity and generality,
+various satisfiability formulations are under active investigation.
 
 Among various generalizations of Boolean satisfiability,
 \textit{stochastic Boolean satisfiability} (SSAT)~\cite{SATHandbook-SSAT} is a logical formalism
@@ -48,6 +55,12 @@ the analysis and synthesis of probabilistic design have gained relatively less a
 Hence,
 \textbf{there is a research need of a framework to evaluate probabilistic design},
 and SSAT stands up as a suitable logical formalism to address the need.
+(In the following,
+the term ``design'' is used as a general term to refer to a single design instance,
+a set of design instances,
+or design process;
+the term ``synthesis" is referred to as the design automation process
+transforming a system under design from high-level system specification to low-level circuit implementation.)
 
 SSAT is closely related to two generalizations of Boolean satisfiability:
 \textit{model counting} of propositional formulas and \textit{quantified Boolean formulas} (QBFs).
@@ -93,6 +106,12 @@ Particularly, random-exist and exist-random quantified SSAT formulas are exploit
 to solve the average-case and worst-case analyses, respectively.
 To the best of our knowledge,
 this is the first attempt that applies SSAT to the analyze VLSI systems.
+(In the following,
+the terms ``analysis'' and ``evaluation'' are used interchangeably as general terms
+referring to the process of determining qualitative or quantitative properties of a design.
+We will formulate the problem of \textit{probabilistic property evaluation},
+and refer to the term ``evaluation" as computing the satisfying probability of
+certain properties of a probabilistic design.)
 
 Second, in contrast to the previous DPLL-based algorithms,
 we utilize modern techniques of SAT/QBF solving and model counting to improve SSAT solving.
