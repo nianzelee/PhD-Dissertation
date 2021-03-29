@@ -1,2 +1,30 @@
 \section{Stochastic Boolean Satisfiability}
 \label{sect:related-work-ssat}
+
+SSAT~\cite{Littman2001,SATHandbook-SSAT} is first formulated by Papadimitriou
+and interpreted as \textit{games against nature}~\cite{Papadimitriou1985}.
+It lies in the same PSPACE-complete~\cite{Stockmeyer1973} complexity class as QBF.
+
+Exploiting randomized quantifiers,
+SSAT is capable of modeling a variety of computational problems inherent with uncertainty~\cite{Hnich2011},
+such as probabilistic planning~\cite{Kushmerick1995,Littman1998},
+Bayesian-network inference~\cite{Cooper1990,Jensen1996,Dechter1998,Bacchus2003},
+and trust management~\cite{SATHandbook-SSAT}.
+Recently, the quantitative information-flow analysis for software security is also formulated
+as an E-MAJSAT formula~\cite{Fremont2017},
+and bi-directional polynomial-time reductions between SSAT and POMDP are established~\cite{Salmon2020}.
+
+A number of SSAT solvers have been developed.
+Among the prior efforts made to approach SSAT,
+most of them are based on Davis-Putnam-Logemann-Loveland (DPLL) search~\cite{Davis1962}.
+For example,
+solver \maxplan~\cite{Majercik1998} encodes a conformant planning problem as an E-MAJSAT formula
+and improves the solving efficiency by pure variables, unit propagation, and subproblem memorization;
+solver \zander~\cite{Majercik2003} deals with partially observable probabilistic planning by formulating the problem as a general SSAT formula and incorporates several threshold-pruning heuristics to reduce the search space;
+solver \dcssat~\cite{Majercik2005} relies on a divide-and-conquer approach to break an SSAT formula into many subproblems and handles them separately to speedup the solving of a general SSAT formula.
+Approximate solving~\cite{Majercik2007} and resolution rules~\cite{Teige2010} for SSAT have also been addressed.
+Techniques from \textit{knowledge compilation} have also been exploited to solve E-MAJSAT formulas.
+Solver \complan~\cite{Huang2006} compiles the matrix of an E-MAJSAT formula into its
+\textit{deterministic, decomposable negation normal form} (d-DNNF)~\cite{Darwiche2001,Darwiche2002dDNNF},
+and performs a branch-and-bound search.
+It is further improved by an enhanced bound computation method~\cite{Pipatsrisawat2009}.
