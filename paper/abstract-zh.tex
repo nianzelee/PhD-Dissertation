@@ -1,3 +1,38 @@
 %\newcommand{\cjk}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
 
-我的中文摘要
+隨機布林可滿足性（SSAT）是一種豐富的邏輯語言，
+可用於表達具有機率性的計算問題，
+例如貝氏網絡推論，
+命題式機率性規劃，
+和部分可觀察馬可夫決策過程（POMDP）。
+求解SSAT公式之複雜度屬於多項式空間完全性複雜度類別（PSPACE-complete complexity class），
+與求解量化布林公式（QBF）相同。
+儘管具有廣泛的應用和深刻的理論價值，
+SSAT在文獻中所引起的關注較SAT或QBF稀少。
+
+我們在機率性設計的正規驗證問題中找到SSAT的新應用。
+機率性設計以及近似性設計是一種新興的計算準則，
+可用來容忍VLSI系統在奈米製程下的元件變異性。
+儘管相關文獻對近似性設計進行了許多探討，
+機率性設計則很少受到關注。
+我們為機率性設計提出了機率性質評估框架並利用隨機存在和存在隨機的量化SSAT公式求解，
+分別進行平均情況和最壞情況分析。
+據我們所知，這是文獻中首次將SSAT應用於VLSI系統分析。
+
+受以上VLSI系統應用的推動，
+我們提出了新的演算法來求解隨機存在和存在隨機的量化SSAT公式。
+不同於與基於Davis-Putnam-Logemann-Loveland（DPLL）搜尋的傳統SSAT演算法，
+我們利用當代SAT或QBF求解技術和模型計數以提高計算效率。
+與之前基於DPLL搜尋的準確SSAT演算法不同，
+我們的演算法能夠近似地求解SSAT公式，計算其滿足機率的上下限。
+
+我們在開源SSAT求解器ressat和erssat中實作所提出的新演算法。
+實驗結果顯示ressat和erssat求解器的性能優於文獻中的SSAT求解器。
+在文獻中的求解器無法計算出準確答案的情況下，它們也能提供有用的上下限。
+
+儘管在不同領域都有許多應用，SSAT仍受限於其PSPACE complexity class的描述能力。
+更複雜的問題，例如非確定性指數時間完全性（NEXPTIME-complete）的分散式POMDP（Dec-POMDP），則無法用SSAT簡潔地表示。
+為了提供此類問題一個邏輯框架，我們借鏡了同為NEXPTIME-complete的依賴性QBF（dependency QBF, DQBF）。
+我們將SSAT推廣至NEXPTIME-completeness，並命名該推廣框架為依賴性SSAT（dependency SSAT, DSSAT），同時證明DSSAT也是NEXPTIME-complete。
+我們展示了DSSAT在機率或近似性設計的合成中的潛在應用，以及針對Dec-POMDP問題的編碼。
+我們希望通過建立理論基礎來鼓勵DSSAT求解器的開發。
