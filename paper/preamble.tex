@@ -13,6 +13,21 @@
 \usepackage{tikz-qtree}
 \usepackage{circuitikz}
 \usetikzlibrary{positioning,arrows}
+% Plots with BenchExec
+\usepackage{standalone}
+\usepackage[
+    group-digits=integer, group-minimum-digits=4, % group digits by thousands
+    free-standing-units, unit-optional-argument, % easier input of numbers with units
+]{siunitx}
+\usepackage{pgfplots}
+\pgfplotsset{
+    compat=1.9,
+    log ticks with fixed point, % no scientific notation in plots
+    table/col sep=tab, % only tabs are column separators
+    unbounded coords=jump, % better have skips in a plot than appear to be interpolating
+    filter discard warning=false, % Don't complain about empty cells
+}
+\SendSettingsToPgf % use siunitx formatting settings in PGF, too
 % end packages
 
 %%% nzlee: This thesis combines the following four papers
@@ -73,6 +88,7 @@
 \newcommand{\tool}[1]{\texttt{#1}\xspace}
 \newcommand{\definetool}[2]{\newcommand{#1}{\tool{#2}}\xspace}
 \definetool{\ressat}{reSSAT}
+\definetool{\ressatb}{reSSAT-b}
 \definetool{\erssat}{erSSAT}
 \definetool{\maxplan}{MAXPLAN}
 \definetool{\zander}{ZANDER}

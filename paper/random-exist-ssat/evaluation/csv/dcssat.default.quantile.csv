@@ -1,0 +1,68 @@
+1	test-cases/benchmarks/re-strategic-company/x5.4.sdimacs	done	0.013157459	0.01484487671405077	3919872
+2	test-cases/benchmarks/re-strategic-company/x5.19.sdimacs	done	0.013194976	0.014353073202073574	4182016
+3	test-cases/benchmarks/re-strategic-company/x5.14.sdimacs	done	0.014232844	0.015375865623354912	3919872
+4	test-cases/benchmarks/re-strategic-company/x5.9.sdimacs	done	0.014695452	0.01584217231720686	3919872
+5	test-cases/benchmarks/re-PEC/c499_re.sdimacs	done	0.017374368	0.018768656067550182	5361664
+6	test-cases/benchmarks/re-strategic-company/x10.19.sdimacs	done	0.02597511	0.02715227287262678	9293824
+7	test-cases/benchmarks/re-strategic-company/x10.14.sdimacs	done	0.026904649	0.028368158265948296	9424896
+8	test-cases/benchmarks/re-strategic-company/x10.4.sdimacs	done	0.027019906	0.028451595455408096	9424896
+9	test-cases/benchmarks/re-strategic-company/x10.9.sdimacs	done	0.027075049	0.028755136765539646	9424896
+10	test-cases/benchmarks/re-strategic-company/x15.14.sdimacs	done	0.088820445	0.09033943805843592	16502784
+11	test-cases/benchmarks/re-strategic-company/x15.4.sdimacs	done	0.147538238	0.14903381280601025	19910656
+12	test-cases/benchmarks/re-strategic-company/x15.9.sdimacs	done	0.173371335	0.17471920233219862	21483520
+13	test-cases/benchmarks/re-strategic-company/x15.19.sdimacs	done	0.177954432	0.17944505531340837	21614592
+14	test-cases/benchmarks/re-strategic-company/x20.4.sdimacs	done	0.507563563	0.5096272062510252	43110400
+15	test-cases/benchmarks/re-strategic-company/x20.14.sdimacs	done	0.564484101	0.565804922953248	44027904
+16	test-cases/benchmarks/re-strategic-company/x20.9.sdimacs	done	0.803450977	0.8046872187405825	53858304
+17	test-cases/benchmarks/re-strategic-company/x20.19.sdimacs	done	0.999507028	1.0007286751642823	63819776
+18	test-cases/benchmarks/re-strategic-company/x25.9.sdimacs	done	6.166302078	6.167773446068168	264753152
+19	test-cases/benchmarks/re-strategic-company/x25.4.sdimacs	done	7.549305002	7.55081017781049	322293760
+20	test-cases/benchmarks/re-strategic-company/x25.19.sdimacs	done	9.082428929	9.08463007863611	405393408
+21	test-cases/benchmarks/re-strategic-company/x25.14.sdimacs	done	11.862919856	11.864258111454546	485216256
+22	test-cases/benchmarks/re-strategic-company/x30.4.sdimacs	done	17.490183499	17.492081325501204	777768960
+23	test-cases/benchmarks/re-strategic-company/x30.19.sdimacs	done	33.569836808	33.57200973853469	1312935936
+24	test-cases/benchmarks/re-strategic-company/x30.9.sdimacs	done	43.374764515	43.378749950788915	1565249536
+25	test-cases/benchmarks/re-strategic-company/x30.14.sdimacs	done	49.200911555	49.20555238611996	1858588672
+26	test-cases/benchmarks/re-PEC/c1908_re.sdimacs	done	199.70408064	199.7073122197762	910675968
+27	test-cases/benchmarks/re-strategic-company/x35.14.sdimacs	OUT OF MEMORY	256.319239667	256.3264034027234	8000000000
+28	test-cases/benchmarks/re-strategic-company/x35.4.sdimacs	OUT OF MEMORY	268.138926827	268.2111962949857	8000000000
+29	test-cases/benchmarks/re-strategic-company/x35.9.sdimacs	OUT OF MEMORY	269.031005903	269.12879972346127	8000000000
+30	test-cases/benchmarks/re-strategic-company/x35.19.sdimacs	OUT OF MEMORY	275.580677741	275.5897814184427	8000000000
+31	test-cases/benchmarks/re-PEC/c7552_re.sdimacs	OUT OF MEMORY	359.229626695	359.26870105136186	8000000000
+32	test-cases/benchmarks/re-strategic-company/x40.9.sdimacs	OUT OF MEMORY	889.836661691	889.8497738577425	8000000000
+33	test-cases/benchmarks/re-strategic-company/x40.4.sdimacs	OUT OF MEMORY	891.880560928	891.9014478288591	8000000000
+34	test-cases/benchmarks/re-strategic-company/x40.19.sdimacs	OUT OF MEMORY	892.044491838	892.0856990609318	8000000000
+35	test-cases/benchmarks/re-PEC/c5315_re.sdimacs	TIMEOUT	901.017936316	901.0836459212005	1380089856
+36	test-cases/benchmarks/re-PEC/c880_re.sdimacs	TIMEOUT	901.031068747	901.0478778854012	744738816
+37	test-cases/benchmarks/re-PEC/c3540_re.sdimacs	TIMEOUT	901.039534206	901.0513079762459	780128256
+38	test-cases/benchmarks/re-PEC/c1355_re.sdimacs	TIMEOUT	901.095717752	901.1448766840622	2083667968
+39	test-cases/benchmarks/re-PEC/c432_re.sdimacs	TIMEOUT	901.1579596	901.2441588239744	4121231360
+40	test-cases/benchmarks/re-strategic-company/x75.14.sdimacs	TIMEOUT	901.204430557	901.2692414671183	3320061952
+41	test-cases/benchmarks/re-strategic-company/x75.19.sdimacs	TIMEOUT	901.209344419	901.2388393497095	3440234496
+42	test-cases/benchmarks/re-strategic-company/x75.4.sdimacs	TIMEOUT	901.229280488	901.2542632138357	3424874496
+43	test-cases/benchmarks/re-strategic-company/x70.14.sdimacs	TIMEOUT	901.238103709	901.2596058920026	3902836736
+44	test-cases/benchmarks/re-strategic-company/x60.19.sdimacs	TIMEOUT	901.246435731	901.2861348865554	4491714560
+45	test-cases/benchmarks/re-strategic-company/x65.14.sdimacs	TIMEOUT	901.246928916	901.2615152532235	3969617920
+46	test-cases/benchmarks/re-strategic-company/x70.9.sdimacs	TIMEOUT	901.249918256	901.2801370751113	4125544448
+47	test-cases/benchmarks/re-strategic-company/x65.9.sdimacs	TIMEOUT	901.251869664	901.2819709442556	4241420288
+48	test-cases/benchmarks/re-strategic-company/x70.19.sdimacs	TIMEOUT	901.254226419	901.266300813295	3891576832
+49	test-cases/benchmarks/re-strategic-company/x65.19.sdimacs	TIMEOUT	901.26160028	901.3053445136175	4047622144
+50	test-cases/benchmarks/re-strategic-company/x60.9.sdimacs	TIMEOUT	901.264743935	901.3145693633705	4784885760
+51	test-cases/benchmarks/re-strategic-company/x60.14.sdimacs	TIMEOUT	901.271466378	901.3337756041437	5186879488
+52	test-cases/benchmarks/re-strategic-company/x75.9.sdimacs	TIMEOUT	901.277591278	901.3007981386036	3458457600
+53	test-cases/benchmarks/re-strategic-company/x70.4.sdimacs	TIMEOUT	901.279373281	901.2950105965137	4082491392
+54	test-cases/benchmarks/re-strategic-company/x60.4.sdimacs	TIMEOUT	901.280077836	901.3073413409293	4792930304
+55	test-cases/benchmarks/re-strategic-company/x65.4.sdimacs	TIMEOUT	901.306976446	901.3146202117205	4219781120
+56	test-cases/benchmarks/re-strategic-company/x55.9.sdimacs	TIMEOUT	901.320049242	901.334679483436	5358694400
+57	test-cases/benchmarks/re-strategic-company/x55.19.sdimacs	TIMEOUT	901.32727923	901.3327466696501	5004972032
+58	test-cases/benchmarks/re-strategic-company/x45.14.sdimacs	TIMEOUT	901.329671008	901.3878989638761	6698422272
+59	test-cases/benchmarks/re-strategic-company/x50.14.sdimacs	TIMEOUT	901.332721037	901.3692610561848	6255075328
+60	test-cases/benchmarks/re-strategic-company/x55.4.sdimacs	TIMEOUT	901.338390102	901.3480218872428	5442334720
+61	test-cases/benchmarks/re-strategic-company/x45.19.sdimacs	TIMEOUT	901.349041692	901.3913512770087	6967476224
+62	test-cases/benchmarks/re-strategic-company/x55.14.sdimacs	TIMEOUT	901.349382179	901.3553175516427	5680451584
+63	test-cases/benchmarks/re-strategic-company/x50.9.sdimacs	TIMEOUT	901.350225697	901.3681441061199	6139559936
+64	test-cases/benchmarks/re-strategic-company/x50.4.sdimacs	TIMEOUT	901.371787196	901.402939661406	5724176384
+65	test-cases/benchmarks/re-strategic-company/x45.9.sdimacs	TIMEOUT	901.379141503	901.4195824805647	7353270272
+66	test-cases/benchmarks/re-strategic-company/x45.4.sdimacs	TIMEOUT	901.381011794	901.4069649139419	7129595904
+67	test-cases/benchmarks/re-strategic-company/x50.19.sdimacs	TIMEOUT	901.399114578	901.455021138303	6603681792
+68	test-cases/benchmarks/re-strategic-company/x40.14.sdimacs	TIMEOUT	901.44090425	901.4505932070315	7811330048
