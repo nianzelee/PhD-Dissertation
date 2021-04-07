@@ -1,0 +1,814 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dcssat-thesis-re.xml
+name:                    dcssat-thesis-re
+run sets:                default
+date:                    Wed, 2021-04-07 00:22:18 CST
+tool:                    DC-SSAT
+tool executable:         bin/dcssat
+options:                 
+parallel runs:           15
+resource limits:
+- memory:                8000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                8000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                                 status                       cpu time   wall time        host
+-------------------------------------------------------------------------------------------------------
+re-random/rand-3-10-20-5.100.sdimacs      done                             0.01        0.03        None
+re-random/rand-3-10-20-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-20-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-20-5.103.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-20-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-30-5.105.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-30-5.106.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-30-5.107.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-30-5.108.sdimacs      done                             0.01        0.02        None
+re-random/rand-3-10-30-5.109.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-40-5.110.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-40-5.111.sdimacs      done                             0.01        0.03        None
+re-random/rand-3-10-40-5.112.sdimacs      done                             0.01        0.02        None
+re-random/rand-3-10-40-5.113.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-40-5.114.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-50-5.115.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-50-5.116.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-50-5.117.sdimacs      done                             0.01        0.01        None
+re-random/rand-3-10-50-5.118.sdimacs      done                             0.01        0.02        None
+re-random/rand-3-10-50-5.119.sdimacs      done                             0.01        0.03        None
+re-random/rand-3-20-100-10.135.sdimacs    done                             0.01        0.04        None
+re-random/rand-3-20-100-10.136.sdimacs    done                             0.01        0.04        None
+re-random/rand-3-20-100-10.137.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-20-100-10.138.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-20-100-10.139.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-20-40-10.120.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-40-10.121.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-40-10.122.sdimacs     done                             0.01        0.02        None
+re-random/rand-3-20-40-10.123.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-40-10.124.sdimacs     done                             0.01        0.03        None
+re-random/rand-3-20-60-10.125.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-60-10.126.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-60-10.127.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-60-10.128.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-60-10.129.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-80-10.130.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-80-10.131.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-80-10.132.sdimacs     done                             0.01        0.02        None
+re-random/rand-3-20-80-10.133.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-20-80-10.134.sdimacs     done                             0.01        0.02        None
+re-random/rand-3-30-120-15.150.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-120-15.151.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-30-120-15.152.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-30-120-15.153.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-120-15.154.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-150-15.155.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-30-150-15.156.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-150-15.157.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-150-15.158.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-150-15.159.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-30-60-15.140.sdimacs     done                             0.01        0.02        None
+re-random/rand-3-30-60-15.141.sdimacs     done                             0.01        0.01        None
+re-random/rand-3-30-60-15.142.sdimacs     done                             0.01        0.03        None
+re-random/rand-3-30-60-15.143.sdimacs     done                             0.02        0.03        None
+re-random/rand-3-30-60-15.144.sdimacs     done                             0.01        0.03        None
+re-random/rand-3-30-90-15.145.sdimacs     done                             0.01        0.02        None
+re-random/rand-3-30-90-15.146.sdimacs     done                             0.01        0.03        None
+re-random/rand-3-30-90-15.147.sdimacs     done                             0.01        0.02        None
+re-random/rand-3-30-90-15.148.sdimacs     done                             0.01        0.04        None
+re-random/rand-3-30-90-15.149.sdimacs     done                             0.01        0.03        None
+re-random/rand-3-40-120-20.165.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-40-120-20.166.sdimacs    done                             0.03        0.04        None
+re-random/rand-3-40-120-20.167.sdimacs    done                             0.02        0.03        None
+re-random/rand-3-40-120-20.168.sdimacs    done                             0.02        0.02        None
+re-random/rand-3-40-120-20.169.sdimacs    done                             0.03        0.03        None
+re-random/rand-3-40-160-20.170.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-40-160-20.171.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-40-160-20.172.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-40-160-20.173.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-40-160-20.174.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-40-200-20.175.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-40-200-20.176.sdimacs    done                             0.01        0.03        None
+re-random/rand-3-40-200-20.177.sdimacs    done                             0.01        0.03        None
+re-random/rand-3-40-200-20.178.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-40-200-20.179.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-40-80-20.160.sdimacs     done                             0.02        0.02        None
+re-random/rand-3-40-80-20.161.sdimacs     done                             0.02        0.02        None
+re-random/rand-3-40-80-20.162.sdimacs     done                             0.02        0.02        None
+re-random/rand-3-40-80-20.163.sdimacs     done                             0.03        0.03        None
+re-random/rand-3-40-80-20.164.sdimacs     done                             0.04        0.05        None
+re-random/rand-3-50-100-25.180.sdimacs    done                             0.43        0.43        None
+re-random/rand-3-50-100-25.181.sdimacs    done                             0.11        0.12        None
+re-random/rand-3-50-100-25.182.sdimacs    done                             0.16        0.16        None
+re-random/rand-3-50-100-25.183.sdimacs    done                             0.10        0.11        None
+re-random/rand-3-50-100-25.184.sdimacs    done                             0.29        0.29        None
+re-random/rand-3-50-150-25.185.sdimacs    done                             0.05        0.06        None
+re-random/rand-3-50-150-25.186.sdimacs    done                             0.03        0.03        None
+re-random/rand-3-50-150-25.187.sdimacs    done                             0.03        0.03        None
+re-random/rand-3-50-150-25.188.sdimacs    done                             0.03        0.04        None
+re-random/rand-3-50-150-25.189.sdimacs    done                             0.02        0.02        None
+re-random/rand-3-50-200-25.190.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-50-200-25.191.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-50-200-25.192.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-50-200-25.193.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-50-200-25.194.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-50-250-25.195.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-50-250-25.196.sdimacs    done                             0.01        0.02        None
+re-random/rand-3-50-250-25.197.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-50-250-25.198.sdimacs    done                             0.01        0.01        None
+re-random/rand-3-50-250-25.199.sdimacs    done                             0.01        0.01        None
+re-random/rand-4-10-30-5.100.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-30-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-30-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-30-5.103.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-30-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-40-5.105.sdimacs      done                             0.01        0.02        None
+re-random/rand-4-10-40-5.106.sdimacs      done                             0.01        0.02        None
+re-random/rand-4-10-40-5.107.sdimacs      done                             0.01        0.02        None
+re-random/rand-4-10-40-5.108.sdimacs      done                             0.01        0.02        None
+re-random/rand-4-10-40-5.109.sdimacs      done                             0.01        0.02        None
+re-random/rand-4-10-50-5.110.sdimacs      done                             0.01        0.03        None
+re-random/rand-4-10-50-5.111.sdimacs      done                             0.01        0.04        None
+re-random/rand-4-10-50-5.112.sdimacs      done                             0.01        0.02        None
+re-random/rand-4-10-50-5.113.sdimacs      done                             0.01        0.08        None
+re-random/rand-4-10-50-5.114.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-60-5.115.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-60-5.116.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-60-5.117.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-60-5.118.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-10-60-5.119.sdimacs      done                             0.01        0.01        None
+re-random/rand-4-20-100-10.130.sdimacs    done                             0.02        0.02        None
+re-random/rand-4-20-100-10.131.sdimacs    done                             0.02        0.02        None
+re-random/rand-4-20-100-10.132.sdimacs    done                             0.02        0.02        None
+re-random/rand-4-20-100-10.133.sdimacs    done                             0.02        0.05        None
+re-random/rand-4-20-100-10.134.sdimacs    done                             0.02        0.03        None
+re-random/rand-4-20-120-10.135.sdimacs    done                             0.01        0.02        None
+re-random/rand-4-20-120-10.136.sdimacs    done                             0.01        0.04        None
+re-random/rand-4-20-120-10.137.sdimacs    done                             0.02        0.04        None
+re-random/rand-4-20-120-10.138.sdimacs    done                             0.02        0.03        None
+re-random/rand-4-20-120-10.139.sdimacs    done                             0.02        0.02        None
+re-random/rand-4-20-60-10.120.sdimacs     done                             0.01        0.01        None
+re-random/rand-4-20-60-10.121.sdimacs     done                             0.02        0.02        None
+re-random/rand-4-20-60-10.122.sdimacs     done                             0.01        0.01        None
+re-random/rand-4-20-60-10.123.sdimacs     done                             0.01        0.01        None
+re-random/rand-4-20-60-10.124.sdimacs     done                             0.01        0.02        None
+re-random/rand-4-20-80-10.125.sdimacs     done                             0.02        0.02        None
+re-random/rand-4-20-80-10.126.sdimacs     done                             0.01        0.02        None
+re-random/rand-4-20-80-10.127.sdimacs     done                             0.02        0.02        None
+re-random/rand-4-20-80-10.128.sdimacs     done                             0.02        0.03        None
+re-random/rand-4-20-80-10.129.sdimacs     done                             0.02        0.02        None
+re-random/rand-4-30-120-15.145.sdimacs    done                             0.12        0.12        None
+re-random/rand-4-30-120-15.146.sdimacs    done                             0.15        0.15        None
+re-random/rand-4-30-120-15.147.sdimacs    done                             0.26        0.26        None
+re-random/rand-4-30-120-15.148.sdimacs    done                             0.29        0.29        None
+re-random/rand-4-30-120-15.149.sdimacs    done                             0.15        0.16        None
+re-random/rand-4-30-150-15.150.sdimacs    done                             0.07        0.07        None
+re-random/rand-4-30-150-15.151.sdimacs    done                             0.08        0.08        None
+re-random/rand-4-30-150-15.152.sdimacs    done                             0.12        0.12        None
+re-random/rand-4-30-150-15.153.sdimacs    done                             0.13        0.13        None
+re-random/rand-4-30-150-15.154.sdimacs    done                             0.19        0.20        None
+re-random/rand-4-30-180-15.155.sdimacs    done                             0.09        0.09        None
+re-random/rand-4-30-180-15.156.sdimacs    done                             0.09        0.10        None
+re-random/rand-4-30-180-15.157.sdimacs    done                             0.07        0.07        None
+re-random/rand-4-30-180-15.158.sdimacs    done                             0.07        0.07        None
+re-random/rand-4-30-180-15.159.sdimacs    done                             0.05        0.06        None
+re-random/rand-4-30-90-15.140.sdimacs     done                             0.15        0.15        None
+re-random/rand-4-30-90-15.141.sdimacs     done                             0.09        0.09        None
+re-random/rand-4-30-90-15.142.sdimacs     done                             0.24        0.24        None
+re-random/rand-4-30-90-15.143.sdimacs     done                             0.28        0.28        None
+re-random/rand-4-30-90-15.144.sdimacs     done                             0.07        0.07        None
+re-random/rand-4-40-120-20.160.sdimacs    done                             5.21        5.21        None
+re-random/rand-4-40-120-20.161.sdimacs    done                             3.86        3.86        None
+re-random/rand-4-40-120-20.162.sdimacs    done                             2.20        2.20        None
+re-random/rand-4-40-120-20.163.sdimacs    done                             5.74        5.74        None
+re-random/rand-4-40-120-20.164.sdimacs    done                             2.06        2.06        None
+re-random/rand-4-40-160-20.165.sdimacs    done                             6.30        6.31        None
+re-random/rand-4-40-160-20.166.sdimacs    done                             8.32        8.32        None
+re-random/rand-4-40-160-20.167.sdimacs    done                             2.69        2.72        None
+re-random/rand-4-40-160-20.168.sdimacs    done                             9.37        9.38        None
+re-random/rand-4-40-160-20.169.sdimacs    done                             2.71        2.71        None
+re-random/rand-4-40-200-20.170.sdimacs    done                             1.73        1.73        None
+re-random/rand-4-40-200-20.171.sdimacs    done                             2.06        2.07        None
+re-random/rand-4-40-200-20.172.sdimacs    done                             0.93        0.93        None
+re-random/rand-4-40-200-20.173.sdimacs    done                             1.22        1.22        None
+re-random/rand-4-40-200-20.174.sdimacs    done                             2.15        2.15        None
+re-random/rand-4-40-240-20.175.sdimacs    done                             0.83        0.83        None
+re-random/rand-4-40-240-20.176.sdimacs    done                             1.11        1.11        None
+re-random/rand-4-40-240-20.177.sdimacs    done                             0.77        0.77        None
+re-random/rand-4-40-240-20.178.sdimacs    done                             0.58        0.58        None
+re-random/rand-4-40-240-20.179.sdimacs    done                             0.61        0.62        None
+re-random/rand-4-50-150-25.180.sdimacs    done                            93.26       93.27        None
+re-random/rand-4-50-150-25.181.sdimacs    done                           100.42      100.43        None
+re-random/rand-4-50-150-25.182.sdimacs    done                           148.65      148.66        None
+re-random/rand-4-50-150-25.183.sdimacs    done                           119.17      119.18        None
+re-random/rand-4-50-150-25.184.sdimacs    done                           103.07      103.08        None
+re-random/rand-4-50-200-25.185.sdimacs    done                            68.09       68.09        None
+re-random/rand-4-50-200-25.186.sdimacs    done                           136.11      136.11        None
+re-random/rand-4-50-200-25.187.sdimacs    done                           119.99      120.01        None
+re-random/rand-4-50-200-25.188.sdimacs    done                            82.38       82.38        None
+re-random/rand-4-50-200-25.189.sdimacs    done                            50.23       50.23        None
+re-random/rand-4-50-250-25.190.sdimacs    done                            12.41       12.41        None
+re-random/rand-4-50-250-25.191.sdimacs    done                            41.43       41.43        None
+re-random/rand-4-50-250-25.192.sdimacs    done                            37.78       37.78        None
+re-random/rand-4-50-250-25.193.sdimacs    done                            16.88       16.88        None
+re-random/rand-4-50-250-25.194.sdimacs    done                            18.96       18.96        None
+re-random/rand-4-50-300-25.195.sdimacs    done                             9.37        9.40        None
+re-random/rand-4-50-300-25.196.sdimacs    done                             4.20        4.21        None
+re-random/rand-4-50-300-25.197.sdimacs    done                            10.06       10.06        None
+re-random/rand-4-50-300-25.198.sdimacs    done                             9.36        9.37        None
+re-random/rand-4-50-300-25.199.sdimacs    done                             6.74        6.74        None
+re-random/rand-5-10-40-5.100.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-40-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-40-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-40-5.103.sdimacs      done                             0.01        0.04        None
+re-random/rand-5-10-40-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-50-5.105.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-50-5.106.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-50-5.107.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-50-5.108.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-50-5.109.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-60-5.110.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-60-5.111.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-60-5.112.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-60-5.113.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-60-5.114.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-70-5.115.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-70-5.116.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-70-5.117.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-70-5.118.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-10-70-5.119.sdimacs      done                             0.01        0.01        None
+re-random/rand-5-20-100-10.125.sdimacs    done                             0.06        0.06        None
+re-random/rand-5-20-100-10.126.sdimacs    done                             0.06        0.06        None
+re-random/rand-5-20-100-10.127.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-100-10.128.sdimacs    done                             0.04        0.04        None
+re-random/rand-5-20-100-10.129.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-120-10.130.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-120-10.131.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-120-10.132.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-120-10.133.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-120-10.134.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-140-10.135.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-140-10.136.sdimacs    done                             0.05        0.06        None
+re-random/rand-5-20-140-10.137.sdimacs    done                             0.06        0.06        None
+re-random/rand-5-20-140-10.138.sdimacs    done                             0.06        0.06        None
+re-random/rand-5-20-140-10.139.sdimacs    done                             0.05        0.05        None
+re-random/rand-5-20-80-10.120.sdimacs     done                             0.03        0.03        None
+re-random/rand-5-20-80-10.121.sdimacs     done                             0.03        0.03        None
+re-random/rand-5-20-80-10.122.sdimacs     done                             0.04        0.05        None
+re-random/rand-5-20-80-10.123.sdimacs     done                             0.05        0.05        None
+re-random/rand-5-20-80-10.124.sdimacs     done                             0.03        0.03        None
+re-random/rand-5-30-120-15.140.sdimacs    done                             0.81        0.81        None
+re-random/rand-5-30-120-15.141.sdimacs    done                             0.94        0.94        None
+re-random/rand-5-30-120-15.142.sdimacs    done                             1.44        1.44        None
+re-random/rand-5-30-120-15.143.sdimacs    done                             0.64        0.64        None
+re-random/rand-5-30-120-15.144.sdimacs    done                             0.89        0.89        None
+re-random/rand-5-30-150-15.145.sdimacs    done                             2.45        2.45        None
+re-random/rand-5-30-150-15.146.sdimacs    done                             1.46        1.46        None
+re-random/rand-5-30-150-15.147.sdimacs    done                             1.13        1.13        None
+re-random/rand-5-30-150-15.148.sdimacs    done                             1.20        1.20        None
+re-random/rand-5-30-150-15.149.sdimacs    done                             1.98        1.98        None
+re-random/rand-5-30-180-15.150.sdimacs    done                             2.65        2.65        None
+re-random/rand-5-30-180-15.151.sdimacs    done                             2.08        2.08        None
+re-random/rand-5-30-180-15.152.sdimacs    done                             1.64        1.64        None
+re-random/rand-5-30-180-15.153.sdimacs    done                             1.08        1.08        None
+re-random/rand-5-30-180-15.154.sdimacs    done                             2.19        2.19        None
+re-random/rand-5-30-210-15.155.sdimacs    done                             2.37        2.37        None
+re-random/rand-5-30-210-15.156.sdimacs    done                             1.96        1.96        None
+re-random/rand-5-30-210-15.157.sdimacs    done                             1.65        1.66        None
+re-random/rand-5-30-210-15.158.sdimacs    done                             3.40        3.40        None
+re-random/rand-5-30-210-15.159.sdimacs    done                             3.11        3.11        None
+re-random/rand-5-40-160-20.160.sdimacs    done                            38.83       38.83        None
+re-random/rand-5-40-160-20.161.sdimacs    done                            47.10       47.10        None
+re-random/rand-5-40-160-20.162.sdimacs    done                            69.92       69.94        None
+re-random/rand-5-40-160-20.163.sdimacs    done                            23.74       23.74        None
+re-random/rand-5-40-160-20.164.sdimacs    done                            26.50       26.50        None
+re-random/rand-5-40-200-20.165.sdimacs    done                            57.17       57.17        None
+re-random/rand-5-40-200-20.166.sdimacs    done                            85.79       85.79        None
+re-random/rand-5-40-200-20.167.sdimacs    done                           113.01      113.02        None
+re-random/rand-5-40-200-20.168.sdimacs    done                            63.57       63.57        None
+re-random/rand-5-40-200-20.169.sdimacs    done                           131.60      131.60        None
+re-random/rand-5-40-240-20.170.sdimacs    done                            96.72       96.73        None
+re-random/rand-5-40-240-20.171.sdimacs    done                           103.83      103.84        None
+re-random/rand-5-40-240-20.172.sdimacs    done                           146.55      146.55        None
+re-random/rand-5-40-240-20.173.sdimacs    done                            82.22       82.22        None
+re-random/rand-5-40-240-20.174.sdimacs    done                            84.29       84.29        None
+re-random/rand-5-40-280-20.175.sdimacs    done                            68.34       68.35        None
+re-random/rand-5-40-280-20.176.sdimacs    done                            88.48       88.49        None
+re-random/rand-5-40-280-20.177.sdimacs    done                           110.77      110.77        None
+re-random/rand-5-40-280-20.178.sdimacs    done                           123.73      123.73        None
+re-random/rand-5-40-280-20.179.sdimacs    done                           118.44      118.45        None
+re-random/rand-5-50-200-25.180.sdimacs    OUT OF MEMORY                  433.22      433.27        None
+re-random/rand-5-50-200-25.181.sdimacs    OUT OF MEMORY                  403.74      403.79        None
+re-random/rand-5-50-200-25.182.sdimacs    OUT OF MEMORY                  442.32      442.38        None
+re-random/rand-5-50-200-25.183.sdimacs    OUT OF MEMORY                  450.42      450.48        None
+re-random/rand-5-50-200-25.184.sdimacs    OUT OF MEMORY                  435.90      435.96        None
+re-random/rand-5-50-250-25.185.sdimacs    OUT OF MEMORY                  538.37      538.43        None
+re-random/rand-5-50-250-25.186.sdimacs    OUT OF MEMORY                  534.41      534.50        None
+re-random/rand-5-50-250-25.187.sdimacs    OUT OF MEMORY                  492.71      492.78        None
+re-random/rand-5-50-250-25.188.sdimacs    OUT OF MEMORY                  537.99      538.07        None
+re-random/rand-5-50-250-25.189.sdimacs    OUT OF MEMORY                  491.04      491.13        None
+re-random/rand-5-50-300-25.190.sdimacs    OUT OF MEMORY                  596.22      596.28        None
+re-random/rand-5-50-300-25.191.sdimacs    OUT OF MEMORY                  624.44      624.51        None
+re-random/rand-5-50-300-25.192.sdimacs    OUT OF MEMORY                  537.22      537.29        None
+re-random/rand-5-50-300-25.193.sdimacs    OUT OF MEMORY                  620.08      620.15        None
+re-random/rand-5-50-300-25.194.sdimacs    OUT OF MEMORY                  579.05      579.11        None
+re-random/rand-5-50-350-25.195.sdimacs    OUT OF MEMORY                  665.49      665.55        None
+re-random/rand-5-50-350-25.196.sdimacs    OUT OF MEMORY                  665.63      665.65        None
+re-random/rand-5-50-350-25.197.sdimacs    OUT OF MEMORY                  640.18      640.20        None
+re-random/rand-5-50-350-25.198.sdimacs    OUT OF MEMORY                  685.40      685.43        None
+re-random/rand-5-50-350-25.199.sdimacs    OUT OF MEMORY                  671.20      671.25        None
+re-random/rand-6-10-50-5.100.sdimacs      done                             0.01        0.03        None
+re-random/rand-6-10-50-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-50-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-50-5.103.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-50-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-60-5.105.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-60-5.106.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-60-5.107.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-60-5.108.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-60-5.109.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-70-5.110.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-70-5.111.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-70-5.112.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-70-5.113.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-70-5.114.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-80-5.115.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-80-5.116.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-80-5.117.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-80-5.118.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-10-80-5.119.sdimacs      done                             0.01        0.01        None
+re-random/rand-6-20-100-10.120.sdimacs    done                             0.05        0.05        None
+re-random/rand-6-20-100-10.121.sdimacs    done                             0.06        0.06        None
+re-random/rand-6-20-100-10.122.sdimacs    done                             0.05        0.06        None
+re-random/rand-6-20-100-10.123.sdimacs    done                             0.06        0.06        None
+re-random/rand-6-20-100-10.124.sdimacs    done                             0.05        0.05        None
+re-random/rand-6-20-120-10.125.sdimacs    done                             0.08        0.08        None
+re-random/rand-6-20-120-10.126.sdimacs    done                             0.08        0.08        None
+re-random/rand-6-20-120-10.127.sdimacs    done                             0.08        0.08        None
+re-random/rand-6-20-120-10.128.sdimacs    done                             0.08        0.08        None
+re-random/rand-6-20-120-10.129.sdimacs    done                             0.07        0.07        None
+re-random/rand-6-20-140-10.130.sdimacs    done                             0.12        0.12        None
+re-random/rand-6-20-140-10.131.sdimacs    done                             0.11        0.11        None
+re-random/rand-6-20-140-10.132.sdimacs    done                             0.09        0.09        None
+re-random/rand-6-20-140-10.133.sdimacs    done                             0.10        0.10        None
+re-random/rand-6-20-140-10.134.sdimacs    done                             0.09        0.09        None
+re-random/rand-6-20-160-10.135.sdimacs    done                             0.12        0.12        None
+re-random/rand-6-20-160-10.136.sdimacs    done                             0.11        0.11        None
+re-random/rand-6-20-160-10.137.sdimacs    done                             0.14        0.14        None
+re-random/rand-6-20-160-10.138.sdimacs    done                             0.08        0.08        None
+re-random/rand-6-20-160-10.139.sdimacs    done                             0.11        0.12        None
+re-random/rand-6-30-150-15.140.sdimacs    done                             2.43        2.44        None
+re-random/rand-6-30-150-15.141.sdimacs    done                             3.21        3.21        None
+re-random/rand-6-30-150-15.142.sdimacs    done                             2.04        2.04        None
+re-random/rand-6-30-150-15.143.sdimacs    done                             1.81        1.81        None
+re-random/rand-6-30-150-15.144.sdimacs    done                             3.79        3.79        None
+re-random/rand-6-30-180-15.145.sdimacs    done                             4.73        4.73        None
+re-random/rand-6-30-180-15.146.sdimacs    done                             4.53        4.53        None
+re-random/rand-6-30-180-15.147.sdimacs    done                             5.32        5.32        None
+re-random/rand-6-30-180-15.148.sdimacs    done                             3.51        3.51        None
+re-random/rand-6-30-180-15.149.sdimacs    done                             4.88        4.88        None
+re-random/rand-6-30-210-15.150.sdimacs    done                             4.93        4.93        None
+re-random/rand-6-30-210-15.151.sdimacs    done                             4.26        4.26        None
+re-random/rand-6-30-210-15.152.sdimacs    done                             4.98        4.99        None
+re-random/rand-6-30-210-15.153.sdimacs    done                             5.71        5.71        None
+re-random/rand-6-30-210-15.154.sdimacs    done                             7.08        7.08        None
+re-random/rand-6-30-240-15.155.sdimacs    done                            10.06       10.06        None
+re-random/rand-6-30-240-15.156.sdimacs    done                             8.05        8.05        None
+re-random/rand-6-30-240-15.157.sdimacs    done                            11.92       11.92        None
+re-random/rand-6-30-240-15.158.sdimacs    done                             8.84        8.84        None
+re-random/rand-6-30-240-15.159.sdimacs    done                            10.52       10.52        None
+re-random/rand-6-40-200-20.160.sdimacs    done                           183.89      183.89        None
+re-random/rand-6-40-200-20.161.sdimacs    done                           126.17      126.18        None
+re-random/rand-6-40-200-20.162.sdimacs    done                           129.43      129.43        None
+re-random/rand-6-40-200-20.163.sdimacs    done                           119.74      119.75        None
+re-random/rand-6-40-200-20.164.sdimacs    done                           162.50      162.51        None
+re-random/rand-6-40-240-20.165.sdimacs    done                           233.13      233.14        None
+re-random/rand-6-40-240-20.166.sdimacs    done                           423.39      423.40        None
+re-random/rand-6-40-240-20.167.sdimacs    done                           289.04      289.05        None
+re-random/rand-6-40-240-20.168.sdimacs    done                           441.41      441.42        None
+re-random/rand-6-40-240-20.169.sdimacs    done                           289.73      289.76        None
+re-random/rand-6-40-280-20.170.sdimacs    done                           393.05      393.06        None
+re-random/rand-6-40-280-20.171.sdimacs    done                           524.58      524.60        None
+re-random/rand-6-40-280-20.172.sdimacs    OUT OF MEMORY                  626.94      626.96        None
+re-random/rand-6-40-280-20.173.sdimacs    done                           332.98      333.01        None
+re-random/rand-6-40-280-20.174.sdimacs    done                           539.33      539.36        None
+re-random/rand-6-40-320-20.175.sdimacs    OUT OF MEMORY                  720.20      720.23        None
+re-random/rand-6-40-320-20.176.sdimacs    OUT OF MEMORY                  747.08      747.13        None
+re-random/rand-6-40-320-20.177.sdimacs    done                           613.26      613.32        None
+re-random/rand-6-40-320-20.178.sdimacs    OUT OF MEMORY                  727.63      727.72        None
+re-random/rand-6-40-320-20.179.sdimacs    OUT OF MEMORY                  753.28      753.34        None
+re-random/rand-6-50-250-25.180.sdimacs    OUT OF MEMORY                  562.41      562.46        None
+re-random/rand-6-50-250-25.181.sdimacs    OUT OF MEMORY                  586.21      586.25        None
+re-random/rand-6-50-250-25.182.sdimacs    OUT OF MEMORY                  572.05      572.12        None
+re-random/rand-6-50-250-25.183.sdimacs    OUT OF MEMORY                  558.07      558.12        None
+re-random/rand-6-50-250-25.184.sdimacs    OUT OF MEMORY                  507.55      507.61        None
+re-random/rand-6-50-300-25.185.sdimacs    OUT OF MEMORY                  646.60      646.66        None
+re-random/rand-6-50-300-25.186.sdimacs    OUT OF MEMORY                  645.02      645.07        None
+re-random/rand-6-50-300-25.187.sdimacs    OUT OF MEMORY                  621.55      621.61        None
+re-random/rand-6-50-300-25.188.sdimacs    OUT OF MEMORY                  649.80      649.87        None
+re-random/rand-6-50-300-25.189.sdimacs    OUT OF MEMORY                  612.88      612.93        None
+re-random/rand-6-50-350-25.190.sdimacs    OUT OF MEMORY                  678.49      678.57        None
+re-random/rand-6-50-350-25.191.sdimacs    OUT OF MEMORY                  708.58      708.68        None
+re-random/rand-6-50-350-25.192.sdimacs    OUT OF MEMORY                  682.06      682.08        None
+re-random/rand-6-50-350-25.193.sdimacs    OUT OF MEMORY                  713.50      713.53        None
+re-random/rand-6-50-350-25.194.sdimacs    OUT OF MEMORY                  680.04      680.09        None
+re-random/rand-6-50-400-25.195.sdimacs    OUT OF MEMORY                  740.01      740.03        None
+re-random/rand-6-50-400-25.196.sdimacs    OUT OF MEMORY                  737.69      737.73        None
+re-random/rand-6-50-400-25.197.sdimacs    OUT OF MEMORY                  770.71      770.73        None
+re-random/rand-6-50-400-25.198.sdimacs    OUT OF MEMORY                  761.68      761.74        None
+re-random/rand-6-50-400-25.199.sdimacs    OUT OF MEMORY                  748.48      748.51        None
+re-random/rand-7-10-60-5.100.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-60-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-60-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-60-5.103.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-60-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-70-5.105.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-70-5.106.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-70-5.107.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-70-5.108.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-70-5.109.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-80-5.110.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-80-5.111.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-80-5.112.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-80-5.113.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-80-5.114.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-90-5.115.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-90-5.116.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-90-5.117.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-90-5.118.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-10-90-5.119.sdimacs      done                             0.01        0.01        None
+re-random/rand-7-20-120-10.120.sdimacs    done                             0.07        0.07        None
+re-random/rand-7-20-120-10.121.sdimacs    done                             0.06        0.06        None
+re-random/rand-7-20-120-10.122.sdimacs    done                             0.07        0.07        None
+re-random/rand-7-20-120-10.123.sdimacs    done                             0.05        0.05        None
+re-random/rand-7-20-120-10.124.sdimacs    done                             0.05        0.05        None
+re-random/rand-7-20-140-10.125.sdimacs    done                             0.08        0.09        None
+re-random/rand-7-20-140-10.126.sdimacs    done                             0.11        0.11        None
+re-random/rand-7-20-140-10.127.sdimacs    done                             0.06        0.06        None
+re-random/rand-7-20-140-10.128.sdimacs    done                             0.07        0.08        None
+re-random/rand-7-20-140-10.129.sdimacs    done                             0.09        0.09        None
+re-random/rand-7-20-160-10.130.sdimacs    done                             0.11        0.11        None
+re-random/rand-7-20-160-10.131.sdimacs    done                             0.14        0.14        None
+re-random/rand-7-20-160-10.132.sdimacs    done                             0.14        0.14        None
+re-random/rand-7-20-160-10.133.sdimacs    done                             0.14        0.15        None
+re-random/rand-7-20-160-10.134.sdimacs    done                             0.13        0.14        None
+re-random/rand-7-20-180-10.135.sdimacs    done                             0.20        0.20        None
+re-random/rand-7-20-180-10.136.sdimacs    done                             0.23        0.23        None
+re-random/rand-7-20-180-10.137.sdimacs    done                             0.18        0.18        None
+re-random/rand-7-20-180-10.138.sdimacs    done                             0.18        0.18        None
+re-random/rand-7-20-180-10.139.sdimacs    done                             0.16        0.16        None
+re-random/rand-7-30-180-15.140.sdimacs    done                             2.75        2.75        None
+re-random/rand-7-30-180-15.141.sdimacs    done                             2.45        2.45        None
+re-random/rand-7-30-180-15.142.sdimacs    done                             5.65        5.66        None
+re-random/rand-7-30-180-15.143.sdimacs    done                             3.62        3.62        None
+re-random/rand-7-30-180-15.144.sdimacs    done                             2.22        2.22        None
+re-random/rand-7-30-210-15.145.sdimacs    done                             5.72        5.72        None
+re-random/rand-7-30-210-15.146.sdimacs    done                             9.62        9.62        None
+re-random/rand-7-30-210-15.147.sdimacs    done                             6.45        6.45        None
+re-random/rand-7-30-210-15.148.sdimacs    done                             5.48        5.48        None
+re-random/rand-7-30-210-15.149.sdimacs    done                             4.71        4.72        None
+re-random/rand-7-30-240-15.150.sdimacs    done                             9.77        9.77        None
+re-random/rand-7-30-240-15.151.sdimacs    done                             8.70        8.70        None
+re-random/rand-7-30-240-15.152.sdimacs    done                             9.33        9.34        None
+re-random/rand-7-30-240-15.153.sdimacs    done                             8.82        8.82        None
+re-random/rand-7-30-240-15.154.sdimacs    done                            10.82       10.82        None
+re-random/rand-7-30-270-15.155.sdimacs    done                            14.12       14.13        None
+re-random/rand-7-30-270-15.156.sdimacs    done                            14.01       14.01        None
+re-random/rand-7-30-270-15.157.sdimacs    done                            15.68       15.68        None
+re-random/rand-7-30-270-15.158.sdimacs    done                            13.34       13.35        None
+re-random/rand-7-30-270-15.159.sdimacs    done                            14.36       14.37        None
+re-random/rand-7-40-240-20.160.sdimacs    done                           221.21      221.21        None
+re-random/rand-7-40-240-20.161.sdimacs    done                           196.63      196.64        None
+re-random/rand-7-40-240-20.162.sdimacs    done                           288.85      288.86        None
+re-random/rand-7-40-240-20.163.sdimacs    done                           320.12      320.14        None
+re-random/rand-7-40-240-20.164.sdimacs    done                           374.62      374.63        None
+re-random/rand-7-40-280-20.165.sdimacs    done                           534.64      534.67        None
+re-random/rand-7-40-280-20.166.sdimacs    done                           256.39      256.40        None
+re-random/rand-7-40-280-20.167.sdimacs    done                           385.15      385.16        None
+re-random/rand-7-40-280-20.168.sdimacs    done                           469.25      469.27        None
+re-random/rand-7-40-280-20.169.sdimacs    done                           514.97      515.00        None
+re-random/rand-7-40-320-20.170.sdimacs    OUT OF MEMORY                  784.56      784.64        None
+re-random/rand-7-40-320-20.171.sdimacs    OUT OF MEMORY                  805.93      805.95        None
+re-random/rand-7-40-320-20.172.sdimacs    OUT OF MEMORY                  765.54      765.56        None
+re-random/rand-7-40-320-20.173.sdimacs    OUT OF MEMORY                  776.73      776.80        None
+re-random/rand-7-40-320-20.174.sdimacs    OUT OF MEMORY                  793.60      793.64        None
+re-random/rand-7-40-360-20.175.sdimacs    OUT OF MEMORY                  808.45      808.49        None
+re-random/rand-7-40-360-20.176.sdimacs    OUT OF MEMORY                  835.66      835.68        None
+re-random/rand-7-40-360-20.177.sdimacs    OUT OF MEMORY                  821.33      821.36        None
+re-random/rand-7-40-360-20.178.sdimacs    OUT OF MEMORY                  826.03      826.05        None
+re-random/rand-7-40-360-20.179.sdimacs    OUT OF MEMORY                  822.01      822.05        None
+re-random/rand-7-50-300-25.180.sdimacs    OUT OF MEMORY                  645.64      645.71        None
+re-random/rand-7-50-300-25.181.sdimacs    OUT OF MEMORY                  679.37      679.39        None
+re-random/rand-7-50-300-25.182.sdimacs    OUT OF MEMORY                  715.85      715.88        None
+re-random/rand-7-50-300-25.183.sdimacs    OUT OF MEMORY                  671.44      671.48        None
+re-random/rand-7-50-300-25.184.sdimacs    OUT OF MEMORY                  699.64      699.68        None
+re-random/rand-7-50-350-25.185.sdimacs    OUT OF MEMORY                  750.51      750.52        None
+re-random/rand-7-50-350-25.186.sdimacs    OUT OF MEMORY                  759.57      759.64        None
+re-random/rand-7-50-350-25.187.sdimacs    OUT OF MEMORY                  724.28      724.33        None
+re-random/rand-7-50-350-25.188.sdimacs    OUT OF MEMORY                  726.46      726.48        None
+re-random/rand-7-50-350-25.189.sdimacs    OUT OF MEMORY                  752.77      752.79        None
+re-random/rand-7-50-400-25.190.sdimacs    OUT OF MEMORY                  818.47      818.49        None
+re-random/rand-7-50-400-25.191.sdimacs    OUT OF MEMORY                  817.68      817.74        None
+re-random/rand-7-50-400-25.192.sdimacs    OUT OF MEMORY                  847.37      847.39        None
+re-random/rand-7-50-400-25.193.sdimacs    OUT OF MEMORY                  799.67      799.69        None
+re-random/rand-7-50-400-25.194.sdimacs    OUT OF MEMORY                  793.92      793.94        None
+re-random/rand-7-50-450-25.195.sdimacs    OUT OF MEMORY                  848.90      848.92        None
+re-random/rand-7-50-450-25.196.sdimacs    OUT OF MEMORY                  872.03      872.06        None
+re-random/rand-7-50-450-25.197.sdimacs    OUT OF MEMORY                  872.17      872.21        None
+re-random/rand-7-50-450-25.198.sdimacs    OUT OF MEMORY                  860.56      860.60        None
+re-random/rand-7-50-450-25.199.sdimacs    OUT OF MEMORY                  870.64      870.68        None
+re-random/rand-8-10-100-5.115.sdimacs     done                             0.01        0.01        None
+re-random/rand-8-10-100-5.116.sdimacs     done                             0.01        0.01        None
+re-random/rand-8-10-100-5.117.sdimacs     done                             0.01        0.01        None
+re-random/rand-8-10-100-5.118.sdimacs     done                             0.01        0.01        None
+re-random/rand-8-10-100-5.119.sdimacs     done                             0.01        0.01        None
+re-random/rand-8-10-70-5.100.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-70-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-70-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-70-5.103.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-70-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-80-5.105.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-80-5.106.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-80-5.107.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-80-5.108.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-80-5.109.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-90-5.110.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-90-5.111.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-90-5.112.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-90-5.113.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-10-90-5.114.sdimacs      done                             0.01        0.01        None
+re-random/rand-8-20-140-10.120.sdimacs    done                             0.07        0.07        None
+re-random/rand-8-20-140-10.121.sdimacs    done                             0.04        0.04        None
+re-random/rand-8-20-140-10.122.sdimacs    done                             0.06        0.06        None
+re-random/rand-8-20-140-10.123.sdimacs    done                             0.05        0.05        None
+re-random/rand-8-20-140-10.124.sdimacs    done                             0.06        0.06        None
+re-random/rand-8-20-160-10.125.sdimacs    done                             0.09        0.10        None
+re-random/rand-8-20-160-10.126.sdimacs    done                             0.12        0.12        None
+re-random/rand-8-20-160-10.127.sdimacs    done                             0.07        0.07        None
+re-random/rand-8-20-160-10.128.sdimacs    done                             0.09        0.09        None
+re-random/rand-8-20-160-10.129.sdimacs    done                             0.09        0.09        None
+re-random/rand-8-20-180-10.130.sdimacs    done                             0.14        0.14        None
+re-random/rand-8-20-180-10.131.sdimacs    done                             0.12        0.12        None
+re-random/rand-8-20-180-10.132.sdimacs    done                             0.12        0.12        None
+re-random/rand-8-20-180-10.133.sdimacs    done                             0.09        0.09        None
+re-random/rand-8-20-180-10.134.sdimacs    done                             0.10        0.10        None
+re-random/rand-8-20-200-10.135.sdimacs    done                             0.15        0.15        None
+re-random/rand-8-20-200-10.136.sdimacs    done                             0.17        0.17        None
+re-random/rand-8-20-200-10.137.sdimacs    done                             0.19        0.19        None
+re-random/rand-8-20-200-10.138.sdimacs    done                             0.19        0.19        None
+re-random/rand-8-20-200-10.139.sdimacs    done                             0.20        0.20        None
+re-random/rand-8-30-210-15.140.sdimacs    done                             3.52        3.52        None
+re-random/rand-8-30-210-15.141.sdimacs    done                             3.04        3.04        None
+re-random/rand-8-30-210-15.142.sdimacs    done                             3.97        3.97        None
+re-random/rand-8-30-210-15.143.sdimacs    done                             3.79        3.79        None
+re-random/rand-8-30-210-15.144.sdimacs    done                             1.66        1.66        None
+re-random/rand-8-30-240-15.145.sdimacs    done                             8.36        8.36        None
+re-random/rand-8-30-240-15.146.sdimacs    done                             3.45        3.46        None
+re-random/rand-8-30-240-15.147.sdimacs    done                             4.75        4.76        None
+re-random/rand-8-30-240-15.148.sdimacs    done                             5.45        5.46        None
+re-random/rand-8-30-240-15.149.sdimacs    done                             7.78        7.79        None
+re-random/rand-8-30-270-15.150.sdimacs    done                             8.83        8.83        None
+re-random/rand-8-30-270-15.151.sdimacs    done                            11.29       11.29        None
+re-random/rand-8-30-270-15.152.sdimacs    done                            10.17       10.17        None
+re-random/rand-8-30-270-15.153.sdimacs    done                             6.08        6.08        None
+re-random/rand-8-30-270-15.154.sdimacs    done                             6.37        6.38        None
+re-random/rand-8-30-300-15.155.sdimacs    done                            17.64       17.64        None
+re-random/rand-8-30-300-15.156.sdimacs    done                            18.36       18.37        None
+re-random/rand-8-30-300-15.157.sdimacs    done                            12.07       12.08        None
+re-random/rand-8-30-300-15.158.sdimacs    done                            13.30       13.31        None
+re-random/rand-8-30-300-15.159.sdimacs    done                            15.61       15.62        None
+re-random/rand-8-40-280-20.160.sdimacs    done                           123.22      123.23        None
+re-random/rand-8-40-280-20.161.sdimacs    done                           233.83      233.84        None
+re-random/rand-8-40-280-20.162.sdimacs    done                           138.27      138.28        None
+re-random/rand-8-40-280-20.163.sdimacs    done                           227.62      227.63        None
+re-random/rand-8-40-280-20.164.sdimacs    done                           318.40      318.43        None
+re-random/rand-8-40-320-20.165.sdimacs    done                           384.96      384.97        None
+re-random/rand-8-40-320-20.166.sdimacs    done                           311.37      311.41        None
+re-random/rand-8-40-320-20.167.sdimacs    done                           390.13      390.18        None
+re-random/rand-8-40-320-20.168.sdimacs    done                           202.71      202.72        None
+re-random/rand-8-40-320-20.169.sdimacs    done                           322.61      322.62        None
+re-random/rand-8-40-360-20.170.sdimacs    done                           775.19      775.21        None
+re-random/rand-8-40-360-20.171.sdimacs    done                           562.59      562.61        None
+re-random/rand-8-40-360-20.172.sdimacs    OUT OF MEMORY                  867.92      867.94        None
+re-random/rand-8-40-360-20.173.sdimacs    done                           630.01      630.03        None
+re-random/rand-8-40-360-20.174.sdimacs    done                           497.48      497.49        None
+re-random/rand-8-40-400-20.175.sdimacs    OUT OF MEMORY                  867.43      867.47        None
+re-random/rand-8-40-400-20.176.sdimacs    TIMEOUT                        901.38      901.47        None
+re-random/rand-8-40-400-20.177.sdimacs    TIMEOUT                        901.45      901.49        None
+re-random/rand-8-40-400-20.178.sdimacs    TIMEOUT                        901.45      901.48        None
+re-random/rand-8-40-400-20.179.sdimacs    TIMEOUT                        901.43      901.48        None
+re-random/rand-8-50-350-25.180.sdimacs    OUT OF MEMORY                  744.41      744.44        None
+re-random/rand-8-50-350-25.181.sdimacs    OUT OF MEMORY                  751.28      751.32        None
+re-random/rand-8-50-350-25.182.sdimacs    OUT OF MEMORY                  809.99      810.02        None
+re-random/rand-8-50-350-25.183.sdimacs    OUT OF MEMORY                  762.61      762.64        None
+re-random/rand-8-50-350-25.184.sdimacs    OUT OF MEMORY                  774.10      774.16        None
+re-random/rand-8-50-400-25.185.sdimacs    OUT OF MEMORY                  870.61      870.64        None
+re-random/rand-8-50-400-25.186.sdimacs    TIMEOUT                        901.46      901.50        None
+re-random/rand-8-50-400-25.187.sdimacs    OUT OF MEMORY                  886.66      886.70        None
+re-random/rand-8-50-400-25.188.sdimacs    OUT OF MEMORY                  864.91      864.95        None
+re-random/rand-8-50-400-25.189.sdimacs    OUT OF MEMORY                  873.15      873.20        None
+re-random/rand-8-50-450-25.190.sdimacs    TIMEOUT                        901.40      901.46        None
+re-random/rand-8-50-450-25.191.sdimacs    TIMEOUT                        901.47      901.49        None
+re-random/rand-8-50-450-25.192.sdimacs    TIMEOUT                        901.43      901.47        None
+re-random/rand-8-50-450-25.193.sdimacs    TIMEOUT                        901.38      901.46        None
+re-random/rand-8-50-450-25.194.sdimacs    TIMEOUT                        901.45      901.48        None
+re-random/rand-8-50-500-25.195.sdimacs    TIMEOUT                        901.42      901.44        None
+re-random/rand-8-50-500-25.196.sdimacs    TIMEOUT                        901.45      901.47        None
+re-random/rand-8-50-500-25.197.sdimacs    TIMEOUT                        901.41      901.45        None
+re-random/rand-8-50-500-25.198.sdimacs    TIMEOUT                        901.46      901.49        None
+re-random/rand-8-50-500-25.199.sdimacs    TIMEOUT                        901.43      901.49        None
+re-random/rand-9-10-100-5.110.sdimacs     done                             0.01        0.03        None
+re-random/rand-9-10-100-5.111.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-100-5.112.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-100-5.113.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-100-5.114.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-110-5.115.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-110-5.116.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-110-5.117.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-110-5.118.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-110-5.119.sdimacs     done                             0.01        0.01        None
+re-random/rand-9-10-80-5.100.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-80-5.101.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-80-5.102.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-80-5.103.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-80-5.104.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-90-5.105.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-90-5.106.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-90-5.107.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-90-5.108.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-10-90-5.109.sdimacs      done                             0.01        0.01        None
+re-random/rand-9-20-160-10.120.sdimacs    done                             0.07        0.07        None
+re-random/rand-9-20-160-10.121.sdimacs    done                             0.06        0.06        None
+re-random/rand-9-20-160-10.122.sdimacs    done                             0.06        0.06        None
+re-random/rand-9-20-160-10.123.sdimacs    done                             0.05        0.05        None
+re-random/rand-9-20-160-10.124.sdimacs    done                             0.06        0.06        None
+re-random/rand-9-20-180-10.125.sdimacs    done                             0.08        0.08        None
+re-random/rand-9-20-180-10.126.sdimacs    done                             0.07        0.07        None
+re-random/rand-9-20-180-10.127.sdimacs    done                             0.08        0.08        None
+re-random/rand-9-20-180-10.128.sdimacs    done                             0.06        0.07        None
+re-random/rand-9-20-180-10.129.sdimacs    done                             0.07        0.08        None
+re-random/rand-9-20-200-10.130.sdimacs    done                             0.11        0.11        None
+re-random/rand-9-20-200-10.131.sdimacs    done                             0.09        0.09        None
+re-random/rand-9-20-200-10.132.sdimacs    done                             0.10        0.10        None
+re-random/rand-9-20-200-10.133.sdimacs    done                             0.09        0.09        None
+re-random/rand-9-20-200-10.134.sdimacs    done                             0.10        0.10        None
+re-random/rand-9-20-220-10.135.sdimacs    done                             0.14        0.14        None
+re-random/rand-9-20-220-10.136.sdimacs    done                             0.11        0.11        None
+re-random/rand-9-20-220-10.137.sdimacs    done                             0.13        0.13        None
+re-random/rand-9-20-220-10.138.sdimacs    done                             0.10        0.10        None
+re-random/rand-9-20-220-10.139.sdimacs    done                             0.10        0.10        None
+re-random/rand-9-30-240-15.140.sdimacs    done                             2.26        2.26        None
+re-random/rand-9-30-240-15.141.sdimacs    done                             2.49        2.49        None
+re-random/rand-9-30-240-15.142.sdimacs    done                             1.56        1.56        None
+re-random/rand-9-30-240-15.143.sdimacs    done                             2.54        2.54        None
+re-random/rand-9-30-240-15.144.sdimacs    done                             3.52        3.52        None
+re-random/rand-9-30-270-15.145.sdimacs    done                             3.31        3.31        None
+re-random/rand-9-30-270-15.146.sdimacs    done                             3.53        3.53        None
+re-random/rand-9-30-270-15.147.sdimacs    done                             3.62        3.62        None
+re-random/rand-9-30-270-15.148.sdimacs    done                             3.09        3.09        None
+re-random/rand-9-30-270-15.149.sdimacs    done                             3.68        3.68        None
+re-random/rand-9-30-300-15.150.sdimacs    done                             6.35        6.36        None
+re-random/rand-9-30-300-15.151.sdimacs    done                             5.69        5.69        None
+re-random/rand-9-30-300-15.152.sdimacs    done                             5.80        5.80        None
+re-random/rand-9-30-300-15.153.sdimacs    done                             5.82        5.82        None
+re-random/rand-9-30-300-15.154.sdimacs    done                             5.05        5.05        None
+re-random/rand-9-30-330-15.155.sdimacs    done                             9.96        9.97        None
+re-random/rand-9-30-330-15.156.sdimacs    done                             8.73        8.73        None
+re-random/rand-9-30-330-15.157.sdimacs    done                             8.04        8.04        None
+re-random/rand-9-30-330-15.158.sdimacs    done                            12.85       12.85        None
+re-random/rand-9-30-330-15.159.sdimacs    done                             6.30        6.30        None
+re-random/rand-9-40-320-20.160.sdimacs    done                           161.71      161.71        None
+re-random/rand-9-40-320-20.161.sdimacs    done                           143.95      143.95        None
+re-random/rand-9-40-320-20.162.sdimacs    done                           106.38      106.39        None
+re-random/rand-9-40-320-20.163.sdimacs    done                            80.34       80.35        None
+re-random/rand-9-40-320-20.164.sdimacs    done                           143.90      143.91        None
+re-random/rand-9-40-360-20.165.sdimacs    done                           227.45      227.46        None
+re-random/rand-9-40-360-20.166.sdimacs    done                           306.97      306.98        None
+re-random/rand-9-40-360-20.167.sdimacs    done                           516.32      516.33        None
+re-random/rand-9-40-360-20.168.sdimacs    done                           160.94      160.94        None
+re-random/rand-9-40-360-20.169.sdimacs    done                           231.50      231.51        None
+re-random/rand-9-40-400-20.170.sdimacs    done                           427.75      427.76        None
+re-random/rand-9-40-400-20.171.sdimacs    done                           370.18      370.19        None
+re-random/rand-9-40-400-20.172.sdimacs    done                           414.06      414.07        None
+re-random/rand-9-40-400-20.173.sdimacs    done                           490.50      490.52        None
+re-random/rand-9-40-400-20.174.sdimacs    done                           475.39      475.43        None
+re-random/rand-9-40-440-20.175.sdimacs    done                           792.05      792.08        None
+re-random/rand-9-40-440-20.176.sdimacs    done                           653.07      653.10        None
+re-random/rand-9-40-440-20.177.sdimacs    done                           602.51      602.52        None
+re-random/rand-9-40-440-20.178.sdimacs    done                           651.39      651.41        None
+re-random/rand-9-40-440-20.179.sdimacs    done                           783.92      783.95        None
+re-random/rand-9-50-400-25.180.sdimacs    OUT OF MEMORY                  862.07      862.09        None
+re-random/rand-9-50-400-25.181.sdimacs    OUT OF MEMORY                  855.57      855.59        None
+re-random/rand-9-50-400-25.182.sdimacs    OUT OF MEMORY                  860.56      860.63        None
+re-random/rand-9-50-400-25.183.sdimacs    OUT OF MEMORY                  857.64      857.67        None
+re-random/rand-9-50-400-25.184.sdimacs    OUT OF MEMORY                  872.90      872.93        None
+re-random/rand-9-50-450-25.185.sdimacs    TIMEOUT                        901.45      901.48        None
+re-random/rand-9-50-450-25.186.sdimacs    TIMEOUT                        901.40      901.42        None
+re-random/rand-9-50-450-25.187.sdimacs    TIMEOUT                        901.42      901.44        None
+re-random/rand-9-50-450-25.188.sdimacs    OUT OF MEMORY                  876.75      876.78        None
+re-random/rand-9-50-450-25.189.sdimacs    TIMEOUT                        901.37      901.45        None
+re-random/rand-9-50-500-25.190.sdimacs    TIMEOUT                        901.39      901.41        None
+re-random/rand-9-50-500-25.191.sdimacs    TIMEOUT                        901.39      901.42        None
+re-random/rand-9-50-500-25.192.sdimacs    TIMEOUT                        901.39      901.41        None
+re-random/rand-9-50-500-25.193.sdimacs    TIMEOUT                        901.40      901.43        None
+re-random/rand-9-50-500-25.194.sdimacs    TIMEOUT                        901.38      901.41        None
+re-random/rand-9-50-550-25.195.sdimacs    TIMEOUT                        901.39      901.41        None
+re-random/rand-9-50-550-25.196.sdimacs    TIMEOUT                        901.40      901.42        None
+re-random/rand-9-50-550-25.197.sdimacs    TIMEOUT                        901.35      901.40        None
+re-random/rand-9-50-550-25.198.sdimacs    TIMEOUT                        901.38      901.40        None
+re-random/rand-9-50-550-25.199.sdimacs    TIMEOUT                        901.37      901.39        None
+re-strategic-company/x10.14.sdimacs       done                             0.03        0.03        None
+re-strategic-company/x10.19.sdimacs       done                             0.03        0.03        None
+re-strategic-company/x10.4.sdimacs        done                             0.03        0.03        None
+re-strategic-company/x10.9.sdimacs        done                             0.03        0.03        None
+re-strategic-company/x15.14.sdimacs       done                             0.08        0.08        None
+re-strategic-company/x15.19.sdimacs       done                             0.16        0.16        None
+re-strategic-company/x15.4.sdimacs        done                             0.13        0.14        None
+re-strategic-company/x15.9.sdimacs        done                             0.16        0.16        None
+re-strategic-company/x20.14.sdimacs       done                             0.49        0.50        None
+re-strategic-company/x20.19.sdimacs       done                             0.88        0.88        None
+re-strategic-company/x20.4.sdimacs        done                             0.45        0.45        None
+re-strategic-company/x20.9.sdimacs        done                             0.71        0.71        None
+re-strategic-company/x25.14.sdimacs       done                            10.43       10.43        None
+re-strategic-company/x25.19.sdimacs       done                             8.01        8.02        None
+re-strategic-company/x25.4.sdimacs        done                             6.62        6.62        None
+re-strategic-company/x25.9.sdimacs        done                             5.41        5.41        None
+re-strategic-company/x30.14.sdimacs       done                            44.41       44.42        None
+re-strategic-company/x30.19.sdimacs       done                            30.10       30.10        None
+re-strategic-company/x30.4.sdimacs        done                            15.45       15.45        None
+re-strategic-company/x30.9.sdimacs        done                            37.67       37.67        None
+re-strategic-company/x35.14.sdimacs       OUT OF MEMORY                  231.47      231.48        None
+re-strategic-company/x35.19.sdimacs       OUT OF MEMORY                  253.35      253.36        None
+re-strategic-company/x35.4.sdimacs        OUT OF MEMORY                  244.19      244.27        None
+re-strategic-company/x35.9.sdimacs        OUT OF MEMORY                  224.58      224.61        None
+re-strategic-company/x40.14.sdimacs       OUT OF MEMORY                  818.00      818.07        None
+re-strategic-company/x40.19.sdimacs       OUT OF MEMORY                  806.81      806.83        None
+re-strategic-company/x40.4.sdimacs        OUT OF MEMORY                  813.35      813.38        None
+re-strategic-company/x40.9.sdimacs        OUT OF MEMORY                  812.67      812.71        None
+re-strategic-company/x45.14.sdimacs       TIMEOUT                        901.47      901.50        None
+re-strategic-company/x45.19.sdimacs       TIMEOUT                        901.43      901.46        None
+re-strategic-company/x45.4.sdimacs        TIMEOUT                        901.44      901.49        None
+re-strategic-company/x45.9.sdimacs        TIMEOUT                        901.45      901.50        None
+re-strategic-company/x5.14.sdimacs        done                             0.02        0.02        None
+re-strategic-company/x5.19.sdimacs        done                             0.02        0.02        None
+re-strategic-company/x5.4.sdimacs         done                             0.02        0.02        None
+re-strategic-company/x5.9.sdimacs         done                             0.02        0.02        None
+re-strategic-company/x50.14.sdimacs       TIMEOUT                        901.40      901.44        None
+re-strategic-company/x50.19.sdimacs       TIMEOUT                        901.40      901.45        None
+re-strategic-company/x50.4.sdimacs        TIMEOUT                        901.40      901.43        None
+re-strategic-company/x50.9.sdimacs        TIMEOUT                        901.42      901.45        None
+re-strategic-company/x55.14.sdimacs       TIMEOUT                        901.36      901.42        None
+re-strategic-company/x55.19.sdimacs       TIMEOUT                        901.37      901.39        None
+re-strategic-company/x55.4.sdimacs        TIMEOUT                        901.38      901.41        None
+re-strategic-company/x55.9.sdimacs        TIMEOUT                        901.30      901.39        None
+re-strategic-company/x60.14.sdimacs       TIMEOUT                        901.34      901.37        None
+re-strategic-company/x60.19.sdimacs       TIMEOUT                        901.32      901.36        None
+re-strategic-company/x60.4.sdimacs        TIMEOUT                        901.32      901.36        None
+re-strategic-company/x60.9.sdimacs        TIMEOUT                        901.33      901.36        None
+re-strategic-company/x65.14.sdimacs       TIMEOUT                        901.31      901.33        None
+re-strategic-company/x65.19.sdimacs       TIMEOUT                        901.29      901.33        None
+re-strategic-company/x65.4.sdimacs        TIMEOUT                        901.30      901.34        None
+re-strategic-company/x65.9.sdimacs        TIMEOUT                        901.32      901.36        None
+re-strategic-company/x70.14.sdimacs       TIMEOUT                        901.27      901.31        None
+re-strategic-company/x70.19.sdimacs       TIMEOUT                        901.30      901.33        None
+re-strategic-company/x70.4.sdimacs        TIMEOUT                        901.31      901.33        None
+re-strategic-company/x70.9.sdimacs        TIMEOUT                        901.28      901.34        None
+re-strategic-company/x75.14.sdimacs       TIMEOUT                        901.27      901.30        None
+re-strategic-company/x75.19.sdimacs       TIMEOUT                        901.27      901.32        None
+re-strategic-company/x75.4.sdimacs        TIMEOUT                        901.23      901.30        None
+re-strategic-company/x75.9.sdimacs        TIMEOUT                        901.29      901.31        None
+re-PEC/c1355_re.sdimacs                   TIMEOUT                        901.18      901.22        None
+re-PEC/c1908_re.sdimacs                   done                           161.67      161.68        None
+re-PEC/c3540_re.sdimacs                   TIMEOUT                        901.07      901.09        None
+re-PEC/c432_re.sdimacs                    TIMEOUT                        901.34      901.36        None
+re-PEC/c499_re.sdimacs                    done                             0.02        0.02        None
+re-PEC/c5315_re.sdimacs                   TIMEOUT                        901.09      901.12        None
+re-PEC/c7552_re.sdimacs                   OUT OF MEMORY                  261.66      261.67        None
+re-PEC/c880_re.sdimacs                    TIMEOUT                        901.04      901.08        None
+-------------------------------------------------------------------------------------------------------
+Run set 1                                 done                        151088.70    10545.96           -
+
+Statistics:            768 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:             163
