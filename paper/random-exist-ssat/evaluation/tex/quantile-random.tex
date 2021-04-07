@@ -27,26 +27,26 @@
 \begin{document}
 
 \begin{tikzpicture}
-  \begin{semilogyaxis}[
-      % Which column to be taken from each file
-      /pgfplots/table/y index=3,
-      /pgfplots/table/header=false,
-      % axis labels
-      xlabel=n-th fastest result,
-      ylabel=CPU time (\second),
-      % axis ranges
-      xmin=0,
-      ymin=0.01,
-      ymax=1000,
-      mark repeat=10,
-      % legend
-      legend entries={\dcssat,\ressatb,\ressat},
-      every axis legend/.append style={at={(1,0)}, anchor=south east, outer xsep=5pt, outer ysep=5pt,},
-    ]
-    \addplot+ table {random-exist-ssat/evaluation/csv/dcssat.default.quantile.csv};
-    \addplot+ table {random-exist-ssat/evaluation/csv/ressat.bare-Cachet.quantile.csv};
-    \addplot+ table {random-exist-ssat/evaluation/csv/ressat.minimize-Cachet.quantile.csv};
-  \end{semilogyaxis}
+    \begin{semilogyaxis}[
+            % Which column to be taken from each file
+            /pgfplots/table/y index=3,
+            /pgfplots/table/header=false,
+            % axis labels
+            xlabel=n-th fastest result,
+            ylabel=CPU time (\second),
+            % axis ranges
+            xmin=0,
+            ymin=0.001,
+            ymax=1000,
+            mark repeat=100,
+            % legend
+            legend entries={\dcssat,\ressatb,\ressat},
+            every axis legend/.append style={at={(1,0)}, anchor=south east, outer xsep=5pt, outer ysep=5pt,},
+        ]
+        \addplot+ table {random-exist-ssat/evaluation/csv/dcssat.default.Random.quantile.csv};
+        \addplot+ table {random-exist-ssat/evaluation/csv/ressat.bare-Cachet.Random.quantile.csv};
+        \addplot+ table {random-exist-ssat/evaluation/csv/ressat.minimize-Cachet.Random.quantile.csv};
+    \end{semilogyaxis}
 \end{tikzpicture}
 
 \end{document}

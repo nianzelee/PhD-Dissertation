@@ -1,22 +1,28 @@
 #!/bin/bash
 
-timestamp='ressat-full.2021-01-28_17-40-12'
+timestamp='ressat-thesis.2021-04-06_18-22-30'
 compared_approaches=('bare-Cachet'
                      'minimize-Cachet')
+formula_families=('Random'
+                  'Strategic')
 
 echo "Generating CSV files of ressat for quantile plots ..."
 for approach in "${compared_approaches[@]}"; do
-    echo "  > Configuration: ${approach}"
-    ./quantile-generator.py "./results/${timestamp}.results.${approach}.RandomExist.xml.bz2" \
-        > "./csv/ressat.${approach}.quantile.csv"
+    for family in "${formula_families[@]}"; do
+        echo "  > Configuration: ${approach}; Family: ${family}"
+        ./quantile-generator.py "./results/${timestamp}.results.${approach}.${family}.xml.bz2" \
+            > "./csv/ressat.${approach}.${family}.quantile.csv"
+    done
 done
 
-timestamp='dcssat-full.2021-01-29_19-06-55'
+timestamp='dcssat-thesis-re.2021-04-07_00-22-18'
 compared_approaches=('default')
 
 echo "Generating CSV files of dcssat for quantile plots ..."
 for approach in "${compared_approaches[@]}"; do
-    echo "  > Configuration: ${approach}"
-    ./quantile-generator.py "./results/${timestamp}.results.${approach}.RandomExist.xml.bz2" \
-        > "./csv/dcssat.${approach}.quantile.csv"
+    for family in "${formula_families[@]}"; do
+        echo "  > Configuration: ${approach}; Family: ${family}"
+        ./quantile-generator.py "./results/${timestamp}.results.${approach}.${family}.xml.bz2" \
+            > "./csv/dcssat.${approach}.${family}.quantile.csv"
+    done
 done
