@@ -23,16 +23,16 @@ were used in the evaluation.
 
 \subsubsection{Random $k$-CNF formulas}
 The random $k$-CNF formulas are generated using the CNF generator \cnfgen~\cite{Lauria2017CNFgen}.
-They were generated as follows.
 Let $k$ be the number of literals in a clause,
 $n$ be the number of variables,
 and $m$ be the number of clauses.
-A collection of 700 CNF formulas is generated with the following parameter settings.
+The CNF formulas were generated with the following parameter settings.
 Let $k$ range from 3 to 9,
 $n$ equal 10, 20, 30, 40, and 50,
 and the clauses-to-variables ratio $\frac{m}{n}$ range from $k-1$ to $k+2$.
 For each combination of parameters,
 five formulas were sampled.
+As a result, 700 CNF formulas were generated.
 To convert the generated formulas to random-exist quantified SSAT formulas,
 half of the variables in a formula are randomly quantified with probability $0.5$,
 and the rest of the variables are existentially quantified.
@@ -60,6 +60,7 @@ The satisfying probability reflects the likelihood for a company to be strategic
 The QBFs that we experimented with have the following parameter settings:
 $n$ equals 5, 10, 15, $\ldots$, 75, $m=3n$,
 and the number of controlling relations equals 4, 9, 14, and 19.
+In total, there are 60 strategic-company formulas.
 
 \subsection{Experimental setup}
 Our experiments were performed on a machine with
@@ -79,7 +80,7 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
 
 \subsubsection{Random $k$-CNF formulas}
 
-\begin{figure*}[t]
+\begin{figure*}[hp]
     \centering
     \subfloat[CPU time]{
         \input{random-exist-ssat/evaluation/tex/quantile-cputime-random.tex}
@@ -93,10 +94,18 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
     \label{fig:ressat-quantile-random}
 \end{figure*}
 
-\Cref{fig:ressat-quantile-random} shows the quantile plots of the SSAT instances
-derived from the random $k$-CNF formulas.
-\Cref{fig:ressat-quantile-cputime-random} shows the CPU-time quantile plot.
-\Cref{fig:ressat-quantile-memory-random} shows the memory-usage quantile plot.
+\Cref{fig:ressat-quantile-random} shows the quantile plots regarding CPU time and memory usage
+of the SSAT instances derived from the random $k$-CNF formulas.
+A data point $(x,y)$ in a quantile plot indicates that
+there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
+In~\cref{fig:ressat-quantile-cputime-random},
+we observe that \ressat solved much more formulas than \dcssat did.
+Moreover, the minterm-generalization technique is crucial for the performance of \ressat,
+as can be seen from the huge difference between \ressat and \ressatb.
+On the other hand,
+\cref{fig:ressat-quantile-memory-random} shows that the memory usage of \dcssat is much larger than that of \ressat.
+This can be attributed to the subformula caching of \dcssat.
+Instead, \ressat stores information as SAT or UNSAT cubes, which are more compact than subformulas.
 
 \subsubsection{Strategic-company formulas}
 
@@ -116,10 +125,8 @@ derived from the random $k$-CNF formulas.
 
 \Cref{fig:ressat-quantile-strategic} shows the quantile plots of the SSAT instances
 derived from the strategic-company formulas.
-\Cref{fig:ressat-quantile-cputime-strategic} shows the CPU-time quantile plot.
-\Cref{fig:ressat-quantile-memory-strategic} shows the memory-usage quantile plot.
-
-\Cref{fig:ressat-quantile-cputime-strategic} shows the CPU-time quantile plot of the SSAT instances
-derived from the strategic-company QBFs.
-\Cref{fig:ressat-quantile-memory-strategic} shows the memory-usage quantile plot of the SSAT instances
-derived from the strategic-company QBFs.
+The results are similar to those of random $k$-CNF formulas,
+showing that \ressat also works well on structured instances from AI applications.
+Compared to \dcssat,
+\ressat was able to solve all strategic-company formulas with much smaller memory usage.
+The performance gap between \ressat and \ressatb again confirms the importance of the minterm-generalization technique.
