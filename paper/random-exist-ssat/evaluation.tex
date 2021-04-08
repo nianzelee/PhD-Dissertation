@@ -1,11 +1,83 @@
 \section{Evaluation}
 \label{sect:ressat-evaluation}
 
-\subsection{Benchmark Set}
+We evaluated the proposed~\cref{alg:ressat} against
+the state-of-the-art DPLL-based SSAT solver \dcssat~\cite{Majercik2005}
+over three families of random-exist quantified SSAT formulas.
+The proposed algorithm is implemented in the \texttt{C++} language inside the \abc~\cite{ABC} environment.
+The SAT solver \minisat-2.2~\cite{Een2003Solver}
+and the model counter \cachet~\cite{Sang2004}
+are used as underlying computational engines.
+Our prototyping implementation\footnote{Available at: \url{\ssatabcurl}} is named \ressat.
+A bare version of \ressat without minterm generalization is called \ressatb in the experiments.
+The solver \dcssat,
+which is also implemented in the \texttt{C++} language,
+was kindly provided by its author Majercik.
+
+\subsection{Benchmark set}
+Three sets of random-exist quantified SSAT formulas\footnote{Available at: \url{\ssatbenchmarkurl}},
+including random $k$-CNF formulas,
+planning formulas,
+and probabilistic equivalence checking formulas,
+were used in the evaluation.
+
+\subsubsection{Random $k$-CNF formulas}
+The random $k$-CNF formulas are generated using the CNF generator \cnfgen~\cite{Lauria2017CNFgen}.
+They were generated as follows.
+Let $k$ be the number of literals in a clause,
+$n$ be the number of variables,
+and $m$ be the number of clauses.
+A collection of 700 CNF formulas is generated with the following parameter settings.
+Let $k$ range from 3 to 9,
+$n$ equal 10, 20, 30, 40, and 50,
+and the clauses-to-variables ratio $\frac{m}{n}$ range from $k-1$ to $k+2$.
+For each combination of parameters,
+five formulas were sampled.
+To convert the generated formulas to random-exist quantified SSAT formulas,
+half of the variables in a formula are randomly quantified with probability $0.5$,
+and the rest of the variables are existentially quantified.
+
+\subsubsection{Planning formulas}
+We use the \textit{strategic-company} problem~\cite{Cadoli1997} as an example
+to evaluate the performance of the SSAT solvers over planning formulas.
+We briefly describe the problem as follows.
+Suppose a businessman owns $n$ companies that produce $m$ different kinds of products.
+A company is \textit{strategic} if it is in a minimal set of companies that together produce all kinds of products.
+The information about a company being strategic is valuable to the businessman.
+Suppose the businessman considers selling out some companies upon a financial crisis,
+but still hopes to produce every kind of products.
+The businessman would prefer selling out a non-strategic company.
+The problem becomes more complicated if the \textit{controlling relations} are taken into account.
+If a company is \textit{controlled} by some other companies,
+the company can be sold out only if some of its controlling companies is also sold out.
+The problem to decide whether a company is strategic can be encoded as a forall-exist quantified QBF~\cite{Faber2005,Leone2006}.
+
+We modify the QBFs encoding the strategic-company problem
+to their SSAT variants by replacing the universal quantifiers in the original QBFs
+with randomized ones with probabilities $0.5$.
+These QBFs are taken from \texttt{QBFLIB}~\cite{Narizzano2006}.
+The satisfying probability reflects the likelihood for a company to be strategic.
+The QBFs that we experimented with have the following parameter settings:
+$n$ equals 5, 10, 15, $\ldots$, 75, $m=3n$,
+and the number of controlling relations equals 4, 9, 14, and 19.
 
 \subsection{Experimental Setup}
+Our experiments were performed on a machine with
+one 2.2\,GHz CPU (Intel Xeon Silver 4210) with 40~processing units and 134616\,MB of RAM.
+The operating system was Ubuntu~20.04 (64~bit),
+using Linux~5.4.
+The programs were compiled with \texttt{g++ 9.3.0}.
+Each SSAT-solving task was limited to a CPU core,
+a CPU time of \SI{15}{min},
+and a memory usage of \SI{8}{GB}.
+To achieve reliable benchmarking,
+we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchexecurl}}~\cite{Benchmarking-STTT}.
+%%% TODO: fix the evaluation commit
+%and \experimentRevision of \cpachecker for evaluation.
 
 \subsection{Results}
+
+\subsubsection{Random $k$-CNF formulas}
 
 \begin{figure*}[t]
     \centering
@@ -14,13 +86,17 @@
     \label{fig:ressat-random-quantile}
 \end{figure*}
 
-The quantile plot is shown in~\cref{fig:ressat-random-quantile}.
+\Cref{fig:ressat-random-quantile} shows the quantile plot of the SSAT instances
+derived from the random $k$-CNF formulas.
+
+\subsubsection{Strategic-company formulas}
 
 \begin{figure*}[t]
     \centering
     \input{random-exist-ssat/evaluation/tex/quantile-strategic.tex}
-    \caption{The quantile plot of strategic companies formulas}
+    \caption{The quantile plot of strategic-company formulas}
     \label{fig:ressat-strategic-quantile}
 \end{figure*}
 
-The quantile plot is shown in~\cref{fig:ressat-strategic-quantile}.
+\Cref{fig:ressat-strategic-quantile} shows the quantile plot of the SSAT instances
+derived from the strategic-company QBFs.

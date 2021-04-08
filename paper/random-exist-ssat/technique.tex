@@ -192,13 +192,14 @@ In this section, we discuss several applications of random-exist quantified SSAT
 
 \subsection{Probability of Success in Planning}
 Many planning problems can be formulated in terms of forall-exist quantified QBFs,
-i.e., QBFs of the form $\Qf=\forall X \exists Y. \pf(X,Y)$.
-By changing universal quantifiers to randomized ones, random-exist quantified SSAT formulas are obtained.
-In essence, under the game interpretation of QBFs,
-the satisfying probability of these formulas corresponds to the likelihood for the existential player to win when the universal player decides its strategy at random.
-In Section~\cref{sect:ressat-evaluation},
-we take the \textit{strategic companies} problem~\cite{Cadoli1997}
-as an example to evaluate the performance of SSAT algorithms on planning applications.
+i.e., QBFs of the form $\Qf=\forall X,\exists Y.\pf(X,Y)$.
+Changing the universal quantifiers of these QBFs to randomized ones yields random-exist quantified SSAT formulas.
+Under the game interpretation of QBFs,
+the satisfying probability of such an SSAT formula corresponds to the likelihood
+for the existential player to win the game if the universal player decides its moves at random.
+In~\cref{sect:ressat-evaluation},
+we will use the \textit{strategic companies} problem~\cite{Cadoli1997} as an example
+to evaluate SSAT solvers on planning applications.
 
 \subsection{Probabilistic Circuit Verification}
 The second application is the formal verification of \textit{probabilistic design}.
