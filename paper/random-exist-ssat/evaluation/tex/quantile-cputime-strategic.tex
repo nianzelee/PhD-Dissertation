@@ -33,7 +33,7 @@
             /pgfplots/table/header=false,
             % axis labels
             xlabel=n-th fastest result,
-            ylabel=CPU time (\second),
+            ylabel=Time (\second),
             % axis ranges
             xmin=0,
             ymin=0.001,
@@ -43,9 +43,9 @@
             legend entries={\dcssat,\ressatb,\ressat},
             every axis legend/.append style={at={(1,0)}, anchor=south east, outer xsep=5pt, outer ysep=5pt,},
         ]
-        \addplot+ table {random-exist-ssat/evaluation/csv/dcssat.default.Strategic.quantile.csv};
-        \addplot+ table {random-exist-ssat/evaluation/csv/ressat.bare-Cachet.Strategic.quantile.csv};
-        \addplot+ table {random-exist-ssat/evaluation/csv/ressat.minimize-Cachet.Strategic.quantile.csv};
+        \addplot+ table {random-exist-ssat/evaluation/csv/dcssat.default.Strategic.quantile.cputime.csv};
+        \addplot+ table {random-exist-ssat/evaluation/csv/ressat.bare-Cachet.Strategic.quantile.cputime.csv};
+        \addplot+ table {random-exist-ssat/evaluation/csv/ressat.minimize-Cachet.Strategic.quantile.cputime.csv};
     \end{semilogyaxis}
 \end{tikzpicture}
 

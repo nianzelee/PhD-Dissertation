@@ -81,22 +81,45 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
 
 \begin{figure*}[t]
     \centering
-    \input{random-exist-ssat/evaluation/tex/quantile-random.tex}
-    \caption{The quantile plot of random $k$-CNF formulas}
-    \label{fig:ressat-random-quantile}
+    \subfloat[CPU time]{
+        \input{random-exist-ssat/evaluation/tex/quantile-cputime-random.tex}
+        \label{fig:ressat-quantile-cputime-random}
+    }\\
+    \subfloat[Memory usage]{
+        \input{random-exist-ssat/evaluation/tex/quantile-memory-random.tex}
+        \label{fig:ressat-quantile-memory-random}
+    }
+    \caption{Quantile plots of random $k$-CNF formulas}
+    \label{fig:ressat-quantile-random}
 \end{figure*}
 
-\Cref{fig:ressat-random-quantile} shows the quantile plot of the SSAT instances
+\Cref{fig:ressat-quantile-random} shows the quantile plots of the SSAT instances
 derived from the random $k$-CNF formulas.
+\Cref{fig:ressat-quantile-cputime-random} shows the CPU-time quantile plot.
+\Cref{fig:ressat-quantile-memory-random} shows the memory-usage quantile plot.
 
 \subsubsection{Strategic-company formulas}
 
 \begin{figure*}[t]
     \centering
-    \input{random-exist-ssat/evaluation/tex/quantile-strategic.tex}
-    \caption{The quantile plot of strategic-company formulas}
-    \label{fig:ressat-strategic-quantile}
+    \subfloat[CPU time]{
+        \input{random-exist-ssat/evaluation/tex/quantile-cputime-strategic.tex}
+        \label{fig:ressat-quantile-cputime-strategic}
+    }\\
+    \subfloat[Memory usage]{
+        \input{random-exist-ssat/evaluation/tex/quantile-memory-strategic.tex}
+        \label{fig:ressat-quantile-memory-strategic}
+    }
+    \caption{Quantile plots of strategic-company formulas}
+    \label{fig:ressat-quantile-strategic}
 \end{figure*}
 
-\Cref{fig:ressat-strategic-quantile} shows the quantile plot of the SSAT instances
+\Cref{fig:ressat-quantile-strategic} shows the quantile plots of the SSAT instances
+derived from the strategic-company formulas.
+\Cref{fig:ressat-quantile-cputime-strategic} shows the CPU-time quantile plot.
+\Cref{fig:ressat-quantile-memory-strategic} shows the memory-usage quantile plot.
+
+\Cref{fig:ressat-quantile-cputime-strategic} shows the CPU-time quantile plot of the SSAT instances
+derived from the strategic-company QBFs.
+\Cref{fig:ressat-quantile-memory-strategic} shows the memory-usage quantile plot of the SSAT instances
 derived from the strategic-company QBFs.
