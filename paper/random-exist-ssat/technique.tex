@@ -1,4 +1,4 @@
-\section{Solving Random-Exist Quantified SSAT}
+\section{Solving random-exist quantified SSAT}
 \label{sect:ressat-technique}
 
 Consider a random-exist quantified SSAT formula $\Qf=\random{} X,\exists Y.\pf(X,Y)$.
@@ -75,7 +75,7 @@ which signifies the Boolean space spanned by $X$ has been exhaustively searched.
 The subroutine \texttt{ComputeWeight} is then invoked to evaluate the weight of the collected cubes.
 The subroutines \texttt{MinimalConflicting}, \texttt{MinimalSatisfying}, and \texttt{ComputeWeight} will be detailed below.
 
-\subsection{Minimal Satisfying Assignment}
+\subsection{Minimal satisfying assignment}
 Given a SAT minterm $\as$ over $X$,
 let $\mu$ be a satisfying assignment over $Y$ for $\pcf{\pf(X,Y)}{\as}$.
 The subroutine \texttt{MinimalSatisfying} generalizes $\as$ to $\as^+$ by the following steps.
@@ -87,7 +87,7 @@ The subroutine \texttt{MinimalSatisfying} generalizes $\as$ to $\as^+$ by the fo
 \end{itemize}
 After the above steps, the SAT minterm $\as$ will be generalized into a minimal satisfying assignment $\as^+$.
 
-\subsection{Minimal Conflicting Assignment}
+\subsection{Minimal conflicting assignment}
 Let $\as$ be an UNSAT minterm over $X$ for $\pf(X,Y)$.
 The analysis of unsatisfiability can be done with a modern SAT solver (e.g., using function \texttt{analyzeFinal()} in \minisat) to find a conjunction of literals from $\as$ responsible for the conflict.
 However, in general this conjunction of literals might not be minimal,
@@ -98,7 +98,7 @@ drop $l$ and examine whether $\pf(X,Y)$ remains unsatisfiable by invoking a SAT 
 If it is unsatisfiable, discard $l$; otherwise, put $l$ in $\as^+$.
 After the above steps, the UNSAT minterm $\as$ will be generalized into a minimal conflicting assignment $\as^+$.
 
-\subsection{Weight Computation}
+\subsection{Weight computation}
 The subroutine \texttt{ComputeWeight} aggregates the weight of collected cubes by invoking a weighted model counter.
 Because a weighted model counter takes CNF formulas as input,
 \texttt{ComputeWeight} first negates each collected cube to turn it into a clause,
@@ -107,7 +107,7 @@ As the CNF formula is the negation of the disjunction of the cubes,
 the weight of the cubes equals one minus the weight of the CNF formula,
 which is computed by a weighted model counter.
 
-\subsection{Modification for Approximate SSAT}
+\subsection{Modification for approximate SSAT}
 \label{sect:ressat-approximate}
 
 The proposed algorithm can be easily modified to solve \textit{approximate SSAT},
@@ -190,7 +190,7 @@ The following example illustrates how~\cref{alg:ressat} solves a random-exist qu
 \section{Applications}
 In this section, we discuss several applications of random-exist quantified SSAT formulas.
 
-\subsection{Probability of Success in Planning}
+\subsection{Probability of success in planning}
 Many planning problems can be formulated in terms of forall-exist quantified QBFs,
 i.e., QBFs of the form $\Qf=\forall X,\exists Y.\pf(X,Y)$.
 Changing the universal quantifiers of these QBFs to randomized ones yields random-exist quantified SSAT formulas.
@@ -201,7 +201,7 @@ In~\cref{sect:ressat-evaluation},
 we will use the \textit{strategic companies} problem~\cite{Cadoli1997} as an example
 to evaluate SSAT solvers on planning applications.
 
-\subsection{Probabilistic Circuit Verification}
+\subsection{Probabilistic circuit verification}
 The second application is the formal verification of \textit{probabilistic design}.
 As probabilistic errors are becoming more common in advanced nanometer technology,
 the \textit{probabilistic equivalence checking} (PEC) problem asks to compute the probability for a probabilistic circuit to produce different outputs from its faultless specification.
