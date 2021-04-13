@@ -1,0 +1,160 @@
+1	test-cases/benchmarks/ere-sand-castle/SC-1.sdimacs	done	0.040599129	0.04257557261735201	14045184
+2	test-cases/benchmarks/ere-ToiletA/toilet_a_04_05.2.sdimacs	done	0.044653352	0.045919531024992466	15224832
+3	test-cases/benchmarks/ere-ToiletA/toilet_a_02_10.2.sdimacs	done	0.04532478	0.04697931278496981	14696448
+4	test-cases/benchmarks/ere-ToiletA/toilet_a_02_01.2.sdimacs	done	0.045453884	0.046640096232295036	14573568
+5	test-cases/benchmarks/ere-sand-castle/SC-2.sdimacs	done	0.046481105	0.0478827515617013	14577664
+6	test-cases/benchmarks/ere-ToiletA/toilet_a_02_05.2.sdimacs	done	0.046580334	0.048632566817104816	14573568
+7	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.2.sdimacs	done	0.047880849	0.049063495360314846	15228928
+8	test-cases/benchmarks/ere-ToiletA/toilet_a_02_01.3.sdimacs	done	0.049503793	0.05113230086863041	14577664
+9	test-cases/benchmarks/ere-MaxCount/QIF-backdoor-32-24.sdimacs	done	0.049575535	0.05170574504882097	15622144
+10	test-cases/benchmarks/ere-sand-castle/SC-3.sdimacs	done	0.050008819	0.0514825452119112	14839808
+11	test-cases/benchmarks/ere-ToiletA/toilet_a_02_01.4.sdimacs	done	0.050803057	0.052830254659056664	14835712
+12	test-cases/benchmarks/ere-sand-castle/SC-4.sdimacs	done	0.055077127	0.05661775358021259	15101952
+13	test-cases/benchmarks/ere-MPEC/c499-er.sdimacs	done	0.05750231	0.05891609750688076	15736832
+14	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.3.sdimacs	done	0.060682933	0.0617168927565217	16015360
+15	test-cases/benchmarks/ere-sand-castle/SC-5.sdimacs	done	0.067442755	0.06958947889506817	15360000
+16	test-cases/benchmarks/ere-ToiletA/toilet_a_06_10.2.sdimacs	done	0.073470698	0.07506846264004707	17027072
+17	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.2.sdimacs	done	0.089515242	0.09092332702130079	17195008
+18	test-cases/benchmarks/ere-sand-castle/SC-6.sdimacs	done	0.102698206	0.10417045094072819	15880192
+19	test-cases/benchmarks/ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs	done	0.144049917	0.14557875599712133	17985536
+20	test-cases/benchmarks/ere-ToiletA/toilet_a_04_10.2.sdimacs	done	0.160310124	0.16168566793203354	19271680
+21	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.4.sdimacs	done	0.163201856	0.1648260410875082	18636800
+22	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.3.sdimacs	done	0.202390189	0.20391960628330708	20996096
+23	test-cases/benchmarks/ere-sand-castle/SC-7.sdimacs	done	0.219985148	0.22141391318291426	17195008
+24	test-cases/benchmarks/ere-ToiletA/toilet_a_08_10.2.sdimacs	done	0.319318202	0.3208686364814639	21196800
+25	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.5.sdimacs	done	0.397624237	0.39885309897363186	21131264
+26	test-cases/benchmarks/ere-sand-castle/SC-8.sdimacs	done	0.577868638	0.5792989572510123	20193280
+27	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.2.sdimacs	done	0.662372506	0.6638118885457516	27025408
+28	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.4.sdimacs	done	1.210497523	1.2120327176526189	31481856
+29	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.6.sdimacs	done	1.308187803	1.3097185352817178	26210304
+30	test-cases/benchmarks/ere-sand-castle/SC-9.sdimacs	done	1.75057443	1.7520292960107327	25645056
+31	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.3.sdimacs	done	1.762454438	1.7634326526895165	38162432
+32	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.8.sdimacs	done	1.784513588	1.7859783517196774	28667904
+33	test-cases/benchmarks/ere-conformant/cube_c3_ser--opt-6_.sdimacs	done	2.217928153	2.231476655229926	29638656
+34	test-cases/benchmarks/ere-MaxCount/QIF-CVE-2007-2875.sdimacs	done	2.24486985	2.246410049498081	28078080
+35	test-cases/benchmarks/ere-ToiletA/toilet_a_04_01.7.sdimacs	done	3.505657264	3.507115215063095	34119680
+36	test-cases/benchmarks/ere-ToiletA/toilet_a_10_10.2.sdimacs	done	4.522213505	4.524033869616687	39399424
+37	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.5.sdimacs	done	4.846955309	4.848441313952208	49545216
+38	test-cases/benchmarks/ere-sand-castle/SC-10.sdimacs	done	7.667088439	7.668936301954091	43692032
+39	test-cases/benchmarks/ere-MPEC/c3540-er.sdimacs	done	8.397383461	8.399083285592496	54525952
+40	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.4.sdimacs	done	11.694880344	11.69639950338751	129773568
+41	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.2.sdimacs	done	13.551204601	13.552747371606529	77221888
+42	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.6.sdimacs	done	14.222242968	14.224843888543546	115957760
+43	test-cases/benchmarks/ere-sand-castle/SC-11.sdimacs	done	31.691156263	31.693562128581107	103968768
+44	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.3.sdimacs	done	33.085903223	33.09060706105083	144318464
+45	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.5.sdimacs	done	36.795156651	36.79747281502932	323203072
+46	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.12.sdimacs	done	46.892586401	46.89537189900875	211742720
+47	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.7.sdimacs	done	54.464607555	54.46769919525832	287760384
+48	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.8.sdimacs	done	114.185051918	114.18951434455812	380579840
+49	test-cases/benchmarks/ere-sand-castle/SC-12.sdimacs	done	125.895856495	125.90048021543771	171159552
+50	test-cases/benchmarks/ere-ToiletA/toilet_a_06_05.2.sdimacs	done	149.063149194	149.06894192285836	463556608
+51	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.4.sdimacs	done	223.642562078	223.66951300669461	799608832
+52	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.6.sdimacs	done	231.645978393	231.652260591276	1224409088
+53	test-cases/benchmarks/ere-conformant/ring_r6_ser---16_.sdimacs	SEGMENTATION FAULT	312.383213832	312.63300833757967	207142912
+54	test-cases/benchmarks/ere-conformant/ring_r6_ser--opt-17_.sdimacs	SEGMENTATION FAULT	312.814652653	313.0230358010158	207532032
+55	test-cases/benchmarks/ere-conformant/ring_r3_ser--opt-8_.sdimacs	done	483.113475465	483.1397729208693	534691840
+56	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.10.sdimacs	done	496.331299692	496.34518002159894	824393728
+57	test-cases/benchmarks/ere-sand-castle/SC-13.sdimacs	done	500.241709759	500.25592486187816	316170240
+58	test-cases/benchmarks/ere-ToiletA/toilet_a_06_05.4.sdimacs	done	527.820756311	527.8363552233204	923635712
+59	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.5.sdimacs	done	694.549254191	694.5642871381715	2146480128
+60	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.9.sdimacs	done	864.799801094	864.8248462686315	1200226304
+61	test-cases/benchmarks/ere-MaxCount/QIF-pwd-backdoor.sdimacs	TIMEOUT (ERROR (1	900.896737756	901.0116402115673	117571584
+62	test-cases/benchmarks/ere-conformant/emptyroom_e3_par--opt-10_.sdimacs	TIMEOUT (ERROR (1	900.903600752	901.0554121704772	451624960
+63	test-cases/benchmarks/ere-sand-castle/SC-18.sdimacs	TIMEOUT (ERROR (1	900.906916602	901.0309184789658	242581504
+64	test-cases/benchmarks/ere-MaxCount/QIF-bin-search-16.sdimacs	TIMEOUT (ERROR (1	900.945890425	901.0102435685694	87928832
+65	test-cases/benchmarks/ere-MaxCount/SyGuS-ProjectService3.sdimacs	TIMEOUT (ERROR (1	900.95057306	901.0580577114597	740024320
+66	test-cases/benchmarks/ere-sand-castle/SC-17.sdimacs	TIMEOUT (ERROR (1	900.960136287	901.0261676432565	206974976
+67	test-cases/benchmarks/ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs	TIMEOUT (ERROR (1	900.980293708	901.0232556685805	182546432
+68	test-cases/benchmarks/ere-conformant/cube_c11_ser--opt-42_.sdimacs	TIMEOUT (ERROR (1	900.981741074	901.0859611248598	227401728
+69	test-cases/benchmarks/ere-sand-castle/SC-25.sdimacs	TIMEOUT (ERROR (1	900.981819561	901.0118773272261	101326848
+70	test-cases/benchmarks/ere-MaxCount/QIF-backdoor-2x16-8.sdimacs	TIMEOUT (ERROR (1	900.984962499	901.0066848965362	43020288
+71	test-cases/benchmarks/ere-conformant/cube_c5_ser---14_.sdimacs	TIMEOUT (ERROR (1	900.988494463	901.0297335321084	244338688
+72	test-cases/benchmarks/ere-conformant/emptyroom_e4_par--opt-22_.sdimacs	TIMEOUT (ERROR (1	900.992190903	901.0321617564186	205193216
+73	test-cases/benchmarks/ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs	TIMEOUT (ERROR (1	900.99327084	901.0074496529996	47607808
+74	test-cases/benchmarks/ere-sand-castle/SC-23.sdimacs	TIMEOUT (ERROR (1	900.993417725	901.0238667679951	189554688
+75	test-cases/benchmarks/ere-conformant/cube_c5_ser--opt-15_.sdimacs	TIMEOUT (ERROR (1	900.994076935	901.0309454463422	238120960
+76	test-cases/benchmarks/ere-MPEC/c7552-er.sdimacs	TIMEOUT (ERROR (1	900.994500105	901.0096361013129	86716416
+77	test-cases/benchmarks/ere-conformant/cube_c7_ser---23_.sdimacs	TIMEOUT (ERROR (1	900.9946966	901.0230778185651	146391040
+78	test-cases/benchmarks/ere-sand-castle/SC-16.sdimacs	TIMEOUT (ERROR (1	900.995650198	901.0331877833232	274513920
+79	test-cases/benchmarks/ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs	TIMEOUT (ERROR (1	900.995784982	901.0274063441902	229912576
+80	test-cases/benchmarks/ere-conformant/cube_c7_ser--opt-24_.sdimacs	TIMEOUT (ERROR (1	900.995988875	901.026357174851	177324032
+81	test-cases/benchmarks/ere-MaxCount/QIF-reverse.sdimacs	TIMEOUT (ERROR (1	900.996083168	901.0080536156893	65978368
+82	test-cases/benchmarks/ere-sand-castle/SC-19.sdimacs	TIMEOUT (ERROR (1	900.996364597	901.0172765608877	147181568
+83	test-cases/benchmarks/ere-MaxCount/QIF-reverse2.sdimacs	TIMEOUT (ABORTED)	900.997474069	901.1887084394693	48431104
+84	test-cases/benchmarks/ere-sand-castle/SC-24.sdimacs	TIMEOUT (ERROR (1	900.997845353	901.0133557012305	103686144
+85	test-cases/benchmarks/ere-conformant/emptyroom_e3_ser---19_.sdimacs	TIMEOUT (ERROR (1	900.998320353	901.0332308141515	254042112
+86	test-cases/benchmarks/ere-MaxCount/SyGuS-GuidanceService.sdimacs	TIMEOUT (ERROR (1	901.000160229	901.0218887906522	248926208
+87	test-cases/benchmarks/ere-conformant/emptyroom_e4_par---21_.sdimacs	TIMEOUT (ERROR (1	901.001256175	901.0271065020934	137195520
+88	test-cases/benchmarks/ere-MaxCount/SyGuS-sign.sdimacs	TIMEOUT (ERROR (1	901.001649541	901.0118637727574	98738176
+89	test-cases/benchmarks/ere-conformant/cube_c9_par--opt-11_.sdimacs	TIMEOUT (ERROR (1	901.002018024	901.0435168631375	212258816
+90	test-cases/benchmarks/ere-MaxCount/SyGuS-sign_correct.sdimacs	TIMEOUT (ABORTED)	901.002793963	901.2105820775032	86241280
+91	test-cases/benchmarks/ere-sand-castle/SC-21.sdimacs	TIMEOUT (ERROR (1	901.004550316	901.0256952671334	203321344
+92	test-cases/benchmarks/ere-sand-castle/SC-20.sdimacs	TIMEOUT (ERROR (1	901.006005013	901.0279617402703	210739200
+93	test-cases/benchmarks/ere-sand-castle/SC-22.sdimacs	TIMEOUT (ERROR (1	901.00677423	901.0246280552819	201367552
+94	test-cases/benchmarks/ere-MaxCount/SyGuS-PhaseService.sdimacs	TIMEOUT (ERROR (1	901.008075518	901.0263403672725	301363200
+95	test-cases/benchmarks/ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs	TIMEOUT (ERROR (1	901.008378953	901.0306873507798	217251840
+96	test-cases/benchmarks/ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs	TIMEOUT (ABORTED)	901.00884291	901.2134202644229	279449600
+97	test-cases/benchmarks/ere-conformant/ring_r7_ser---19_.sdimacs	TIMEOUT (ERROR (1	901.011241094	901.056472771801	127356928
+98	test-cases/benchmarks/ere-MaxCount/SyGuS-GuidanceService2.sdimacs	TIMEOUT (ERROR (1	901.011483511	901.0216605672613	249057280
+99	test-cases/benchmarks/ere-conformant/cube_c9_par---10_.sdimacs	TIMEOUT (ERROR (1	901.011498758	901.044645672664	210874368
+100	test-cases/benchmarks/ere-conformant/ring_r4_ser--opt-11_.sdimacs	TIMEOUT (ERROR (1	901.011665689	901.0590118495747	582586368
+101	test-cases/benchmarks/ere-MaxCount/SyGuS-UserServiceImpl.sdimacs	TIMEOUT (ERROR (1	901.01247998	901.0214328235015	238899200
+102	test-cases/benchmarks/ere-MaxCount/SyGuS-ProcessBean.sdimacs	TIMEOUT (ABORTED)	901.013398155	901.2617826675996	760438784
+103	test-cases/benchmarks/ere-MaxCount/SyGuS-ActivityService2.sdimacs	TIMEOUT (ERROR (1	901.013706978	901.0261185765266	301355008
+104	test-cases/benchmarks/ere-MaxCount/SyGuS-ActivityService.sdimacs	TIMEOUT (ERROR (1	901.016174677	901.0280620381236	301359104
+105	test-cases/benchmarks/ere-MaxCount/SyGuS-IterationService.sdimacs	TIMEOUT (ERROR (1	901.017544783	901.0271641630679	301355008
+106	test-cases/benchmarks/ere-sand-castle/SC-15.sdimacs	TIMEOUT (ERROR (1	901.01931756	901.0427080495283	331137024
+107	test-cases/benchmarks/ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs	TIMEOUT (ABORTED)	901.021507756	901.2233388237655	424448000
+108	test-cases/benchmarks/ere-MaxCount/SyGuS-LoginService.sdimacs	TIMEOUT (ABORTED)	901.021512031	901.2247509630397	291581952
+109	test-cases/benchmarks/ere-MaxCount/SyGuS-LoginService2.sdimacs	TIMEOUT (ABORTED)	901.021891709	901.2252488974482	280743936
+110	test-cases/benchmarks/ere-sand-castle/SC-14.sdimacs	TIMEOUT (ERROR (1	901.022498461	901.0482093058527	388284416
+111	test-cases/benchmarks/ere-MPEC/c5315-er.sdimacs	TIMEOUT (ERROR (1	901.022549474	901.0410894704983	336072704
+112	test-cases/benchmarks/ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs	TIMEOUT (ABORTED)	901.029948425	901.2352005019784	407371776
+113	test-cases/benchmarks/ere-conformant/ring_r7_ser--opt-20_.sdimacs	TIMEOUT (ERROR (1	901.032890675	901.0553744677454	116248576
+114	test-cases/benchmarks/ere-conformant/cube_c11_par---13_.sdimacs	TIMEOUT (ERROR (1	901.054615382	901.0860500549898	248434688
+115	test-cases/benchmarks/ere-conformant/cube_c11_par--opt-14_.sdimacs	TIMEOUT (ERROR (1	901.055942773	901.0871158549562	283664384
+116	test-cases/benchmarks/ere-MPEC/c432-er.sdimacs	TIMEOUT (ERROR (1	901.058913722	901.0936478190124	725803008
+117	test-cases/benchmarks/ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs	TIMEOUT (ERROR (1	901.067674307	901.1245471090078	1001947136
+118	test-cases/benchmarks/ere-ToiletA/toilet_a_06_01.11.sdimacs	TIMEOUT (ERROR (1	901.099492681	901.1374043645337	1132146688
+119	test-cases/benchmarks/ere-ToiletA/toilet_a_06_05.3.sdimacs	TIMEOUT (ERROR (1	901.113645986	901.1469542048872	1230352384
+120	test-cases/benchmarks/ere-MPEC/c1908-er.sdimacs	TIMEOUT (ERROR (1	901.114364549	901.1435918882489	1103773696
+121	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.11.sdimacs	TIMEOUT (ERROR (1	901.135009863	901.2573207458481	2488193024
+122	test-cases/benchmarks/ere-MPEC/c1355-er.sdimacs	TIMEOUT (ERROR (1	901.141279734	901.1600225027651	1310720000
+123	test-cases/benchmarks/ere-MPEC/c880-er.sdimacs	TIMEOUT (ERROR (1	901.145893991	901.1686626216397	1247703040
+124	test-cases/benchmarks/ere-ToiletA/toilet_a_10_05.4.sdimacs	TIMEOUT (ERROR (1	901.167026979	901.2918664338067	2830909440
+125	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.7.sdimacs	TIMEOUT (ERROR (1	901.167104653	901.2832318358123	2857070592
+126	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.15.sdimacs	TIMEOUT (ERROR (1	901.179432438	901.2043758006766	1869500416
+127	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.13.sdimacs	TIMEOUT (ERROR (1	901.184470308	901.205540982075	1985892352
+128	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.18.sdimacs	TIMEOUT (ERROR (1	901.190581767	901.2238447219133	2284089344
+129	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.20.sdimacs	TIMEOUT (ERROR (1	901.194719336	901.2226261161268	2250387456
+130	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.15.sdimacs	TIMEOUT (ERROR (1	901.194935488	901.2273459890857	2351181824
+131	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.14.sdimacs	TIMEOUT (ERROR (1	901.196583346	901.2196690989658	1932283904
+132	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.16.sdimacs	TIMEOUT (ERROR (1	901.199435039	901.2231806665659	2073169920
+133	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.16.sdimacs	TIMEOUT (ERROR (1	901.206789445	901.2278900118545	2321702912
+134	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.17.sdimacs	TIMEOUT (ERROR (1	901.214003176	901.2365551609546	2314625024
+135	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.13.sdimacs	TIMEOUT (ERROR (1	901.214787207	901.2434952743351	2377805824
+136	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.19.sdimacs	TIMEOUT (ERROR (1	901.215074909	901.2363692615181	2292068352
+137	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.6.sdimacs	TIMEOUT (ERROR (1	901.216823637	901.2726674675941	2700218368
+138	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.12.sdimacs	TIMEOUT (ERROR (1	901.217602183	901.2459367457777	2389733376
+139	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.14.sdimacs	TIMEOUT (ERROR (1	901.217668784	901.2397138690576	2358272000
+140	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.10.sdimacs	TIMEOUT (ERROR (1	901.230472168	901.2533100824803	2475241472
+141	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.12.sdimacs	TIMEOUT (ERROR (1	901.231597174	901.2539305342361	2444738560
+142	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.10.sdimacs	TIMEOUT (ERROR (1	901.231720601	901.2960209092125	2728230912
+143	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.11.sdimacs	TIMEOUT (ERROR (1	901.232475513	901.2545792991295	2476560384
+144	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.6.sdimacs	TIMEOUT (ERROR (1	901.239673682	901.2990746609867	2934697984
+145	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.9.sdimacs	TIMEOUT (ERROR (1	901.24090236	901.2625891398638	2614566912
+146	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.8.sdimacs	TIMEOUT (ERROR (1	901.242867157	901.2634751247242	2603950080
+147	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.9.sdimacs	TIMEOUT (ERROR (1	901.242920496	901.2647075569257	2753609728
+148	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.9.sdimacs	TIMEOUT (ERROR (1	901.250414266	901.2856407053769	2773331968
+149	test-cases/benchmarks/ere-ToiletA/toilet_a_10_01.7.sdimacs	TIMEOUT (ERROR (1	901.251277077	901.2713577374816	2712825856
+150	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.3.sdimacs	TIMEOUT (ERROR (1	901.256099733	901.2926033791155	2973712384
+151	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.8.sdimacs	TIMEOUT (ERROR (1	901.256622151	901.2775038201362	2787278848
+152	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.7.sdimacs	TIMEOUT (ERROR (1	901.264840973	901.296334839426	2844319744
+153	test-cases/benchmarks/ere-ToiletA/toilet_a_10_05.3.sdimacs	TIMEOUT (ERROR (1	901.267173167	901.2955422066152	2873536512
+154	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.5.sdimacs	TIMEOUT (ERROR (1	901.267486203	901.3042231798172	2927235072
+155	test-cases/benchmarks/ere-ToiletA/toilet_a_08_01.8.sdimacs	TIMEOUT (ERROR (1	901.267915919	901.2912640990689	2814210048
+156	test-cases/benchmarks/ere-ToiletA/toilet_a_10_05.2.sdimacs	TIMEOUT (ERROR (1	901.276060679	901.3063940266147	2884395008
+157	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.10.sdimacs	TIMEOUT (ERROR (1	901.278013463	901.2990443781018	2724106240
+158	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.2.sdimacs	TIMEOUT (ERROR (1	901.284253789	901.3069273661822	3006124032
+159	test-cases/benchmarks/ere-ToiletA/toilet_a_08_05.4.sdimacs	TIMEOUT (ERROR (1	901.284394475	901.3071697410196	2969243648
+160	test-cases/benchmarks/ere-MaxCount/QIF-CVE-2009-3002.sdimacs	TIMEOUT (ERROR (1	901.683691398	901.7038613380864	3503325184

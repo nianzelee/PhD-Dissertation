@@ -1,0 +1,700 @@
+1	test-cases/benchmarks/er-random-k-CNF/rand-3-10-50-5.16.sdimacs	done	0.041454044	0.047281342558562756	14053376
+2	test-cases/benchmarks/er-random-k-CNF/rand-6-10-50-5.4.sdimacs	done	0.041465964	0.042732744477689266	14053376
+3	test-cases/benchmarks/er-random-k-CNF/rand-9-10-110-5.17.sdimacs	done	0.042027567	0.04347152728587389	14053376
+4	test-cases/benchmarks/er-random-k-CNF/rand-3-50-250-25.100.sdimacs	done	0.042240604	0.04359929356724024	14184448
+5	test-cases/benchmarks/er-random-k-CNF/rand-3-10-50-5.19.sdimacs	done	0.042258283	0.04602061025798321	14053376
+6	test-cases/benchmarks/er-random-k-CNF/rand-9-10-110-5.16.sdimacs	done	0.042870554	0.04405813571065664	14053376
+7	test-cases/benchmarks/er-random-k-CNF/rand-3-30-150-15.60.sdimacs	done	0.042920543	0.04895796254277229	14053376
+8	test-cases/benchmarks/er-random-k-CNF/rand-9-10-80-5.5.sdimacs	done	0.043128793	0.04466718342155218	14053376
+9	test-cases/benchmarks/er-random-k-CNF/rand-3-40-200-20.79.sdimacs	done	0.043210986	0.04634478408843279	14184448
+10	test-cases/benchmarks/er-random-k-CNF/rand-9-10-80-5.3.sdimacs	done	0.043474966	0.04503538180142641	14053376
+11	test-cases/benchmarks/er-random-k-CNF/rand-3-10-30-5.7.sdimacs	done	0.043778587	0.045049725100398064	14577664
+12	test-cases/benchmarks/er-random-k-CNF/rand-8-10-90-5.15.sdimacs	done	0.043913879	0.04499215539544821	14053376
+13	test-cases/benchmarks/er-random-k-CNF/rand-3-20-100-10.36.sdimacs	done	0.043973222	0.04634058382362127	14053376
+14	test-cases/benchmarks/er-random-k-CNF/rand-9-10-80-5.2.sdimacs	done	0.044038284	0.04544269386678934	14053376
+15	test-cases/benchmarks/er-random-k-CNF/rand-3-40-200-20.76.sdimacs	done	0.044107814	0.05451472848653793	14053376
+16	test-cases/benchmarks/er-random-k-CNF/rand-3-30-120-15.52.sdimacs	done	0.044128603	0.0476963734254241	14053376
+17	test-cases/benchmarks/er-random-k-CNF/rand-8-10-90-5.13.sdimacs	done	0.044229155	0.04587706830352545	14053376
+18	test-cases/benchmarks/er-random-k-CNF/rand-9-20-180-10.27.sdimacs	done	0.044357319	0.04623611178249121	14184448
+19	test-cases/benchmarks/er-random-k-CNF/rand-3-10-20-5.1.sdimacs	done	0.044419364	0.04686848632991314	14446592
+20	test-cases/benchmarks/er-random-k-CNF/rand-3-40-200-20.78.sdimacs	done	0.044592934	0.0476482380181551	14053376
+21	test-cases/benchmarks/er-random-k-CNF/rand-3-30-150-15.58.sdimacs	done	0.044626596	0.0477625448256731	14053376
+22	test-cases/benchmarks/er-random-k-CNF/rand-3-20-100-10.39.sdimacs	done	0.044640089	0.04734788276255131	14053376
+23	test-cases/benchmarks/er-random-k-CNF/rand-3-20-80-10.31.sdimacs	done	0.044642061	0.048681977204978466	14053376
+24	test-cases/benchmarks/er-random-k-CNF/rand-9-10-100-5.13.sdimacs	done	0.044716437	0.04709958378225565	14053376
+25	test-cases/benchmarks/er-random-k-CNF/rand-9-10-90-5.9.sdimacs	done	0.044728674	0.046845097094774246	14446592
+26	test-cases/benchmarks/er-random-k-CNF/rand-3-50-250-25.96.sdimacs	done	0.044929231	0.046774943359196186	14184448
+27	test-cases/benchmarks/er-random-k-CNF/rand-3-10-50-5.17.sdimacs	done	0.04495801	0.04633505176752806	14577664
+28	test-cases/benchmarks/er-random-k-CNF/rand-3-30-150-15.59.sdimacs	done	0.045109981	0.05229496210813522	14053376
+29	test-cases/benchmarks/er-random-k-CNF/rand-3-10-40-5.15.sdimacs	done	0.045204334	0.04825590457767248	14708736
+30	test-cases/benchmarks/er-random-k-CNF/rand-4-10-40-5.7.sdimacs	done	0.045280801	0.046080091036856174	14708736
+31	test-cases/benchmarks/er-random-k-CNF/rand-4-10-50-5.14.sdimacs	done	0.045312045	0.0468574995175004	14839808
+32	test-cases/benchmarks/er-random-k-CNF/rand-3-10-20-5.4.sdimacs	done	0.0453604	0.04656686540693045	14577664
+33	test-cases/benchmarks/er-random-k-CNF/rand-3-20-100-10.37.sdimacs	done	0.045793587	0.047702481970191	14053376
+34	test-cases/benchmarks/er-random-k-CNF/rand-5-10-40-5.5.sdimacs	done	0.045804324	0.04723239690065384	14577664
+35	test-cases/benchmarks/er-random-k-CNF/rand-3-40-200-20.77.sdimacs	done	0.045860439	0.04695608466863632	14053376
+36	test-cases/benchmarks/er-random-k-CNF/rand-3-10-20-5.3.sdimacs	done	0.045993229	0.04771696962416172	14450688
+37	test-cases/benchmarks/er-random-k-CNF/rand-3-50-250-25.97.sdimacs	done	0.046064229	0.047194658778607845	14184448
+38	test-cases/benchmarks/er-random-k-CNF/rand-3-10-40-5.11.sdimacs	done	0.046227352	0.04789422173053026	14573568
+39	test-cases/benchmarks/er-random-k-CNF/rand-4-10-30-5.2.sdimacs	done	0.046350766	0.04729812126606703	14704640
+40	test-cases/benchmarks/er-random-k-CNF/rand-3-30-150-15.56.sdimacs	done	0.046456713	0.04895923379808664	14053376
+41	test-cases/benchmarks/er-random-k-CNF/rand-3-20-80-10.34.sdimacs	done	0.046461466	0.04899826366454363	14573568
+42	test-cases/benchmarks/er-random-k-CNF/rand-3-50-250-25.99.sdimacs	done	0.046465043	0.04825005680322647	14184448
+43	test-cases/benchmarks/er-random-k-CNF/rand-3-20-80-10.32.sdimacs	done	0.0466898	0.05222651921212673	14835712
+44	test-cases/benchmarks/er-random-k-CNF/rand-3-10-30-5.9.sdimacs	done	0.046733224	0.05377910006791353	14565376
+45	test-cases/benchmarks/er-random-k-CNF/rand-3-10-30-5.8.sdimacs	done	0.046764883	0.04826563689857721	14577664
+46	test-cases/benchmarks/er-random-k-CNF/rand-4-10-50-5.13.sdimacs	done	0.046831626	0.04795765317976475	14708736
+47	test-cases/benchmarks/er-random-k-CNF/rand-4-10-30-5.1.sdimacs	done	0.046862008	0.047840978018939495	14577664
+48	test-cases/benchmarks/er-random-k-CNF/rand-3-10-30-5.10.sdimacs	done	0.046939925	0.048655442893505096	14577664
+49	test-cases/benchmarks/er-random-k-CNF/rand-3-40-160-20.71.sdimacs	done	0.046953464	0.051915296353399754	14565376
+50	test-cases/benchmarks/er-random-k-CNF/rand-3-10-50-5.20.sdimacs	done	0.047034969	0.04953666124492884	14573568
+51	test-cases/benchmarks/er-random-k-CNF/rand-4-10-30-5.3.sdimacs	done	0.047063092	0.04852717276662588	14708736
+52	test-cases/benchmarks/er-random-k-CNF/rand-3-10-40-5.13.sdimacs	done	0.047203309	0.05160301271826029	14053376
+53	test-cases/benchmarks/er-random-k-CNF/rand-9-10-80-5.4.sdimacs	done	0.047252722	0.048775418661534786	14053376
+54	test-cases/benchmarks/er-random-k-CNF/rand-3-20-100-10.40.sdimacs	done	0.047278277	0.0484486473724246	14053376
+55	test-cases/benchmarks/er-random-k-CNF/rand-3-10-20-5.2.sdimacs	done	0.047335392	0.04861853923648596	14573568
+56	test-cases/benchmarks/er-random-k-CNF/rand-3-20-100-10.38.sdimacs	done	0.047459864	0.04854130744934082	14053376
+57	test-cases/benchmarks/er-random-k-CNF/rand-3-40-200-20.80.sdimacs	done	0.047506615	0.05005796626210213	14053376
+58	test-cases/benchmarks/er-random-k-CNF/rand-9-10-100-5.14.sdimacs	done	0.047512373	0.04923681542277336	14053376
+59	test-cases/benchmarks/er-random-k-CNF/rand-3-30-150-15.57.sdimacs	done	0.047576662	0.05307160038501024	14053376
+60	test-cases/benchmarks/er-random-k-CNF/rand-3-20-80-10.33.sdimacs	done	0.047659502	0.04930568486452103	14696448
+61	test-cases/benchmarks/er-random-k-CNF/rand-3-50-200-25.91.sdimacs	done	0.047744199	0.05614085402339697	14688256
+62	test-cases/benchmarks/er-random-k-CNF/rand-3-10-50-5.18.sdimacs	done	0.047818693	0.051094891503453255	14053376
+63	test-cases/benchmarks/er-random-k-CNF/rand-3-30-120-15.55.sdimacs	done	0.047891943	0.05289490148425102	14835712
+64	test-cases/benchmarks/er-random-k-CNF/rand-3-10-20-5.5.sdimacs	done	0.048000027	0.050218500196933746	14577664
+65	test-cases/benchmarks/er-random-k-CNF/rand-7-10-70-5.10.sdimacs	done	0.048041243	0.04963925573974848	14839808
+66	test-cases/benchmarks/er-random-k-CNF/rand-4-10-60-5.20.sdimacs	done	0.048060668	0.050172071903944016	14839808
+67	test-cases/benchmarks/er-random-k-CNF/rand-4-10-60-5.17.sdimacs	done	0.048195676	0.04990704823285341	14835712
+68	test-cases/benchmarks/er-random-k-CNF/rand-6-10-50-5.5.sdimacs	done	0.048298244	0.049562154337763786	14839808
+69	test-cases/benchmarks/er-random-k-CNF/rand-3-10-40-5.14.sdimacs	done	0.048342783	0.04958461504429579	14573568
+70	test-cases/benchmarks/er-random-k-CNF/rand-3-50-250-25.98.sdimacs	done	0.048482371	0.05136767216026783	14184448
+71	test-cases/benchmarks/er-random-k-CNF/rand-8-10-70-5.3.sdimacs	done	0.048509112	0.05001280549913645	14577664
+72	test-cases/benchmarks/er-random-k-CNF/rand-8-10-70-5.4.sdimacs	done	0.048566647	0.05015247780829668	14581760
+73	test-cases/benchmarks/er-random-k-CNF/rand-3-10-40-5.12.sdimacs	done	0.048705247	0.050501005724072456	14577664
+74	test-cases/benchmarks/er-random-k-CNF/rand-5-10-50-5.9.sdimacs	done	0.048748516	0.05008008889853954	14835712
+75	test-cases/benchmarks/er-random-k-CNF/rand-4-10-60-5.18.sdimacs	done	0.048914508	0.04999678302556276	14839808
+76	test-cases/benchmarks/er-random-k-CNF/rand-3-20-80-10.35.sdimacs	done	0.04901266	0.05237028934061527	14835712
+77	test-cases/benchmarks/er-random-k-CNF/rand-4-10-50-5.11.sdimacs	done	0.049076426	0.0504414401948452	14839808
+78	test-cases/benchmarks/er-random-k-CNF/rand-4-10-60-5.19.sdimacs	done	0.049143483	0.050256816670298576	14839808
+79	test-cases/benchmarks/er-random-k-CNF/rand-7-10-60-5.1.sdimacs	done	0.049193168	0.05062314588576555	14577664
+80	test-cases/benchmarks/er-random-k-CNF/rand-4-10-50-5.12.sdimacs	done	0.049209627	0.051027010194957256	14708736
+81	test-cases/benchmarks/er-random-k-CNF/rand-3-20-60-10.27.sdimacs	done	0.049235252	0.051163061521947384	14573568
+82	test-cases/benchmarks/er-random-k-CNF/rand-6-10-50-5.3.sdimacs	done	0.049369881	0.05061246268451214	14839808
+83	test-cases/benchmarks/er-random-k-CNF/rand-4-10-40-5.8.sdimacs	done	0.049405005	0.05047235172241926	14708736
+84	test-cases/benchmarks/er-random-k-CNF/rand-8-10-80-5.8.sdimacs	done	0.049411064	0.05115462560206652	14577664
+85	test-cases/benchmarks/er-random-k-CNF/rand-9-10-100-5.15.sdimacs	done	0.049642541	0.05058665107935667	14839808
+86	test-cases/benchmarks/er-random-k-CNF/rand-6-10-70-5.13.sdimacs	done	0.050152263	0.051366809755563736	14839808
+87	test-cases/benchmarks/er-random-k-CNF/rand-8-10-80-5.9.sdimacs	done	0.050286908	0.05248201824724674	14577664
+88	test-cases/benchmarks/er-random-k-CNF/rand-8-10-80-5.6.sdimacs	done	0.05035812	0.05180402100086212	14864384
+89	test-cases/benchmarks/er-random-k-CNF/rand-3-20-40-10.21.sdimacs	done	0.050433815	0.052041503600776196	14577664
+90	test-cases/benchmarks/er-random-k-CNF/rand-8-10-90-5.11.sdimacs	done	0.050438201	0.05123720970004797	14839808
+91	test-cases/benchmarks/er-random-k-CNF/rand-9-10-100-5.12.sdimacs	done	0.05048324	0.05195936746895313	14839808
+92	test-cases/benchmarks/er-random-k-CNF/rand-6-10-60-5.6.sdimacs	done	0.05048653	0.052060351707041264	14839808
+93	test-cases/benchmarks/er-random-k-CNF/rand-4-10-30-5.4.sdimacs	done	0.050583642	0.05558331683278084	14577664
+94	test-cases/benchmarks/er-random-k-CNF/rand-8-10-80-5.10.sdimacs	done	0.050640968	0.052062759175896645	14839808
+95	test-cases/benchmarks/er-random-k-CNF/rand-8-10-80-5.7.sdimacs	done	0.050672577	0.05165718216449022	14708736
+96	test-cases/benchmarks/er-random-k-CNF/rand-7-10-60-5.4.sdimacs	done	0.050694469	0.05222362466156483	14831616
+97	test-cases/benchmarks/er-random-k-CNF/rand-4-10-50-5.15.sdimacs	done	0.050763533	0.052105363458395004	14770176
+98	test-cases/benchmarks/er-random-k-CNF/rand-6-10-50-5.1.sdimacs	done	0.050785461	0.053148879669606686	14839808
+99	test-cases/benchmarks/er-random-k-CNF/rand-9-10-100-5.11.sdimacs	done	0.050802267	0.0525555731728673	14712832
+100	test-cases/benchmarks/er-random-k-CNF/rand-8-10-90-5.14.sdimacs	done	0.05083055	0.05206398479640484	14839808
+101	test-cases/benchmarks/er-random-k-CNF/rand-5-10-40-5.3.sdimacs	done	0.050837954	0.05212113820016384	14704640
+102	test-cases/benchmarks/er-random-k-CNF/rand-9-10-90-5.10.sdimacs	done	0.050966023	0.052099873311817646	14708736
+103	test-cases/benchmarks/er-random-k-CNF/rand-4-10-40-5.6.sdimacs	done	0.050990278	0.051986162550747395	14843904
+104	test-cases/benchmarks/er-random-k-CNF/rand-5-10-40-5.2.sdimacs	done	0.051036656	0.052487595938146114	14839808
+105	test-cases/benchmarks/er-random-k-CNF/rand-8-10-90-5.12.sdimacs	done	0.051038447	0.052314153872430325	14708736
+106	test-cases/benchmarks/er-random-k-CNF/rand-6-10-70-5.11.sdimacs	done	0.051055609	0.052723354659974575	14839808
+107	test-cases/benchmarks/er-random-k-CNF/rand-5-10-50-5.8.sdimacs	done	0.051099059	0.05242925509810448	14839808
+108	test-cases/benchmarks/er-random-k-CNF/rand-5-10-50-5.10.sdimacs	done	0.051181949	0.05271974578499794	14843904
+109	test-cases/benchmarks/er-random-k-CNF/rand-5-10-60-5.12.sdimacs	done	0.051232186	0.05253154784440994	14839808
+110	test-cases/benchmarks/er-random-k-CNF/rand-5-10-40-5.1.sdimacs	done	0.05133678	0.0532037103548646	14708736
+111	test-cases/benchmarks/er-random-k-CNF/rand-5-10-40-5.4.sdimacs	done	0.05136655	0.05324026010930538	14581760
+112	test-cases/benchmarks/er-random-k-CNF/rand-6-10-60-5.7.sdimacs	done	0.051413352	0.05346858501434326	14839808
+113	test-cases/benchmarks/er-random-k-CNF/rand-8-10-70-5.1.sdimacs	done	0.05143555	0.05293061584234238	14577664
+114	test-cases/benchmarks/er-random-k-CNF/rand-8-10-70-5.5.sdimacs	done	0.051550874	0.05266765132546425	14839808
+115	test-cases/benchmarks/er-random-k-CNF/rand-3-10-30-5.6.sdimacs	done	0.051658372	0.05321899801492691	14835712
+116	test-cases/benchmarks/er-random-k-CNF/rand-7-10-60-5.2.sdimacs	done	0.051674266	0.053418186493217945	14839808
+117	test-cases/benchmarks/er-random-k-CNF/rand-8-10-100-5.19.sdimacs	done	0.051679044	0.05304049979895353	14839808
+118	test-cases/benchmarks/er-random-k-CNF/rand-7-10-80-5.15.sdimacs	done	0.051693457	0.05286216828972101	14839808
+119	test-cases/benchmarks/er-random-k-CNF/rand-9-10-90-5.8.sdimacs	done	0.05169593	0.05324104242026806	14708736
+120	test-cases/benchmarks/er-random-k-CNF/rand-5-10-70-5.16.sdimacs	done	0.051734401	0.052803448401391506	14839808
+121	test-cases/benchmarks/er-random-k-CNF/rand-4-10-60-5.16.sdimacs	done	0.051749682	0.05319178104400635	14839808
+122	test-cases/benchmarks/er-random-k-CNF/rand-8-10-100-5.16.sdimacs	done	0.051759787	0.05320187285542488	14839808
+123	test-cases/benchmarks/er-random-k-CNF/rand-6-10-60-5.9.sdimacs	done	0.051814941	0.053036464378237724	14839808
+124	test-cases/benchmarks/er-random-k-CNF/rand-9-10-80-5.1.sdimacs	done	0.051909699	0.05352027993649244	14577664
+125	test-cases/benchmarks/er-random-k-CNF/rand-7-10-60-5.3.sdimacs	done	0.052009756	0.05315901804715395	14577664
+126	test-cases/benchmarks/er-random-k-CNF/rand-6-10-60-5.8.sdimacs	done	0.052101596	0.05382339842617512	14839808
+127	test-cases/benchmarks/er-random-k-CNF/rand-8-10-100-5.18.sdimacs	done	0.0522898	0.05456855334341526	14716928
+128	test-cases/benchmarks/er-random-k-CNF/rand-6-10-80-5.17.sdimacs	done	0.05234674	0.05365297198295593	14962688
+129	test-cases/benchmarks/er-random-k-CNF/rand-7-10-60-5.5.sdimacs	done	0.052426336	0.05385657399892807	14839808
+130	test-cases/benchmarks/er-random-k-CNF/rand-9-10-90-5.6.sdimacs	done	0.052431558	0.054361176677048206	14839808
+131	test-cases/benchmarks/er-random-k-CNF/rand-6-10-70-5.14.sdimacs	done	0.052530038	0.05421665217727423	14831616
+132	test-cases/benchmarks/er-random-k-CNF/rand-9-10-110-5.19.sdimacs	done	0.052567622	0.05401676148176193	14856192
+133	test-cases/benchmarks/er-random-k-CNF/rand-7-10-70-5.9.sdimacs	done	0.052722007	0.05425749905407429	14839808
+134	test-cases/benchmarks/er-random-k-CNF/rand-7-10-80-5.13.sdimacs	done	0.052841214	0.05464238300919533	14835712
+135	test-cases/benchmarks/er-random-k-CNF/rand-9-10-90-5.7.sdimacs	done	0.05285183	0.05454943422228098	14839808
+136	test-cases/benchmarks/er-random-k-CNF/rand-7-10-90-5.19.sdimacs	done	0.052936188	0.0541188633069396	14839808
+137	test-cases/benchmarks/er-random-k-CNF/rand-7-10-80-5.14.sdimacs	done	0.052952868	0.053896332159638405	14839808
+138	test-cases/benchmarks/er-random-k-CNF/rand-7-10-70-5.6.sdimacs	done	0.05298022	0.054269785061478615	14708736
+139	test-cases/benchmarks/er-random-k-CNF/rand-8-10-100-5.17.sdimacs	done	0.052985746	0.05415605194866657	14839808
+140	test-cases/benchmarks/er-random-k-CNF/rand-6-10-60-5.10.sdimacs	done	0.052998221	0.05448386538773775	14708736
+141	test-cases/benchmarks/er-random-k-CNF/rand-7-10-70-5.7.sdimacs	done	0.053233705	0.05493590980768204	14839808
+142	test-cases/benchmarks/er-random-k-CNF/rand-7-10-70-5.8.sdimacs	done	0.05323646	0.0542181683704257	14839808
+143	test-cases/benchmarks/er-random-k-CNF/rand-6-10-70-5.12.sdimacs	done	0.053238969	0.05437685549259186	14839808
+144	test-cases/benchmarks/er-random-k-CNF/rand-5-10-50-5.7.sdimacs	done	0.053244915	0.05494326911866665	14839808
+145	test-cases/benchmarks/er-random-k-CNF/rand-4-10-40-5.10.sdimacs	done	0.053335601	0.05495140515267849	14839808
+146	test-cases/benchmarks/er-random-k-CNF/rand-5-10-50-5.6.sdimacs	done	0.053397679	0.05513195227831602	14839808
+147	test-cases/benchmarks/er-random-k-CNF/rand-7-10-90-5.18.sdimacs	done	0.053441552	0.055028896778821945	14843904
+148	test-cases/benchmarks/er-random-k-CNF/rand-5-10-60-5.13.sdimacs	done	0.053678393	0.0556136230006814	14839808
+149	test-cases/benchmarks/er-random-k-CNF/rand-5-10-60-5.14.sdimacs	done	0.053852902	0.055631354451179504	14839808
+150	test-cases/benchmarks/er-random-k-CNF/rand-7-10-90-5.20.sdimacs	done	0.053907708	0.05521716922521591	14884864
+151	test-cases/benchmarks/er-random-k-CNF/rand-8-10-70-5.2.sdimacs	done	0.053946905	0.05568494834005833	14577664
+152	test-cases/benchmarks/er-random-k-CNF/rand-5-10-70-5.20.sdimacs	done	0.054013345	0.055250382982194424	14839808
+153	test-cases/benchmarks/er-random-k-CNF/rand-4-10-30-5.5.sdimacs	done	0.054146566	0.05550496652722359	14581760
+154	test-cases/benchmarks/er-random-k-CNF/rand-6-10-80-5.19.sdimacs	done	0.054252998	0.05557690002024174	14839808
+155	test-cases/benchmarks/er-random-k-CNF/rand-9-10-110-5.18.sdimacs	done	0.054486976	0.05607938766479492	14839808
+156	test-cases/benchmarks/er-random-k-CNF/rand-5-10-70-5.17.sdimacs	done	0.054526914	0.05688996147364378	14839808
+157	test-cases/benchmarks/er-random-k-CNF/rand-7-10-80-5.12.sdimacs	done	0.054638473	0.057175484485924244	14839808
+158	test-cases/benchmarks/er-random-k-CNF/rand-3-20-60-10.29.sdimacs	done	0.054830669	0.05680981371551752	14970880
+159	test-cases/benchmarks/er-random-k-CNF/rand-3-20-60-10.30.sdimacs	done	0.054951974	0.05858184024691582	14827520
+160	test-cases/benchmarks/er-random-k-CNF/rand-6-10-70-5.15.sdimacs	done	0.055073327	0.056588963605463505	14839808
+161	test-cases/benchmarks/er-random-k-CNF/rand-6-10-50-5.2.sdimacs	done	0.055082584	0.05674904212355614	14839808
+162	test-cases/benchmarks/er-random-k-CNF/rand-6-10-80-5.20.sdimacs	done	0.055286584	0.05665307678282261	14970880
+163	test-cases/benchmarks/er-random-k-CNF/rand-7-10-90-5.17.sdimacs	done	0.055324721	0.056937605142593384	14839808
+164	test-cases/benchmarks/er-random-k-CNF/rand-5-10-60-5.15.sdimacs	done	0.055525531	0.0573448371142149	14839808
+165	test-cases/benchmarks/er-random-k-CNF/rand-9-10-110-5.20.sdimacs	done	0.055634477	0.0575030455365777	14839808
+166	test-cases/benchmarks/er-random-k-CNF/rand-5-10-70-5.18.sdimacs	done	0.055654908	0.05710216984152794	14917632
+167	test-cases/benchmarks/er-random-k-CNF/rand-8-10-100-5.20.sdimacs	done	0.055776448	0.05747943837195635	14843904
+168	test-cases/benchmarks/er-random-k-CNF/rand-5-10-60-5.11.sdimacs	done	0.055948643	0.058094967156648636	14839808
+169	test-cases/benchmarks/er-random-k-CNF/rand-6-10-80-5.16.sdimacs	done	0.056090431	0.05771333072334528	14839808
+170	test-cases/benchmarks/er-random-k-CNF/rand-5-10-70-5.19.sdimacs	done	0.056364803	0.057795045897364616	14839808
+171	test-cases/benchmarks/er-random-k-CNF/rand-7-10-90-5.16.sdimacs	done	0.056443988	0.05794848408550024	14872576
+172	test-cases/benchmarks/er-random-k-CNF/rand-3-20-40-10.25.sdimacs	done	0.056836119	0.05876507144421339	14704640
+173	test-cases/benchmarks/er-random-k-CNF/rand-3-30-120-15.53.sdimacs	done	0.056904884	0.058198580518364906	14958592
+174	test-cases/benchmarks/er-random-k-CNF/rand-3-20-60-10.26.sdimacs	done	0.056913452	0.05846044048666954	14958592
+175	test-cases/benchmarks/er-random-k-CNF/rand-6-10-80-5.18.sdimacs	done	0.057069338	0.0589254517108202	14856192
+176	test-cases/benchmarks/er-random-k-CNF/rand-3-20-40-10.22.sdimacs	done	0.05716291	0.0639296481385827	14708736
+177	test-cases/benchmarks/er-random-k-CNF/rand-3-20-60-10.28.sdimacs	done	0.057865695	0.06362380459904671	14966784
+178	test-cases/benchmarks/er-random-k-CNF/rand-3-30-120-15.51.sdimacs	done	0.058029456	0.059736592695117	15085568
+179	test-cases/benchmarks/er-random-k-CNF/rand-3-30-120-15.54.sdimacs	done	0.058380292	0.05996366124600172	15089664
+180	test-cases/benchmarks/er-random-k-CNF/rand-7-10-80-5.11.sdimacs	done	0.058606085	0.060267907567322254	14860288
+181	test-cases/benchmarks/er-random-k-CNF/rand-4-20-60-10.24.sdimacs	done	0.059473245	0.06356768775731325	14831616
+182	test-cases/benchmarks/er-random-k-CNF/rand-3-20-40-10.23.sdimacs	done	0.060902905	0.06301800813525915	14708736
+183	test-cases/benchmarks/er-random-k-CNF/rand-3-50-200-25.95.sdimacs	done	0.061066394	0.06299784779548645	15736832
+184	test-cases/benchmarks/er-random-k-CNF/rand-3-30-90-15.46.sdimacs	done	0.062228833	0.06494803167879581	15351808
+185	test-cases/benchmarks/er-random-k-CNF/rand-3-40-160-20.75.sdimacs	done	0.062472217	0.06393998861312866	15740928
+186	test-cases/benchmarks/er-random-k-CNF/rand-4-10-40-5.9.sdimacs	done	0.062519447	0.06422707717865705	14708736
+187	test-cases/benchmarks/er-random-k-CNF/rand-3-20-40-10.24.sdimacs	done	0.065330209	0.06835844740271568	14839808
+188	test-cases/benchmarks/er-random-k-CNF/rand-4-20-60-10.22.sdimacs	done	0.074040083	0.0762553745880723	15093760
+189	test-cases/benchmarks/er-random-k-CNF/rand-3-30-60-15.43.sdimacs	done	0.074957189	0.08794848434627056	15364096
+190	test-cases/benchmarks/er-random-k-CNF/rand-4-20-60-10.25.sdimacs	done	0.075129836	0.078163156285882	15224832
+191	test-cases/benchmarks/er-random-k-CNF/rand-3-40-160-20.72.sdimacs	done	0.075578455	0.07918813265860081	15994880
+192	test-cases/benchmarks/er-random-k-CNF/rand-4-20-60-10.21.sdimacs	done	0.076363998	0.07780272513628006	15351808
+193	test-cases/benchmarks/er-random-k-CNF/rand-3-30-60-15.45.sdimacs	done	0.077912366	0.08374736364930868	15491072
+194	test-cases/benchmarks/er-random-k-CNF/rand-4-30-90-15.43.sdimacs	done	0.078225916	0.07970803696662188	15888384
+195	test-cases/benchmarks/er-random-k-CNF/rand-3-30-60-15.42.sdimacs	done	0.081389427	0.09136537928134203	15491072
+196	test-cases/benchmarks/er-random-k-CNF/rand-9-20-180-10.29.sdimacs	done	0.084494192	0.08607569616287947	15204352
+197	test-cases/benchmarks/er-random-k-CNF/rand-3-30-60-15.41.sdimacs	done	0.095251125	0.09705867245793343	15622144
+198	test-cases/benchmarks/er-random-k-CNF/rand-5-20-100-10.26.sdimacs	done	0.097940206	0.09987813234329224	15626240
+199	test-cases/benchmarks/er-random-k-CNF/rand-4-20-80-10.30.sdimacs	done	0.100984183	0.1085501853376627	15884288
+200	test-cases/benchmarks/er-random-k-CNF/rand-4-20-60-10.23.sdimacs	done	0.102609453	0.10433510597795248	15609856
+201	test-cases/benchmarks/er-random-k-CNF/rand-7-20-120-10.22.sdimacs	done	0.103634246	0.10532688535749912	15495168
+202	test-cases/benchmarks/er-random-k-CNF/rand-3-30-90-15.49.sdimacs	done	0.105253139	0.1097002662718296	16146432
+203	test-cases/benchmarks/er-random-k-CNF/rand-3-40-160-20.74.sdimacs	done	0.107950968	0.11029144190251827	16510976
+204	test-cases/benchmarks/er-random-k-CNF/rand-9-20-160-10.21.sdimacs	done	0.111455168	0.11321129836142063	15495168
+205	test-cases/benchmarks/er-random-k-CNF/rand-4-20-120-10.40.sdimacs	done	0.112713708	0.11411718558520079	16011264
+206	test-cases/benchmarks/er-random-k-CNF/rand-5-20-80-10.23.sdimacs	done	0.114676353	0.11684043146669865	15626240
+207	test-cases/benchmarks/er-random-k-CNF/rand-6-20-100-10.21.sdimacs	done	0.115636138	0.11754021048545837	15740928
+208	test-cases/benchmarks/er-random-k-CNF/rand-3-30-90-15.47.sdimacs	done	0.117397982	0.11933152377605438	16277504
+209	test-cases/benchmarks/er-random-k-CNF/rand-4-20-120-10.38.sdimacs	done	0.126930375	0.1291143223643303	16244736
+210	test-cases/benchmarks/er-random-k-CNF/rand-3-30-90-15.50.sdimacs	done	0.127482962	0.1440705843269825	16539648
+211	test-cases/benchmarks/er-random-k-CNF/rand-4-20-80-10.29.sdimacs	done	0.128324085	0.12991454638540745	15998976
+212	test-cases/benchmarks/er-random-k-CNF/rand-4-20-120-10.36.sdimacs	done	0.130414067	0.1316345976665616	16236544
+213	test-cases/benchmarks/er-random-k-CNF/rand-4-20-100-10.32.sdimacs	done	0.132490385	0.13368292339146137	16125952
+214	test-cases/benchmarks/er-random-k-CNF/rand-5-20-80-10.22.sdimacs	done	0.134795384	0.1365540800616145	15998976
+215	test-cases/benchmarks/er-random-k-CNF/rand-4-20-100-10.35.sdimacs	done	0.135066192	0.13654057402163744	16257024
+216	test-cases/benchmarks/er-random-k-CNF/rand-6-20-120-10.29.sdimacs	done	0.13766307	0.13898074068129063	15994880
+217	test-cases/benchmarks/er-random-k-CNF/rand-4-20-120-10.39.sdimacs	done	0.138608379	0.14001397788524628	16379904
+218	test-cases/benchmarks/er-random-k-CNF/rand-4-20-120-10.37.sdimacs	done	0.139269812	0.14046324882656336	16273408
+219	test-cases/benchmarks/er-random-k-CNF/rand-7-20-120-10.25.sdimacs	done	0.14062635	0.14236979372799397	15728640
+220	test-cases/benchmarks/er-random-k-CNF/rand-8-20-160-10.26.sdimacs	done	0.141591088	0.14331249985843897	15847424
+221	test-cases/benchmarks/er-random-k-CNF/rand-3-30-90-15.48.sdimacs	done	0.141947441	0.14767843019217253	16125952
+222	test-cases/benchmarks/er-random-k-CNF/rand-9-20-160-10.25.sdimacs	done	0.143644814	0.14594230987131596	15699968
+223	test-cases/benchmarks/er-random-k-CNF/rand-5-20-80-10.21.sdimacs	done	0.144729491	0.14620234910398722	16019456
+224	test-cases/benchmarks/er-random-k-CNF/rand-4-20-80-10.28.sdimacs	done	0.147467951	0.14875107072293758	16248832
+225	test-cases/benchmarks/er-random-k-CNF/rand-9-20-160-10.23.sdimacs	done	0.147641468	0.149673068895936	15831040
+226	test-cases/benchmarks/er-random-k-CNF/rand-8-20-140-10.23.sdimacs	done	0.150554382	0.1517462432384491	15585280
+227	test-cases/benchmarks/er-random-k-CNF/rand-9-20-160-10.22.sdimacs	done	0.151988457	0.15355250146239996	15712256
+228	test-cases/benchmarks/er-random-k-CNF/rand-6-20-100-10.22.sdimacs	done	0.152388261	0.1537126861512661	15867904
+229	test-cases/benchmarks/er-random-k-CNF/rand-4-20-80-10.26.sdimacs	done	0.15641403	0.16240246314555407	16375808
+230	test-cases/benchmarks/er-random-k-CNF/rand-8-20-160-10.30.sdimacs	done	0.15691886	0.1583878370001912	15978496
+231	test-cases/benchmarks/er-random-k-CNF/rand-3-40-80-20.65.sdimacs	done	0.16298118	0.1657711174339056	16539648
+232	test-cases/benchmarks/er-random-k-CNF/rand-5-20-80-10.25.sdimacs	done	0.173991947	0.1750192204490304	16392192
+233	test-cases/benchmarks/er-random-k-CNF/rand-7-20-120-10.24.sdimacs	done	0.176453089	0.17835962679237127	16117760
+234	test-cases/benchmarks/er-random-k-CNF/rand-4-20-100-10.34.sdimacs	done	0.176750282	0.17891343776136637	16670720
+235	test-cases/benchmarks/er-random-k-CNF/rand-3-40-160-20.73.sdimacs	done	0.177253497	0.18344704527407885	17039360
+236	test-cases/benchmarks/er-random-k-CNF/rand-5-20-120-10.35.sdimacs	done	0.179947751	0.18120888620615005	16519168
+237	test-cases/benchmarks/er-random-k-CNF/rand-9-20-200-10.34.sdimacs	done	0.180791296	0.18249404337257147	15953920
+238	test-cases/benchmarks/er-random-k-CNF/rand-4-20-100-10.33.sdimacs	done	0.185545116	0.1870947191491723	16629760
+239	test-cases/benchmarks/er-random-k-CNF/rand-6-20-100-10.24.sdimacs	done	0.185771666	0.18759417068213224	16384000
+240	test-cases/benchmarks/er-random-k-CNF/rand-6-20-100-10.25.sdimacs	done	0.185993386	0.18784985225647688	16076800
+241	test-cases/benchmarks/er-random-k-CNF/rand-8-20-140-10.24.sdimacs	done	0.186776899	0.18881319276988506	16240640
+242	test-cases/benchmarks/er-random-k-CNF/rand-6-20-120-10.30.sdimacs	done	0.187391237	0.1892690509557724	16379904
+243	test-cases/benchmarks/er-random-k-CNF/rand-4-20-100-10.31.sdimacs	done	0.190874914	0.19165794737637043	16904192
+244	test-cases/benchmarks/er-random-k-CNF/rand-8-20-160-10.27.sdimacs	done	0.197783192	0.19928913563489914	16166912
+245	test-cases/benchmarks/er-random-k-CNF/rand-8-20-140-10.21.sdimacs	done	0.198057872	0.20113743096590042	16240640
+246	test-cases/benchmarks/er-random-k-CNF/rand-9-20-200-10.33.sdimacs	done	0.200455869	0.2020866358652711	16216064
+247	test-cases/benchmarks/er-random-k-CNF/rand-9-20-180-10.30.sdimacs	done	0.202728418	0.2045918358489871	16076800
+248	test-cases/benchmarks/er-random-k-CNF/rand-9-20-160-10.24.sdimacs	done	0.203345336	0.20514980982989073	16097280
+249	test-cases/benchmarks/er-random-k-CNF/rand-6-20-140-10.33.sdimacs	done	0.203789636	0.20565760415047407	16650240
+250	test-cases/benchmarks/er-random-k-CNF/rand-9-20-200-10.31.sdimacs	done	0.208125154	0.21022549830377102	16080896
+251	test-cases/benchmarks/er-random-k-CNF/rand-8-20-180-10.31.sdimacs	done	0.211992787	0.21440189331769943	16359424
+252	test-cases/benchmarks/er-random-k-CNF/rand-9-20-200-10.32.sdimacs	done	0.212060626	0.2138292221352458	16084992
+253	test-cases/benchmarks/er-random-k-CNF/rand-5-20-80-10.24.sdimacs	done	0.21273302	0.21438785828649998	16375808
+254	test-cases/benchmarks/er-random-k-CNF/rand-9-20-220-10.40.sdimacs	done	0.217267437	0.21975904516875744	16343040
+255	test-cases/benchmarks/er-random-k-CNF/rand-9-20-180-10.26.sdimacs	done	0.221316751	0.22335462551563978	16220160
+256	test-cases/benchmarks/er-random-k-CNF/rand-7-20-140-10.30.sdimacs	done	0.223997515	0.22543182410299778	16506880
+257	test-cases/benchmarks/er-random-k-CNF/rand-9-20-220-10.39.sdimacs	done	0.226748008	0.22791339736431837	16334848
+258	test-cases/benchmarks/er-random-k-CNF/rand-7-20-140-10.27.sdimacs	done	0.230752274	0.23212664294987917	16637952
+259	test-cases/benchmarks/er-random-k-CNF/rand-6-20-100-10.23.sdimacs	done	0.234090484	0.23599153943359852	16515072
+260	test-cases/benchmarks/er-random-k-CNF/rand-8-20-180-10.32.sdimacs	done	0.234336077	0.2357394928112626	16355328
+261	test-cases/benchmarks/er-random-k-CNF/rand-8-20-160-10.29.sdimacs	done	0.234620111	0.2360169319435954	16363520
+262	test-cases/benchmarks/er-random-k-CNF/rand-4-20-80-10.27.sdimacs	done	0.234859436	0.23718934040516615	17031168
+263	test-cases/benchmarks/er-random-k-CNF/rand-8-20-200-10.40.sdimacs	done	0.235911413	0.2371383924037218	16740352
+264	test-cases/benchmarks/er-random-k-CNF/rand-7-20-120-10.23.sdimacs	done	0.236775595	0.23846276849508286	16506880
+265	test-cases/benchmarks/er-random-k-CNF/rand-8-20-140-10.22.sdimacs	done	0.239375212	0.2418440980836749	16179200
+266	test-cases/benchmarks/er-random-k-CNF/rand-6-20-140-10.32.sdimacs	done	0.240603783	0.24218199588358402	16637952
+267	test-cases/benchmarks/er-random-k-CNF/rand-8-20-160-10.28.sdimacs	done	0.242508693	0.24396378174424171	16498688
+268	test-cases/benchmarks/er-random-k-CNF/rand-9-20-180-10.28.sdimacs	done	0.248862833	0.25060752034187317	16076800
+269	test-cases/benchmarks/er-random-k-CNF/rand-6-20-120-10.28.sdimacs	done	0.254209169	0.25578607246279716	16756736
+270	test-cases/benchmarks/er-random-k-CNF/rand-7-20-160-10.33.sdimacs	done	0.254320704	0.2555549656972289	16629760
+271	test-cases/benchmarks/er-random-k-CNF/rand-9-20-200-10.35.sdimacs	done	0.254351503	0.2556473147124052	16343040
+272	test-cases/benchmarks/er-random-k-CNF/rand-3-50-200-25.92.sdimacs	done	0.25439257	0.25580736994743347	18096128
+273	test-cases/benchmarks/er-random-k-CNF/rand-7-20-120-10.21.sdimacs	done	0.259989868	0.2615536153316498	16596992
+274	test-cases/benchmarks/er-random-k-CNF/rand-3-40-80-20.63.sdimacs	done	0.263246521	0.2674151426181197	17186816
+275	test-cases/benchmarks/er-random-k-CNF/rand-6-20-120-10.26.sdimacs	done	0.265303539	0.26671433076262474	16900096
+276	test-cases/benchmarks/er-random-k-CNF/rand-8-20-200-10.38.sdimacs	done	0.265914031	0.2675407286733389	16740352
+277	test-cases/benchmarks/er-random-k-CNF/rand-7-20-160-10.31.sdimacs	done	0.271582373	0.27305697556585073	16683008
+278	test-cases/benchmarks/er-random-k-CNF/rand-9-20-220-10.38.sdimacs	done	0.277274187	0.27867172472178936	16601088
+279	test-cases/benchmarks/er-random-k-CNF/rand-5-20-100-10.27.sdimacs	done	0.280906005	0.28342116717249155	16875520
+280	test-cases/benchmarks/er-random-k-CNF/rand-3-40-80-20.61.sdimacs	done	0.281279361	0.2831530701369047	17813504
+281	test-cases/benchmarks/er-random-k-CNF/rand-8-20-140-10.25.sdimacs	done	0.28746459	0.2893845774233341	16629760
+282	test-cases/benchmarks/er-random-k-CNF/rand-8-20-180-10.34.sdimacs	done	0.294955201	0.2960748169571161	16879616
+283	test-cases/benchmarks/er-random-k-CNF/rand-6-20-140-10.34.sdimacs	done	0.295237224	0.2970987791195512	17027072
+284	test-cases/benchmarks/er-random-k-CNF/rand-7-20-140-10.26.sdimacs	done	0.295587376	0.2968248473480344	16891904
+285	test-cases/benchmarks/er-random-k-CNF/rand-8-20-200-10.37.sdimacs	done	0.29675867	0.2983628371730447	16875520
+286	test-cases/benchmarks/er-random-k-CNF/rand-5-20-140-10.37.sdimacs	done	0.298229958	0.29993951972573996	17534976
+287	test-cases/benchmarks/er-random-k-CNF/rand-5-20-100-10.29.sdimacs	done	0.29870789	0.3003180380910635	16818176
+288	test-cases/benchmarks/er-random-k-CNF/rand-7-20-140-10.28.sdimacs	done	0.305303742	0.30705449264496565	16916480
+289	test-cases/benchmarks/er-random-k-CNF/rand-6-20-160-10.39.sdimacs	done	0.307584512	0.309357819147408	17604608
+290	test-cases/benchmarks/er-random-k-CNF/rand-5-20-100-10.30.sdimacs	done	0.309290304	0.31022450141608715	17317888
+291	test-cases/benchmarks/er-random-k-CNF/rand-8-20-200-10.39.sdimacs	done	0.310535516	0.3119664900004864	17063936
+292	test-cases/benchmarks/er-random-k-CNF/rand-3-40-80-20.62.sdimacs	done	0.310785641	0.3146476335823536	17588224
+293	test-cases/benchmarks/er-random-k-CNF/rand-7-20-160-10.35.sdimacs	done	0.315799611	0.31703038047999144	17154048
+294	test-cases/benchmarks/er-random-k-CNF/rand-5-20-140-10.36.sdimacs	done	0.318050209	0.31950600259006023	17584128
+295	test-cases/benchmarks/er-random-k-CNF/rand-6-20-120-10.27.sdimacs	done	0.321478393	0.3231023969128728	17514496
+296	test-cases/benchmarks/er-random-k-CNF/rand-3-30-60-15.44.sdimacs	done	0.326685571	0.3284589545801282	17723392
+297	test-cases/benchmarks/er-random-k-CNF/rand-8-20-180-10.33.sdimacs	done	0.343285252	0.3443396585062146	17137664
+298	test-cases/benchmarks/er-random-k-CNF/rand-7-20-180-10.38.sdimacs	done	0.355144665	0.3563225381076336	17539072
+299	test-cases/benchmarks/er-random-k-CNF/rand-7-20-160-10.34.sdimacs	done	0.355508872	0.35725182946771383	17305600
+300	test-cases/benchmarks/er-random-k-CNF/rand-3-50-200-25.93.sdimacs	done	0.363821794	0.3655751943588257	18726912
+301	test-cases/benchmarks/er-random-k-CNF/rand-8-20-200-10.36.sdimacs	done	0.369454542	0.3704945631325245	17002496
+302	test-cases/benchmarks/er-random-k-CNF/rand-9-20-220-10.37.sdimacs	done	0.371087364	0.37264642119407654	16859136
+303	test-cases/benchmarks/er-random-k-CNF/rand-6-20-140-10.35.sdimacs	done	0.371319139	0.37282350938767195	17678336
+304	test-cases/benchmarks/er-random-k-CNF/rand-8-20-180-10.35.sdimacs	done	0.371873549	0.3734767809510231	16871424
+305	test-cases/benchmarks/er-random-k-CNF/rand-5-20-140-10.39.sdimacs	done	0.373725096	0.3755412818863988	17915904
+306	test-cases/benchmarks/er-random-k-CNF/rand-5-20-120-10.32.sdimacs	done	0.383973071	0.3853615168482065	17784832
+307	test-cases/benchmarks/er-random-k-CNF/rand-5-20-100-10.28.sdimacs	done	0.388398833	0.39000736456364393	17629184
+308	test-cases/benchmarks/er-random-k-CNF/rand-9-20-220-10.36.sdimacs	done	0.394813939	0.39707272592931986	16732160
+309	test-cases/benchmarks/er-random-k-CNF/rand-7-20-160-10.32.sdimacs	done	0.398614678	0.4009013967588544	17870848
+310	test-cases/benchmarks/er-random-k-CNF/rand-5-20-120-10.31.sdimacs	done	0.403497882	0.40507890842854977	17813504
+311	test-cases/benchmarks/er-random-k-CNF/rand-6-20-160-10.38.sdimacs	done	0.405601183	0.4069684064015746	17780736
+312	test-cases/benchmarks/er-random-k-CNF/rand-7-20-180-10.40.sdimacs	done	0.413645564	0.4153927443549037	17870848
+313	test-cases/benchmarks/er-random-k-CNF/rand-3-40-120-20.69.sdimacs	done	0.437782305	0.439295738004148	18243584
+314	test-cases/benchmarks/er-random-k-CNF/rand-7-20-140-10.29.sdimacs	done	0.441031587	0.4420443121343851	17805312
+315	test-cases/benchmarks/er-random-k-CNF/rand-7-20-180-10.39.sdimacs	done	0.44851812	0.4500327371060848	17764352
+316	test-cases/benchmarks/er-random-k-CNF/rand-5-20-140-10.38.sdimacs	done	0.461666048	0.46545819379389286	18427904
+317	test-cases/benchmarks/er-random-k-CNF/rand-7-20-180-10.36.sdimacs	done	0.473452353	0.47525875736027956	18087936
+318	test-cases/benchmarks/er-random-k-CNF/rand-6-20-160-10.36.sdimacs	done	0.474492745	0.4759601093828678	18313216
+319	test-cases/benchmarks/er-random-k-CNF/rand-6-20-160-10.40.sdimacs	done	0.475567943	0.4769885018467903	18231296
+320	test-cases/benchmarks/er-random-k-CNF/rand-5-20-120-10.34.sdimacs	done	0.484669036	0.4863667469471693	18329600
+321	test-cases/benchmarks/er-random-k-CNF/rand-7-20-180-10.37.sdimacs	done	0.485913371	0.4879492996260524	18186240
+322	test-cases/benchmarks/er-random-k-CNF/rand-3-40-120-20.67.sdimacs	done	0.491436282	0.4923835527151823	19398656
+323	test-cases/benchmarks/er-random-k-CNF/rand-6-20-140-10.31.sdimacs	done	0.507886367	0.5096673965454102	18198528
+324	test-cases/benchmarks/er-random-k-CNF/rand-5-20-120-10.33.sdimacs	done	0.515298369	0.5169938774779439	18382848
+325	test-cases/benchmarks/er-random-k-CNF/rand-6-20-160-10.37.sdimacs	done	0.55001104	0.5512213679030538	18718720
+326	test-cases/benchmarks/er-random-k-CNF/rand-5-20-140-10.40.sdimacs	done	0.601635839	0.6030385121703148	19529728
+327	test-cases/benchmarks/er-random-k-CNF/rand-3-50-200-25.94.sdimacs	done	0.721945837	0.7250724695622921	20561920
+328	test-cases/benchmarks/er-random-k-CNF/rand-5-30-120-15.43.sdimacs	done	0.980081632	0.9814575174823403	19959808
+329	test-cases/benchmarks/er-random-k-CNF/rand-3-40-120-20.68.sdimacs	done	1.036680216	1.0387968812137842	22372352
+330	test-cases/benchmarks/er-random-k-CNF/rand-3-40-80-20.64.sdimacs	done	1.091619091	1.0954235726967454	21479424
+331	test-cases/benchmarks/er-random-k-CNF/rand-4-30-90-15.45.sdimacs	done	1.218836436	1.2207024861127138	20803584
+332	test-cases/benchmarks/er-random-k-CNF/rand-4-30-90-15.42.sdimacs	done	1.237443739	1.2399857360869646	21331968
+333	test-cases/benchmarks/er-random-k-CNF/rand-3-40-120-20.70.sdimacs	done	1.306674394	1.3080440564081073	24080384
+334	test-cases/benchmarks/er-random-k-CNF/rand-4-30-180-15.60.sdimacs	done	1.326066044	1.327705755829811	23363584
+335	test-cases/benchmarks/er-random-k-CNF/rand-3-50-100-25.83.sdimacs	done	1.354749236	1.3561395639553666	22396928
+336	test-cases/benchmarks/er-random-k-CNF/rand-4-30-120-15.50.sdimacs	done	1.38085971	1.383042709901929	22257664
+337	test-cases/benchmarks/er-random-k-CNF/rand-8-30-240-15.48.sdimacs	done	1.636028194	1.637540821917355	21434368
+338	test-cases/benchmarks/er-random-k-CNF/rand-9-30-240-15.44.sdimacs	done	1.676448032	1.6779848411679268	20795392
+339	test-cases/benchmarks/er-random-k-CNF/rand-4-30-180-15.57.sdimacs	done	1.731310607	1.7328350869938731	24965120
+340	test-cases/benchmarks/er-random-k-CNF/rand-9-30-240-15.45.sdimacs	done	1.772743528	1.7740882253274322	20377600
+341	test-cases/benchmarks/er-random-k-CNF/rand-4-30-180-15.59.sdimacs	done	1.873164429	1.8745408300310373	24981504
+342	test-cases/benchmarks/er-random-k-CNF/rand-8-30-210-15.42.sdimacs	done	2.010554258	2.012284144759178	21577728
+343	test-cases/benchmarks/er-random-k-CNF/rand-3-40-120-20.66.sdimacs	done	2.154819788	2.1565587976947427	25640960
+344	test-cases/benchmarks/er-random-k-CNF/rand-4-30-180-15.58.sdimacs	done	2.368833512	2.370000820606947	26812416
+345	test-cases/benchmarks/er-random-k-CNF/rand-9-30-270-15.47.sdimacs	done	2.432003115	2.433652658946812	21921792
+346	test-cases/benchmarks/er-random-k-CNF/rand-6-30-150-15.44.sdimacs	done	2.683043911	2.6848777886480093	23994368
+347	test-cases/benchmarks/er-random-k-CNF/rand-4-30-150-15.52.sdimacs	done	2.691641935	2.6927177850157022	27058176
+348	test-cases/benchmarks/er-random-k-CNF/rand-4-30-180-15.56.sdimacs	done	2.822045995	2.8244260447099805	29032448
+349	test-cases/benchmarks/er-random-k-CNF/rand-4-30-90-15.44.sdimacs	done	2.845394088	2.8475255081430078	26730496
+350	test-cases/benchmarks/er-random-k-CNF/rand-7-30-180-15.44.sdimacs	done	3.028016856	3.0300990538671613	24076288
+351	test-cases/benchmarks/er-random-k-CNF/rand-9-30-270-15.49.sdimacs	done	3.064954357	3.067258359864354	23777280
+352	test-cases/benchmarks/er-random-k-CNF/rand-9-30-240-15.43.sdimacs	done	3.090993784	3.0924620218575	23388160
+353	test-cases/benchmarks/er-random-k-CNF/rand-8-30-240-15.49.sdimacs	done	3.102388475	3.1039558136835694	24375296
+354	test-cases/benchmarks/er-random-k-CNF/rand-4-30-150-15.51.sdimacs	done	3.212554204	3.214449659921229	28979200
+355	test-cases/benchmarks/er-random-k-CNF/rand-9-30-300-15.51.sdimacs	done	3.241628242	3.243543040007353	23891968
+356	test-cases/benchmarks/er-random-k-CNF/rand-4-30-90-15.41.sdimacs	done	3.255061141	3.257348987273872	26132480
+357	test-cases/benchmarks/er-random-k-CNF/rand-9-30-240-15.42.sdimacs	done	3.271283153	3.2731923684477806	23523328
+358	test-cases/benchmarks/er-random-k-CNF/rand-3-50-150-25.88.sdimacs	done	3.37513528	3.376469143666327	30707712
+359	test-cases/benchmarks/er-random-k-CNF/rand-3-50-100-25.81.sdimacs	done	3.428461058	3.429625064134598	30597120
+360	test-cases/benchmarks/er-random-k-CNF/rand-4-30-120-15.46.sdimacs	done	3.519464457	3.5237887874245644	28532736
+361	test-cases/benchmarks/er-random-k-CNF/rand-5-30-120-15.45.sdimacs	done	3.651803697	3.6536939395591617	26198016
+362	test-cases/benchmarks/er-random-k-CNF/rand-3-50-150-25.86.sdimacs	done	3.7093569	3.716092588379979	32153600
+363	test-cases/benchmarks/er-random-k-CNF/rand-7-30-210-15.50.sdimacs	done	3.88161673	3.8839754117652774	26042368
+364	test-cases/benchmarks/er-random-k-CNF/rand-6-30-180-15.47.sdimacs	done	4.081528131	4.082796843722463	27037696
+365	test-cases/benchmarks/er-random-k-CNF/rand-3-50-100-25.85.sdimacs	done	4.177810811	4.182859444990754	31297536
+366	test-cases/benchmarks/er-random-k-CNF/rand-5-30-150-15.49.sdimacs	done	4.26929082	4.270666413940489	27914240
+367	test-cases/benchmarks/er-random-k-CNF/rand-4-30-120-15.48.sdimacs	done	4.348291609	4.350843577645719	29708288
+368	test-cases/benchmarks/er-random-k-CNF/rand-8-30-210-15.43.sdimacs	done	4.499870584	4.501856072805822	26296320
+369	test-cases/benchmarks/er-random-k-CNF/rand-5-30-120-15.42.sdimacs	done	4.502383179	4.504272543825209	27521024
+370	test-cases/benchmarks/er-random-k-CNF/rand-8-30-240-15.47.sdimacs	done	4.508884281	4.5107682859525084	26943488
+371	test-cases/benchmarks/er-random-k-CNF/rand-4-30-120-15.49.sdimacs	done	4.720845878	4.724282491952181	30334976
+372	test-cases/benchmarks/er-random-k-CNF/rand-8-30-210-15.44.sdimacs	done	4.908463542	4.9102261224761605	26746880
+373	test-cases/benchmarks/er-random-k-CNF/rand-4-30-120-15.47.sdimacs	done	5.104056751	5.106632557697594	32055296
+374	test-cases/benchmarks/er-random-k-CNF/rand-7-30-180-15.43.sdimacs	done	5.15884663	5.160525729879737	28917760
+375	test-cases/benchmarks/er-random-k-CNF/rand-8-30-300-15.57.sdimacs	done	5.304441107	5.3065164582803845	28631040
+376	test-cases/benchmarks/er-random-k-CNF/rand-6-30-150-15.45.sdimacs	done	5.474375113	5.476552194915712	29990912
+377	test-cases/benchmarks/er-random-k-CNF/rand-4-40-120-20.62.sdimacs	done	5.488235988	5.490932228974998	31174656
+378	test-cases/benchmarks/er-random-k-CNF/rand-8-30-240-15.46.sdimacs	done	5.495395197	5.496728350408375	28299264
+379	test-cases/benchmarks/er-random-k-CNF/rand-9-30-270-15.48.sdimacs	done	5.692112876	5.693867979571223	26902528
+380	test-cases/benchmarks/er-random-k-CNF/rand-9-30-300-15.54.sdimacs	done	5.901245862	5.902978790923953	27340800
+381	test-cases/benchmarks/er-random-k-CNF/rand-9-30-330-15.56.sdimacs	done	6.218388724	6.22006300650537	29118464
+382	test-cases/benchmarks/er-random-k-CNF/rand-9-30-330-15.57.sdimacs	done	6.327798961	6.329362574033439	29544448
+383	test-cases/benchmarks/er-random-k-CNF/rand-6-30-150-15.42.sdimacs	done	6.363055933	6.365139079280198	30773248
+384	test-cases/benchmarks/er-random-k-CNF/rand-6-30-150-15.41.sdimacs	done	6.387708558	6.389660910703242	31203328
+385	test-cases/benchmarks/er-random-k-CNF/rand-9-30-240-15.41.sdimacs	done	6.418314865	6.419864003546536	28368896
+386	test-cases/benchmarks/er-random-k-CNF/rand-7-30-210-15.48.sdimacs	done	6.474767605	6.476687246002257	30486528
+387	test-cases/benchmarks/er-random-k-CNF/rand-9-30-330-15.59.sdimacs	done	6.493072586	6.494958318769932	28975104
+388	test-cases/benchmarks/er-random-k-CNF/rand-9-30-270-15.50.sdimacs	done	6.643480711	6.645055485889316	28471296
+389	test-cases/benchmarks/er-random-k-CNF/rand-7-30-210-15.47.sdimacs	done	6.68040298	6.683107674121857	31870976
+390	test-cases/benchmarks/er-random-k-CNF/rand-4-30-150-15.53.sdimacs	done	6.685775778	6.687991542741656	37814272
+391	test-cases/benchmarks/er-random-k-CNF/rand-9-30-270-15.46.sdimacs	done	6.697639853	6.699085068888962	30113792
+392	test-cases/benchmarks/er-random-k-CNF/rand-8-30-210-15.41.sdimacs	done	6.787749962	6.789001713506877	29831168
+393	test-cases/benchmarks/er-random-k-CNF/rand-8-30-210-15.45.sdimacs	done	6.865331342	6.866943437606096	29831168
+394	test-cases/benchmarks/er-random-k-CNF/rand-6-30-180-15.46.sdimacs	done	7.036717744	7.038858016952872	32960512
+395	test-cases/benchmarks/er-random-k-CNF/rand-7-30-210-15.46.sdimacs	done	7.082265496	7.083761689253151	31531008
+396	test-cases/benchmarks/er-random-k-CNF/rand-7-30-210-15.49.sdimacs	done	7.224345348	7.226911178790033	31281152
+397	test-cases/benchmarks/er-random-k-CNF/rand-8-30-270-15.54.sdimacs	done	7.337695351	7.339521457441151	31641600
+398	test-cases/benchmarks/er-random-k-CNF/rand-4-30-150-15.54.sdimacs	done	7.791738463	7.795076075010002	38232064
+399	test-cases/benchmarks/er-random-k-CNF/rand-3-50-100-25.84.sdimacs	done	7.965636714	7.968326361849904	39219200
+400	test-cases/benchmarks/er-random-k-CNF/rand-5-30-150-15.46.sdimacs	done	8.07424687	8.076061071828008	35500032
+401	test-cases/benchmarks/er-random-k-CNF/rand-7-30-180-15.45.sdimacs	done	8.141016643	8.143919767811894	32727040
+402	test-cases/benchmarks/er-random-k-CNF/rand-7-30-180-15.41.sdimacs	done	8.16774524	8.169672567397356	32301056
+403	test-cases/benchmarks/er-random-k-CNF/rand-8-30-240-15.50.sdimacs	done	8.471190282	8.473175436258316	31928320
+404	test-cases/benchmarks/er-random-k-CNF/rand-8-30-300-15.59.sdimacs	done	8.584750206	8.587225288152695	32907264
+405	test-cases/benchmarks/er-random-k-CNF/rand-6-30-150-15.43.sdimacs	done	8.676622993	8.678032827563584	32985088
+406	test-cases/benchmarks/er-random-k-CNF/rand-4-30-150-15.55.sdimacs	done	8.738187285	8.740201543085277	43180032
+407	test-cases/benchmarks/er-random-k-CNF/rand-3-50-150-25.90.sdimacs	done	9.234563457	9.236583445221186	44765184
+408	test-cases/benchmarks/er-random-k-CNF/rand-5-30-120-15.41.sdimacs	done	9.408018463	9.410210088826716	36216832
+409	test-cases/benchmarks/er-random-k-CNF/rand-5-30-180-15.51.sdimacs	done	9.459290395	9.462434945628047	39612416
+410	test-cases/benchmarks/er-random-k-CNF/rand-7-30-240-15.52.sdimacs	done	9.683923127	9.686359577812254	35446784
+411	test-cases/benchmarks/er-random-k-CNF/rand-7-30-240-15.54.sdimacs	done	9.701969681	9.704435038380325	34795520
+412	test-cases/benchmarks/er-random-k-CNF/rand-5-30-120-15.44.sdimacs	done	9.862949459	9.86514600738883	36999168
+413	test-cases/benchmarks/er-random-k-CNF/rand-7-30-180-15.42.sdimacs	done	10.238530876	10.240975178778172	36130816
+414	test-cases/benchmarks/er-random-k-CNF/rand-9-30-300-15.52.sdimacs	done	10.340225724	10.341935285367072	33239040
+415	test-cases/benchmarks/er-random-k-CNF/rand-8-30-270-15.51.sdimacs	done	10.513575819	10.515539434738457	36667392
+416	test-cases/benchmarks/er-random-k-CNF/rand-5-30-150-15.47.sdimacs	done	10.92821517	10.930297912098467	37801984
+417	test-cases/benchmarks/er-random-k-CNF/rand-6-30-180-15.48.sdimacs	done	11.610627261	11.613026301376522	38719488
+418	test-cases/benchmarks/er-random-k-CNF/rand-6-30-210-15.52.sdimacs	done	12.406123366	12.409005564637482	40943616
+419	test-cases/benchmarks/er-random-k-CNF/rand-8-30-270-15.52.sdimacs	done	12.410922037	12.413862428627908	36659200
+420	test-cases/benchmarks/er-random-k-CNF/rand-3-50-100-25.82.sdimacs	done	12.98810701	12.99031030293554	46055424
+421	test-cases/benchmarks/er-random-k-CNF/rand-3-50-150-25.87.sdimacs	done	13.070904118	13.072948220185935	50913280
+422	test-cases/benchmarks/er-random-k-CNF/rand-9-30-300-15.53.sdimacs	done	13.257893092	13.259825230576098	38768640
+423	test-cases/benchmarks/er-random-k-CNF/rand-9-30-300-15.55.sdimacs	done	13.628571336	13.630389049649239	38162432
+424	test-cases/benchmarks/er-random-k-CNF/rand-4-40-120-20.61.sdimacs	done	13.970829936	13.97244779765606	42885120
+425	test-cases/benchmarks/er-random-k-CNF/rand-8-30-300-15.60.sdimacs	done	14.111163222	14.11333817243576	40337408
+426	test-cases/benchmarks/er-random-k-CNF/rand-5-30-150-15.50.sdimacs	done	14.406828468	14.409723801538348	44728320
+427	test-cases/benchmarks/er-random-k-CNF/rand-6-30-180-15.50.sdimacs	done	14.613914975	14.616074232384562	41492480
+428	test-cases/benchmarks/er-random-k-CNF/rand-5-30-210-15.59.sdimacs	done	15.032303224	15.0343295391649	46841856
+429	test-cases/benchmarks/er-random-k-CNF/rand-8-30-270-15.53.sdimacs	done	15.420006256	15.421812737360597	42475520
+430	test-cases/benchmarks/er-random-k-CNF/rand-3-50-150-25.89.sdimacs	done	17.02490283	17.028570242226124	56418304
+431	test-cases/benchmarks/er-random-k-CNF/rand-9-30-330-15.60.sdimacs	done	17.735915345	17.738032538443804	43061248
+432	test-cases/benchmarks/er-random-k-CNF/rand-5-30-150-15.48.sdimacs	done	19.171168561	19.173666382208467	49786880
+433	test-cases/benchmarks/er-random-k-CNF/rand-7-30-270-15.58.sdimacs	done	19.183677191	19.18630870524794	49582080
+434	test-cases/benchmarks/er-random-k-CNF/rand-6-30-210-15.55.sdimacs	done	19.225000103	19.226697421632707	46866432
+435	test-cases/benchmarks/er-random-k-CNF/rand-8-30-300-15.58.sdimacs	done	19.516760358	19.51869375165552	47497216
+436	test-cases/benchmarks/er-random-k-CNF/rand-8-30-270-15.55.sdimacs	done	19.718229252	19.720310620963573	49262592
+437	test-cases/benchmarks/er-random-k-CNF/rand-5-30-210-15.58.sdimacs	done	20.088316736	20.090365924872458	54968320
+438	test-cases/benchmarks/er-random-k-CNF/rand-7-30-240-15.51.sdimacs	done	20.659462946	20.663443342782557	48439296
+439	test-cases/benchmarks/er-random-k-CNF/rand-4-40-240-20.80.sdimacs	done	22.875289608	22.877772303298116	63700992
+440	test-cases/benchmarks/er-random-k-CNF/rand-4-40-120-20.65.sdimacs	done	23.275207604	23.2779471706599	50667520
+441	test-cases/benchmarks/er-random-k-CNF/rand-7-30-240-15.55.sdimacs	done	25.235299706	25.24039332009852	52928512
+442	test-cases/benchmarks/er-random-k-CNF/rand-7-30-270-15.60.sdimacs	done	25.386758502	25.39098813291639	50102272
+443	test-cases/benchmarks/er-random-k-CNF/rand-6-30-240-15.56.sdimacs	done	25.873842431	25.875949079170823	57921536
+444	test-cases/benchmarks/er-random-k-CNF/rand-8-30-300-15.56.sdimacs	done	27.172910469	27.175195252522826	55689216
+445	test-cases/benchmarks/er-random-k-CNF/rand-6-30-240-15.59.sdimacs	done	27.511824967	27.51417174562812	54976512
+446	test-cases/benchmarks/er-random-k-CNF/rand-9-30-330-15.58.sdimacs	done	27.866032122	27.86800612229854	52076544
+447	test-cases/benchmarks/er-random-k-CNF/rand-5-30-210-15.56.sdimacs	done	28.493092603	28.495942514389753	62255104
+448	test-cases/benchmarks/er-random-k-CNF/rand-6-30-180-15.49.sdimacs	done	28.620275302	28.62273170426488	57397248
+449	test-cases/benchmarks/er-random-k-CNF/rand-5-30-180-15.53.sdimacs	done	28.962341206	28.96512656286359	59785216
+450	test-cases/benchmarks/er-random-k-CNF/rand-6-30-210-15.51.sdimacs	done	29.250567498	29.25314600020647	57176064
+451	test-cases/benchmarks/er-random-k-CNF/rand-4-40-120-20.63.sdimacs	done	29.807441913	29.809755904600024	53907456
+452	test-cases/benchmarks/er-random-k-CNF/rand-4-40-120-20.64.sdimacs	done	29.998383906	30.001363299787045	55259136
+453	test-cases/benchmarks/er-random-k-CNF/rand-7-30-270-15.59.sdimacs	done	31.817777475	31.820439769886434	56672256
+454	test-cases/benchmarks/er-random-k-CNF/rand-4-40-160-20.67.sdimacs	done	32.29033557	32.29252976831049	61448192
+455	test-cases/benchmarks/er-random-k-CNF/rand-4-40-160-20.68.sdimacs	done	32.311378485	32.316316017881036	61079552
+456	test-cases/benchmarks/er-random-k-CNF/rand-6-30-240-15.60.sdimacs	done	35.075897094	35.07964161597192	65126400
+457	test-cases/benchmarks/er-random-k-CNF/rand-9-40-320-20.65.sdimacs	done	35.125090132	35.12737835291773	50581504
+458	test-cases/benchmarks/er-random-k-CNF/rand-7-30-240-15.53.sdimacs	done	38.413139715	38.41694757249206	65376256
+459	test-cases/benchmarks/er-random-k-CNF/rand-6-30-210-15.54.sdimacs	done	39.230405193	39.23369428049773	63430656
+460	test-cases/benchmarks/er-random-k-CNF/rand-5-30-210-15.60.sdimacs	done	39.733944741	39.740408402867615	72445952
+461	test-cases/benchmarks/er-random-k-CNF/rand-5-30-180-15.55.sdimacs	done	41.135984488	41.13856369629502	71794688
+462	test-cases/benchmarks/er-random-k-CNF/rand-5-30-210-15.57.sdimacs	done	42.355672901	42.35834943782538	74272768
+463	test-cases/benchmarks/er-random-k-CNF/rand-5-30-180-15.52.sdimacs	done	44.940261914	44.94317974336445	76062720
+464	test-cases/benchmarks/er-random-k-CNF/rand-5-30-180-15.54.sdimacs	done	46.271008026	46.27481101825833	70520832
+465	test-cases/benchmarks/er-random-k-CNF/rand-7-30-270-15.56.sdimacs	done	56.974366617	56.97821244597435	76214272
+466	test-cases/benchmarks/er-random-k-CNF/rand-4-40-240-20.76.sdimacs	done	59.632807479	59.6393110267818	94248960
+467	test-cases/benchmarks/er-random-k-CNF/rand-6-30-240-15.57.sdimacs	done	59.69147246	59.69456024747342	81731584
+468	test-cases/benchmarks/er-random-k-CNF/rand-6-30-240-15.58.sdimacs	done	60.923355693	60.9270127536729	83611648
+469	test-cases/benchmarks/er-random-k-CNF/rand-5-40-160-20.61.sdimacs	done	64.203759727	64.20748386438936	68784128
+470	test-cases/benchmarks/er-random-k-CNF/rand-4-40-160-20.66.sdimacs	done	65.151573614	65.16170225571841	82837504
+471	test-cases/benchmarks/er-random-k-CNF/rand-7-30-270-15.57.sdimacs	done	70.469548375	70.4742046399042	81903616
+472	test-cases/benchmarks/er-random-k-CNF/rand-9-40-320-20.62.sdimacs	done	72.439255005	72.44249880686402	61865984
+473	test-cases/benchmarks/er-random-k-CNF/rand-4-40-240-20.78.sdimacs	done	74.132754465	74.13609052542597	102989824
+474	test-cases/benchmarks/er-random-k-CNF/rand-6-30-210-15.53.sdimacs	done	80.592200733	80.5965911084786	100925440
+475	test-cases/benchmarks/er-random-k-CNF/rand-8-40-320-20.68.sdimacs	done	91.85620815	91.86003687046468	82149376
+476	test-cases/benchmarks/er-random-k-CNF/rand-4-40-200-20.75.sdimacs	done	103.6311672	103.63618096802384	110956544
+477	test-cases/benchmarks/er-random-k-CNF/rand-4-40-200-20.71.sdimacs	done	103.800253863	103.8046904746443	114257920
+478	test-cases/benchmarks/er-random-k-CNF/rand-5-40-200-20.67.sdimacs	done	106.581887396	106.5874411156401	96784384
+479	test-cases/benchmarks/er-random-k-CNF/rand-7-40-240-20.61.sdimacs	done	116.983646514	116.9910028707236	95215616
+480	test-cases/benchmarks/er-random-k-CNF/rand-4-50-150-25.84.sdimacs	done	133.76921331	133.78831081278622	106483712
+481	test-cases/benchmarks/er-random-k-CNF/rand-4-40-160-20.70.sdimacs	done	134.964035132	134.97044756263494	116895744
+482	test-cases/benchmarks/er-random-k-CNF/rand-8-40-280-20.63.sdimacs	done	150.924163716	150.9292542124167	97771520
+483	test-cases/benchmarks/er-random-k-CNF/rand-5-40-160-20.63.sdimacs	done	176.653312986	176.65966828446835	123039744
+484	test-cases/benchmarks/er-random-k-CNF/rand-8-40-280-20.61.sdimacs	done	197.594673162	197.60382497310638	109441024
+485	test-cases/benchmarks/er-random-k-CNF/rand-9-40-320-20.63.sdimacs	done	202.738132213	202.74483791925013	104837120
+486	test-cases/benchmarks/er-random-k-CNF/rand-5-40-160-20.62.sdimacs	done	212.673014669	212.68130609579384	124809216
+487	test-cases/benchmarks/er-random-k-CNF/rand-7-40-240-20.65.sdimacs	done	214.462188795	214.47247497085482	116523008
+488	test-cases/benchmarks/er-random-k-CNF/rand-6-40-200-20.61.sdimacs	done	222.081893666	222.09190689120442	139329536
+489	test-cases/benchmarks/er-random-k-CNF/rand-8-40-320-20.69.sdimacs	done	228.684445739	228.69685151055455	122368000
+490	test-cases/benchmarks/er-random-k-CNF/rand-4-50-150-25.81.sdimacs	done	229.491569152	229.4988940320909	140374016
+491	test-cases/benchmarks/er-random-k-CNF/rand-6-40-200-20.63.sdimacs	done	252.461211063	252.4928453946486	138858496
+492	test-cases/benchmarks/er-random-k-CNF/rand-8-40-280-20.62.sdimacs	done	259.63988216	259.64818092621863	131596288
+493	test-cases/benchmarks/er-random-k-CNF/rand-8-40-320-20.66.sdimacs	done	281.609174252	281.62251801695675	134524928
+494	test-cases/benchmarks/er-random-k-CNF/rand-5-40-160-20.65.sdimacs	done	289.758904506	289.79670532327145	150396928
+495	test-cases/benchmarks/er-random-k-CNF/rand-4-40-200-20.73.sdimacs	done	301.504825205	301.5139040965587	183955456
+496	test-cases/benchmarks/er-random-k-CNF/rand-9-40-320-20.64.sdimacs	done	302.723572951	302.76080516166985	121683968
+497	test-cases/benchmarks/er-random-k-CNF/rand-4-40-200-20.74.sdimacs	done	311.283998405	311.29343665298074	194486272
+498	test-cases/benchmarks/er-random-k-CNF/rand-4-40-240-20.77.sdimacs	done	323.333125546	323.34289242886007	218124288
+499	test-cases/benchmarks/er-random-k-CNF/rand-8-40-280-20.64.sdimacs	done	354.809200279	354.8210812639445	142606336
+500	test-cases/benchmarks/er-random-k-CNF/rand-7-40-240-20.64.sdimacs	done	364.838225235	364.8514649923891	162664448
+501	test-cases/benchmarks/er-random-k-CNF/rand-8-40-280-20.65.sdimacs	done	372.78007157	372.79658553097397	155332608
+502	test-cases/benchmarks/er-random-k-CNF/rand-4-40-240-20.79.sdimacs	done	377.596003125	377.6074368879199	232370176
+503	test-cases/benchmarks/er-random-k-CNF/rand-7-40-280-20.68.sdimacs	done	389.710047058	389.72769042197615	169037824
+504	test-cases/benchmarks/er-random-k-CNF/rand-9-40-400-20.74.sdimacs	done	398.148717396	398.16133415605873	151797760
+505	test-cases/benchmarks/er-random-k-CNF/rand-9-40-320-20.61.sdimacs	done	405.618600747	405.63127629831433	132067328
+506	test-cases/benchmarks/er-random-k-CNF/rand-6-40-240-20.70.sdimacs	done	423.482396963	423.49581070709974	187826176
+507	test-cases/benchmarks/er-random-k-CNF/rand-7-40-280-20.67.sdimacs	done	432.201370287	432.2138539291918	178655232
+508	test-cases/benchmarks/er-random-k-CNF/rand-5-40-200-20.66.sdimacs	done	471.217171898	471.2327584428713	189231104
+509	test-cases/benchmarks/er-random-k-CNF/rand-8-40-320-20.67.sdimacs	done	479.823492125	479.836449068971	173752320
+510	test-cases/benchmarks/er-random-k-CNF/rand-6-40-200-20.64.sdimacs	done	481.681158694	481.70181594695896	195239936
+511	test-cases/benchmarks/er-random-k-CNF/rand-9-40-360-20.67.sdimacs	done	498.903193542	498.94317267555743	173510656
+512	test-cases/benchmarks/er-random-k-CNF/rand-9-40-360-20.69.sdimacs	done	506.535019774	506.5566014479846	163258368
+513	test-cases/benchmarks/er-random-k-CNF/rand-6-40-200-20.62.sdimacs	done	509.323325995	509.3396139377728	181391360
+514	test-cases/benchmarks/er-random-k-CNF/rand-4-40-200-20.72.sdimacs	done	573.634434905	573.6562244836241	272527360
+515	test-cases/benchmarks/er-random-k-CNF/rand-6-40-200-20.65.sdimacs	done	605.129585226	605.1474638907239	211759104
+516	test-cases/benchmarks/er-random-k-CNF/rand-9-40-360-20.66.sdimacs	done	614.046653678	614.150270389393	182177792
+517	test-cases/benchmarks/er-random-k-CNF/rand-7-40-240-20.62.sdimacs	done	624.74187498	624.799488526769	171552768
+518	test-cases/benchmarks/er-random-k-CNF/rand-7-40-320-20.75.sdimacs	done	656.015199591	656.0304980669171	225718272
+519	test-cases/benchmarks/er-random-k-CNF/rand-9-40-360-20.68.sdimacs	done	679.245043366	679.2645816914737	197763072
+520	test-cases/benchmarks/er-random-k-CNF/rand-6-40-240-20.67.sdimacs	done	691.855003673	691.8848876329139	227233792
+521	test-cases/benchmarks/er-random-k-CNF/rand-7-40-280-20.69.sdimacs	done	843.033000852	843.0520653361455	254926848
+522	test-cases/benchmarks/er-random-k-CNF/rand-8-50-450-25.91.sdimacs	TIMEOUT (ERROR (1	900.879566563	901.0361992530525	284930048
+523	test-cases/benchmarks/er-random-k-CNF/rand-7-50-450-25.100.sdimacs	TIMEOUT (ERROR (1	900.880713842	901.0277083469555	211652608
+524	test-cases/benchmarks/er-random-k-CNF/rand-9-50-400-25.82.sdimacs	TIMEOUT (ERROR (1	900.891200677	901.0300792828202	223412224
+525	test-cases/benchmarks/er-random-k-CNF/rand-7-50-300-25.81.sdimacs	TIMEOUT (ERROR (1	900.891273828	901.0348272668198	279474176
+526	test-cases/benchmarks/er-random-k-CNF/rand-8-40-400-20.76.sdimacs	TIMEOUT (ERROR (1	900.892202435	901.0373449251056	276414464
+527	test-cases/benchmarks/er-random-k-CNF/rand-6-50-400-25.99.sdimacs	TIMEOUT (ERROR (1	900.89410851	901.0357064325362	274866176
+528	test-cases/benchmarks/er-random-k-CNF/rand-9-50-550-25.96.sdimacs	TIMEOUT (ERROR (1	900.903383994	901.0341434860602	297082880
+529	test-cases/benchmarks/er-random-k-CNF/rand-6-40-240-20.69.sdimacs	TIMEOUT (ERROR (1	900.916818999	901.0372738465667	271990784
+530	test-cases/benchmarks/er-random-k-CNF/rand-6-50-250-25.85.sdimacs	TIMEOUT (ERROR (1	900.917723755	901.0371193420142	281694208
+531	test-cases/benchmarks/er-random-k-CNF/rand-9-50-450-25.90.sdimacs	TIMEOUT (ERROR (1	900.924668636	901.0318976370618	228577280
+532	test-cases/benchmarks/er-random-k-CNF/rand-5-50-250-25.90.sdimacs	TIMEOUT (ERROR (1	900.933291232	901.0380477253348	295981056
+533	test-cases/benchmarks/er-random-k-CNF/rand-9-40-400-20.75.sdimacs	TIMEOUT (ERROR (1	900.937607072	901.0351218674332	236154880
+534	test-cases/benchmarks/er-random-k-CNF/rand-8-50-400-25.89.sdimacs	TIMEOUT (ERROR (1	900.939269811	901.0338716935366	262787072
+535	test-cases/benchmarks/er-random-k-CNF/rand-4-50-200-25.90.sdimacs	TIMEOUT (ERROR (1	900.940011186	901.0468060197309	331591680
+536	test-cases/benchmarks/er-random-k-CNF/rand-5-40-240-20.75.sdimacs	TIMEOUT (ERROR (1	900.943572336	901.0474679619074	350461952
+537	test-cases/benchmarks/er-random-k-CNF/rand-8-40-360-20.74.sdimacs	TIMEOUT (ERROR (1	900.944027535	901.0395239721984	270204928
+538	test-cases/benchmarks/er-random-k-CNF/rand-5-50-200-25.81.sdimacs	TIMEOUT (ERROR (1	900.951572459	901.0383948674425	272322560
+539	test-cases/benchmarks/er-random-k-CNF/rand-6-50-300-25.88.sdimacs	TIMEOUT (ERROR (1	900.955234929	901.0385806746781	285134848
+540	test-cases/benchmarks/er-random-k-CNF/rand-7-50-400-25.95.sdimacs	TIMEOUT (ERROR (1	900.955875254	901.0330561455339	238780416
+541	test-cases/benchmarks/er-random-k-CNF/rand-6-40-280-20.73.sdimacs	TIMEOUT (ERROR (1	900.955992858	901.0432866131887	305029120
+542	test-cases/benchmarks/er-random-k-CNF/rand-5-50-350-25.100.sdimacs	TIMEOUT (ERROR (1	900.962317965	901.0498972665519	341139456
+543	test-cases/benchmarks/er-random-k-CNF/rand-7-40-360-20.80.sdimacs	TIMEOUT (ERROR (1	900.963255904	901.0409392630681	291778560
+544	test-cases/benchmarks/er-random-k-CNF/rand-4-50-150-25.85.sdimacs	TIMEOUT (ERROR (1	900.976409722	901.0428048996255	292569088
+545	test-cases/benchmarks/er-random-k-CNF/rand-4-50-300-25.99.sdimacs	TIMEOUT (ERROR (1	900.977765697	901.059427715838	405352448
+546	test-cases/benchmarks/er-random-k-CNF/rand-7-50-400-25.92.sdimacs	TIMEOUT (ERROR (1	900.987625298	901.0325997043401	248811520
+547	test-cases/benchmarks/er-random-k-CNF/rand-6-50-300-25.86.sdimacs	TIMEOUT (ERROR (1	900.988486155	901.0357065955177	269877248
+548	test-cases/benchmarks/er-random-k-CNF/rand-8-50-450-25.93.sdimacs	TIMEOUT (ERROR (1	900.989047419	901.0336838811636	263376896
+549	test-cases/benchmarks/er-random-k-CNF/rand-9-50-450-25.86.sdimacs	TIMEOUT (ERROR (1	900.9896485	901.0336168929935	261537792
+550	test-cases/benchmarks/er-random-k-CNF/rand-9-40-360-20.70.sdimacs	TIMEOUT (ERROR (1	900.990053591	901.0307697532699	226250752
+551	test-cases/benchmarks/er-random-k-CNF/rand-9-40-400-20.72.sdimacs	TIMEOUT (ERROR (1	900.99186754	901.0328204417601	214286336
+552	test-cases/benchmarks/er-random-k-CNF/rand-8-40-400-20.78.sdimacs	TIMEOUT (ERROR (1	900.992249293	901.0374577781186	275791872
+553	test-cases/benchmarks/er-random-k-CNF/rand-9-50-400-25.81.sdimacs	TIMEOUT (ERROR (1	900.992773177	901.028330183588	213487616
+554	test-cases/benchmarks/er-random-k-CNF/rand-6-50-250-25.82.sdimacs	TIMEOUT (ERROR (1	900.993532336	901.0330342426896	262860800
+555	test-cases/benchmarks/er-random-k-CNF/rand-6-40-280-20.71.sdimacs	TIMEOUT (ERROR (1	900.993728672	901.040324434638	301314048
+556	test-cases/benchmarks/er-random-k-CNF/rand-7-50-400-25.91.sdimacs	TIMEOUT (ERROR (1	900.995277315	901.0327374795452	246063104
+557	test-cases/benchmarks/er-random-k-CNF/rand-8-50-500-25.98.sdimacs	TIMEOUT (ERROR (1	900.995310803	901.0354425637051	260345856
+558	test-cases/benchmarks/er-random-k-CNF/rand-6-50-250-25.83.sdimacs	TIMEOUT (ERROR (1	900.995883558	901.0360539034009	292397056
+559	test-cases/benchmarks/er-random-k-CNF/rand-9-50-500-25.93.sdimacs	TIMEOUT (ERROR (1	900.996782518	901.0328260911629	248229888
+560	test-cases/benchmarks/er-random-k-CNF/rand-6-50-400-25.97.sdimacs	TIMEOUT (ERROR (1	900.997345835	901.0342685701326	266895360
+561	test-cases/benchmarks/er-random-k-CNF/rand-9-50-550-25.100.sdimacs	TIMEOUT (ERROR (1	900.998722175	901.0316620133817	276451328
+562	test-cases/benchmarks/er-random-k-CNF/rand-7-50-450-25.97.sdimacs	TIMEOUT (ERROR (1	900.999140705	901.0260535003617	200101888
+563	test-cases/benchmarks/er-random-k-CNF/rand-6-50-400-25.96.sdimacs	TIMEOUT (ERROR (1	900.999625312	901.0374691225588	292708352
+564	test-cases/benchmarks/er-random-k-CNF/rand-6-50-400-25.100.sdimacs	TIMEOUT (ERROR (1	901.000081749	901.0257627200335	201641984
+565	test-cases/benchmarks/er-random-k-CNF/rand-6-40-280-20.74.sdimacs	TIMEOUT (ERROR (1	901.000568849	901.0417941221967	301391872
+566	test-cases/benchmarks/er-random-k-CNF/rand-7-50-350-25.90.sdimacs	TIMEOUT (ERROR (1	901.000637679	901.0357136372477	260272128
+567	test-cases/benchmarks/er-random-k-CNF/rand-5-40-280-20.79.sdimacs	TIMEOUT (ERROR (1	901.000701006	901.0460342587903	349188096
+568	test-cases/benchmarks/er-random-k-CNF/rand-7-50-450-25.96.sdimacs	TIMEOUT (ERROR (1	901.000752917	901.0266814241186	182247424
+569	test-cases/benchmarks/er-random-k-CNF/rand-6-40-240-20.66.sdimacs	TIMEOUT (ERROR (1	901.00139683	901.0388790080324	282669056
+570	test-cases/benchmarks/er-random-k-CNF/rand-6-50-350-25.93.sdimacs	TIMEOUT (ERROR (1	901.00146019	901.030250063166	219795456
+571	test-cases/benchmarks/er-random-k-CNF/rand-6-50-400-25.98.sdimacs	TIMEOUT (ERROR (1	901.001554201	901.0266314959154	186294272
+572	test-cases/benchmarks/er-random-k-CNF/rand-4-40-160-20.69.sdimacs	TIMEOUT (ERROR (1	901.001587863	901.0443485770375	302489600
+573	test-cases/benchmarks/er-random-k-CNF/rand-6-50-300-25.89.sdimacs	TIMEOUT (ERROR (1	901.001651319	901.0401895027608	290582528
+574	test-cases/benchmarks/er-random-k-CNF/rand-6-50-350-25.92.sdimacs	TIMEOUT (ERROR (1	901.001699298	901.0307470252737	225251328
+575	test-cases/benchmarks/er-random-k-CNF/rand-8-50-450-25.94.sdimacs	TIMEOUT (ERROR (1	901.001749672	901.0347241740674	272072704
+576	test-cases/benchmarks/er-random-k-CNF/rand-7-50-350-25.88.sdimacs	TIMEOUT (ERROR (1	901.002229746	901.0370730757713	276332544
+577	test-cases/benchmarks/er-random-k-CNF/rand-7-40-360-20.77.sdimacs	TIMEOUT (ERROR (1	901.002240274	901.0388489328325	302157824
+578	test-cases/benchmarks/er-random-k-CNF/rand-8-40-400-20.79.sdimacs	TIMEOUT (ERROR (1	901.002290006	901.0375005202368	287113216
+579	test-cases/benchmarks/er-random-k-CNF/rand-6-50-350-25.91.sdimacs	TIMEOUT (ERROR (1	901.002463934	901.0293737631291	223203328
+580	test-cases/benchmarks/er-random-k-CNF/rand-9-50-400-25.85.sdimacs	TIMEOUT (ERROR (1	901.003290067	901.0303178280592	210604032
+581	test-cases/benchmarks/er-random-k-CNF/rand-8-40-400-20.77.sdimacs	TIMEOUT (ERROR (1	901.004192953	901.0381514430046	282234880
+582	test-cases/benchmarks/er-random-k-CNF/rand-5-50-250-25.86.sdimacs	TIMEOUT (ERROR (1	901.004438235	901.040276909247	320294912
+583	test-cases/benchmarks/er-random-k-CNF/rand-5-50-300-25.94.sdimacs	TIMEOUT (ERROR (1	901.004647726	901.0473474869505	368562176
+584	test-cases/benchmarks/er-random-k-CNF/rand-9-50-400-25.83.sdimacs	TIMEOUT (ERROR (1	901.004840185	901.0311304870993	218701824
+585	test-cases/benchmarks/er-random-k-CNF/rand-7-50-400-25.93.sdimacs	TIMEOUT (ERROR (1	901.004857617	901.0314426319674	224927744
+586	test-cases/benchmarks/er-random-k-CNF/rand-4-50-150-25.82.sdimacs	TIMEOUT (ERROR (1	901.005098573	901.0390073070303	278425600
+587	test-cases/benchmarks/er-random-k-CNF/rand-8-50-500-25.96.sdimacs	TIMEOUT (ERROR (1	901.005201898	901.0313263870776	248852480
+588	test-cases/benchmarks/er-random-k-CNF/rand-6-50-300-25.87.sdimacs	TIMEOUT (ERROR (1	901.005205329	901.0354408221319	257708032
+589	test-cases/benchmarks/er-random-k-CNF/rand-7-50-450-25.99.sdimacs	TIMEOUT (ERROR (1	901.005958459	901.0334868496284	238280704
+590	test-cases/benchmarks/er-random-k-CNF/rand-6-50-250-25.81.sdimacs	TIMEOUT (ERROR (1	901.005992502	901.0348399467766	282710016
+591	test-cases/benchmarks/er-random-k-CNF/rand-5-40-240-20.71.sdimacs	TIMEOUT (ERROR (1	901.0061887	901.0415785713121	300269568
+592	test-cases/benchmarks/er-random-k-CNF/rand-7-50-400-25.94.sdimacs	TIMEOUT (ERROR (1	901.006295431	901.0305725978687	226119680
+593	test-cases/benchmarks/er-random-k-CNF/rand-9-50-450-25.88.sdimacs	TIMEOUT (ERROR (1	901.006672071	901.0320285428315	225325056
+594	test-cases/benchmarks/er-random-k-CNF/rand-5-50-300-25.91.sdimacs	TIMEOUT (ERROR (1	901.006747955	901.040807836689	317636608
+595	test-cases/benchmarks/er-random-k-CNF/rand-9-50-550-25.99.sdimacs	TIMEOUT (ERROR (1	901.006753026	901.0333943022415	286789632
+596	test-cases/benchmarks/er-random-k-CNF/rand-9-50-400-25.84.sdimacs	TIMEOUT (ERROR (1	901.006832223	901.0308971079066	248483840
+597	test-cases/benchmarks/er-random-k-CNF/rand-8-50-350-25.82.sdimacs	TIMEOUT (ERROR (1	901.006850023	901.0313839446753	237813760
+598	test-cases/benchmarks/er-random-k-CNF/rand-9-50-450-25.89.sdimacs	TIMEOUT (ERROR (1	901.00713831	901.0303543033078	238022656
+599	test-cases/benchmarks/er-random-k-CNF/rand-9-40-400-20.73.sdimacs	TIMEOUT (ERROR (1	901.007387015	901.0317075941712	225431552
+600	test-cases/benchmarks/er-random-k-CNF/rand-6-50-350-25.94.sdimacs	TIMEOUT (ERROR (1	901.007413892	901.033976668492	258600960
+601	test-cases/benchmarks/er-random-k-CNF/rand-8-50-350-25.81.sdimacs	TIMEOUT (ERROR (1	901.007424126	901.0331878513098	229138432
+602	test-cases/benchmarks/er-random-k-CNF/rand-9-40-440-20.78.sdimacs	TIMEOUT (ERROR (1	901.007521645	901.0359793687239	248954880
+603	test-cases/benchmarks/er-random-k-CNF/rand-9-50-550-25.97.sdimacs	TIMEOUT (ERROR (1	901.007538136	901.033055759035	270962688
+604	test-cases/benchmarks/er-random-k-CNF/rand-9-50-450-25.87.sdimacs	TIMEOUT (ERROR (1	901.007732894	901.0319668641314	252125184
+605	test-cases/benchmarks/er-random-k-CNF/rand-9-50-500-25.91.sdimacs	TIMEOUT (ERROR (1	901.007742677	901.0320679908618	270680064
+606	test-cases/benchmarks/er-random-k-CNF/rand-6-50-350-25.95.sdimacs	TIMEOUT (ERROR (1	901.007802461	901.0359931271523	256573440
+607	test-cases/benchmarks/er-random-k-CNF/rand-9-40-440-20.76.sdimacs	TIMEOUT (ERROR (1	901.007872754	901.0329306423664	245231616
+608	test-cases/benchmarks/er-random-k-CNF/rand-9-50-550-25.98.sdimacs	TIMEOUT (ERROR (1	901.007894419	901.0319435102865	277422080
+609	test-cases/benchmarks/er-random-k-CNF/rand-8-50-500-25.99.sdimacs	TIMEOUT (ERROR (1	901.008153463	901.0351260043681	245747712
+610	test-cases/benchmarks/er-random-k-CNF/rand-9-50-500-25.94.sdimacs	TIMEOUT (ERROR (1	901.008167477	901.0342639731243	264372224
+611	test-cases/benchmarks/er-random-k-CNF/rand-6-40-320-20.78.sdimacs	TIMEOUT (ERROR (1	901.008223693	901.0415874645114	300642304
+612	test-cases/benchmarks/er-random-k-CNF/rand-9-40-440-20.80.sdimacs	TIMEOUT (ERROR (1	901.008238865	901.0362205682322	252813312
+613	test-cases/benchmarks/er-random-k-CNF/rand-8-50-350-25.83.sdimacs	TIMEOUT (ERROR (1	901.008248265	901.0323783187196	227164160
+614	test-cases/benchmarks/er-random-k-CNF/rand-6-50-250-25.84.sdimacs	TIMEOUT (ERROR (1	901.008266561	901.0359184341505	263454720
+615	test-cases/benchmarks/er-random-k-CNF/rand-8-50-450-25.92.sdimacs	TIMEOUT (ERROR (1	901.008582956	901.033342496492	261345280
+616	test-cases/benchmarks/er-random-k-CNF/rand-6-40-280-20.75.sdimacs	TIMEOUT (ERROR (1	901.008743853	901.0400754613802	284041216
+617	test-cases/benchmarks/er-random-k-CNF/rand-9-50-500-25.95.sdimacs	TIMEOUT (ERROR (1	901.008865887	901.0336998421699	273481728
+618	test-cases/benchmarks/er-random-k-CNF/rand-6-40-320-20.77.sdimacs	TIMEOUT (ERROR (1	901.009219575	901.0412167692557	295739392
+619	test-cases/benchmarks/er-random-k-CNF/rand-5-40-280-20.76.sdimacs	TIMEOUT (ERROR (1	901.009224769	901.0455054407939	336891904
+620	test-cases/benchmarks/er-random-k-CNF/rand-9-40-400-20.71.sdimacs	TIMEOUT (ERROR (1	901.009360088	901.0354928821325	256495616
+621	test-cases/benchmarks/er-random-k-CNF/rand-7-40-320-20.74.sdimacs	TIMEOUT (ERROR (1	901.009376353	901.037625990808	270839808
+622	test-cases/benchmarks/er-random-k-CNF/rand-8-50-500-25.100.sdimacs	TIMEOUT (ERROR (1	901.009406342	901.0366413947195	259768320
+623	test-cases/benchmarks/er-random-k-CNF/rand-9-40-440-20.79.sdimacs	TIMEOUT (ERROR (1	901.00957399	901.037064387463	263458816
+624	test-cases/benchmarks/er-random-k-CNF/rand-7-50-450-25.98.sdimacs	TIMEOUT (ERROR (1	901.009914468	901.0358378905803	248332288
+625	test-cases/benchmarks/er-random-k-CNF/rand-8-50-350-25.84.sdimacs	TIMEOUT (ERROR (1	901.010076613	901.0366192674264	263680000
+626	test-cases/benchmarks/er-random-k-CNF/rand-6-40-320-20.79.sdimacs	TIMEOUT (ERROR (1	901.010216139	901.0405995287001	299307008
+627	test-cases/benchmarks/er-random-k-CNF/rand-8-50-450-25.95.sdimacs	TIMEOUT (ERROR (1	901.01038525	901.0346604473889	262926336
+628	test-cases/benchmarks/er-random-k-CNF/rand-6-50-300-25.90.sdimacs	TIMEOUT (ERROR (1	901.010427584	901.0384717993438	268951552
+629	test-cases/benchmarks/er-random-k-CNF/rand-7-50-300-25.83.sdimacs	TIMEOUT (ERROR (1	901.010471952	901.0318816704676	247803904
+630	test-cases/benchmarks/er-random-k-CNF/rand-6-40-320-20.80.sdimacs	TIMEOUT (ERROR (1	901.010577309	901.042179979384	308518912
+631	test-cases/benchmarks/er-random-k-CNF/rand-8-40-360-20.75.sdimacs	TIMEOUT (ERROR (1	901.010649351	901.0376253463328	270983168
+632	test-cases/benchmarks/er-random-k-CNF/rand-8-50-400-25.87.sdimacs	TIMEOUT (ERROR (1	901.010837069	901.0364050501958	266518528
+633	test-cases/benchmarks/er-random-k-CNF/rand-8-50-400-25.86.sdimacs	TIMEOUT (ERROR (1	901.010960964	901.0354655673727	276627456
+634	test-cases/benchmarks/er-random-k-CNF/rand-8-50-500-25.97.sdimacs	TIMEOUT (ERROR (1	901.010976101	901.0365596115589	255815680
+635	test-cases/benchmarks/er-random-k-CNF/rand-7-40-320-20.72.sdimacs	TIMEOUT (ERROR (1	901.010986607	901.0405835025012	296144896
+636	test-cases/benchmarks/er-random-k-CNF/rand-9-40-440-20.77.sdimacs	TIMEOUT (ERROR (1	901.011084422	901.0368640432134	251248640
+637	test-cases/benchmarks/er-random-k-CNF/rand-5-50-250-25.87.sdimacs	TIMEOUT (ERROR (1	901.011092923	901.03723535873	275251200
+638	test-cases/benchmarks/er-random-k-CNF/rand-4-50-200-25.88.sdimacs	TIMEOUT (ERROR (1	901.011623195	901.0461290897802	323502080
+639	test-cases/benchmarks/er-random-k-CNF/rand-9-50-500-25.92.sdimacs	TIMEOUT (ERROR (1	901.011722981	901.0368681848049	273072128
+640	test-cases/benchmarks/er-random-k-CNF/rand-6-40-280-20.72.sdimacs	TIMEOUT (ERROR (1	901.011919506	901.0441451156512	298688512
+641	test-cases/benchmarks/er-random-k-CNF/rand-5-40-160-20.64.sdimacs	TIMEOUT (ERROR (1	901.011925116	901.0364335281774	257589248
+642	test-cases/benchmarks/er-random-k-CNF/rand-6-40-320-20.76.sdimacs	TIMEOUT (ERROR (1	901.012010439	901.0429116049781	311365632
+643	test-cases/benchmarks/er-random-k-CNF/rand-8-40-320-20.70.sdimacs	TIMEOUT (ERROR (1	901.012018475	901.0379990004003	254353408
+644	test-cases/benchmarks/er-random-k-CNF/rand-8-40-360-20.73.sdimacs	TIMEOUT (ERROR (1	901.012062593	901.0367254307494	255942656
+645	test-cases/benchmarks/er-random-k-CNF/rand-8-50-350-25.85.sdimacs	TIMEOUT (ERROR (1	901.012167578	901.0377251710743	266338304
+646	test-cases/benchmarks/er-random-k-CNF/rand-5-50-200-25.84.sdimacs	TIMEOUT (ERROR (1	901.012344907	901.0361939501017	275800064
+647	test-cases/benchmarks/er-random-k-CNF/rand-8-40-360-20.72.sdimacs	TIMEOUT (ERROR (1	901.012518574	901.0385256670415	269213696
+648	test-cases/benchmarks/er-random-k-CNF/rand-8-40-400-20.80.sdimacs	TIMEOUT (ERROR (1	901.01252165	901.0364788044244	277757952
+649	test-cases/benchmarks/er-random-k-CNF/rand-7-50-350-25.89.sdimacs	TIMEOUT (ERROR (1	901.012565722	901.0350031666458	278761472
+650	test-cases/benchmarks/er-random-k-CNF/rand-6-40-240-20.68.sdimacs	TIMEOUT (ERROR (1	901.012630082	901.0415572719648	282882048
+651	test-cases/benchmarks/er-random-k-CNF/rand-5-50-250-25.88.sdimacs	TIMEOUT (ERROR (1	901.01304507	901.0395325059071	296443904
+652	test-cases/benchmarks/er-random-k-CNF/rand-7-50-300-25.84.sdimacs	TIMEOUT (ERROR (1	901.013113559	901.0358694437891	270520320
+653	test-cases/benchmarks/er-random-k-CNF/rand-7-40-360-20.76.sdimacs	TIMEOUT (ERROR (1	901.013237959	901.0409461464733	316657664
+654	test-cases/benchmarks/er-random-k-CNF/rand-7-50-300-25.85.sdimacs	TIMEOUT (ERROR (1	901.013292514	901.038247525692	286785536
+655	test-cases/benchmarks/er-random-k-CNF/rand-8-50-400-25.90.sdimacs	TIMEOUT (ERROR (1	901.013365658	901.0408265702426	283828224
+656	test-cases/benchmarks/er-random-k-CNF/rand-4-50-300-25.97.sdimacs	TIMEOUT (ERROR (1	901.013450266	901.0554127227515	402243584
+657	test-cases/benchmarks/er-random-k-CNF/rand-5-50-200-25.82.sdimacs	TIMEOUT (ERROR (1	901.013716349	901.0381899811327	293285888
+658	test-cases/benchmarks/er-random-k-CNF/rand-5-40-240-20.74.sdimacs	TIMEOUT (ERROR (1	901.013751165	901.0444824369624	310595584
+659	test-cases/benchmarks/er-random-k-CNF/rand-8-40-360-20.71.sdimacs	TIMEOUT (ERROR (1	901.013875527	901.0379050122574	273833984
+660	test-cases/benchmarks/er-random-k-CNF/rand-7-40-240-20.63.sdimacs	TIMEOUT (ERROR (1	901.013970991	901.0365708582103	240312320
+661	test-cases/benchmarks/er-random-k-CNF/rand-8-50-400-25.88.sdimacs	TIMEOUT (ERROR (1	901.014001112	901.0381176099181	279146496
+662	test-cases/benchmarks/er-random-k-CNF/rand-5-40-280-20.78.sdimacs	TIMEOUT (ERROR (1	901.01432496	901.0474584940821	354594816
+663	test-cases/benchmarks/er-random-k-CNF/rand-4-50-150-25.83.sdimacs	TIMEOUT (ERROR (1	901.01492232	901.0439571822062	285388800
+664	test-cases/benchmarks/er-random-k-CNF/rand-7-50-350-25.87.sdimacs	TIMEOUT (ERROR (1	901.015040502	901.0384709341452	268337152
+665	test-cases/benchmarks/er-random-k-CNF/rand-5-50-250-25.89.sdimacs	TIMEOUT (ERROR (1	901.015553966	901.0412657195702	297406464
+666	test-cases/benchmarks/er-random-k-CNF/rand-5-50-200-25.85.sdimacs	TIMEOUT (ERROR (1	901.015821123	901.0417579002678	285278208
+667	test-cases/benchmarks/er-random-k-CNF/rand-7-50-350-25.86.sdimacs	TIMEOUT (ERROR (1	901.015891585	901.0370615413412	272629760
+668	test-cases/benchmarks/er-random-k-CNF/rand-7-50-300-25.82.sdimacs	TIMEOUT (ERROR (1	901.016076545	901.0384195065126	271454208
+669	test-cases/benchmarks/er-random-k-CNF/rand-5-40-200-20.70.sdimacs	TIMEOUT (ERROR (1	901.016721005	901.0419277921319	273788928
+670	test-cases/benchmarks/er-random-k-CNF/rand-7-40-280-20.70.sdimacs	TIMEOUT (ERROR (1	901.017362531	901.0354944067076	254181376
+671	test-cases/benchmarks/er-random-k-CNF/rand-4-50-200-25.89.sdimacs	TIMEOUT (ERROR (1	901.017480165	901.0422858390957	310861824
+672	test-cases/benchmarks/er-random-k-CNF/rand-5-50-300-25.93.sdimacs	TIMEOUT (ERROR (1	901.017581775	901.0451578684151	341032960
+673	test-cases/benchmarks/er-random-k-CNF/rand-4-50-300-25.100.sdimacs	TIMEOUT (ERROR (1	901.017909456	901.0525519084185	374226944
+674	test-cases/benchmarks/er-random-k-CNF/rand-5-50-200-25.83.sdimacs	TIMEOUT (ERROR (1	901.018079465	901.0427439855412	280219648
+675	test-cases/benchmarks/er-random-k-CNF/rand-7-40-280-20.66.sdimacs	TIMEOUT (ERROR (1	901.018219387	901.0379649549723	275656704
+676	test-cases/benchmarks/er-random-k-CNF/rand-5-50-300-25.92.sdimacs	TIMEOUT (ERROR (1	901.018232588	901.0432186452672	309460992
+677	test-cases/benchmarks/er-random-k-CNF/rand-5-50-300-25.95.sdimacs	TIMEOUT (ERROR (1	901.018287239	901.0472635049373	327962624
+678	test-cases/benchmarks/er-random-k-CNF/rand-5-50-350-25.97.sdimacs	TIMEOUT (ERROR (1	901.018480962	901.04502280429	315113472
+679	test-cases/benchmarks/er-random-k-CNF/rand-4-50-300-25.96.sdimacs	TIMEOUT (ERROR (1	901.018909878	901.0571240484715	415285248
+680	test-cases/benchmarks/er-random-k-CNF/rand-5-40-240-20.73.sdimacs	TIMEOUT (ERROR (1	901.019044807	901.0453514009714	311119872
+681	test-cases/benchmarks/er-random-k-CNF/rand-5-40-200-20.68.sdimacs	TIMEOUT (ERROR (1	901.019294964	901.0444317152724	286515200
+682	test-cases/benchmarks/er-random-k-CNF/rand-7-40-320-20.71.sdimacs	TIMEOUT (ERROR (1	901.019939459	901.0401120996103	274485248
+683	test-cases/benchmarks/er-random-k-CNF/rand-7-40-360-20.79.sdimacs	TIMEOUT (ERROR (1	901.020133794	901.041121722199	292241408
+684	test-cases/benchmarks/er-random-k-CNF/rand-5-40-200-20.69.sdimacs	TIMEOUT (ERROR (1	901.020633008	901.0439269030467	309141504
+685	test-cases/benchmarks/er-random-k-CNF/rand-7-40-320-20.73.sdimacs	TIMEOUT (ERROR (1	901.020739189	901.0379103990272	280723456
+686	test-cases/benchmarks/er-random-k-CNF/rand-5-50-350-25.96.sdimacs	TIMEOUT (ERROR (1	901.020743581	901.0460410322994	349646848
+687	test-cases/benchmarks/er-random-k-CNF/rand-5-50-350-25.98.sdimacs	TIMEOUT (ERROR (1	901.020883246	901.046266795136	340459520
+688	test-cases/benchmarks/er-random-k-CNF/rand-5-50-350-25.99.sdimacs	TIMEOUT (ERROR (1	901.020891498	901.0468150181696	336248832
+689	test-cases/benchmarks/er-random-k-CNF/rand-7-40-360-20.78.sdimacs	TIMEOUT (ERROR (1	901.021751516	901.0421874644235	292085760
+690	test-cases/benchmarks/er-random-k-CNF/rand-5-40-240-20.72.sdimacs	TIMEOUT (ERROR (1	901.021900964	901.0468980371952	317489152
+691	test-cases/benchmarks/er-random-k-CNF/rand-5-40-280-20.80.sdimacs	TIMEOUT (ERROR (1	901.022497496	901.0497540282086	336789504
+692	test-cases/benchmarks/er-random-k-CNF/rand-4-50-200-25.87.sdimacs	TIMEOUT (ERROR (1	901.023047635	901.0475058667362	331792384
+693	test-cases/benchmarks/er-random-k-CNF/rand-5-40-280-20.77.sdimacs	TIMEOUT (ERROR (1	901.023594718	901.0486159669235	337920000
+694	test-cases/benchmarks/er-random-k-CNF/rand-4-50-250-25.93.sdimacs	TIMEOUT (ERROR (1	901.024877088	901.0486053917557	344145920
+695	test-cases/benchmarks/er-random-k-CNF/rand-4-50-200-25.86.sdimacs	TIMEOUT (ERROR (1	901.025024288	901.0499790618196	325382144
+696	test-cases/benchmarks/er-random-k-CNF/rand-4-50-250-25.94.sdimacs	TIMEOUT (ERROR (1	901.026580365	901.0526709863916	353468416
+697	test-cases/benchmarks/er-random-k-CNF/rand-4-50-250-25.92.sdimacs	TIMEOUT (ERROR (1	901.029315635	901.0531606050208	354775040
+698	test-cases/benchmarks/er-random-k-CNF/rand-4-50-250-25.91.sdimacs	TIMEOUT (ERROR (1	901.029894047	901.0531154423952	365694976
+699	test-cases/benchmarks/er-random-k-CNF/rand-4-50-250-25.95.sdimacs	TIMEOUT (ERROR (1	901.031047541	901.0563478777185	381394944
+700	test-cases/benchmarks/er-random-k-CNF/rand-4-50-300-25.98.sdimacs	TIMEOUT (ERROR (1	901.03192463	901.0603323746473	402235392

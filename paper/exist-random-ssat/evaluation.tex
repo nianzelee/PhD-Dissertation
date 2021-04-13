@@ -7,11 +7,34 @@
 
 \subsection{Results}
 
-\begin{figure*}[t]
+\begin{figure*}[ht]
     \centering
-    \input{exist-random-ssat/evaluation/tex/quantile.tex}
-    \caption{The quantile plot of application formulas}
-    \label{fig:erssat-quantile}
+    \subfloat[CPU time]{
+        \input{exist-random-ssat/evaluation/tex/quantile-cputime-random.tex}
+        \label{fig:erssat-quantile-cputime-random}
+    }\\
+    \subfloat[Memory usage]{
+        \input{exist-random-ssat/evaluation/tex/quantile-memory-random.tex}
+        \label{fig:erssat-quantile-memory-random}
+    }
+    \caption{Quantile plots of random $k$-CNF formulas}
+    \label{fig:erssat-quantile-random}
 \end{figure*}
 
-The quantile plot is shown in~\cref{fig:erssat-quantile}.
+The quantile plot is shown in~\cref{fig:erssat-quantile-random}.
+
+\begin{figure*}[ht]
+    \centering
+    \subfloat[CPU time]{
+        \input{exist-random-ssat/evaluation/tex/quantile-cputime-application.tex}
+        \label{fig:erssat-quantile-cputime-application}
+    }\\
+    \subfloat[Memory usage]{
+        \input{exist-random-ssat/evaluation/tex/quantile-memory-application.tex}
+        \label{fig:erssat-quantile-memory-application}
+    }
+    \caption{Quantile plots of application formulas}
+    \label{fig:erssat-quantile-application}
+\end{figure*}
+
+The quantile plot is shown in~\cref{fig:erssat-quantile-application}.
