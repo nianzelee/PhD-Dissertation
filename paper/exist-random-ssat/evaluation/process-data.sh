@@ -31,3 +31,13 @@ for approach in "${compared_approaches[@]}"; do
         done
     done
 done
+
+timestamp_er='erssat.2021-04-09_12-40-52'
+timestamp_dc='dcssat-er.2021-04-09_23-47-31'
+echo "Generating CSV files of application formulas for scatter plots ..."
+table-generator --no-diff -f csv -o ./csv -x ./scatter.xml -n "erssat.scatter" \
+    "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2" \
+    "./results/${timestamp_er}.results.bare-BDD.Application.xml.bz2"
+table-generator --no-diff -f csv -o ./csv -x ./scatter.xml -n "dcssat.scatter" \
+    "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2" \
+    "./results/${timestamp_dc}.results.default.Application.xml.bz2"
