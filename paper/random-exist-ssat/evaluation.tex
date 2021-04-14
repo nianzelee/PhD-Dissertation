@@ -1,3 +1,7 @@
+\newcommand{\nrandom}{\num{700}}
+\newcommand{\napplication}{\num{60}}
+\newcommand{\nstrategic}{\num{60}}
+
 \section{Evaluation}
 \label{sect:ressat-evaluation}
 
@@ -10,6 +14,7 @@ and the model counter \cachet~\cite{Sang2004}
 are used as underlying computational engines.
 Our prototyping implementation\footnote{Available at: \url{\ssatabcurl}} is named \ressat.
 A bare version of \ressat without minterm generalization is called \ressatb in the experiments.
+We used \ssatABCRevision for the evaluation.
 The solver \dcssat,
 which is also implemented in the \texttt{C++} language,
 was kindly provided by its author Majercik.
@@ -20,6 +25,7 @@ including random $k$-CNF formulas,
 planning formulas,
 and probabilistic equivalence checking formulas,
 were used in the evaluation.
+We used \ssatBenchRevision in the experiments.
 
 \subsubsection{Random $k$-CNF formulas}
 The random $k$-CNF formulas are generated using the CNF generator \cnfgen~\cite{Lauria2017CNFgen}.
@@ -32,7 +38,7 @@ $n$ equal 10, 20, 30, 40, and 50,
 and the clauses-to-variables ratio $\frac{m}{n}$ range from $k-1$ to $k+2$.
 For each combination of parameters,
 five formulas were sampled.
-As a result, 700 CNF formulas were generated.
+As a result,~\nrandom~CNF formulas were generated.
 To convert the generated formulas to random-exist quantified SSAT formulas,
 half of the variables in a formula are randomly quantified with probability $0.5$,
 and the rest of the variables are existentially quantified.
@@ -60,7 +66,7 @@ The satisfying probability reflects the likelihood for a company to be strategic
 The QBFs that we experimented with have the following parameter settings:
 $n$ equals 5, 10, 15, $\ldots$, 75, $m=3n$,
 and the number of controlling relations equals 4, 9, 14, and 19.
-In total, there are 60 strategic-company formulas.
+In total, there are~\nstrategic~strategic-company formulas.
 
 \subsection{Experimental setup}
 Our experiments were performed on a machine with

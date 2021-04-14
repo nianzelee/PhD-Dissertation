@@ -1,5 +1,5 @@
-\newcommand{\nrandom}{\num{700}}
-\newcommand{\napplication}{\num{160}}
+\renewcommand{\nrandom}{\num{700}}
+\renewcommand{\napplication}{\num{160}}
 \newcommand{\ntoilet}{\num{77}}
 \newcommand{\nmaxcount}{\num{26}}
 \newcommand{\nsandcastle}{\num{25}}
@@ -21,8 +21,12 @@ Instead, we resorted to the well-developed BDD package \cudd~\cite{CUDD}.
 Weight computation of a formula is fulfilled via a classic approach~\cite{Darwiche2002KnowledgeCompilation} that traverses the BDD of the formula and computes the satisfying probabilities of the BDD nodes.
 Our prototyping implementation\footnote{Available at: \url{\ssatabcurl}} is named \erssat.
 A bare version of \erssat without the enhancement techniques is called \erssatb in the experiments.
+We used \ssatABCRevision in the experiments.
 
 \subsection{Benchmark set}
+The SSAT instances in the evaluation are hosted
+in a publicly available database\footnote{Available at: \url{\ssatbenchmarkurl}}.
+We used \ssatBenchRevision in the experiments.
 
 \subsubsection{Random $k$-CNF formulas}
 We generated random $k$-CNF formulas by \cnfgen~\cite{Lauria2017CNFgen}.
