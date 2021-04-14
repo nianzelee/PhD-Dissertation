@@ -86,6 +86,8 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
 
 \subsection{Results}
 
+\subsubsection{Random $k$-CNF formulas}
+
 \begin{figure*}[ht]
     \centering
     \subfloat[CPU time]{
@@ -100,7 +102,20 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
     \label{fig:erssat-quantile-random}
 \end{figure*}
 
-The quantile plot is shown in~\cref{fig:erssat-quantile-random}.
+\Cref{fig:erssat-quantile-random} shows the quantile plots regarding CPU time and memory usage
+of the SSAT instances derived from the random $k$-CNF formulas.
+A data point $(x,y)$ in a quantile plot indicates that
+there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
+In~\cref{fig:erssat-quantile-cputime-random},
+we observe that \erssat solved a similar amount of formulas as \dcssat did.
+Moreover, the enhancement techniques improve the performance of \erssat a lot,
+as can be seen from the huge difference between \erssat and \erssatb.
+On the other hand,
+\cref{fig:erssat-quantile-memory-random} shows that the memory usage of \dcssat is much larger than that of \erssat.
+This can be attributed to the subformula caching of \dcssat.
+Instead, \erssat only builds BDDs for cofactored formulas, which confined its memory footprint.
+
+\subsubsection{Application formulas}
 
 \begin{figure*}[ht]
     \centering
@@ -116,8 +131,6 @@ The quantile plot is shown in~\cref{fig:erssat-quantile-random}.
     \label{fig:erssat-quantile-application}
 \end{figure*}
 
-The quantile plot is shown in~\cref{fig:erssat-quantile-application}.
-
 \begin{figure*}[ht]
     \centering
     \subfloat[\erssatb]{
@@ -132,4 +145,28 @@ The quantile plot is shown in~\cref{fig:erssat-quantile-application}.
     \label{fig:erssat-scatter-application}
 \end{figure*}
 
-The scatter plot is shown in~\cref{fig:erssat-scatter-application}.
+\input{exist-random-ssat/evaluation/tex/data-commands.tex}
+\begin{table}[ht]
+    \centering
+    \caption{The number of solved instances per family}
+    \label{tbl:solved-instances-per-family}
+    \begin{tabular}{c|c|c|c}
+        Family               & \dcssat           & \erssatb           & erssat            \\
+        \hline
+        \textit{Toilet-A}    & \dcssatToiletA    & \erssatbToiletA    & \erssatToiletA    \\
+        \textit{Conformant}  & \dcssatconformant & \erssatbconformant & \erssatconformant \\
+        \textit{Sand-Castle} & \dcssatcastle     & \erssatbcastle     & \erssatcastle     \\
+        \textit{Max-Count}   & \dcssatMaxCount   & \erssatbMaxCount   & \erssatMaxCount   \\
+        \textit{MPEC}        & \dcssatMPEC       & \erssatbMPEC       & \erssatMPEC       \\
+    \end{tabular}
+\end{table}
+
+\Cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
+To our surprise, the results are very different from those of random $k$-CNF formulas.
+First, \dcssat solved the most instances.
+Second, the bare version \erssatb solved more instances than \erssat did.
+In order to investigate this phenomenon,
+the scatter plots are shown in~\cref{fig:erssat-scatter-application}.
+A data point $(x,y)$ in the plots indicates that there is a formula processed by both \erssat and a compared approach,
+while \erssat took a CPU time of $y$~seconds and the other approach took a CPU time of $x$~seconds.
+The numbers of instanced solved per family are summarized in~\cref{tbl:solved-instances-per-family}.

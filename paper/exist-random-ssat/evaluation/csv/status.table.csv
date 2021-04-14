@@ -1,0 +1,163 @@
+tool	DC-SSAT 	ABC 	ABC 
+run set	dcssat-er.default.Application	erssat.bare-BDD.Application	erssat.default-BDD.Application
+test-cases/benchmarks/	status	status	status
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c11_par---13_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c11_par--opt-14_.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-conformant/cube_c11_ser--opt-42_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c3_ser--opt-6_.sdimacs	done	done	done
+ere-conformant/cube_c5_ser---14_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c5_ser--opt-15_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c7_ser---23_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c7_ser--opt-24_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c9_par---10_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/cube_c9_par--opt-11_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/emptyroom_e3_ser---19_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/emptyroom_e4_par---21_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/ring_r3_ser--opt-8_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	done
+ere-conformant/ring_r4_ser--opt-11_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/ring_r6_ser---16_.sdimacs	TIMEOUT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-conformant/ring_r6_ser--opt-17_.sdimacs	TIMEOUT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-conformant/ring_r7_ser---19_.sdimacs	TIMEOUT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
+ere-conformant/ring_r7_ser--opt-20_.sdimacs	TIMEOUT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	done
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	done
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs	ERROR (255)	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/QIF-backdoor-32-24.sdimacs	done	done	done
+ere-MaxCount/QIF-bin-search-16.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/QIF-pwd-backdoor.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/QIF-reverse.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/QIF-reverse2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-ActivityService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-ActivityService2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-GuidanceService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-IterationService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-LoginService.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-LoginService2.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-PhaseService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-ProcessBean.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-ProjectService3.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-sign.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-sign_correct.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MPEC/c1355-er.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/c1908-er.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/c3540-er.sdimacs	done	TIMEOUT (ERROR (1))	done
+ere-MPEC/c432-er.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/c499-er.sdimacs	done	done	done
+ere-MPEC/c5315-er.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/c7552-er.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/c880-er.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-1.sdimacs	done	done	done
+ere-sand-castle/SC-10.sdimacs	done	done	done
+ere-sand-castle/SC-11.sdimacs	done	done	done
+ere-sand-castle/SC-12.sdimacs	done	done	done
+ere-sand-castle/SC-13.sdimacs	done	done	done
+ere-sand-castle/SC-14.sdimacs	done	done	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-15.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-16.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-17.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-18.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-19.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-2.sdimacs	done	done	done
+ere-sand-castle/SC-20.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-21.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-22.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-23.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-24.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-25.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-3.sdimacs	done	done	done
+ere-sand-castle/SC-4.sdimacs	done	done	done
+ere-sand-castle/SC-5.sdimacs	done	done	done
+ere-sand-castle/SC-6.sdimacs	done	done	done
+ere-sand-castle/SC-7.sdimacs	done	done	done
+ere-sand-castle/SC-8.sdimacs	done	done	done
+ere-sand-castle/SC-9.sdimacs	done	done	done
+ere-ToiletA/toilet_a_02_01.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_02_01.3.sdimacs	done	done	done
+ere-ToiletA/toilet_a_02_01.4.sdimacs	done	done	done
+ere-ToiletA/toilet_a_02_05.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_02_10.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.3.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.4.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.5.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.6.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.7.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_01.8.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_05.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_04_10.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.10.sdimacs	done	TIMEOUT (ERROR (1))	done
+ere-ToiletA/toilet_a_06_01.11.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_06_01.12.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.3.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.4.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.5.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.6.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.7.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.8.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_01.9.sdimacs	done	TIMEOUT (ERROR (1))	done
+ere-ToiletA/toilet_a_06_05.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_05.3.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_06_05.4.sdimacs	done	done	done
+ere-ToiletA/toilet_a_06_10.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_08_01.10.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.11.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.12.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.13.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.14.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.15.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.16.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_08_01.3.sdimacs	done	done	done
+ere-ToiletA/toilet_a_08_01.4.sdimacs	done	done	done
+ere-ToiletA/toilet_a_08_01.5.sdimacs	done	done	done
+ere-ToiletA/toilet_a_08_01.6.sdimacs	done	done	done
+ere-ToiletA/toilet_a_08_01.7.sdimacs	done	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.8.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_01.9.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.10.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.2.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.3.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.4.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.5.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.6.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.7.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.8.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_05.9.sdimacs	TIMEOUT	done	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_08_10.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_10_01.10.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.11.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.12.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.13.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.14.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.15.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.16.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.17.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.18.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.19.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.2.sdimacs	done	done	done
+ere-ToiletA/toilet_a_10_01.20.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.3.sdimacs	done	done	done
+ere-ToiletA/toilet_a_10_01.4.sdimacs	done	done	done
+ere-ToiletA/toilet_a_10_01.5.sdimacs	done	done	done
+ere-ToiletA/toilet_a_10_01.6.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.7.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.8.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_01.9.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_05.2.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_05.3.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_05.4.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-ToiletA/toilet_a_10_10.2.sdimacs	TIMEOUT	done	done

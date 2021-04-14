@@ -1,5 +1,14 @@
 #!/bin/bash
 
+compute_number_solved_instances () {
+    number=$(grep "$1" ./csv/status.table.csv | cut -f"$2" | sort | uniq -c | grep 'done' | awk '{print $1}')
+    echo "${number}"
+}
+
+write_tex_data_command () {
+    echo "\newcommand{\\$1}{\num{$2}}" >> "$3"
+}
+
 timestamp='erssat.2021-04-09_12-40-52'
 compared_approaches=('bare-BDD' 'default-BDD')
 formula_families=('Random' 'Application')
@@ -41,3 +50,20 @@ table-generator --no-diff -f csv -o ./csv -x ./scatter.xml -n "erssat.scatter" \
 table-generator --no-diff -f csv -o ./csv -x ./scatter.xml -n "dcssat.scatter" \
     "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2" \
     "./results/${timestamp_dc}.results.default.Application.xml.bz2"
+
+tool_name=(dcssat erssatb erssat)
+application_formula_families=('ToiletA' 'conformant' 'castle' 'MaxCount' 'MPEC')
+#application_formula_families=('ere-ToiletA' 'ere-conformant' 'ere-sand-castle' 'ere-MaxCount' 'ere-MPEC')
+data_commands_file="tex/data-commands.tex"
+echo "Generating a tex file for data commands of application formulas ..."
+table-generator --no-diff -f csv -o ./csv -x ./status.xml -n "status" \
+    "./results/${timestamp_dc}.results.default.Application.xml.bz2" \
+    "./results/${timestamp_er}.results.bare-BDD.Application.xml.bz2" \
+    "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2"
+echo "% Commands for application formulas of ER-SSAT" > "${data_commands_file}"
+for i in {2..4}; do
+    for family in "${application_formula_families[@]}"; do
+        number_solved_instances=$(compute_number_solved_instances "${family}" "${i}")
+        write_tex_data_command "${tool_name[i-2]}${family}" "${number_solved_instances}" "${data_commands_file}"
+    done
+done
