@@ -1,0 +1,175 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/approxmc-ppe.xml
+name:                    approxmc-ppe
+run sets:                default, tight
+date:                    Sat, 2021-04-17 00:33:35 CST
+tool:                    ApproxMC
+tool executable:         /usr/local/bin/approxmc
+options:                 
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 2 with options '--epsilon 0.8 --delta 0.2' and propertyfile 'None'
+
+inputfile                                                         status                       cpu time   wall time        host
+-------------------------------------------------------------------------------------------------------------------------------
+E-0.125-D-0.1/adder.aig/adder-0.125-0.10-pmc.dimacs               done                           151.74      151.75        None
+E-0.125-D-0.1/arbiter.aig/arbiter-0.125-0.10-pmc.dimacs           TIMEOUT                        900.98      901.06        None
+E-0.125-D-0.1/bar.aig/bar-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.05      901.07        None
+E-0.125-D-0.1/c1355.bench/c1355-0.125-0.10-pmc.dimacs             done                            17.86       17.87        None
+E-0.125-D-0.1/c1908.bench/c1908-0.125-0.10-pmc.dimacs             done                            10.15       10.16        None
+E-0.125-D-0.1/c2670.bench/c2670-0.125-0.10-pmc.dimacs             done                           100.00      100.00        None
+E-0.125-D-0.1/c3540.bench/c3540-0.125-0.10-pmc.dimacs             done                            57.44       57.44        None
+E-0.125-D-0.1/c432.bench/c432-0.125-0.10-pmc.dimacs               done                             2.37        2.37        None
+E-0.125-D-0.1/c499.bench/c499-0.125-0.10-pmc.dimacs               done                             8.19        8.20        None
+E-0.125-D-0.1/c5315.bench/c5315-0.125-0.10-pmc.dimacs             done                           298.47      298.48        None
+E-0.125-D-0.1/c6288.bench/c6288-0.125-0.10-pmc.dimacs             done                           434.79      434.81        None
+E-0.125-D-0.1/c7552.bench/c7552-0.125-0.10-pmc.dimacs             done                           550.87      550.88        None
+E-0.125-D-0.1/c880.bench/c880-0.125-0.10-pmc.dimacs               done                             9.56        9.56        None
+E-0.125-D-0.1/cavlc.aig/cavlc-0.125-0.10-pmc.dimacs               done                            18.12       18.12        None
+E-0.125-D-0.1/ctrl.aig/ctrl-0.125-0.10-pmc.dimacs                 done                             1.20        1.20        None
+E-0.125-D-0.1/dec.aig/dec-0.125-0.10-pmc.dimacs                   done                             2.70        2.70        None
+E-0.125-D-0.1/div.aig/div-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.1/hyp.aig/hyp-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/i2c.aig/i2c-0.125-0.10-pmc.dimacs                   done                           127.04      127.05        None
+E-0.125-D-0.1/int2float.aig/int2float-0.125-0.10-pmc.dimacs       done                             1.66        1.66        None
+E-0.125-D-0.1/log2.aig/log2-0.125-0.10-pmc.dimacs                 TIMEOUT                        900.95      901.04        None
+E-0.125-D-0.1/max.aig/max-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/mem_ctrl.aig/mem_ctrl-0.125-0.10-pmc.dimacs         TIMEOUT                        900.97      901.02        None
+E-0.125-D-0.1/multiplier.aig/multiplier-0.125-0.10-pmc.dimacs     TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/priority.aig/priority-0.125-0.10-pmc.dimacs         done                            81.39       81.40        None
+E-0.125-D-0.1/router.aig/router-0.125-0.10-pmc.dimacs             done                             5.96        5.97        None
+E-0.125-D-0.1/sin.aig/sin-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.02      901.04        None
+E-0.125-D-0.1/sqrt.aig/sqrt-0.125-0.10-pmc.dimacs                 TIMEOUT                        900.96      901.02        None
+E-0.125-D-0.1/square.aig/square-0.125-0.10-pmc.dimacs             TIMEOUT                        901.02      901.04        None
+E-0.125-D-0.1/voter.aig/voter-0.125-0.10-pmc.dimacs               TIMEOUT                        901.30      901.36        None
+E-0.125-D-0.01/adder.aig/adder-0.125-0.01-pmc.dimacs              done                            30.93       30.93        None
+E-0.125-D-0.01/arbiter.aig/arbiter-0.125-0.01-pmc.dimacs          done                           271.68      271.69        None
+E-0.125-D-0.01/bar.aig/bar-0.125-0.01-pmc.dimacs                  done                            20.75       20.76        None
+E-0.125-D-0.01/c1355.bench/c1355-0.125-0.01-pmc.dimacs            done                             1.54        1.54        None
+E-0.125-D-0.01/c1908.bench/c1908-0.125-0.01-pmc.dimacs            done                             0.78        0.78        None
+E-0.125-D-0.01/c2670.bench/c2670-0.125-0.01-pmc.dimacs            done                            23.27       23.28        None
+E-0.125-D-0.01/c3540.bench/c3540-0.125-0.01-pmc.dimacs            done                             2.76        2.76        None
+E-0.125-D-0.01/c432.bench/c432-0.125-0.01-pmc.dimacs              done                             0.56        0.56        None
+E-0.125-D-0.01/c499.bench/c499-0.125-0.01-pmc.dimacs              done                             1.15        1.15        None
+E-0.125-D-0.01/c5315.bench/c5315-0.125-0.01-pmc.dimacs            done                            22.98       22.99        None
+E-0.125-D-0.01/c6288.bench/c6288-0.125-0.01-pmc.dimacs            done                             4.99        4.99        None
+E-0.125-D-0.01/c7552.bench/c7552-0.125-0.01-pmc.dimacs            done                            27.33       27.34        None
+E-0.125-D-0.01/c880.bench/c880-0.125-0.01-pmc.dimacs              done                             1.84        1.84        None
+E-0.125-D-0.01/cavlc.aig/cavlc-0.125-0.01-pmc.dimacs              done                             0.51        0.52        None
+E-0.125-D-0.01/ctrl.aig/ctrl-0.125-0.01-pmc.dimacs                done                             0.09        0.09        None
+E-0.125-D-0.01/dec.aig/dec-0.125-0.01-pmc.dimacs                  done                             0.13        0.13        None
+E-0.125-D-0.01/div.aig/div-0.125-0.01-pmc.dimacs                  TIMEOUT                        900.95      901.05        None
+E-0.125-D-0.01/hyp.aig/hyp-0.125-0.01-pmc.dimacs                  TIMEOUT                        901.00      901.03        None
+E-0.125-D-0.01/i2c.aig/i2c-0.125-0.01-pmc.dimacs                  done                            10.43       10.43        None
+E-0.125-D-0.01/int2float.aig/int2float-0.125-0.01-pmc.dimacs      done                             0.03        0.04        None
+E-0.125-D-0.01/log2.aig/log2-0.125-0.01-pmc.dimacs                TIMEOUT                        901.00      901.03        None
+E-0.125-D-0.01/max.aig/max-0.125-0.01-pmc.dimacs                  done                           330.53      330.55        None
+E-0.125-D-0.01/mem_ctrl.aig/mem_ctrl-0.125-0.01-pmc.dimacs        TIMEOUT                        901.16      901.19        None
+E-0.125-D-0.01/multiplier.aig/multiplier-0.125-0.01-pmc.dimacs    TIMEOUT                        901.03      901.06        None
+E-0.125-D-0.01/priority.aig/priority-0.125-0.01-pmc.dimacs        done                            10.02       10.02        None
+E-0.125-D-0.01/router.aig/router-0.125-0.01-pmc.dimacs            done                             0.03        0.03        None
+E-0.125-D-0.01/sin.aig/sin-0.125-0.01-pmc.dimacs                  done                            37.22       37.23        None
+E-0.125-D-0.01/sqrt.aig/sqrt-0.125-0.01-pmc.dimacs                done                           688.78      688.81        None
+E-0.125-D-0.01/square.aig/square-0.125-0.01-pmc.dimacs            done                           211.01      211.04        None
+E-0.125-D-0.01/voter.aig/voter-0.125-0.01-pmc.dimacs              TIMEOUT                        901.00      901.04        None
+-------------------------------------------------------------------------------------------------------------------------------
+Run set 1                                                         done                         19799.44     2833.24           -
+
+
+tight
+Run set 2 of 2 with options '--epsilon 0.99 --delta 0.01' and propertyfile 'None'
+
+inputfile                                                         status                       cpu time   wall time        host
+-------------------------------------------------------------------------------------------------------------------------------
+E-0.125-D-0.1/adder.aig/adder-0.125-0.10-pmc.dimacs               TIMEOUT                        901.06      901.14        None
+E-0.125-D-0.1/arbiter.aig/arbiter-0.125-0.10-pmc.dimacs           TIMEOUT                        901.02      901.06        None
+E-0.125-D-0.1/bar.aig/bar-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.07      901.10        None
+E-0.125-D-0.1/c1355.bench/c1355-0.125-0.10-pmc.dimacs             done                           352.78      352.80        None
+E-0.125-D-0.1/c1908.bench/c1908-0.125-0.10-pmc.dimacs             done                           241.42      241.43        None
+E-0.125-D-0.1/c2670.bench/c2670-0.125-0.10-pmc.dimacs             TIMEOUT                        901.08      901.11        None
+E-0.125-D-0.1/c3540.bench/c3540-0.125-0.10-pmc.dimacs             TIMEOUT                        901.07      901.10        None
+E-0.125-D-0.1/c432.bench/c432-0.125-0.10-pmc.dimacs               done                            60.16       60.16        None
+E-0.125-D-0.1/c499.bench/c499-0.125-0.10-pmc.dimacs               done                           201.26      201.27        None
+E-0.125-D-0.1/c5315.bench/c5315-0.125-0.10-pmc.dimacs             TIMEOUT                        901.11      901.14        None
+E-0.125-D-0.1/c6288.bench/c6288-0.125-0.10-pmc.dimacs             TIMEOUT                        901.14      901.16        None
+E-0.125-D-0.1/c7552.bench/c7552-0.125-0.10-pmc.dimacs             TIMEOUT                        901.11      901.17        None
+E-0.125-D-0.1/c880.bench/c880-0.125-0.10-pmc.dimacs               done                           229.39      229.41        None
+E-0.125-D-0.1/cavlc.aig/cavlc-0.125-0.10-pmc.dimacs               done                           457.78      457.81        None
+E-0.125-D-0.1/ctrl.aig/ctrl-0.125-0.10-pmc.dimacs                 done                            28.80       28.81        None
+E-0.125-D-0.1/dec.aig/dec-0.125-0.10-pmc.dimacs                   done                            66.51       66.52        None
+E-0.125-D-0.1/div.aig/div-0.125-0.10-pmc.dimacs                   TIMEOUT                        900.97      901.02        None
+E-0.125-D-0.1/hyp.aig/hyp-0.125-0.10-pmc.dimacs                   TIMEOUT                        900.95      901.03        None
+E-0.125-D-0.1/i2c.aig/i2c-0.125-0.10-pmc.dimacs                   TIMEOUT                        901.11      901.14        None
+E-0.125-D-0.1/int2float.aig/int2float-0.125-0.10-pmc.dimacs       done                            46.54       46.54        None
+E-0.125-D-0.1/log2.aig/log2-0.125-0.10-pmc.dimacs                 TIMEOUT                        901.00      901.03        None
+E-0.125-D-0.1/max.aig/max-0.125-0.10-pmc.dimacs                   TIMEOUT                        900.99      901.03        None
+E-0.125-D-0.1/mem_ctrl.aig/mem_ctrl-0.125-0.10-pmc.dimacs         TIMEOUT                        900.98      901.02        None
+E-0.125-D-0.1/multiplier.aig/multiplier-0.125-0.10-pmc.dimacs     TIMEOUT                        900.99      901.03        None
+E-0.125-D-0.1/priority.aig/priority-0.125-0.10-pmc.dimacs         TIMEOUT                        901.05      901.11        None
+E-0.125-D-0.1/router.aig/router-0.125-0.10-pmc.dimacs             done                           158.14      158.15        None
+E-0.125-D-0.1/sin.aig/sin-0.125-0.10-pmc.dimacs                   TIMEOUT                        900.96      901.04        None
+E-0.125-D-0.1/sqrt.aig/sqrt-0.125-0.10-pmc.dimacs                 TIMEOUT                        901.01      901.04        None
+E-0.125-D-0.1/square.aig/square-0.125-0.10-pmc.dimacs             TIMEOUT                        901.02      901.04        None
+E-0.125-D-0.1/voter.aig/voter-0.125-0.10-pmc.dimacs               TIMEOUT                        901.37      901.40        None
+E-0.125-D-0.01/adder.aig/adder-0.125-0.01-pmc.dimacs              done                           655.14      655.18        None
+E-0.125-D-0.01/arbiter.aig/arbiter-0.125-0.01-pmc.dimacs          TIMEOUT                        901.05      901.07        None
+E-0.125-D-0.01/bar.aig/bar-0.125-0.01-pmc.dimacs                  done                           436.16      436.18        None
+E-0.125-D-0.01/c1355.bench/c1355-0.125-0.01-pmc.dimacs            done                            26.60       26.60        None
+E-0.125-D-0.01/c1908.bench/c1908-0.125-0.01-pmc.dimacs            done                            10.59       10.59        None
+E-0.125-D-0.01/c2670.bench/c2670-0.125-0.01-pmc.dimacs            done                           542.98      543.02        None
+E-0.125-D-0.01/c3540.bench/c3540-0.125-0.01-pmc.dimacs            done                            46.85       46.86        None
+E-0.125-D-0.01/c432.bench/c432-0.125-0.01-pmc.dimacs              done                            11.31       11.31        None
+E-0.125-D-0.01/c499.bench/c499-0.125-0.01-pmc.dimacs              done                            24.07       24.07        None
+E-0.125-D-0.01/c5315.bench/c5315-0.125-0.01-pmc.dimacs            done                           466.84      466.88        None
+E-0.125-D-0.01/c6288.bench/c6288-0.125-0.01-pmc.dimacs            done                            87.59       87.60        None
+E-0.125-D-0.01/c7552.bench/c7552-0.125-0.01-pmc.dimacs            done                           656.53      656.59        None
+E-0.125-D-0.01/c880.bench/c880-0.125-0.01-pmc.dimacs              done                            56.95       56.96        None
+E-0.125-D-0.01/cavlc.aig/cavlc-0.125-0.01-pmc.dimacs              done                             5.64        5.64        None
+E-0.125-D-0.01/ctrl.aig/ctrl-0.125-0.01-pmc.dimacs                done                             1.12        1.12        None
+E-0.125-D-0.01/dec.aig/dec-0.125-0.01-pmc.dimacs                  done                             3.14        3.14        None
+E-0.125-D-0.01/div.aig/div-0.125-0.01-pmc.dimacs                  TIMEOUT                        901.02      901.06        None
+E-0.125-D-0.01/hyp.aig/hyp-0.125-0.01-pmc.dimacs                  TIMEOUT                        900.99      901.03        None
+E-0.125-D-0.01/i2c.aig/i2c-0.125-0.01-pmc.dimacs                  done                           272.83      272.85        None
+E-0.125-D-0.01/int2float.aig/int2float-0.125-0.01-pmc.dimacs      done                             0.34        0.34        None
+E-0.125-D-0.01/log2.aig/log2-0.125-0.01-pmc.dimacs                TIMEOUT                        901.03      901.05        None
+E-0.125-D-0.01/max.aig/max-0.125-0.01-pmc.dimacs                  TIMEOUT                        901.03      901.06        None
+E-0.125-D-0.01/mem_ctrl.aig/mem_ctrl-0.125-0.01-pmc.dimacs        TIMEOUT                        901.18      901.21        None
+E-0.125-D-0.01/multiplier.aig/multiplier-0.125-0.01-pmc.dimacs    TIMEOUT                        901.03      901.07        None
+E-0.125-D-0.01/priority.aig/priority-0.125-0.01-pmc.dimacs        done                           222.30      222.32        None
+E-0.125-D-0.01/router.aig/router-0.125-0.01-pmc.dimacs            done                             0.03        0.03        None
+E-0.125-D-0.01/sin.aig/sin-0.125-0.01-pmc.dimacs                  done                           370.35      370.37        None
+E-0.125-D-0.01/sqrt.aig/sqrt-0.125-0.01-pmc.dimacs                TIMEOUT                        900.98      901.07        None
+E-0.125-D-0.01/square.aig/square-0.125-0.01-pmc.dimacs            TIMEOUT                        901.03      901.07        None
+E-0.125-D-0.01/voter.aig/voter-0.125-0.01-pmc.dimacs              TIMEOUT                        901.07      901.10        None
+-------------------------------------------------------------------------------------------------------------------------------
+Run set 2                                                         done                         32773.74     4631.58           -
+
+Statistics:            120 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              48

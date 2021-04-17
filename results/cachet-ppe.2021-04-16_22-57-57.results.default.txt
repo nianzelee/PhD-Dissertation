@@ -1,0 +1,106 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/cachet-ppe.xml
+name:                    cachet-ppe
+run sets:                default
+date:                    Fri, 2021-04-16 22:57:57 CST
+tool:                    Cachet
+tool executable:         bin/cachet
+options:                 
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                                                       status                       cpu time   wall time        host
+-----------------------------------------------------------------------------------------------------------------------------
+E-0.125-D-0.1/adder.aig/adder-0.125-0.10-wmc.wcnf               TIMEOUT                        900.95      901.02        None
+E-0.125-D-0.1/arbiter.aig/arbiter-0.125-0.10-wmc.wcnf           TIMEOUT                        900.96      901.03        None
+E-0.125-D-0.1/bar.aig/bar-0.125-0.10-wmc.wcnf                   TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/c1355.bench/c1355-0.125-0.10-wmc.wcnf             TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/c1908.bench/c1908-0.125-0.10-wmc.wcnf             TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/c2670.bench/c2670-0.125-0.10-wmc.wcnf             TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/c3540.bench/c3540-0.125-0.10-wmc.wcnf             TIMEOUT                        901.00      901.03        None
+E-0.125-D-0.1/c432.bench/c432-0.125-0.10-wmc.wcnf               done                           328.06      328.06        None
+E-0.125-D-0.1/c499.bench/c499-0.125-0.10-wmc.wcnf               TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/c5315.bench/c5315-0.125-0.10-wmc.wcnf             TIMEOUT                        900.94      901.02        None
+E-0.125-D-0.1/c6288.bench/c6288-0.125-0.10-wmc.wcnf             TIMEOUT                        900.96      901.02        None
+E-0.125-D-0.1/c7552.bench/c7552-0.125-0.10-wmc.wcnf             TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.1/c880.bench/c880-0.125-0.10-wmc.wcnf               TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.1/cavlc.aig/cavlc-0.125-0.10-wmc.wcnf               done                             7.25        7.26        None
+E-0.125-D-0.1/ctrl.aig/ctrl-0.125-0.10-wmc.wcnf                 done                             0.07        0.07        None
+E-0.125-D-0.1/dec.aig/dec-0.125-0.10-wmc.wcnf                   done                             0.26        0.27        None
+E-0.125-D-0.1/div.aig/div-0.125-0.10-wmc.wcnf                   TIMEOUT                        901.16      901.17        None
+E-0.125-D-0.1/hyp.aig/hyp-0.125-0.10-wmc.wcnf                   TIMEOUT                        901.59      901.60        None
+E-0.125-D-0.1/i2c.aig/i2c-0.125-0.10-wmc.wcnf                   TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.1/int2float.aig/int2float-0.125-0.10-wmc.wcnf       done                             0.18        0.18        None
+E-0.125-D-0.1/log2.aig/log2-0.125-0.10-wmc.wcnf                 TIMEOUT                        901.05      901.06        None
+E-0.125-D-0.1/max.aig/max-0.125-0.10-wmc.wcnf                   TIMEOUT                        900.95      901.03        None
+E-0.125-D-0.1/mem_ctrl.aig/mem_ctrl-0.125-0.10-wmc.wcnf         TIMEOUT                        901.01      901.08        None
+E-0.125-D-0.1/multiplier.aig/multiplier-0.125-0.10-wmc.wcnf     TIMEOUT                        901.05      901.07        None
+E-0.125-D-0.1/priority.aig/priority-0.125-0.10-wmc.wcnf         TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/router.aig/router-0.125-0.10-wmc.wcnf             done                           253.34      253.35        None
+E-0.125-D-0.1/sin.aig/sin-0.125-0.10-wmc.wcnf                   TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.1/sqrt.aig/sqrt-0.125-0.10-wmc.wcnf                 TIMEOUT                        901.04      901.06        None
+E-0.125-D-0.1/square.aig/square-0.125-0.10-wmc.wcnf             TIMEOUT                        901.03      901.05        None
+E-0.125-D-0.1/voter.aig/voter-0.125-0.10-wmc.wcnf               TIMEOUT                        901.06      901.08        None
+E-0.125-D-0.01/adder.aig/adder-0.125-0.01-wmc.wcnf              TIMEOUT                        900.95      901.02        None
+E-0.125-D-0.01/arbiter.aig/arbiter-0.125-0.01-wmc.wcnf          TIMEOUT                        901.02      901.03        None
+E-0.125-D-0.01/bar.aig/bar-0.125-0.01-wmc.wcnf                  TIMEOUT                        900.96      901.02        None
+E-0.125-D-0.01/c1355.bench/c1355-0.125-0.01-wmc.wcnf            TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/c1908.bench/c1908-0.125-0.01-wmc.wcnf            TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.01/c2670.bench/c2670-0.125-0.01-wmc.wcnf            TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.01/c3540.bench/c3540-0.125-0.01-wmc.wcnf            TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/c432.bench/c432-0.125-0.01-wmc.wcnf              done                             0.20        0.20        None
+E-0.125-D-0.01/c499.bench/c499-0.125-0.01-wmc.wcnf              TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.01/c5315.bench/c5315-0.125-0.01-wmc.wcnf            TIMEOUT                        900.94      901.02        None
+E-0.125-D-0.01/c6288.bench/c6288-0.125-0.01-wmc.wcnf            TIMEOUT                        900.95      901.03        None
+E-0.125-D-0.01/c7552.bench/c7552-0.125-0.01-wmc.wcnf            TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/c880.bench/c880-0.125-0.01-wmc.wcnf              TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/cavlc.aig/cavlc-0.125-0.01-wmc.wcnf              done                             0.07        0.08        None
+E-0.125-D-0.01/ctrl.aig/ctrl-0.125-0.01-wmc.wcnf                done                             0.04        0.04        None
+E-0.125-D-0.01/dec.aig/dec-0.125-0.01-wmc.wcnf                  done                             0.04        0.04        None
+E-0.125-D-0.01/div.aig/div-0.125-0.01-wmc.wcnf                  TIMEOUT                        901.03      901.05        None
+E-0.125-D-0.01/hyp.aig/hyp-0.125-0.01-wmc.wcnf                  TIMEOUT                        901.42      901.44        None
+E-0.125-D-0.01/i2c.aig/i2c-0.125-0.01-wmc.wcnf                  TIMEOUT                        901.01      901.02        None
+E-0.125-D-0.01/int2float.aig/int2float-0.125-0.01-wmc.wcnf      done                             0.04        0.04        None
+E-0.125-D-0.01/log2.aig/log2-0.125-0.01-wmc.wcnf                TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/max.aig/max-0.125-0.01-wmc.wcnf                  TIMEOUT                        900.96      901.03        None
+E-0.125-D-0.01/mem_ctrl.aig/mem_ctrl-0.125-0.01-wmc.wcnf        TIMEOUT                        900.97      901.05        None
+E-0.125-D-0.01/multiplier.aig/multiplier-0.125-0.01-wmc.wcnf    TIMEOUT                        901.02      901.04        None
+E-0.125-D-0.01/priority.aig/priority-0.125-0.01-wmc.wcnf        TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/router.aig/router-0.125-0.01-wmc.wcnf            done                             0.04        0.04        None
+E-0.125-D-0.01/sin.aig/sin-0.125-0.01-wmc.wcnf                  TIMEOUT                        901.01      901.03        None
+E-0.125-D-0.01/sqrt.aig/sqrt-0.125-0.01-wmc.wcnf                TIMEOUT                        901.02      901.03        None
+E-0.125-D-0.01/square.aig/square-0.125-0.01-wmc.wcnf            TIMEOUT                        901.00      901.03        None
+E-0.125-D-0.01/voter.aig/voter-0.125-0.01-wmc.wcnf              TIMEOUT                        901.02      901.05        None
+-----------------------------------------------------------------------------------------------------------------------------
+Run set 1                                                       done                         43841.03     5738.41           -
+
+Statistics:             60 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              48

@@ -1,0 +1,175 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/bddsp-ppe.xml
+name:                    bddsp-ppe
+run sets:                average-case, worst-case
+date:                    Fri, 2021-04-16 18:17:52 CST
+tool:                    ABC
+tool executable:         bin/abc
+options:                 
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+average-case
+Run set 1 of 2 with options '-c st; bddsp -r' and propertyfile 'None'
+
+inputfile                                                        status                       cpu time   wall time        host
+------------------------------------------------------------------------------------------------------------------------------
+E-0.125-D-0.1/adder.aig/adder-0.125-0.10-spbn.blif               done                             1.09        1.09        None
+E-0.125-D-0.1/arbiter.aig/arbiter-0.125-0.10-spbn.blif           TIMEOUT (ERROR (1))            901.07      901.14        None
+E-0.125-D-0.1/bar.aig/bar-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.16      901.18        None
+E-0.125-D-0.1/c1355.bench/c1355-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.08      901.09        None
+E-0.125-D-0.1/c1908.bench/c1908-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.08      901.11        None
+E-0.125-D-0.1/c2670.bench/c2670-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.08      901.09        None
+E-0.125-D-0.1/c3540.bench/c3540-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.08      901.09        None
+E-0.125-D-0.1/c432.bench/c432-0.125-0.10-spbn.blif               done                             7.97        7.97        None
+E-0.125-D-0.1/c499.bench/c499-0.125-0.10-spbn.blif               TIMEOUT (ERROR (1))            901.02      901.08        None
+E-0.125-D-0.1/c5315.bench/c5315-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.07      901.08        None
+E-0.125-D-0.1/c6288.bench/c6288-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.06      901.13        None
+E-0.125-D-0.1/c7552.bench/c7552-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.09      901.10        None
+E-0.125-D-0.1/c880.bench/c880-0.125-0.10-spbn.blif               TIMEOUT (SEGMENTATION FAULT)      901.07      901.27        None
+E-0.125-D-0.1/cavlc.aig/cavlc-0.125-0.10-spbn.blif               done                             0.19        0.20        None
+E-0.125-D-0.1/ctrl.aig/ctrl-0.125-0.10-spbn.blif                 done                             0.05        0.05        None
+E-0.125-D-0.1/dec.aig/dec-0.125-0.10-spbn.blif                   done                             0.05        0.05        None
+E-0.125-D-0.1/div.aig/div-0.125-0.10-spbn.blif                   TIMEOUT (SEGMENTATION FAULT)      901.09      901.28        None
+E-0.125-D-0.1/hyp.aig/hyp-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.13      901.14        None
+E-0.125-D-0.1/i2c.aig/i2c-0.125-0.10-spbn.blif                   done                            10.91       10.91        None
+E-0.125-D-0.1/int2float.aig/int2float-0.125-0.10-spbn.blif       done                             0.05        0.05        None
+E-0.125-D-0.1/log2.aig/log2-0.125-0.10-spbn.blif                 TIMEOUT (SEGMENTATION FAULT)      901.41      901.66        None
+E-0.125-D-0.1/max.aig/max-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.14      901.15        None
+E-0.125-D-0.1/mem_ctrl.aig/mem_ctrl-0.125-0.10-spbn.blif         TIMEOUT (SEGMENTATION FAULT)      901.10      901.32        None
+E-0.125-D-0.1/multiplier.aig/multiplier-0.125-0.10-spbn.blif     TIMEOUT (ERROR (1))            901.11      901.13        None
+E-0.125-D-0.1/priority.aig/priority-0.125-0.10-spbn.blif         TIMEOUT (ERROR (1))            901.05      901.13        None
+E-0.125-D-0.1/router.aig/router-0.125-0.10-spbn.blif             done                             0.57        0.57        None
+E-0.125-D-0.1/sin.aig/sin-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.10      901.13        None
+E-0.125-D-0.1/sqrt.aig/sqrt-0.125-0.10-spbn.blif                 TIMEOUT (ERROR (1))            901.16      901.19        None
+E-0.125-D-0.1/square.aig/square-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.07      901.09        None
+E-0.125-D-0.1/voter.aig/voter-0.125-0.10-spbn.blif               TIMEOUT (ERROR (1))            901.06      901.14        None
+E-0.125-D-0.01/adder.aig/adder-0.125-0.01-spbn.blif              done                             0.66        0.66        None
+E-0.125-D-0.01/arbiter.aig/arbiter-0.125-0.01-spbn.blif          done                           210.53      210.53        None
+E-0.125-D-0.01/bar.aig/bar-0.125-0.01-spbn.blif                  done                             3.16        3.16        None
+E-0.125-D-0.01/c1355.bench/c1355-0.125-0.01-spbn.blif            done                             1.72        1.72        None
+E-0.125-D-0.01/c1908.bench/c1908-0.125-0.01-spbn.blif            done                             0.42        0.43        None
+E-0.125-D-0.01/c2670.bench/c2670-0.125-0.01-spbn.blif            done                            75.84       75.84        None
+E-0.125-D-0.01/c3540.bench/c3540-0.125-0.01-spbn.blif            done                            14.82       14.82        None
+E-0.125-D-0.01/c432.bench/c432-0.125-0.01-spbn.blif              done                             0.06        0.06        None
+E-0.125-D-0.01/c499.bench/c499-0.125-0.01-spbn.blif              done                             0.90        0.90        None
+E-0.125-D-0.01/c5315.bench/c5315-0.125-0.01-spbn.blif            done                            13.20       13.20        None
+E-0.125-D-0.01/c6288.bench/c6288-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.05      901.09        None
+E-0.125-D-0.01/c7552.bench/c7552-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.08      901.10        None
+E-0.125-D-0.01/c880.bench/c880-0.125-0.01-spbn.blif              done                             5.94        5.95        None
+E-0.125-D-0.01/cavlc.aig/cavlc-0.125-0.01-spbn.blif              done                             0.05        0.05        None
+E-0.125-D-0.01/ctrl.aig/ctrl-0.125-0.01-spbn.blif                done                             0.05        0.05        None
+E-0.125-D-0.01/dec.aig/dec-0.125-0.01-spbn.blif                  done                             0.05        0.05        None
+E-0.125-D-0.01/div.aig/div-0.125-0.01-spbn.blif                  TIMEOUT (ERROR (1))            901.13      901.14        None
+E-0.125-D-0.01/hyp.aig/hyp-0.125-0.01-spbn.blif                  TIMEOUT (ERROR (1))            901.18      901.24        None
+E-0.125-D-0.01/i2c.aig/i2c-0.125-0.01-spbn.blif                  done                             0.11        0.11        None
+E-0.125-D-0.01/int2float.aig/int2float-0.125-0.01-spbn.blif      done                             0.05        0.05        None
+E-0.125-D-0.01/log2.aig/log2-0.125-0.01-spbn.blif                TIMEOUT (ERROR (1))            901.22      901.24        None
+E-0.125-D-0.01/max.aig/max-0.125-0.01-spbn.blif                  TIMEOUT (ERROR (1))            901.12      901.13        None
+E-0.125-D-0.01/mem_ctrl.aig/mem_ctrl-0.125-0.01-spbn.blif        TIMEOUT (ERROR (1))            901.00      901.08        None
+E-0.125-D-0.01/multiplier.aig/multiplier-0.125-0.01-spbn.blif    TIMEOUT (ERROR (1))            901.06      901.08        None
+E-0.125-D-0.01/priority.aig/priority-0.125-0.01-spbn.blif        done                             2.25        2.25        None
+E-0.125-D-0.01/router.aig/router-0.125-0.01-spbn.blif            done                             0.05        0.05        None
+E-0.125-D-0.01/sin.aig/sin-0.125-0.01-spbn.blif                  TIMEOUT (ERROR (1))            901.10      901.13        None
+E-0.125-D-0.01/sqrt.aig/sqrt-0.125-0.01-spbn.blif                TIMEOUT (ERROR (1))            901.50      901.51        None
+E-0.125-D-0.01/square.aig/square-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.03      901.06        None
+E-0.125-D-0.01/voter.aig/voter-0.125-0.01-spbn.blif              TIMEOUT (ERROR (1))            901.02      901.08        None
+------------------------------------------------------------------------------------------------------------------------------
+Run set 1                                                        done                         30990.53     4508.27           -
+
+
+worst-case
+Run set 2 of 2 with options '-c st; bddsp -rw' and propertyfile 'None'
+
+inputfile                                                        status                       cpu time   wall time        host
+------------------------------------------------------------------------------------------------------------------------------
+E-0.125-D-0.1/adder.aig/adder-0.125-0.10-spbn.blif               TIMEOUT (SEGMENTATION FAULT)      901.00      901.25        None
+E-0.125-D-0.1/arbiter.aig/arbiter-0.125-0.10-spbn.blif           TIMEOUT (SEGMENTATION FAULT)      901.03      901.27        None
+E-0.125-D-0.1/bar.aig/bar-0.125-0.10-spbn.blif                   TIMEOUT (SEGMENTATION FAULT)      901.03      901.29        None
+E-0.125-D-0.1/c1355.bench/c1355-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.00      901.01        None
+E-0.125-D-0.1/c1908.bench/c1908-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.01      901.02        None
+E-0.125-D-0.1/c2670.bench/c2670-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.04      901.05        None
+E-0.125-D-0.1/c3540.bench/c3540-0.125-0.10-spbn.blif             TIMEOUT (SEGMENTATION FAULT)      901.01      901.20        None
+E-0.125-D-0.1/c432.bench/c432-0.125-0.10-spbn.blif               TIMEOUT (ERROR (1))            901.07      901.08        None
+E-0.125-D-0.1/c499.bench/c499-0.125-0.10-spbn.blif               TIMEOUT (ERROR (1))            901.07      901.09        None
+E-0.125-D-0.1/c5315.bench/c5315-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.05      901.07        None
+E-0.125-D-0.1/c6288.bench/c6288-0.125-0.10-spbn.blif             TIMEOUT (SEGMENTATION FAULT)      901.02      901.23        None
+E-0.125-D-0.1/c7552.bench/c7552-0.125-0.10-spbn.blif             TIMEOUT (SEGMENTATION FAULT)      900.94      901.20        None
+E-0.125-D-0.1/c880.bench/c880-0.125-0.10-spbn.blif               TIMEOUT (SEGMENTATION FAULT)      901.04      901.30        None
+E-0.125-D-0.1/cavlc.aig/cavlc-0.125-0.10-spbn.blif               TIMEOUT (SEGMENTATION FAULT)      900.97      901.21        None
+E-0.125-D-0.1/ctrl.aig/ctrl-0.125-0.10-spbn.blif                 done                             0.05        0.05        None
+E-0.125-D-0.1/dec.aig/dec-0.125-0.10-spbn.blif                   done                             0.05        0.05        None
+E-0.125-D-0.1/div.aig/div-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.03      901.05        None
+E-0.125-D-0.1/hyp.aig/hyp-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.17      901.18        None
+E-0.125-D-0.1/i2c.aig/i2c-0.125-0.10-spbn.blif                   TIMEOUT (SEGMENTATION FAULT)      901.05      901.24        None
+E-0.125-D-0.1/int2float.aig/int2float-0.125-0.10-spbn.blif       TIMEOUT (ERROR (1))            901.13      901.15        None
+E-0.125-D-0.1/log2.aig/log2-0.125-0.10-spbn.blif                 TIMEOUT (ERROR (1))            901.01      901.09        None
+E-0.125-D-0.1/max.aig/max-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            900.97      901.03        None
+E-0.125-D-0.1/mem_ctrl.aig/mem_ctrl-0.125-0.10-spbn.blif         TIMEOUT (SEGMENTATION FAULT)      901.10      901.32        None
+E-0.125-D-0.1/multiplier.aig/multiplier-0.125-0.10-spbn.blif     TIMEOUT (SEGMENTATION FAULT)      901.03      901.30        None
+E-0.125-D-0.1/priority.aig/priority-0.125-0.10-spbn.blif         TIMEOUT (ERROR (1))            901.11      901.12        None
+E-0.125-D-0.1/router.aig/router-0.125-0.10-spbn.blif             TIMEOUT (ERROR (1))            901.05      901.06        None
+E-0.125-D-0.1/sin.aig/sin-0.125-0.10-spbn.blif                   TIMEOUT (ERROR (1))            901.07      901.09        None
+E-0.125-D-0.1/sqrt.aig/sqrt-0.125-0.10-spbn.blif                 TIMEOUT (SEGMENTATION FAULT)      901.03      901.23        None
+E-0.125-D-0.1/square.aig/square-0.125-0.10-spbn.blif             TIMEOUT (SEGMENTATION FAULT)      900.98      901.23        None
+E-0.125-D-0.1/voter.aig/voter-0.125-0.10-spbn.blif               TIMEOUT (ERROR (1))            900.98      901.06        None
+E-0.125-D-0.01/adder.aig/adder-0.125-0.01-spbn.blif              done                             1.99        1.99        None
+E-0.125-D-0.01/arbiter.aig/arbiter-0.125-0.01-spbn.blif          TIMEOUT (SEGMENTATION FAULT)      901.25      901.48        None
+E-0.125-D-0.01/bar.aig/bar-0.125-0.01-spbn.blif                  TIMEOUT (SEGMENTATION FAULT)      901.01      901.26        None
+E-0.125-D-0.01/c1355.bench/c1355-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.00      901.01        None
+E-0.125-D-0.01/c1908.bench/c1908-0.125-0.01-spbn.blif            done                             0.43        0.43        None
+E-0.125-D-0.01/c2670.bench/c2670-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.00      901.01        None
+E-0.125-D-0.01/c3540.bench/c3540-0.125-0.01-spbn.blif            done                           408.23      408.24        None
+E-0.125-D-0.01/c432.bench/c432-0.125-0.01-spbn.blif              done                             0.06        0.06        None
+E-0.125-D-0.01/c499.bench/c499-0.125-0.01-spbn.blif              done                             0.95        0.95        None
+E-0.125-D-0.01/c5315.bench/c5315-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            900.98      901.05        None
+E-0.125-D-0.01/c6288.bench/c6288-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.06      901.08        None
+E-0.125-D-0.01/c7552.bench/c7552-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.00      901.01        None
+E-0.125-D-0.01/c880.bench/c880-0.125-0.01-spbn.blif              TIMEOUT (SEGMENTATION FAULT)      901.08      901.29        None
+E-0.125-D-0.01/cavlc.aig/cavlc-0.125-0.01-spbn.blif              done                             0.05        0.05        None
+E-0.125-D-0.01/ctrl.aig/ctrl-0.125-0.01-spbn.blif                done                             0.04        0.05        None
+E-0.125-D-0.01/dec.aig/dec-0.125-0.01-spbn.blif                  done                             0.05        0.05        None
+E-0.125-D-0.01/div.aig/div-0.125-0.01-spbn.blif                  TIMEOUT (SEGMENTATION FAULT)      900.99      901.24        None
+E-0.125-D-0.01/hyp.aig/hyp-0.125-0.01-spbn.blif                  TIMEOUT (ERROR (1))            901.20      901.21        None
+E-0.125-D-0.01/i2c.aig/i2c-0.125-0.01-spbn.blif                  done                             2.71        2.71        None
+E-0.125-D-0.01/int2float.aig/int2float-0.125-0.01-spbn.blif      done                             0.05        0.05        None
+E-0.125-D-0.01/log2.aig/log2-0.125-0.01-spbn.blif                TIMEOUT (ERROR (1))            901.10      901.11        None
+E-0.125-D-0.01/max.aig/max-0.125-0.01-spbn.blif                  TIMEOUT (ERROR (1))            900.99      901.01        None
+E-0.125-D-0.01/mem_ctrl.aig/mem_ctrl-0.125-0.01-spbn.blif        TIMEOUT (ERROR (1))            900.97      901.05        None
+E-0.125-D-0.01/multiplier.aig/multiplier-0.125-0.01-spbn.blif    TIMEOUT (ERROR (1))            901.09      901.11        None
+E-0.125-D-0.01/priority.aig/priority-0.125-0.01-spbn.blif        TIMEOUT (ERROR (1))            901.00      901.01        None
+E-0.125-D-0.01/router.aig/router-0.125-0.01-spbn.blif            done                             0.05        0.05        None
+E-0.125-D-0.01/sin.aig/sin-0.125-0.01-spbn.blif                  TIMEOUT (SEGMENTATION FAULT)      901.07      901.26        None
+E-0.125-D-0.01/sqrt.aig/sqrt-0.125-0.01-spbn.blif                TIMEOUT (SEGMENTATION FAULT)      901.10      901.36        None
+E-0.125-D-0.01/square.aig/square-0.125-0.01-spbn.blif            TIMEOUT (ERROR (1))            901.13      901.15        None
+E-0.125-D-0.01/voter.aig/voter-0.125-0.01-spbn.blif              TIMEOUT (ERROR (1))            901.00      901.01        None
+------------------------------------------------------------------------------------------------------------------------------
+Run set 2                                                        done                         42765.78     5415.42           -
+
+Statistics:            120 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              81

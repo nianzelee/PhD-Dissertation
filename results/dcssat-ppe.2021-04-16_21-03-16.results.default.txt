@@ -1,0 +1,166 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/dcssat-ppe.xml
+name:                    dcssat-ppe
+run sets:                default
+date:                    Fri, 2021-04-16 21:03:16 CST
+tool:                    DC-SSAT
+tool executable:         bin/dcssat
+options:                 
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                                                          status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------------------
+E-0.125-D-0.1/adder.aig/re-adder-0.125-0.10.sdimacs                OUT OF MEMORY                  671.58      671.64        None
+E-0.125-D-0.1/arbiter.aig/re-arbiter-0.125-0.10.sdimacs            OUT OF MEMORY                  551.46      551.52        None
+E-0.125-D-0.1/bar.aig/re-bar-0.125-0.10.sdimacs                    OUT OF MEMORY                  592.79      592.80        None
+E-0.125-D-0.1/c1355.bench/re-c1355-0.125-0.10.sdimacs              OUT OF MEMORY                  655.47      655.49        None
+E-0.125-D-0.1/c1908.bench/re-c1908-0.125-0.10.sdimacs              OUT OF MEMORY                  523.97      523.98        None
+E-0.125-D-0.1/c2670.bench/re-c2670-0.125-0.10.sdimacs              OUT OF MEMORY                  506.00      506.01        None
+E-0.125-D-0.1/c3540.bench/re-c3540-0.125-0.10.sdimacs              OUT OF MEMORY                  858.29      858.31        None
+E-0.125-D-0.1/c432.bench/re-c432-0.125-0.10.sdimacs                OUT OF MEMORY                  308.95      308.96        None
+E-0.125-D-0.1/c499.bench/re-c499-0.125-0.10.sdimacs                OUT OF MEMORY                  608.57      608.62        None
+E-0.125-D-0.1/c5315.bench/re-c5315-0.125-0.10.sdimacs              OUT OF MEMORY                  509.94      509.98        None
+E-0.125-D-0.1/c6288.bench/re-c6288-0.125-0.10.sdimacs              TIMEOUT                        901.78      901.83        None
+E-0.125-D-0.1/c7552.bench/re-c7552-0.125-0.10.sdimacs              OUT OF MEMORY                  547.09      547.18        None
+E-0.125-D-0.1/c880.bench/re-c880-0.125-0.10.sdimacs                OUT OF MEMORY                  426.96      427.00        None
+E-0.125-D-0.1/cavlc.aig/re-cavlc-0.125-0.10.sdimacs                OUT OF MEMORY                  405.48      405.53        None
+E-0.125-D-0.1/ctrl.aig/re-ctrl-0.125-0.10.sdimacs                  done                             0.14        0.15        None
+E-0.125-D-0.1/dec.aig/re-dec-0.125-0.10.sdimacs                    done                             0.42        0.43        None
+E-0.125-D-0.1/div.aig/re-div-0.125-0.10.sdimacs                    SEGMENTATION FAULT               3.69        3.88        None
+E-0.125-D-0.1/hyp.aig/re-hyp-0.125-0.10.sdimacs                    SEGMENTATION FAULT              13.94       14.13        None
+E-0.125-D-0.1/i2c.aig/re-i2c-0.125-0.10.sdimacs                    OUT OF MEMORY                  611.73      611.83        None
+E-0.125-D-0.1/int2float.aig/re-int2float-0.125-0.10.sdimacs        done                             1.07        1.07        None
+E-0.125-D-0.1/log2.aig/re-log2-0.125-0.10.sdimacs                  SEGMENTATION FAULT               5.76        5.94        None
+E-0.125-D-0.1/max.aig/re-max-0.125-0.10.sdimacs                    OUT OF MEMORY                  464.62      464.67        None
+E-0.125-D-0.1/mem_ctrl.aig/re-mem_ctrl-0.125-0.10.sdimacs          SEGMENTATION FAULT               3.81        4.08        None
+E-0.125-D-0.1/multiplier.aig/re-multiplier-0.125-0.10.sdimacs      SEGMENTATION FAULT               4.85        5.03        None
+E-0.125-D-0.1/priority.aig/re-priority-0.125-0.10.sdimacs          OUT OF MEMORY                  683.07      683.08        None
+E-0.125-D-0.1/router.aig/re-router-0.125-0.10.sdimacs              OUT OF MEMORY                  418.85      418.86        None
+E-0.125-D-0.1/sin.aig/re-sin-0.125-0.10.sdimacs                    TIMEOUT                        901.66      901.68        None
+E-0.125-D-0.1/sqrt.aig/re-sqrt-0.125-0.10.sdimacs                  SEGMENTATION FAULT               4.12        4.30        None
+E-0.125-D-0.1/square.aig/re-square-0.125-0.10.sdimacs              TIMEOUT                        901.71      901.73        None
+E-0.125-D-0.1/voter.aig/re-voter-0.125-0.10.sdimacs                TIMEOUT                        900.99      901.07        None
+E-0.125-D-0.1/adder.aig/ere-adder-0.125-0.10.sdimacs               OUT OF MEMORY                  531.66      531.72        None
+E-0.125-D-0.1/arbiter.aig/ere-arbiter-0.125-0.10.sdimacs           OUT OF MEMORY                  576.89      576.91        None
+E-0.125-D-0.1/bar.aig/ere-bar-0.125-0.10.sdimacs                   OUT OF MEMORY                  674.54      674.56        None
+E-0.125-D-0.1/c1355.bench/ere-c1355-0.125-0.10.sdimacs             OUT OF MEMORY                  705.89      705.91        None
+E-0.125-D-0.1/c1908.bench/ere-c1908-0.125-0.10.sdimacs             OUT OF MEMORY                  499.64      499.65        None
+E-0.125-D-0.1/c2670.bench/ere-c2670-0.125-0.10.sdimacs             OUT OF MEMORY                  583.26      583.32        None
+E-0.125-D-0.1/c3540.bench/ere-c3540-0.125-0.10.sdimacs             OUT OF MEMORY                  857.81      857.87        None
+E-0.125-D-0.1/c432.bench/ere-c432-0.125-0.10.sdimacs               OUT OF MEMORY                  311.25      311.26        None
+E-0.125-D-0.1/c499.bench/ere-c499-0.125-0.10.sdimacs               OUT OF MEMORY                  611.66      611.71        None
+E-0.125-D-0.1/c5315.bench/ere-c5315-0.125-0.10.sdimacs             OUT OF MEMORY                  645.71      645.82        None
+E-0.125-D-0.1/c6288.bench/ere-c6288-0.125-0.10.sdimacs             TIMEOUT                        901.82      901.88        None
+E-0.125-D-0.1/c7552.bench/ere-c7552-0.125-0.10.sdimacs             OUT OF MEMORY                  696.39      696.44        None
+E-0.125-D-0.1/c880.bench/ere-c880-0.125-0.10.sdimacs               OUT OF MEMORY                  354.45      354.50        None
+E-0.125-D-0.1/cavlc.aig/ere-cavlc-0.125-0.10.sdimacs               OUT OF MEMORY                  407.06      407.11        None
+E-0.125-D-0.1/ctrl.aig/ere-ctrl-0.125-0.10.sdimacs                 done                             0.14        0.14        None
+E-0.125-D-0.1/dec.aig/ere-dec-0.125-0.10.sdimacs                   done                             0.41        0.41        None
+E-0.125-D-0.1/div.aig/ere-div-0.125-0.10.sdimacs                   SEGMENTATION FAULT               3.08        3.26        None
+E-0.125-D-0.1/hyp.aig/ere-hyp-0.125-0.10.sdimacs                   SEGMENTATION FAULT              11.14       11.32        None
+E-0.125-D-0.1/i2c.aig/ere-i2c-0.125-0.10.sdimacs                   OUT OF MEMORY                  502.37      502.46        None
+E-0.125-D-0.1/int2float.aig/ere-int2float-0.125-0.10.sdimacs       done                             1.03        1.08        None
+E-0.125-D-0.1/log2.aig/ere-log2-0.125-0.10.sdimacs                 SEGMENTATION FAULT               5.02        5.23        None
+E-0.125-D-0.1/max.aig/ere-max-0.125-0.10.sdimacs                   OUT OF MEMORY                  474.36      474.37        None
+E-0.125-D-0.1/mem_ctrl.aig/ere-mem_ctrl-0.125-0.10.sdimacs         SEGMENTATION FAULT               3.27        3.45        None
+E-0.125-D-0.1/multiplier.aig/ere-multiplier-0.125-0.10.sdimacs     SEGMENTATION FAULT               5.06        5.24        None
+E-0.125-D-0.1/priority.aig/ere-priority-0.125-0.10.sdimacs         OUT OF MEMORY                  669.60      669.62        None
+E-0.125-D-0.1/router.aig/ere-router-0.125-0.10.sdimacs             OUT OF MEMORY                  352.73      352.74        None
+E-0.125-D-0.1/sin.aig/ere-sin-0.125-0.10.sdimacs                   TIMEOUT                        901.50      901.59        None
+E-0.125-D-0.1/sqrt.aig/ere-sqrt-0.125-0.10.sdimacs                 SEGMENTATION FAULT               3.90        4.08        None
+E-0.125-D-0.1/square.aig/ere-square-0.125-0.10.sdimacs             TIMEOUT                        901.71      901.73        None
+E-0.125-D-0.1/voter.aig/ere-voter-0.125-0.10.sdimacs               TIMEOUT                        901.05      901.07        None
+E-0.125-D-0.01/adder.aig/re-adder-0.125-0.01.sdimacs               OUT OF MEMORY                  552.12      552.16        None
+E-0.125-D-0.01/arbiter.aig/re-arbiter-0.125-0.01.sdimacs           OUT OF MEMORY                  332.13      332.13        None
+E-0.125-D-0.01/bar.aig/re-bar-0.125-0.01.sdimacs                   OUT OF MEMORY                  767.50      767.51        None
+E-0.125-D-0.01/c1355.bench/re-c1355-0.125-0.01.sdimacs             OUT OF MEMORY                  516.02      516.03        None
+E-0.125-D-0.01/c1908.bench/re-c1908-0.125-0.01.sdimacs             TIMEOUT                        901.08      901.09        None
+E-0.125-D-0.01/c2670.bench/re-c2670-0.125-0.01.sdimacs             OUT OF MEMORY                  615.94      615.95        None
+E-0.125-D-0.01/c3540.bench/re-c3540-0.125-0.01.sdimacs             OUT OF MEMORY                  456.48      456.52        None
+E-0.125-D-0.01/c432.bench/re-c432-0.125-0.01.sdimacs               OUT OF MEMORY                  519.45      519.46        None
+E-0.125-D-0.01/c499.bench/re-c499-0.125-0.01.sdimacs               OUT OF MEMORY                  528.97      529.02        None
+E-0.125-D-0.01/c5315.bench/re-c5315-0.125-0.01.sdimacs             OUT OF MEMORY                  506.83      506.84        None
+E-0.125-D-0.01/c6288.bench/re-c6288-0.125-0.01.sdimacs             OUT OF MEMORY                  667.99      668.00        None
+E-0.125-D-0.01/c7552.bench/re-c7552-0.125-0.01.sdimacs             OUT OF MEMORY                  691.23      691.24        None
+E-0.125-D-0.01/c880.bench/re-c880-0.125-0.01.sdimacs               TIMEOUT                        901.09      901.10        None
+E-0.125-D-0.01/cavlc.aig/re-cavlc-0.125-0.01.sdimacs               done                             0.06        0.06        None
+E-0.125-D-0.01/ctrl.aig/re-ctrl-0.125-0.01.sdimacs                 done                             0.01        0.01        None
+E-0.125-D-0.01/dec.aig/re-dec-0.125-0.01.sdimacs                   done                             0.01        0.01        None
+E-0.125-D-0.01/div.aig/re-div-0.125-0.01.sdimacs                   SEGMENTATION FAULT               2.77        2.95        None
+E-0.125-D-0.01/hyp.aig/re-hyp-0.125-0.01.sdimacs                   SEGMENTATION FAULT               9.08        9.26        None
+E-0.125-D-0.01/i2c.aig/re-i2c-0.125-0.01.sdimacs                   OUT OF MEMORY                  356.61      356.64        None
+E-0.125-D-0.01/int2float.aig/re-int2float-0.125-0.01.sdimacs       done                             0.01        0.01        None
+E-0.125-D-0.01/log2.aig/re-log2-0.125-0.01.sdimacs                 SEGMENTATION FAULT               1.43        1.61        None
+E-0.125-D-0.01/max.aig/re-max-0.125-0.01.sdimacs                   TIMEOUT                        901.67      901.69        None
+E-0.125-D-0.01/mem_ctrl.aig/re-mem_ctrl-0.125-0.01.sdimacs         SEGMENTATION FAULT               2.22        2.40        None
+E-0.125-D-0.01/multiplier.aig/re-multiplier-0.125-0.01.sdimacs     SEGMENTATION FAULT               1.26        1.43        None
+E-0.125-D-0.01/priority.aig/re-priority-0.125-0.01.sdimacs         OUT OF MEMORY                  289.19      289.22        None
+E-0.125-D-0.01/router.aig/re-router-0.125-0.01.sdimacs             TIMEOUT                        901.15      901.16        None
+E-0.125-D-0.01/sin.aig/re-sin-0.125-0.01.sdimacs                   TIMEOUT                        901.47      901.49        None
+E-0.125-D-0.01/sqrt.aig/re-sqrt-0.125-0.01.sdimacs                 SEGMENTATION FAULT               1.25        1.44        None
+E-0.125-D-0.01/square.aig/re-square-0.125-0.01.sdimacs             TIMEOUT                        901.53      901.60        None
+E-0.125-D-0.01/voter.aig/re-voter-0.125-0.01.sdimacs               TIMEOUT                        900.98      901.05        None
+E-0.125-D-0.01/adder.aig/ere-adder-0.125-0.01.sdimacs              OUT OF MEMORY                  477.53      477.53        None
+E-0.125-D-0.01/arbiter.aig/ere-arbiter-0.125-0.01.sdimacs          OUT OF MEMORY                  333.37      333.38        None
+E-0.125-D-0.01/bar.aig/ere-bar-0.125-0.01.sdimacs                  OUT OF MEMORY                  639.97      639.98        None
+E-0.125-D-0.01/c1355.bench/ere-c1355-0.125-0.01.sdimacs            OUT OF MEMORY                  478.87      478.88        None
+E-0.125-D-0.01/c1908.bench/ere-c1908-0.125-0.01.sdimacs            TIMEOUT                        901.10      901.12        None
+E-0.125-D-0.01/c2670.bench/ere-c2670-0.125-0.01.sdimacs            OUT OF MEMORY                  550.07      550.09        None
+E-0.125-D-0.01/c3540.bench/ere-c3540-0.125-0.01.sdimacs            OUT OF MEMORY                  508.54      508.55        None
+E-0.125-D-0.01/c432.bench/ere-c432-0.125-0.01.sdimacs              OUT OF MEMORY                  518.99      519.00        None
+E-0.125-D-0.01/c499.bench/ere-c499-0.125-0.01.sdimacs              OUT OF MEMORY                  533.27      533.31        None
+E-0.125-D-0.01/c5315.bench/ere-c5315-0.125-0.01.sdimacs            OUT OF MEMORY                  480.17      480.21        None
+E-0.125-D-0.01/c6288.bench/ere-c6288-0.125-0.01.sdimacs            OUT OF MEMORY                  670.31      670.33        None
+E-0.125-D-0.01/c7552.bench/ere-c7552-0.125-0.01.sdimacs            OUT OF MEMORY                  854.43      854.44        None
+E-0.125-D-0.01/c880.bench/ere-c880-0.125-0.01.sdimacs              OUT OF MEMORY                  412.21      412.22        None
+E-0.125-D-0.01/cavlc.aig/ere-cavlc-0.125-0.01.sdimacs              done                             0.05        0.06        None
+E-0.125-D-0.01/ctrl.aig/ere-ctrl-0.125-0.01.sdimacs                done                             0.01        0.01        None
+E-0.125-D-0.01/dec.aig/ere-dec-0.125-0.01.sdimacs                  done                             0.01        0.01        None
+E-0.125-D-0.01/div.aig/ere-div-0.125-0.01.sdimacs                  SEGMENTATION FAULT               2.71        2.89        None
+E-0.125-D-0.01/hyp.aig/ere-hyp-0.125-0.01.sdimacs                  SEGMENTATION FAULT               8.68        8.86        None
+E-0.125-D-0.01/i2c.aig/ere-i2c-0.125-0.01.sdimacs                  OUT OF MEMORY                  400.91      400.92        None
+E-0.125-D-0.01/int2float.aig/ere-int2float-0.125-0.01.sdimacs      done                             0.01        0.01        None
+E-0.125-D-0.01/log2.aig/ere-log2-0.125-0.01.sdimacs                SEGMENTATION FAULT               1.33        1.51        None
+E-0.125-D-0.01/max.aig/ere-max-0.125-0.01.sdimacs                  TIMEOUT                        901.70      901.73        None
+E-0.125-D-0.01/mem_ctrl.aig/ere-mem_ctrl-0.125-0.01.sdimacs        SEGMENTATION FAULT               2.18        2.36        None
+E-0.125-D-0.01/multiplier.aig/ere-multiplier-0.125-0.01.sdimacs    SEGMENTATION FAULT               1.25        1.43        None
+E-0.125-D-0.01/priority.aig/ere-priority-0.125-0.01.sdimacs        OUT OF MEMORY                  252.58      252.61        None
+E-0.125-D-0.01/router.aig/ere-router-0.125-0.01.sdimacs            TIMEOUT                        901.16      901.18        None
+E-0.125-D-0.01/sin.aig/ere-sin-0.125-0.01.sdimacs                  TIMEOUT                        901.42      901.50        None
+E-0.125-D-0.01/sqrt.aig/ere-sqrt-0.125-0.01.sdimacs                SEGMENTATION FAULT               1.24        1.42        None
+E-0.125-D-0.01/square.aig/ere-square-0.125-0.01.sdimacs            TIMEOUT                        901.68      901.70        None
+E-0.125-D-0.01/voter.aig/ere-voter-0.125-0.01.sdimacs              TIMEOUT                        901.02      901.07        None
+--------------------------------------------------------------------------------------------------------------------------------
+Run set 1                                                          done                         51751.74     6879.82           -
+
+Statistics:            120 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:             106
