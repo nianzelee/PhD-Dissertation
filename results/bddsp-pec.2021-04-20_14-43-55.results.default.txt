@@ -1,0 +1,106 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/bddsp-pec.xml
+name:                    bddsp-pec
+run sets:                default
+date:                    Tue, 2021-04-20 14:43:55 CST
+tool:                    ABC
+tool executable:         bin/abc
+options:                 
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '-c st; bddsp -r' and propertyfile 'None'
+
+inputfile                    status                       cpu time   wall time        host
+------------------------------------------------------------------------------------------
+adder-0.125-0.10.pec         done                             1.90        1.91        None
+arbiter-0.125-0.10.pec       TIMEOUT (ERROR (1))            900.99      901.09        None
+bar-0.125-0.10.pec           TIMEOUT (ERROR (1))            901.03      901.06        None
+c1355-0.125-0.10.pec         TIMEOUT (SEGMENTATION FAULT)      901.03      901.46        None
+c1908-0.125-0.10.pec         TIMEOUT (ERROR (1))            901.07      901.08        None
+c2670-0.125-0.10.pec         TIMEOUT (SEGMENTATION FAULT)      901.06      901.39        None
+c3540-0.125-0.10.pec         TIMEOUT (ERROR (1))            901.07      901.09        None
+c432-0.125-0.10.pec          done                            11.19       11.19        None
+c499-0.125-0.10.pec          TIMEOUT (ERROR (1))            900.98      901.06        None
+c5315-0.125-0.10.pec         TIMEOUT (SEGMENTATION FAULT)      901.01      901.21        None
+c6288-0.125-0.10.pec         TIMEOUT (ERROR (1))            900.99      901.08        None
+c7552-0.125-0.10.pec         TIMEOUT (ERROR (1))            901.06      901.08        None
+c880-0.125-0.10.pec          TIMEOUT (ERROR (1))            901.05      901.06        None
+cavlc-0.125-0.10.pec         done                             0.27        0.27        None
+ctrl-0.125-0.10.pec          done                             0.04        0.05        None
+dec-0.125-0.10.pec           done                             0.06        0.06        None
+div-0.125-0.10.pec           TIMEOUT (ERROR (1))            901.17      901.19        None
+hyp-0.125-0.10.pec           TIMEOUT (ERROR (1))            901.28      901.30        None
+i2c-0.125-0.10.pec           TIMEOUT (ERROR (1))            901.08      901.11        None
+int2float-0.125-0.10.pec     done                             0.06        0.06        None
+log2-0.125-0.10.pec          TIMEOUT (ERROR (1))            901.03      901.11        None
+max-0.125-0.10.pec           TIMEOUT (ERROR (1))            901.20      901.21        None
+mem_ctrl-0.125-0.10.pec      TIMEOUT (ERROR (1))            900.99      901.09        None
+multiplier-0.125-0.10.pec    TIMEOUT (ERROR (1))            901.06      901.07        None
+priority-0.125-0.10.pec      TIMEOUT (ERROR (1))            901.10      901.12        None
+router-0.125-0.10.pec        done                             0.37        0.38        None
+sin-0.125-0.10.pec           TIMEOUT (ERROR (1))            901.04      901.07        None
+sqrt-0.125-0.10.pec          TIMEOUT (ERROR (1))            901.17      901.19        None
+square-0.125-0.10.pec        TIMEOUT (ERROR (1))            901.25      901.27        None
+voter-0.125-0.10.pec         TIMEOUT (SEGMENTATION FAULT)      901.05      901.31        None
+adder-0.125-0.01.pec         done                             0.40        0.40        None
+arbiter-0.125-0.01.pec       TIMEOUT (ERROR (1))            901.16      901.17        None
+bar-0.125-0.01.pec           done                             7.21        7.21        None
+c1355-0.125-0.01.pec         done                             5.22        5.23        None
+c1908-0.125-0.01.pec         done                             0.50        0.51        None
+c2670-0.125-0.01.pec         done                             0.28        0.28        None
+c3540-0.125-0.01.pec         done                             8.48        8.49        None
+c432-0.125-0.01.pec          done                             0.06        0.06        None
+c499-0.125-0.01.pec          done                             2.17        2.17        None
+c5315-0.125-0.01.pec         done                            66.07       66.08        None
+c6288-0.125-0.01.pec         TIMEOUT (SEGMENTATION FAULT)      901.05      901.25        None
+c7552-0.125-0.01.pec         TIMEOUT (ERROR (1))            901.07      901.14        None
+c880-0.125-0.01.pec          done                             0.64        0.64        None
+cavlc-0.125-0.01.pec         done                             0.05        0.05        None
+ctrl-0.125-0.01.pec          done                             0.05        0.05        None
+dec-0.125-0.01.pec           done                             0.04        0.05        None
+div-0.125-0.01.pec           TIMEOUT (ERROR (1))            901.03      901.12        None
+hyp-0.125-0.01.pec           TIMEOUT (ERROR (1))            901.10      901.12        None
+i2c-0.125-0.01.pec           done                             0.08        0.09        None
+int2float-0.125-0.01.pec     done                             0.05        0.05        None
+log2-0.125-0.01.pec          TIMEOUT (ERROR (1))            901.12      901.14        None
+max-0.125-0.01.pec           TIMEOUT (ERROR (1))            901.16      901.18        None
+mem_ctrl-0.125-0.01.pec      TIMEOUT (ERROR (1))            901.04      901.05        None
+multiplier-0.125-0.01.pec    TIMEOUT (ERROR (1))            901.09      901.12        None
+priority-0.125-0.01.pec      done                             0.12        0.13        None
+router-0.125-0.01.pec        done                             0.05        0.05        None
+sin-0.125-0.01.pec           TIMEOUT (SEGMENTATION FAULT)      901.11      901.31        None
+sqrt-0.125-0.01.pec          TIMEOUT (SEGMENTATION FAULT)      901.07      901.33        None
+square-0.125-0.01.pec        TIMEOUT (ERROR (1))            901.14      901.17        None
+voter-0.125-0.01.pec         TIMEOUT (ERROR (1))            900.99      901.07        None
+------------------------------------------------------------------------------------------
+Run set 1                    done                         32546.42     4513.24           -
+
+Statistics:             60 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              36
