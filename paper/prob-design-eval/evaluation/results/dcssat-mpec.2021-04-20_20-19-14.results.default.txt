@@ -1,0 +1,106 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/dcssat-mpec.xml
+name:                    dcssat-mpec
+run sets:                default
+date:                    Tue, 2021-04-20 20:19:14 CST
+tool:                    DC-SSAT
+tool executable:         bin/dcssat
+options:                 
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                     status                       cpu time   wall time        host
+-------------------------------------------------------------------------------------------
+adder-0.125-0.10.mpec         TIMEOUT                        901.65      901.73        None
+arbiter-0.125-0.10.mpec       OUT OF MEMORY                  533.75      533.82        None
+bar-0.125-0.10.mpec           OUT OF MEMORY                  764.85      764.87        None
+c1355-0.125-0.10.mpec         OUT OF MEMORY                  635.16      635.19        None
+c1908-0.125-0.10.mpec         OUT OF MEMORY                  641.90      641.91        None
+c2670-0.125-0.10.mpec         OUT OF MEMORY                  467.19      467.21        None
+c3540-0.125-0.10.mpec         OUT OF MEMORY                  601.66      601.67        None
+c432-0.125-0.10.mpec          OUT OF MEMORY                  289.74      289.75        None
+c499-0.125-0.10.mpec          OUT OF MEMORY                  642.93      642.94        None
+c5315-0.125-0.10.mpec         OUT OF MEMORY                  552.28      552.30        None
+c6288-0.125-0.10.mpec         TIMEOUT                        901.49      901.62        None
+c7552-0.125-0.10.mpec         OUT OF MEMORY                  710.38      710.39        None
+c880-0.125-0.10.mpec          OUT OF MEMORY                  338.90      338.91        None
+cavlc-0.125-0.10.mpec         OUT OF MEMORY                  388.59      388.60        None
+ctrl-0.125-0.10.mpec          done                             0.06        0.06        None
+dec-0.125-0.10.mpec           done                           181.31      181.32        None
+div-0.125-0.10.mpec           SEGMENTATION FAULT               2.41        2.59        None
+hyp-0.125-0.10.mpec           SEGMENTATION FAULT              10.79       10.98        None
+i2c-0.125-0.10.mpec           OUT OF MEMORY                  528.47      528.52        None
+int2float-0.125-0.10.mpec     done                             4.21        4.22        None
+log2-0.125-0.10.mpec          SEGMENTATION FAULT               5.26        5.45        None
+max-0.125-0.10.mpec           OUT OF MEMORY                  884.89      884.91        None
+mem_ctrl-0.125-0.10.mpec      SEGMENTATION FAULT               2.91        3.09        None
+multiplier-0.125-0.10.mpec    SEGMENTATION FAULT               3.77        3.95        None
+priority-0.125-0.10.mpec      OUT OF MEMORY                  887.35      887.37        None
+router-0.125-0.10.mpec        OUT OF MEMORY                  422.42      422.43        None
+sin-0.125-0.10.mpec           TIMEOUT                        901.58      901.61        None
+sqrt-0.125-0.10.mpec          SEGMENTATION FAULT               3.13        3.31        None
+square-0.125-0.10.mpec        OUT OF MEMORY                  634.92      634.94        None
+voter-0.125-0.10.mpec         TIMEOUT                        901.07      901.09        None
+adder-0.125-0.01.mpec         OUT OF MEMORY                  650.57      650.59        None
+arbiter-0.125-0.01.mpec       OUT OF MEMORY                  259.60      259.63        None
+bar-0.125-0.01.mpec           OUT OF MEMORY                  788.99      789.06        None
+c1355-0.125-0.01.mpec         OUT OF MEMORY                  364.99      365.01        None
+c1908-0.125-0.01.mpec         done                            47.78       47.79        None
+c2670-0.125-0.01.mpec         OUT OF MEMORY                  399.99      400.05        None
+c3540-0.125-0.01.mpec         TIMEOUT                        901.02      901.03        None
+c432-0.125-0.01.mpec          OUT OF MEMORY                  563.28      563.30        None
+c499-0.125-0.01.mpec          OUT OF MEMORY                  345.31      345.32        None
+c5315-0.125-0.01.mpec         OUT OF MEMORY                  393.93      393.94        None
+c6288-0.125-0.01.mpec         OUT OF MEMORY                  814.22      814.26        None
+c7552-0.125-0.01.mpec         OUT OF MEMORY                  637.22      637.30        None
+c880-0.125-0.01.mpec          TIMEOUT                        901.63      901.65        None
+cavlc-0.125-0.01.mpec         done                             0.14        0.15        None
+ctrl-0.125-0.01.mpec          done                             0.01        0.01        None
+dec-0.125-0.01.mpec           done                             0.00        0.01        None
+div-0.125-0.01.mpec           SEGMENTATION FAULT               2.00        2.18        None
+hyp-0.125-0.01.mpec           SEGMENTATION FAULT               8.54        8.73        None
+i2c-0.125-0.01.mpec           OUT OF MEMORY                  358.90      358.95        None
+int2float-0.125-0.01.mpec     done                             0.01        0.01        None
+log2-0.125-0.01.mpec          SEGMENTATION FAULT               1.26        1.45        None
+max-0.125-0.01.mpec           TIMEOUT                        901.26      901.29        None
+mem_ctrl-0.125-0.01.mpec      SEGMENTATION FAULT               2.19        2.38        None
+multiplier-0.125-0.01.mpec    TIMEOUT                        901.29      901.31        None
+priority-0.125-0.01.mpec      OUT OF MEMORY                  532.27      532.28        None
+router-0.125-0.01.mpec        TIMEOUT                        901.08      901.16        None
+sin-0.125-0.01.mpec           TIMEOUT                        901.61      901.63        None
+sqrt-0.125-0.01.mpec          TIMEOUT                        901.05      901.17        None
+square-0.125-0.01.mpec        TIMEOUT                        901.48      901.52        None
+voter-0.125-0.01.mpec         TIMEOUT                        901.04      901.07        None
+-------------------------------------------------------------------------------------------
+Run set 1                     done                         28030.09     3864.04           -
+
+Statistics:             60 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              52

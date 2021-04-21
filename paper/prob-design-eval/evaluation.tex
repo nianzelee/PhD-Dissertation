@@ -1,2 +1,38 @@
 \section{Evaluation}
 \label{sect:prob-evaluation}
+
+\pgfplotstableset{
+    circuit column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string type,column name=\textsc{Circuit}
+                }
+        },
+    time column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
+                }
+        },
+    prob column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=$Pr.$
+                }
+        },
+}
+
+\begin{table}
+    \centering
+    \scriptsize
+    \caption{PEC results}
+    \label{tbl:prob-design-eval-pec}
+    \pgfplotstabletypeset[
+        column type=c,
+        every head row/.style={before row={\toprule
+                        & \multicolumn{4}{c}{ABC} & \multicolumn{4}{c}{DC-SSAT} & \multicolumn{4}{c}{Cachet} & \multicolumn{4}{c}{ApproxMC}\\},after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        empty cells with={--},
+        circuit column/.list={0},
+        time column/.list={1,3,5,7},
+        prob column/.list={2,4,6,8}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-PEC.table.csv}
+\end{table}
