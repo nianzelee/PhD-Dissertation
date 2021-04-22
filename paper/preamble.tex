@@ -84,6 +84,8 @@
 \newcommand{\nodethen}[1]{#1.\mathrm{then}} % BDD node then
 \newcommand{\nodeelse}[1]{#1.\mathrm{else}} % BDD node else
 \newcommand{\nodesp}[1]{#1.\mathrm{sp}} % BDD node satisfying probability
+\newcommand{\er}{\epsilon} % error rate of a gate
+\newcommand{\dr}{\delta} % defect rate of a design
 \DeclareMathOperator*{\argmax}{arg\,max} % maximizing argument
 \DeclareMathOperator*{\argmin}{arg\,min} % minimizing argument
 
@@ -94,12 +96,14 @@
 \definetool{\ressatb}{reSSAT-b}
 \definetool{\erssat}{erSSAT}
 \definetool{\erssatb}{erSSAT-b}
+\definetool{\bddsp}{BDDsp}
 \definetool{\maxplan}{MAXPLAN}
 \definetool{\zander}{ZANDER}
 \definetool{\dcssat}{DC-SSAT}
 \definetool{\complan}{ComPlan}
 \definetool{\minisat}{MiniSat}
 \definetool{\cachet}{Cachet}
+\definetool{\approxmc}{ApproxMC}
 \definetool{\cnfgen}{CNFgen}
 \definetool{\benchexec}{BenchExec}
 \definetool{\abc}{ABC}
