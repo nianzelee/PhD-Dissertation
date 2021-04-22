@@ -1,0 +1,14 @@
+tool	ABC 	ABC 	ABC 	ABC 	ABC 
+run set	default.ISCAS	default.ISCAS	default.ISCAS	default.ISCAS	default.ISCAS
+../../../Benchmarks/ISCAS-benchmarks/	status	Pi	Po	And	Level
+c1355.bench	done	41	32	504	26
+c17.bench	done	5	2	6	3
+c1908.bench	done	33	25	414	32
+c2670.bench	done	233	140	717	21
+c3540.bench	done	50	22	1038	41
+c432.bench	done	36	7	209	42
+c499.bench	done	41	32	400	20
+c5315.bench	done	178	123	1773	38
+c6288.bench	done	32	32	2337	120
+c7552.bench	done	207	108	2074	29
+c880.bench	done	60	26	327	24

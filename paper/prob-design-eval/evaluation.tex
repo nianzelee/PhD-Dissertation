@@ -1,15 +1,23 @@
 \section{Evaluation}
 \label{sect:prob-evaluation}
 
-\subsection{Benchmark set}
-\subsection{Experimental setup}
-\subsection{Results}
-
 \pgfplotstableset{
     circuit column/.style={
             /pgfplots/table/display columns/#1/.style={
-                    string type,column name=\textsc{Circuit}
+                    string type,column type=c,column name=\textsc{Circuit}
                 }
+        },
+    pi column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PI}
+        },
+    po column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PO}
+        },
+    and column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#And}
+        },
+    level column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#Level}
         },
     time column/.style={
             /pgfplots/table/display columns/#1/.style={
@@ -23,13 +31,119 @@
         },
 }
 
+\subsection{Benchmark set}
+
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \caption{Circuit statistics of ISCAS benchmark suite}
+    \label{tbl:prob-design-eval-iscas}
+    \pgfplotstabletypeset[
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        circuit column/.list={0},
+        pi column/.list={1},
+        po column/.list={2},
+        and column/.list={3},
+        level column/.list={4}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-ISCAS.csv}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \caption{Circuit statistics of EPFL benchmark suite}
+    \label{tbl:prob-design-eval-epfl}
+    \pgfplotstabletypeset[
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        circuit column/.list={0},
+        pi column/.list={1},
+        po column/.list={2},
+        and column/.list={3},
+        level column/.list={4}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-EPFL.csv}
+\end{table}
+
+\subsection{Experimental setup}
+\subsection{Results}
+
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \caption{Miter statistics of ISCAS benchmark suite ($\er=0.125,\dr=0.01$)}
+    \label{tbl:prob-design-eval-miter-iscas-0.01}
+    \pgfplotstabletypeset[
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        circuit column/.list={0},
+        pi column/.list={1},
+        ai column/.list={2},
+        and column/.list={3},
+        level column/.list={4}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-ISCAS-Miter-D-0.01.csv}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \caption{Miter statistics of ISCAS benchmark suite ($\er=0.125,\dr=0.1$)}
+    \label{tbl:prob-design-eval-miter-iscas-0.10}
+    \pgfplotstabletypeset[
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        circuit column/.list={0},
+        pi column/.list={1},
+        ai column/.list={2},
+        and column/.list={3},
+        level column/.list={4}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-ISCAS-Miter-D-0.10.csv}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \caption{Miter statistics of EPFL benchmark suite ($\er=0.125,\dr=0.01$)}
+    \label{tbl:prob-design-eval-miter-epfl-0.01}
+    \pgfplotstabletypeset[
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        circuit column/.list={0},
+        pi column/.list={1},
+        ai column/.list={2},
+        and column/.list={3},
+        level column/.list={4}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-EPFL-Miter-D-0.01.csv}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \caption{Miter statistics of EPFL benchmark suite ($\er=0.125,\dr=0.1$)}
+    \label{tbl:prob-design-eval-miter-epfl-0.10}
+    \pgfplotstabletypeset[
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        circuit column/.list={0},
+        pi column/.list={1},
+        ai column/.list={2},
+        and column/.list={3},
+        level column/.list={4}
+    ]
+    {prob-design-eval/evaluation/csv/parsed-EPFL-Miter-D-0.10.csv}
+\end{table}
+
 \begin{table}[ht]
     \centering
     \scriptsize
     \caption{Solving PEC by various techniques ($\er=0.125,\dr=0.01$)}
     \label{tbl:prob-design-eval-pec-0.01}
     \pgfplotstabletypeset[
-        column type=c,
         every head row/.style={before row={\toprule
                         & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat} & \multicolumn{4}{c}{\cachet} & \multicolumn{4}{c}{\approxmc}\\},after row=\midrule},
         every last row/.style={after row=\bottomrule},
@@ -38,7 +152,7 @@
         time column/.list={1,3,5,7},
         prob column/.list={2,4,6,8}
     ]
-    {prob-design-eval/evaluation/csv/parsed-PEC-D-0.01.table.csv}
+    {prob-design-eval/evaluation/csv/parsed-PEC-D-0.01.csv}
 \end{table}
 
 \begin{table}[ht]
@@ -47,7 +161,6 @@
     \caption{Solving PEC by various techniques ($\er=0.125,\dr=0.1$)}
     \label{tbl:prob-design-eval-pec-0.10}
     \pgfplotstabletypeset[
-        column type=c,
         every head row/.style={before row={\toprule
                         & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat} & \multicolumn{4}{c}{\cachet} & \multicolumn{4}{c}{\approxmc}\\},after row=\midrule},
         every last row/.style={after row=\bottomrule},
@@ -56,7 +169,7 @@
         time column/.list={1,3,5,7},
         prob column/.list={2,4,6,8}
     ]
-    {prob-design-eval/evaluation/csv/parsed-PEC-D-0.10.table.csv}
+    {prob-design-eval/evaluation/csv/parsed-PEC-D-0.10.csv}
 \end{table}
 
 \begin{table}[ht]
@@ -65,7 +178,6 @@
     \caption{Solving MPEC by various techniques ($\er=0.125,\dr=0.01$)}
     \label{tbl:prob-design-eval-mpec-0.01}
     \pgfplotstabletypeset[
-        column type=c,
         every head row/.style={before row={\toprule
                         & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
         every last row/.style={after row=\bottomrule},
@@ -74,7 +186,7 @@
         time column/.list={1,3},
         prob column/.list={2,4}
     ]
-    {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.01.table.csv}
+    {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.01.csv}
 \end{table}
 
 \begin{table}[ht]
@@ -83,7 +195,6 @@
     \caption{Solving MPEC by various techniques ($\er=0.125,\dr=0.1$)}
     \label{tbl:prob-design-eval-mpec-0.10}
     \pgfplotstabletypeset[
-        column type=c,
         every head row/.style={before row={\toprule
                         & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
         every last row/.style={after row=\bottomrule},
@@ -92,5 +203,5 @@
         time column/.list={1,3},
         prob column/.list={2,4}
     ]
-    {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.10.table.csv}
+    {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.10.csv}
 \end{table}

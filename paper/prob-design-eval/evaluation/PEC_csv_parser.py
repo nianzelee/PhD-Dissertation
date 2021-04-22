@@ -18,7 +18,7 @@ df = df.fillna(value=np.nan)
 df = df.drop([0, 1])
 # Adjust circuit names
 df = df.replace(regex=pattern, value="")
-df = df.replace(regex=r"mem_ctrl", value="memctrl")
+df = df.replace(regex=r"mem_ctrl", value="mem\_ctrl")
 # Erase CPU time if the task is not done
 for tool in tool_list:
     df[tool + " .1"][df[tool + " "] != "done"] = np.nan
@@ -44,6 +44,4 @@ df.columns = [
 # Drop all-empty rows
 df = df.dropna(how="all", subset=df.columns[1:])
 # Write out a parsed csv file
-df.to_csv(
-    "./csv/parsed-PEC-" + exp_name + ".table.csv", sep="\t", na_rep="nan", index=False
-)
+df.to_csv("./csv/parsed-PEC-" + exp_name + ".csv", sep="\t", na_rep="nan", index=False)

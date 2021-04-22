@@ -2,25 +2,25 @@
 <!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.10//EN" "http://www.sosy-lab.org/benchexec/table-1.10.dtd">
 
 <table>
-    <result filename="results/bddsp-pec.2021-04-20_14-43-55.results.default.D-0.10.xml.bz2">
+    <result filename="../results/bddsp-pec.2021-04-20_14-43-55.results.default.D-0.10.xml.bz2">
         <column title="status"/>
         <column title="cputime"/>
         <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">prob</column>
     </result>
     
-    <result filename="results/dcssat-pec.2021-04-20_17-41-40.results.default.D-0.10.xml.bz2">
+    <result filename="../results/dcssat-pec.2021-04-20_17-41-40.results.default.D-0.10.xml.bz2">
         <column title="status"/>
         <column title="cputime"/>
         <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Pr[SAT]</column>
     </result>
     
-    <result filename="results/cachet-pec.2021-04-20_15-59-08.results.default.D-0.10.xml.bz2">
+    <result filename="../results/cachet-pec.2021-04-20_15-59-08.results.default.D-0.10.xml.bz2">
         <column title="status"/>
         <column title="cputime"/>
         <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Satisfying probability</column>
     </result>
 
-    <result filename="results/approxmc-pec.2021-04-20_12-40-32.results.tight.D-0.10.xml.bz2">
+    <result filename="../results/approxmc-pec.2021-04-20_12-40-32.results.tight.D-0.10.xml.bz2">
         <column title="status"/>
         <column title="cputime"/>
         <column title="sampling vars" numberOfDigits="7" relevantForDiff="true">Sampling set size</column>

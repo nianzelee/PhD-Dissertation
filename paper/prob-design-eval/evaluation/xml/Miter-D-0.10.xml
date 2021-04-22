@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.10//EN" "http://www.sosy-lab.org/benchexec/table-1.10.dtd">
+
+<table>
+    <result filename="../results/circuit-statistics.2021-04-22_14-16-52.results.default.Miter-D-0.10.xml.bz2">
+        <column title="status"/>
+        <column title="Pi">i</column>
+        <column title="Po">o</column>
+        <column title="And">and</column>
+        <column title="Level">lev</column>
+    </result>
+</table>

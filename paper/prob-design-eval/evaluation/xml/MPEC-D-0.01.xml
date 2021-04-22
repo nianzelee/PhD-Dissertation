@@ -2,13 +2,13 @@
 <!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.10//EN" "http://www.sosy-lab.org/benchexec/table-1.10.dtd">
 
 <table>
-    <result filename="results/bddsp-mpec.2021-04-20_18-49-03.results.default.D-0.01.xml.bz2">
+    <result filename="../results/bddsp-mpec.2021-04-20_18-49-03.results.default.D-0.01.xml.bz2">
         <column title="status"/>
         <column title="cputime"/>
         <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">prob</column>
     </result>
     
-    <result filename="results/dcssat-mpec.2021-04-20_20-19-14.results.default.D-0.01.xml.bz2">
+    <result filename="../results/dcssat-mpec.2021-04-20_20-19-14.results.default.D-0.01.xml.bz2">
         <column title="status"/>
         <column title="cputime"/>
         <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Pr[SAT]</column>

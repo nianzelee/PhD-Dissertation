@@ -1,0 +1,23 @@
+tool	ABC 	ABC 	ABC 	ABC 	ABC 
+run set	default.EPFL	default.EPFL	default.EPFL	default.EPFL	default.EPFL
+../../../Benchmarks/EPFL-benchmark/	status	Pi	Po	And	Level
+random_control/arbiter.aig	done	256	129	11839	87
+random_control/cavlc.aig	done	10	11	693	16
+random_control/ctrl.aig	done	7	26	174	10
+random_control/dec.aig	done	8	256	304	3
+random_control/i2c.aig	done	147	142	1342	20
+random_control/int2float.aig	done	11	7	260	16
+random_control/mem_ctrl.aig	done	1204	1231	46836	114
+random_control/priority.aig	done	128	8	978	250
+random_control/router.aig	done	60	30	257	54
+random_control/voter.aig	done	1001	1	13758	70
+arithmetic/adder.aig	done	256	129	1020	255
+arithmetic/bar.aig	done	135	128	3336	12
+arithmetic/div.aig	done	128	128	57247	4372
+arithmetic/hyp.aig	done	256	128	214335	24801
+arithmetic/log2.aig	done	32	32	32060	444
+arithmetic/max.aig	done	512	130	2865	287
+arithmetic/multiplier.aig	done	128	128	27062	274
+arithmetic/sin.aig	done	24	25	5416	225
+arithmetic/sqrt.aig	done	128	64	24618	5058
+arithmetic/square.aig	done	64	128	18484	250

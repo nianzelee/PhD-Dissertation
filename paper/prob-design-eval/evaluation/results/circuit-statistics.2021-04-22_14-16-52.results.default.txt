@@ -1,0 +1,137 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/circuit-statistics.xml
+name:                    circuit-statistics
+run sets:                default
+date:                    Thu, 2021-04-22 14:16:52 CST
+tool:                    ABC
+tool executable:         bin/abc
+options:
+parallel runs:           4
+resource limits:
+- memory:                2000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                2000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    nianzelee-XPS-13-9370
+os:                      Linux-5.4.0-72-generic-x86_64-with-glibc2.29
+cpu:                     Intel Core i7-8550U CPU @ 1.80GHz
+- cores:                 8
+- max frequency:         4000.0 MHz
+- turbo boost enabled:   True
+ram:                     16476.01664 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '-c st; ps' and propertyfile 'None'
+
+inputfile                                                          status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------------------
+../../../Benchmarks/ISCAS-benchmarks/c1355.bench                   done                             0.04        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c17.bench                     done                             0.04        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c1908.bench                   done                             0.03        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c2670.bench                   done                             0.03        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c3540.bench                   done                             0.04        0.05        None
+../../../Benchmarks/ISCAS-benchmarks/c432.bench                    done                             0.03        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c499.bench                    done                             0.04        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c5315.bench                   done                             0.04        0.04        None
+../../../Benchmarks/ISCAS-benchmarks/c6288.bench                   done                             0.09        0.09        None
+../../../Benchmarks/ISCAS-benchmarks/c7552.bench                   done                             0.07        0.08        None
+../../../Benchmarks/ISCAS-benchmarks/c880.bench                    done                             0.04        0.05        None
+../../../Benchmarks/EPFL-benchmark/random_control/arbiter.aig      done                             0.05        0.05        None
+../../../Benchmarks/EPFL-benchmark/random_control/cavlc.aig        done                             0.11        0.11        None
+../../../Benchmarks/EPFL-benchmark/random_control/ctrl.aig         done                             0.04        0.04        None
+../../../Benchmarks/EPFL-benchmark/random_control/dec.aig          done                             0.04        0.04        None
+../../../Benchmarks/EPFL-benchmark/random_control/i2c.aig          done                             0.03        0.04        None
+../../../Benchmarks/EPFL-benchmark/random_control/int2float.aig    done                             0.08        0.08        None
+../../../Benchmarks/EPFL-benchmark/random_control/mem_ctrl.aig     done                             0.09        0.09        None
+../../../Benchmarks/EPFL-benchmark/random_control/priority.aig     done                             0.07        0.07        None
+../../../Benchmarks/EPFL-benchmark/random_control/router.aig       done                             0.04        0.04        None
+../../../Benchmarks/EPFL-benchmark/random_control/voter.aig        done                             0.07        0.08        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/adder.aig            done                             0.08        0.09        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/bar.aig              done                             0.06        0.06        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/div.aig              done                             0.08        0.08        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/hyp.aig              done                             0.51        0.53        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/log2.aig             done                             0.09        0.11        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/max.aig              done                             0.05        0.07        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/multiplier.aig       done                             0.08        0.10        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/sin.aig              done                             0.05        0.05        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/sqrt.aig             done                             0.07        0.07        None
+../../../Benchmarks/EPFL-benchmark/arithmetic/square.aig           done                             0.06        0.06        None
+PPE-benchmarks/adder-0.125-0.10.pec                                done                             0.09        0.09        None
+PPE-benchmarks/arbiter-0.125-0.10.pec                              done                             0.19        0.19        None
+PPE-benchmarks/bar-0.125-0.10.pec                                  done                             0.10        0.12        None
+PPE-benchmarks/c1355-0.125-0.10.pec                                done                             0.03        0.04        None
+PPE-benchmarks/c1908-0.125-0.10.pec                                done                             0.10        0.10        None
+PPE-benchmarks/c2670-0.125-0.10.pec                                done                             0.06        0.07        None
+PPE-benchmarks/c3540-0.125-0.10.pec                                done                             0.04        0.05        None
+PPE-benchmarks/c432-0.125-0.10.pec                                 done                             0.04        0.04        None
+PPE-benchmarks/c499-0.125-0.10.pec                                 done                             0.09        0.11        None
+PPE-benchmarks/c5315-0.125-0.10.pec                                done                             0.05        0.05        None
+PPE-benchmarks/c6288-0.125-0.10.pec                                done                             0.05        0.05        None
+PPE-benchmarks/c7552-0.125-0.10.pec                                done                             0.05        0.05        None
+PPE-benchmarks/c880-0.125-0.10.pec                                 done                             0.12        0.12        None
+PPE-benchmarks/cavlc-0.125-0.10.pec                                done                             0.04        0.05        None
+PPE-benchmarks/ctrl-0.125-0.10.pec                                 done                             0.03        0.04        None
+PPE-benchmarks/dec-0.125-0.10.pec                                  done                             0.03        0.04        None
+PPE-benchmarks/div-0.125-0.10.pec                                  done                             0.49        0.49        None
+PPE-benchmarks/hyp-0.125-0.10.pec                                  done                             2.09        2.10        None
+PPE-benchmarks/i2c-0.125-0.10.pec                                  done                             0.05        0.05        None
+PPE-benchmarks/int2float-0.125-0.10.pec                            done                             0.04        0.04        None
+PPE-benchmarks/log2-0.125-0.10.pec                                 done                             0.30        0.30        None
+PPE-benchmarks/max-0.125-0.10.pec                                  done                             0.05        0.05        None
+PPE-benchmarks/mem_ctrl-0.125-0.10.pec                             done                             0.47        0.48        None
+PPE-benchmarks/multiplier-0.125-0.10.pec                           done                             0.22        0.22        None
+PPE-benchmarks/priority-0.125-0.10.pec                             done                             0.04        0.04        None
+PPE-benchmarks/router-0.125-0.10.pec                               done                             0.04        0.04        None
+PPE-benchmarks/sin-0.125-0.10.pec                                  done                             0.08        0.08        None
+PPE-benchmarks/sqrt-0.125-0.10.pec                                 done                             0.21        0.21        None
+PPE-benchmarks/square-0.125-0.10.pec                               done                             0.17        0.18        None
+PPE-benchmarks/voter-0.125-0.10.pec                                done                             0.11        0.11        None
+PPE-benchmarks/adder-0.125-0.01.pec                                done                             0.04        0.05        None
+PPE-benchmarks/arbiter-0.125-0.01.pec                              done                             0.11        0.11        None
+PPE-benchmarks/bar-0.125-0.01.pec                                  done                             0.05        0.05        None
+PPE-benchmarks/c1355-0.125-0.01.pec                                done                             0.04        0.05        None
+PPE-benchmarks/c1908-0.125-0.01.pec                                done                             0.04        0.04        None
+PPE-benchmarks/c2670-0.125-0.01.pec                                done                             0.04        0.05        None
+PPE-benchmarks/c3540-0.125-0.01.pec                                done                             0.06        0.06        None
+PPE-benchmarks/c432-0.125-0.01.pec                                 done                             0.05        0.06        None
+PPE-benchmarks/c499-0.125-0.01.pec                                 done                             0.04        0.04        None
+PPE-benchmarks/c5315-0.125-0.01.pec                                done                             0.04        0.04        None
+PPE-benchmarks/c6288-0.125-0.01.pec                                done                             0.10        0.12        None
+PPE-benchmarks/c7552-0.125-0.01.pec                                done                             0.07        0.09        None
+PPE-benchmarks/c880-0.125-0.01.pec                                 done                             0.03        0.04        None
+PPE-benchmarks/cavlc-0.125-0.01.pec                                done                             0.03        0.04        None
+PPE-benchmarks/ctrl-0.125-0.01.pec                                 done                             0.07        0.08        None
+PPE-benchmarks/dec-0.125-0.01.pec                                  done                             0.06        0.07        None
+PPE-benchmarks/div-0.125-0.01.pec                                  done                             0.29        0.30        None
+PPE-benchmarks/hyp-0.125-0.01.pec                                  done                             1.53        1.54        None
+PPE-benchmarks/i2c-0.125-0.01.pec                                  done                             0.03        0.04        None
+PPE-benchmarks/int2float-0.125-0.01.pec                            done                             0.04        0.04        None
+PPE-benchmarks/log2-0.125-0.01.pec                                 done                             0.21        0.22        None
+PPE-benchmarks/max-0.125-0.01.pec                                  done                             0.05        0.06        None
+PPE-benchmarks/mem_ctrl-0.125-0.01.pec                             done                             0.29        0.29        None
+PPE-benchmarks/multiplier-0.125-0.01.pec                           done                             0.19        0.19        None
+PPE-benchmarks/priority-0.125-0.01.pec                             done                             0.04        0.04        None
+PPE-benchmarks/router-0.125-0.01.pec                               done                             0.04        0.04        None
+PPE-benchmarks/sin-0.125-0.01.pec                                  done                             0.06        0.06        None
+PPE-benchmarks/sqrt-0.125-0.01.pec                                 done                             0.17        0.17        None
+PPE-benchmarks/square-0.125-0.01.pec                               done                             0.12        0.13        None
+PPE-benchmarks/voter-0.125-0.01.pec                                done                             0.09        0.09        None
+--------------------------------------------------------------------------------------------------------------------------------
+Run set 1                                                          done                            15.19       10.10           -
+
+Statistics:             91 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:               0
