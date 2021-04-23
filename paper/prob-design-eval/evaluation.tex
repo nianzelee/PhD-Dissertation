@@ -1,6 +1,3 @@
-\section{Evaluation}
-\label{sect:prob-evaluation}
-
 \pgfplotstableset{
     circuit column/.style={
             /pgfplots/table/display columns/#1/.style={
@@ -9,6 +6,9 @@
         },
     pi column/.style={
             /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PI}
+        },
+    ai column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#AI}
         },
     po column/.style={
             /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PO}
@@ -31,7 +31,46 @@
         },
 }
 
+\section{Evaluation}
+\label{sect:prob-evaluation}
+
+We evaluated various techniques to solve the proposed PPE formulation.
+Specifically, we focus on PEC and MPEC problems,
+as equivalence checking is widely encountered in automated design verification.
+
+For the worst-case analysis (i.e., MPEC), two SSAT-based techniques are evaluated.
+The signal-probability approach via BDD-based SSAT solving
+is implemented in the \texttt{C} language inside the \abc~\cite{ABC} environment.
+The BDD operations are handled by the \cudd~\cite{CUDD} package.
+Our prototyping implementation\footnote{Available at: \url{\ssatabcurl}}
+of the signal-probability approach is named \bddsp.
+A version of \bddsp without variable reordering during the BDD construction
+is called \bddspnr in the experiments.
+We used \ssatABCRevision in the experiments.
+For the CNF-based SSAT approach,
+we employ the state-of-the-art DPLL-based SSAT solver \dcssat~\cite{Majercik2005}.
+
+For the average-case analysis (i.e., PEC),
+in addition to the above two SSAT-based solutions,
+two techniques based on model counting are also evaluated.
+A classic exact model counter \cachet~\cite{Sang2004,Sang2005ModelCounting} is used
+for the solution via exact weighted model counting.
+Thanks to the proposed formula rewriting
+that converts an instance of weighted model counting into an unweighted one,
+we are able to leverage the latest developments of approximate model counting.
+A state-of-the-art approximate model counter \approxmc-4.0.1~\cite{Chakraborty2013,Chakraborty2016}
+is applied to solve the converted instances.
+To achieve a relatively fair comparison with other exact techniques,
+we set the epsilon parameter to $0.99$ and the delta parameter to $0.01$ for \approxmc.
+
 \subsection{Benchmark set}
+Combinational circuits from the ISCAS\,'85~\cite{ISCAS85-benchmark}
+and EPFL~\cite{EPFL-benchmark} benchmark suites were used in the experiments.
+The circuit statistics are shown in~\cref{tbl:prob-design-eval-iscas,tbl:prob-design-eval-epfl}.
+We represent the circuits as and-inverter graphs (AIGs).
+Although the AIG representation is chosen in our experiments,
+the proposed formulation and solutions are applicable to other circuit representations,
+such as FPGA LUT-based or standard cell-based designs.
 
 \begin{table}[ht]
     \centering
@@ -50,7 +89,7 @@
     {prob-design-eval/evaluation/csv/parsed-ISCAS.csv}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[hp]
     \centering
     \scriptsize
     \caption{Circuit statistics of EPFL benchmark suite}
@@ -67,13 +106,25 @@
     {prob-design-eval/evaluation/csv/parsed-EPFL.csv}
 \end{table}
 
-\subsection{Experimental setup}
-\subsection{Results}
+In order to generate circuits with probabilistic errors,
+we specify an error rate $\er$ of a (data-independent) probabilistic gate and
+a defection rate $\dr$ of an entire design (i.e., the ratio of erroneous gates to all gates in a design).
+We fixed both parameters to constants for evaluation
+and selected probabilistic gates at random according to the defection rate.
+In our experiments, $\er$ was set to $0.125$, and $\dr$ was set to $0.01$ and $0.1$.
+To solve probabilistic equivalence checking,
+a miter circuit that compares a design with probabilistic errors against its error-free counterpart is built.
+Since the two designs are structurally identical except for the probabilistic gates,
+logic synthesis may achieve substantial reduction when the number of erroneous nodes is small.
+In our evaluation, we synthesized a miter with the script \texttt{resyn2} before applying the discussed techniques.
+The statistics of the synthesized miters are shown in~\cref{tbl:prob-design-eval-miter-iscas-0.01,tbl:prob-design-eval-miter-iscas-0.10,tbl:prob-design-eval-miter-epfl-0.01,tbl:prob-design-eval-miter-epfl-0.10}.
+Note that the numbers of auxiliary inputs (AIs) in these tables are the numbers of erroneous gates in the circuits.
+Therefore, a circuit would have more AIs if the specified defection rate is larger.
 
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Miter statistics of ISCAS benchmark suite ($\er=0.125,\dr=0.01$)}
+    \caption{Miter statistics of ISCAS benchmark suite ($\dr=0.01$)}
     \label{tbl:prob-design-eval-miter-iscas-0.01}
     \pgfplotstabletypeset[
         every head row/.style={before row=\toprule,after row=\midrule},
@@ -90,7 +141,7 @@
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Miter statistics of ISCAS benchmark suite ($\er=0.125,\dr=0.1$)}
+    \caption{Miter statistics of ISCAS benchmark suite ($\dr=0.1$)}
     \label{tbl:prob-design-eval-miter-iscas-0.10}
     \pgfplotstabletypeset[
         every head row/.style={before row=\toprule,after row=\midrule},
@@ -104,10 +155,10 @@
     {prob-design-eval/evaluation/csv/parsed-ISCAS-Miter-D-0.10.csv}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[hp]
     \centering
     \scriptsize
-    \caption{Miter statistics of EPFL benchmark suite ($\er=0.125,\dr=0.01$)}
+    \caption{Miter statistics of EPFL benchmark suite ($\dr=0.01$)}
     \label{tbl:prob-design-eval-miter-epfl-0.01}
     \pgfplotstabletypeset[
         every head row/.style={before row=\toprule,after row=\midrule},
@@ -121,10 +172,10 @@
     {prob-design-eval/evaluation/csv/parsed-EPFL-Miter-D-0.01.csv}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[hp]
     \centering
     \scriptsize
-    \caption{Miter statistics of EPFL benchmark suite ($\er=0.125,\dr=0.1$)}
+    \caption{Miter statistics of EPFL benchmark suite ($\dr=0.1$)}
     \label{tbl:prob-design-eval-miter-epfl-0.10}
     \pgfplotstabletypeset[
         every head row/.style={before row=\toprule,after row=\midrule},
@@ -138,10 +189,48 @@
     {prob-design-eval/evaluation/csv/parsed-EPFL-Miter-D-0.10.csv}
 \end{table}
 
-\begin{table}[ht]
+\subsection{Experimental setup}
+Our experiments were performed on a machine with
+one 2.2\,GHz CPU (Intel Xeon Silver 4210) with 40~processing units and 134616\,MB of RAM.
+The operating system was Ubuntu~20.04 (64~bit),
+using Linux~5.4.
+The programs were compiled with \texttt{g++ 9.3.0}.
+Each PEC or MPEC task was limited to a CPU core,
+a CPU time of \SI{15}{min},
+and a memory usage of \SI{15}{GB}.
+To achieve reliable benchmarking,
+we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchexecurl}}~\cite{Benchmarking-STTT}.
+
+\subsection{Results}
+
+\subsubsection{PEC instances}
+The solving results of the PEC instances with the defection rate $\dr$ equal $0.01$ and $0.1$
+are shown in~\cref{tbl:prob-design-eval-pec-0.01,tbl:prob-design-eval-pec-0.10}, respectively.
+The average probabilities for the two circuits to have different outputs and the CPU time are reported.
+The symbol ``-'' in an entry of the tables indicates the execution ran out of computational resource.
+An instance that cannot be solved by any technique is not shown in the tables.
+
+We observe the following phenomenons from these tables.
+First of all, the defection rate strongly influences the performance of all methods.
+As discussed above, the number of AIs is proportional to the defection rate.
+More AIs result in more inputs to a miter and more variables in a formula.
+Therefore, all of the proposed techniques performed worse when $\dr=0.1$.
+Second, \bddsp solved many instances in the shortest time among all compared methods.
+Recall that the complexity of the proposed BDD-based SSAT solving is linear to the numbers of BDD nodes.
+The satisfying probability is readily available as long as the BDD of a miter can be built.
+On the other hand, \dcssat and \cachet are less competitive in the evaluation.
+Both of them failed to handle circuits with more than a thousand gates.
+Finally, \approxmc achieved the best scalability.
+Although it tends to spend more time for small- and medium-sized circuits than \bddsp did,
+it uniquely solved three instances when $\dr=0.01$ and four instances when $\dr=0.1$.
+Enabling any model counter to deal with weighted model counting,
+the proposed formula-rewriting technique demonstrates its value
+in improving the scalability to solve the PEC problem.
+
+\begin{table}[hp]
     \centering
     \scriptsize
-    \caption{Solving PEC by various techniques ($\er=0.125,\dr=0.01$)}
+    \caption{Solving PEC by various techniques ($\dr=0.01$)}
     \label{tbl:prob-design-eval-pec-0.01}
     \pgfplotstabletypeset[
         every head row/.style={before row={\toprule
@@ -158,7 +247,7 @@
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Solving PEC by various techniques ($\er=0.125,\dr=0.1$)}
+    \caption{Solving PEC by various techniques ($\dr=0.1$)}
     \label{tbl:prob-design-eval-pec-0.10}
     \pgfplotstabletypeset[
         every head row/.style={before row={\toprule
@@ -172,10 +261,49 @@
     {prob-design-eval/evaluation/csv/parsed-PEC-D-0.10.csv}
 \end{table}
 
+\subsubsection{MPEC instances}
+The solving results of the MPEC instances with the defection rate $\dr$ equal $0.01$ and $0.1$
+are shown in~\cref{tbl:prob-design-eval-mpec-0.01,tbl:prob-design-eval-mpec-0.10}, respectively.
+The maximum probabilities for the two circuits to have different outputs and the CPU time are reported.
+The symbol ``-'' in an entry of the tables indicates the execution ran out of computational resource.
+An instance that cannot be solved by any technique is not shown in the tables.
+
+We included \bddspnr (i.e., \bddsp without variable reordering) in the MPEC experiments.
+In order to achieve a smaller BDD,
+the \cudd package automatically reorders variables during the BDD construction by default.
+Variable reordering usually achieves better results in our empirical experience.
+For PEC instance, since both the PI and the AI variables are randomly quantified,
+the variable order in BDD construction is irrelevant to signal probability computation.
+Therefore, we always enabled this option in the PEC experiments.
+
+However, variable reordering is problematic under the MPEC scenario.
+For MPEC instances, since the PI variables are existentially and the AI variables are randomly quantified,
+the PI variables must be placed before the AI variables.
+The default reordering, nevertheless, might violate such structure.
+To make variable reordering respect the quantification prefix,
+we classify PI and AI variables into two separate groups and
+require that variable reordering can only happen within each group.
+In the following experiments, we use \bddspnr as a baseline
+to evaluate the performance of the constrained variable reordering.
+
+From these tables, we observe the following phenomenons.
+First, the property violation probabilities between the average case and the worst case
+can differ for several orders of magnitude.
+For example, the difference for circuit \texttt{router} when $\dr=0.01$ is about three orders of magnitude.
+This observation shows the criticality of the MPPE formulation for scenarios
+where the worst-case analysis is concerned.
+Second, same as the PEC experiments, \bddsp performed much better than \dcssat did.
+Regarding the reordering of variables,
+the performance difference is not very consistent.
+There are cases which can be solved by \bddsp within seconds but cannot be solved by \bddspnr, and vice versa.
+Constrained variable reordering is still useful in general.
+However, if the original variable order happens to be good enough for BDD construction,
+enabling the constrained reordering would just incur overhead for CPU time.
+
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Solving MPEC by various techniques ($\er=0.125,\dr=0.01$)}
+    \caption{Solving MPEC by various techniques ($\dr=0.01$)}
     \label{tbl:prob-design-eval-mpec-0.01}
     \pgfplotstabletypeset[
         every head row/.style={before row={\toprule
@@ -192,7 +320,7 @@
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Solving MPEC by various techniques ($\er=0.125,\dr=0.1$)}
+    \caption{Solving MPEC by various techniques ($\dr=0.1$)}
     \label{tbl:prob-design-eval-mpec-0.10}
     \pgfplotstabletypeset[
         every head row/.style={before row={\toprule
