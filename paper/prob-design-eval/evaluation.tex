@@ -179,12 +179,12 @@
     \label{tbl:prob-design-eval-mpec-0.01}
     \pgfplotstabletypeset[
         every head row/.style={before row={\toprule
-                        & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
+                        & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\bddspnr} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
         every last row/.style={after row=\bottomrule},
         empty cells with={--},
         circuit column/.list={0},
-        time column/.list={1,3},
-        prob column/.list={2,4}
+        time column/.list={1,3,5},
+        prob column/.list={2,4,6}
     ]
     {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.01.csv}
 \end{table}
@@ -196,12 +196,12 @@
     \label{tbl:prob-design-eval-mpec-0.10}
     \pgfplotstabletypeset[
         every head row/.style={before row={\toprule
-                        & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
+                        & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\bddspnr} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
         every last row/.style={after row=\bottomrule},
         empty cells with={--},
         circuit column/.list={0},
-        time column/.list={1,3},
-        prob column/.list={2,4}
+        time column/.list={1,3,5},
+        prob column/.list={2,4,6}
     ]
     {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.10.csv}
 \end{table}
