@@ -1,0 +1,106 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/cachet-pec.xml
+name:                    cachet-pec
+run sets:                default
+date:                    Fri, 2021-04-23 13:49:50 CST
+tool:                    Cachet
+tool executable:         bin/cachet
+options:
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                    status                       cpu time   wall time        host
+------------------------------------------------------------------------------------------
+adder-0.125-0.10.pec         TIMEOUT                        900.95      901.02        None
+arbiter-0.125-0.10.pec       TIMEOUT                        900.94      901.04        None
+bar-0.125-0.10.pec           TIMEOUT                        901.01      901.03        None
+c1355-0.125-0.10.pec         TIMEOUT                        901.00      901.03        None
+c1908-0.125-0.10.pec         TIMEOUT                        901.01      901.03        None
+c2670-0.125-0.10.pec         TIMEOUT                        901.00      901.02        None
+c3540-0.125-0.10.pec         TIMEOUT                        901.01      901.03        None
+c432-0.125-0.10.pec          TIMEOUT                        901.01      901.03        None
+c499-0.125-0.10.pec          TIMEOUT                        900.95      901.02        None
+c5315-0.125-0.10.pec         TIMEOUT                        900.91      901.03        None
+c6288-0.125-0.10.pec         TIMEOUT                        901.02      901.04        None
+c7552-0.125-0.10.pec         TIMEOUT                        901.00      901.03        None
+c880-0.125-0.10.pec          TIMEOUT                        900.99      901.02        None
+cavlc-0.125-0.10.pec         done                             1.77        1.77        None
+ctrl-0.125-0.10.pec          done                             0.05        0.05        None
+dec-0.125-0.10.pec           done                             1.34        1.34        None
+div-0.125-0.10.pec           TIMEOUT                        901.08      901.11        None
+hyp-0.125-0.10.pec           TIMEOUT                        901.53      901.56        None
+i2c-0.125-0.10.pec           TIMEOUT                        901.01      901.02        None
+int2float-0.125-0.10.pec     done                             0.36        0.36        None
+log2-0.125-0.10.pec          TIMEOUT                        901.04      901.06        None
+max-0.125-0.10.pec           TIMEOUT                        900.92      901.03        None
+mem_ctrl-0.125-0.10.pec      TIMEOUT                        901.05      901.08        None
+multiplier-0.125-0.10.pec    TIMEOUT                        901.04      901.07        None
+priority-0.125-0.10.pec      TIMEOUT                        901.01      901.03        None
+router-0.125-0.10.pec        TIMEOUT                        900.95      901.02        None
+sin-0.125-0.10.pec           TIMEOUT                        901.01      901.03        None
+sqrt-0.125-0.10.pec          TIMEOUT                        901.02      901.04        None
+square-0.125-0.10.pec        TIMEOUT                        901.03      901.05        None
+voter-0.125-0.10.pec         TIMEOUT                        900.96      901.07        None
+adder-0.125-0.01.pec         TIMEOUT                        901.00      901.03        None
+arbiter-0.125-0.01.pec       TIMEOUT                        901.00      901.04        None
+bar-0.125-0.01.pec           TIMEOUT                        901.00      901.03        None
+c1355-0.125-0.01.pec         TIMEOUT                        900.96      901.03        None
+c1908-0.125-0.01.pec         TIMEOUT                        901.01      901.02        None
+c2670-0.125-0.01.pec         TIMEOUT                        901.01      901.02        None
+c3540-0.125-0.01.pec         TIMEOUT                        901.01      901.03        None
+c432-0.125-0.01.pec          done                             0.29        0.29        None
+c499-0.125-0.01.pec          TIMEOUT                        901.00      901.03        None
+c5315-0.125-0.01.pec         TIMEOUT                        900.91      901.02        None
+c6288-0.125-0.01.pec         TIMEOUT                        900.95      901.03        None
+c7552-0.125-0.01.pec         TIMEOUT                        901.00      901.03        None
+c880-0.125-0.01.pec          done                            11.01       11.01        None
+cavlc-0.125-0.01.pec         done                             0.11        0.11        None
+ctrl-0.125-0.01.pec          done                             0.04        0.04        None
+dec-0.125-0.01.pec           done                             0.04        0.04        None
+div-0.125-0.01.pec           TIMEOUT                        901.02      901.04        None
+hyp-0.125-0.01.pec           TIMEOUT                        901.40      901.42        None
+i2c-0.125-0.01.pec           done                           742.00      742.03        None
+int2float-0.125-0.01.pec     done                             0.04        0.04        None
+log2-0.125-0.01.pec          TIMEOUT                        901.00      901.03        None
+max-0.125-0.01.pec           TIMEOUT                        901.01      901.03        None
+mem_ctrl-0.125-0.01.pec      TIMEOUT                        901.02      901.05        None
+multiplier-0.125-0.01.pec    TIMEOUT                        900.92      901.03        None
+priority-0.125-0.01.pec      TIMEOUT                        900.95      901.03        None
+router-0.125-0.01.pec        done                             6.84        6.84        None
+sin-0.125-0.01.pec           TIMEOUT                        901.01      901.03        None
+sqrt-0.125-0.01.pec          TIMEOUT                        901.01      901.03        None
+square-0.125-0.01.pec        TIMEOUT                        901.01      901.03        None
+voter-0.125-0.01.pec         TIMEOUT                        900.96      901.04        None
+------------------------------------------------------------------------------------------
+Run set 1                    done                         44014.64     6162.99           -
+
+Statistics:             60 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              48
