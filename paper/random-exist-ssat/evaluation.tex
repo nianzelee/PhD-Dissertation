@@ -89,11 +89,11 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
 \begin{figure*}[hp]
     \centering
     \subfloat[CPU time]{
-        \input{random-exist-ssat/evaluation/tex/quantile-cputime-random.tex}
+        \includegraphics{random-exist-ssat/evaluation/plots/quantile-cputime-Random.pdf}
         \label{fig:ressat-quantile-cputime-random}
     }\\
     \subfloat[Memory usage]{
-        \input{random-exist-ssat/evaluation/tex/quantile-memory-random.tex}
+        \includegraphics{random-exist-ssat/evaluation/plots/quantile-memory-Random.pdf}
         \label{fig:ressat-quantile-memory-random}
     }
     \caption{Quantile plots of random $k$-CNF formulas}
@@ -118,11 +118,11 @@ Instead, \ressat stores information as SAT or UNSAT cubes, which are more compac
 \begin{figure*}[t]
     \centering
     \subfloat[CPU time]{
-        \input{random-exist-ssat/evaluation/tex/quantile-cputime-strategic.tex}
+        \includegraphics{random-exist-ssat/evaluation/plots/quantile-cputime-Strategic.pdf}
         \label{fig:ressat-quantile-cputime-strategic}
     }\\
     \subfloat[Memory usage]{
-        \input{random-exist-ssat/evaluation/tex/quantile-memory-strategic.tex}
+        \includegraphics{random-exist-ssat/evaluation/plots/quantile-memory-Strategic.pdf}
         \label{fig:ressat-quantile-memory-strategic}
     }
     \caption{Quantile plots of strategic-company formulas}

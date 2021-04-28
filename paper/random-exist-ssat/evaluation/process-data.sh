@@ -31,3 +31,11 @@ for approach in "${compared_approaches[@]}"; do
         done
     done
 done
+
+echo "Compiling quantile plots from the tex files ..."
+for family in "${formula_families[@]}"; do
+    for identifier in "${column_identifiers[@]}"; do
+        echo "  > Family: ${family}; Identifier: ${identifier}"
+        pdflatex -output-directory=./plots "./tex/quantile-${identifier}-${family}.tex"
+    done
+done
