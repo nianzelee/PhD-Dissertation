@@ -135,6 +135,28 @@
 % customize package "amsthm"
 \renewcommand\qedsymbol{$\blacksquare$}
 
+% customize package "hyperref"
+\hypersetup{pdfpagemode=UseNone} % No sidebar in pdf viewer
+\hypersetup{plainpages=true} % Work if the document has no page numbers
+\hypersetup{bookmarksnumbered=true}
+\hypersetup{draft=false} % links even in draft mode
+
+\definecolor[named]{ACMBlue}{cmyk}{1,0.1,0,0.1}
+\definecolor[named]{ACMYellow}{cmyk}{0,0.16,1,0}
+\definecolor[named]{ACMOrange}{cmyk}{0,0.42,1,0.01}
+\definecolor[named]{ACMRed}{cmyk}{0,0.90,0.86,0}
+\definecolor[named]{ACMLightBlue}{cmyk}{0.49,0.01,0,0}
+\definecolor[named]{ACMGreen}{cmyk}{0.20,0,1,0.19}
+\definecolor[named]{ACMPurple}{cmyk}{0.55,1,0,0.15}
+\definecolor[named]{ACMDarkBlue}{cmyk}{1,0.58,0,0.21}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=ACMPurple,
+    citecolor=ACMPurple,
+    urlcolor=ACMDarkBlue,
+    filecolor=ACMDarkBlue}
+
 % customize package "cleveref"
 \newcommand{\creflastconjunction}{, and~}
 \crefname{equation}{Eq.}{Eqs.}
