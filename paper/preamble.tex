@@ -169,6 +169,55 @@
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 
+% customize package "pgfplotstable"
+\pgfplotstableset{
+    circuit column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string type,column type=c,column name=\textsc{Circuit}
+                }
+        },
+    formula column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string type,column type=c,column name=\textsc{Formula}
+                }
+        },
+    pi column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PI}
+        },
+    ai column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#AI}
+        },
+    po column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PO}
+        },
+    and column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#And}
+        },
+    level column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#Level}
+        },
+    time column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
+                }
+        },
+    prob column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=$\Pr$
+                }
+        },
+    ubound column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=UB
+                }
+        },
+    lbound column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=LB
+                }
+        }
+}
+
 % Fix line counters if multiple algorithms exist
 \makeatletter % Make '@' a normal letter so that it can be used in *.tex files
 \@addtoreset{ALC@line}{algorithm}
