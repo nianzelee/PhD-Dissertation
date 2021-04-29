@@ -30,8 +30,8 @@ We used \ssatBenchRevision in the experiments.
 \subsubsection{Random $k$-CNF formulas}
 The random $k$-CNF formulas are generated using the CNF generator \cnfgen~\cite{Lauria2017CNFgen}.
 Let $k$ be the number of literals in a clause,
-$n$ be the number of variables,
-and $m$ be the number of clauses.
+$n$ be the number of variables of a formula,
+and $m$ be the number of clauses of a formula.
 The CNF formulas were generated with the following parameter settings.
 Let $k$ range from 3 to 9,
 $n$ equal 10, 20, 30, 40, and 50,
@@ -69,18 +69,14 @@ and the number of controlling relations equals 4, 9, 14, and 19.
 In total, there are~\nstrategic~strategic-company formulas.
 
 \subsection{Experimental setup}
-Our experiments were performed on a machine with
-one 2.2\,GHz CPU (Intel Xeon Silver 4210) with 40~processing units and 134616\,MB of RAM.
-The operating system was Ubuntu~20.04 (64~bit),
-using Linux~5.4.
-The programs were compiled with \texttt{g++ 9.3.0}.
+Our experiments were performed on a machine with~\machineSpec.
+The operating system was~\osInfo.
+The programs were compiled with~\compiler.
 Each SSAT-solving task was limited to a CPU core,
-a CPU time of \SI{15}{min},
-and a memory usage of \SI{8}{GB}.
+a CPU time of~\timelimit,
+and a memory usage of~\memlimit.
 To achieve reliable benchmarking,
 we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchexecurl}}~\cite{Benchmarking-STTT}.
-%%% TODO: fix the evaluation commit
-%and \experimentRevision of \cpachecker for evaluation.
 
 \subsection{Results}
 
@@ -105,13 +101,15 @@ of the SSAT instances derived from the random $k$-CNF formulas.
 A data point $(x,y)$ in a quantile plot indicates that
 there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
 In~\cref{fig:ressat-quantile-cputime-random},
-we observe that \ressat solved much more formulas than \dcssat did.
+we observe that \ressat not only solved more formulas than \dcssat,
+but was also more efficient.
 Moreover, the minterm-generalization technique is crucial for the performance of \ressat,
-as can be seen from the huge difference between \ressat and \ressatb.
+as can be seen from the huge gap between \ressat and \ressatb.
 On the other hand,
-\cref{fig:ressat-quantile-memory-random} shows that the memory usage of \dcssat is much larger than that of \ressat.
+\cref{fig:ressat-quantile-memory-random} shows that the memory usage of \dcssat is about two orders of magnitude greater than that of \ressat for large formulas.
 This can be attributed to the subformula caching of \dcssat.
-Instead, \ressat stores information as SAT or UNSAT cubes, which are more compact than subformulas.
+Instead, \ressat stores information as SAT or UNSAT cubes,
+which are more compact than subformulas.
 
 \subsubsection{Strategic-company formulas}
 

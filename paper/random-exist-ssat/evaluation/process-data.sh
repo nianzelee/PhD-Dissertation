@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timestamp='ressat-thesis.2021-04-06_18-22-30'
+timestamp='ressat.2021-04-23_21-45-25'
 compared_approaches=('bare-Cachet' 'minimize-Cachet')
 formula_families=('Random' 'Strategic')
 column_identifiers=('cputime' 'memory')
@@ -17,7 +17,7 @@ for approach in "${compared_approaches[@]}"; do
     done
 done
 
-timestamp='dcssat-thesis-re.2021-04-07_00-22-18'
+timestamp='dcssat-re.2021-04-24_12-18-42'
 compared_approaches=('default')
 
 echo "Generating CSV files of dcssat for quantile plots ..."
