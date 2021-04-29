@@ -41,6 +41,14 @@ for approach in "${compared_approaches[@]}"; do
     done
 done
 
+echo "Compiling quantile plots from the tex files ..."
+for family in "${formula_families[@]}"; do
+    for identifier in "${column_identifiers[@]}"; do
+        echo "  > Family: ${family}; Identifier: ${identifier}"
+        pdflatex -output-directory=./plots "./tex/quantile-${identifier}-${family}.tex"
+    done
+done
+
 timestamp_er='erssat.2021-04-09_12-40-52'
 timestamp_dc='dcssat-er.2021-04-09_23-47-31'
 echo "Generating CSV files of application formulas for scatter plots ..."
@@ -50,6 +58,10 @@ table-generator --no-diff -f csv -o ./csv -x ./scatter.xml -n "erssat.scatter" \
 table-generator --no-diff -f csv -o ./csv -x ./scatter.xml -n "dcssat.scatter" \
     "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2" \
     "./results/${timestamp_dc}.results.default.Application.xml.bz2"
+
+echo "Compiling scatter plots from the tex files ..."
+pdflatex -output-directory=./plots ./tex/scatter-erssat.tex
+pdflatex -output-directory=./plots ./tex/scatter-dcssat.tex
 
 tool_name=(dcssat erssatb erssat)
 application_formula_families=('ToiletA' 'conformant' 'castle' 'MaxCount' 'MPEC')

@@ -1,3 +1,8 @@
+\documentclass{standalone}
+
+\input{preamble-tikz}
+
+\begin{document}
 \begin{circuitikz}
     \tikzset{faulty/.style={muxdemux,muxdemux def={Lh=8,Rh=6,w=6,NL=7,NR=3,NB=0,NT=0},rotate=90}}
     \tikzset{golden/.style={muxdemux,muxdemux def={Lh=8,Rh=6,w=6,NL=4,NR=3,NB=0,NT=0},rotate=90}}
@@ -50,3 +55,4 @@
     \node[font=\scriptsize] at (-1.7,-1.9) {$z_2$};
     \node[font=\scriptsize] at (-1.1,-2) {$t_2$};
 \end{circuitikz}
+\end{document}

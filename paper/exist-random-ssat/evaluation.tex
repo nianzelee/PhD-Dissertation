@@ -91,11 +91,11 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
 \begin{figure*}[ht]
     \centering
     \subfloat[CPU time]{
-        \input{exist-random-ssat/evaluation/tex/quantile-cputime-random.tex}
+        \includegraphics{exist-random-ssat/evaluation/plots/quantile-cputime-Random.pdf}
         \label{fig:erssat-quantile-cputime-random}
     }\\
     \subfloat[Memory usage]{
-        \input{exist-random-ssat/evaluation/tex/quantile-memory-random.tex}
+        \includegraphics{exist-random-ssat/evaluation/plots/quantile-memory-Random.pdf}
         \label{fig:erssat-quantile-memory-random}
     }
     \caption{Quantile plots of random $k$-CNF formulas}
@@ -120,11 +120,11 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
 \begin{figure*}[ht]
     \centering
     \subfloat[CPU time]{
-        \input{exist-random-ssat/evaluation/tex/quantile-cputime-application.tex}
+        \includegraphics{exist-random-ssat/evaluation/plots/quantile-cputime-Application.pdf}
         \label{fig:erssat-quantile-cputime-application}
     }\\
     \subfloat[Memory usage]{
-        \input{exist-random-ssat/evaluation/tex/quantile-memory-application.tex}
+        \includegraphics{exist-random-ssat/evaluation/plots/quantile-memory-Application.pdf}
         \label{fig:erssat-quantile-memory-application}
     }
     \caption{Quantile plots of application formulas}
@@ -134,11 +134,11 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
 \begin{figure*}[ht]
     \centering
     \subfloat[\erssatb]{
-        \input{exist-random-ssat/evaluation/tex/scatter-erssat.tex}
+        \includegraphics{exist-random-ssat/evaluation/plots/scatter-erssat.pdf}
         \label{fig:erssat-scatter-cputime-application}
     }\\
     \subfloat[\dcssat]{
-        \input{exist-random-ssat/evaluation/tex/scatter-dcssat.tex}
+        \includegraphics{exist-random-ssat/evaluation/plots/scatter-dcssat.pdf}
         \label{fig:dcssat-scatter-cputime-application}
     }
     \caption{CPU-time scatter plots of application formulas with \erssat in y-axis and compared approaches in x-axis}
