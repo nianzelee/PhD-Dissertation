@@ -134,3 +134,41 @@ showing that \ressat also works well on structured instances from AI application
 Compared to \dcssat,
 \ressat was able to solve all strategic-company formulas with much smaller memory usage.
 The performance gap between \ressat and \ressatb again confirms the importance of the minterm-generalization technique.
+
+\subsubsection{Probabilistic equivalence checking formulas}
+
+\begin{table}[hp]
+    \centering
+    \scriptsize
+    \caption{Results of solving PEC formulas ($\dr=0.01$)}
+    \label{tbl:random-exist-ssat-pec-0.01}
+    \pgfplotstabletypeset[
+        every head row/.style={before row={\toprule
+                        & \multicolumn{4}{c}{\dcssat} & \multicolumn{6}{c}{\ressat} & \multicolumn{6}{c}{\ressatb}\\},after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        empty cells with={--},
+        formula column/.list={0},
+        time column/.list={1,3,6},
+        prob column/.list={2,4,7},
+        ubound column/.list={5,8}
+    ]
+    {random-exist-ssat/evaluation/csv/parsed-PEC-0.01.csv}
+\end{table}
+
+\begin{table}[hp]
+    \centering
+    \scriptsize
+    \caption{Results of solving PEC formulas ($\dr=0.1$)}
+    \label{tbl:random-exist-ssat-pec-0.10}
+    \pgfplotstabletypeset[
+        every head row/.style={before row={\toprule
+                        & \multicolumn{4}{c}{\dcssat} & \multicolumn{6}{c}{\ressat} & \multicolumn{6}{c}{\ressatb}\\},after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        empty cells with={--},
+        formula column/.list={0},
+        time column/.list={1,3,6},
+        prob column/.list={2,4,7},
+        ubound column/.list={5,8}
+    ]
+    {random-exist-ssat/evaluation/csv/parsed-PEC-0.10.csv}
+\end{table}

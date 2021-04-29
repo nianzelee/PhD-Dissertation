@@ -39,3 +39,6 @@ for family in "${formula_families[@]}"; do
         pdflatex -output-directory=./plots "./tex/quantile-${identifier}-${family}.tex"
     done
 done
+
+table-generator -f csv --no-diff -o ./csv -x ./PEC.xml
+./PEC_csv_parser.py
