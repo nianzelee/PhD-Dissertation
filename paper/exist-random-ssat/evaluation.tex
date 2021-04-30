@@ -117,6 +117,46 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
 
 \subsubsection{Application formulas}
 
+\input{exist-random-ssat/evaluation/tex/data-commands.tex}
+\begin{table}[t]
+    \centering
+    \caption{Summary of the results for~\napplication~application formulas}
+    \label{tbl:exist-random-ssat-application}
+    \begin{tabular}{l|ccc}
+        \toprule
+        Algorithm                   & {\dcssat}                                                     & {\erssat} & {\erssatb} \\
+        \midrule
+        Solved formulas             & \num{\DcssatErDefaultApplicationMissingCount}
+                                    & \num{\ErssatDefaultBddApplicationMissingCount}
+                                    & \num{\ErssatBareBddApplicationMissingCount}                                            \\
+        \qquad \textit{Toilet-A}    & \num{\dcssatToiletA}
+                                    & \num{\erssatToiletA}
+                                    & \num{\erssatbToiletA}                                                                  \\
+        \qquad \textit{Conformant}  & \num{\dcssatconformant}
+                                    & \num{\erssatconformant}
+                                    & \num{\erssatbconformant}                                                               \\
+        \qquad \textit{Sand-Castle} & \num{\dcssatcastle}
+                                    & \num{\erssatcastle}
+                                    & \num{\erssatbcastle}                                                                   \\
+        \qquad \textit{Max-Count}   & \num{\dcssatMaxCount}
+                                    & \num{\erssatMaxCount}
+                                    & \num{\erssatbMaxCount}                                                                 \\
+        \qquad \textit{MPEC}        & \num{\dcssatMPEC}
+                                    & \num{\erssatMPEC}
+                                    & \num{\erssatbMPEC}                                                                     \\
+        Timeouts                    & \num{\DcssatErDefaultApplicationErrorTimeoutCount}
+                                    & \num{\ErssatDefaultBddApplicationErrorTimeoutCount}
+                                    & \num{\ErssatBareBddApplicationErrorTimeoutCount}                                       \\
+        Out of memory               & \num{\DcssatErDefaultApplicationErrorOutOfMemoryCount}
+                                    & \num{\ErssatDefaultBddApplicationErrorOutOfMemoryCount}
+                                    & \num{\ErssatBareBddApplicationErrorOutOfMemoryCount}                                   \\
+        Other inconclusive          & \num{\DcssatErDefaultApplicationErrorOtherInconclusiveCount}
+                                    & \num{\ErssatDefaultBddApplicationErrorOtherInconclusiveCount}
+                                    & \num{\ErssatBareBddApplicationErrorOtherInconclusiveCount}                             \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \begin{figure*}[ht]
     \centering
     \subfloat[CPU time]{
@@ -145,21 +185,7 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
     \label{fig:erssat-scatter-application}
 \end{figure*}
 
-\input{exist-random-ssat/evaluation/tex/data-commands.tex}
-\begin{table}[ht]
-    \centering
-    \caption{The number of solved instances per family}
-    \label{tbl:solved-instances-per-family}
-    \begin{tabular}{c|c|c|c}
-        Family               & \dcssat           & \erssatb           & erssat            \\
-        \hline
-        \textit{Toilet-A}    & \dcssatToiletA    & \erssatbToiletA    & \erssatToiletA    \\
-        \textit{Conformant}  & \dcssatconformant & \erssatbconformant & \erssatconformant \\
-        \textit{Sand-Castle} & \dcssatcastle     & \erssatbcastle     & \erssatcastle     \\
-        \textit{Max-Count}   & \dcssatMaxCount   & \erssatbMaxCount   & \erssatMaxCount   \\
-        \textit{MPEC}        & \dcssatMPEC       & \erssatbMPEC       & \erssatMPEC       \\
-    \end{tabular}
-\end{table}
+The results of solving the application formulas are summarized in~\cref{tbl:exist-random-ssat-application}.
 
 \Cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
 To our surprise, the results are very different from those of random $k$-CNF formulas.
@@ -169,4 +195,3 @@ In order to investigate this phenomenon,
 the scatter plots are shown in~\cref{fig:erssat-scatter-application}.
 A data point $(x,y)$ in the plots indicates that there is a formula processed by both \erssat and a compared approach,
 while \erssat took a CPU time of $y$~seconds and the other approach took a CPU time of $x$~seconds.
-The numbers of instanced solved per family are summarized in~\cref{tbl:solved-instances-per-family}.

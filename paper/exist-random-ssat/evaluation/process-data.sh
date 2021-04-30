@@ -6,7 +6,44 @@ compute_number_solved_instances () {
 }
 
 write_tex_data_command () {
-    echo "\newcommand{\\$1}{\num{$2}}" >> "$3"
+    echo "\newcommand{\\$1}{$2}" >> "$3"
+}
+
+normalize_string_for_benchexec () {
+    # Remove timestamp
+    temp=$(echo "$1" | cut -d'.' -f1)
+    # Tokenize
+    IFS='-' read -ra ARR <<< "$temp"
+    # Change cases and concatenate
+    retval=''
+    for word in "${ARR[@]}"; do
+        word="${word//[0-9]/}"
+        word="${word,,}"
+        word="${word^}"
+        retval+="${word}"
+    done
+    echo "$retval"
+}
+
+write_missing_commands () {
+    PREFIX="${1}${2}"
+    echo "\\ifdefined\\${PREFIX}TotalCount\\else\\edef\\${PREFIX}TotalCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectCount\\else\\edef\\${PREFIX}CorrectCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectTrueCount\\else\\edef\\${PREFIX}CorrectTrueCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectFalseCount\\else\\edef\\${PREFIX}CorrectFalseCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}WrongTrueCount\\else\\edef\\${PREFIX}WrongTrueCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}WrongFalseCount\\else\\edef\\${PREFIX}WrongFalseCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}ErrorTimeoutCount\\else\\edef\\${PREFIX}ErrorTimeoutCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}ErrorOutOfMemoryCount\\else\\edef\\${PREFIX}ErrorOutOfMemoryCount{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectCputime\\else\\edef\\${PREFIX}CorrectCputime{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectCputimeAvg\\else\\edef\\${PREFIX}CorrectCputimeAvg{None}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectWalltime\\else\\edef\\${PREFIX}CorrectWalltime{0}\\fi" >> "$3"
+    echo "\\ifdefined\\${PREFIX}CorrectWalltimeAvg\\else\\edef\\${PREFIX}CorrectWalltimeAvg{None}\\fi" >> "$3"
+}
+
+write_inconclusive_commands () {
+    PREFIX="${1}${2}"
+    echo "\\edef\\${PREFIX}ErrorOtherInconclusiveCount{\\the\\numexpr \\${PREFIX}TotalCount - \\${PREFIX}MissingCount - \\${PREFIX}ErrorTimeoutCount - \\${PREFIX}ErrorOutOfMemoryCount \\relax}" >> "$3"
 }
 
 timestamp='erssat.2021-04-09_12-40-52'
@@ -63,19 +100,54 @@ echo "Compiling scatter plots from the tex files ..."
 pdflatex -output-directory=./plots ./tex/scatter-erssat.tex
 pdflatex -output-directory=./plots ./tex/scatter-dcssat.tex
 
+# Generate the LaTeX commands for application formulas
+cmdfile='./tex/data-commands.tex'
+echo "" > $cmdfile
+echo "Generating data commands for application formulas ..."
+./statistics-tex.py "./results/${timestamp_dc}.results.default.Application.xml.bz2" >> $cmdfile
+./statistics-tex.py "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2" >> $cmdfile
+./statistics-tex.py "./results/${timestamp_er}.results.bare-BDD.Application.xml.bz2" >> $cmdfile
+
+# Define missing commands for those values equal to zero
+write_missing_commands \
+    "$(normalize_string_for_benchexec "$timestamp_dc")" \
+    "$(normalize_string_for_benchexec default-Application)" \
+    "$cmdfile"
+write_missing_commands \
+    "$(normalize_string_for_benchexec "$timestamp_er")" \
+    "$(normalize_string_for_benchexec default-BDD-Application)" \
+    "$cmdfile"
+write_missing_commands \
+    "$(normalize_string_for_benchexec "$timestamp_er")" \
+    "$(normalize_string_for_benchexec bare-BDD-Application)" \
+    "$cmdfile"
+
+# Define other inconclusive commands
+write_inconclusive_commands \
+    "$(normalize_string_for_benchexec "$timestamp_dc")" \
+    "$(normalize_string_for_benchexec default-Application)" \
+    "$cmdfile"
+write_inconclusive_commands \
+    "$(normalize_string_for_benchexec "$timestamp_er")" \
+    "$(normalize_string_for_benchexec default-BDD-Application)" \
+    "$cmdfile"
+write_inconclusive_commands \
+    "$(normalize_string_for_benchexec "$timestamp_er")" \
+    "$(normalize_string_for_benchexec bare-BDD-Application)" \
+    "$cmdfile"
+
 tool_name=(dcssat erssatb erssat)
 application_formula_families=('ToiletA' 'conformant' 'castle' 'MaxCount' 'MPEC')
 #application_formula_families=('ere-ToiletA' 'ere-conformant' 'ere-sand-castle' 'ere-MaxCount' 'ere-MPEC')
-data_commands_file="tex/data-commands.tex"
 echo "Generating a tex file for data commands of application formulas ..."
 table-generator --no-diff -f csv -o ./csv -x ./status.xml -n "status" \
     "./results/${timestamp_dc}.results.default.Application.xml.bz2" \
     "./results/${timestamp_er}.results.bare-BDD.Application.xml.bz2" \
     "./results/${timestamp_er}.results.default-BDD.Application.xml.bz2"
-echo "% Commands for application formulas of ER-SSAT" > "${data_commands_file}"
+echo "% Commands for application formulas of ER-SSAT" >> "${cmdfile}"
 for i in {2..4}; do
     for family in "${application_formula_families[@]}"; do
         number_solved_instances=$(compute_number_solved_instances "${family}" "${i}")
-        write_tex_data_command "${tool_name[i-2]}${family}" "${number_solved_instances}" "${data_commands_file}"
+        write_tex_data_command "${tool_name[i-2]}${family}" "${number_solved_instances}" "${cmdfile}"
     done
 done
