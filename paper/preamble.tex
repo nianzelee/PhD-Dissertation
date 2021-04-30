@@ -9,6 +9,7 @@
 %\usepackage{subfiles}
 \usepackage{booktabs}
 \usepackage{rotating}
+\usepackage{adjustbox}
 \usepackage{xspace}
 \usepackage{tcolorbox}
 \usepackage{subfig}
@@ -178,12 +179,12 @@
 \pgfplotstableset{
     circuit column/.style={
             /pgfplots/table/display columns/#1/.style={
-                    string type,column type=c,column name=\textsc{Circuit}
+                    string type,column type=l,column name=\textsc{Circuit}
                 }
         },
     formula column/.style={
             /pgfplots/table/display columns/#1/.style={
-                    string type,column type=c,column name=\textsc{Formula}
+                    string type,column type=l,column name=\textsc{Formula}
                 }
         },
     pi column/.style={
@@ -219,6 +220,16 @@
     lbound column/.style={
             /pgfplots/table/display columns/#1/.style={
                     string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=LB
+                }
+        },
+    ubtime column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-UB (s)
+                }
+        },
+    lbtime column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-LB (s)
                 }
         }
 }

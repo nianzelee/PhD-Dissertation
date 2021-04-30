@@ -1,0 +1,9 @@
+Formula	DC-T	DC-P	erSSAT-T	erSSAT-P	erSSAT-L	erSSAT-TL	erSSATb-T	erSSATb-P	erSSATb-L	erSSATb-TL
+MaxSAT-keller4-1212.clq.wcnf	nan	nan	0.169898182	0.9755859	nan	nan	nan	nan	0.9653320	0.12
+QIF-CVE-2007-2875	nan	nan	2.022982298	1.000000	nan	nan	nan	nan	0.0000009536743	5.17
+QIF-backdoor-2x16-8	0.011646521	0.0000152588	nan	nan	0.00000005960464	0.16	nan	nan	0.00000005960464	0.15
+QIF-backdoor-32-24	0.009598037	1	0.054105177	1.000000	nan	nan	0.05216017	1.000000	nan	nan
+QIF-bin-search-16	nan	nan	nan	nan	0.001953125	113.67	nan	nan	0.0001220703	141.96
+QIF-reverse	nan	nan	nan	nan	0.0000005960464	546.68	nan	nan	0.0000009536743	432.36
+QIF-reverse2	nan	nan	nan	nan	0.0000002980232	200.88	nan	nan	0.0000009536743	542.40
+SyGuS-sign	528.34960447	0.999985	nan	nan	nan	nan	nan	nan	nan	nan

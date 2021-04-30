@@ -148,3 +148,7 @@ for i in {2..4}; do
         write_tex_data_command "${tool_name[i-2]}${family}" "${number_solved_instances}" "${cmdfile}"
     done
 done
+
+# Generate tables with lower bounds
+table-generator -x Application.xml -f csv --no-diff -o ./csv
+./Application_csv_parser.py
