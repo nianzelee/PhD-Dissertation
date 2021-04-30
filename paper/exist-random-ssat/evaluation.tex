@@ -52,7 +52,7 @@ and the rest are randomly quantified with probability $0.37$.
         \textit{Conformant}  & Adapted from exist-forall QBFs~\cite{Narizzano2006}    & \nconformant \\
         \textit{Sand-Castle} & A probabilistic planning problem~\cite{Majercik1998}   & \nsandcastle \\
         \textit{Max-Count}   & Adapted from maximum model counting~\cite{Fremont2017} & \nmaxcount   \\
-        \textit{MPEC}        & Probabilistic design equivalence checking              & \nmpec       \\
+        \textit{MPEC}        & Maximum probabilistic equivalence checking             & \nmpec       \\
     \end{tabular}
 \end{table}
 
@@ -67,28 +67,24 @@ The third family \textit{Sand-Castle} is a probabilistic conformant planning dom
 The problem can be encoded as E-MAJSAT formulas~\cite{Majercik1998}.
 The family \textit{Max-Count} models the problems of maximum satisfiability, quantitative information flow, and program synthesis with maximum model counting~\cite{Fremont2017}.
 We represented the maximum model counting instances as E-MAJSAT formulas.
-The last family \textit{MPEC} consists of formulas that analyze the maximum probability of a probabilistic circuit to produce erroneous outputs.
-%The MPEC formulas for evaluation were created from \texttt{ISCAS} benchmark suite with the erroneous and defective rates equal to $0.125$ and $0.01$.
+The last family \textit{MPEC} consists of formulas that analyze the maximum probability of a probabilistic circuit to produce erroneous outputs,
+as discussed in~\cref{chap:prob-design-eval}.
 
 \subsection{Experimental setup}
-Our experiments were performed on a machine with
-one 2.2\,GHz CPU (Intel Xeon Silver 4210) with 40~processing units and 134616\,MB of RAM.
-The operating system was Ubuntu~20.04 (64~bit),
-using Linux~5.4.
-The programs were compiled with \texttt{g++ 9.3.0}.
+Our experiments were performed on a machine with~\machineSpec.
+The operating system was~\osInfo.
+The programs were compiled with~\compiler.
 Each SSAT-solving task was limited to a CPU core,
-a CPU time of \SI{15}{min},
-and a memory usage of \SI{8}{GB}.
+a CPU time of~\timelimit,
+and a memory usage of~\memlimit.
 To achieve reliable benchmarking,
 we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchexecurl}}~\cite{Benchmarking-STTT}.
-%%% TODO: fix the evaluation commit
-%and \experimentRevision of \cpachecker for evaluation.
 
 \subsection{Results}
 
 \subsubsection{Random $k$-CNF formulas}
 
-\begin{figure*}[ht]
+\begin{figure*}[hp]
     \centering
     \subfloat[CPU time]{
         \includegraphics{exist-random-ssat/evaluation/plots/quantile-cputime-Random.pdf}
@@ -111,7 +107,7 @@ we observe that \erssat solved a similar amount of formulas as \dcssat did.
 Moreover, the enhancement techniques improve the performance of \erssat a lot,
 as can be seen from the huge difference between \erssat and \erssatb.
 On the other hand,
-\cref{fig:erssat-quantile-memory-random} shows that the memory usage of \dcssat is much larger than that of \erssat.
+\cref{fig:erssat-quantile-memory-random} shows that \dcssat used much more memory than \erssat.
 This can be attributed to the subformula caching of \dcssat.
 Instead, \erssat only builds BDDs for cofactored formulas, which confined its memory footprint.
 
@@ -157,7 +153,24 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
     \end{tabular}
 \end{table}
 
-\begin{figure*}[ht]
+The solving results of the application formulas are summarized in~\cref{tbl:exist-random-ssat-application}.
+For each compared approach,
+the numbers of its exactly solved formulas,
+timeouts, out of memory, and other inconclusive situations are reported.
+To study the solving performance regarding different kinds of formulas,
+we further report the numbers of exactly solved formulas per family.
+Observe that \dcssat exactly solved the most formulas.
+Its advantage mainly comes from family \textit{Sand-Castle},
+where it solved \num{22} formulas,
+but \erssat and \erssatb only solved \num{13} and \num{14} formulas, respectively.
+We will analyze why the proposed clause-containment learning is not suitable for this family later.
+To our surprise, the proposed enhancement techniques seem not very useful on the evaluated application formulas.
+They even worsened the performance over formulas from the family \textit{Toilet-A}.
+While \erssat and \erssatb suffered from more timeouts than \dcssat,
+they did not run out of memory for any formula.
+Instead, \dcssat tends to consume a lot of memory, because it memorizes many subformulas.
+
+\begin{figure*}[hp]
     \centering
     \subfloat[CPU time]{
         \includegraphics{exist-random-ssat/evaluation/plots/quantile-cputime-Application.pdf}
@@ -171,7 +184,13 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
     \label{fig:erssat-quantile-application}
 \end{figure*}
 
-\begin{figure*}[ht]
+\Cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
+We can see that the enhancement techniques affected not only the effectiveness of \erssat but also its efficiency
+from~\cref{fig:erssat-quantile-cputime-application}.
+This phenomenon indicates that the additional effort spent to strengthen a learnt clause is not worthy.
+The reason behind this phenomenon will be inspected in the following.
+
+\begin{figure*}[hp]
     \centering
     \subfloat[\erssatb]{
         \includegraphics{exist-random-ssat/evaluation/plots/scatter-erssat.pdf}
@@ -185,11 +204,24 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
     \label{fig:erssat-scatter-application}
 \end{figure*}
 
+To further examine the suitability of the enhancement techniques,
+we demonstrate the scatter plots with \erssat in y-axis and compared approaches in x-axis
+in~\cref{fig:erssat-scatter-application}.
+A data point $(x,y)$ in the plots indicates that there is a formula processed by both \erssat and a compared approach,
+while \erssat took a CPU time of $y$~seconds and the other approach took a CPU time of $x$~seconds.
+From~\cref{fig:erssat-scatter-cputime-application},
+we find that the enhancement techniques did improve the solving of some formulas,
+but more often they were an overhead to \erssatb.
+\Cref{fig:dcssat-scatter-cputime-application} also shows that
+\dcssat was more efficient to exactly solve formulas than \erssat over the evaluated application formulas.
+
+\subsubsection{Approximate solving}
+
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Results of solving the formulas from \textit{MPEC}}
-    \label{tbl:exist-random-ssat-mpec}
+    \caption{Results of solving the formulas from \textit{Conformant}}
+    \label{tbl:exist-random-ssat-conformant}
     \begin{adjustbox}{angle=90}
         \pgfplotstabletypeset[
             every head row/.style={before row={\toprule
@@ -202,7 +234,7 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
             lbound column/.list={5,9},
             lbtime column/.list={6,10}
         ]
-        {exist-random-ssat/evaluation/csv/parsed-MPEC.csv}
+        {exist-random-ssat/evaluation/csv/parsed-conformant.csv}
     \end{adjustbox}
 \end{table}
 
@@ -230,8 +262,8 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Results of solving the formulas from \textit{Conformant}}
-    \label{tbl:exist-random-ssat-conformant}
+    \caption{Results of solving the formulas from \textit{MPEC}}
+    \label{tbl:exist-random-ssat-mpec}
     \begin{adjustbox}{angle=90}
         \pgfplotstabletypeset[
             every head row/.style={before row={\toprule
@@ -244,17 +276,36 @@ Instead, \erssat only builds BDDs for cofactored formulas, which confined its me
             lbound column/.list={5,9},
             lbtime column/.list={6,10}
         ]
-        {exist-random-ssat/evaluation/csv/parsed-conformant.csv}
+        {exist-random-ssat/evaluation/csv/parsed-MPEC.csv}
     \end{adjustbox}
 \end{table}
 
-The results of solving the application formulas are summarized in~\cref{tbl:exist-random-ssat-application}.
+Recall that the proposed~\cref{alg:erssat} solves an SSAT formula in a converging manner.
+Instead of computing the exact satisfying probability at once,
+it keeps deriving lower bounds of the satisfying probability of a formula.
+This characteristic integrates exact and approximate solving into one approach.
+In the following, we study the approximation ability of \erssat.
+We choose families \textit{Conformant}, \textit{Max-Count}, and \textit{MPEC} for detailed investigation,
+because all of the compared approaches ran out of CPU time or memory over most of their formulas.
 
-\Cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
-To our surprise, the results are very different from those of random $k$-CNF formulas.
-First, \dcssat solved the most instances.
-Second, the bare version \erssatb solved more instances than \erssat did.
-In order to investigate this phenomenon,
-the scatter plots are shown in~\cref{fig:erssat-scatter-application}.
-A data point $(x,y)$ in the plots indicates that there is a formula processed by both \erssat and a compared approach,
-while \erssat took a CPU time of $y$~seconds and the other approach took a CPU time of $x$~seconds.
+\Cref{tbl:exist-random-ssat-conformant,tbl:exist-random-ssat-maxcount,tbl:exist-random-ssat-mpec}
+show the approximate results over the above three families, respectively.
+For \dcssat, the CPU time and exact satisfying probability are reported.
+For \erssat and \erssatb, in addition to the CPU and exact satisfying probability,
+the tightest lower bound and the time elapsed to derive the lower bound are also shown in the tables.
+A formula is not shown in the tables
+if none of the approaches can solve it or derive a non-trivial lower bound for it.
+
+As can be observed from the tables,
+\erssat was able to derive useful tight lower bounds for formulas from these families,
+while \dcssat suffered from timeouts over most of them.
+The approximation ability of \erssat makes it useful for large formulas,
+which cannot be exactly solved by the state-of-the-art approaches.
+
+The above results on the random and application formulas suggest that:
+\begin{itemize}
+    \item The proposed solver \erssat achieves a similar performance as \dcssat in terms of CPU time and outperforms \dcssat in terms of memory consumption on random formulas.
+    \item The proposed solver \erssat is not as good as \dcssat at exactly solving the application formulas, which can be attributed to the overhead caused by the enhancement techniques.
+    \item The proposed solver \erssat is good at deriving tight lower bounds for large formulas. This approximation ability is especially valuable when the size of a formula is beyond the capability of the state-of-the-art exact solver.
+\end{itemize}
+To sum up, our evaluation results demonstrate the unique value of the proposed clause-containment learning.
