@@ -1,0 +1,958 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/dcssat-er.xml
+name:                    dcssat-er
+run sets:                default
+date:                    Sun, 2021-04-25 20:57:51 CST
+tool:                    DC-SSAT
+tool executable:         bin/dcssat
+options:
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                                              status                       cpu time   wall time        host
+--------------------------------------------------------------------------------------------------------------------
+er-random-k-CNF/rand-3-10-20-5.1.sdimacs               done                             0.01        0.02        None
+er-random-k-CNF/rand-3-10-20-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-20-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-20-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-20-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-30-5.10.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-30-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-30-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-30-5.8.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-30-5.9.sdimacs               done                             0.01        0.02        None
+er-random-k-CNF/rand-3-10-40-5.11.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-40-5.12.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-3-10-40-5.13.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-40-5.14.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-40-5.15.sdimacs              done                             0.01        0.03        None
+er-random-k-CNF/rand-3-10-50-5.16.sdimacs              done                             0.01        0.03        None
+er-random-k-CNF/rand-3-10-50-5.17.sdimacs              done                             0.01        0.03        None
+er-random-k-CNF/rand-3-10-50-5.18.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-3-10-50-5.19.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-3-10-50-5.20.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-100-10.36.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-100-10.37.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-100-10.38.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-100-10.39.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-100-10.40.sdimacs            done                             0.01        0.03        None
+er-random-k-CNF/rand-3-20-40-10.21.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-3-20-40-10.22.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-40-10.23.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-40-10.24.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-40-10.25.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-60-10.26.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-60-10.27.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-60-10.28.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-60-10.29.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-60-10.30.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-80-10.31.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-80-10.32.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-80-10.33.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-80-10.34.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-20-80-10.35.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-120-15.51.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-120-15.52.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-120-15.53.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-120-15.54.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-120-15.55.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-150-15.56.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-30-150-15.57.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-150-15.58.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-150-15.59.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-30-150-15.60.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-30-60-15.41.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-60-15.42.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-3-30-60-15.43.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-3-30-60-15.44.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-3-30-60-15.45.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-90-15.46.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-90-15.47.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-30-90-15.48.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-3-30-90-15.49.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-3-30-90-15.50.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-120-20.66.sdimacs            done                             0.04        0.04        None
+er-random-k-CNF/rand-3-40-120-20.67.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-3-40-120-20.68.sdimacs            done                             0.03        0.03        None
+er-random-k-CNF/rand-3-40-120-20.69.sdimacs            done                             0.02        0.03        None
+er-random-k-CNF/rand-3-40-120-20.70.sdimacs            done                             0.02        0.03        None
+er-random-k-CNF/rand-3-40-160-20.71.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-160-20.72.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-160-20.73.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-160-20.74.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-160-20.75.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-200-20.76.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-200-20.77.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-40-200-20.78.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-40-200-20.79.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-40-200-20.80.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-40-80-20.61.sdimacs             done                             0.04        0.05        None
+er-random-k-CNF/rand-3-40-80-20.62.sdimacs             done                             0.03        0.04        None
+er-random-k-CNF/rand-3-40-80-20.63.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-3-40-80-20.64.sdimacs             done                             0.04        0.04        None
+er-random-k-CNF/rand-3-40-80-20.65.sdimacs             done                             0.04        0.04        None
+er-random-k-CNF/rand-3-50-100-25.81.sdimacs            done                             0.48        0.48        None
+er-random-k-CNF/rand-3-50-100-25.82.sdimacs            done                             0.40        0.42        None
+er-random-k-CNF/rand-3-50-100-25.83.sdimacs            done                             0.42        0.43        None
+er-random-k-CNF/rand-3-50-100-25.84.sdimacs            done                             0.17        0.17        None
+er-random-k-CNF/rand-3-50-100-25.85.sdimacs            done                             0.17        0.17        None
+er-random-k-CNF/rand-3-50-150-25.86.sdimacs            done                             0.04        0.04        None
+er-random-k-CNF/rand-3-50-150-25.87.sdimacs            done                             0.11        0.12        None
+er-random-k-CNF/rand-3-50-150-25.88.sdimacs            done                             0.03        0.03        None
+er-random-k-CNF/rand-3-50-150-25.89.sdimacs            done                             0.10        0.11        None
+er-random-k-CNF/rand-3-50-150-25.90.sdimacs            done                             0.08        0.08        None
+er-random-k-CNF/rand-3-50-200-25.91.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-50-200-25.92.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-3-50-200-25.93.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-3-50-200-25.94.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-3-50-200-25.95.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-3-50-250-25.100.sdimacs           done                             0.01        0.02        None
+er-random-k-CNF/rand-3-50-250-25.96.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-50-250-25.97.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-50-250-25.98.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-3-50-250-25.99.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-30-5.1.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-30-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-30-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-30-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-30-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-40-5.10.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-40-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-40-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-40-5.8.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-40-5.9.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-50-5.11.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-4-10-50-5.12.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-50-5.13.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-50-5.14.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-50-5.15.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-60-5.16.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-60-5.17.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-60-5.18.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-4-10-60-5.19.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-4-10-60-5.20.sdimacs              done                             0.01        0.03        None
+er-random-k-CNF/rand-4-20-100-10.31.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-100-10.32.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-4-20-100-10.33.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-100-10.34.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-100-10.35.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-120-10.36.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-4-20-120-10.37.sdimacs            done                             0.01        0.01        None
+er-random-k-CNF/rand-4-20-120-10.38.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-4-20-120-10.39.sdimacs            done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-120-10.40.sdimacs            done                             0.01        0.02        None
+er-random-k-CNF/rand-4-20-60-10.21.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-4-20-60-10.22.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-60-10.23.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-60-10.24.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-60-10.25.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-80-10.26.sdimacs             done                             0.02        0.04        None
+er-random-k-CNF/rand-4-20-80-10.27.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-80-10.28.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-80-10.29.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-20-80-10.30.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-4-30-120-15.46.sdimacs            done                             0.19        0.20        None
+er-random-k-CNF/rand-4-30-120-15.47.sdimacs            done                             0.17        0.17        None
+er-random-k-CNF/rand-4-30-120-15.48.sdimacs            done                             0.18        0.18        None
+er-random-k-CNF/rand-4-30-120-15.49.sdimacs            done                             0.19        0.19        None
+er-random-k-CNF/rand-4-30-120-15.50.sdimacs            done                             0.25        0.25        None
+er-random-k-CNF/rand-4-30-150-15.51.sdimacs            done                             0.20        0.20        None
+er-random-k-CNF/rand-4-30-150-15.52.sdimacs            done                             0.07        0.07        None
+er-random-k-CNF/rand-4-30-150-15.53.sdimacs            done                             0.26        0.26        None
+er-random-k-CNF/rand-4-30-150-15.54.sdimacs            done                             0.20        0.20        None
+er-random-k-CNF/rand-4-30-150-15.55.sdimacs            done                             0.19        0.19        None
+er-random-k-CNF/rand-4-30-180-15.56.sdimacs            done                             0.09        0.10        None
+er-random-k-CNF/rand-4-30-180-15.57.sdimacs            done                             0.05        0.06        None
+er-random-k-CNF/rand-4-30-180-15.58.sdimacs            done                             0.11        0.11        None
+er-random-k-CNF/rand-4-30-180-15.59.sdimacs            done                             0.08        0.08        None
+er-random-k-CNF/rand-4-30-180-15.60.sdimacs            done                             0.05        0.05        None
+er-random-k-CNF/rand-4-30-90-15.41.sdimacs             done                             0.39        0.39        None
+er-random-k-CNF/rand-4-30-90-15.42.sdimacs             done                             0.18        0.18        None
+er-random-k-CNF/rand-4-30-90-15.43.sdimacs             done                             0.55        0.56        None
+er-random-k-CNF/rand-4-30-90-15.44.sdimacs             done                             0.22        0.22        None
+er-random-k-CNF/rand-4-30-90-15.45.sdimacs             done                             0.51        0.52        None
+er-random-k-CNF/rand-4-40-120-20.61.sdimacs            done                            10.09       10.09        None
+er-random-k-CNF/rand-4-40-120-20.62.sdimacs            done                             4.90        4.90        None
+er-random-k-CNF/rand-4-40-120-20.63.sdimacs            done                            15.13       15.13        None
+er-random-k-CNF/rand-4-40-120-20.64.sdimacs            done                             8.54        8.54        None
+er-random-k-CNF/rand-4-40-120-20.65.sdimacs            done                             8.15        8.15        None
+er-random-k-CNF/rand-4-40-160-20.66.sdimacs            done                             9.89        9.89        None
+er-random-k-CNF/rand-4-40-160-20.67.sdimacs            done                             9.67        9.67        None
+er-random-k-CNF/rand-4-40-160-20.68.sdimacs            done                             4.72        4.72        None
+er-random-k-CNF/rand-4-40-160-20.69.sdimacs            done                             5.96        5.96        None
+er-random-k-CNF/rand-4-40-160-20.70.sdimacs            done                             4.13        4.13        None
+er-random-k-CNF/rand-4-40-200-20.71.sdimacs            done                             2.24        2.24        None
+er-random-k-CNF/rand-4-40-200-20.72.sdimacs            done                             1.96        1.96        None
+er-random-k-CNF/rand-4-40-200-20.73.sdimacs            done                             3.23        3.23        None
+er-random-k-CNF/rand-4-40-200-20.74.sdimacs            done                             3.65        3.66        None
+er-random-k-CNF/rand-4-40-200-20.75.sdimacs            done                             0.96        0.96        None
+er-random-k-CNF/rand-4-40-240-20.76.sdimacs            done                             0.36        0.36        None
+er-random-k-CNF/rand-4-40-240-20.77.sdimacs            done                             0.97        0.97        None
+er-random-k-CNF/rand-4-40-240-20.78.sdimacs            done                             0.70        0.70        None
+er-random-k-CNF/rand-4-40-240-20.79.sdimacs            done                             1.05        1.05        None
+er-random-k-CNF/rand-4-40-240-20.80.sdimacs            done                             0.24        0.24        None
+er-random-k-CNF/rand-4-50-150-25.81.sdimacs            done                           252.56      252.57        None
+er-random-k-CNF/rand-4-50-150-25.82.sdimacs            done                           327.52      327.56        None
+er-random-k-CNF/rand-4-50-150-25.83.sdimacs            done                           264.59      264.60        None
+er-random-k-CNF/rand-4-50-150-25.84.sdimacs            done                           299.05      299.06        None
+er-random-k-CNF/rand-4-50-150-25.85.sdimacs            done                           216.91      216.92        None
+er-random-k-CNF/rand-4-50-200-25.86.sdimacs            done                           161.85      161.88        None
+er-random-k-CNF/rand-4-50-200-25.87.sdimacs            done                           234.92      234.92        None
+er-random-k-CNF/rand-4-50-200-25.88.sdimacs            done                           108.96      108.97        None
+er-random-k-CNF/rand-4-50-200-25.89.sdimacs            done                           320.57      320.57        None
+er-random-k-CNF/rand-4-50-200-25.90.sdimacs            done                           214.86      214.90        None
+er-random-k-CNF/rand-4-50-250-25.91.sdimacs            done                            52.16       52.17        None
+er-random-k-CNF/rand-4-50-250-25.92.sdimacs            done                            45.28       45.29        None
+er-random-k-CNF/rand-4-50-250-25.93.sdimacs            done                            32.78       32.79        None
+er-random-k-CNF/rand-4-50-250-25.94.sdimacs            done                            35.84       35.86        None
+er-random-k-CNF/rand-4-50-250-25.95.sdimacs            done                            60.80       60.81        None
+er-random-k-CNF/rand-4-50-300-25.100.sdimacs           done                            10.39       10.41        None
+er-random-k-CNF/rand-4-50-300-25.96.sdimacs            done                             6.92        6.92        None
+er-random-k-CNF/rand-4-50-300-25.97.sdimacs            done                             9.78        9.79        None
+er-random-k-CNF/rand-4-50-300-25.98.sdimacs            done                             7.24        7.24        None
+er-random-k-CNF/rand-4-50-300-25.99.sdimacs            done                             6.31        6.33        None
+er-random-k-CNF/rand-5-10-40-5.1.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-40-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-40-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-40-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-40-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-50-5.10.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-50-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-50-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-50-5.8.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-50-5.9.sdimacs               done                             0.01        0.02        None
+er-random-k-CNF/rand-5-10-60-5.11.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-5-10-60-5.12.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-60-5.13.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-60-5.14.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-5-10-60-5.15.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-70-5.16.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-70-5.17.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-70-5.18.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-70-5.19.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-10-70-5.20.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-5-20-100-10.26.sdimacs            done                             0.05        0.05        None
+er-random-k-CNF/rand-5-20-100-10.27.sdimacs            done                             0.04        0.05        None
+er-random-k-CNF/rand-5-20-100-10.28.sdimacs            done                             0.07        0.07        None
+er-random-k-CNF/rand-5-20-100-10.29.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-100-10.30.sdimacs            done                             0.07        0.07        None
+er-random-k-CNF/rand-5-20-120-10.31.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-120-10.32.sdimacs            done                             0.05        0.06        None
+er-random-k-CNF/rand-5-20-120-10.33.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-120-10.34.sdimacs            done                             0.07        0.07        None
+er-random-k-CNF/rand-5-20-120-10.35.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-140-10.36.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-140-10.37.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-140-10.38.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-140-10.39.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-140-10.40.sdimacs            done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-80-10.21.sdimacs             done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-80-10.22.sdimacs             done                             0.06        0.07        None
+er-random-k-CNF/rand-5-20-80-10.23.sdimacs             done                             0.04        0.04        None
+er-random-k-CNF/rand-5-20-80-10.24.sdimacs             done                             0.06        0.06        None
+er-random-k-CNF/rand-5-20-80-10.25.sdimacs             done                             0.06        0.06        None
+er-random-k-CNF/rand-5-30-120-15.41.sdimacs            done                             4.76        4.76        None
+er-random-k-CNF/rand-5-30-120-15.42.sdimacs            done                             3.00        3.00        None
+er-random-k-CNF/rand-5-30-120-15.43.sdimacs            done                             2.14        2.14        None
+er-random-k-CNF/rand-5-30-120-15.44.sdimacs            done                             4.19        4.20        None
+er-random-k-CNF/rand-5-30-120-15.45.sdimacs            done                             2.62        2.62        None
+er-random-k-CNF/rand-5-30-150-15.46.sdimacs            done                             3.70        3.70        None
+er-random-k-CNF/rand-5-30-150-15.47.sdimacs            done                             3.59        3.59        None
+er-random-k-CNF/rand-5-30-150-15.48.sdimacs            done                             4.76        4.76        None
+er-random-k-CNF/rand-5-30-150-15.49.sdimacs            done                             3.50        3.50        None
+er-random-k-CNF/rand-5-30-150-15.50.sdimacs            done                             3.66        3.66        None
+er-random-k-CNF/rand-5-30-180-15.51.sdimacs            done                             3.59        3.59        None
+er-random-k-CNF/rand-5-30-180-15.52.sdimacs            done                             4.56        4.57        None
+er-random-k-CNF/rand-5-30-180-15.53.sdimacs            done                             2.98        2.98        None
+er-random-k-CNF/rand-5-30-180-15.54.sdimacs            done                             3.93        3.94        None
+er-random-k-CNF/rand-5-30-180-15.55.sdimacs            done                             4.86        4.86        None
+er-random-k-CNF/rand-5-30-210-15.56.sdimacs            done                             3.11        3.11        None
+er-random-k-CNF/rand-5-30-210-15.57.sdimacs            done                             1.93        1.95        None
+er-random-k-CNF/rand-5-30-210-15.58.sdimacs            done                             3.89        3.90        None
+er-random-k-CNF/rand-5-30-210-15.59.sdimacs            done                             4.03        4.03        None
+er-random-k-CNF/rand-5-30-210-15.60.sdimacs            done                             2.64        2.64        None
+er-random-k-CNF/rand-5-40-160-20.61.sdimacs            done                           249.85      249.85        None
+er-random-k-CNF/rand-5-40-160-20.62.sdimacs            done                           246.05      246.05        None
+er-random-k-CNF/rand-5-40-160-20.63.sdimacs            done                           220.59      220.60        None
+er-random-k-CNF/rand-5-40-160-20.64.sdimacs            done                           285.52      285.53        None
+er-random-k-CNF/rand-5-40-160-20.65.sdimacs            done                           209.62      209.64        None
+er-random-k-CNF/rand-5-40-200-20.66.sdimacs            done                           218.02      218.03        None
+er-random-k-CNF/rand-5-40-200-20.67.sdimacs            done                           274.05      274.09        None
+er-random-k-CNF/rand-5-40-200-20.68.sdimacs            done                           332.77      332.78        None
+er-random-k-CNF/rand-5-40-200-20.69.sdimacs            done                           463.10      463.16        None
+er-random-k-CNF/rand-5-40-200-20.70.sdimacs            done                           229.23      229.23        None
+er-random-k-CNF/rand-5-40-240-20.71.sdimacs            done                           414.09      414.10        None
+er-random-k-CNF/rand-5-40-240-20.72.sdimacs            done                           289.76      289.76        None
+er-random-k-CNF/rand-5-40-240-20.73.sdimacs            done                           298.78      298.79        None
+er-random-k-CNF/rand-5-40-240-20.74.sdimacs            done                           375.88      375.89        None
+er-random-k-CNF/rand-5-40-240-20.75.sdimacs            done                           356.29      356.34        None
+er-random-k-CNF/rand-5-40-280-20.76.sdimacs            done                           145.50      145.50        None
+er-random-k-CNF/rand-5-40-280-20.77.sdimacs            done                           204.74      204.75        None
+er-random-k-CNF/rand-5-40-280-20.78.sdimacs            done                           216.36      216.37        None
+er-random-k-CNF/rand-5-40-280-20.79.sdimacs            done                           158.33      158.36        None
+er-random-k-CNF/rand-5-40-280-20.80.sdimacs            done                           153.54      153.56        None
+er-random-k-CNF/rand-5-50-200-25.81.sdimacs            OUT OF MEMORY                  834.44      834.47        None
+er-random-k-CNF/rand-5-50-200-25.82.sdimacs            OUT OF MEMORY                  796.36      796.40        None
+er-random-k-CNF/rand-5-50-200-25.83.sdimacs            OUT OF MEMORY                  848.38      848.42        None
+er-random-k-CNF/rand-5-50-200-25.84.sdimacs            OUT OF MEMORY                  809.59      809.72        None
+er-random-k-CNF/rand-5-50-200-25.85.sdimacs            OUT OF MEMORY                  854.52      854.65        None
+er-random-k-CNF/rand-5-50-250-25.86.sdimacs            TIMEOUT                        901.75      901.77        None
+er-random-k-CNF/rand-5-50-250-25.87.sdimacs            TIMEOUT                        901.71      901.74        None
+er-random-k-CNF/rand-5-50-250-25.88.sdimacs            TIMEOUT                        901.70      901.73        None
+er-random-k-CNF/rand-5-50-250-25.89.sdimacs            TIMEOUT                        901.74      901.79        None
+er-random-k-CNF/rand-5-50-250-25.90.sdimacs            TIMEOUT                        901.74      901.78        None
+er-random-k-CNF/rand-5-50-300-25.91.sdimacs            TIMEOUT                        901.61      901.71        None
+er-random-k-CNF/rand-5-50-300-25.92.sdimacs            TIMEOUT                        901.66      901.70        None
+er-random-k-CNF/rand-5-50-300-25.93.sdimacs            TIMEOUT                        901.57      901.74        None
+er-random-k-CNF/rand-5-50-300-25.94.sdimacs            TIMEOUT                        901.67      901.71        None
+er-random-k-CNF/rand-5-50-300-25.95.sdimacs            TIMEOUT                        901.72      901.76        None
+er-random-k-CNF/rand-5-50-350-25.100.sdimacs           TIMEOUT                        901.69      901.73        None
+er-random-k-CNF/rand-5-50-350-25.96.sdimacs            TIMEOUT                        901.67      901.71        None
+er-random-k-CNF/rand-5-50-350-25.97.sdimacs            TIMEOUT                        901.68      901.71        None
+er-random-k-CNF/rand-5-50-350-25.98.sdimacs            TIMEOUT                        901.59      901.70        None
+er-random-k-CNF/rand-5-50-350-25.99.sdimacs            TIMEOUT                        901.68      901.71        None
+er-random-k-CNF/rand-6-10-50-5.1.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-50-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-50-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-50-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-50-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-60-5.10.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-60-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-60-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-60-5.8.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-60-5.9.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-70-5.11.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-70-5.12.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-70-5.13.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-70-5.14.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-70-5.15.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-80-5.16.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-80-5.17.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-80-5.18.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-80-5.19.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-10-80-5.20.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-6-20-100-10.21.sdimacs            done                             0.12        0.12        None
+er-random-k-CNF/rand-6-20-100-10.22.sdimacs            done                             0.12        0.12        None
+er-random-k-CNF/rand-6-20-100-10.23.sdimacs            done                             0.13        0.13        None
+er-random-k-CNF/rand-6-20-100-10.24.sdimacs            done                             0.09        0.10        None
+er-random-k-CNF/rand-6-20-100-10.25.sdimacs            done                             0.10        0.10        None
+er-random-k-CNF/rand-6-20-120-10.26.sdimacs            done                             0.14        0.14        None
+er-random-k-CNF/rand-6-20-120-10.27.sdimacs            done                             0.20        0.20        None
+er-random-k-CNF/rand-6-20-120-10.28.sdimacs            done                             0.12        0.13        None
+er-random-k-CNF/rand-6-20-120-10.29.sdimacs            done                             0.15        0.16        None
+er-random-k-CNF/rand-6-20-120-10.30.sdimacs            done                             0.14        0.15        None
+er-random-k-CNF/rand-6-20-140-10.31.sdimacs            done                             0.20        0.20        None
+er-random-k-CNF/rand-6-20-140-10.32.sdimacs            done                             0.13        0.13        None
+er-random-k-CNF/rand-6-20-140-10.33.sdimacs            done                             0.19        0.19        None
+er-random-k-CNF/rand-6-20-140-10.34.sdimacs            done                             0.16        0.16        None
+er-random-k-CNF/rand-6-20-140-10.35.sdimacs            done                             0.20        0.20        None
+er-random-k-CNF/rand-6-20-160-10.36.sdimacs            done                             0.21        0.21        None
+er-random-k-CNF/rand-6-20-160-10.37.sdimacs            done                             0.20        0.21        None
+er-random-k-CNF/rand-6-20-160-10.38.sdimacs            done                             0.20        0.20        None
+er-random-k-CNF/rand-6-20-160-10.39.sdimacs            done                             0.21        0.22        None
+er-random-k-CNF/rand-6-20-160-10.40.sdimacs            done                             0.19        0.19        None
+er-random-k-CNF/rand-6-30-150-15.41.sdimacs            done                            16.10       16.10        None
+er-random-k-CNF/rand-6-30-150-15.42.sdimacs            done                            10.51       10.51        None
+er-random-k-CNF/rand-6-30-150-15.43.sdimacs            done                             8.14        8.15        None
+er-random-k-CNF/rand-6-30-150-15.44.sdimacs            done                             9.20        9.20        None
+er-random-k-CNF/rand-6-30-150-15.45.sdimacs            done                            11.61       11.61        None
+er-random-k-CNF/rand-6-30-180-15.46.sdimacs            done                            17.57       17.59        None
+er-random-k-CNF/rand-6-30-180-15.47.sdimacs            done                            18.89       18.90        None
+er-random-k-CNF/rand-6-30-180-15.48.sdimacs            done                            18.49       18.50        None
+er-random-k-CNF/rand-6-30-180-15.49.sdimacs            done                            20.81       20.82        None
+er-random-k-CNF/rand-6-30-180-15.50.sdimacs            done                            15.87       15.89        None
+er-random-k-CNF/rand-6-30-210-15.51.sdimacs            done                            19.88       19.88        None
+er-random-k-CNF/rand-6-30-210-15.52.sdimacs            done                            22.97       22.97        None
+er-random-k-CNF/rand-6-30-210-15.53.sdimacs            done                            29.41       29.41        None
+er-random-k-CNF/rand-6-30-210-15.54.sdimacs            done                            22.80       22.80        None
+er-random-k-CNF/rand-6-30-210-15.55.sdimacs            done                            21.27       21.27        None
+er-random-k-CNF/rand-6-30-240-15.56.sdimacs            done                            22.49       22.49        None
+er-random-k-CNF/rand-6-30-240-15.57.sdimacs            done                            21.21       21.22        None
+er-random-k-CNF/rand-6-30-240-15.58.sdimacs            done                            18.47       18.47        None
+er-random-k-CNF/rand-6-30-240-15.59.sdimacs            done                            22.97       22.98        None
+er-random-k-CNF/rand-6-30-240-15.60.sdimacs            done                            21.25       21.26        None
+er-random-k-CNF/rand-6-40-200-20.61.sdimacs            TIMEOUT                        901.87      901.89        None
+er-random-k-CNF/rand-6-40-200-20.62.sdimacs            OUT OF MEMORY                  886.77      886.79        None
+er-random-k-CNF/rand-6-40-200-20.63.sdimacs            OUT OF MEMORY                  895.15      895.17        None
+er-random-k-CNF/rand-6-40-200-20.64.sdimacs            TIMEOUT                        901.72      901.85        None
+er-random-k-CNF/rand-6-40-200-20.65.sdimacs            TIMEOUT                        901.83      901.85        None
+er-random-k-CNF/rand-6-40-240-20.66.sdimacs            TIMEOUT                        901.74      901.75        None
+er-random-k-CNF/rand-6-40-240-20.67.sdimacs            TIMEOUT                        901.70      901.79        None
+er-random-k-CNF/rand-6-40-240-20.68.sdimacs            TIMEOUT                        901.78      901.80        None
+er-random-k-CNF/rand-6-40-240-20.69.sdimacs            TIMEOUT                        901.76      901.78        None
+er-random-k-CNF/rand-6-40-240-20.70.sdimacs            TIMEOUT                        901.87      901.89        None
+er-random-k-CNF/rand-6-40-280-20.71.sdimacs            TIMEOUT                        901.79      901.82        None
+er-random-k-CNF/rand-6-40-280-20.72.sdimacs            TIMEOUT                        901.59      901.72        None
+er-random-k-CNF/rand-6-40-280-20.73.sdimacs            TIMEOUT                        901.71      901.73        None
+er-random-k-CNF/rand-6-40-280-20.74.sdimacs            TIMEOUT                        901.68      901.70        None
+er-random-k-CNF/rand-6-40-280-20.75.sdimacs            TIMEOUT                        901.62      901.70        None
+er-random-k-CNF/rand-6-40-320-20.76.sdimacs            TIMEOUT                        901.68      901.70        None
+er-random-k-CNF/rand-6-40-320-20.77.sdimacs            TIMEOUT                        901.66      901.67        None
+er-random-k-CNF/rand-6-40-320-20.78.sdimacs            TIMEOUT                        901.74      901.76        None
+er-random-k-CNF/rand-6-40-320-20.79.sdimacs            TIMEOUT                        901.76      901.78        None
+er-random-k-CNF/rand-6-40-320-20.80.sdimacs            TIMEOUT                        901.56      901.68        None
+er-random-k-CNF/rand-6-50-250-25.81.sdimacs            TIMEOUT                        901.79      901.82        None
+er-random-k-CNF/rand-6-50-250-25.82.sdimacs            TIMEOUT                        901.75      901.78        None
+er-random-k-CNF/rand-6-50-250-25.83.sdimacs            TIMEOUT                        901.74      901.83        None
+er-random-k-CNF/rand-6-50-250-25.84.sdimacs            TIMEOUT                        901.84      901.86        None
+er-random-k-CNF/rand-6-50-250-25.85.sdimacs            TIMEOUT                        901.81      901.84        None
+er-random-k-CNF/rand-6-50-300-25.86.sdimacs            TIMEOUT                        901.82      901.84        None
+er-random-k-CNF/rand-6-50-300-25.87.sdimacs            TIMEOUT                        901.84      901.86        None
+er-random-k-CNF/rand-6-50-300-25.88.sdimacs            TIMEOUT                        901.62      901.75        None
+er-random-k-CNF/rand-6-50-300-25.89.sdimacs            TIMEOUT                        901.75      901.77        None
+er-random-k-CNF/rand-6-50-300-25.90.sdimacs            TIMEOUT                        901.68      901.71        None
+er-random-k-CNF/rand-6-50-350-25.91.sdimacs            TIMEOUT                        901.65      901.74        None
+er-random-k-CNF/rand-6-50-350-25.92.sdimacs            TIMEOUT                        901.73      901.75        None
+er-random-k-CNF/rand-6-50-350-25.93.sdimacs            TIMEOUT                        901.72      901.75        None
+er-random-k-CNF/rand-6-50-350-25.94.sdimacs            TIMEOUT                        901.83      901.85        None
+er-random-k-CNF/rand-6-50-350-25.95.sdimacs            TIMEOUT                        901.81      901.84        None
+er-random-k-CNF/rand-6-50-400-25.100.sdimacs           TIMEOUT                        901.57      901.70        None
+er-random-k-CNF/rand-6-50-400-25.96.sdimacs            TIMEOUT                        901.71      901.74        None
+er-random-k-CNF/rand-6-50-400-25.97.sdimacs            TIMEOUT                        901.66      901.68        None
+er-random-k-CNF/rand-6-50-400-25.98.sdimacs            TIMEOUT                        901.59      901.68        None
+er-random-k-CNF/rand-6-50-400-25.99.sdimacs            TIMEOUT                        901.70      901.72        None
+er-random-k-CNF/rand-7-10-60-5.1.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-60-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-60-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-60-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-60-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-70-5.10.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-70-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-70-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-70-5.8.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-70-5.9.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-80-5.11.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-80-5.12.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-80-5.13.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-80-5.14.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-80-5.15.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-90-5.16.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-90-5.17.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-90-5.18.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-90-5.19.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-10-90-5.20.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-7-20-120-10.21.sdimacs            done                             0.15        0.15        None
+er-random-k-CNF/rand-7-20-120-10.22.sdimacs            done                             0.14        0.14        None
+er-random-k-CNF/rand-7-20-120-10.23.sdimacs            done                             0.15        0.15        None
+er-random-k-CNF/rand-7-20-120-10.24.sdimacs            done                             0.17        0.17        None
+er-random-k-CNF/rand-7-20-120-10.25.sdimacs            done                             0.15        0.16        None
+er-random-k-CNF/rand-7-20-140-10.26.sdimacs            done                             0.23        0.23        None
+er-random-k-CNF/rand-7-20-140-10.27.sdimacs            done                             0.24        0.25        None
+er-random-k-CNF/rand-7-20-140-10.28.sdimacs            done                             0.27        0.27        None
+er-random-k-CNF/rand-7-20-140-10.29.sdimacs            done                             0.27        0.27        None
+er-random-k-CNF/rand-7-20-140-10.30.sdimacs            done                             0.19        0.19        None
+er-random-k-CNF/rand-7-20-160-10.31.sdimacs            done                             0.29        0.30        None
+er-random-k-CNF/rand-7-20-160-10.32.sdimacs            done                             0.32        0.32        None
+er-random-k-CNF/rand-7-20-160-10.33.sdimacs            done                             0.23        0.23        None
+er-random-k-CNF/rand-7-20-160-10.34.sdimacs            done                             0.31        0.31        None
+er-random-k-CNF/rand-7-20-160-10.35.sdimacs            done                             0.29        0.29        None
+er-random-k-CNF/rand-7-20-180-10.36.sdimacs            done                             0.37        0.37        None
+er-random-k-CNF/rand-7-20-180-10.37.sdimacs            done                             0.36        0.36        None
+er-random-k-CNF/rand-7-20-180-10.38.sdimacs            done                             0.30        0.30        None
+er-random-k-CNF/rand-7-20-180-10.39.sdimacs            done                             0.31        0.31        None
+er-random-k-CNF/rand-7-20-180-10.40.sdimacs            done                             0.38        0.39        None
+er-random-k-CNF/rand-7-30-180-15.41.sdimacs            done                            28.33       28.33        None
+er-random-k-CNF/rand-7-30-180-15.42.sdimacs            done                            27.95       27.95        None
+er-random-k-CNF/rand-7-30-180-15.43.sdimacs            done                            20.40       20.40        None
+er-random-k-CNF/rand-7-30-180-15.44.sdimacs            done                            24.69       24.70        None
+er-random-k-CNF/rand-7-30-180-15.45.sdimacs            done                            19.97       19.97        None
+er-random-k-CNF/rand-7-30-210-15.46.sdimacs            done                            38.30       38.31        None
+er-random-k-CNF/rand-7-30-210-15.47.sdimacs            done                            33.15       33.16        None
+er-random-k-CNF/rand-7-30-210-15.48.sdimacs            done                            36.96       36.96        None
+er-random-k-CNF/rand-7-30-210-15.49.sdimacs            done                            35.57       35.57        None
+er-random-k-CNF/rand-7-30-210-15.50.sdimacs            done                            32.06       32.07        None
+er-random-k-CNF/rand-7-30-240-15.51.sdimacs            done                            42.76       42.77        None
+er-random-k-CNF/rand-7-30-240-15.52.sdimacs            done                            42.92       42.92        None
+er-random-k-CNF/rand-7-30-240-15.53.sdimacs            done                            49.29       49.30        None
+er-random-k-CNF/rand-7-30-240-15.54.sdimacs            done                            42.78       42.80        None
+er-random-k-CNF/rand-7-30-240-15.55.sdimacs            done                            50.60       50.61        None
+er-random-k-CNF/rand-7-30-270-15.56.sdimacs            done                            59.67       59.69        None
+er-random-k-CNF/rand-7-30-270-15.57.sdimacs            done                            67.86       67.87        None
+er-random-k-CNF/rand-7-30-270-15.58.sdimacs            done                            63.01       63.02        None
+er-random-k-CNF/rand-7-30-270-15.59.sdimacs            done                            50.32       50.32        None
+er-random-k-CNF/rand-7-30-270-15.60.sdimacs            done                            45.81       45.82        None
+er-random-k-CNF/rand-7-40-240-20.61.sdimacs            TIMEOUT                        901.63      901.75        None
+er-random-k-CNF/rand-7-40-240-20.62.sdimacs            TIMEOUT                        901.76      901.78        None
+er-random-k-CNF/rand-7-40-240-20.63.sdimacs            TIMEOUT                        901.74      901.76        None
+er-random-k-CNF/rand-7-40-240-20.64.sdimacs            TIMEOUT                        901.70      901.72        None
+er-random-k-CNF/rand-7-40-240-20.65.sdimacs            TIMEOUT                        901.74      901.76        None
+er-random-k-CNF/rand-7-40-280-20.66.sdimacs            TIMEOUT                        901.66      901.68        None
+er-random-k-CNF/rand-7-40-280-20.67.sdimacs            TIMEOUT                        901.60      901.70        None
+er-random-k-CNF/rand-7-40-280-20.68.sdimacs            TIMEOUT                        901.69      901.71        None
+er-random-k-CNF/rand-7-40-280-20.69.sdimacs            TIMEOUT                        901.58      901.70        None
+er-random-k-CNF/rand-7-40-280-20.70.sdimacs            TIMEOUT                        901.68      901.70        None
+er-random-k-CNF/rand-7-40-320-20.71.sdimacs            TIMEOUT                        901.65      901.67        None
+er-random-k-CNF/rand-7-40-320-20.72.sdimacs            TIMEOUT                        901.59      901.61        None
+er-random-k-CNF/rand-7-40-320-20.73.sdimacs            TIMEOUT                        901.64      901.66        None
+er-random-k-CNF/rand-7-40-320-20.74.sdimacs            TIMEOUT                        901.64      901.66        None
+er-random-k-CNF/rand-7-40-320-20.75.sdimacs            TIMEOUT                        901.56      901.65        None
+er-random-k-CNF/rand-7-40-360-20.76.sdimacs            TIMEOUT                        901.62      901.64        None
+er-random-k-CNF/rand-7-40-360-20.77.sdimacs            TIMEOUT                        901.51      901.62        None
+er-random-k-CNF/rand-7-40-360-20.78.sdimacs            TIMEOUT                        901.59      901.61        None
+er-random-k-CNF/rand-7-40-360-20.79.sdimacs            TIMEOUT                        901.61      901.63        None
+er-random-k-CNF/rand-7-40-360-20.80.sdimacs            TIMEOUT                        901.61      901.63        None
+er-random-k-CNF/rand-7-50-300-25.81.sdimacs            TIMEOUT                        901.71      901.73        None
+er-random-k-CNF/rand-7-50-300-25.82.sdimacs            TIMEOUT                        901.69      901.71        None
+er-random-k-CNF/rand-7-50-300-25.83.sdimacs            TIMEOUT                        901.65      901.73        None
+er-random-k-CNF/rand-7-50-300-25.84.sdimacs            TIMEOUT                        901.74      901.75        None
+er-random-k-CNF/rand-7-50-300-25.85.sdimacs            TIMEOUT                        901.62      901.74        None
+er-random-k-CNF/rand-7-50-350-25.86.sdimacs            TIMEOUT                        901.68      901.70        None
+er-random-k-CNF/rand-7-50-350-25.87.sdimacs            TIMEOUT                        901.71      901.72        None
+er-random-k-CNF/rand-7-50-350-25.88.sdimacs            TIMEOUT                        901.66      901.69        None
+er-random-k-CNF/rand-7-50-350-25.89.sdimacs            TIMEOUT                        901.70      901.73        None
+er-random-k-CNF/rand-7-50-350-25.90.sdimacs            TIMEOUT                        901.70      901.72        None
+er-random-k-CNF/rand-7-50-400-25.91.sdimacs            TIMEOUT                        901.59      901.66        None
+er-random-k-CNF/rand-7-50-400-25.92.sdimacs            TIMEOUT                        901.66      901.68        None
+er-random-k-CNF/rand-7-50-400-25.93.sdimacs            TIMEOUT                        901.53      901.65        None
+er-random-k-CNF/rand-7-50-400-25.94.sdimacs            TIMEOUT                        901.64      901.66        None
+er-random-k-CNF/rand-7-50-400-25.95.sdimacs            TIMEOUT                        901.65      901.67        None
+er-random-k-CNF/rand-7-50-450-25.100.sdimacs           TIMEOUT                        901.64      901.66        None
+er-random-k-CNF/rand-7-50-450-25.96.sdimacs            TIMEOUT                        901.66      901.68        None
+er-random-k-CNF/rand-7-50-450-25.97.sdimacs            TIMEOUT                        901.66      901.68        None
+er-random-k-CNF/rand-7-50-450-25.98.sdimacs            TIMEOUT                        901.63      901.71        None
+er-random-k-CNF/rand-7-50-450-25.99.sdimacs            TIMEOUT                        901.67      901.69        None
+er-random-k-CNF/rand-8-10-100-5.16.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-100-5.17.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-100-5.18.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-8-10-100-5.19.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-100-5.20.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-70-5.1.sdimacs               done                             0.01        0.02        None
+er-random-k-CNF/rand-8-10-70-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-70-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-70-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-70-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-80-5.10.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-80-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-80-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-80-5.8.sdimacs               done                             0.01        0.02        None
+er-random-k-CNF/rand-8-10-80-5.9.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-90-5.11.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-90-5.12.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-90-5.13.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-90-5.14.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-8-10-90-5.15.sdimacs              done                             0.01        0.01        None
+er-random-k-CNF/rand-8-20-140-10.21.sdimacs            done                             0.24        0.24        None
+er-random-k-CNF/rand-8-20-140-10.22.sdimacs            done                             0.22        0.22        None
+er-random-k-CNF/rand-8-20-140-10.23.sdimacs            done                             0.19        0.19        None
+er-random-k-CNF/rand-8-20-140-10.24.sdimacs            done                             0.21        0.22        None
+er-random-k-CNF/rand-8-20-140-10.25.sdimacs            done                             0.23        0.24        None
+er-random-k-CNF/rand-8-20-160-10.26.sdimacs            done                             0.28        0.28        None
+er-random-k-CNF/rand-8-20-160-10.27.sdimacs            done                             0.31        0.32        None
+er-random-k-CNF/rand-8-20-160-10.28.sdimacs            done                             0.28        0.29        None
+er-random-k-CNF/rand-8-20-160-10.29.sdimacs            done                             0.26        0.26        None
+er-random-k-CNF/rand-8-20-160-10.30.sdimacs            done                             0.27        0.28        None
+er-random-k-CNF/rand-8-20-180-10.31.sdimacs            done                             0.38        0.39        None
+er-random-k-CNF/rand-8-20-180-10.32.sdimacs            done                             0.35        0.35        None
+er-random-k-CNF/rand-8-20-180-10.33.sdimacs            done                             0.38        0.39        None
+er-random-k-CNF/rand-8-20-180-10.34.sdimacs            done                             0.36        0.37        None
+er-random-k-CNF/rand-8-20-180-10.35.sdimacs            done                             0.30        0.31        None
+er-random-k-CNF/rand-8-20-200-10.36.sdimacs            done                             0.41        0.41        None
+er-random-k-CNF/rand-8-20-200-10.37.sdimacs            done                             0.46        0.46        None
+er-random-k-CNF/rand-8-20-200-10.38.sdimacs            done                             0.41        0.41        None
+er-random-k-CNF/rand-8-20-200-10.39.sdimacs            done                             0.45        0.47        None
+er-random-k-CNF/rand-8-20-200-10.40.sdimacs            done                             0.43        0.43        None
+er-random-k-CNF/rand-8-30-210-15.41.sdimacs            done                            30.98       31.00        None
+er-random-k-CNF/rand-8-30-210-15.42.sdimacs            done                            30.08       30.08        None
+er-random-k-CNF/rand-8-30-210-15.43.sdimacs            done                            28.66       28.67        None
+er-random-k-CNF/rand-8-30-210-15.44.sdimacs            done                            28.50       28.51        None
+er-random-k-CNF/rand-8-30-210-15.45.sdimacs            done                            26.43       26.43        None
+er-random-k-CNF/rand-8-30-240-15.46.sdimacs            done                            37.05       37.07        None
+er-random-k-CNF/rand-8-30-240-15.47.sdimacs            done                            45.18       45.19        None
+er-random-k-CNF/rand-8-30-240-15.48.sdimacs            done                            51.15       51.16        None
+er-random-k-CNF/rand-8-30-240-15.49.sdimacs            done                            36.96       36.96        None
+er-random-k-CNF/rand-8-30-240-15.50.sdimacs            done                            44.27       44.29        None
+er-random-k-CNF/rand-8-30-270-15.51.sdimacs            done                            56.88       56.88        None
+er-random-k-CNF/rand-8-30-270-15.52.sdimacs            done                            52.72       52.73        None
+er-random-k-CNF/rand-8-30-270-15.53.sdimacs            done                            57.74       57.74        None
+er-random-k-CNF/rand-8-30-270-15.54.sdimacs            done                            53.31       53.33        None
+er-random-k-CNF/rand-8-30-270-15.55.sdimacs            done                            59.29       59.30        None
+er-random-k-CNF/rand-8-30-300-15.56.sdimacs            done                            82.87       82.88        None
+er-random-k-CNF/rand-8-30-300-15.57.sdimacs            done                            76.09       76.10        None
+er-random-k-CNF/rand-8-30-300-15.58.sdimacs            done                            72.70       72.72        None
+er-random-k-CNF/rand-8-30-300-15.59.sdimacs            done                            60.08       60.08        None
+er-random-k-CNF/rand-8-30-300-15.60.sdimacs            done                            80.39       80.39        None
+er-random-k-CNF/rand-8-40-280-20.61.sdimacs            TIMEOUT                        901.60      901.63        None
+er-random-k-CNF/rand-8-40-280-20.62.sdimacs            TIMEOUT                        901.50      901.63        None
+er-random-k-CNF/rand-8-40-280-20.63.sdimacs            TIMEOUT                        901.62      901.64        None
+er-random-k-CNF/rand-8-40-280-20.64.sdimacs            TIMEOUT                        901.61      901.64        None
+er-random-k-CNF/rand-8-40-280-20.65.sdimacs            TIMEOUT                        901.62      901.65        None
+er-random-k-CNF/rand-8-40-320-20.66.sdimacs            TIMEOUT                        901.57      901.59        None
+er-random-k-CNF/rand-8-40-320-20.67.sdimacs            TIMEOUT                        901.53      901.62        None
+er-random-k-CNF/rand-8-40-320-20.68.sdimacs            TIMEOUT                        901.58      901.60        None
+er-random-k-CNF/rand-8-40-320-20.69.sdimacs            TIMEOUT                        901.58      901.61        None
+er-random-k-CNF/rand-8-40-320-20.70.sdimacs            TIMEOUT                        901.46      901.59        None
+er-random-k-CNF/rand-8-40-360-20.71.sdimacs            TIMEOUT                        901.57      901.59        None
+er-random-k-CNF/rand-8-40-360-20.72.sdimacs            TIMEOUT                        901.56      901.59        None
+er-random-k-CNF/rand-8-40-360-20.73.sdimacs            TIMEOUT                        901.58      901.61        None
+er-random-k-CNF/rand-8-40-360-20.74.sdimacs            TIMEOUT                        901.57      901.60        None
+er-random-k-CNF/rand-8-40-360-20.75.sdimacs            TIMEOUT                        901.52      901.60        None
+er-random-k-CNF/rand-8-40-400-20.76.sdimacs            TIMEOUT                        901.53      901.56        None
+er-random-k-CNF/rand-8-40-400-20.77.sdimacs            TIMEOUT                        901.53      901.55        None
+er-random-k-CNF/rand-8-40-400-20.78.sdimacs            TIMEOUT                        901.42      901.55        None
+er-random-k-CNF/rand-8-40-400-20.79.sdimacs            TIMEOUT                        901.53      901.56        None
+er-random-k-CNF/rand-8-40-400-20.80.sdimacs            TIMEOUT                        901.53      901.55        None
+er-random-k-CNF/rand-8-50-350-25.81.sdimacs            TIMEOUT                        901.63      901.66        None
+er-random-k-CNF/rand-8-50-350-25.82.sdimacs            TIMEOUT                        901.61      901.64        None
+er-random-k-CNF/rand-8-50-350-25.83.sdimacs            TIMEOUT                        901.61      901.69        None
+er-random-k-CNF/rand-8-50-350-25.84.sdimacs            TIMEOUT                        901.62      901.65        None
+er-random-k-CNF/rand-8-50-350-25.85.sdimacs            TIMEOUT                        901.64      901.67        None
+er-random-k-CNF/rand-8-50-400-25.86.sdimacs            TIMEOUT                        901.46      901.59        None
+er-random-k-CNF/rand-8-50-400-25.87.sdimacs            TIMEOUT                        901.59      901.61        None
+er-random-k-CNF/rand-8-50-400-25.88.sdimacs            TIMEOUT                        901.58      901.60        None
+er-random-k-CNF/rand-8-50-400-25.89.sdimacs            TIMEOUT                        901.58      901.61        None
+er-random-k-CNF/rand-8-50-400-25.90.sdimacs            TIMEOUT                        901.59      901.61        None
+er-random-k-CNF/rand-8-50-450-25.91.sdimacs            TIMEOUT                        901.55      901.62        None
+er-random-k-CNF/rand-8-50-450-25.92.sdimacs            TIMEOUT                        901.58      901.60        None
+er-random-k-CNF/rand-8-50-450-25.93.sdimacs            TIMEOUT                        901.57      901.60        None
+er-random-k-CNF/rand-8-50-450-25.94.sdimacs            TIMEOUT                        901.44      901.59        None
+er-random-k-CNF/rand-8-50-450-25.95.sdimacs            TIMEOUT                        901.56      901.62        None
+er-random-k-CNF/rand-8-50-500-25.100.sdimacs           TIMEOUT                        901.54      901.57        None
+er-random-k-CNF/rand-8-50-500-25.96.sdimacs            TIMEOUT                        901.55      901.57        None
+er-random-k-CNF/rand-8-50-500-25.97.sdimacs            TIMEOUT                        901.57      901.59        None
+er-random-k-CNF/rand-8-50-500-25.98.sdimacs            TIMEOUT                        901.51      901.60        None
+er-random-k-CNF/rand-8-50-500-25.99.sdimacs            TIMEOUT                        901.57      901.60        None
+er-random-k-CNF/rand-9-10-100-5.11.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-100-5.12.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-9-10-100-5.13.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-9-10-100-5.14.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-100-5.15.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-110-5.16.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-9-10-110-5.17.sdimacs             done                             0.01        0.02        None
+er-random-k-CNF/rand-9-10-110-5.18.sdimacs             done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-110-5.19.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-9-10-110-5.20.sdimacs             done                             0.02        0.02        None
+er-random-k-CNF/rand-9-10-80-5.1.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-80-5.2.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-80-5.3.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-80-5.4.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-80-5.5.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-90-5.10.sdimacs              done                             0.01        0.02        None
+er-random-k-CNF/rand-9-10-90-5.6.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-90-5.7.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-90-5.8.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-10-90-5.9.sdimacs               done                             0.01        0.01        None
+er-random-k-CNF/rand-9-20-160-10.21.sdimacs            done                             0.23        0.24        None
+er-random-k-CNF/rand-9-20-160-10.22.sdimacs            done                             0.23        0.23        None
+er-random-k-CNF/rand-9-20-160-10.23.sdimacs            done                             0.21        0.22        None
+er-random-k-CNF/rand-9-20-160-10.24.sdimacs            done                             0.27        0.29        None
+er-random-k-CNF/rand-9-20-160-10.25.sdimacs            done                             0.22        0.22        None
+er-random-k-CNF/rand-9-20-180-10.26.sdimacs            done                             0.28        0.28        None
+er-random-k-CNF/rand-9-20-180-10.27.sdimacs            done                             0.26        0.26        None
+er-random-k-CNF/rand-9-20-180-10.28.sdimacs            done                             0.29        0.30        None
+er-random-k-CNF/rand-9-20-180-10.29.sdimacs            done                             0.27        0.28        None
+er-random-k-CNF/rand-9-20-180-10.30.sdimacs            done                             0.27        0.27        None
+er-random-k-CNF/rand-9-20-200-10.31.sdimacs            done                             0.36        0.37        None
+er-random-k-CNF/rand-9-20-200-10.32.sdimacs            done                             0.38        0.39        None
+er-random-k-CNF/rand-9-20-200-10.33.sdimacs            done                             0.38        0.39        None
+er-random-k-CNF/rand-9-20-200-10.34.sdimacs            done                             0.33        0.33        None
+er-random-k-CNF/rand-9-20-200-10.35.sdimacs            done                             0.36        0.36        None
+er-random-k-CNF/rand-9-20-220-10.36.sdimacs            done                             0.44        0.45        None
+er-random-k-CNF/rand-9-20-220-10.37.sdimacs            done                             0.45        0.46        None
+er-random-k-CNF/rand-9-20-220-10.38.sdimacs            done                             0.51        0.52        None
+er-random-k-CNF/rand-9-20-220-10.39.sdimacs            done                             0.44        0.45        None
+er-random-k-CNF/rand-9-20-220-10.40.sdimacs            done                             0.45        0.45        None
+er-random-k-CNF/rand-9-30-240-15.41.sdimacs            done                            30.84       30.85        None
+er-random-k-CNF/rand-9-30-240-15.42.sdimacs            done                            21.67       21.68        None
+er-random-k-CNF/rand-9-30-240-15.43.sdimacs            done                            26.54       26.54        None
+er-random-k-CNF/rand-9-30-240-15.44.sdimacs            done                            34.87       34.88        None
+er-random-k-CNF/rand-9-30-240-15.45.sdimacs            done                            24.14       24.15        None
+er-random-k-CNF/rand-9-30-270-15.46.sdimacs            done                            43.04       43.04        None
+er-random-k-CNF/rand-9-30-270-15.47.sdimacs            done                            32.42       32.42        None
+er-random-k-CNF/rand-9-30-270-15.48.sdimacs            done                            35.12       35.13        None
+er-random-k-CNF/rand-9-30-270-15.49.sdimacs            done                            39.58       39.58        None
+er-random-k-CNF/rand-9-30-270-15.50.sdimacs            done                            37.02       37.02        None
+er-random-k-CNF/rand-9-30-300-15.51.sdimacs            done                            57.07       57.08        None
+er-random-k-CNF/rand-9-30-300-15.52.sdimacs            done                            48.29       48.30        None
+er-random-k-CNF/rand-9-30-300-15.53.sdimacs            done                            59.25       59.25        None
+er-random-k-CNF/rand-9-30-300-15.54.sdimacs            done                            37.56       37.56        None
+er-random-k-CNF/rand-9-30-300-15.55.sdimacs            done                            60.84       60.85        None
+er-random-k-CNF/rand-9-30-330-15.56.sdimacs            done                            62.95       62.96        None
+er-random-k-CNF/rand-9-30-330-15.57.sdimacs            done                            83.52       83.53        None
+er-random-k-CNF/rand-9-30-330-15.58.sdimacs            done                            73.95       73.95        None
+er-random-k-CNF/rand-9-30-330-15.59.sdimacs            done                            76.79       76.80        None
+er-random-k-CNF/rand-9-30-330-15.60.sdimacs            done                            76.04       76.05        None
+er-random-k-CNF/rand-9-40-320-20.61.sdimacs            TIMEOUT                        901.41      901.52        None
+er-random-k-CNF/rand-9-40-320-20.62.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-40-320-20.63.sdimacs            TIMEOUT                        901.44      901.52        None
+er-random-k-CNF/rand-9-40-320-20.64.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-40-320-20.65.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-40-360-20.66.sdimacs            TIMEOUT                        901.51      901.52        None
+er-random-k-CNF/rand-9-40-360-20.67.sdimacs            TIMEOUT                        901.51      901.52        None
+er-random-k-CNF/rand-9-40-360-20.68.sdimacs            TIMEOUT                        901.49      901.51        None
+er-random-k-CNF/rand-9-40-360-20.69.sdimacs            TIMEOUT                        901.42      901.52        None
+er-random-k-CNF/rand-9-40-360-20.70.sdimacs            TIMEOUT                        901.50      901.52        None
+er-random-k-CNF/rand-9-40-400-20.71.sdimacs            TIMEOUT                        901.43      901.49        None
+er-random-k-CNF/rand-9-40-400-20.72.sdimacs            TIMEOUT                        901.49      901.50        None
+er-random-k-CNF/rand-9-40-400-20.73.sdimacs            TIMEOUT                        901.51      901.51        None
+er-random-k-CNF/rand-9-40-400-20.74.sdimacs            TIMEOUT                        901.49      901.50        None
+er-random-k-CNF/rand-9-40-400-20.75.sdimacs            TIMEOUT                        901.49      901.50        None
+er-random-k-CNF/rand-9-40-440-20.76.sdimacs            TIMEOUT                        901.45      901.46        None
+er-random-k-CNF/rand-9-40-440-20.77.sdimacs            TIMEOUT                        901.33      901.45        None
+er-random-k-CNF/rand-9-40-440-20.78.sdimacs            TIMEOUT                        901.44      901.46        None
+er-random-k-CNF/rand-9-40-440-20.79.sdimacs            TIMEOUT                        901.39      901.46        None
+er-random-k-CNF/rand-9-40-440-20.80.sdimacs            TIMEOUT                        901.44      901.46        None
+er-random-k-CNF/rand-9-50-400-25.81.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-50-400-25.82.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-50-400-25.83.sdimacs            TIMEOUT                        901.52      901.54        None
+er-random-k-CNF/rand-9-50-400-25.84.sdimacs            TIMEOUT                        901.53      901.54        None
+er-random-k-CNF/rand-9-50-400-25.85.sdimacs            TIMEOUT                        901.39      901.52        None
+er-random-k-CNF/rand-9-50-450-25.86.sdimacs            TIMEOUT                        901.48      901.51        None
+er-random-k-CNF/rand-9-50-450-25.87.sdimacs            TIMEOUT                        901.44      901.53        None
+er-random-k-CNF/rand-9-50-450-25.88.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-50-450-25.89.sdimacs            TIMEOUT                        901.51      901.53        None
+er-random-k-CNF/rand-9-50-450-25.90.sdimacs            TIMEOUT                        901.50      901.52        None
+er-random-k-CNF/rand-9-50-500-25.91.sdimacs            TIMEOUT                        901.46      901.49        None
+er-random-k-CNF/rand-9-50-500-25.92.sdimacs            TIMEOUT                        901.44      901.48        None
+er-random-k-CNF/rand-9-50-500-25.93.sdimacs            TIMEOUT                        901.36      901.49        None
+er-random-k-CNF/rand-9-50-500-25.94.sdimacs            TIMEOUT                        901.47      901.49        None
+er-random-k-CNF/rand-9-50-500-25.95.sdimacs            TIMEOUT                        901.39      901.48        None
+er-random-k-CNF/rand-9-50-550-25.100.sdimacs           TIMEOUT                        901.44      901.46        None
+er-random-k-CNF/rand-9-50-550-25.96.sdimacs            TIMEOUT                        901.45      901.46        None
+er-random-k-CNF/rand-9-50-550-25.97.sdimacs            TIMEOUT                        901.45      901.47        None
+er-random-k-CNF/rand-9-50-550-25.98.sdimacs            TIMEOUT                        901.46      901.47        None
+er-random-k-CNF/rand-9-50-550-25.99.sdimacs            TIMEOUT                        901.45      901.48        None
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs     TIMEOUT                        901.42      901.55        None
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs    TIMEOUT                        901.77      901.80        None
+ere-conformant/cube_c11_par---13_.sdimacs              TIMEOUT                        900.96      901.06        None
+ere-conformant/cube_c11_par--opt-14_.sdimacs           TIMEOUT                        901.04      901.06        None
+ere-conformant/cube_c11_ser--opt-42_.sdimacs           TIMEOUT                        901.05      901.07        None
+ere-conformant/cube_c3_ser--opt-6_.sdimacs             done                            16.68       16.68        None
+ere-conformant/cube_c5_ser---14_.sdimacs               TIMEOUT                        901.13      901.15        None
+ere-conformant/cube_c5_ser--opt-15_.sdimacs            TIMEOUT                        901.14      901.16        None
+ere-conformant/cube_c7_ser---23_.sdimacs               TIMEOUT                        901.04      901.07        None
+ere-conformant/cube_c7_ser--opt-24_.sdimacs            TIMEOUT                        900.96      901.07        None
+ere-conformant/cube_c9_par---10_.sdimacs               TIMEOUT                        901.02      901.04        None
+ere-conformant/cube_c9_par--opt-11_.sdimacs            TIMEOUT                        900.96      901.04        None
+ere-conformant/emptyroom_e3_par--opt-10_.sdimacs       TIMEOUT                        901.09      901.11        None
+ere-conformant/emptyroom_e3_ser---19_.sdimacs          TIMEOUT                        901.15      901.17        None
+ere-conformant/emptyroom_e3_ser--opt-20_.sdimacs       TIMEOUT                        901.17      901.19        None
+ere-conformant/emptyroom_e4_par---21_.sdimacs          TIMEOUT                        901.00      901.02        None
+ere-conformant/emptyroom_e4_par--opt-22_.sdimacs       TIMEOUT                        901.00      901.02        None
+ere-conformant/emptyroom_e4_ser--opt-44_.sdimacs       TIMEOUT                        900.92      901.05        None
+ere-conformant/ring_r3_ser--opt-8_.sdimacs             TIMEOUT                        901.24      901.27        None
+ere-conformant/ring_r4_ser--opt-11_.sdimacs            TIMEOUT                        900.98      901.07        None
+ere-conformant/ring_r6_ser---16_.sdimacs               TIMEOUT                        901.04      901.07        None
+ere-conformant/ring_r6_ser--opt-17_.sdimacs            TIMEOUT                        901.05      901.07        None
+ere-conformant/ring_r7_ser---19_.sdimacs               TIMEOUT                        901.20      901.23        None
+ere-conformant/ring_r7_ser--opt-20_.sdimacs            TIMEOUT                        901.18      901.20        None
+ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs      TIMEOUT                        901.05      901.08        None
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs           TIMEOUT                        900.90      901.02        None
+ere-MaxCount/QIF-CVE-2007-2875.sdimacs                 OUT OF MEMORY                  538.13      538.14        None
+ere-MaxCount/QIF-CVE-2009-3002.sdimacs                 ERROR (255)                      0.01        0.01        None
+ere-MaxCount/QIF-backdoor-2x16-8.sdimacs               done                             0.01        0.02        None
+ere-MaxCount/QIF-backdoor-32-24.sdimacs                done                             0.01        0.02        None
+ere-MaxCount/QIF-bin-search-16.sdimacs                 TIMEOUT                        900.97      901.04        None
+ere-MaxCount/QIF-pwd-backdoor.sdimacs                  OUT OF MEMORY                  744.86      744.88        None
+ere-MaxCount/QIF-reverse.sdimacs                       OUT OF MEMORY                  362.66      362.68        None
+ere-MaxCount/QIF-reverse2.sdimacs                      OUT OF MEMORY                  397.30      397.31        None
+ere-MaxCount/SyGuS-ActivityService.sdimacs             TIMEOUT                        901.53      901.55        None
+ere-MaxCount/SyGuS-ActivityService2.sdimacs            TIMEOUT                        901.54      901.57        None
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs     TIMEOUT                        901.68      901.72        None
+ere-MaxCount/SyGuS-GuidanceService.sdimacs             TIMEOUT                        901.59      901.62        None
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs            TIMEOUT                        901.60      901.63        None
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs            TIMEOUT                        901.64      901.67        None
+ere-MaxCount/SyGuS-IterationService.sdimacs            TIMEOUT                        901.46      901.59        None
+ere-MaxCount/SyGuS-LoginService.sdimacs                TIMEOUT                        901.36      901.43        None
+ere-MaxCount/SyGuS-LoginService2.sdimacs               TIMEOUT                        900.99      901.02        None
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs    TIMEOUT                        901.53      901.57        None
+ere-MaxCount/SyGuS-PhaseService.sdimacs                TIMEOUT                        901.54      901.57        None
+ere-MaxCount/SyGuS-ProcessBean.sdimacs                 TIMEOUT                        901.00      901.04        None
+ere-MaxCount/SyGuS-ProjectService3.sdimacs             TIMEOUT                        901.41      901.44        None
+ere-MaxCount/SyGuS-UserServiceImpl.sdimacs             OUT OF MEMORY                  790.85      790.88        None
+ere-MaxCount/SyGuS-sign.sdimacs                        done                           528.35      528.42        None
+ere-MaxCount/SyGuS-sign_correct.sdimacs                OUT OF MEMORY                  537.79      537.84        None
+ere-MPEC/ere-adder-0.125-0.01.sdimacs                  OUT OF MEMORY                  648.53      648.56        None
+ere-MPEC/ere-adder-0.125-0.10.sdimacs                  TIMEOUT                        901.75      901.78        None
+ere-MPEC/ere-arbiter-0.125-0.01.sdimacs                OUT OF MEMORY                  248.55      248.57        None
+ere-MPEC/ere-arbiter-0.125-0.10.sdimacs                OUT OF MEMORY                  525.66      525.68        None
+ere-MPEC/ere-bar-0.125-0.01.sdimacs                    OUT OF MEMORY                  776.20      776.32        None
+ere-MPEC/ere-bar-0.125-0.10.sdimacs                    OUT OF MEMORY                  779.70      779.72        None
+ere-MPEC/ere-c1355-0.125-0.01.sdimacs                  OUT OF MEMORY                  363.41      363.45        None
+ere-MPEC/ere-c1355-0.125-0.10.sdimacs                  OUT OF MEMORY                  632.53      632.56        None
+ere-MPEC/ere-c1908-0.125-0.01.sdimacs                  done                            48.04       48.04        None
+ere-MPEC/ere-c1908-0.125-0.10.sdimacs                  OUT OF MEMORY                  645.17      645.19        None
+ere-MPEC/ere-c2670-0.125-0.01.sdimacs                  OUT OF MEMORY                  400.91      400.94        None
+ere-MPEC/ere-c2670-0.125-0.10.sdimacs                  OUT OF MEMORY                  467.88      467.92        None
+ere-MPEC/ere-c3540-0.125-0.01.sdimacs                  TIMEOUT                        901.01      901.03        None
+ere-MPEC/ere-c3540-0.125-0.10.sdimacs                  OUT OF MEMORY                  605.50      605.52        None
+ere-MPEC/ere-c432-0.125-0.01.sdimacs                   OUT OF MEMORY                  560.50      560.52        None
+ere-MPEC/ere-c432-0.125-0.10.sdimacs                   OUT OF MEMORY                  289.48      289.50        None
+ere-MPEC/ere-c499-0.125-0.01.sdimacs                   OUT OF MEMORY                  347.82      347.87        None
+ere-MPEC/ere-c499-0.125-0.10.sdimacs                   OUT OF MEMORY                  642.62      642.64        None
+ere-MPEC/ere-c5315-0.125-0.01.sdimacs                  OUT OF MEMORY                  392.41      392.43        None
+ere-MPEC/ere-c5315-0.125-0.10.sdimacs                  OUT OF MEMORY                  548.21      548.27        None
+ere-MPEC/ere-c6288-0.125-0.01.sdimacs                  OUT OF MEMORY                  809.81      809.84        None
+ere-MPEC/ere-c6288-0.125-0.10.sdimacs                  TIMEOUT                        901.63      901.65        None
+ere-MPEC/ere-c7552-0.125-0.01.sdimacs                  OUT OF MEMORY                  642.70      642.79        None
+ere-MPEC/ere-c7552-0.125-0.10.sdimacs                  OUT OF MEMORY                  694.17      694.18        None
+ere-MPEC/ere-c880-0.125-0.01.sdimacs                   TIMEOUT                        901.57      901.59        None
+ere-MPEC/ere-c880-0.125-0.10.sdimacs                   OUT OF MEMORY                  340.30      340.31        None
+ere-MPEC/ere-cavlc-0.125-0.01.sdimacs                  done                             0.15        0.16        None
+ere-MPEC/ere-cavlc-0.125-0.10.sdimacs                  OUT OF MEMORY                  389.14      389.18        None
+ere-MPEC/ere-ctrl-0.125-0.01.sdimacs                   done                             0.01        0.02        None
+ere-MPEC/ere-ctrl-0.125-0.10.sdimacs                   done                             0.06        0.06        None
+ere-MPEC/ere-dec-0.125-0.01.sdimacs                    done                             0.01        0.01        None
+ere-MPEC/ere-dec-0.125-0.10.sdimacs                    done                           180.51      180.51        None
+ere-MPEC/ere-div-0.125-0.01.sdimacs                    SEGMENTATION FAULT               1.99        2.18        None
+ere-MPEC/ere-div-0.125-0.10.sdimacs                    SEGMENTATION FAULT               2.41        2.59        None
+ere-MPEC/ere-hyp-0.125-0.01.sdimacs                    SEGMENTATION FAULT               8.37        8.56        None
+ere-MPEC/ere-hyp-0.125-0.10.sdimacs                    SEGMENTATION FAULT              10.72       10.91        None
+ere-MPEC/ere-i2c-0.125-0.01.sdimacs                    OUT OF MEMORY                  359.91      359.92        None
+ere-MPEC/ere-i2c-0.125-0.10.sdimacs                    OUT OF MEMORY                  525.84      525.85        None
+ere-MPEC/ere-int2float-0.125-0.01.sdimacs              done                             0.01        0.01        None
+ere-MPEC/ere-int2float-0.125-0.10.sdimacs              done                             4.22        4.22        None
+ere-MPEC/ere-log2-0.125-0.01.sdimacs                   SEGMENTATION FAULT               1.28        1.47        None
+ere-MPEC/ere-log2-0.125-0.10.sdimacs                   SEGMENTATION FAULT               5.20        5.39        None
+ere-MPEC/ere-max-0.125-0.01.sdimacs                    TIMEOUT                        901.15      901.28        None
+ere-MPEC/ere-max-0.125-0.10.sdimacs                    OUT OF MEMORY                  880.92      881.02        None
+ere-MPEC/ere-mem_ctrl-0.125-0.01.sdimacs               SEGMENTATION FAULT               2.18        2.38        None
+ere-MPEC/ere-mem_ctrl-0.125-0.10.sdimacs               SEGMENTATION FAULT               3.09        3.28        None
+ere-MPEC/ere-multiplier-0.125-0.01.sdimacs             TIMEOUT                        901.25      901.28        None
+ere-MPEC/ere-multiplier-0.125-0.10.sdimacs             SEGMENTATION FAULT               3.64        3.83        None
+ere-MPEC/ere-priority-0.125-0.01.sdimacs               OUT OF MEMORY                  538.50      538.51        None
+ere-MPEC/ere-priority-0.125-0.10.sdimacs               OUT OF MEMORY                  873.49      873.53        None
+ere-MPEC/ere-router-0.125-0.01.sdimacs                 TIMEOUT                        901.11      901.13        None
+ere-MPEC/ere-router-0.125-0.10.sdimacs                 OUT OF MEMORY                  417.80      417.81        None
+ere-MPEC/ere-sin-0.125-0.01.sdimacs                    TIMEOUT                        901.58      901.61        None
+ere-MPEC/ere-sin-0.125-0.10.sdimacs                    TIMEOUT                        901.59      901.63        None
+ere-MPEC/ere-sqrt-0.125-0.01.sdimacs                   TIMEOUT                        901.14      901.16        None
+ere-MPEC/ere-sqrt-0.125-0.10.sdimacs                   SEGMENTATION FAULT               3.27        3.46        None
+ere-MPEC/ere-square-0.125-0.01.sdimacs                 TIMEOUT                        901.37      901.50        None
+ere-MPEC/ere-square-0.125-0.10.sdimacs                 OUT OF MEMORY                  640.02      640.09        None
+ere-MPEC/ere-voter-0.125-0.01.sdimacs                  TIMEOUT                        901.03      901.05        None
+ere-MPEC/ere-voter-0.125-0.10.sdimacs                  TIMEOUT                        901.08      901.11        None
+ere-sand-castle/SC-1.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-10.sdimacs                          done                             0.05        0.05        None
+ere-sand-castle/SC-11.sdimacs                          done                             0.10        0.10        None
+ere-sand-castle/SC-12.sdimacs                          done                             0.19        0.19        None
+ere-sand-castle/SC-13.sdimacs                          done                             0.41        0.41        None
+ere-sand-castle/SC-14.sdimacs                          done                             0.84        0.84        None
+ere-sand-castle/SC-15.sdimacs                          done                             1.80        1.80        None
+ere-sand-castle/SC-16.sdimacs                          done                             3.82        3.83        None
+ere-sand-castle/SC-17.sdimacs                          done                             8.07        8.09        None
+ere-sand-castle/SC-18.sdimacs                          done                            17.15       17.17        None
+ere-sand-castle/SC-19.sdimacs                          done                            36.11       36.12        None
+ere-sand-castle/SC-2.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-20.sdimacs                          done                            76.78       76.79        None
+ere-sand-castle/SC-21.sdimacs                          done                           161.39      161.41        None
+ere-sand-castle/SC-22.sdimacs                          done                           348.74      348.75        None
+ere-sand-castle/SC-23.sdimacs                          OUT OF MEMORY                  492.51      492.53        None
+ere-sand-castle/SC-24.sdimacs                          OUT OF MEMORY                  503.40      503.42        None
+ere-sand-castle/SC-25.sdimacs                          OUT OF MEMORY                  487.62      487.67        None
+ere-sand-castle/SC-3.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-4.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-5.sdimacs                           done                             0.01        0.02        None
+ere-sand-castle/SC-6.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-7.sdimacs                           done                             0.01        0.01        None
+ere-sand-castle/SC-8.sdimacs                           done                             0.02        0.02        None
+ere-sand-castle/SC-9.sdimacs                           done                             0.03        0.03        None
+ere-ToiletA/toilet_a_02_01.2.sdimacs                   done                             0.01        0.02        None
+ere-ToiletA/toilet_a_02_01.3.sdimacs                   done                             0.01        0.02        None
+ere-ToiletA/toilet_a_02_01.4.sdimacs                   done                             0.01        0.02        None
+ere-ToiletA/toilet_a_02_05.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_02_10.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.3.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_01.4.sdimacs                   done                             0.01        0.02        None
+ere-ToiletA/toilet_a_04_01.5.sdimacs                   done                             0.02        0.02        None
+ere-ToiletA/toilet_a_04_01.6.sdimacs                   done                             0.02        0.03        None
+ere-ToiletA/toilet_a_04_01.7.sdimacs                   done                             0.04        0.06        None
+ere-ToiletA/toilet_a_04_01.8.sdimacs                   done                             0.09        0.09        None
+ere-ToiletA/toilet_a_04_05.2.sdimacs                   done                             0.01        0.01        None
+ere-ToiletA/toilet_a_04_10.2.sdimacs                   done                             0.02        0.02        None
+ere-ToiletA/toilet_a_06_01.10.sdimacs                  done                            26.08       26.08        None
+ere-ToiletA/toilet_a_06_01.11.sdimacs                  done                            63.14       63.14        None
+ere-ToiletA/toilet_a_06_01.12.sdimacs                  done                           150.18      150.19        None
+ere-ToiletA/toilet_a_06_01.2.sdimacs                   done                             0.03        0.03        None
+ere-ToiletA/toilet_a_06_01.3.sdimacs                   done                             0.04        0.04        None
+ere-ToiletA/toilet_a_06_01.4.sdimacs                   done                             0.10        0.11        None
+ere-ToiletA/toilet_a_06_01.5.sdimacs                   done                             0.23        0.23        None
+ere-ToiletA/toilet_a_06_01.6.sdimacs                   done                             0.64        0.64        None
+ere-ToiletA/toilet_a_06_01.7.sdimacs                   done                             1.60        1.60        None
+ere-ToiletA/toilet_a_06_01.8.sdimacs                   done                             4.19        4.19        None
+ere-ToiletA/toilet_a_06_01.9.sdimacs                   done                            10.44       10.44        None
+ere-ToiletA/toilet_a_06_05.2.sdimacs                   done                             0.14        0.14        None
+ere-ToiletA/toilet_a_06_05.3.sdimacs                   done                             2.38        2.38        None
+ere-ToiletA/toilet_a_06_05.4.sdimacs                   done                            45.73       45.74        None
+ere-ToiletA/toilet_a_06_10.2.sdimacs                   done                             0.36        0.36        None
+ere-ToiletA/toilet_a_08_01.10.sdimacs                  TIMEOUT                        900.93      901.06        None
+ere-ToiletA/toilet_a_08_01.11.sdimacs                  TIMEOUT                        901.05      901.07        None
+ere-ToiletA/toilet_a_08_01.12.sdimacs                  TIMEOUT                        901.08      901.10        None
+ere-ToiletA/toilet_a_08_01.13.sdimacs                  TIMEOUT                        901.11      901.13        None
+ere-ToiletA/toilet_a_08_01.14.sdimacs                  TIMEOUT                        901.12      901.15        None
+ere-ToiletA/toilet_a_08_01.15.sdimacs                  TIMEOUT                        901.15      901.18        None
+ere-ToiletA/toilet_a_08_01.16.sdimacs                  TIMEOUT                        901.17      901.20        None
+ere-ToiletA/toilet_a_08_01.2.sdimacs                   done                             0.46        0.47        None
+ere-ToiletA/toilet_a_08_01.3.sdimacs                   done                             0.86        0.86        None
+ere-ToiletA/toilet_a_08_01.4.sdimacs                   done                             3.93        3.93        None
+ere-ToiletA/toilet_a_08_01.5.sdimacs                   done                             9.88        9.88        None
+ere-ToiletA/toilet_a_08_01.6.sdimacs                   done                            34.70       34.71        None
+ere-ToiletA/toilet_a_08_01.7.sdimacs                   done                            95.90       95.90        None
+ere-ToiletA/toilet_a_08_01.8.sdimacs                   done                           294.85      294.88        None
+ere-ToiletA/toilet_a_08_01.9.sdimacs                   done                           823.03      823.09        None
+ere-ToiletA/toilet_a_08_05.10.sdimacs                  TIMEOUT                        900.93      901.04        None
+ere-ToiletA/toilet_a_08_05.2.sdimacs                   done                             9.35        9.35        None
+ere-ToiletA/toilet_a_08_05.3.sdimacs                   done                           169.85      169.86        None
+ere-ToiletA/toilet_a_08_05.4.sdimacs                   TIMEOUT                        901.13      901.15        None
+ere-ToiletA/toilet_a_08_05.5.sdimacs                   TIMEOUT                        901.16      901.18        None
+ere-ToiletA/toilet_a_08_05.6.sdimacs                   TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_08_05.7.sdimacs                   TIMEOUT                        901.05      901.06        None
+ere-ToiletA/toilet_a_08_05.8.sdimacs                   TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_08_05.9.sdimacs                   TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_08_10.2.sdimacs                   done                            22.29       22.29        None
+ere-ToiletA/toilet_a_10_01.10.sdimacs                  TIMEOUT                        900.94      901.02        None
+ere-ToiletA/toilet_a_10_01.11.sdimacs                  TIMEOUT                        900.91      901.02        None
+ere-ToiletA/toilet_a_10_01.12.sdimacs                  TIMEOUT                        901.01      901.02        None
+ere-ToiletA/toilet_a_10_01.13.sdimacs                  TIMEOUT                        901.01      901.03        None
+ere-ToiletA/toilet_a_10_01.14.sdimacs                  TIMEOUT                        901.02      901.03        None
+ere-ToiletA/toilet_a_10_01.15.sdimacs                  TIMEOUT                        901.02      901.03        None
+ere-ToiletA/toilet_a_10_01.16.sdimacs                  TIMEOUT                        901.02      901.04        None
+ere-ToiletA/toilet_a_10_01.17.sdimacs                  TIMEOUT                        901.03      901.05        None
+ere-ToiletA/toilet_a_10_01.18.sdimacs                  TIMEOUT                        900.96      901.05        None
+ere-ToiletA/toilet_a_10_01.19.sdimacs                  TIMEOUT                        900.94      901.06        None
+ere-ToiletA/toilet_a_10_01.2.sdimacs                   done                            24.62       24.62        None
+ere-ToiletA/toilet_a_10_01.20.sdimacs                  TIMEOUT                        901.04      901.07        None
+ere-ToiletA/toilet_a_10_01.3.sdimacs                   done                            47.24       47.24        None
+ere-ToiletA/toilet_a_10_01.4.sdimacs                   done                           270.55      270.56        None
+ere-ToiletA/toilet_a_10_01.5.sdimacs                   done                           720.16      720.18        None
+ere-ToiletA/toilet_a_10_01.6.sdimacs                   TIMEOUT                        901.00      901.01        None
+ere-ToiletA/toilet_a_10_01.7.sdimacs                   TIMEOUT                        900.99      901.01        None
+ere-ToiletA/toilet_a_10_01.8.sdimacs                   TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_01.9.sdimacs                   TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_05.2.sdimacs                   TIMEOUT                        900.94      901.02        None
+ere-ToiletA/toilet_a_10_05.3.sdimacs                   TIMEOUT                        901.00      901.02        None
+ere-ToiletA/toilet_a_10_05.4.sdimacs                   TIMEOUT                        900.93      901.04        None
+ere-ToiletA/toilet_a_10_10.2.sdimacs                   TIMEOUT                        901.07      901.09        None
+--------------------------------------------------------------------------------------------------------------------
+Run set 1                                              done                        275053.62    34853.96           -
+
+Statistics:            912 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:             314

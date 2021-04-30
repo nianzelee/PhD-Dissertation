@@ -1,8 +1,8 @@
 tool	DC-SSAT 	ABC 	ABC 
 run set	dcssat-er.default.Application	erssat.bare-BDD.Application	erssat.default-BDD.Application
 test-cases/benchmarks/	status	status	status
-ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/blocks_enc_2_b3_ser--opt-9_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-conformant/blocks_enc_2_b4_ser--opt-26_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-conformant/cube_c11_par---13_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-conformant/cube_c11_par--opt-14_.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
 ere-conformant/cube_c11_ser--opt-42_.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
@@ -26,7 +26,7 @@ ere-conformant/ring_r6_ser--opt-17_.sdimacs	TIMEOUT	SEGMENTATION FAULT	SEGMENTAT
 ere-conformant/ring_r7_ser---19_.sdimacs	TIMEOUT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
 ere-conformant/ring_r7_ser--opt-20_.sdimacs	TIMEOUT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
 ere-MaxCount/MaxSAT-keller4-1212.clq.wcnf.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	done
-ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/MaxSAT-keller4.clq.wcnf.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
 ere-MaxCount/QIF-CVE-2007-2875.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	done
 ere-MaxCount/QIF-CVE-2009-3002.sdimacs	ERROR (255)	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-MaxCount/QIF-backdoor-2x16-8.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
@@ -34,31 +34,83 @@ ere-MaxCount/QIF-backdoor-32-24.sdimacs	done	done	done
 ere-MaxCount/QIF-bin-search-16.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-MaxCount/QIF-pwd-backdoor.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-MaxCount/QIF-reverse.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/QIF-reverse2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
-ere-MaxCount/SyGuS-ActivityService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-ActivityService2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
-ere-MaxCount/SyGuS-GuidanceService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-GuidanceService2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
-ere-MaxCount/SyGuS-IterationService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-LoginService.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/QIF-reverse2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-ActivityService.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-ActivityService2.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-ConcreteActivityService.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-GuidanceService.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-GuidanceService2.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-IssueServiceImpl.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-IterationService.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-LoginService.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
 ere-MaxCount/SyGuS-LoginService2.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
-ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
-ere-MaxCount/SyGuS-PhaseService.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-NotificationServiceImpl2.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MaxCount/SyGuS-PhaseService.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-MaxCount/SyGuS-ProcessBean.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
 ere-MaxCount/SyGuS-ProjectService3.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
 ere-MaxCount/SyGuS-UserServiceImpl.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-sign.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
-ere-MaxCount/SyGuS-sign_correct.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
-ere-MPEC/c1355-er.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MPEC/c1908-er.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MPEC/c3540-er.sdimacs	done	TIMEOUT (ERROR (1))	done
-ere-MPEC/c432-er.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MPEC/c499-er.sdimacs	done	done	done
-ere-MPEC/c5315-er.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MPEC/c7552-er.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-MPEC/c880-er.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-sign.sdimacs	done	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MaxCount/SyGuS-sign_correct.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-adder-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-adder-0.125-0.10.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MPEC/ere-arbiter-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-arbiter-0.125-0.10.sdimacs	OUT OF MEMORY	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-bar-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-bar-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c1355-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c1355-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c1908-0.125-0.01.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c1908-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c2670-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c2670-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c3540-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MPEC/ere-c3540-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c432-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c432-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c499-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c499-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c5315-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c5315-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c6288-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MPEC/ere-c6288-0.125-0.10.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c7552-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c7552-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c880-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-c880-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-cavlc-0.125-0.01.sdimacs	done	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MPEC/ere-cavlc-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MPEC/ere-ctrl-0.125-0.01.sdimacs	done	done	done
+ere-MPEC/ere-ctrl-0.125-0.10.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-dec-0.125-0.01.sdimacs	done	done	done
+ere-MPEC/ere-dec-0.125-0.10.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-div-0.125-0.01.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-div-0.125-0.10.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
+ere-MPEC/ere-hyp-0.125-0.01.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
+ere-MPEC/ere-hyp-0.125-0.10.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
+ere-MPEC/ere-i2c-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MPEC/ere-i2c-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-int2float-0.125-0.01.sdimacs	done	done	done
+ere-MPEC/ere-int2float-0.125-0.10.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-log2-0.125-0.01.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-log2-0.125-0.10.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-max-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-max-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ABORTED)
+ere-MPEC/ere-mem_ctrl-0.125-0.01.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-mem_ctrl-0.125-0.10.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	TIMEOUT (ERROR (1))
+ere-MPEC/ere-multiplier-0.125-0.01.sdimacs	TIMEOUT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-multiplier-0.125-0.10.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-priority-0.125-0.01.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-priority-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MPEC/ere-router-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-router-0.125-0.10.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ABORTED)
+ere-MPEC/ere-sin-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-sin-0.125-0.10.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-sqrt-0.125-0.01.sdimacs	TIMEOUT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-sqrt-0.125-0.10.sdimacs	SEGMENTATION FAULT	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-square-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
+ere-MPEC/ere-square-0.125-0.10.sdimacs	OUT OF MEMORY	SEGMENTATION FAULT	SEGMENTATION FAULT
+ere-MPEC/ere-voter-0.125-0.01.sdimacs	TIMEOUT	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-MPEC/ere-voter-0.125-0.10.sdimacs	TIMEOUT	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-sand-castle/SC-1.sdimacs	done	done	done
 ere-sand-castle/SC-10.sdimacs	done	done	done
 ere-sand-castle/SC-11.sdimacs	done	done	done
@@ -73,7 +125,7 @@ ere-sand-castle/SC-19.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-sand-castle/SC-2.sdimacs	done	done	done
 ere-sand-castle/SC-20.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-sand-castle/SC-21.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
-ere-sand-castle/SC-22.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
+ere-sand-castle/SC-22.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-sand-castle/SC-23.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-sand-castle/SC-24.sdimacs	OUT OF MEMORY	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-sand-castle/SC-25.sdimacs	OUT OF MEMORY	TIMEOUT (ABORTED)	TIMEOUT (ERROR (1))
@@ -108,7 +160,7 @@ ere-ToiletA/toilet_a_06_01.5.sdimacs	done	done	done
 ere-ToiletA/toilet_a_06_01.6.sdimacs	done	done	done
 ere-ToiletA/toilet_a_06_01.7.sdimacs	done	done	done
 ere-ToiletA/toilet_a_06_01.8.sdimacs	done	done	done
-ere-ToiletA/toilet_a_06_01.9.sdimacs	done	TIMEOUT (ERROR (1))	done
+ere-ToiletA/toilet_a_06_01.9.sdimacs	done	done	done
 ere-ToiletA/toilet_a_06_05.2.sdimacs	done	done	done
 ere-ToiletA/toilet_a_06_05.3.sdimacs	done	TIMEOUT (ERROR (1))	TIMEOUT (ERROR (1))
 ere-ToiletA/toilet_a_06_05.4.sdimacs	done	done	done
