@@ -215,6 +215,49 @@ but more often they were an overhead to \erssatb.
 \Cref{fig:dcssat-scatter-cputime-application} also shows that
 \dcssat was more efficient to exactly solve formulas than \erssat over the evaluated application formulas.
 
+\subsubsection{Clause-containment learning over the \textit{Sand-Castle} problem}
+As \erssat and \erssatb did not solve formulas from the probabilistic planning domain \textit{Sand-Castle} quite well,
+we look into the problem and discuss our findings here.
+The \textit{Sand-Castle} problem~\cite{Majercik1998} describes an agent who wants to build a sand castle on a beach.
+The agent has two actions to choose from: digging a moat or erecting a castle.
+A moat protects a castle from the water and increases the probability to successfully build a castle.
+The agent must take a unique action at every stage.
+Under the settings of conformant planning,
+the agent must decide its strategy beforehand and does not have access to internal states
+(whether a moat has been digged or a castle has been erected) during the execution.
+Given a finite number of stages,
+the problem asks to compute a strategy to maximize the chance of successfully building a castle at the last stage.
+The agent's actions are encoded with existentially quantified variables,
+and the nondeterminism in the state-transition mechanism is encoded with randomly quantified variables.
+
+A formula that encodes the \textit{Sand-Castle} problem with $n$ stages has the form:
+\begin{align}
+    \pf=\bigwedge_{i=1}^n \pf_d^{(i)}\land\pf_e^{(i)},
+\end{align}
+where $\pf_d$ and $\pf_e$ are sets of clauses used to represent the state-transition mechanism
+when the agent chooses to \textit{dig} a moat or \textit{erect} a castle, respectively.
+As the state-transition mechanism is the same for every stage except for the variables recording the internal state,
+we use the superscripts to indicate the stage indices.
+We found that the \textit{Sand-Castle} problem has the following property:
+the set of clauses $\pf_d^{(i)}$ (resp. $\pf_e^{(i)}$) will be selected
+if and only if the agent chooses to dig a moat (resp. erect a castle) at stage~$i$.
+In other words, each strategy of the agent (i.e., an assignment to the existentially quantified variables)
+will select a distinct set of clauses.
+Recall that the proposed clause-containment principle aims at blocking assignments
+selecting a superset of clauses that has been selected by a previously explored assignment.
+As a result, a learnt clause constructed based on this principle can only block the current assignment itself,
+which means that \erssatb degenerates to merely brute-force search.
+This theoretic reasoning is confirmed by the solving statistics (visible from the log files),
+which show that \erssatb invoked $2^n-1$ model-counting queries.
+For \erssat, the situation is worse due to partial assignment pruning,
+which invokes additional model-counting queries to strengthen a learnt clause.
+From the log files, we found that \erssat invoked twice numbers of model-counting queries than \erssatb,
+because it had an additional trial but always ended in vain.
+
+On the other hand, the structure of the \textit{Sand-Castle} formulas favors \dcssat,
+as the subformulas are essentially the same across the stages.
+It is not surprising the formula caching and divide-and-conquer method works well with these formulas.
+
 \subsubsection{Approximate solving}
 
 \begin{table}[ht]
