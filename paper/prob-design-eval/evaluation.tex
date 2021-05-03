@@ -5,7 +5,7 @@ We evaluated various techniques to solve the proposed PPE formulation.
 Specifically, we focus on PEC and MPEC problems,
 as equivalence checking is widely encountered in automated design verification.
 
-For the worst-case analysis (i.e., MPEC), two SSAT-based techniques are evaluated.
+For the worst-case analysis (i.e., MPEC), two SSAT-based techniques were evaluated.
 The signal-probability approach via BDD-based SSAT solving
 is implemented in the \texttt{C} language inside the \abc~\cite{ABC} environment.
 The BDD operations are handled by the \cudd~\cite{CUDD} package.
@@ -19,7 +19,7 @@ we employ the state-of-the-art DPLL-based SSAT solver \dcssat~\cite{Majercik2005
 
 For the average-case analysis (i.e., PEC),
 in addition to the above two SSAT-based solutions,
-two techniques based on model counting are also evaluated.
+two techniques based on model counting were also evaluated.
 A classic exact model counter \cachet~\cite{Sang2004,Sang2005ModelCounting} is used
 for the solution via exact weighted model counting.
 Thanks to the proposed formula rewriting
@@ -27,18 +27,10 @@ that converts an instance of weighted model counting into an unweighted one,
 we are able to leverage the latest developments of approximate model counting.
 A state-of-the-art approximate model counter \approxmc-4.0.1~\cite{Chakraborty2013,Chakraborty2016}
 is applied to solve the converted instances.
-To achieve a relatively fair comparison with other exact techniques,
+To achieve a relatively fair comparison with the other exact techniques,
 we set the epsilon parameter to $0.99$ and the delta parameter to $0.01$ for \approxmc.
 
 \subsection{Benchmark set}
-Combinational circuits from the ISCAS\,'85~\cite{ISCAS85-benchmark}
-and EPFL~\cite{EPFL-benchmark} benchmark suites were used in the experiments.
-The circuit statistics are shown in~\cref{tbl:prob-design-eval-iscas,tbl:prob-design-eval-epfl}.
-We represent the circuits as and-inverter graphs (AIGs).
-Although the AIG representation is chosen in our experiments,
-the proposed formulation and solutions are applicable to other circuit representations,
-such as FPGA LUT-based or standard cell-based designs.
-
 \begin{table}[ht]
     \centering
     \scriptsize
@@ -55,6 +47,14 @@ such as FPGA LUT-based or standard cell-based designs.
     ]
     {prob-design-eval/evaluation/csv/parsed-ISCAS.csv}
 \end{table}
+
+Combinational circuits from the ISCAS\,'85~\cite{ISCAS85-benchmark}
+and EPFL~\cite{EPFL-benchmark} benchmark suites were used in the experiments.
+The circuit statistics are shown in~\cref{tbl:prob-design-eval-iscas,tbl:prob-design-eval-epfl}.
+We represent the circuits as and-inverter graphs (AIGs).
+Although the AIG representation is chosen in our experiments,
+the proposed formulation and solutions are applicable to other circuit representations,
+such as FPGA LUT-based or standard cell-based designs.
 
 \begin{table}[hp]
     \centering
@@ -73,21 +73,6 @@ such as FPGA LUT-based or standard cell-based designs.
     {prob-design-eval/evaluation/csv/parsed-EPFL.csv}
 \end{table}
 
-In order to generate circuits with probabilistic errors,
-we specify an error rate $\er$ of a (data-independent) probabilistic gate and
-a defection rate $\dr$ of an entire design (i.e., the ratio of erroneous gates to all gates in a design).
-We fixed both parameters to constants for evaluation
-and selected probabilistic gates at random according to the defection rate.
-In our experiments, $\er$ was set to $0.125$, and $\dr$ was set to $0.01$ and $0.1$.
-To solve probabilistic equivalence checking,
-a miter circuit that compares a design with probabilistic errors against its error-free counterpart is built.
-Since the two designs are structurally identical except for the probabilistic gates,
-logic synthesis may achieve substantial reduction when the number of erroneous nodes is small.
-In our evaluation, we synthesized a miter with the script \texttt{resyn2} before applying the discussed techniques.
-The statistics of the synthesized miters are shown in~\cref{tbl:prob-design-eval-miter-iscas-0.01,tbl:prob-design-eval-miter-iscas-0.10,tbl:prob-design-eval-miter-epfl-0.01,tbl:prob-design-eval-miter-epfl-0.10}.
-Note that the numbers of auxiliary inputs (AIs) in these tables are the numbers of erroneous gates in the circuits.
-Therefore, a circuit would have more AIs if the specified defection rate is larger.
-
 \begin{table}[ht]
     \centering
     \scriptsize
@@ -104,6 +89,22 @@ Therefore, a circuit would have more AIs if the specified defection rate is larg
     ]
     {prob-design-eval/evaluation/csv/parsed-ISCAS-Miter-D-0.01.csv}
 \end{table}
+
+In order to generate circuits with probabilistic errors,
+we specify an error rate $\er$ of a (data-independent) probabilistic gate and
+a defection rate $\dr$ of an entire design (i.e., the ratio of erroneous gates to all gates in a design).
+We fixed both parameters to constants for evaluation
+and selected probabilistic gates at random according to the defection rate.
+In our experiments, $\er$ was set to $0.125$, and $\dr$ was set to $0.01$ and $0.1$.
+To solve probabilistic equivalence checking,
+a miter circuit that compares a design with probabilistic errors against its error-free counterpart is built.
+Since the two designs are structurally identical except for the probabilistic gates,
+logic synthesis may achieve substantial reduction when the number of erroneous nodes is small.
+In our evaluation,
+we synthesized a miter with the script \texttt{resyn2} in \abc before applying the discussed techniques.
+The statistics of the synthesized miters are shown in~\cref{tbl:prob-design-eval-miter-iscas-0.01,tbl:prob-design-eval-miter-iscas-0.10,tbl:prob-design-eval-miter-epfl-0.01,tbl:prob-design-eval-miter-epfl-0.10}.
+Note that the numbers of auxiliary inputs (AIs) in these tables are the numbers of erroneous gates in the circuits.
+Therefore, a circuit would have more AIs if the specified defection rate is larger.
 
 \begin{table}[ht]
     \centering
@@ -229,44 +230,6 @@ in improving the scalability to solve the PEC problem.
 \end{table}
 
 \subsubsection{MPEC instances}
-The solving results of the MPEC instances with the defection rate $\dr$ equal $0.01$ and $0.1$
-are shown in~\cref{tbl:prob-design-eval-mpec-0.01,tbl:prob-design-eval-mpec-0.10}, respectively.
-The maximum probabilities for the two circuits to have different outputs and the CPU time are reported.
-The symbol ``-'' in an entry of the tables indicates the execution ran out of computational resource.
-An instance that cannot be solved by any technique is not shown in the tables.
-
-We included \bddspnr (i.e., \bddsp without variable reordering) in the MPEC experiments.
-In order to achieve a smaller BDD,
-the \cudd package automatically reorders variables during the BDD construction by default.
-Variable reordering usually achieves better results in our empirical experience.
-For PEC instance, since both the PI and the AI variables are randomly quantified,
-the variable order in BDD construction is irrelevant to signal probability computation.
-Therefore, we always enabled this option in the PEC experiments.
-
-However, variable reordering is problematic under the MPEC scenario.
-For MPEC instances, since the PI variables are existentially and the AI variables are randomly quantified,
-the PI variables must be placed before the AI variables.
-The default reordering, nevertheless, might violate such structure.
-To make variable reordering respect the quantification prefix,
-we classify PI and AI variables into two separate groups and
-require that variable reordering can only happen within each group.
-In the following experiments, we use \bddspnr as a baseline
-to evaluate the performance of the constrained variable reordering.
-
-From these tables, we observe the following phenomenons.
-First, the property violation probabilities between the average case and the worst case
-can differ for several orders of magnitude.
-For example, the difference for circuit \texttt{router} when $\dr=0.01$ is about three orders of magnitude.
-This observation shows the criticality of the MPPE formulation for scenarios
-where the worst-case analysis is concerned.
-Second, same as the PEC experiments, \bddsp performed much better than \dcssat did.
-Regarding the reordering of variables,
-the performance difference is not very consistent.
-There are cases which can be solved by \bddsp within seconds but cannot be solved by \bddspnr, and vice versa.
-Constrained variable reordering is still useful in general.
-However, if the original variable order happens to be good enough for BDD construction,
-enabling the constrained reordering would just incur overhead for CPU time.
-
 \begin{table}[ht]
     \centering
     \scriptsize
@@ -300,3 +263,48 @@ enabling the constrained reordering would just incur overhead for CPU time.
     ]
     {prob-design-eval/evaluation/csv/parsed-MPEC-D-0.10.csv}
 \end{table}
+
+The solving results of the MPEC instances with the defection rate $\dr$ equal $0.01$ and $0.1$
+are shown in~\cref{tbl:prob-design-eval-mpec-0.01,tbl:prob-design-eval-mpec-0.10}, respectively.
+The maximum probabilities for the two circuits to have different outputs and the CPU time are reported.
+The symbol ``-'' in an entry of the tables indicates the execution ran out of computational resource.
+An instance that cannot be solved by any technique is not shown in the tables.
+
+We included \bddspnr (i.e., \bddsp without variable reordering) in the MPEC experiments.
+In order to achieve a smaller BDD,
+the \cudd package automatically reorders variables during the BDD construction by default.
+Variable reordering usually achieves better results in our empirical experience.
+For PEC instance, since both the PI and the AI variables are randomly quantified,
+the variable order in BDD construction is irrelevant to signal probability computation.
+Therefore, we always enabled this option in the PEC experiments.
+
+However, variable reordering is problematic under the MPEC scenario.
+For MPEC instances, since the PI variables are existentially quantified and the AI variables are randomly quantified,
+the PI variables must be placed before the AI variables.
+The default reordering, nevertheless, might violate such structure.
+To make variable reordering respect the quantification prefix,
+we classify PI and AI variables into two separate groups and
+require that variable reordering can only happen within each group.
+In the following experiments, we use \bddspnr as a baseline
+to evaluate the performance of the constrained variable reordering.
+
+From these tables, we observe the following phenomenons.
+First, the property violation probabilities between the average case and the worst case
+can differ for several orders of magnitude.
+For example, the difference for circuit \texttt{router} when $\dr=0.01$ is about three orders of magnitude.
+This observation shows the criticality of the MPPE formulation for scenarios
+where the worst-case analysis is concerned.
+Second, same as the PEC experiments, \bddsp performed much better than \dcssat did.
+Regarding the reordering of variables,
+the performance difference is not very consistent.
+There are cases which can be solved by \bddsp within seconds but cannot be solved by \bddspnr, and vice versa.
+Constrained variable reordering is still useful in general.
+However, if the original variable order happens to be good enough for BDD construction,
+enabling the constrained reordering would just incur overhead for CPU time.
+
+The above results on the PEC and MPEC instances suggest that:
+\begin{itemize}
+    \item The proposed BDD-based SSAT solver \bddsp achieves the best performance for small- and medium-sized circuits, whose BDDs can be constructed easily.
+    \item The state-of-the-art approximate model counter \approxmc has the best scalability in our evaluation, which shows the unique value of the proposed formula rewriting.
+    \item The exact weighted model counter \cachet and the CNF-based SSAT solver \dcssat do not scale well when the circuit size grows.
+\end{itemize}
