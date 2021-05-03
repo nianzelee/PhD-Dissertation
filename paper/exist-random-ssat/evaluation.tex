@@ -17,8 +17,8 @@ The SAT solver \minisat-2.2~\cite{Een2003Solver} is used to answer satisfiabilit
 For weighted model counting,
 we tried \cachet~\cite{Sang2004,Sang2005ModelCounting},
 but the overall performance was not satisfactory.
-Instead, we resorted to the well-developed BDD package \cudd~\cite{CUDD}.
-Weight computation of a formula is fulfilled via a classic approach~\cite{Darwiche2002KnowledgeCompilation} that traverses the BDD of the formula and computes the satisfying probabilities of the BDD nodes.
+Instead, we resorted to a well-developed BDD package \cudd~\cite{CUDD}.
+Weight computation of a formula is fulfilled via a classic approach~\cite{Darwiche2002KnowledgeCompilation} that traverses the BDD of a formula and computes the satisfying probabilities of the BDD nodes.
 Our prototyping implementation\footnote{Available at: \url{\ssatabcurl}} is named \erssat.
 A bare version of \erssat without the enhancement techniques is called \erssatb in the experiments.
 We used \ssatABCRevision in the experiments.
@@ -289,7 +289,7 @@ We choose families \textit{Conformant}, \textit{Max-Count}, and \textit{MPEC} fo
 because all of the compared approaches ran out of CPU time or memory over most of their formulas.
 
 \Cref{tbl:exist-random-ssat-conformant,tbl:exist-random-ssat-maxcount,tbl:exist-random-ssat-mpec}
-show the approximate results over the above three families, respectively.
+show the approximation results over the above three families, respectively.
 For \dcssat, the CPU time and exact satisfying probability are reported.
 For \erssat and \erssatb, in addition to the CPU and exact satisfying probability,
 the tightest lower bound and the time elapsed to derive the lower bound are also shown in the tables.
@@ -297,7 +297,7 @@ A formula is not shown in the tables
 if none of the approaches can solve it or derive a non-trivial lower bound for it.
 
 As can be observed from the tables,
-\erssat was able to derive useful tight lower bounds for formulas from these families,
+\erssat was able to derive tight lower bounds for formulas from these families,
 while \dcssat suffered from timeouts over most of them.
 The approximation ability of \erssat makes it useful for large formulas,
 which cannot be exactly solved by the state-of-the-art approaches.
