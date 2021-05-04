@@ -98,7 +98,7 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
     \label{fig:erssat-quantile-random}
 \end{figure*}
 
-\Cref{fig:erssat-quantile-random} shows the quantile plots regarding CPU time and memory usage
+\cref{fig:erssat-quantile-random} shows the quantile plots regarding CPU time and memory usage
 of the SSAT instances derived from the random $k$-CNF formulas.
 A data point $(x,y)$ in a quantile plot indicates that
 there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
@@ -184,7 +184,7 @@ Instead, \dcssat tends to consume a lot of memory, because it memorizes many sub
     \label{fig:erssat-quantile-application}
 \end{figure*}
 
-\Cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
+\cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
 We can see that the enhancement techniques affected not only the effectiveness of \erssat but also its efficiency
 from~\cref{fig:erssat-quantile-cputime-application}.
 This phenomenon indicates that the additional effort spent to strengthen a learnt clause is not worthy.
@@ -200,7 +200,7 @@ The reason behind this phenomenon will be inspected in the following.
         \includegraphics{exist-random-ssat/evaluation/plots/scatter-dcssat.pdf}
         \label{fig:dcssat-scatter-cputime-application}
     }
-    \caption{CPU-time scatter plots of application formulas with \erssat in y-axis and compared approaches in x-axis}
+    \caption{Run-time scatter plots of application formulas with \erssat in y-axis and compared approaches in x-axis}
     \label{fig:erssat-scatter-application}
 \end{figure*}
 
@@ -212,7 +212,7 @@ while \erssat took a CPU time of $y$~seconds and the other approach took a CPU t
 From~\cref{fig:erssat-scatter-cputime-application},
 we find that the enhancement techniques did improve the solving of some formulas,
 but more often they were an overhead to \erssatb.
-\Cref{fig:dcssat-scatter-cputime-application} also shows that
+\cref{fig:dcssat-scatter-cputime-application} also shows that
 \dcssat was more efficient to exactly solve formulas than \erssat over the evaluated application formulas.
 
 \subsubsection{Clause-containment learning over the \textit{Sand-Castle} problem}
@@ -263,7 +263,7 @@ It is not surprising the formula caching and divide-and-conquer method works wel
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Results of solving the formulas from \textit{Conformant}}
+    \caption{Results of solving the \textit{Conformant} family}
     \label{tbl:exist-random-ssat-conformant}
     \begin{adjustbox}{angle=90}
         \pgfplotstabletypeset[
@@ -284,7 +284,7 @@ It is not surprising the formula caching and divide-and-conquer method works wel
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Results of solving the formulas from \textit{Max-Count}}
+    \caption{Results of solving the \textit{Max-Count} family}
     \label{tbl:exist-random-ssat-maxcount}
     \begin{adjustbox}{angle=90}
         \pgfplotstabletypeset[
@@ -305,7 +305,7 @@ It is not surprising the formula caching and divide-and-conquer method works wel
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{Results of solving the formulas from \textit{MPEC}}
+    \caption{Results of solving the \textit{MPEC} family}
     \label{tbl:exist-random-ssat-mpec}
     \begin{adjustbox}{angle=90}
         \pgfplotstabletypeset[
@@ -331,7 +331,7 @@ In the following, we study the approximation ability of \erssat.
 We choose families \textit{Conformant}, \textit{Max-Count}, and \textit{MPEC} for detailed investigation,
 because all of the compared approaches ran out of CPU time or memory over most of their formulas.
 
-\Cref{tbl:exist-random-ssat-conformant,tbl:exist-random-ssat-maxcount,tbl:exist-random-ssat-mpec}
+\cref{tbl:exist-random-ssat-conformant,tbl:exist-random-ssat-maxcount,tbl:exist-random-ssat-mpec}
 show the approximation results over the above three families, respectively.
 For \dcssat, the CPU time and exact satisfying probability are reported.
 For \erssat and \erssatb, in addition to the CPU and exact satisfying probability,

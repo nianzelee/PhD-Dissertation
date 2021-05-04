@@ -95,7 +95,7 @@ we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchex
 
 \subsubsection{Random $k$-CNF formulas}
 
-\Cref{fig:ressat-quantile-random} shows the quantile plots regarding CPU time and memory usage
+\cref{fig:ressat-quantile-random} shows the quantile plots regarding CPU time and memory usage
 of the SSAT instances derived from the random $k$-CNF formulas.
 A data point $(x,y)$ in a quantile plot indicates that
 there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
@@ -156,11 +156,11 @@ Observe that \ressat successfully solved all formulas in this family,
 while \dcssat and \ressatb only solved \num{28} and \num{12} formulas, respectively.
 The results show that \ressat also works well over structured instances from AI applications.
 
-\Cref{fig:ressat-quantile-strategic} shows the quantile plots for the \textit{Strategic-Company} family.
+\cref{fig:ressat-quantile-strategic} shows the quantile plots for the \textit{Strategic-Company} family.
 The quantile plots show that \ressat is not only effective but also efficient
 in terms of CPU time and memory usage.
 The performance gap between \ressat and \ressatb again confirms the importance of the minterm-generalization technique.
-\Cref{fig:ressat-scatter-strategic} shows the scatter plots,
+\cref{fig:ressat-scatter-strategic} shows the scatter plots,
 which indicate the great improvement for the run-time efficiency of \ressat.
 
 \begin{figure*}[hp]
