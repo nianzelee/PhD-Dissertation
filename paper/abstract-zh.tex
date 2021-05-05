@@ -31,8 +31,8 @@ SSAT在文獻中所引起的關注較SAT或QBF稀少。
 在文獻中的求解器無法計算出準確答案的情況下，它們也能提供有用的上下限。
 
 儘管在不同領域都有許多應用，SSAT仍受限於其PSPACE complexity class的描述能力。
-更複雜的問題，例如非確定性指數時間完全性（NEXPTIME-complete）的分散式POMDP（Dec-POMDP），則無法用SSAT簡潔地表示。
+更複雜的問題，例如非確定性指數時間完全性（NEXPTIME-complete）的分散式POMDP（decentralized POMDP, Dec-POMDP），則無法用SSAT簡潔地表示。
 為了提供此類問題一個邏輯框架，我們借鏡了同為NEXPTIME-complete的依賴性QBF（dependency QBF, DQBF）。
-我們將SSAT推廣至NEXPTIME-completeness，並命名該推廣框架為依賴性SSAT（dependency SSAT, DSSAT），同時證明DSSAT也是NEXPTIME-complete。
+我們推廣SSAT並命名該推廣框架為依賴性SSAT（dependency SSAT, DSSAT），同時證明DSSAT也是NEXPTIME-complete。
 我們展示了DSSAT在機率或近似性設計的合成中的潛在應用，以及針對Dec-POMDP問題的編碼。
 我們希望通過建立理論基礎來鼓勵DSSAT求解器的開發。
