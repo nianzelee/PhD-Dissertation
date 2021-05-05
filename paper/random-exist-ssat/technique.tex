@@ -25,13 +25,13 @@ This difficulty will be overcome by applying weighted model counting to evaluate
     \label{alg:ressat}
     \begin{algorithmic}[1]
         \REQUIRE
-        $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and a runtime limit \timeout
+        $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and a run-time limit \timeout
         \ENSURE
         Lower and upper bounds $(P_L,P_U)$ of $\spb{\Qf}$
         \STATE $\select(X) := \top$
         \STATE $C_\top := \emptyset$
         \STATE $C_\bot := \emptyset$
-        \WHILE{($\sat{\select}$ \textbf{and} $\texttt{runtime} < \timeout$)}
+        \WHILE{($\sat{\select}$ \textbf{and} $\texttt{run-time} < \timeout$)}
         \STATE $\as := \model{\select}$
         \IF{($\sat{\pcf{\pf}{\as}}$)}
         \STATE $\as^+ := \texttt{MinimalSatisfying}(\pf,\as)$
@@ -48,8 +48,8 @@ This difficulty will be overcome by applying weighted model counting to evaluate
 
 The above thoughts give rise to the proposed algorithm in~\cref{alg:ressat} to compute the satisfying probability of $\Qf=\random{} X,\exists Y.\pf(X,Y)$.
 The proposed algorithm works as follows.
-Fow now, assume the runtime limit \timeout to be infinity.
-The effect of imposing a runtime limit on~\cref{alg:ressat} will be explained in~\cref{sect:ressat-approximate}.
+Fow now, assume the run-time limit \timeout to be infinity.
+The effect of imposing a run-time limit on~\cref{alg:ressat} will be explained in~\cref{sect:ressat-approximate}.
 Two SAT solvers are used in~\cref{alg:ressat}.
 In addition to the SAT solver that holds the matrix CNF $\pf(X,Y)$,
 the other SAT solver $\select(X)$, named the selector in the following,
@@ -115,16 +115,16 @@ where upper and lower bounds of the satisfying probability of an SSAT formula ar
 Suppose~\cref{alg:ressat} is forced to terminate before the selector $\select$ becomes unsatisfiable.
 The weights of the collected SAT and UNSAT cubes are still valid and can be aggregated by \texttt{ComputeWeight},
 and the resulted weights reflect the lower and upper bounds of the satisfying probability, respectively.
-The early termination can be triggered by imposing a runtime limit for~\cref{alg:ressat}.
+The early termination can be triggered by imposing a run-time limit for~\cref{alg:ressat}.
 Compared to previous DPLL-based approaches that branch on a single variable,
 the proposed algorithm considers all randomly quantified variables together and exploits the concept of SAT and UNSAT cubes over the Boolean space spanned by randomly quantified variables,
 making the intermediate collected SAT and UNSAT cubes convey useful information about the upper and lower bounds of the exact satisfying probability.
 As will be seen in our experiments over formulas arising from VLSI circuit analysis,
-the proposed algorithm is able to find tight bounds even with a short runtime limit.
+the proposed algorithm is able to find tight bounds even with a short run-time limit.
 Compared to the DPLL-based state-of-the-art methods,
 which cannot be easily modified for approximate SSAT,
 the proposed method enjoys the flexibility of solving SSAT approximately or exactly,
-depending on the imposed runtime constraint.
+depending on the imposed run-time constraint.
 
 We note that the proposed algorithm is more efficient in memory consumption than previous DPLL-based algorithms.
 Prior DPLL-based algorithms mostly apply subproblem memorization to avoid repeated computation on the same subproblem.
