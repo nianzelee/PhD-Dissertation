@@ -1,0 +1,59 @@
+\begin{frame}
+      \frametitle{Modeling Decentralized POMDP}
+      \begin{itemize}
+            \item Multiple agents with uncertainty and partial information~\cite{Oliehoek2016}
+                  \pause
+            \item NEXPTIME-completeness~\cite{Bernstein2002}
+                  \pause
+            \item $\mathcal{M} = (I,S,\{A_i\},$ $T, \rho, \{O_i\}, \Omega, \Delta_0, h)$
+                  \pause
+                  \begin{itemize}
+                        \item $T: S \times (A_1 \times \cdots \times A_n) \times S \mapsto [0,1]$
+                              \pause
+                        \item $\rho: S \times (A_1 \times \cdots \times A_n) \mapsto \mathbb{R}$
+                              \pause
+                        \item $\Omega: S \times (A_1 \times \cdots \times A_n) \times (O_1 \times \cdots \times O_n) \mapsto [0,1]$
+                              \pause
+                  \end{itemize}
+            \item Optimal \emph{joint policy} to maximize the expected total reward
+                  \pause
+            \item A polynomial-time reduction from Dec-POMDP to DSSAT
+                  \pause
+                  \begin{itemize}
+                        \item Extending the reduction from POMDP to SSAT~\cite{Salmon2020}
+                  \end{itemize}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
+      \frametitle{Modeling Decentralized POMDP}
+      \begin{center}
+            \input{fig/formulas}
+      \end{center}
+\end{frame}
+
+\begin{frame}
+      \frametitle{Modeling Decentralized POMDP}
+      \begin{itemize}
+            \item Policy selection for a single agent~\cite{Salmon2020}
+                  \pause
+                  \begin{itemize}
+                        \item
+                              $\exists x_a^{i,0},\random{} x_p^0,\random{} x_o^{i,0},\ldots,\exists x_a^{i,h-2},\random{} x_p^{h-2},\random{} x_o^{i,h-2},\exists x_a^{i,h-1},\random{} x_p^{h-1}$
+                  \end{itemize}
+                  \pause
+            \item Joint policy for multiple agents
+                  \pause
+                  \begin{itemize}
+                        \item An agent can only base its actions on \alert{its own observations}
+                              \pause
+                        \item A linearly ordered prefix for all agents?
+                  \end{itemize}
+                  \pause
+            \item Explicitly specify dependency sets in DSSAT
+                  \pause
+                  \begin{itemize}
+                        \item $D_{x_a^{i,t}}=\{x_o^{i,0},\ldots,x_o^{i,t-1},x_p^0,\ldots,x_p^{t-1}\}$
+                  \end{itemize}
+      \end{itemize}
+\end{frame}

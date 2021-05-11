@@ -1,0 +1,46 @@
+\input{preamble}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\input{introduction}
+
+\section{Background}
+\input{background}
+
+\section{Dependency Stochastic Boolean Satisfiability}
+\subsection{Formulation}
+\input{formulation}
+\subsection{Complexity}
+\input{complexity}
+\subsection{Benefits of DSSAT over DQBF}
+\input{benefit}
+
+\section{Applications}
+\subsection{Analyzing Probabilistic/Approximate VLSI Design}
+\input{prob-approx-design}
+\subsection{Modeling Decentralized POMDP}
+\input{dec-pomdp}
+
+\section{Conclusion and Future Work}
+\input{conclusion}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  \bibliographystyle{ACM-Reference-Format}
+  \bibliography{nzlee,prob}
+\end{frame}
+
+\begin{frame}
+  \centering\Large
+  Thanks for your attention!\\
+  Questions?
+\end{frame}
+
+\end{document}

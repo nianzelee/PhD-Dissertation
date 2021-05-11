@@ -1,0 +1,1410 @@
+% Encoding: UTF-8
+
+% The following rules for this file ares copied from dbeyer.bib
+
+% Always cite conference papers instead of technical reports when possible
+% Abbreviate given names
+% No duplicate entries
+
+% Usage of fields:
+% doi: (mandatory)                      DOI of the official copy in a digital library, not URL with a DOI
+% url: (mandatory if DOI link not free) URL of a free copy (e.g., under https://www.sosy-lab.org/research/pub/)
+% pdf: (should not be used here)
+% isbnnote:                             Use field `isbn` if the ISBN shall be printed, `isbnnote` otherwise.
+
+% Format ISBN with this tool: https://tools.wmflabs.org/isbn/IsbnCheckAndFormat
+% We link to book using: https://www.worldcat.org/isbn/978-3-319-10574-1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% This file contains the bibliographies of the following topics
+% SSAT
+% QBF/DQBF
+% SAT/SMT
+% Model counting
+% Integer linear programming
+% Probabilistic/Approximate/Partial design
+% POMDP/Bayesian network
+% Computational complexity
+% Knowledge compilation
+% Reliability/Soft error
+% AI/EDA/SV
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% SSAT
+
+%papadimitriou1985games
+@article{Papadimitriou1985,
+  author  = {C.~H.~Papadimitriou},
+  title   = {Games against nature},
+  journal = {Journal of Computer and System Sciences},
+  volume  = {31},
+  number  = {2},
+  pages   = {288-301},
+  year    = {1985},
+  doi     = {10.1016/0022-0000(85)90045-5}
+}
+
+%majercik1998maxplan,MAXPLAN
+@inproceedings{Majercik1998,
+  author    = {S.~M.~Majercik and M.~L.~Littman},
+  title     = {{MAXPLAN:} {A} new approach to probabilistic planning},
+  booktitle = {Proc.\ AIPS},
+  pages     = {86-93},
+  publisher = {{AAAI}},
+  year      = {1998},
+  url       = {http://www.aaai.org/Library/AIPS/1998/aips98-011.php}
+}
+
+%littman2001stochastic,SSAT
+@article{Littman2001,
+  author  = {M.~L.~Littman and
+             S.~M.~Majercik and
+             T.~Pitassi},
+  title   = {Stochastic {Boolean} satisfiability},
+  journal = {Journal of Automated Reasoning},
+  volume  = {27},
+  number  = {3},
+  pages   = {251-296},
+  year    = {2001},
+  doi     = {10.1023/A:1017584715408}
+}
+
+%majercik2003contingent,ZANDER
+@article{Majercik2003,
+  author  = {S.~M.~Majercik and M.~L.~Littman},
+  title   = {Contingent planning under uncertainty via stochastic satisfiability},
+  journal = {Artificial Intelligence},
+  volume  = {147},
+  number  = {1-2},
+  pages   = {119-162},
+  year    = {2003},
+  doi     = {10.1016/S0004-3702(02)00379-X}
+}
+
+%Majercik04
+@inproceedings{Majercik2004,
+  author    = {S.~M.~Majercik},
+  title     = {Nonchronological backtracking in stochastic {Boolean} satisfiability},
+  booktitle = {Proc.\ ICTAI},
+  pages     = {498-507},
+  publisher = {{IEEE} Computer Society},
+  year      = {2004},
+  doi       = {10.1109/ICTAI.2004.94}
+}
+
+%majercik2005dc,DCSSAT
+@inproceedings{Majercik2005,
+  author    = {S.~M.~Majercik and B.~Boots},
+  title     = {{DC-SSAT:} {A} divide-and-conquer approach to solving stochastic satisfiability
+               problems efficiently},
+  booktitle = {Proc.\ AAAI},
+  pages     = {416-422},
+  publisher = {{AAAI} Press / The {MIT} Press},
+  year      = {2005},
+  url       = {http://www.aaai.org/Library/AAAI/2005/aaai05-066.php}
+}
+
+%Majercik07,APPSSAT
+@article{Majercik2007,
+  author  = {S.~M.~Majercik},
+  title   = {{APPSSAT:} {Approximate} probabilistic planning using stochastic satisfiability},
+  journal = {International Journal of Approximate Reasoning},
+  volume  = {45},
+  number  = {2},
+  pages   = {402-419},
+  year    = {2007},
+  doi     = {https://doi.org/10.1016/j.ijar.2006.06.016}
+}
+
+%majercik2009stochastic
+@incollection{SATHandbook-SSAT,
+  author    = {S.~M.~Majercik},
+  title     = {Stochastic {Boolean} satisfiability},
+  booktitle = {Handbook of Satisfiability},
+  pages     = {887-925},
+  publisher = {{IOS} Press},
+  year      = {2009},
+  doi       = {10.3233/978-1-58603-929-5-887}
+}
+
+%Teige10
+@inproceedings{Teige2010,
+  author    = {T.~Teige and M.~Fr{\"{a}}nzle},
+  title     = {Resolution for stochastic {Boolean} satisfiability},
+  booktitle = {Proc.\ LPAR},
+  series    = {LNCS~6397},
+  pages     = {625-639},
+  publisher = {Springer},
+  year      = {2010},
+  doi       = {10.1007/978-3-642-16242-8\_44}
+}
+
+%SP19
+@inproceedings{Salmon2020,
+  author    = {R.~Salmon and P.~Poupart},
+  title     = {On the relationship between stochastic satisfiability and {Markov} decision processes},
+  booktitle = {Proc.\ UAI},
+  pages     = {1105-1115},
+  publisher = {{PMLR}},
+  year      = {2020},
+  url       = {http://proceedings.mlr.press/v115/salmon20a.html}
+}
+
+%ChenHJ21
+@inproceedings{Chen2021,
+  author    = {P.-W.~Chen and Y.-C.~Huang and J.-H.~R.~Jiang},
+  title     = {A sharp leap from quantified {Boolean} formula to stochastic {Boolean} satisfiability solving},
+  booktitle = {Proc.\ AAAI},
+  pages     = {},
+  publisher = {{AAAI} Press},
+  year      = {2021},
+  doi       = {}
+}
+
+%%% QBF/DQBF
+
+%qbfeval2006
+@inproceedings{Narizzano2006,
+  author    = {M.~Narizzano and
+               L.~Pulina and
+               A.~Tacchella},
+  title     = {The {QBFEVAL} web portal},
+  booktitle = {Proc.\ JELIA},
+  series    = {LNCS~4160},
+  pages     = {494-497},
+  publisher = {Springer},
+  year      = {2006},
+  doi       = {10.1007/11853886\_45}
+}
+
+%buning2009theory
+@incollection{SATHandbook-QBF,
+  author    = {H.~K.~B{\"{u}}ning and U.~Bubeck},
+  title     = {Theory of quantified {Boolean} formulas},
+  booktitle = {Handbook of Satisfiability},
+  pages     = {735-760},
+  publisher = {{IOS} Press},
+  year      = {2009},
+  doi       = {10.3233/978-1-58603-929-5-735}
+}
+
+%frohlich2012dpll
+@inproceedings{Frohlich2012,
+  title     = {A {DPLL} algorithm for solving {DQBF}},
+  author    = {A.~Fr{\"o}hlich and G.~Kov{\'a}sznai and A.~Biere},
+  booktitle = {Proc.\ POS},
+  year      = {2012}
+}
+
+%balabanov2014henkin
+@article{Balabanov2014,
+  author  = {V.~Balabanov and
+             H.-J.~K.~Chiang and
+             J.-H.~R.~Jiang},
+  title   = {Henkin quantifiers and {Boolean} formulae: {A} certification perspective
+               of {DQBF}},
+  journal = {Theoretical Computer Science},
+  volume  = {523},
+  pages   = {86-100},
+  year    = {2014},
+  doi     = {10.1016/j.tcs.2013.12.020}
+}
+
+%GitinaWRSSB15
+@inproceedings{Gitina2015,
+  author    = {K.~Gitina and R.~Wimmer and S.~Reimer and M.~Sauer and C.~Scholl and B.~Becker},
+  booktitle = {Proc.\ DATE},
+  title     = {Solving {DQBF} through quantifier elimination},
+  year      = {2015},
+  pages     = {1617-1622},
+  doi       = {10.7873/DATE.2015.0098}
+}
+
+%JanotaM15
+@inproceedings{Janota2015,
+  author    = {M.~Janota and J.~P.~Marques-Silva},
+  title     = {Solving {QBF} by clause selection},
+  booktitle = {Proc.\ IJCAI},
+  pages     = {325-331},
+  publisher = {{AAAI} Press},
+  year      = {2015},
+  url       = {http://ijcai.org/Abstract/15/052}
+}
+
+%RabeT15
+@inproceedings{Rabe2015,
+  author    = {M.~N.~Rabe and L.~Tentrup},
+  title     = {{CAQE:} {A} certifying {QBF} solver},
+  booktitle = {Proc.\ FMCAD},
+  pages     = {136-143},
+  publisher = {{IEEE}},
+  year      = {2015},
+  doi       = {10.1109/FMCAD.2015.7542263}
+}
+
+%scholl2018dependency
+@inproceedings{Scholl2018,
+  author    = {C.~Scholl and R.~Wimmer},
+  title     = {Dependency quantified {Boolean} formulas: {An} overview of solution methods
+               and applications},
+  booktitle = {Proc.\ SAT},
+  series    = {LNCS~10929},
+  pages     = {3-16},
+  publisher = {Springer},
+  year      = {2018},
+  doi       = {10.1007/978-3-319-94144-8\_1}
+}
+
+%Tentrup19
+@inproceedings{Tentrup2019,
+  author    = {L.~Tentrup and M.~N.~Rabe},
+  title     = {Clausal abstraction for {DQBF}},
+  booktitle = {Proc.\ SAT},
+  series    = {LNCS~11628},
+  pages     = {388-405},
+  publisher = {Springer},
+  year      = {2019},
+  doi       = {10.1007/978-3-030-24258-9\_27}
+}
+
+%%% SAT/SMT
+
+%Davis62
+@article{Davis1962,
+  author  = {M.~Davis and
+             G.~Logemann and
+             D.~W.~Loveland},
+  title   = {A machine program for theorem-proving},
+  journal = {Communications of the ACM},
+  volume  = {5},
+  number  = {7},
+  pages   = {394-397},
+  year    = {1962},
+  doi     = {10.1145/368273.368557}
+}
+
+@inproceedings{Cook1971,
+  author    = {S.~A.~Cook},
+  title     = {The complexity of theorem-proving procedures},
+  booktitle = {Proc.\ STOC},
+  pages     = {151--158},
+  publisher = {{ACM}},
+  year      = {1971},
+  doi       = {10.1145/800157.805047}
+}
+
+%marques2000boolean
+@inproceedings{Marques2000,
+  author    = {J.~P.~Marques-Silva and K.~A.~Sakallah},
+  title     = {{Boolean} satisfiability in electronic design automation},
+  booktitle = {Proc.\ DAC},
+  pages     = {675-680},
+  publisher = {{ACM}},
+  year      = {2000},
+  doi       = {10.1145/337292.337611}
+}
+
+%Een03a
+@inproceedings{Een2003Solver,
+  author    = {N.~E{\'{e}}n and N.~S{\"{o}}rensson},
+  title     = {An extensible {SAT}-solver},
+  booktitle = {Proc.\ SAT},
+  series    = {LNCS~2919},
+  pages     = {502-518},
+  publisher = {Springer},
+  year      = {2003},
+  doi       = {10.1007/978-3-540-24605-3\_37}
+}
+
+%Een03b
+@article{Een2003Incremental,
+  author  = {N.~E{\'{e}}n and N.~S{\"{o}}rensson},
+  title   = {Temporal induction by incremental {SAT} solving},
+  journal = {Electronic Notes in Theoretical Computer Science},
+  volume  = {89},
+  number  = {4},
+  pages   = {543-560},
+  year    = {2003},
+  doi     = {10.1016/S1571-0661(05)82542-3}
+}
+
+%biere2009handbook
+@proceedings{SATHandbook,
+  editor    = {A.~Biere and
+               M.~Heule and
+               H.~van~Maaren and
+               T.~Walsh},
+  title     = {Handbook of Satisfiability},
+  series    = {Frontiers in Artificial Intelligence and Applications},
+  volume    = {185},
+  publisher = {{IOS} Press},
+  year      = {2009},
+  isbn      = {978-1-58603-929-5}
+}
+
+%de2011satisfiability
+@article{Moura2011,
+  author  = {L.~M.~de~Moura and N.~Bj{\o}rner},
+  title   = {Satisfiability modulo theories: {Introduction} and applications},
+  journal = {Communications of the ACM},
+  volume  = {54},
+  number  = {9},
+  pages   = {69-77},
+  year    = {2011},
+  doi     = {10.1145/1995376.1995394}
+}
+
+%cnfgen
+@inproceedings{Lauria2017CNFgen,
+  author    = {M.~Lauria and
+               J.~Elffers and
+               J.~Nordstr{\"{o}}m and
+               M.~Vinyals},
+  title     = {CNFgen: {A} generator of crafted benchmarks},
+  booktitle = {Proc.\ SAT},
+  series    = {LNCS~10491},
+  pages     = {464-473},
+  publisher = {Springer},
+  year      = {2017},
+  doi       = {10.1007/978-3-319-66263-3\_30}
+}
+
+%barrett2018satisfiability
+@incollection{HBMC-SMT,
+  author    = {C.~W.~Barrett and C.~Tinelli},
+  title     = {Satisfiability modulo theories},
+  booktitle = {Handbook of Model Checking},
+  pages     = {305-343},
+  publisher = {Springer},
+  year      = {2018},
+  doi       = {10.1007/978-3-319-10575-8\_11}
+}
+
+%%% Model counting
+
+%Sang04
+@inproceedings{Sang2004,
+  author    = {T.~Sang and
+               F.~Bacchus and
+               P.~Beame and
+               H.~A.~Kautz and
+               T.~Pitassi},
+  title     = {Combining component caching and clause learning for effective model
+               counting},
+  booktitle = {Proc.\ SAT},
+  pages     = {20-28},
+  year      = {2004},
+  url       = {http://www.satisfiability.org/SAT04/programme/21.pdf}
+}
+
+%sang2005heuristics
+@inproceedings{Sang2005ModelCounting,
+  author    = {T.~Sang and
+               P.~Beame and
+               H.~A.~Kautz},
+  title     = {Heuristics for fast exact model counting},
+  booktitle = {Proc.\ SAT},
+  series    = {LNCS~3569},
+  pages     = {226-240},
+  publisher = {Springer},
+  year      = {2005},
+  doi       = {10.1007/11499107\_17}
+}
+
+%gomes2006model
+@inproceedings{Gomes2006,
+  author    = {C.~P.~Gomes and
+               A.~Sabharwal and
+               B.~Selman},
+  title     = {Model counting: {A} new strategy for obtaining good bounds},
+  booktitle = {Proc.\ AAAI},
+  pages     = {54-61},
+  publisher = {{AAAI} Press},
+  year      = {2006},
+  url       = {http://www.aaai.org/Library/AAAI/2006/aaai06-009.php}
+}
+
+%gomes2007sampling,SampleCount
+@inproceedings{Gomes2007,
+  author    = {C.~P.~Gomes and
+               J.~Hoffmann and
+               A.~Sabharwal and
+               B.~Selman},
+  title     = {From sampling to model counting},
+  booktitle = {Proc.\ IJCAI},
+  pages     = {2293-2299},
+  publisher = {Morgan Kaufmann},
+  year      = {2007},
+  url       = {http://ijcai.org/Proceedings/07/Papers/369.pdf}
+}
+
+%sathandbookCh20
+@incollection{SATHandbook-ModelCounting,
+  author    = {C.~P.~Gomes and
+               A.~Sabharwal and
+               B.~Selman},
+  title     = {Model counting},
+  booktitle = {Handbook of Satisfiability},
+  pages     = {633-654},
+  publisher = {{IOS} Press},
+  year      = {2009},
+  doi       = {10.3233/978-1-58603-929-5-633}
+}
+
+%Chakraborty13,ApproxMC
+@inproceedings{Chakraborty2013,
+  author    = {S.~Chakraborty and
+               K.~S.~Meel and
+               M.~Y.~Vardi},
+  title     = {A scalable approximate model counter},
+  booktitle = {Proc.\ CP},
+  series    = {LNCS~8124},
+  pages     = {200-216},
+  publisher = {Springer},
+  year      = {2013},
+  doi       = {10.1007/978-3-642-40627-0\_18}
+}
+
+%AzizCMS15
+@inproceedings{Aziz2015,
+  author    = {R.~A.~Aziz and
+               G.~Chu and
+               C.~J.~Muise and
+               P.~J.~Stuckey},
+  title     = {{\#}{\(\exists\)}{SAT}: {Projected} model counting},
+  booktitle = {Proc.\ SAT},
+  series    = {LNCS~9340},
+  pages     = {121-137},
+  publisher = {Springer},
+  year      = {2015},
+  doi       = {10.1007/978-3-319-24318-4\_10}
+}
+
+%Chakraborty16
+@inproceedings{Chakraborty2016,
+  author    = {S.~Chakraborty and
+               K.~S.~Meel and
+               M.~Y.~Vardi},
+  title     = {Algorithmic improvements in approximate counting for probabilistic
+               inference: {From} linear to logarithmic {SAT} calls},
+  booktitle = {Proc.\ IJCAI},
+  pages     = {3569-3576},
+  publisher = {{IJCAI/AAAI} Press},
+  year      = {2016},
+  url       = {http://www.ijcai.org/Abstract/16/503}
+}
+
+%fremont2017maximum
+@inproceedings{Fremont2017,
+  author    = {D.~J.~Fremont and M.~N.~Rabe and S.~A.~Seshia},
+  title     = {Maximum model counting},
+  booktitle = {Proc.\ AAAI},
+  pages     = {3885-3892},
+  publisher = {{AAAI} Press},
+  year      = {2017},
+  url       = {http://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14968}
+}
+
+@article{MC-COMP2020,
+  author        = {J.~K.~Fichte and M.~Hecher and F.~Hamiti},
+  title         = {The Model Counting Competition 2020},
+  journal       = {CoRR},
+  volume        = {abs/2012.01323},
+  year          = {2020},
+  url           = {https://arxiv.org/abs/2012.01323},
+  archiveprefix = {arXiv},
+  eprint        = {2012.01323}
+}
+
+%%% Integer linear programming
+%SIP tutorial
+@article{Schultz2003,
+  author  = {R.~Schultz},
+  title   = {Stochastic programming with integer variables},
+  journal = {Mathematical Programming},
+  volume  = {97},
+  number  = {1-2},
+  pages   = {285--309},
+  year    = {2003},
+  url     = {https://doi.org/10.1007/s10107-003-0445-z},
+  doi     = {10.1007/s10107-003-0445-z}
+}
+
+%%% Probabilistic/Approximate/Partial design
+
+%Sinha:2002
+@inproceedings{Sinha2002,
+  author    = {S.~Sinha and
+               A.~Mishchenko and
+               R.~K.~Brayton},
+  title     = {Topologically constrained logic synthesis},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {679-686},
+  publisher = {{ACM} / {IEEE} Computer Society},
+  year      = {2002},
+  doi       = {10.1145/774572.774672}
+}
+
+%Bahar03
+@inproceedings{Bahar2003,
+  author    = {R.~I.~Bahar and
+               J.~L.~Mundy and
+               J.~Chen},
+  title     = {A probabilistic-based design methodology for nanoscale computation},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {480-486},
+  publisher = {{IEEE} Computer Society / {ACM}},
+  year      = {2003},
+  doi       = {10.1109/ICCAD.2003.1257854}
+}
+
+%ProbDesign,Chakrapani07
+@inproceedings{Chakrapani2006ProbDesign,
+  author    = {L.~N.~B.~Chakrapani and
+               J.~George and
+               B.~Marr and
+               B.~E.~S.~Akgul and
+               K.~V.~Palem},
+  title     = {Probabilistic design: {A} survey of probabilistic {CMOS} technology
+               and future directions for terascale {IC} design},
+  booktitle = {Proc.\ VLSI-SoC},
+  series    = {{IFIP}~249},
+  pages     = {101-118},
+  publisher = {Springer},
+  year      = {2006},
+  doi       = {10.1007/978-0-387-74909-9\_7}
+}
+
+
+%ApproxDesign,Venkatesan11
+@inproceedings{Venkatesan2011ApproxDesign,
+  author    = {R.~Venkatesan and
+               A.~Agarwal and
+               K.~Roy and
+               A.~Raghunathan},
+  title     = {{MACACO:} {Modeling} and analysis of circuits for approximate computing},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {667-673},
+  publisher = {{IEEE} Computer Society},
+  year      = {2011},
+  doi       = {10.1109/ICCAD.2011.6105401}
+}
+
+%Venkataramani12
+@inproceedings{Venkataramani2012,
+  author    = {S.~Venkataramani and
+               A.~Sabne and
+               V.~J.~Kozhikkottu and
+               K.~Roy and
+               A.~Raghunathan},
+  title     = {{SALSA:} {Systematic} logic synthesis of approximate circuits},
+  booktitle = {Proc.\ DAC},
+  pages     = {796-801},
+  publisher = {{ACM}},
+  year      = {2012},
+  doi       = {10.1145/2228360.2228504}
+}
+
+%Kahng12
+@inproceedings{Kahng2012,
+  author    = {A.~B.~Kahng and S.~Kang},
+  title     = {Accuracy-configurable adder for approximate arithmetic designs},
+  booktitle = {Proc.\ DAC},
+  pages     = {820-825},
+  publisher = {{ACM}},
+  year      = {2012},
+  doi       = {10.1145/2228360.2228509}
+}
+
+%Ye13
+@inproceedings{Ye2013,
+  author    = {R.~Ye and
+               T.~Wang and
+               F.~Yuan and
+               R.~Kumar and
+               Q.~Xu},
+  title     = {On reconfiguration-oriented approximate adder design and its application},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {48-54},
+  publisher = {{IEEE}},
+  year      = {2013},
+  doi       = {10.1109/ICCAD.2013.6691096}
+}
+
+%Jin13
+@inproceedings{Miao2013,
+  author    = {J.~Miao and
+               A.~Gerstlauer and
+               M.~Orshansky},
+  title     = {Approximate logic synthesis under general error magnitude and frequency constraints},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {779-786},
+  publisher = {{IEEE}},
+  year      = {2013},
+  doi       = {10.1109/ICCAD.2013.6691202}
+}
+
+%Kim13
+@inproceedings{Kim2013,
+  author    = {Y.~Kim and
+               Y.~Zhang and
+               P.~Li},
+  title     = {An energy efficient approximate adder with carry skip for error resilient neuromorphic {VLSI} systems},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {130-137},
+  publisher = {{IEEE}},
+  year      = {2013},
+  doi       = {10.1109/ICCAD.2013.6691108}
+}
+
+%ICCD13
+@inproceedings{Gitina2013,
+  author    = {K.~Gitina and
+               S.~Reimer and
+               M.~Sauer and
+               R.~Wimmer and
+               C.~Scholl and
+               B.~Becker},
+  title     = {Equivalence checking of partial designs using dependency quantified {Boolean} formulae},
+  booktitle = {Proc.\ ICCD},
+  year      = {2013},
+  pages     = {396-403},
+  doi       = {10.1109/ICCD.2013.6657071}
+}
+
+%Jin14
+@inproceedings{Miao2014,
+  author    = {J.~Miao and
+               A.~Gerstlauer and
+               M.~Orshansky},
+  title     = {Multi-level approximate logic synthesis under general error constraints},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {504-510},
+  publisher = {{IEEE}},
+  year      = {2014},
+  doi       = {10.1109/ICCAD.2014.7001398}
+}
+
+%Li14
+@inproceedings{Li2014,
+  author    = {L.~Li and H.~Zhou},
+  title     = {On error modeling and analysis of approximate adders},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {511-518},
+  publisher = {{IEEE}},
+  year      = {2014},
+  doi       = {10.1109/ICCAD.2014.7001399}
+}
+
+%Rehman16
+@inproceedings{Rehman2016,
+  author    = {S.~Rehman and
+               W.~El-Harouni and
+               M.~Shafique and
+               A.~Kumar and
+               J.~ Henkel},
+  title     = {Architectural-space exploration of approximate multipliers},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {80:1-80:8},
+  publisher = {{ACM}},
+  year      = {2016},
+  doi       = {10.1145/2966986.2967005}
+}
+
+%Mrazek16
+@inproceedings{Mrazek2016,
+  author    = {V.~Mrazek and
+               S.~S.~Sarwar and
+               L.~Sekanina and
+               Z.~Vas{\'{\i}}cek and
+               K.~Roy},
+  title     = {Design of power-efficient approximate multipliers for approximate artificial neural networks},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {81:1-81:7},
+  publisher = {{ACM}},
+  year      = {2016},
+  doi       = {10.1145/2966986.2967021}
+}
+
+%%% POMDP/Bayesian network
+
+%PCTL
+@inproceedings{Hansson1989,
+  author    = {H.~Hansson and B.~Jonsson},
+  title     = {A framework for reasoning about time and reliability},
+  booktitle = {Proc.\ RTSS},
+  pages     = {102-111},
+  publisher = {{IEEE} Computer Society},
+  year      = {1989},
+  doi       = {10.1109/REAL.1989.63561}
+}
+
+%Cooper90
+@article{Cooper1990,
+  author  = {G.~F.~Cooper},
+  title   = {The computational complexity of probabilistic inference using {Bayesian} belief networks},
+  journal = {Artificial Intelligence},
+  volume  = {42},
+  number  = {2-3},
+  pages   = {393-405},
+  year    = {1990},
+  doi     = {10.1016/0004-3702(90)90060-D}
+}
+
+%Kushmerick95
+@article{Kushmerick1995,
+  author  = {N.~Kushmerick and
+             S.~Hanks and
+             D.~S.~Weld},
+  title   = {An algorithm for probabilistic planning},
+  journal = {Artificial Intelligence},
+  volume  = {76},
+  number  = {1-2},
+  pages   = {239-286},
+  year    = {1995},
+  doi     = {10.1016/0004-3702(94)00087-H}
+}
+
+%Jensen96
+@book{Jensen1996,
+  author    = {F.~V.~Jensen},
+  title     = {An Introduction to Bayesian Networks},
+  year      = {1996},
+  publisher = {Taylor {\&} Francis},
+  isbn      = {978-1-85-728332-7}
+}
+
+%Marculescu98
+@inproceedings{Marculescu1998,
+  author    = {D.~Marculescu and
+               R.~Marculescu and
+               M.~Pedram},
+  title     = {Trace-driven steady-state probability estimation in {FSM}s with application to power estimation},
+  booktitle = {Proc.\ DATE},
+  pages     = {774-779},
+  publisher = {{IEEE} Computer Society},
+  year      = {1998},
+  doi       = {10.1109/DATE.1998.655946}
+}
+
+%Dechter98
+@incollection{Dechter1998,
+  author    = {R.~Dechter},
+  title     = {Bucket elimination: {A} unifying framework for probabilistic inference},
+  booktitle = {Learning in Graphical Models},
+  series    = {{NATO} {ASI} Series},
+  volume    = {89},
+  pages     = {75-104},
+  publisher = {Springer},
+  year      = {1998},
+  doi       = {10.1007/978-94-011-5014-9\_4}
+}
+
+%Littman98
+@article{Littman1998,
+  author  = {M.~L.~Littman and
+             J.~Goldsmith and
+             M.~Mundhenk},
+  title   = {The computational complexity of probabilistic planning},
+  journal = {Journal of Artificial Intelligence Research},
+  volume  = {9},
+  pages   = {1-36},
+  year    = {1998},
+  doi     = {10.1613/jair.505}
+}
+
+%bernstein2002complexity
+@article{Bernstein2002,
+  author  = {D.~S.~Bernstein and
+             R.~Givan and
+             N.~Immerman and
+             S.~Zilberstein},
+  title   = {The complexity of decentralized control of {Markov} decision processes},
+  journal = {Mathematics of Operations Research},
+  volume  = {27},
+  number  = {4},
+  pages   = {819-840},
+  year    = {2002},
+  doi     = {10.1287/moor.27.4.819.297}
+}
+
+%Bacchus03
+@inproceedings{Bacchus2003,
+  author    = {F.~Bacchus and
+               S.~Dalmao and
+               T.~Pitassi},
+  title     = {Algorithms and complexity results for {\#}{SAT} and {Bayesian} inference},
+  booktitle = {Proc.\ FOCS},
+  pages     = {340-351},
+  publisher = {{IEEE} Computer Society},
+  year      = {2003},
+  doi       = {10.1109/SFCS.2003.1238208}
+}
+
+%Rejimon05
+@inproceedings{Rejimon2005,
+  author    = {T.~Rejimon and S.~Bhanja},
+  title     = {Scalable probabilistic computing models using {Bayesian} networks},
+  booktitle = {Proc.\ MWSCAS},
+  pages     = {712-715},
+  publisher = {{IEEE}},
+  year      = {2005},
+  doi       = {10.1109/MWSCAS.2005.1594200}
+}
+
+%Krishnaswamy05
+@inproceedings{Krishnaswamy2005,
+  author    = {S.~Krishnaswamy and
+               G.~F.~Viamontes and
+               I.~L.~Markov and
+               J.~P.~Hayes},
+  title     = {Accurate reliability evaluation and enhancement via probabilistic transfer matrices},
+  booktitle = {Proc.\ DATE},
+  pages     = {282-287},
+  publisher = {{IEEE} Computer Society},
+  year      = {2005},
+  doi       = {10.1109/DATE.2005.47}
+}
+
+%Sang05
+@inproceedings{Sang2005BayesianInference,
+  author    = {T.~Sang and
+               P.~Beame and
+               H.~A.~Kautz},
+  title     = {Performing {Bayesian} inference by weighted model counting},
+  booktitle = {Proc.\ AAAI},
+  pages     = {475-482},
+  publisher = {{AAAI} Press / The {MIT} Press},
+  year      = {2005},
+  url       = {http://www.aaai.org/Library/AAAI/2005/aaai05-075.php}
+}
+
+%Chavira08
+@article{Chavira2008,
+  author  = {M.~Chavira and A.~Darwiche},
+  title   = {On probabilistic inference by weighted model counting},
+  journal = {Artificial Intelligence},
+  volume  = {172},
+  number  = {6-7},
+  pages   = {772-799},
+  year    = {2008},
+  doi     = {10.1016/j.artint.2007.11.002}
+}
+
+%oliehoek2008optimal
+@article{Oliehoek2008,
+  author  = {F.~A.~Oliehoek and
+             M.~T.~J.~Spaan and
+             N.~A.~Vlassis},
+  title   = {Optimal and approximate {Q}-value functions for decentralized {POMDP}s},
+  journal = {Journal of Artificial Intelligence Research},
+  volume  = {32},
+  pages   = {289-353},
+  year    = {2008},
+  doi     = {10.1613/jair.2447}
+}
+
+%Kumar13
+@article{Kumar2013,
+  author  = {J.~A.~Kumar and S.~Vasudevan},
+  title   = {Formal probabilistic timing verification in {RTL}},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume  = {32},
+  number  = {5},
+  pages   = {788-801},
+  year    = {2013},
+  doi     = {10.1109/TCAD.2012.2232706}
+}
+
+%oliehoek2016concise
+@book{Oliehoek2016,
+  author    = {F.~A.~Oliehoek and C.~Amato},
+  title     = {A Concise Introduction to Decentralized POMDPs},
+  publisher = {Springer},
+  year      = {2016},
+  doi       = {10.1007/978-3-319-28929-8}
+}
+
+%%% Computational complexity
+
+%stockmeyer1973word
+@inproceedings{Stockmeyer1973,
+  author    = {L.~J.~Stockmeyer and A.~R.~Meyer},
+  title     = {Word problems requiring exponential time: {Preliminary} report},
+  booktitle = {Proc.\ STOC},
+  pages     = {1-9},
+  publisher = {{ACM}},
+  year      = {1973},
+  doi       = {10.1145/800125.804029}
+}
+
+%peterson1979multiple
+@inproceedings{Peterson1979,
+  author    = {G.~L.~Peterson and J.~H.~Reif},
+  title     = {Multiple-person alternation},
+  booktitle = {Proc.\ FOCS},
+  pages     = {348-363},
+  publisher = {{IEEE} Computer Society},
+  year      = {1979},
+  doi       = {10.1109/SFCS.1979.25}
+}
+
+%peterson2001lower
+@article{Peterson2001,
+  author  = {G.~L.~Peterson and J.~H.~Reif and S.~Azhar},
+  title   = {Lower bounds for multiplayer noncooperative games of incomplete information},
+  journal = {Computers {\&} Mathematics with Applications},
+  volume  = {41},
+  number  = {7},
+  pages   = {957-992},
+  year    = {2001},
+  doi     = {10.1016/S0898-1221(00)00333-3}
+}
+
+%%% Knowledge compilation
+
+%Darwiche01
+@article{Darwiche2001,
+  author  = {A.~Darwiche},
+  title   = {Decomposable negation normal form},
+  journal = {Journal of the ACM},
+  volume  = {48},
+  number  = {4},
+  pages   = {608-647},
+  year    = {2001},
+  doi     = {10.1145/502090.502091}
+}
+
+%Darwiche02
+@inproceedings{Darwiche2002dDNNF,
+  author    = {A.~Darwiche},
+  title     = {A compiler for deterministic, decomposable negation normal form},
+  booktitle = {Proc.\ AAAI},
+  pages     = {627-634},
+  publisher = {{AAAI} Press / The {MIT} Press},
+  year      = {2002},
+  url       = {http://www.aaai.org/Library/AAAI/2002/aaai02-094.php}
+}
+
+%darwiche2002knowledge
+@article{Darwiche2002KnowledgeCompilation,
+  author  = {A.~Darwiche and P.~Marquis},
+  title   = {A knowledge compilation map},
+  journal = {Journal of Artificial Intelligence Research},
+  volume  = {17},
+  pages   = {229-264},
+  year    = {2002},
+  doi     = {10.1613/jair.989}
+}
+
+%Huang06
+@inproceedings{Huang2006,
+  author    = {J.~Huang},
+  title     = {Combining knowledge compilation and search for conformant probabilistic planning},
+  booktitle = {Proc.\ ICAPS},
+  pages     = {253-262},
+  publisher = {{AAAI}},
+  year      = {2006},
+  url       = {http://www.aaai.org/Library/ICAPS/2006/icaps06-026.php}
+}
+
+%Pipatsrisawat09
+@inproceedings{Pipatsrisawat2009,
+  author    = {K.~Pipatsrisawat and A.~Darwiche},
+  title     = {A new d-{DNNF}-based bound computation algorithm for functional {E-MAJSAT}},
+  booktitle = {Proc.\ IJCAI},
+  pages     = {590-595},
+  publisher = {{AAAI} Press},
+  year      = {2009},
+  url       = {http://ijcai.org/Proceedings/09/Papers/104.pdf}
+}
+
+% Reliability/Soft error
+
+%Mohanram03
+@inproceedings{Mohanram2003,
+  author    = {K.~Mohanram and N.~A.~Touba},
+  title     = {Cost-effective approach for reducing soft error failure rate in logic circuits},
+  booktitle = {Proc.\ ITC},
+  pages     = {893-901},
+  publisher = {{IEEE} Computer Society},
+  year      = {2003},
+  doi       = {10.1109/TEST.2003.1271075}
+}
+
+%Zhang06
+@article{Zhang2006,
+  author  = {M.~Zhang and N.~R.~Shanbhag},
+  title   = {Soft-error-rate-analysis {(SERA)} methodology},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume  = {25},
+  number  = {10},
+  pages   = {2140-2155},
+  year    = {2006},
+  doi     = {10.1109/TCAD.2005.862738}
+}
+
+%Miskov06
+@article{Miskov-Zivanov2006,
+  author  = {N.~Miskov.Zivanov and D.~Marculescu},
+  title   = {Circuit reliability analysis using symbolic techniques},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume  = {25},
+  number  = {12},
+  pages   = {2638-2649},
+  year    = {2006},
+  doi     = {10.1109/TCAD.2006.882592}
+}
+
+%Mitra06
+@inproceedings{Mitra2006,
+  author    = {S.~Mitra and
+               M.~Zhang and
+               S.~Waqas and
+               N.~Seifert and
+               B.~S.~Gill and
+               K.~S.~Kim},
+  title     = {Combinational logic soft error correction},
+  booktitle = {Proc.\ ITC},
+  pages     = {1-9},
+  publisher = {{IEEE} Computer Society},
+  year      = {2006},
+  doi       = {10.1109/TEST.2006.297681}
+}
+
+%Lingasubramanian07
+@inproceedings{Lingasubramanian2007,
+  author    = {K.~Lingasubramanian and S.~Bhanja},
+  title     = {Probabilistic maximum error modeling for unreliable logic circuits},
+  booktitle = {Proc.\ GLSVLSI},
+  pages     = {223-226},
+  publisher = {{ACM}},
+  year      = {2007},
+  doi       = {10.1145/1228784.1228842}
+}
+
+%Miskov08
+@article{Miskov-Zivanov2008,
+  author  = {N.~Miskov-Zivanov and D.~Marculescu},
+  title   = {Modeling and optimization for soft-error reliability of sequential circuits},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume  = {27},
+  number  = {5},
+  pages   = {803-816},
+  year    = {2008},
+  doi     = {10.1109/TCAD.2008.917591}
+}
+
+%Choudhury09
+@article{Choudhury2009,
+  author  = {M.~R.~Choudhury and K.~Mohanram},
+  title   = {Reliability analysis of logic circuits},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume  = {28},
+  number  = {3},
+  pages   = {392-405},
+  year    = {2009},
+  doi     = {10.1109/TCAD.2009.2012530}
+}
+
+%Lingasubramanian11
+@article{Lingasubramanian2011,
+  author  = {K.~Lingasubramanian and
+             S.~M.~Alam and
+             S.~Bhanja},
+  title   = {Maximum error modeling for fault-tolerant computation using maximum a posteriori {(MAP)} hypothesis},
+  journal = {Microelectronics Reliability},
+  volume  = {51},
+  number  = {2},
+  pages   = {485-501},
+  year    = {2011},
+  doi     = {10.1016/j.microrel.2010.07.156}
+}
+
+%%% AI/EDA/SV
+
+%Moore65
+@article{Moore1965,
+  author  = {G.~E.~Moore},
+  title   = {Cramming more components onto integrated circuits},
+  journal = {Electronics},
+  volume  = {38},
+  number  = {8},
+  pages   = {114-117},
+  year    = {1965},
+  url     = {https://newsroom.intel.com/wp-content/uploads/sites/11/2018/05/moores-law-electronics.pdf}
+}
+
+%Tseitin68
+@incollection{Tseitin1983,
+  author    = {G.~S.~Tseitin},
+  title     = {On the complexity of derivation in propositional calculus},
+  booktitle = {Automation of Reasoning},
+  year      = {1983},
+  publisher = {Springer},
+  pages     = {466-483},
+  doi       = {10.1007/978-3-642-81955-1_28}
+}
+
+%Najm94
+@article{Najm1994,
+  author  = {F.~N.~Najm},
+  title   = {A survey of power estimation techniques in {VLSI} circuits},
+  journal = {IEEE Transactions on Very Large Scale Integration (VLSI) Systems},
+  volume  = {2},
+  number  = {4},
+  pages   = {446-455},
+  year    = {1994},
+  doi     = {10.1109/92.335013}
+}
+
+%Kuehlmann97
+@inproceedings{Kuehlmann1997,
+  author    = {A.~Kuehlmann and F.~Krohm},
+  title     = {Equivalence checking using cuts and heaps},
+  booktitle = {Proc.\ DAC},
+  pages     = {263-268},
+  publisher = {{ACM} Press},
+  year      = {1997},
+  doi       = {10.1145/266021.266090}
+}
+
+%cadoli1997default
+@article{Cadoli1997,
+  author  = {M.~Cadoli and
+             T.~Eiter and
+             G.~Gottlob},
+  title   = {Default logic as a query language},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {9},
+  number  = {3},
+  pages   = {448-463},
+  year    = {1997},
+  doi     = {10.1109/69.599933}
+}
+
+%Clarke01
+@article{Clarke2001,
+  author  = {E.~M.~Clarke and
+             A.~Biere and
+             R.~Raimi and
+             Y.~Zhu},
+  title   = {Bounded model checking using satisfiability solving},
+  journal = {Formal Methods in System Design},
+  volume  = {19},
+  number  = {1},
+  pages   = {7-34},
+  year    = {2001},
+  doi     = {10.1023/A:1011276507260}
+}
+
+%PRISM
+@inproceedings{Kwiatkowska2002PRISM,
+  author    = {M.~Z.~Kwiatkowska and
+               G.~Norman and
+               D.~Parker},
+  title     = {{PRISM:} {Probabilistic} symbolic model checker},
+  booktitle = {Proc.\ TOOLS},
+  series    = {LNCS~2324},
+  pages     = {200-204},
+  publisher = {Springer},
+  year      = {2002},
+  doi       = {10.1007/3-540-46029-2\_13}
+}
+
+%Constantinescu03
+@article{Constantinescu2003,
+  author  = {C.~Constantinescu},
+  title   = {Trends and challenges in {VLSI} circuit reliability},
+  journal = {{IEEE} Micro},
+  volume  = {23},
+  number  = {4},
+  pages   = {14-19},
+  year    = {2003},
+  doi     = {10.1109/MM.2003.1225959}
+}
+
+%Mishchenko05
+@techreport{Mishchenko2005,
+  author      = {A.~Mishchenko and
+                 S.~Chatterjee and
+                 J.-H.~R.~Jiang and
+                 R.~K.~Brayton},
+  title       = {{FRAIG}s: {A} unifying representation for logic synthesis and verification},
+  institution = {EECS Department, UC Berkeley},
+  year        = {2005},
+  url         = {https://people.eecs.berkeley.edu/~alanmi/publications/2005/tech05_fraigs.pdf}
+}
+
+%faber2005solving
+@inproceedings{Faber2005,
+  author    = {W.~Faber and F.~Ricca},
+  title     = {Solving hard {ASP} programs efficiently},
+  booktitle = {Proc.\ LPNMR},
+  series    = {LNCS~3662},
+  pages     = {240-252},
+  publisher = {Springer},
+  year      = {2005},
+  doi       = {10.1007/11546207\_19}
+}
+
+%Mishchenko06
+@inproceedings{Mishchenko2006,
+  author    = {A.~Mishchenko and
+               S.~Chatterjee and
+               R.~K.~Brayton and
+               N.~E{\'{e}}n},
+  title     = {Improvements to combinational equivalence checking},
+  booktitle = {Proc.\ ICCAD},
+  pages     = {836-843},
+  publisher = {{ACM}},
+  year      = {2006},
+  doi       = {10.1145/1233501.1233679}
+}
+
+%leone2006dlv
+@article{Leone2006,
+  author  = {N.~Leone and
+             G.~Pfeifer and
+             W.~Faber and
+             T.~Eiter and
+             G.~Gottlob and
+             S.~Perri and
+             F.~Scarcello},
+  title   = {The {DLV} system for knowledge representation and reasoning},
+  journal = {ACM Transactions on Computational Logic},
+  volume  = {7},
+  number  = {3},
+  pages   = {499-562},
+  year    = {2006},
+  doi     = {10.1145/1149114.1149117}
+}
+
+%jhala2009software
+@article{Jhala2009,
+  author  = {R.~Jhala and R.~Majumdar},
+  title   = {Software model checking},
+  journal = {ACM Computing Surveys},
+  volume  = {41},
+  number  = {4},
+  pages   = {21:1-21:54},
+  year    = {2009},
+  doi     = {10.1145/1592434.1592438}
+}
+
+%wang2009electronic
+@book{Wang2009,
+  author    = {L.-T.~Wang and Y.-W.~Chang and K.-T.~T.~Cheng},
+  title     = {Electronic Design Automation: Synthesis, Verification, and Test},
+  year      = {2009},
+  publisher = {Morgan Kaufmann},
+  edition   = {1st},
+  isbn      = {978-0-12-374364-0}
+}
+
+%ABC
+@inproceedings{ABC,
+  author    = {R.~K.~Brayton and A.~Mishchenko},
+  title     = {{ABC:} {An} academic industrial-strength verification tool},
+  booktitle = {Proc.\ CAV},
+  series    = {LNCS~6174},
+  pages     = {24-40},
+  publisher = {Springer},
+  year      = {2010},
+  doi       = {10.1007/978-3-642-14295-6\_5},
+  note      = {Latest version available at: https://github.com/berkeley-abc/abc}
+}
+
+@inproceedings{ISCAS85-benchmark,
+  author    = {F.~Brglez and H.~Fujiwara},
+  title     = {A neutral netlist of 10 combinational benchmark circuits},
+  booktitle = {Proc.\ ISCAS},
+  pages     = {695-698},
+  publisher = {{IEEE}},
+  year      = {1985},
+  url       = {https://people.engr.ncsu.edu/brglez/CBL/benchmarks/index.html}
+}
+
+@inproceedings{EPFL-benchmark,
+  author    = {L.~Amar{\'u} and P.-E.~Gaillardon and G.~De Micheli},
+  title     = {The {EPFL} combinational benchmark suite},
+  booktitle = {Proc.\ IWLS},
+  year      = {2015},
+  url       = {https://www.epfl.ch/labs/lsi/page-102566-en-html/benchmarks/}
+}
+
+%Hnich11
+@incollection{Hnich2011,
+  author    = {B.~Hnich and
+               R.~Rossi and
+               S.~A.~Tarim and
+               S. Prestwich},
+  title     = {A survey on {CP-AI-OR} hybrids for decision making under uncertainty},
+  booktitle = {Hybrid Optimization: The Ten Years of CPAIOR},
+  publisher = {Springer},
+  pages     = {227-270},
+  year      = {2011},
+  doi       = {10.1007/978-1-4419-1644-0_7}
+}
+
+%berard2013systems
+@book{Berard2013,
+  author    = {B.~B{\'e}rard and
+               M.~Bidoit and
+               A.~Finkel and
+               F.~Laroussinie and
+               A.~Petit and
+               L.~Petrucci and
+               P.~Schnoebelen},
+  title     = {Systems and Software Verification: Model-Checking Techniques and Tools},
+  year      = {2013},
+  publisher = {Springer},
+  edition   = {1st},
+  doi       = {10.1007/978-3-662-04558-9}
+}
+
+%nilsson2014principles
+@book{Nilsson2014,
+  author    = {N.~J.~Nilsson},
+  title     = {Principles of Artificial Intelligence},
+  year      = {2014},
+  publisher = {Morgan Kaufmann},
+  isbn      = {978-3-66-209440-2}
+}
+
+%russell2016artificial
+@book{Russell2020,
+  author    = {S.~J.~Russell and P.~Norvig},
+  title     = {Artificial Intelligence: A Modern Approach},
+  year      = {2020},
+  publisher = {Pearson},
+  edition   = {4th},
+  isbn      = {978-0-13-461099-3}
+}
+
+%CUDD
+@misc{CUDD,
+  author       = {F.~Somenzi},
+  title        = {{CUDD: {CU} decision diagram package}},
+  howpublished = {http://vlsi.colorado.edu/~fabio/}
+}
+
+%SAMIAM
+@misc{SAMIAM,
+  author       = {Automated Reasoning Group, UCLA},
+  title        = {{SAMIAM}: {Sensitivity} analysis, modeling, inference and more},
+  howpublished = {http://reasoning.cs.ucla.edu/samiam/}
+}
+
+@article{Benchmarking-STTT,
+  author  = {D.~Beyer and S.~L{\"{o}}we and P.~Wendler},
+  title   = {Reliable benchmarking: {R}equirements and solutions},
+  journal = {International Journal on Software Tools for Technology Transfer},
+  volume  = {21},
+  number  = {1},
+  pages   = {1--29},
+  year    = {2019},
+  doi     = {10.1007/s10009-017-0469-y}
+}

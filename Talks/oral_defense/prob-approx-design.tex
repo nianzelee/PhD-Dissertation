@@ -1,0 +1,48 @@
+\begin{frame}
+  \frametitle{Analyzing Probabilistic/Approximate VLSI Design}
+  \begin{itemize}
+    \item Paradigm shifts in the post-Moore VLSI design
+          \pause
+          \begin{itemize}
+            \item Probabilistic design~\cite{Chakrapani2006ProbDesign}: erroneous components
+                  \pause
+            \item Approximate design~\cite{Venkatesan2011ApproxDesign}: deviation from specification
+          \end{itemize}
+          \pause
+    \item Distillation operation~\cite{LeeTC18ProbDesign}
+          \pause
+          \begin{itemize}
+            \item Error sources as auxiliary inputs
+                  \pause
+            \item Techniques for conventional Boolean-logic circuits
+          \end{itemize}
+  \end{itemize}
+  \pause
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig/prob-distillation.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Analyzing Probabilistic/Approximate VLSI Design}
+  \begin{itemize}
+    \item Partial design problem~\cite{Gitina2013} of probabilistic design
+          \pause
+          \begin{itemize}
+            \item Synthesize black-box outputs $T$ to realize specification
+                  \pause
+            \item \alert{Constraints on inputs} to black boxes: $D_i \subseteq X \cup Y$
+          \end{itemize}
+  \end{itemize}
+  \pause
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{fig/dssat-prob-miter.pdf}
+  \end{figure}
+  \pause
+  \begin{equation*}
+    \random{} X,\random{} Z,\forall Y,\exists T(D).
+    (Y \equiv E(X)) \limply (F(X,Z,T) \equiv G(X))
+  \end{equation*}
+\end{frame}

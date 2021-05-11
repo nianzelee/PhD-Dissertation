@@ -1,0 +1,233 @@
+%%% Use option "handout" to disable pause/action
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{utopia}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% packages
+\usepackage[square,numbers,sort&compress]{natbib}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{xspace}
+\usepackage{tcolorbox}
+\usepackage{subfig}
+\usepackage{hyperref}
+\usepackage[capitalise,nosort,nameinlink]{cleveref}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{circuitikz}
+\usepackage{pgfplotstable}
+\usetikzlibrary{positioning,arrows}
+% Plots with BenchExec
+\usepackage{standalone}
+\usepackage[
+    group-digits=integer, group-minimum-digits=4, % group digits by thousands
+    free-standing-units, unit-optional-argument, % easier input of numbers with units
+]{siunitx}
+\usepackage{pgfplots}
+\pgfplotsset{
+    compat=1.9,
+    %log ticks with fixed point, % no scientific notation in plots
+    table/col sep=tab, % only tabs are column separators
+    unbounded coords=jump, % better have skips in a plot than appear to be interpolating
+    filter discard warning=false, % Don't complain about empty cells
+}
+\SendSettingsToPgf % use siunitx formatting settings in PGF, too
+% end packages
+
+% symbols
+\newcommand{\booldom}{\mathbb{B}} % Boolean domain
+\newcommand{\limply}{\rightarrow} % logical implication
+\newcommand{\vl}[1]{\texttt{var}(#1)} % variable of a literal
+\newcommand{\as}{\tau} % an assignment
+\newcommand{\av}[1]{\mathcal{A}(#1)} % all assignments over a variable set
+\newcommand{\pf}{\phi} % propositional formula (quantifier-free)
+\newcommand{\vf}[1]{\texttt{vars}(#1)} % variable of a formula
+\newcommand{\pcf}[2]{#1|_{#2}} % positive cofactor
+\newcommand{\ncf}[2]{#1|_{\lnot#2}} % negative cofactor
+\newcommand{\Qf}{\Phi} % quantified formula
+\newcommand{\base}{X_d} % a base set of a formula
+\newcommand{\random}[1]{\rotatebox[origin=c]{180}{$\mathsf{R}$}^{#1}} % randomized quantifier
+\newcommand{\spb}[1]{\Pr[#1]} % satisfying probability
+\newcommand{\wt}{\omega} % weight of a variable
+\newcommand{\sat}[1]{\texttt{SAT}(#1)} % formula is satisfiable
+\newcommand{\unsat}[1]{\texttt{UNSAT}(#1)} % formula is unsatisfiable
+\newcommand{\model}[1]{#1.\mathrm{model}} % formula is unsatisfiable
+\newcommand{\select}{\psi} % selection formula
+\newcommand{\cx}{C^X} % sub-clause of X variables
+\newcommand{\cy}{C^Y} % sub-clause of Y variables
+\newcommand{\sv}[1]{s_{#1}} % selection variable
+\newcommand{\dep}[1]{D_{#1}} % dependency set
+\newcommand{\uvs}{V_{\Qf}^{\forall}} % universal variable set
+\newcommand{\evs}{V_{\Qf}^{\exists}} % existential variable set
+\newcommand{\rvs}{V_{\Qf}^{\random{}}} % random variable set
+\newcommand{\skf}{\mathcal{F}} % Skolem function set
+\newcommand{\nodeval}[1]{#1.\mathrm{value}} % BDD node value
+\newcommand{\nodevar}[1]{#1.\mathrm{var}} % BDD node variable
+\newcommand{\nodevisit}[1]{#1.\mathrm{visited}} % BDD node visited flag
+\newcommand{\nodethen}[1]{#1.\mathrm{then}} % BDD node then
+\newcommand{\nodeelse}[1]{#1.\mathrm{else}} % BDD node else
+\newcommand{\nodesp}[1]{#1.\mathrm{sp}} % BDD node satisfying probability
+\newcommand{\er}{\epsilon} % error rate of a gate
+\newcommand{\dr}{\delta} % defect rate of a design
+\DeclareMathOperator*{\argmax}{arg\,max} % maximizing argument
+\DeclareMathOperator*{\argmin}{arg\,min} % minimizing argument
+
+% tools
+\newcommand{\tool}[1]{\texttt{#1}\xspace}
+\newcommand{\definetool}[2]{\newcommand{#1}{\tool{#2}}\xspace}
+\definetool{\ressat}{reSSAT}
+\definetool{\ressatb}{reSSAT-b}
+\definetool{\erssat}{erSSAT}
+\definetool{\erssatb}{erSSAT-b}
+\definetool{\bddsp}{BDDsp}
+\definetool{\bddspnr}{BDDsp-nr}
+\definetool{\maxplan}{MAXPLAN}
+\definetool{\zander}{ZANDER}
+\definetool{\dcssat}{DC-SSAT}
+\definetool{\complan}{ComPlan}
+\definetool{\minisat}{MiniSat}
+\definetool{\cachet}{Cachet}
+\definetool{\approxmc}{ApproxMC}
+\definetool{\cnfgen}{CNFgen}
+\definetool{\benchexec}{BenchExec}
+\definetool{\abc}{ABC}
+\definetool{\cudd}{CUDD}
+\definetool{\prism}{PRISM}
+\definetool{\timeout}{TO}
+\definetool{\memout}{MO}
+
+% URL
+\newcommand{\ssatabcurl}{https://github.com/NTU-ALComLab/ssatABC}
+\newcommand{\ssatbenchmarkurl}{https://github.com/NTU-ALComLab/ssat-benchmarks}
+\newcommand{\benchexecurl}{https://github.com/sosy-lab/benchexec}
+
+% Evaluation setup, environment, and version
+\newcommand{\machineSpec}{one 2.2\,GHz CPU (Intel Xeon Silver 4210) with 40~processing units and \num{134616}\,MB of RAM}
+\newcommand{\osInfo}{Ubuntu~20.04 (64~bit), running Linux~5.4}
+\newcommand{\compiler}{\texttt{g++ 9.3.0}}
+\newcommand{\timelimit}{\SI{15}{min}}
+\newcommand{\memlimit}{\SI{15}{GB}}
+\newcommand{\ssatABCRevision}{commit \texttt{2ff8e74} of branch \texttt{master}\xspace}
+\newcommand{\ssatBenchRevision}{commit \texttt{ea9fbae} of branch \texttt{master}\xspace}
+
+% constant words
+\newcommand{\word}[1]{\textsc{#1}\xspace}
+\newcommand{\defineword}[2]{\newcommand{#1}{\word{#2}}\xspace}
+\defineword{\true}{true}
+\defineword{\false}{false}
+\defineword{\disjoin}{or}
+\defineword{\conjoin}{and}
+\defineword{\nand}{nand}
+\defineword{\xor}{xor}
+
+% customize package "amsthm"
+\renewcommand\qedsymbol{$\blacksquare$}
+
+% customize package "cleveref"
+\newcommand{\creflastconjunction}{, and~}
+\crefname{equation}{Eq.}{Eqs.}
+\crefname{algorithm}{Alg.}{Algs.}
+\crefname{line}{line}{lines}
+\crefalias{ALC@unique}{line}
+\crefalias{ALC@line}{line}
+
+% customize package "algorithmic"
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+% customize package "pgfplotstable"
+\pgfplotstableset{
+    circuit column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string type,column type=l,column name=\textsc{Circuit}
+                }
+        },
+    formula column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string type,column type=l,column name=\textsc{Formula}
+                }
+        },
+    pi column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PI}
+        },
+    ai column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#AI}
+        },
+    po column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PO}
+        },
+    and column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#And}
+        },
+    level column/.style={
+            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#Level}
+        },
+    time column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
+                }
+        },
+    prob column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=$\Pr$
+                }
+        },
+    ubound column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=UB
+                }
+        },
+    lbound column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=LB
+                }
+        },
+    ubtime column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-UB (s)
+                }
+        },
+    lbtime column/.style={
+            /pgfplots/table/display columns/#1/.style={
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-LB (s)
+                }
+        }
+}
+
+% Fix line counters if multiple algorithms exist
+\makeatletter % Make '@' a normal letter so that it can be used in *.tex files
+\@addtoreset{ALC@line}{algorithm}
+\@addtoreset{ALC@unique}{algorithm}
+\makeatother % Undo the change to '@'
+
+% Title page information
+\title[Stochastic Boolean Satisfiability]{Stochastic Boolean Satisfiability}
+\subtitle{Decision Procedure, Generalization, and Applications}
+
+\author[Nian-Ze Lee]{Nian-Ze Lee}
+
+\institute[NTU GIEE]{Graduate Institute of Electronics Engineering, National Taiwan University}
+
+\date[Disseration Defense, June 2021]{Doctoral Dissertation Oral Defense, 2nd June 2021}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection,subsectionstyle=shaded]
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
