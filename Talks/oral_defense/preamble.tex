@@ -7,6 +7,7 @@
 \usecolortheme{default}
 
 % packages
+\usepackage{etoolbox}
 \usepackage[square,numbers,sort&compress]{natbib}
 \usepackage{algorithm}
 \usepackage{algorithmic}
@@ -216,11 +217,18 @@
 
 \date[Disseration Defense, June 2021]{Doctoral Dissertation Oral Defense, 2nd June 2021}
 
+\setbeamerfont{section in toc}{size=\footnotesize}
+\setbeamerfont{subsection in toc}{size=\scriptsize}
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+\makeatother
+
 \AtBeginSection[]
 {
     \begin{frame}
         \frametitle{Outline}
-        \tableofcontents[currentsection,subsectionstyle=shaded]
+        \tableofcontents[currentsection,hideallsubsections]
     \end{frame}
 }
 
@@ -228,6 +236,6 @@
 {
     \begin{frame}
         \frametitle{Outline}
-        \tableofcontents[currentsection,currentsubsection]
+        \tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]
     \end{frame}
 }
