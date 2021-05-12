@@ -1,0 +1,20 @@
+\begin{frame}
+    \frametitle{Preliminaries}
+    \begin{block}{Dependency Quantified Boolean Formula (DQBF)}
+        $\Qf=\forall x_1, \ldots, \forall x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf$
+        \pause
+        \begin{itemize}
+            \item $D_{y_j} \subseteq \{x_1,\ldots,x_n\}$: the \alert{dependency set} of $y_j$
+                  \pause
+            \item $\Qf$ is satisfiable if
+                  \pause
+                  \begin{enumerate}
+                      \item A Boolean function $f_j$ over variables in $D_{y_j}$ exists for each $y_j$
+                            \pause
+                      \item $\pf$ becomes a tautology over $\{x_1,\ldots,x_n\}$ after substituting $y_j$ with $f_j$
+                  \end{enumerate}
+                  \pause
+            \item $\skf=\{f_1,\ldots,f_m\}$: a set of Skolem functions for $\Qf$
+        \end{itemize}
+    \end{block}
+\end{frame}
