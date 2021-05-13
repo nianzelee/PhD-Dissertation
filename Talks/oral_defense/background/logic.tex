@@ -1,0 +1,24 @@
+\begin{frame}
+    \frametitle{Propositional Logic}
+    \begin{itemize}
+        \item The notations used in this presentation:
+              \pause
+    \end{itemize}
+    \begin{table}[t]
+        \centering
+        \label{tbl:background-symbols}
+        \begin{tabular}{c|c}
+            Symbol                      & Description                                                   \\
+            \hline
+            $\booldom,x,l$              & The Boolean domain $\{\bot,\top\}$, a variable, and a literal \\
+            $C$                         & A clause (a disjunction of literals)                          \\
+            $\as$                       & An assignment (a mapping from a variable set to $\booldom$)   \\
+            $\av{V}$                    & The set of all assignments over variable set $V$              \\
+            $\pf$                       & A quantifier-free formula                                     \\
+            $\as\models\pf$             & $\as$ satisfies $\pf$                                         \\
+            $\pcf{\pf}{x},\ncf{\pf}{x}$ & Positive and negative cofactors of $\pf$ w.r.t. $x$           \\
+            $\pcf{\pf}{\as}$            & The resultant formula after cofactoring $\pf$ with $\as$      \\
+            $\Qf$                       & A quantified formula                                          \\
+        \end{tabular}
+    \end{table}
+\end{frame}
