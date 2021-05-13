@@ -1,0 +1,78 @@
+\newcommand{\nrandom}{\num{700}}
+\newcommand{\napplication}{\num{120}}
+\newcommand{\nstrategic}{\num{60}}
+\newcommand{\npec}{\num{60}}
+
+\begin{frame}
+    \frametitle{Evaluation}
+    \begin{itemize}
+        \item Compared solvers:
+              \pause
+              \begin{itemize}
+                  \item \ressat
+                        \pause
+                        \begin{itemize}
+                            \item With \texttt{C++} language inside~\abc environment~\cite{ABC}
+                                  \pause
+                            \item SAT solver: \minisat-2.2~\cite{Een2003Solver}; weighted model counter: \cachet~\cite{Sang2004}
+                                  \pause
+                        \end{itemize}
+                  \item \ressatb: \ressat without minterm generalization
+                        \pause
+                  \item \dcssat: state-of-the-art DPLL-based SSAT solver
+                        \pause
+              \end{itemize}
+        \item Benchmark set:
+              \pause
+              \begin{itemize}
+                  \item \nrandom~random $k$-CNF formulas
+                        \pause
+                  \item \napplication~application formulas
+                        \pause
+              \end{itemize}
+        \item Experimental setup
+              \pause
+              \begin{itemize}
+                  \item A machine with~\machineSpec
+                        \pause
+                  \item \osInfo
+                        \pause
+                  \item CPU time: \timelimit; memory: \memlimit
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quantile Plot for Random Formulas}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/random-exist-ssat/quantile-cputime-Random.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quantile Plot for Strategic-Company Formulas}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/random-exist-ssat/quantile-cputime-Strategic.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results for PEC Formulas}
+    \begin{table}[ht]
+        \centering
+        \tiny
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\dcssat} & \multicolumn{6}{c}{\ressat} & \multicolumn{6}{c}{\ressatb}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            formula column/.list={0},
+            time column/.list={1,3,6},
+            prob column/.list={2,4,7},
+            ubound column/.list={5,8}
+        ]
+        {random-exist-ssat/parsed-PEC-0.01.csv}
+    \end{table}
+\end{frame}

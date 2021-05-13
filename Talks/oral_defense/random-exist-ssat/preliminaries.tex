@@ -1,3 +1,82 @@
 \begin{frame}
-  \frametitle{Minterm Generalization}
+  \frametitle{Preliminaries}
+  \begin{block}{Random-Exist Quantified SSAT}
+    $\Qf=\random{} X,\exists Y.\pf(X,Y)$
+    \pause
+    \begin{itemize}
+      \item $X,Y$: two disjoint sets of Boolean variables
+            \pause
+      \item $\pf(X,Y)$: a CNF formula
+            \pause
+    \end{itemize}
+  \end{block}
+  \begin{block}{SAT/UNSAT Minterms and Cubes}
+    Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and an assignment $\as$ over $X$:
+    \pause
+    \begin{itemize}
+      \item $\pcf{\pf(X,Y)}{\as}$ is satisfiable: $\as$ is a SAT minterm of $\pf$ over $X$
+            \pause
+      \item $\pcf{\pf(X,Y)}{\as}$ is unsatisfiable: $\as$ is an UNSAT minterm of $\pf$ over $X$
+            \pause
+      \item $\as$ is a partial assignment: $\as$ is a SAT or an UNSAT cube
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preliminaries}
+  \begin{block}{Generalizing SAT Minterms}
+    Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and a SAT minterm $\as$ over $X$:
+    \pause
+    \begin{itemize}
+      \item Find a minimum subset of literals from $\as$ that satisfy all clauses
+            \pause
+      \item Also known as \textit{minimum hitting set}
+            \pause
+    \end{itemize}
+  \end{block}
+  \begin{block}{Example}
+    Consider $\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf$,
+    with $\pf$ consisting of the following clauses, and $\as=\lnot r_1r_2r_3$:
+    \begin{itemize}
+      \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
+      \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
+            \pause
+    \end{itemize}
+    \begin{itemize}
+      \item $\as$ is a SAT minterm: $\pf$ is satisfiable with $\as$ and $\mu=\lnot e_1e_2\lnot e_3$
+            \pause
+      \item Generalize $\as$ to a SAT cube $\as^+=r_2r_3$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preliminaries}
+  \begin{block}{Generalizing UNSAT Minterms}
+    Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and an UNSAT minterm $\as$ over $X$:
+    \pause
+    \begin{itemize}
+      \item Modern SAT solvers: conflict analysis
+            \pause
+      \item $\pcf{\pf(X,Y)}{\as}$ is UNSAT: a subset of literals from $\as$
+            \pause
+      \item Also known as \textit{minimum UNSAT core}
+            \pause
+    \end{itemize}
+  \end{block}
+  \begin{block}{Example}
+    Consider $\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf$,
+    with $\pf$ consisting of the following clauses, and $\as=\lnot r_1\lnot r_2\lnot r_3$:
+    \begin{itemize}
+      \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
+      \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
+            \pause
+    \end{itemize}
+    \begin{itemize}
+      \item $\as$ is an UNSAT minterm: $C_4$ and $C_5$ conflict
+            \pause
+      \item Generalize $\as$ to an UNSAT cube $\as^+=\lnot r_3$
+    \end{itemize}
+  \end{block}
 \end{frame}
