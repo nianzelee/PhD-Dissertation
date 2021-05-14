@@ -1,0 +1,207 @@
+\renewcommand{\nrandom}{\num{700}}
+\renewcommand{\napplication}{\num{212}}
+\newcommand{\ntoilet}{\num{77}}
+\newcommand{\nmaxcount}{\num{26}}
+\newcommand{\nsandcastle}{\num{25}}
+\newcommand{\nconformant}{\num{24}}
+\newcommand{\nmpec}{\num{60}}
+
+\begin{frame}
+    \frametitle{Evaluation}
+    \begin{itemize}
+        \item Compared solvers:
+              \pause
+              \begin{itemize}
+                  \item \erssat: \texttt{C++} language inside~\abc environment~\cite{ABC}
+                        \pause
+                        \begin{itemize}
+                            \item SAT solver: \minisat-2.2~\cite{Een2003Solver}
+                                  \pause
+                            \item Weighted model counter: \cachet~\cite{Sang2004} or \cudd~\cite{Darwiche2002KnowledgeCompilation}
+                                  \pause
+                        \end{itemize}
+                  \item \erssatb: \erssat without heuristics to shorten learnt clauses
+                        \pause
+                  \item \dcssat: state-of-the-art DPLL-based SSAT solver
+                        \pause
+              \end{itemize}
+        \item Experimental setup
+              \pause
+              \begin{itemize}
+                  \item A machine with~\machineSpec
+                        \pause
+                  \item \osInfo
+                        \pause
+                  \item CPU time: \timelimit; memory: \memlimit
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Benchmark Set}
+    \begin{itemize}
+        \item Random $k$-CNF formulas (by \cnfgen~\cite{Lauria2017CNFgen})
+              \pause
+              \begin{itemize}
+                  \item $k\in\{3,\ldots,9\},n\in\{10,20,\ldots,50\},\frac{m}{n}=\{k-1,k,k+1,k+2\}$
+                        \pause
+                  \item Quantify half variables existentially and the other randomly
+                        \pause
+                  \item \num{5} samples per configuration: \nrandom~formulas
+                        \pause
+              \end{itemize}
+        \item Application formulas: \napplication~formulas
+              \pause
+              \begin{table}[ht]
+                  \centering
+                  \small
+                  \begin{tabular}{c|c|c}
+                      Family               & Description                                            & Number       \\
+                      \hline
+                      \textit{Toilet-A}    & Adapted from exist-forall QBFs~\cite{Narizzano2006}    & \ntoilet     \\
+                      \textit{Conformant}  & Adapted from exist-forall QBFs~\cite{Narizzano2006}    & \nconformant \\
+                      \textit{Sand-Castle} & A probabilistic planning problem~\cite{Majercik1998}   & \nsandcastle \\
+                      \textit{Max-Count}   & Adapted from maximum model counting~\cite{Fremont2017} & \nmaxcount   \\
+                      \textit{MPEC}        & Maximum probabilistic equivalence checking             & \nmpec       \\
+                  \end{tabular}
+              \end{table}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CPU-Time Quantile Plot for Random Formulas}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/exist-random-ssat/quantile-cputime-Random.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Memory Quantile Plot for Random Formulas}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/exist-random-ssat/quantile-memory-Random.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Summary of Results for Application Formulas}
+    \input{exist-random-ssat/data-commands.tex}
+    \begin{table}[t]
+        \centering
+        \begin{tabular}{l|ccc}
+            \toprule
+            Algorithm                   & {\dcssat}                                                     & {\erssat} & {\erssatb} \\
+            \midrule
+            Solved formulas             & \num{\DcssatErDefaultApplicationMissingCount}
+                                        & \num{\ErssatDefaultBddApplicationMissingCount}
+                                        & \num{\ErssatBareBddApplicationMissingCount}                                            \\
+            \qquad \textit{Toilet-A}    & \num{\dcssatToiletA}
+                                        & \num{\erssatToiletA}
+                                        & \num{\erssatbToiletA}                                                                  \\
+            \qquad \textit{Conformant}  & \num{\dcssatconformant}
+                                        & \num{\erssatconformant}
+                                        & \num{\erssatbconformant}                                                               \\
+            \qquad \textit{Sand-Castle} & \num{\dcssatcastle}
+                                        & \num{\erssatcastle}
+                                        & \num{\erssatbcastle}                                                                   \\
+            \qquad \textit{Max-Count}   & \num{\dcssatMaxCount}
+                                        & \num{\erssatMaxCount}
+                                        & \num{\erssatbMaxCount}                                                                 \\
+            \qquad \textit{MPEC}        & \num{\dcssatMPEC}
+                                        & \num{\erssatMPEC}
+                                        & \num{\erssatbMPEC}                                                                     \\
+            Timeouts                    & \num{\DcssatErDefaultApplicationErrorTimeoutCount}
+                                        & \num{\ErssatDefaultBddApplicationErrorTimeoutCount}
+                                        & \num{\ErssatBareBddApplicationErrorTimeoutCount}                                       \\
+            Out of memory               & \num{\DcssatErDefaultApplicationErrorOutOfMemoryCount}
+                                        & \num{\ErssatDefaultBddApplicationErrorOutOfMemoryCount}
+                                        & \num{\ErssatBareBddApplicationErrorOutOfMemoryCount}                                   \\
+            Other inconclusive          & \num{\DcssatErDefaultApplicationErrorOtherInconclusiveCount}
+                                        & \num{\ErssatDefaultBddApplicationErrorOtherInconclusiveCount}
+                                        & \num{\ErssatBareBddApplicationErrorOtherInconclusiveCount}                             \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CPU-Time Quantile Plot for Application Formulas}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/exist-random-ssat/quantile-cputime-Application.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Memory Quantile Plot for Application Formulas}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/exist-random-ssat/quantile-memory-Application.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CPU-Time Scatter Plot: \erssat vs. \erssatb}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/exist-random-ssat/scatter-erssat.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CPU-Time Scatter Plot: \erssat vs. \dcssat}
+    \begin{figure}
+        \centering
+        \includegraphics{fig/exist-random-ssat/scatter-dcssat.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results for MPEC Formulas: \erssat}
+    \begin{table}[ht]
+        \centering
+        \scriptsize
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\dcssat} & \multicolumn{8}{c}{\erssat}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            formula column/.list={0},
+            time column/.list={1,3},
+            prob column/.list={2,4},
+            lbound column/.list={5},
+            lbtime column/.list={6}
+        ]
+        {exist-random-ssat/parsed-MPEC-erssat.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results for MPEC Formulas: \erssatb}
+    \begin{table}[ht]
+        \centering
+        \scriptsize
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\dcssat} & \multicolumn{8}{c}{\erssatb}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            formula column/.list={0},
+            time column/.list={1,3},
+            prob column/.list={2,4},
+            lbound column/.list={5},
+            lbtime column/.list={6}
+        ]
+        {exist-random-ssat/parsed-MPEC-erssatb.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Implications from the Results}
+    \begin{itemize}
+        \item \erssat achieves a similar performance as \dcssat in terms of CPU time and outperforms \dcssat in terms of memory consumption on random formulas
+        \item \erssat is not as good as \dcssat at exactly solving the application formulas, which can be attributed to the overhead caused by heuristics
+        \item \erssat is good at deriving tight lower bounds for large formulas
+    \end{itemize}
+\end{frame}
