@@ -9,25 +9,17 @@
         \item Compared solvers:
               \pause
               \begin{itemize}
-                  \item \ressat
+                  \item \ressat: \texttt{C++} language inside~\abc environment~\cite{ABC}
                         \pause
                         \begin{itemize}
-                            \item With \texttt{C++} language inside~\abc environment~\cite{ABC}
+                            \item SAT solver: \minisat-2.2~\cite{Een2003Solver}
                                   \pause
-                            \item SAT solver: \minisat-2.2~\cite{Een2003Solver}; weighted model counter: \cachet~\cite{Sang2004}
+                            \item Weighted model counter: \cachet~\cite{Sang2004}
                                   \pause
                         \end{itemize}
                   \item \ressatb: \ressat without minterm generalization
                         \pause
                   \item \dcssat: state-of-the-art DPLL-based SSAT solver
-                        \pause
-              \end{itemize}
-        \item Benchmark set:
-              \pause
-              \begin{itemize}
-                  \item \nrandom~random $k$-CNF formulas
-                        \pause
-                  \item \napplication~application formulas
                         \pause
               \end{itemize}
         \item Experimental setup
@@ -38,6 +30,37 @@
                   \item \osInfo
                         \pause
                   \item CPU time: \timelimit; memory: \memlimit
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Benchmark Set}
+    \begin{itemize}
+        \item Random $k$-CNF formulas (by \cnfgen~\cite{Lauria2017CNFgen})
+              \pause
+              \begin{itemize}
+                  \item $k\in\{3,\ldots,9\},n\in\{10,20,\ldots,50\},\frac{m}{n}=\{k-1,k,k+1,k+2\}$
+                        \pause
+                  \item Quantify half variables randomly and the other existentially
+                        \pause
+                  \item \num{5} samples per configuration: \nrandom~formulas
+                        \pause
+              \end{itemize}
+        \item Strategic-company~\cite{Cadoli1997} formulas
+              \pause
+              \begin{itemize}
+                  \item Forall-exist QBF: decide whether a company is \textit{strategic}
+                        \pause
+                  \item Replace universal quantifiers with randomized ones
+                        \pause
+                  \item From \texttt{QBFLIB}~\cite{Narizzano2006}: \nstrategic~formulas
+                        \pause
+              \end{itemize}
+        \item PEC formulas
+              \pause
+              \begin{itemize}
+                  \item $\er=0.125,\dr=0.01,0.1$: \npec~formulas
               \end{itemize}
     \end{itemize}
 \end{frame}
@@ -59,7 +82,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Results for PEC Formulas}
+    \frametitle{Results for PEC Formulas ($\dr=0.01$)}
     \begin{table}[ht]
         \centering
         \tiny
@@ -75,4 +98,15 @@
         ]
         {random-exist-ssat/parsed-PEC-0.01.csv}
     \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Implications from the Results}
+    \begin{itemize}
+        \item \ressat outperforms \dcssat on random and strategic formulas
+              \pause
+        \item \ressat is able to derive non-trivial bounds when \dcssat timeouts
+              \pause
+        \item Minterm generalization is crucial to the performance of \ressat
+    \end{itemize}
 \end{frame}
