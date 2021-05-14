@@ -1,3 +1,50 @@
 \begin{frame}
-  \frametitle{Clause Selection}
+  \frametitle{Preliminaries}
+  \begin{block}{Exist-Random Quantified SSAT (E-MAJSAT)}
+    $\Qf=\exists X,\random{} Y.\pf(X,Y)$
+    \pause
+    \begin{itemize}
+      \item $X,Y$: two disjoint sets of Boolean variables
+            \pause
+      \item $\pf(X,Y)$: a CNF formula
+            \pause
+    \end{itemize}
+  \end{block}
+  \begin{block}{Clause Selection}
+    Given a CNF formula $\pf(X,Y)$:
+    \pause
+    \begin{itemize}
+      \item $C=\cx\lor\cy$
+            \pause
+      \item An assignment $\as$ \textit{selects} $C$ if $\as$ falsifies every literal in $\cx$
+            \pause
+      \item Selection variable: $\sv{C}\equiv\lnot\cx$
+            \pause
+      \item Selection relation: $\select(X,S)=\bigwedge\limits_{C\in\pf}(\sv{C}\equiv\lnot\cx)$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preliminaries}
+  \begin{block}{Example: Clause Selection}
+    Consider $\pf(X,Y)$ over $X=\{e_1,e_2,e_3\}$ and $Y=\{r_1,r_2,r_3\}$:
+    \begin{itemize}
+      \item[] $C_1: (e_1 \lor r_1 \lor r_2)$ $C_2: (e_1 \lor e_2 \lor r_1 \lor r_2 \lor \lnot r_3)$
+      \item[] $C_3: (\lnot e_2 \lor \lnot e_3 \lor r_2 \lor \lnot r_3)$ $C_4: (\lnot e_1 \lor e_3 \lor r_3)$
+    \end{itemize}
+    \pause
+    The selection relation $\select(X,S)$ of $\pf(X,Y)$ equals
+    \belowdisplayskip=0pt
+    \begin{align*}
+      (\sv{1} \equiv \lnot e_1) \land
+      (\sv{2} \equiv \lnot e_1 \land \lnot e_2) \land
+      (\sv{3} \equiv e_2 \land e_3) \land
+      (\sv{4} \equiv e_1 \land \lnot e_3)
+    \end{align*}
+    \pause
+    \begin{itemize}
+      \item $\as=\lnot e_1 \lnot e_2 \lnot e_3$: $\pcf{\select}{\as}=s_1s_2\neg s_3 \neg s_4$
+    \end{itemize}
+  \end{block}
 \end{frame}
