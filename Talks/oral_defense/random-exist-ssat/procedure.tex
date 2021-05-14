@@ -33,6 +33,41 @@
 
 \begin{frame}
     \frametitle{Decision Procedure}
+    \begin{block}{Example}
+        Consider $\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf$ with
+        \begin{itemize}
+            \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
+            \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
+        \end{itemize}
+        \pause
+        \begin{table}[t]
+            \centering
+            \small
+            \begin{tabular}{c|c|c|c|c}
+                Assignment                            & Minterm Type & Generalization                & UB      & LB      \\
+                \hline
+                $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$ & UNSAT        & $\as_0^+=\lnot r_3$           & $0.5$   & $0$     \\
+                \pause
+                $\as_1=\lnot r_1 \lnot r_2 r_3$       & UNSAT        & $\as_1^+=\lnot r_1 \lnot r_2$ & $0.375$ & $0$     \\
+                \pause
+                $\as_2=\lnot r_1 r_2 r_3$             & SAT          & $\as_2^+=r_2r_3$              & $0.375$ & $0.25$  \\
+                \pause
+                $\as_3=r_1 \lnot r_2 r_3$             & SAT          & $\as_3^+=r_1r_3$              & $0.375$ & $0.375$
+            \end{tabular}
+        \end{table}
+        \pause
+        \begin{itemize}
+            \item $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$
+                  \pause
+            \item $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$
+                  \pause
+            \item $\spb{\Qf}=0.375$
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Decision Procedure}
     {\small
         \begin{algorithmic}[1]
             \REQUIRE
@@ -56,31 +91,4 @@
             \RETURN $(\texttt{ComputeWeight}(C_\top),1-\texttt{ComputeWeight}(C_\bot))$
         \end{algorithmic}
     }
-\end{frame}
-
-\begin{frame}
-    \frametitle{Decision Procedure}
-    \begin{block}{Example}
-        Consider $\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf$ with
-        \begin{itemize}
-            \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
-            \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
-                  \pause
-        \end{itemize}
-        \begin{itemize}
-            \item $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$: UNSAT minterm, generalized to $\as_0^+=\lnot r_3$
-                  \pause
-            \item $\as_1=\lnot r_1 \lnot r_2 r_3$: UNSAT minterm, generalized to $\as_1^+=\lnot r_1 \lnot r_2$
-                  \pause
-            \item $\as_2=\lnot r_1 r_2 r_3$: SAT minterm, generalized to $\as_2^+=r_2r_3$
-                  \pause
-            \item $\as_3=r_1 \lnot r_2 r_3$: SAT minterm, generalized to $\as_3^+=r_1r_3$
-                  \pause
-            \item $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$
-                  \pause
-            \item $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$
-                  \pause
-            \item $\spb{\Qf}=0.375$
-        \end{itemize}
-    \end{block}
 \end{frame}
