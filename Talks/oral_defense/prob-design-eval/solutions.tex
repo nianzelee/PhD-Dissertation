@@ -29,3 +29,150 @@
     \end{itemize}
   \end{block}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Probabilistic Property Evaluation (PPE)}
+  \begin{block}{Solving MPPE and PPE}
+    \begin{itemize}
+      \item MPPE:
+            \pause
+            \begin{itemize}
+              \item CNF-/BDD-based SSAT solving
+                    \pause
+            \end{itemize}
+      \item PPE:
+            \pause
+            \begin{itemize}
+              \item Weighted model counting
+                    \pause
+              \item Unweighted model counting with formula rewriting
+            \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Probabilistic Property Evaluation (PPE)}
+  \begin{block}{Solving PPE and MPPE via SSAT}
+    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$:
+    \pause
+    \begin{itemize}
+      \item PPE encoding:
+            \pause
+            \belowdisplayskip=0pt
+            \begin{align*}
+              \alert<6>{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
+              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
+              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+              \exists y_1,\ldots,\exists y_m.
+              \pf_M.
+            \end{align*}
+            \pause
+      \item MPPE encoding:
+            \pause
+            \begin{align*}
+              \alert<6>{\exists x_1,\ldots,\exists x_n},
+              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+              \exists y_1,\ldots,\exists y_m.
+              \pf_M.
+            \end{align*}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{BDD-Based SSAT Solving}
+  {
+    \small
+    \begin{algorithmic}[1]
+      \REQUIRE An ROBDD node $N$ and a prefix $Q$
+      \ENSURE $\spb{N=\top}$ under $Q$
+      \IF{($N$ is a terminal node)}\label{code:bddssat-recursive-constant-start}
+      \RETURN $\nodesp{N}$\label{code:bddssat-recursive-constant-end}
+      \ENDIF
+      \IF{($\nodevisit{N}=\false$)}
+      \IF{($Q(\nodevar{N})=\random{p}$)}
+      \alert{\STATE $\nodesp{N}:=(1-p)\cdot\texttt{BddSsatRecur}(\nodeelse{N},Q)+p\cdot\texttt{BddSsatRecur}(\nodethen{N},Q)$}
+      \label{code:bddssat-recursive-random}
+      \ELSE
+      \alert{\STATE $\nodesp{N}:=\max\{\texttt{BddSsatRecur}(\nodeelse{N},Q),\texttt{BddSsatRecur}(\nodethen{N},Q)\}$}
+      \label{code:bddssat-recursive-exist}
+      \ENDIF
+      \STATE $\nodevisit{N} := \true$
+      \ENDIF
+      \RETURN $\nodesp{N}$
+    \end{algorithmic}
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Probabilistic Property Evaluation (PPE)}
+  \begin{block}{Connection between WMC and SSAT}
+    $\random{p_{x_1}}x_1,\ldots,\random{p_{x_n}}x_n,\exists y_1,\ldots,\exists y_m.\pf$ is equivalent to a WMC instance of $\pf$ under $\wt(x_i)=p_{x_i}$ for every $x_i\in X$ if $X=\{x_1,\ldots,x_n\}$ is a \alert{base set} for $\pf$:
+    \pause
+    \begin{itemize}
+      \item Base set: propagating values to variables outside the set
+            \pause
+            \begin{itemize}
+              \item E.g., fresh variables for internal vertices during Tseitin transform
+                    \pause
+            \end{itemize}
+      \item SSAT encoding of PPE can be solved by WMC
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Probabilistic Property Evaluation (PPE)}
+  \begin{block}{Rewriting WMC into Unweighted MC}
+    \begin{itemize}
+      \item Approximate model counting mostly focuses on unweighted instances
+            \pause
+      \item A rewriting technique to enjoy the advancements of approximate MC
+            \pause
+      \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
+    \end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{Example: WMC Rewriting}
+    Express $p_{z_1}=0.25$ with $z_1\equiv z_2\land z_3$:
+    \begin{figure}
+      \centering
+      \input{prob-design-eval/rewriting.tex}
+    \end{figure}
+    \pause
+    \begin{itemize}
+      \item Unweighted: $p_{x_1}=p_{x_2}=p_{x_3}=p_{z_2}=p_{z_3}=0.5$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{WMC Rewriting Procedure}
+  {
+    \footnotesize
+    \begin{algorithmic}[1]
+      \REQUIRE A formula $\pf$, a base set $\base$ for $\pf$,
+      a wt. func. $\wt$ s.t. $\forall x\in\base.\wt(x)=\frac{k}{2^n}$
+      \ENSURE A formula $\pf'$, a base set $\base'$ for $\pf'$,
+      a wt. func. $\wt'$ s.t. $\forall x\in\base'.\wt'(x)=\frac{1}{2}$
+      \STATE $\pf':=\pf,\base':=\base$
+      \FORALL{($x\in\base$)}
+      \STATE $var:=x,wt:=\wt(x)$
+      \WHILE{($wt\neq\frac{1}{2}$)}
+      \STATE $inv:=\bot$
+      \IF{($wt>\frac{1}{2}$)}
+      \STATE $wt:=1-wt,inv:=\top$
+      \ENDIF
+      \STATE $\pf':=\pf'\land((inv \oplus var) \equiv (y_{var} \land z_{var}))$
+      \STATE $\base':=\base'\setminus\{var\}\cup\{y_{var}\}$
+      \STATE $\wt'(y_{var})=\frac{1}{2}$
+      \STATE $var=z_{var},wt=2 \cdot wt$
+      \ENDWHILE
+      \STATE $\base':=\base'\cup\{var\},\wt'(var)=\frac{1}{2}$
+      \ENDFOR
+      \RETURN $(\pf',\base',\wt')$
+    \end{algorithmic}
+  }
+\end{frame}
