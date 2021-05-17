@@ -1,0 +1,12 @@
+\begin{circuitikz}
+    % Logic gates
+    \node[and port] (y1) {$y_1$};
+    \node[or port,right = of y1, anchor=in 1] (y2) {$y_2$};
+    % Wires
+    \draw (y1.out) -- (y2.in 1);
+    % Labels
+    \node[left = 0.1cm of y1.in 1] {$x_1$};
+    \node[left = 0.1cm of y1.in 2] {$x_2$};
+    \node[left = 0.1cm of y2.in 2] {$x_3$};
+    \node[right = 0.1cm of y2.out] {$o$};
+\end{circuitikz}
