@@ -12,12 +12,12 @@
         \item Compared solvers:
               \pause
               \begin{itemize}
-                  \item \erssat: \texttt{C++} language inside~\abc environment~\cite{ABC}
+                  \item \erssat: \texttt{C++} language inside~\abc~\cite{ABC}
                         \pause
                         \begin{itemize}
                             \item SAT solver: \minisat-2.2~\cite{Een2003Solver}
                                   \pause
-                            \item Weighted model counter: \cachet~\cite{Sang2004} or \cudd~\cite{Darwiche2002KnowledgeCompilation}
+                            \item Weighted model counter: \cachet~\cite{Sang2004} and \cudd~\cite{Darwiche2002KnowledgeCompilation}
                                   \pause
                         \end{itemize}
                   \item \erssatb: \erssat without heuristics to shorten learnt clauses
@@ -91,35 +91,35 @@
         \centering
         \begin{tabular}{l|ccc}
             \toprule
-            Algorithm                   & {\dcssat}                                                     & {\erssat} & {\erssatb} \\
+            Algorithm                              & {\dcssat}                                                     & {\erssat} & {\erssatb} \\
             \midrule
-            Solved formulas             & \num{\DcssatErDefaultApplicationMissingCount}
-                                        & \num{\ErssatDefaultBddApplicationMissingCount}
-                                        & \num{\ErssatBareBddApplicationMissingCount}                                            \\
-            \qquad \textit{Toilet-A}    & \num{\dcssatToiletA}
-                                        & \num{\erssatToiletA}
-                                        & \num{\erssatbToiletA}                                                                  \\
-            \qquad \textit{Conformant}  & \num{\dcssatconformant}
-                                        & \num{\erssatconformant}
-                                        & \num{\erssatbconformant}                                                               \\
-            \qquad \textit{Sand-Castle} & \num{\dcssatcastle}
-                                        & \num{\erssatcastle}
-                                        & \num{\erssatbcastle}                                                                   \\
-            \qquad \textit{Max-Count}   & \num{\dcssatMaxCount}
-                                        & \num{\erssatMaxCount}
-                                        & \num{\erssatbMaxCount}                                                                 \\
-            \qquad \textit{MPEC}        & \num{\dcssatMPEC}
-                                        & \num{\erssatMPEC}
-                                        & \num{\erssatbMPEC}                                                                     \\
-            Timeouts                    & \num{\DcssatErDefaultApplicationErrorTimeoutCount}
-                                        & \num{\ErssatDefaultBddApplicationErrorTimeoutCount}
-                                        & \num{\ErssatBareBddApplicationErrorTimeoutCount}                                       \\
-            Out of memory               & \num{\DcssatErDefaultApplicationErrorOutOfMemoryCount}
-                                        & \num{\ErssatDefaultBddApplicationErrorOutOfMemoryCount}
-                                        & \num{\ErssatBareBddApplicationErrorOutOfMemoryCount}                                   \\
-            Other inconclusive          & \num{\DcssatErDefaultApplicationErrorOtherInconclusiveCount}
-                                        & \num{\ErssatDefaultBddApplicationErrorOtherInconclusiveCount}
-                                        & \num{\ErssatBareBddApplicationErrorOtherInconclusiveCount}                             \\
+            Solved formulas                        & \num{\DcssatErDefaultApplicationMissingCount}
+                                                   & \num{\ErssatDefaultBddApplicationMissingCount}
+                                                   & \num{\ErssatBareBddApplicationMissingCount}                                            \\
+            \qquad \textit{Toilet-A}               & \num{\dcssatToiletA}
+                                                   & \num{\erssatToiletA}
+                                                   & \num{\erssatbToiletA}                                                                  \\
+            \qquad \textit{Conformant}             & \num{\dcssatconformant}
+                                                   & \num{\erssatconformant}
+                                                   & \num{\erssatbconformant}                                                               \\
+            \qquad \alert<2>{\textit{Sand-Castle}} & \num{\dcssatcastle}
+                                                   & \num{\erssatcastle}
+                                                   & \num{\erssatbcastle}                                                                   \\
+            \qquad \textit{Max-Count}              & \num{\dcssatMaxCount}
+                                                   & \num{\erssatMaxCount}
+                                                   & \num{\erssatbMaxCount}                                                                 \\
+            \qquad \textit{MPEC}                   & \num{\dcssatMPEC}
+                                                   & \num{\erssatMPEC}
+                                                   & \num{\erssatbMPEC}                                                                     \\
+            Timeouts                               & \num{\DcssatErDefaultApplicationErrorTimeoutCount}
+                                                   & \num{\ErssatDefaultBddApplicationErrorTimeoutCount}
+                                                   & \num{\ErssatBareBddApplicationErrorTimeoutCount}                                       \\
+            Out of memory                          & \num{\DcssatErDefaultApplicationErrorOutOfMemoryCount}
+                                                   & \num{\ErssatDefaultBddApplicationErrorOutOfMemoryCount}
+                                                   & \num{\ErssatBareBddApplicationErrorOutOfMemoryCount}                                   \\
+            Other inconclusive                     & \num{\DcssatErDefaultApplicationErrorOtherInconclusiveCount}
+                                                   & \num{\ErssatDefaultBddApplicationErrorOtherInconclusiveCount}
+                                                   & \num{\ErssatBareBddApplicationErrorOtherInconclusiveCount}                             \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -158,7 +158,38 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Results for MPEC Formulas: \erssat}
+    \frametitle{Case Study: \textit{Sand-Castle}}
+    \begin{itemize}
+        \item An agent wants to build a sand castle within finite stages
+              \pause
+              \begin{itemize}
+                  \item At each stage: either digging a moat or erecting a castle
+                        \pause
+              \end{itemize}
+        \item Conformant planning: exist-random quantified SSAT
+              \pause
+              \begin{itemize}
+                  \item Existentially quantified variables: policy selection
+                        \pause
+                  \item Randomly quantified variables: probabilistic mechanism
+                        \pause
+              \end{itemize}
+        \item \textit{Sand-Castle} formula with $n$ stages: $\pf=\bigwedge_{i=1}^n \pf_d^{(i)}\land\pf_e^{(i)}$
+              \pause
+              \begin{itemize}
+                  \item $\pf_d^{(i)}$ (resp. $\pf_e^{(i)}$) selected iff digging (resp. erecting) at stage~$i$
+                        \pause
+                  \item Each policy selects a distinct set of clauses
+                        \pause
+                  \item Clause-containment learning degenerates to brute-force search
+                        \pause
+              \end{itemize}
+        \item \textit{Sand-Castle} favors \dcssat: same subformulas  across the stages
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Approximate Solving: \erssat on \textit{MPEC}}
     \begin{table}[ht]
         \centering
         \scriptsize
@@ -178,7 +209,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Results for MPEC Formulas: \erssatb}
+    \frametitle{Approximate Solving: \erssatb on \textit{MPEC}}
     \begin{table}[ht]
         \centering
         \scriptsize
@@ -200,8 +231,16 @@
 \begin{frame}
     \frametitle{Implications from the Results}
     \begin{itemize}
-        \item \erssat achieves a similar performance as \dcssat in terms of CPU time and outperforms \dcssat in terms of memory consumption on random formulas
-        \item \erssat is not as good as \dcssat at exactly solving the application formulas, which can be attributed to the overhead caused by heuristics
+        \item \erssat achieves a similar performance as \dcssat on random formulas
+              \pause
+        \item \erssat is not suitable for certain application formulas
+              \pause
+              \begin{itemize}
+                  \item Clause-containment learning might degenerate to brute-force search
+                        \pause
+                  \item Overhead incurred by the heuristics to shorten learnt clauses
+                        \pause
+              \end{itemize}
         \item \erssat is good at deriving tight lower bounds for large formulas
     \end{itemize}
 \end{frame}
