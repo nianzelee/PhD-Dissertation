@@ -34,13 +34,13 @@
   \frametitle{Probabilistic Property Evaluation (PPE)}
   \begin{block}{Solving MPPE and PPE}
     \begin{itemize}
-      \item MPPE:
+      \item MPPE
             \pause
             \begin{itemize}
               \item CNF-/BDD-based SSAT solving
                     \pause
             \end{itemize}
-      \item PPE:
+      \item PPE
             \pause
             \begin{itemize}
               \item Weighted model counting
@@ -57,7 +57,7 @@
     Given a miter SPBN $G_M$ and its CNF formula $\pf_M$:
     \pause
     \begin{itemize}
-      \item PPE encoding:
+      \item PPE encoding
             \pause
             \belowdisplayskip=0pt
             \begin{align*}
@@ -65,17 +65,17 @@
               \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
               \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
               \exists y_1,\ldots,\exists y_m.
-              \pf_M.
+              \pf_M
             \end{align*}
             \pause
-      \item MPPE encoding:
+      \item MPPE encoding
             \pause
             \begin{align*}
               \alert<6>{\exists x_1,\ldots,\exists x_n},
               \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
               \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
               \exists y_1,\ldots,\exists y_m.
-              \pf_M.
+              \pf_M
             \end{align*}
     \end{itemize}
   \end{block}
