@@ -13,11 +13,11 @@
               \item $f_j$ over variables in $D_{y_j}$ for each $y_j$
             \end{itemize}
             \pause
-      \item Satisfying probability of $\Qf$ with respect to $\skf$:
+      \item Satisfying probability of $\Qf$ with respect to $\skf$
             \pause
-            \begin{equation*}
+            \begin{align*}
               \spb{\pcf{\Qf}{\skf}}=\Pr[\random{p_1} x_1, \ldots, \random{p_n} x_n.\pf|_{\skf}]
-            \end{equation*}
+            \end{align*}
             \pause
       \item Decision version: given $\Qf$ and $\theta$ decide if $\spb{\pcf{\Qf}{\skf}} \geq \theta$ for some $\skf$
             \pause
@@ -39,14 +39,15 @@
       (x_1 \lor \lnot y_2)
       (x_2 \lor \lnot y_2)                                                                                       \\
        & \Qf_1' = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_1,x_2}\}).\pf
-    \end{align*}\pause
+    \end{align*}
+    \pause
     \begin{itemize}
-      \item Skolem functions:
-            \begin{equation*}
-              \skf^*=\{f^*_1(x_1)=x_1,f^*_2(x_1,x_2)=x_1 \land x_2\},\spb{\pcf{\Qf_1'}{\skf^*}}=1
-            \end{equation*}
+      \item Skolem functions: $\skf^*=\{f^*_1(x_1)=x_1,f^*_2(x_1,x_2)=x_1 \land x_2\}$
+            \pause
+      \item Satisfying probability: $\spb{\pcf{\Qf_1'}{\skf^*}}=1$
     \end{itemize}
-  \end{block}\pause
+  \end{block}
+  \pause
   \begin{block}{Example: Satisfying Probability of DSSAT}
     \abovedisplayskip=0pt
     $\Qf_2 = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_2}\}).\pf$

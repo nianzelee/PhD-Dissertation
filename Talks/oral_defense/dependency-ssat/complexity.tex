@@ -13,7 +13,7 @@
   \begin{block}{Proof Sketch}
     \belowdisplayskip=0pt
     \begin{itemize}
-      \item NEXPTIME:
+      \item NEXPTIME
             \pause
             \begin{enumerate}
               \item nondeterministically construct a set of Skolem functions $\skf$
@@ -23,13 +23,13 @@
             \pause
       \item NEXPTIME-hard: DQBF $\leq_P$ DSSAT
             \pause
-            \begin{equation*}
+            \begin{align*}
               \Qf_Q=\forall x_1, \ldots, \forall x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf
-            \end{equation*}
+            \end{align*}
             \pause
-            \begin{equation*}
+            \begin{align*}
               \Qf_S=\random{0.5} x_1, \ldots, \random{0.5} x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf
-            \end{equation*}
+            \end{align*}
             \pause
             Claim: $\Qf_Q$ is satisfiable if and only if $\spb{\pcf{\Qf_S}{\skf}} \geq 1$ for some $\skf$
     \end{itemize}
