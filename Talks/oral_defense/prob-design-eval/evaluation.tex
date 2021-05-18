@@ -1,0 +1,141 @@
+\begin{frame}
+    \frametitle{Evaluation}
+    \begin{itemize}
+        \item Compared approaches
+              \pause
+              \begin{itemize}
+                  \item SSAT formulation (MPPE and PPE)
+                        \pause
+                        \begin{itemize}
+                            \item \bddsp: \texttt{C} language using \cudd~\cite{CUDD} inside \abc~\cite{ABC}
+                                  \pause
+                            \item \bddspnr: \bddsp without variable reordering
+                                  \pause
+                            \item \dcssat: state-of-the-art CNF-based solver
+                                  \pause
+                        \end{itemize}
+                  \item Model-counting formulation (PPE)
+                        \pause
+                        \begin{itemize}
+                            \item \cachet: exact weighted model counter
+                                  \pause
+                            \item \approxmc: $(\epsilon,\delta)$ approximate model counter ($\epsilon=0.99,\delta=0.01$)
+                                  \pause
+                        \end{itemize}
+              \end{itemize}
+        \item Experimental setup
+              \pause
+              \begin{itemize}
+                  \item A machine with~\machineSpec
+                        \pause
+                  \item \osInfo
+                        \pause
+                  \item CPU time: \timelimit; memory: \memlimit
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Benchmark Set}
+    \begin{itemize}
+        \item Equivalence checking: probabilistic design vs. error-free version
+              \pause
+              \begin{itemize}
+                  \item Average case (PEC): uniform distribution over PIs
+                        \pause
+                  \item Worst case (MPEC): find a maximizing assignment for PIs
+                        \pause
+              \end{itemize}
+        \item ISCAS\,'85~\cite{ISCAS85-benchmark}
+              and EPFL~\cite{EPFL-benchmark} benchmark suites
+              \pause
+              \begin{itemize}
+                  \item And-inverter graphs (AIGs): from 100 to 100K gates
+                        \pause
+                  \item Error rate: $\er=0.125$
+                        \pause
+                  \item Defect rate: $\dr=0.01$ and $0.1$
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results: Solving PEC with $\dr=0.01$}
+    \begin{table}
+        \centering
+        \tiny
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat} & \multicolumn{4}{c}{\cachet} & \multicolumn{4}{c}{\approxmc}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            circuit column/.list={0},
+            time column/.list={1,3,5,7},
+            prob column/.list={2,4,6,8}
+        ]
+        {prob-design-eval/parsed-PEC-D-0.01.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results: Solving PEC with $\dr=0.1$}
+    \begin{table}
+        \centering
+        \tiny
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\dcssat} & \multicolumn{4}{c}{\cachet} & \multicolumn{4}{c}{\approxmc}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            circuit column/.list={0},
+            time column/.list={1,3,5,7},
+            prob column/.list={2,4,6,8}
+        ]
+        {prob-design-eval/parsed-PEC-D-0.10.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results: Solving MPEC with $\dr=0.01$}
+    \begin{table}
+        \centering
+        \tiny
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\bddspnr} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            circuit column/.list={0},
+            time column/.list={1,3,5},
+            prob column/.list={2,4,6}
+        ]
+        {prob-design-eval/parsed-MPEC-D-0.01.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results: Solving MPEC with $\dr=0.1$}
+    \begin{table}
+        \centering
+        \tiny
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\bddsp} & \multicolumn{4}{c}{\bddspnr} & \multicolumn{4}{c}{\dcssat}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            circuit column/.list={0},
+            time column/.list={1,3,5},
+            prob column/.list={2,4,6}
+        ]
+        {prob-design-eval/parsed-MPEC-D-0.10.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Implications from the Results}
+    \begin{itemize}
+        \item \bddsp performs the best for small- and medium-sized circuits
+        \item \approxmc uniquely solves large instances
+        \item \cachet and \dcssat do not scale well
+    \end{itemize}
+\end{frame}
