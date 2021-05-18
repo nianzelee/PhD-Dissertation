@@ -30,7 +30,7 @@
     \begin{block}{Example: Computation of Satisfying Probability}
         \abovedisplayskip=0pt
         \begin{align*}
-             & \Qf_1=\random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf \\
+             & \Qf=\random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf \\
              & \pf=(x_1 \lor \lnot y_1)
             (\lnot x_1 \lor y_1)
             (\lnot x_1 \lor \lnot x_2 \lor y_2)
@@ -120,7 +120,7 @@
             \action<10>{\node{$\random{0.5} x_1$}
                 child[negative]{node{$1$}}
                 child[positive]{node{$1$}};}
-            \action<11>{\node{$\spb{\Qf_1}=1$};}
+            \action<11>{\node{$\spb{\Qf}=1$};}
         \end{tikzpicture}
     \end{figure}
 \end{frame}
@@ -144,8 +144,9 @@
     \end{block}\pause
     \begin{block}{Example: Skolem Functions}
         \abovedisplayskip=0pt
+        \belowdisplayskip=0pt
         \begin{align*}
-             & \Qf_1=\random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf \\
+             & \Qf=\random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf \\
              & \pf=(x_1 \lor \lnot y_1)
             (\lnot x_1 \lor y_1)
             (\lnot x_1 \lor \lnot x_2 \lor y_2)
@@ -153,7 +154,8 @@
             (x_2 \lor \lnot y_2)
         \end{align*}
         \pause
-        Variable $y_1$: $f_1(x_1)=x_1$;
-        variable $y_2$: $f_2(x_1,x_2)=x_1 \land x_2$
+        \begin{itemize}
+            \item Variable $y_1$: $f_1(x_1)=x_1$; variable $y_2$: $f_2(x_1,x_2)=x_1 \land x_2$
+        \end{itemize}
     \end{block}
 \end{frame}

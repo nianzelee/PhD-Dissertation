@@ -1,94 +1,94 @@
 \begin{frame}
-    \frametitle{Decision Procedure}
-    \begin{block}{Summation of Minterm Weights}
-        Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$, $\spb{\Qf}$ equals:
-        \pause
-        \begin{itemize}
-            \item Sum of weights of all SAT minterms over $X$
-                  \pause
-            \item One minus sum of weights of all UNSAT minterms over $X$
-                  \pause
-        \end{itemize}
-    \end{block}
-    \begin{block}{Summation of Cube Weights}
-        Avoid exhaustive enumeration by minterm generalization:
-        \pause
-        \begin{itemize}
-            \item Overlapping cubes: weights cannot be summed up directly
-                  \pause
-            \item Weighted model counting
-                  \pause
-        \end{itemize}
-    \end{block}
-    \begin{block}{Approximate SSAT}
-        The collected cubes reflect bounds of $\spb{\Qf}$:
-        \pause
-        \begin{itemize}
-            \item SAT cubes: lower bound
-                  \pause
-            \item UNSAT cubes: upper bound
-        \end{itemize}
-    \end{block}
+  \frametitle{Decision Procedure}
+  \begin{block}{RE-SSAT Solving: Summation of Minterm Weights}
+    Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$, $\spb{\Qf}$ equals:
+    \pause
+    \begin{itemize}
+      \item Sum of weights of all SAT minterms over $X$
+            \pause
+      \item One minus sum of weights of all UNSAT minterms over $X$
+            \pause
+    \end{itemize}
+  \end{block}
+  \begin{block}{RE-SSAT Solving: Summation of Cube Weights}
+    Avoid exhaustive enumeration by minterm generalization:
+    \pause
+    \begin{itemize}
+      \item Overlapping cubes: weights cannot be summed up directly
+            \pause
+      \item Handle overlap by weighted model counting
+            \pause
+    \end{itemize}
+  \end{block}
+  \begin{block}{Approximate RE-SSAT Solving}
+    The collected cubes reflect bounds of $\spb{\Qf}$:
+    \pause
+    \begin{itemize}
+      \item SAT cubes: lower bound
+            \pause
+      \item UNSAT cubes: upper bound
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Decision Procedure}
-    \begin{block}{Example}
-        Consider $\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf$ with
-        \begin{itemize}
-            \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
-            \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
-        \end{itemize}
+  \frametitle{Decision Procedure}
+  \begin{block}{Example: RE-SSAT Solving}
+    Consider $\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf$ with
+    \begin{itemize}
+      \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
+      \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
+    \end{itemize}
+    \pause
+    \begin{table}[t]
+      \centering
+      \small
+      \begin{tabular}{c|c|c|c|c}
+        Assignment                            & Minterm Type & Generalization                & UB      & LB      \\
+        \hline
+        $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$ & UNSAT        & $\as_0^+=\lnot r_3$           & $0.5$   & $0$     \\
         \pause
-        \begin{table}[t]
-            \centering
-            \small
-            \begin{tabular}{c|c|c|c|c}
-                Assignment                            & Minterm Type & Generalization                & UB      & LB      \\
-                \hline
-                $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$ & UNSAT        & $\as_0^+=\lnot r_3$           & $0.5$   & $0$     \\
-                \pause
-                $\as_1=\lnot r_1 \lnot r_2 r_3$       & UNSAT        & $\as_1^+=\lnot r_1 \lnot r_2$ & $0.375$ & $0$     \\
-                \pause
-                $\as_2=\lnot r_1 r_2 r_3$             & SAT          & $\as_2^+=r_2r_3$              & $0.375$ & $0.25$  \\
-                \pause
-                $\as_3=r_1 \lnot r_2 r_3$             & SAT          & $\as_3^+=r_1r_3$              & $0.375$ & $0.375$
-            \end{tabular}
-        \end{table}
+        $\as_1=\lnot r_1 \lnot r_2 r_3$       & UNSAT        & $\as_1^+=\lnot r_1 \lnot r_2$ & $0.375$ & $0$     \\
         \pause
-        \begin{itemize}
-            \item $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$
-                  \pause
-            \item $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$
-                  \pause
-            \item $\spb{\Qf}=0.375$
-        \end{itemize}
-    \end{block}
+        $\as_2=\lnot r_1 r_2 r_3$             & SAT          & $\as_2^+=r_2r_3$              & $0.375$ & $0.25$  \\
+        \pause
+        $\as_3=r_1 \lnot r_2 r_3$             & SAT          & $\as_3^+=r_1r_3$              & $0.375$ & $0.375$
+      \end{tabular}
+    \end{table}
+    \pause
+    \begin{itemize}
+      \item $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$
+            \pause
+      \item $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$
+            \pause
+      \item $\spb{\Qf}=0.375$
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Decision Procedure}
-    {\small
-        \begin{algorithmic}[1]
-            \REQUIRE
-            $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and a run-time limit \timeout
-            \ENSURE
-            Lower and upper bounds $(P_L,P_U)$ of $\spb{\Qf}$
-            \STATE $\select(X) := \top$
-            \STATE $C_\top := \emptyset$
-            \STATE $C_\bot := \emptyset$
-            \WHILE{($\sat{\select}$ \textbf{and} $\texttt{run-time} < \timeout$)}
-            \STATE $\as := \model{\select}$
-            \IF{($\sat{\pcf{\pf}{\as}}$)}
-            \STATE $\as^+ := \texttt{MinimalSatisfying}(\pf,\as)$
-            \STATE $C_\top := C_\top \cup \{\as^+\}$
-            \ELSE
-            \STATE $\as^+ := \texttt{MinimalConflicting}(\pf,\as)$
-            \STATE $C_\bot := C_\bot \cup \{\as^+\}$
-            \ENDIF
-            \STATE $\select := \select \land \lnot\as^+$
-            \ENDWHILE
-            \RETURN $(\texttt{ComputeWeight}(C_\top),1-\texttt{ComputeWeight}(C_\bot))$
-        \end{algorithmic}
-    }
+  \frametitle{Decision Procedure}
+  {\scriptsize
+    \begin{algorithmic}[1]
+      \REQUIRE
+      $\Qf=\random{} X,\exists Y.\pf(X,Y)$ and a run-time limit \timeout
+      \ENSURE
+      Lower and upper bounds $(P_L,P_U)$ of $\spb{\Qf}$
+      \STATE $\select(X) := \top$
+      \STATE $C_\top := \emptyset$
+      \STATE $C_\bot := \emptyset$
+      \WHILE{($\sat{\select}$ \textbf{and} $\texttt{run-time} < \timeout$)}
+      \STATE $\as := \model{\select}$
+      \IF{($\sat{\pcf{\pf}{\as}}$)}
+      \STATE $\as^+ := \texttt{MinimalSatisfying}(\pf,\as)$
+      \STATE $C_\top := C_\top \cup \{\as^+\}$
+      \ELSE
+      \STATE $\as^+ := \texttt{MinimalConflicting}(\pf,\as)$
+      \STATE $C_\bot := C_\bot \cup \{\as^+\}$
+      \ENDIF
+      \STATE $\select := \select \land \lnot\as^+$
+      \ENDWHILE
+      \RETURN $(\texttt{ComputeWeight}(C_\top),1-\texttt{ComputeWeight}(C_\bot))$
+    \end{algorithmic}
+  }
 \end{frame}

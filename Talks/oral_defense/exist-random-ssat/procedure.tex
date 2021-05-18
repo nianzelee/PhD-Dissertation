@@ -1,6 +1,6 @@
 \begin{frame}
     \frametitle{Decision Procedure}
-    \begin{block}{Solving E-MAJSAT}
+    \begin{block}{E-MAJSAT Solving: Maximize Conditional Probability}
         Given $\Qf=\exists X,\random{} Y.\pf(X,Y)$, $\spb{\Qf}$ equals:
         \pause
         \begin{itemize}
@@ -10,7 +10,7 @@
                   \pause
         \end{itemize}
     \end{block}
-    \begin{block}{Clause-Containment Learning}
+    \begin{block}{E-MAJSAT Solving: Clause-Containment Learning}
         Prune assignments that select a superset of the selected clauses
         \pause
         \begin{itemize}
@@ -25,7 +25,7 @@
 
 \begin{frame}
     \frametitle{Decision Procedure}
-    \begin{block}{Example: Solving E-MAJSAT}
+    \begin{block}{Example: E-MAJSAT Solving}
         Consider $\Qf=\exists e_1,\exists e_2,\exists e_3,\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pf$ with
         \begin{itemize}
             \item[] $C_1: (e_1 \lor r_1 \lor r_2)$ $C_2: (e_1 \lor e_2 \lor r_1 \lor r_2 \lor \lnot r_3)$
@@ -58,9 +58,9 @@
 
 \begin{frame}
     \frametitle{Decision Procedure}
-    \begin{block}{Heuristics to Shorten Learnt Clauses}
+    \begin{block}{E-MAJSAT Solving: Heuristics to Shorten Learnt Clauses}
         \begin{itemize}
-            \item A shorter learnt clause prunes more search space:
+            \item A shorter learnt clause prunes more search space
                   \pause
                   \begin{itemize}
                       \item Minimal clause selection: SAT solving
@@ -156,7 +156,7 @@
 
 \begin{frame}
     \frametitle{Decision Procedure}
-    {\footnotesize
+    {\scriptsize
         \begin{algorithmic}[1]
             \REQUIRE $\Qf=\exists X,\random{} Y.\pf(X,Y)$
             \ENSURE $\spb{\Qf}$

@@ -1,0 +1,13 @@
+Formula	DC-T	DC-P	erSSAT-T	erSSAT-P	erSSAT-U	erSSATb-T	erSSATb-P	erSSATb-U
+c1908	nan	nan	nan	nan	0.9999810	nan	nan	nan
+c3540	nan	nan	nan	nan	0.9999960	nan	nan	nan
+c432	nan	nan	nan	nan	0.7812120	nan	nan	0.9759230
+c880	nan	nan	nan	nan	0.9983850	nan	nan	nan
+cavlc	nan	nan	nan	nan	0.7656860	nan	nan	0.8879150
+ctrl	0.052739122	0.821531	nan	nan	0.8491570	nan	nan	0.8725620
+dec	184.520715081	0.987405	nan	nan	0.9878030	nan	nan	0.9992850
+i2c	nan	nan	nan	nan	0.9981550	nan	nan	nan
+int2float	4.327174128	0.432427	nan	nan	0.5223450	nan	nan	0.6464930
+max	nan	nan	nan	nan	0.9999550	nan	nan	nan
+priority	nan	nan	nan	nan	0.9999890	nan	nan	nan
+router	nan	nan	nan	nan	0.2411610	nan	nan	0.3104570
