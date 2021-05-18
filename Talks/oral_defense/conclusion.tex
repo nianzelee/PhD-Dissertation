@@ -1,24 +1,57 @@
 \begin{frame}
-      \frametitle{Conclusion and Future Work}
+      \frametitle{Conclusion}
       \begin{itemize}
-            \item Formulation of DSSAT
+            \item An SSAT-based framework to analyze probabilistic design
                   \pause
                   \begin{itemize}
-                        \item Extension from DQBF
+                        \item Average case: random-exist quantified SSAT
                               \pause
-                        \item NEXPTIME-completeness
-                              \pause
-                        \item Applications in probabilistic/approximate circuits and Dec-POMDP
+                        \item Worst case: exist-random quantified SSAT
                               \pause
                   \end{itemize}
-            \item Solver development: combining DQBF and SSAT techniques
+            \item Novel algorithms for random-exist and exist-random quantified SSAT
                   \pause
                   \begin{itemize}
-                        \item DPLL-based solving for DQBF~\cite{Frohlich2012}
+                        \item Model counting
                               \pause
-                        \item Variable elimination for DQBF~\cite{Gitina2015}
+                        \item Random-exist: minterm generalization from SAT
                               \pause
-                        \item Clausal abstraction for DQBF~\cite{Tentrup2019} and SSAT~\cite{Chen2021}
+                        \item Exist-random: clause selection from QBF
+                              \pause
+                  \end{itemize}
+            \item Dependency SSAT formulation
+                  \pause
+                  \begin{itemize}
+                        \item NEXPTIME-completeness
+                              \pause
+                        \item Applications to probabilistic partial design and Dec-POMDP
+                              \pause
+                  \end{itemize}
+            \item Open-source solvers and instances
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
+      \frametitle{Future Work}
+      \begin{itemize}
+            \item General SSAT and DSSAT formulas
+                  \pause
+                  \begin{itemize}
+                        \item Clause selection for SSAT~\cite{Chen2021} and DQBF~\cite{Tentrup2019}
+                              \pause
+                  \end{itemize}
+            \item $(\epsilon,\delta)$ approximate SSAT solving
+                  \pause
+                  \begin{itemize}
+                        \item Based on $(\epsilon,\delta)$ approximate model counting
+                              \pause
+                  \end{itemize}
+            \item Tight integration of model-counting component
+                  \pause
+                  \begin{itemize}
+                        \item Incremental model counting
+                              \pause
+                        \item More advanced data structure, e.g., d-DNNF~\cite{Darwiche2002dDNNF}
                   \end{itemize}
       \end{itemize}
 \end{frame}
