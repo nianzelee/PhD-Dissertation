@@ -1,0 +1,30 @@
+\begin{frame}
+    \frametitle{Model Counting}
+    \begin{itemize}
+        \item Exact: find the precise count
+              \pause
+              \begin{itemize}
+                  \item \cachet~\cite{Sang2004,Sang2005ModelCounting}: DPLL search plus subformula caching
+                        \pause
+                  \item \texttt{c2d}~\cite{Darwiche2001,Darwiche2002dDNNF}: CNF-to-d-DNNF compilation
+                        \pause
+              \end{itemize}
+        \item Approximate: bounds with guarantee
+              \pause
+              \begin{itemize}
+                  \item \approxmc~\cite{Chakraborty2013,Chakraborty2016}: $\Pr[(1+\epsilon)^{-1}\#\pf \leq A \leq (1+\epsilon)\#\pf] \geq 1-\delta$
+                        \pause
+              \end{itemize}
+        \item Variants: expressible by SSAT
+              \pause
+              \begin{itemize}
+                  \item Weighted model counting~\cite{Sang2005BayesianInference,Chavira2008}
+                        \pause
+                  \item Projected model counting~\cite{Aziz2015}
+                        \pause
+                  \item Maximum model counting~\cite{Fremont2017}
+                        \pause
+              \end{itemize}
+        \item Model Counting Competition~\cite{MC-COMP2020}
+    \end{itemize}
+\end{frame}

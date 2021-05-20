@@ -126,6 +126,23 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Express Model-Counting Variants with SSAT}
+    \begin{table}[t]
+        \centering
+        \begin{tabular}{c|c}
+            Variant            & SSAT encoding                                                               \\
+            \hline
+            Unweighted         & $\random{0.5}x_1,\ldots,\random{0.5}x_n.\pf$                                \\
+            Weighted           & $\random{p_1}x_1,\ldots,\random{p_n}x_n.\pf$                                \\
+            Projected          & $\random{0.5}x_1,\ldots,\random{0.5}x_n,\exists y_1,\ldots,\exists y_m.\pf$ \\
+            Maximum            & $\exists x_1,\ldots,\exists x_n,\random{0.5}y_1,\ldots,\random{0.5}y_m.\pf$ \\
+            Projected weighted & $\random{p_1}x_1,\ldots,\random{p_n}x_n,\exists y_1,\ldots,\exists y_m.\pf$ \\
+            Maximum weighted   & $\exists x_1,\ldots,\exists x_n,\random{p_1}y_1,\ldots,\random{p_m}y_m.\pf$ \\
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
     \frametitle{Background}
     \begin{block}{Game-Theoretical Interpretation of SSAT}
         $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf$, $Q_i \in \{\random{p},\exists\}$

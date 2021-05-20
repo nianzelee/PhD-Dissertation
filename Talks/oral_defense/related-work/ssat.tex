@@ -1,0 +1,32 @@
+\begin{frame}
+    \frametitle{Stochastic Boolean Satisfiability}
+    \begin{itemize}
+        \item \textit{Games against nature}~\cite{Papadimitriou1985}: PSPACE-complete~\cite{Stockmeyer1973}
+              \pause
+              \begin{itemize}
+                  \item $\random{p}x$: $\spb{x=\true}=p$
+                        \pause
+                  \item Formalism for probabilistic problems~\cite{SATHandbook-SSAT}
+                        \pause
+              \end{itemize}
+        \item SSAT solvers
+              \pause
+              \begin{itemize}
+                  \item DPLL search~\cite{Davis1962}
+                        \pause
+                        \begin{itemize}
+                            \item \maxplan~\cite{Majercik1998}: pure variables and unit propagation
+                                  \pause
+                            \item \zander~\cite{Majercik2003}: threshold-pruning heuristics
+                                  \pause
+                            \item \dcssat~\cite{Majercik2005}: divide-and-conquer (planning problems)
+                                  \pause
+                        \end{itemize}
+                  \item Knowledge compilation~\cite{Darwiche2002KnowledgeCompilation}
+                        \pause
+                        \begin{itemize}
+                            \item \complan~\cite{Huang2006}: deterministic, decomposable NNF (d-DNNF)~\cite{Darwiche2001,Darwiche2002dDNNF}
+                        \end{itemize}
+              \end{itemize}
+    \end{itemize}
+\end{frame}
