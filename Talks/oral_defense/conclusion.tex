@@ -34,16 +34,18 @@
 \begin{frame}
       \frametitle{Future Work}
       \begin{itemize}
+            \item Approximate analysis for probabilistic design based on simulation
+                  \pause
+                  \begin{itemize}
+                        \item Monte Carlo method
+                              \pause
+                        \item Symbolic sampling~\cite{KravetsDAC19ECOSampling}
+                              \pause
+                  \end{itemize}
             \item General SSAT and DSSAT formulas
                   \pause
                   \begin{itemize}
                         \item Clause selection for SSAT~\cite{Chen2021} and DQBF~\cite{Tentrup2019}
-                              \pause
-                  \end{itemize}
-            \item $(\epsilon,\delta)$ approximate SSAT solving
-                  \pause
-                  \begin{itemize}
-                        \item Based on $(\epsilon,\delta)$ approximate model counting
                               \pause
                   \end{itemize}
             \item Tighter integration of model-counting component
@@ -52,6 +54,14 @@
                         \item Incremental model counting
                               \pause
                         \item More advanced data structure, e.g., d-DNNF~\cite{Darwiche2002dDNNF}
+                              \pause
+                  \end{itemize}
+            \item Approximate SSAT solving
+                  \pause
+                  \begin{itemize}
+                        \item Inspired by $(\epsilon,\delta)$ approximate model counting
+                              \pause
+                        \item Trade inexactness for scalability
                   \end{itemize}
       \end{itemize}
 \end{frame}

@@ -2,43 +2,57 @@
 \label{chap:conclusion-future-work}
 
 In this dissertation,
-the research needs highlighted in~\cref{chap:introduction} have been addressed.
-Specifically,
-the applicability of SSAT to the analysis of VLSI systems was examined.
-We formulated a framework for the property evaluation of probabilistic design,
-and encoded the average-case and the worst-case analyses
+we contributed to the research needs highlighted in~\cref{chap:introduction}.
+
+The applicability of SSAT to the analysis of VLSI systems was examined.
+We formulated a framework for the property evaluation of probabilistic design.
+The average-case and worst-case analyses are encoded
 as random-exist and exist-random quantified SSAT formulas, respectively.
 
 Motivated by the emerging VLSI applications,
-we further designed novel algorithms for random-exist and exist-random quantified SSAT formulas.
-The proposed algorithms aim at leveraging the success from SAT/QBF-solving and model-counting communities,
-so as to advance the state-of-the-art of SSAT solving beyond the conventional DPLL-based search.
+we further devised novel algorithms for random-exist and exist-random quantified SSAT formulas.
+The proposed algorithms leverage the success from SAT/QBF-solving and model-counting communities
+and advance the state-of-the-art of SSAT solving beyond the conventional DPLL-based search.
 For random-exist quantified SSAT formulas,
-we used minterm generalization and weighted model counting as subroutines,
+we used minterm generalization and weighted model counting as subroutines
 and employed SAT solvers and weighted model counters as plug-in engines.
 For exist-random quantified SSAT formulas,
-we devised the clause-containment learning,
-which was inspired by the clause-selection technique of QBF.
+we proposed clause-containment learning,
+which was inspired by clause selection from QBF solving.
 Under the framework of clause-containment learning,
-three clause-strengthening heuristics were proposed to improve the computational efficiency.
-Moreover, unlike previous exact SSAT methods,
-the proposed algorithms can solve approximate SSAT by deriving upper and lower bounds of satisfying probability.
-Experiment results showed the benefits of our solvers over a wide range of benchmarking instances.
-Our implementations and the benchmark suite of SSAT instances are open-source
+we explored three heuristics to strengthen learnt clauses.
+Moreover, unlike previous exact approaches,
+the proposed algorithms can solve approximate SSAT by deriving upper and lower bounds of satisfying probabilities.
+Our evaluation showed the benefits of the proposed solvers over a wide range of formula instances.
+Furthermore, our implementations and the benchmark suite of SSAT instances are open-source
 for other researchers to base their work on top of our results.
 
 To generalize SSAT beyond the PSPACE-complete complexity class for more complex problems,
 we extended DQBF to its stochastic variant DSSAT and proved its NEXPTIME-completeness.
 Compared to the PSPACE-complete SSAT,
 DSSAT is more powerful to succinctly model NEXPTIME-complete decision problems with uncertainty.
-We demonstrated the DSSAT formulation of the analysis to probabilistic/approximate partial design,
+We demonstrated the DSSAT formulation of the analysis to probabilistic/approximate partial design
 and gave a polynomial-time reduction from the NEXPTIME-complete Dec-POMDP to DSSAT.
 
-For future work,
-we plan to incorporate Monte-Carlo simulation into our framework of probabilistic property evaluation,
-and develop solvers for arbitrary quantified SSAT and DSSAT formulas.
-We note that the clause-containment learning has been generalized to solve general SSAT~\cite{Chen2021},
-and the recent developments of DQBF~\cite{Tentrup2019} might provide a promising framework for DSSAT solving.
+We highlight several directions for future investigation.
+First, in order to improve the scalability of probabilistic property evaluation,
+we are interested in approximate approaches based on simulation techniques.
+In additional to the conventional Monte Carlo method,
+circuit simulation based on symbolic sampling~\cite{KravetsDAC19ECOSampling} may have much potential.
+Another line of on-going work is to develop solvers for arbitrarily quantified SSAT and DSSAT formulas.
+Recently, clause selection has been adapted to solve random-exist quantified SSAT formulas
+and combined with the clause-containment learning in a recursive manner to solve general SSAT~\cite{Chen2021}.
+It is also extended to DQBF~\cite{Tentrup2019},
+which might provide a promising framework for DSSAT solving.
+From the view of practical implementation,
+SSAT solvers will benefit from a tight integration with model-counting components.
+In particular, \textit{incremental} model counting might be a key step to boost the performance of SSAT solvers
+if the computational efforts among different counting queries can be effectively shared.
+More advanced data structures, e.g., d-DNNF~\cite{Darwiche2001,Darwiche2002dDNNF}, could be also integrated.
+Motivated by approximate model counting,
+we hope to pursue a similar formulation for SSAT solving.
+Specifically, we envisage a unified SSAT framework that allows users to control the solution precision,
+in order to trade inexactness for better scalability.
 
 \iffalse
     We have proposed a formal framework to probabilistic property
