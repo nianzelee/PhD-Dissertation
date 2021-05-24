@@ -254,9 +254,9 @@ which invokes additional model-counting queries to strengthen a learnt clause.
 From the log files, we found that \erssat invoked twice numbers of model-counting queries than \erssatb,
 because it had an additional trial but always ended in vain.
 
-On the other hand, the structure of the \textit{Sand-Castle} formulas favors \dcssat,
-as the subformulas are essentially the same across the stages.
-It is not surprising the formula caching and divide-and-conquer method works well with these formulas.
+On the other hand, recall that \dcssat is tailored to exploit the structural characteristics of planning problems.
+The \textit{Sand-Castle} formulas favors \dcssat, as the subformulas are essentially the same across the stages.
+It is not surprising the formula caching and divide-and-conquer method work well with these formulas.
 
 \subsubsection{Approximate solving}
 

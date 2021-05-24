@@ -20,8 +20,12 @@ most of them are based on Davis-Putnam-Logemann-Loveland (DPLL) search~\cite{Dav
 For example,
 solver \maxplan~\cite{Majercik1998} encodes a conformant planning problem as an E-MAJSAT formula
 and improves the solving efficiency by pure variables, unit propagation, and subproblem memorization;
-solver \zander~\cite{Majercik2003} deals with partially observable probabilistic planning by formulating the problem as a general SSAT formula and incorporates several threshold-pruning heuristics to reduce the search space;
-solver \dcssat~\cite{Majercik2005} relies on a divide-and-conquer approach to break an SSAT formula into many subproblems and handles them separately to speedup the solving of a general SSAT formula.
+solver \zander~\cite{Majercik2003} deals with partially observable probabilistic planning by formulating the problem as a general SSAT formula and incorporates several threshold-pruning heuristics to reduce the search space.
+Solver \dcssat~\cite{Majercik2005} divides an SSAT formula into several smaller SSAT formulas and conquers them with a DPLL-based algorithm.
+The solutions to the separate SSAT problems are then combined into an optimal solution to the entire formula.
+The formula splitting is tailored to exploit the structural characteristics of probabilistic planning problems,
+which often contain similar clauses to encode the state-transition mechanism across different stages.
+The divide-and-conquer approach of \dcssat achieves several orders of magnitude speedup than its predecessor \zander.
 Approximate solving~\cite{Majercik2007} and resolution rules~\cite{Teige2010} for SSAT have also been addressed.
 Techniques from \textit{knowledge compilation} have also been exploited to solve E-MAJSAT formulas.
 Solver \complan~\cite{Huang2006} compiles the matrix of an E-MAJSAT formula into its
