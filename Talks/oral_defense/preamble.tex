@@ -27,16 +27,16 @@
 % Plots with BenchExec
 \usepackage{standalone}
 \usepackage[
-    group-digits=integer, group-minimum-digits=4, % group digits by thousands
-    free-standing-units, unit-optional-argument, % easier input of numbers with units
+      group-digits=integer, group-minimum-digits=4, % group digits by thousands
+      free-standing-units, unit-optional-argument, % easier input of numbers with units
 ]{siunitx}
 \usepackage{pgfplots}
 \pgfplotsset{
-    compat=1.9,
-    %log ticks with fixed point, % no scientific notation in plots
-    table/col sep=tab, % only tabs are column separators
-    unbounded coords=jump, % better have skips in a plot than appear to be interpolating
-    filter discard warning=false, % Don't complain about empty cells
+      compat=1.9,
+      %log ticks with fixed point, % no scientific notation in plots
+      table/col sep=tab, % only tabs are column separators
+      unbounded coords=jump, % better have skips in a plot than appear to be interpolating
+      filter discard warning=false, % Don't complain about empty cells
 }
 \SendSettingsToPgf % use siunitx formatting settings in PGF, too
 % end packages
@@ -95,6 +95,8 @@
 \definetool{\minisat}{MiniSat}
 \definetool{\cachet}{Cachet}
 \definetool{\approxmc}{ApproxMC}
+\definetool{\dpmc}{DPMC}
+\definetool{\procount}{ProCount}
 \definetool{\cnfgen}{CNFgen}
 \definetool{\benchexec}{BenchExec}
 \definetool{\abc}{ABC}
@@ -144,61 +146,61 @@
 
 % customize package "pgfplotstable"
 \pgfplotstableset{
-    circuit column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string type,column type=l,column name=\textsc{Circuit}
-                }
-        },
-    formula column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string type,column type=l,column name=\textsc{Formula}
-                }
-        },
-    pi column/.style={
-            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PI}
-        },
-    ai column/.style={
-            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#AI}
-        },
-    po column/.style={
-            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PO}
-        },
-    and column/.style={
-            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#And}
-        },
-    level column/.style={
-            /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#Level}
-        },
-    time column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
-                }
-        },
-    prob column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=$\Pr$
-                }
-        },
-    ubound column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=UB
-                }
-        },
-    lbound column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=LB
-                }
-        },
-    ubtime column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-UB (s)
-                }
-        },
-    lbtime column/.style={
-            /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-LB (s)
-                }
-        }
+      circuit column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string type,column type=l,column name=\textsc{Circuit}
+                        }
+            },
+      formula column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string type,column type=l,column name=\textsc{Formula}
+                        }
+            },
+      pi column/.style={
+                  /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PI}
+            },
+      ai column/.style={
+                  /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#AI}
+            },
+      po column/.style={
+                  /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#PO}
+            },
+      and column/.style={
+                  /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#And}
+            },
+      level column/.style={
+                  /pgfplots/table/display columns/#1/.style={fixed,column type=r,column name=\#Level}
+            },
+      time column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
+                        }
+            },
+      prob column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=$\Pr$
+                        }
+            },
+      ubound column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=UB
+                        }
+            },
+      lbound column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=LB
+                        }
+            },
+      ubtime column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-UB (s)
+                        }
+            },
+      lbtime column/.style={
+                  /pgfplots/table/display columns/#1/.style={
+                              string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-LB (s)
+                        }
+            }
 }
 
 % Fix line counters if multiple algorithms exist
@@ -226,16 +228,16 @@
 
 \AtBeginSection[]
 {
-    \begin{frame}
-        \frametitle{Outline}
-        \tableofcontents[currentsection,hideallsubsections]
-    \end{frame}
+      \begin{frame}
+            \frametitle{Outline}
+            \tableofcontents[currentsection,hideallsubsections]
+      \end{frame}
 }
 
 \AtBeginSubsection[]
 {
-    \begin{frame}
-        \frametitle{Outline}
-        \tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]
-    \end{frame}
+      \begin{frame}
+            \frametitle{Outline}
+            \tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]
+      \end{frame}
 }

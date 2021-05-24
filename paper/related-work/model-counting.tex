@@ -4,7 +4,7 @@
 Model-counting~\cite{SATHandbook-ModelCounting} algorithms can be classified into two categories:
 exact counting and approximate counting.
 The former adopts DPLL-based search with additional techniques,
-such as component analysis and caching, to improve the counting efficiency\cite{Sang2004,Sang2005ModelCounting}.
+such as component analysis and caching, to improve the counting efficiency~\cite{Sang2004,Sang2005ModelCounting}.
 The latter takes a different strategy,
 aiming at providing lower and/or upper bounds with guarantee on confidence level.
 Ideas from statistics~\cite{Chakraborty2016} have been adopted to increase the capacity limit of model counting.
@@ -21,7 +21,7 @@ such that the number of satisfying assignments of the residual formula cofactore
 The above variants of model counting can be expressed via SSAT,
 because the randomized quantifiers of SSAT essentially aggregate the results from different branches with weights.
 \Cref{tbl:related-work-model-counting} shows the variants of model-counting problems and their respective SSAT encodings.
-Note that projected weighted model counting and maximum weighted model counting are equivalent to
+Note that weighted projected model counting and maximum weighted model counting are equivalent to
 random-exist quantified SSAT and exist-random quantified SSAT, respectively.
 
 \begin{table}[t]
@@ -35,9 +35,16 @@ random-exist quantified SSAT and exist-random quantified SSAT, respectively.
         Weighted               & $\random{p_1}x_1,\ldots,\random{p_n}x_n.\pf(x_1,\ldots,x_n)$                                               \\
         Projected              & $\random{0.5}x_1,\ldots,\random{0.5}x_n,\exists y_1,\ldots,\exists y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
         Maximum                & $\exists x_1,\ldots,\exists x_n,\random{0.5}y_1,\ldots,\random{0.5}y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
-        Projected weighted     & $\random{p_1}x_1,\ldots,\random{p_n}x_n,\exists y_1,\ldots,\exists y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
+        Weighted projected     & $\random{p_1}x_1,\ldots,\random{p_n}x_n,\exists y_1,\ldots,\exists y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
         Maximum weighted       & $\exists x_1,\ldots,\exists x_n,\random{p_1}y_1,\ldots,\random{p_m}y_m.\pf(x_1,\ldots,x_n,y_1,\ldots,y_m)$ \\
     \end{tabular}
 \end{table}
 
-The latest developments of model counting can be found in the report~\cite{MC-COMP2020} of the 2020 Model Counting Competition.
+Model counting is under active research.
+Recent advancements include \dpmc~\cite{Dudek2020},
+a dynamic-programming framework for exact weighted model counting based on \textit{project-join} trees.
+\dpmc applies tree decomposition to the constraint graph of a CNF formula to obtain a project-join tree
+and aggregates the weight of the formula with \textit{arithmetic decision diagrams} using dynamic programming.
+\dpmc is further extended to a weighted projected model counter \procount~\cite{Dudek2021}
+by requiring the projected variables to be placed on top of the non-projected variables in a project-join tree.
+Other latest developments of model counting can be found in the report~\cite{MC-COMP2020} of the 2020 Model Counting Competition.
