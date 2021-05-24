@@ -20,7 +20,7 @@ but the overall performance was not satisfactory.
 Instead, we resorted to a well-developed BDD package \cudd~\cite{CUDD}.
 Weight computation of a formula is fulfilled via a classic approach~\cite{Darwiche2002KnowledgeCompilation} that traverses the BDD of a formula and computes the satisfying probabilities of the BDD nodes.
 Our prototyping implementation\footnote{Available at: \url{\ssatabcurl}} is named \erssat.
-A bare version of \erssat without the enhancement techniques is called \erssatb in the experiments.
+A bare version of \erssat without the clause-strengthening heuristics is called \erssatb in the experiments.
 We used \ssatABCRevision in the experiments.
 
 \subsection{Benchmark set}
@@ -104,7 +104,7 @@ A data point $(x,y)$ in a quantile plot indicates that
 there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
 In~\cref{fig:erssat-quantile-cputime-random},
 we observe that \erssat solved a similar amount of formulas as \dcssat did.
-Moreover, the enhancement techniques improve the performance of \erssat a lot,
+Moreover, the clause-strengthening heuristics improve the performance of \erssat a lot,
 as can be seen from the huge difference between \erssat and \erssatb.
 On the other hand,
 \cref{fig:erssat-quantile-memory-random} shows that \dcssat used much more memory than \erssat.
@@ -164,7 +164,7 @@ Its advantage mainly comes from family \textit{Sand-Castle},
 where it solved \num{22} formulas,
 but \erssat and \erssatb only solved \num{13} and \num{14} formulas, respectively.
 We will analyze why the proposed clause-containment learning is not suitable for this family later.
-To our surprise, the proposed enhancement techniques seem not very useful on the evaluated application formulas.
+To our surprise, the proposed clause-strengthening heuristics seem not very useful on the evaluated application formulas.
 They even worsened the performance over formulas from the family \textit{Toilet-A}.
 While \erssat and \erssatb suffered from more timeouts than \dcssat,
 they did not run out of memory for any formula.
@@ -185,7 +185,7 @@ Instead, \dcssat tends to consume a lot of memory, because it memorizes many sub
 \end{figure*}
 
 \cref{fig:erssat-quantile-application} shows the quantile plots of the application SSAT formulas.
-We can see that the enhancement techniques affected not only the effectiveness of \erssat but also its efficiency
+We can see that the clause-strengthening heuristics affected not only the effectiveness of \erssat but also its efficiency
 from~\cref{fig:erssat-quantile-cputime-application}.
 This phenomenon indicates that the additional effort spent to strengthen a learnt clause is not worthy.
 The reason behind this phenomenon will be inspected in the following.
@@ -204,13 +204,13 @@ The reason behind this phenomenon will be inspected in the following.
     \label{fig:erssat-scatter-application}
 \end{figure*}
 
-To further examine the suitability of the enhancement techniques,
+To further examine the suitability of the clause-strengthening heuristics,
 we demonstrate the scatter plots with \erssat in y-axis and compared approaches in x-axis
 in~\cref{fig:erssat-scatter-application}.
 A data point $(x,y)$ in the plots indicates that there is a formula processed by both \erssat and a compared approach,
 while \erssat took a CPU time of $y$~seconds and the other approach took a CPU time of $x$~seconds.
 From~\cref{fig:erssat-scatter-cputime-application},
-we find that the enhancement techniques did improve the solving of some formulas,
+we find that the clause-strengthening heuristics did improve the solving of some formulas,
 but more often they were an overhead to \erssatb.
 \cref{fig:dcssat-scatter-cputime-application} also shows that
 \dcssat was more efficient to exactly solve formulas than \erssat over the evaluated application formulas.
@@ -348,7 +348,7 @@ which cannot be exactly solved by the state-of-the-art approaches.
 The above results on the random and application formulas suggest that:
 \begin{itemize}
     \item The proposed solver \erssat achieves a similar performance as \dcssat in terms of CPU time and outperforms \dcssat in terms of memory consumption on random formulas.
-    \item The proposed solver \erssat is not as good as \dcssat at exactly solving the application formulas, which can be attributed to the overhead caused by the enhancement techniques.
+    \item The proposed solver \erssat is not as good as \dcssat at exactly solving the application formulas, which can be attributed to the overhead caused by the clause-strengthening heuristics.
     \item The proposed solver \erssat is good at deriving tight lower bounds for large formulas. This approximation ability is especially valuable when the size of a formula is beyond the capability of the state-of-the-art exact solver.
 \end{itemize}
 To sum up, our evaluation results demonstrate the unique value of the proposed clause-containment learning.

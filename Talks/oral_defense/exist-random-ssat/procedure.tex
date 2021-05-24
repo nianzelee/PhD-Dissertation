@@ -58,7 +58,7 @@
 
 \begin{frame}
     \frametitle{Decision Procedure}
-    \begin{block}{E-MAJSAT Solving: Heuristics to Shorten Learnt Clauses}
+    \begin{block}{E-MAJSAT Solving: Heuristics to Strengthen Learnt Clauses}
         \begin{itemize}
             \item A shorter learnt clause prunes more search space
                   \pause
@@ -70,13 +70,13 @@
                       \item Partial assignment pruning: model counting
                             \pause
                   \end{itemize}
-            \item Extra reasoning effort vs. Effectiveness of shortened learnt clauses
+            \item Extra reasoning effort vs. Effectiveness of strengthened learnt clauses
         \end{itemize}
     \end{block}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Heuristics to Shorten Learnt Clauses}
+    \frametitle{Heuristics to Strengthen Learnt Clauses}
     \begin{block}{Minimal Clause Selection}
         \begin{itemize}
             \item Iteratively solve $\select(X,S)$ to select a minimal set of clauses
@@ -101,7 +101,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Heuristics to Shorten Learnt Clauses}
+    \frametitle{Heuristics to Strengthen Learnt Clauses}
     \begin{block}{Induced Clause Subsumption}
         \begin{itemize}
             \item $C_1$ subsumes $C_2$ if $C_1 \subseteq C_2$ (treat $C_1$ and $C_2$ as sets of literals)
@@ -119,7 +119,7 @@
             \item $C_1^Y$ subsumes $C_2^Y$: remove $C_2$ from the set of selected clauses
                   \pause
                   \begin{itemize}
-                      \item Shorten the learnt clause to $(\lnot s_1)$
+                      \item Strengthen the learnt clause to $(\lnot s_1)$
                             \pause
                   \end{itemize}
             \item Subsumption among $\cy$ clauses is \textit{induced} by clause selection
@@ -128,7 +128,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Heuristics to Shorten Learnt Clauses}
+    \frametitle{Heuristics to Strengthen Learnt Clauses}
     \begin{block}{Partial Assignment Pruning}
         \begin{itemize}
             \item $C_L=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}=\bigvee\limits_{C\in\pcf{\pf}{\as}}\cx$

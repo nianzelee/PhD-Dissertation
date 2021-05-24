@@ -39,7 +39,7 @@ we enforce at least one of the clauses in $\pcf{\pf}{\as_1}$ to be deselected.
 Recall that the selection variable $\sv{C}$ of clause $C$ valuates to $\bot$ if and only if $C$ is deselected.
 Therefore, the disjunction of the negation of the selection variables for the clauses in $\pcf{\pf}{\as_1}$ is deduced as a learnt clause to record this information.
 The above idea gives rise to~\cref{alg:erssat} for E-MAJSAT formulas.
-(\Cref{code:erssat-subsume-table,code:erssat-minimal-clauses,code:erssat-subsume-clauses,code:erssat-discard-literals} describe the enhancement techniques of the proposed algorithm, which will be discussed later.)
+(\Cref{code:erssat-subsume-table,code:erssat-minimal-clauses,code:erssat-subsume-clauses,code:erssat-discard-literals} describe the clause-strengthening heuristics of the proposed algorithm, which will be discussed later.)
 
 \begin{algorithm}[p]
     \caption{Solving exist-random quantified SSAT (E-MAJSAT) formulas}
@@ -103,7 +103,7 @@ which equals the satisfying probability of the input E-MAJSAT formula.
 We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following example.
 \begin{example}\label{ex:erssat-basic}
     Continuing~\cref{ex:erssat-select},
-    we show how~\cref{alg:erssat} (without the enhancement techniques) solves the E-MAJSAT instance
+    we show how~\cref{alg:erssat} (without the clause-strengthening heuristics) solves the E-MAJSAT instance
     \begin{align*}
         \Qf=\exists e_1,\exists e_2,\exists e_3,\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pf.
     \end{align*}
@@ -138,15 +138,15 @@ We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following 
     and the algorithm returns the satisfying probability, which equals $1$, of the E-MAJSAT instance.
 \end{example}
 
-\subsection{Enhancement techniques}
+\subsection{Clause-strengthening heuristics}
 The efficiency of~\cref{alg:erssat} is greatly affected by the strength of the learnt clauses.
-We introduce three enhancement methods,
+We introduce three heuristics,
 \textit{minimal clause selection},
 \textit{clause subsumption}, and
 \textit{partial assignment pruning},
 to strengthen the learnt clauses deduced by the proposed learning technique.
 In~\cref{alg:erssat},
-the enhancement techniques are executed by subroutines
+the clause-strengthening heuristics are executed by subroutines
 $\texttt{SelectMinimalClauses}$ (in~\cref{code:erssat-minimal-clauses}),
 $\texttt{RemoveSubsumedClauses}$ (in~\cref{code:erssat-subsume-clauses}), and
 $\texttt{DiscardLiterals}$ (in~\cref{code:erssat-discard-literals}),
@@ -164,7 +164,7 @@ Therefore, selecting fewer clauses gives a stronger learnt clause,
 as well as a higher conditional satisfying probability.
 
 Starting from a set of initially selected clauses $\pcf{\pf}{\as}$,
-the first enhancement technique \textit{minimal clause selection} decreases the number of selected clauses by making the set of initially selected clauses minimal as follows.
+the first heuristic \textit{minimal clause selection} decreases the number of selected clauses by making the set of initially selected clauses minimal as follows.
 A learnt clause $C_S=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}$ is conjoined with the selection relation $\select(X,S)$ to avoid clauses in $\pcf{\pf}{\as}$ being selected simultaneously again.
 A SAT solver is invoked to solve $\select\land C_S$ under an assumption $\mu=\bigwedge\limits_{C\notin\pcf{\pf}{\as}}\lnot\sv{C}$.
 The assumption $\mu$ prevents originally deselected clauses being selected.
@@ -215,7 +215,7 @@ The following example illustrates how this technique improves the solving effici
 \end{example}
 
 \subsubsection{Clause subsumption}
-The second enhancement technique, named \textit{clause subsumption},
+The second heuristic, named \textit{clause subsumption},
 decreases the length of a learnt clause via examining the subsumption relation among the selected clauses.
 Recall that clause $C_1$ \textit{subsumes} clause $C_2$ if every literal appears in $C_1$ also appears in $C_2$.
 Consider a CNF formula $C_1 \land C_2$ with $C_2$ subsumed by $C_1$.
@@ -264,7 +264,7 @@ The following example explains how the subsumption relation shortens a learnt cl
 \end{example}
 
 \subsubsection{Partial assignment pruning}
-To illustrate the third enhancement technique \textit{partial assignment pruning},
+To illustrate the third heuristic \textit{partial assignment pruning},
 we first take a closer look at a learnt clause deduced by the proposed clause-containment learning.
 Given a matrix $\pf(X,Y)$ and an assignment $\as$ over $X$,
 a learnt clause is a disjunction of the negated selection variables of the selected clauses.
@@ -346,13 +346,13 @@ because the value only reflects an upper bound for satisfying probabilities unde
     and thus prevents a fruitless trail of the assignment $\as_2=\lnot e_1 e_2 \lnot e_3$.
 \end{example}
 
-To summarize, the above three enhancement techniques are designed based on different reasoning strategies:
+To summarize, the above three clause-strengthening heuristics are designed based on different reasoning strategies:
 the minimal clause selection technique strengthens the learnt clause by invoking additional SAT calls to solve the selection relation to select a minimal set of clauses;
 the clause subsumption technique builds a lookup table to record the subsumption relation and removes subsumed clauses;
 the partial assignment pruning technique utilizes the current maximum conditional satisfying probability,
 and invokes extra calls to a weighted model counter to test whether it is feasible to discard some literal in a learnt clause.
-Benefiting from the three enhancement techniques,
-the efficiency of the proposed algorithm is greatly improved,
+Benefiting from the three clause-strengthening heuristics,
+the efficiency of the proposed algorithm is improved over certain formulas,
 as will be shown in our experiments.
 
 We emphasize two more strengths of the proposed algorithm.
@@ -368,7 +368,7 @@ whose sizes are typically much smaller than that of original matrix.
 %In our empirical evaluation, the selected clauses on average account for less than $20\%$ of the entire CNF formula.
 %As will be clear from our experimental data, the proposed algorithm improves memory efficiency by more than one order of magnitude compared to previous approaches.
 
-%We emphasize that, the proposed three enhancement techniques are orthogonal to each other. Simultaneously enabling all of them gives the enhanced algorithm in Figure~\ref{fig:enhance}.
+%We emphasize that, the proposed three clause-strengthening heuristics are orthogonal to each other. Simultaneously enabling all of them gives the enhanced algorithm in Figure~\ref{fig:enhance}.
 
 \subsection{Implementation details}
 We discuss some details about our implementation of the proposed algorithm.
