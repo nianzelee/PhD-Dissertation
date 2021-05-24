@@ -1,26 +1,28 @@
 \begin{frame}
-    \frametitle{Model Counting}
-    \begin{block}{Unweighted Model Counting}
-        Given a Boolean formula $\pf$:
-        \pause
-        \begin{itemize}
-            \item Exact: find $\#\pf$ (the number of satisfying assignments to $\pf$)
-                  \pause
-            \item $(\epsilon,\delta)$ approximate: $\Pr[(1+\epsilon)^{-1}\#\pf \leq A \leq (1+\epsilon)\#\pf] \geq 1-\delta$
-        \end{itemize}
-    \end{block}
-    \pause
-    \begin{block}{Weighted Model Counting}
-        Given $\pf$ and $\wt:\vf{\pf}\mapsto[0,1]$:
-        \pause
-        \begin{itemize}
-            \item Weight of $x$: $\wt(x)$
-                  \pause
-            \item Weight of $\lnot x$: $1-\wt(x)$
-                  \pause
-            \item Weight of $\as$: product of the weights of the individual literals
-                  \pause
-            \item Weight of $\pf$: summation of the weights of the satisfying assignments
-        \end{itemize}
-    \end{block}
+      \frametitle{Model Counting}
+      \begin{block}{Definition: Unweighted Model Counting}
+            Given a Boolean formula $\pf$:
+            \pause
+            \begin{itemize}
+                  \item Exact: find $\#\pf$
+                        \pause
+                  \item Approximate: $\Pr[(1+\epsilon)^{-1}\#\pf \leq A \leq (1+\epsilon)\#\pf] \geq 1-\delta$
+            \end{itemize}
+      \end{block}
+      \pause
+      \begin{block}{Definition: Weighted Model Counting}
+            Given $\pf$ and $\wt:\vf{\pf}\mapsto[0,1]$:
+            \pause
+            \begin{itemize}
+                  \item Weight of $\pf$: sum of the weights of the satisfying assignments
+                        \pause
+                        \begin{itemize}
+                              \item Weight of $x$: $\wt(x)$
+                                    \pause
+                              \item Weight of $\lnot x$: $1-\wt(x)$
+                                    \pause
+                              \item Weight of $\as$: product of the weights of the individual literals
+                        \end{itemize}
+            \end{itemize}
+      \end{block}
 \end{frame}

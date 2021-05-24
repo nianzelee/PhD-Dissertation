@@ -1,6 +1,6 @@
 \begin{frame}
   \frametitle{Probabilistic Property Evaluation (PPE)}
-  \begin{block}{Property Violation Probability}
+  \begin{block}{Definition: Property Violation Probability}
     \begin{figure}
       \centering
       \includegraphics[scale=0.8]{fig/prob-design-eval/prob-spbn-miter.pdf}
@@ -31,53 +31,50 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation (PPE)}
-  \begin{block}{Solving MPPE and PPE}
-    \begin{itemize}
-      \item MPPE
-            \pause
-            \begin{itemize}
-              \item CNF-/BDD-based SSAT solving
-                    \pause
-            \end{itemize}
-      \item PPE
-            \pause
-            \begin{itemize}
-              \item Weighted model counting
-                    \pause
-              \item Unweighted model counting with formula rewriting
-            \end{itemize}
-    \end{itemize}
-  \end{block}
+  \frametitle{Solving MPPE and PPE}
+  \begin{itemize}
+    \item MPPE
+          \pause
+          \begin{itemize}
+            \item CNF-/BDD-based SSAT solving
+                  \pause
+          \end{itemize}
+    \item PPE
+          \pause
+          \begin{itemize}
+            \item Weighted model counting
+                  \pause
+            \item Unweighted model counting with formula rewriting
+          \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation (PPE)}
-  \begin{block}{Solving PPE and MPPE via SSAT}
-    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$:
+  \frametitle{Solving PPE and MPPE via SSAT}
+  \begin{block}{Theorem: SSAT Encoding of PPE}
+    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$,
+    the SSAT encoding of its PPE problem:
     \pause
-    \begin{itemize}
-      \item PPE encoding
-            \pause
-            \belowdisplayskip=0pt
-            \begin{align*}
-              \alert<6>{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
-              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
-              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-              \exists y_1,\ldots,\exists y_m.
-              \pf_M
-            \end{align*}
-            \pause
-      \item MPPE encoding
-            \pause
-            \begin{align*}
-              \alert<6>{\exists x_1,\ldots,\exists x_n},
-              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
-              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-              \exists y_1,\ldots,\exists y_m.
-              \pf_M
-            \end{align*}
-    \end{itemize}
+    \begin{align*}
+      \alert<5>{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
+      \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
+      \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+      \exists y_1,\ldots,\exists y_m.
+      \pf_M
+    \end{align*}
+  \end{block}
+  \pause
+  \begin{block}{Theorem: SSAT Encoding of MPPE}
+    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$,
+    the SSAT encoding of its MPPE problem:
+    \pause
+    \begin{align*}
+      \alert<5>{\exists x_1,\ldots,\exists x_n},
+      \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+      \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+      \exists y_1,\ldots,\exists y_m.
+      \pf_M
+    \end{align*}
   \end{block}
 \end{frame}
 
@@ -107,9 +104,11 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation (PPE)}
-  \begin{block}{Connection between WMC and SSAT}
-    $\random{p_{x_1}}x_1,\ldots,\random{p_{x_n}}x_n,\exists y_1,\ldots,\exists y_m.\pf$ is equivalent to a WMC instance of $\pf$ under $\wt(x_i)=p_{x_i}$ for every $x_i\in X$ if $X=\{x_1,\ldots,x_n\}$ is a \alert{base set} for $\pf$:
+  \frametitle{Connection between WMC and SSAT}
+  \begin{block}{Theorem: Solving SSAT Encoding of PPE via WMC}
+    $\random{p_{x_1}}x_1,\ldots,\random{p_{x_n}}x_n,\exists y_1,\ldots,\exists y_m.\pf$ is
+    a WMC instance of $\pf$ under $\wt(x_i)=p_{x_i}$ for every $x_i$
+    if $\{x_1,\ldots,x_n\}$ is a \textit{base set} for $\pf$:
     \pause
     \begin{itemize}
       \item Base set: propagating values to variables outside the set
@@ -124,17 +123,18 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation (PPE)}
-  \begin{block}{Rewriting WMC into Unweighted MC}
-    \begin{itemize}
-      \item Approximate model counting mostly focuses on unweighted instances
-            \pause
-      \item A rewriting technique to enjoy the advancements of approximate MC
-            \pause
-      \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
-    \end{itemize}
-  \end{block}
-  \pause
+  \frametitle{Rewriting WMC into Unweighted MC}
+  \begin{itemize}
+    \item Approximate model counting mostly focuses on unweighted instances
+          \pause
+    \item A rewriting technique to enjoy the advancements of approximate MC
+          \pause
+    \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Rewriting WMC into Unweighted MC}
   \begin{block}{Example: WMC Rewriting}
     Express $p_{z_1}=0.25$ with $z_1\equiv z_2\land z_3$:
     \begin{figure}

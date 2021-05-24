@@ -1,7 +1,7 @@
 \begin{frame}
       \frametitle{Background}
-      \begin{block}{Stochastic Boolean Satisfiability (SSAT)}
-            $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf$
+      \begin{block}{Definition: Stochastic Boolean Satisfiability (SSAT)}
+            Given a quantified formula $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf$:
             \pause
             \begin{itemize}
                   \item $Q_1 x_1,\ldots,Q_n x_n$: quantification structure, $Q_i \in \{\random{p},\exists\}$ (\emph{prefix})
@@ -10,7 +10,7 @@
             \end{itemize}
       \end{block}
       \pause
-      \begin{block}{Computational Rules for Satisfying Probability}
+      \begin{block}{Definition: Satisfying Probability of SSAT}
             Let $x$ be the outermost variable in the prefix:
             \pause
             \begin{enumerate}
@@ -27,7 +27,7 @@
 
 \begin{frame}
       \frametitle{Background}
-      \begin{block}{Example: Computation of Satisfying Probability}
+      \begin{block}{Example: Satisfying Probability of SSAT}
             \abovedisplayskip=0pt
             \begin{align*}
                    & \Qf=\random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf \\
@@ -126,22 +126,26 @@
 \end{frame}
 
 \begin{frame}
-      \frametitle{Background}
-      \begin{block}{Game-Theoretical Interpretation of SSAT}
-            $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf$, $Q_i \in \{\random{p},\exists\}$
-            \pause
-            \begin{itemize}
-                  \item $\random{p}$: nondeterministic factors
-                        \pause
-                  \item $\exists$: an agent who plays under uncertainty
-                        \pause
-                  \item $\pf$: game matrix
-                        \pause
-                  \item $\spb{\Qf}$: the maximum winning probability of the agent
-                        \pause
-                  \item \alert{Skolem functions}: a winning/optimization strategy of the agent
-            \end{itemize}
-      \end{block}\pause
+      \frametitle{Game-Theoretical Interpretations of SSAT}
+      \begin{itemize}
+            \item $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf,Q_i\in\{\random{p},\exists\}$
+                  \pause
+                  \begin{itemize}
+                        \item $\random{p}$: nondeterministic factors
+                              \pause
+                        \item $\exists$: an agent who plays under uncertainty
+                              \pause
+                        \item $\pf$: game matrix
+                              \pause
+                        \item $\spb{\Qf}$: the maximum winning probability of the agent
+                              \pause
+                        \item \alert{Skolem functions}: a winning strategy of the agent
+                  \end{itemize}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
+      \frametitle{Game-Theoretical Interpretations of SSAT}
       \begin{block}{Example: Skolem Functions}
             \abovedisplayskip=0pt
             \belowdisplayskip=0pt

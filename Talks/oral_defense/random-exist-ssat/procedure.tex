@@ -1,34 +1,30 @@
 \begin{frame}
   \frametitle{Decision Procedure}
-  \begin{block}{RE-SSAT Solving: Summation of Minterm Weights}
-    Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$, $\spb{\Qf}$ equals:
-    \pause
-    \begin{itemize}
-      \item Sum of weights of all SAT minterms over $X$
-            \pause
-      \item One minus sum of weights of all UNSAT minterms over $X$
-            \pause
-    \end{itemize}
-  \end{block}
-  \begin{block}{RE-SSAT Solving: Summation of Cube Weights}
-    Avoid exhaustive enumeration by minterm generalization:
-    \pause
-    \begin{itemize}
-      \item Overlapping cubes: weights cannot be summed up directly
-            \pause
-      \item Handle overlap by weighted model counting
-            \pause
-    \end{itemize}
-  \end{block}
-  \begin{block}{Approximate RE-SSAT Solving}
-    The collected cubes reflect bounds of $\spb{\Qf}$:
-    \pause
-    \begin{itemize}
-      \item SAT cubes: lower bound
-            \pause
-      \item UNSAT cubes: upper bound
-    \end{itemize}
-  \end{block}
+  \begin{itemize}
+    \item Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$, $\spb{\Qf}$ equals
+          \pause
+          \begin{itemize}
+            \item Sum of weights of all SAT minterms over $X$
+                  \pause
+            \item One minus sum of weights of all UNSAT minterms over $X$
+                  \pause
+          \end{itemize}
+    \item Avoid exhaustive enumeration by minterm generalization
+          \pause
+          \begin{itemize}
+            \item Overlapping cubes: weights cannot be summed up directly
+                  \pause
+            \item Handle overlap by weighted model counting
+                  \pause
+          \end{itemize}
+    \item The collected cubes reflect bounds of $\spb{\Qf}$:
+          \pause
+          \begin{itemize}
+            \item SAT cubes: lower bound
+                  \pause
+            \item UNSAT cubes: upper bound
+          \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}

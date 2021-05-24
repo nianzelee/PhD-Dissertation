@@ -64,22 +64,10 @@
             \item New computational paradigms
                   \pause
                   \begin{itemize}
-                        \item Approximate design~\cite{Venkatesan2011ApproxDesign}
+                        \item Approximate design~\cite{Venkatesan2011ApproxDesign}: deterministic deviation
                               \pause
-                              \begin{itemize}
-                                    \item Deterministic deviation
-                                          \pause
-                                    \item Automatic synthesis, analysis, verification, etc
-                                          \pause
-                              \end{itemize}
-                        \item Probabilistic design~\cite{Chakrapani2006ProbDesign}
+                        \item Probabilistic design~\cite{Chakrapani2006ProbDesign}: nondeterministic deviation
                               \pause
-                              \begin{itemize}
-                                    \item Nondeterministic deviation
-                                          \pause
-                                    \item Relatively less attention
-                                          \pause
-                              \end{itemize}
                   \end{itemize}
             \item \alert{Research need: a framework to analyze probabilistic design}
                   \pause
@@ -92,7 +80,7 @@
 \begin{frame}
       \frametitle{State-of-the-Art SSAT Solving}
       \begin{itemize}
-            \item Less active than SAT, model counting~\cite{SATHandbook-ModelCounting}, or QBF
+            \item Less active than SAT, model counting~\cite{SATHandbook-ModelCounting}, and QBF
                   \pause
                   \begin{itemize}
                         \item Based on DPLL search~\cite{Davis1962} and heuristics
@@ -138,7 +126,7 @@
 \begin{frame}
       \frametitle{Difficulty in Algorithm Comparison}
       \begin{itemize}
-            \item Most SSAT work was done before 2010~\cite{Majercik1998,Majercik2003,Majercik2004,Majercik2005,Majercik2007}
+            \item Most SSAT work was done before 2005~\cite{Majercik1998,Majercik2003,Majercik2004,Majercik2005}
                   \pause
                   \begin{itemize}
                         \item Open-source solvers and formula instances are barely available
