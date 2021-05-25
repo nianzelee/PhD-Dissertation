@@ -2,24 +2,18 @@
       \frametitle{Satisfiability Solving: A Success Story}
       \begin{itemize}
             \item Satisfiability solvers~\cite{SATHandbook} have succeeded in various fields
-                  \pause
                   \begin{itemize}
                         \item Artificial intelligence~\cite{Nilsson2014,Russell2020}
-                              \pause
                         \item Electronic design automation~\cite{Marques2000,Wang2009}
-                              \pause
                         \item Formal verification~\cite{Berard2013,Jhala2009}
                   \end{itemize}
                   \pause
             \item Beyond propositional logic
-                  \pause
                   \begin{itemize}
                         \item Satisfiability modulo theories~\cite{Moura2011,HBMC-SMT}
-                              \pause
+                        \item Model counting~\cite{SATHandbook-ModelCounting}
                         \item Quantified Boolean formula (QBF)~\cite{Narizzano2006,SATHandbook-QBF}
-                              \pause
                         \item Stochastic Boolean satisfiability (SSAT)~\cite{Littman2001,SATHandbook-SSAT}
-                              \pause
                         \item Dependency quantified Boolean formula (DQBF)~\cite{Balabanov2014,Scholl2018}
                   \end{itemize}
       \end{itemize}
@@ -29,30 +23,22 @@
       \frametitle{Decision Making under Uncertainty}
       \begin{itemize}
             \item Stochastic Boolean satisfiability (SSAT)
-                  \pause
                   \begin{itemize}
                         \item First proposed by Papadimitriou~\cite{Papadimitriou1985} as \emph{games against nature}
-                              \pause
                         \item Randomized quantifiers for nondeterminism
-                              \pause
                         \item Logical formalism for problems with uncertainty
-                              \pause
                               \begin{itemize}
                                     \item Probabilistic planning~\cite{Majercik1998,
                                                 Majercik2003,
                                                 Majercik2005}
-                                          \pause
                                     \item Partially observable Markov decision process (POMDP)~\cite{Salmon2020}
-                                          \pause
                                     \item Quantitative information flow~\cite{Fremont2017}
-                                          \pause
                               \end{itemize}
                   \end{itemize}
-            \item Application to VLSI systems?
                   \pause
+            \item Application to VLSI systems?
                   \begin{itemize}
                         \item Conventionally: error detection~\cite{Constantinescu2003} or correction~\cite{Mitra2006}
-                              \pause
                         \item Post-Moore: probabilistic behavior of devices~\cite{Chakrapani2006ProbDesign}
                   \end{itemize}
       \end{itemize}
@@ -62,15 +48,12 @@
       \frametitle{Accepting Device Imperfection}
       \begin{itemize}
             \item New computational paradigms
-                  \pause
                   \begin{itemize}
                         \item Approximate design~\cite{Venkatesan2011ApproxDesign}: deterministic deviation
-                              \pause
                         \item Probabilistic design~\cite{Chakrapani2006ProbDesign}: nondeterministic deviation
-                              \pause
                   \end{itemize}
-            \item \alert{Research need: a framework to analyze probabilistic design}
                   \pause
+            \item \alert{Research need: a framework to analyze probabilistic design}
                   \begin{itemize}
                         \item SSAT is a suitable logical formalism
                   \end{itemize}
@@ -80,22 +63,18 @@
 \begin{frame}
       \frametitle{State-of-the-Art SSAT Solving}
       \begin{itemize}
-            \item Less active than SAT, model counting~\cite{SATHandbook-ModelCounting}, and QBF
-                  \pause
+            \item Less active than SAT, model counting, and QBF
                   \begin{itemize}
                         \item Based on DPLL search~\cite{Davis1962} and heuristics
-                              \pause
                   \end{itemize}
-            \item Closely related to model counting and QBF
                   \pause
+            \item Closely related to model counting and QBF
                   \begin{itemize}
                         \item Randomized quantifier: weighted summation of satisfying assignments
-                              \pause
                         \item PSPACE-complete~\cite{Stockmeyer1973}: the same as QBF
-                              \pause
                   \end{itemize}
-            \item \alert{Research need: novel algorithms for SSAT solving}
                   \pause
+            \item \alert{Research need: novel algorithms for SSAT solving}
                   \begin{itemize}
                         \item Leverage advancements of other formalisms
                   \end{itemize}
@@ -108,15 +87,12 @@
             \item SSAT is limited within PSPACE-completeness
                   \pause
             \item A logical formalism for NEXPTIME-complete~\cite{Peterson1979} problems?
-                  \pause
                   \begin{itemize}
                         \item E.g., decentralized POMDP (Dec-POMDP)~\cite{Bernstein2002}
-                              \pause
                         \item Difficult to obtain succinct encodings using SSAT
-                              \pause
                   \end{itemize}
-            \item \alert{Research need: modeling NEXPTIME problems with uncertainty}
                   \pause
+            \item \alert{Research need: modeling NEXPTIME problems with uncertainty}
                   \begin{itemize}
                         \item Extend DQBF to stochastic domain
                   \end{itemize}
@@ -127,13 +103,11 @@
       \frametitle{Difficulty in Algorithm Comparison}
       \begin{itemize}
             \item Most SSAT work was done before 2005~\cite{Majercik1998,Majercik2003,Majercik2004,Majercik2005}
-                  \pause
                   \begin{itemize}
                         \item Open-source solvers and formula instances are barely available
-                              \pause
                   \end{itemize}
-            \item \alert{Research need: public SSAT solvers and instances}
                   \pause
+            \item \alert{Research need: public SSAT solvers and instances}
                   \begin{itemize}
                         \item Convenient comparison of different algorithms
                   \end{itemize}

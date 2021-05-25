@@ -1,26 +1,18 @@
 \begin{frame}
   \frametitle{Formulation}
   \begin{block}{Definition: Dependency Stochastic Boolean Satisfiability (DSSAT)}
-    \belowdisplayskip=0pt
     $\Qf=\random{p_1} x_1, \ldots, \random{p_n} x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf$
-    \pause
     \begin{itemize}
       \item $D_{y_j} \subseteq \{x_1,\ldots,x_n\}$: the \alert{dependency set} of $y_j$
-            \pause
       \item $\skf=\{f_1,\ldots,f_m\}$: a set of Boolean functions
-            \pause
             \begin{itemize}
               \item $f_j$ over variables in $D_{y_j}$ for each $y_j$
             \end{itemize}
-            \pause
       \item Satisfying probability of $\Qf$ with respect to $\skf$
-            \pause
             \begin{align*}
               \spb{\pcf{\Qf}{\skf}}=\Pr[\random{p_1} x_1, \ldots, \random{p_n} x_n.\pf|_{\skf}]
             \end{align*}
-            \pause
       \item Decision version: given $\Qf$ and $\theta$ decide if $\spb{\pcf{\Qf}{\skf}} \geq \theta$ for some $\skf$
-            \pause
       \item Optimization version: find $\skf$ to maximize $\spb{\pcf{\Qf}{\skf}}$
     \end{itemize}
   \end{block}
@@ -32,18 +24,16 @@
     \abovedisplayskip=0pt
     \belowdisplayskip=0pt
     \begin{align*}
-       & \Qf_1=\random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf                                 \\
-       & \pf=(x_1 \lor \lnot y_1)
+      \Qf_1  & = \random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf                              \\
+      \pf    & = (x_1 \lor \lnot y_1)
       (\lnot x_1 \lor y_1)
       (\lnot x_1 \lor \lnot x_2 \lor y_2)
       (x_1 \lor \lnot y_2)
-      (x_2 \lor \lnot y_2)                                                                                       \\
-       & \Qf_1' = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_1,x_2}\}).\pf
+      (x_2 \lor \lnot y_2)                                                                                      \\
+      \Qf_1' & = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_1,x_2}\}).\pf
     \end{align*}
-    \pause
     \begin{itemize}
       \item Skolem functions: $\skf^*=\{f^*_1(x_1)=x_1,f^*_2(x_1,x_2)=x_1 \land x_2\}$
-            \pause
       \item Satisfying probability: $\spb{\pcf{\Qf_1'}{\skf^*}}=1$
     \end{itemize}
   \end{block}
@@ -51,9 +41,8 @@
   \begin{block}{Example: Satisfying Probability of DSSAT}
     \abovedisplayskip=0pt
     $\Qf_2 = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_2}\}).\pf$
-    \pause
     \begin{itemize}
-      \item $\skf=\{f_1(x_1)=x_1,f_2(x_2)=x_2\},\spb{\pcf{\Qf_2}{\skf}}=0.75$\pause
+      \item $\skf=\{f_1(x_1)=x_1,f_2(x_2)=x_2\},\spb{\pcf{\Qf_2}{\skf}}=0.75$
       \item $\skf'=\{f_1'(x_1)=x_1,f_2'(x_2)=\neg x_2\},\spb{\pcf{\Qf_2}{\skf'}}=0.25$
     \end{itemize}
   \end{block}

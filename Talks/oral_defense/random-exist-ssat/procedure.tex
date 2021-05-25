@@ -2,26 +2,20 @@
   \frametitle{Decision Procedure}
   \begin{itemize}
     \item Given $\Qf=\random{} X,\exists Y.\pf(X,Y)$, $\spb{\Qf}$ equals
-          \pause
           \begin{itemize}
             \item Sum of weights of all SAT minterms over $X$
-                  \pause
             \item One minus sum of weights of all UNSAT minterms over $X$
-                  \pause
           \end{itemize}
-    \item Avoid exhaustive enumeration by minterm generalization
           \pause
+    \item Avoid exhaustive enumeration by minterm generalization
           \begin{itemize}
             \item Overlapping cubes: weights cannot be summed up directly
-                  \pause
             \item Handle overlap by weighted model counting
-                  \pause
           \end{itemize}
-    \item The collected cubes reflect bounds of $\spb{\Qf}$:
           \pause
+    \item The collected cubes reflect bounds of $\spb{\Qf}$
           \begin{itemize}
             \item SAT cubes: lower bound
-                  \pause
             \item UNSAT cubes: upper bound
           \end{itemize}
   \end{itemize}
@@ -35,28 +29,21 @@
       \item[] $C_1: (r_1 \lor r_2 \lor e_1)$; $C_2: (r_1 \lor \lnot r_3 \lor e_2)$; $C_3: (r_2 \lor \lnot r_3 \lor \lnot e_1 \lor \lnot e_2)$
       \item[] $C_4: (r_3 \lor e_3)$; $C_5: (r_3 \lor \lnot e_3)$
     \end{itemize}
-    \pause
     \begin{table}[t]
       \centering
       \small
       \begin{tabular}{c|c|c|c|c}
         Assignment                            & Minterm Type & Generalization                & UB      & LB      \\
         \hline
-        $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$ & UNSAT        & $\as_0^+=\lnot r_3$           & $0.5$   & $0$     \\
-        \pause
-        $\as_1=\lnot r_1 \lnot r_2 r_3$       & UNSAT        & $\as_1^+=\lnot r_1 \lnot r_2$ & $0.375$ & $0$     \\
-        \pause
-        $\as_2=\lnot r_1 r_2 r_3$             & SAT          & $\as_2^+=r_2r_3$              & $0.375$ & $0.25$  \\
-        \pause
-        $\as_3=r_1 \lnot r_2 r_3$             & SAT          & $\as_3^+=r_1r_3$              & $0.375$ & $0.375$
+        $\as_1=\lnot r_1 \lnot r_2 \lnot r_3$ & UNSAT        & $\as_1^+=\lnot r_3$           & $0.5$   & $0$     \\
+        $\as_2=\lnot r_1 \lnot r_2 r_3$       & UNSAT        & $\as_2^+=\lnot r_1 \lnot r_2$ & $0.375$ & $0$     \\
+        $\as_3=\lnot r_1 r_2 r_3$             & SAT          & $\as_3^+=r_2r_3$              & $0.375$ & $0.25$  \\
+        $\as_4=r_1 \lnot r_2 r_3$             & SAT          & $\as_4^+=r_1r_3$              & $0.375$ & $0.375$
       \end{tabular}
     \end{table}
-    \pause
     \begin{itemize}
-      \item $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$
-            \pause
-      \item $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$
-            \pause
+      \item $C_\bot=\{\as_1^+,\as_2^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$
+      \item $C_\top=\{\as_3^+,\as_4^+\}=\{r_2r_3,r_1r_3\}$
       \item $\spb{\Qf}=0.375$
     \end{itemize}
   \end{block}

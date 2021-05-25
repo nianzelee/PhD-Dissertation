@@ -5,10 +5,8 @@
       \centering
       \includegraphics[scale=0.8]{fig/prob-design-eval/prob-spbn-miter.pdf}
     \end{figure}
-    \pause
     \begin{itemize}
-      \item PPE: the violation probability under $\pi:X\mapsto[0,1]$
-            \pause
+      \item PPE: the average violation probability under $\pi:X\mapsto[0,1]$
       \item MPPE: the maximum violation probability
     \end{itemize}
   \end{block}
@@ -21,10 +19,8 @@
       \centering
       \input{prob-design-eval/pec-miter.tex}
     \end{figure}
-    \pause
     \begin{itemize}
       \item PEC: the average difference probability under $\pi(x)=0.5$
-            \pause
       \item MPEC: the maximum difference probability
     \end{itemize}
   \end{block}
@@ -34,16 +30,13 @@
   \frametitle{Solving MPPE and PPE}
   \begin{itemize}
     \item MPPE
-          \pause
           \begin{itemize}
             \item CNF-/BDD-based SSAT solving
-                  \pause
           \end{itemize}
-    \item PPE
           \pause
+    \item PPE
           \begin{itemize}
             \item Weighted model counting
-                  \pause
             \item Unweighted model counting with formula rewriting
           \end{itemize}
   \end{itemize}
@@ -51,30 +44,30 @@
 
 \begin{frame}
   \frametitle{Solving PPE and MPPE via SSAT}
-  \begin{block}{Theorem: SSAT Encoding of PPE}
-    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$,
-    the SSAT encoding of its PPE problem:
-    \pause
-    \begin{align*}
-      \alert<5>{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
-      \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
-      \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-      \exists y_1,\ldots,\exists y_m.
-      \pf_M
-    \end{align*}
-  \end{block}
-  \pause
-  \begin{block}{Theorem: SSAT Encoding of MPPE}
-    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$,
-    the SSAT encoding of its MPPE problem:
-    \pause
-    \begin{align*}
-      \alert<5>{\exists x_1,\ldots,\exists x_n},
-      \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
-      \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-      \exists y_1,\ldots,\exists y_m.
-      \pf_M
-    \end{align*}
+  \begin{block}{Theorem: SSAT Encodings of PPE and MPPE}
+    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$:
+    \begin{itemize}
+      \item PPE (average case)
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
+            \begin{align*}
+              \alert<2>{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
+              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
+              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+              \exists y_1,\ldots,\exists y_m.
+              \pf_M
+            \end{align*}
+      \item MPPE (worst case)
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
+            \begin{align*}
+              \alert<2>{\exists x_1,\ldots,\exists x_n},
+              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+              \exists y_1,\ldots,\exists y_m.
+              \pf_M
+            \end{align*}
+    \end{itemize}
   \end{block}
 \end{frame}
 
@@ -104,25 +97,6 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Connection between WMC and SSAT}
-  \begin{block}{Theorem: Solving SSAT Encoding of PPE via WMC}
-    $\random{p_{x_1}}x_1,\ldots,\random{p_{x_n}}x_n,\exists y_1,\ldots,\exists y_m.\pf$ is
-    a WMC instance of $\pf$ under $\wt(x_i)=p_{x_i}$ for every $x_i$
-    if $\{x_1,\ldots,x_n\}$ is a \textit{base set} for $\pf$:
-    \pause
-    \begin{itemize}
-      \item Base set: propagating values to variables outside the set
-            \pause
-            \begin{itemize}
-              \item E.g., fresh variables for internal vertices during Tseitin transform
-                    \pause
-            \end{itemize}
-      \item SSAT encoding of PPE can be solved by WMC
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
   \frametitle{Rewriting WMC into Unweighted MC}
   \begin{itemize}
     \item Approximate model counting mostly focuses on unweighted instances
@@ -141,7 +115,6 @@
       \centering
       \input{prob-design-eval/rewriting.tex}
     \end{figure}
-    \pause
     \begin{itemize}
       \item Unweighted: $p_{x_1}=p_{x_2}=p_{x_3}=p_{z_2}=p_{z_3}=0.5$
     \end{itemize}

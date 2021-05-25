@@ -2,35 +2,25 @@
   \frametitle{Complexity}
   \begin{block}{Theorem: NEXPTIME-Completeness of DSSAT}
     The decision version of DSSAT is NEXPTIME-complete
-    \pause
     \begin{itemize}
       \item DSSAT is NEXPTIME
-            \pause
       \item DSSAT is NEXPTIME-hard
     \end{itemize}
   \end{block}
   \pause
   \begin{block}{Proof Sketch}
-    \belowdisplayskip=0pt
     \begin{itemize}
       \item NEXPTIME
-            \pause
             \begin{enumerate}
               \item nondeterministically construct a set of Skolem functions $\skf$
-                    \pause
               \item compute $\spb{\pcf{\Qf}{\skf}}$ and compare it with the threshold $\theta$
             \end{enumerate}
-            \pause
       \item NEXPTIME-hard: DQBF $\leq_P$ DSSAT
-            \pause
+            \abovedisplayskip=0pt
             \begin{align*}
-              \Qf_Q=\forall x_1, \ldots, \forall x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf
+              \Qf_Q & = \forall x_1, \ldots, \forall x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf           \\
+              \Qf_S & = \random{0.5} x_1, \ldots, \random{0.5} x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf
             \end{align*}
-            \pause
-            \begin{align*}
-              \Qf_S=\random{0.5} x_1, \ldots, \random{0.5} x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf
-            \end{align*}
-            \pause
             Claim: $\Qf_Q$ is satisfiable if and only if $\spb{\pcf{\Qf_S}{\skf}} \geq 1$ for some $\skf$
     \end{itemize}
   \end{block}

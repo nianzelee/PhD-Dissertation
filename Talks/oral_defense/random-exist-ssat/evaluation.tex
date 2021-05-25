@@ -7,28 +7,20 @@
       \frametitle{Evaluation}
       \begin{itemize}
             \item Compared solvers
-                  \pause
                   \begin{itemize}
                         \item \ressat: \texttt{C++} language inside~\abc environment~\cite{ABC}
-                              \pause
                               \begin{itemize}
                                     \item SAT solver: \minisat-2.2~\cite{Een2003Solver}
-                                          \pause
                                     \item Weighted model counter: \cachet~\cite{Sang2004}
-                                          \pause
                               \end{itemize}
                         \item \ressatb: \ressat without minterm generalization
-                              \pause
                         \item \dcssat: state-of-the-art DPLL-based SSAT solver
-                              \pause
                   \end{itemize}
-            \item Experimental setup
                   \pause
+            \item Experimental setup
                   \begin{itemize}
                         \item A machine with~\machineSpec
-                              \pause
                         \item \osInfo
-                              \pause
                         \item CPU time: \timelimit; memory: \memlimit
                   \end{itemize}
       \end{itemize}
@@ -38,25 +30,19 @@
       \frametitle{Benchmark Set}
       \begin{itemize}
             \item Random $k$-CNF formulas (by \cnfgen~\cite{Lauria2017CNFgen})
-                  \pause
                   \begin{itemize}
                         \item $k\in\{3,\ldots,9\},n\in\{10,20,\ldots,50\},\frac{m}{n}=\{k-1,k,k+1,k+2\}$
-                              \pause
                         \item Quantify half variables randomly and others existentially
-                              \pause
                         \item \num{5} samples per configuration: \nrandom~formulas
-                              \pause
                   \end{itemize}
-            \item Strategic-company~\cite{Cadoli1997} formulas
                   \pause
+            \item Strategic-company~\cite{Cadoli1997} formulas
                   \begin{itemize}
                         \item Forall-exist QBF: decide whether a company is \textit{strategic}
-                              \pause
                         \item Replace universal quantifiers with randomized ones
-                              \pause
                         \item From \texttt{QBFLIB}~\cite{Narizzano2006}: \nstrategic~formulas
-                              \pause
                   \end{itemize}
+                  \pause
             \item PEC formulas: \npec~formulas
       \end{itemize}
 \end{frame}

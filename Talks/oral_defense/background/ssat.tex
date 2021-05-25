@@ -2,24 +2,18 @@
       \frametitle{Background}
       \begin{block}{Definition: Stochastic Boolean Satisfiability (SSAT)}
             Given a quantified formula $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf$:
-            \pause
             \begin{itemize}
                   \item $Q_1 x_1,\ldots,Q_n x_n$: quantification structure, $Q_i \in \{\random{p},\exists\}$ (\emph{prefix})
-                        \pause
                   \item $\pf$: quantifier-free formula over $\{x_1,\ldots,x_n\}$ (\emph{matrix})
             \end{itemize}
       \end{block}
       \pause
       \begin{block}{Definition: Satisfying Probability of SSAT}
             Let $x$ be the outermost variable in the prefix:
-            \pause
             \begin{enumerate}
                   \item[a)] $\spb{\top}=1$,
-                        \pause
                   \item[b)] $\spb{\bot}=0$,
-                        \pause
                   \item[c)] $\spb{\Qf}=\max\{\spb{\ncf{\Qf}{x}},\spb{\pcf{\Qf}{x}}\}$, if $x$ is quantified by $\exists$,
-                        \pause
                   \item[d)] $\spb{\Qf}=(1-p)\spb{\ncf{\Qf}{x}}+p\spb{\pcf{\Qf}{x}}$, if $x$ is quantified by $\random{p}$.
             \end{enumerate}
       \end{block}
@@ -37,7 +31,8 @@
                   (x_1 \lor \lnot y_2)
                   (x_2 \lor \lnot y_2)
             \end{align*}
-      \end{block}\pause
+      \end{block}
+      \pause
       \begin{figure}
             \centering
             \begin{tikzpicture}[
@@ -129,16 +124,11 @@
       \frametitle{Game-Theoretical Interpretations of SSAT}
       \begin{itemize}
             \item $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf,Q_i\in\{\random{p},\exists\}$
-                  \pause
                   \begin{itemize}
                         \item $\random{p}$: nondeterministic factors
-                              \pause
                         \item $\exists$: an agent who plays under uncertainty
-                              \pause
                         \item $\pf$: game matrix
-                              \pause
                         \item $\spb{\Qf}$: the maximum winning probability of the agent
-                              \pause
                         \item \alert{Skolem functions}: a winning strategy of the agent
                   \end{itemize}
       \end{itemize}
@@ -157,7 +147,6 @@
                   (x_1 \lor \lnot y_2)
                   (x_2 \lor \lnot y_2)
             \end{align*}
-            \pause
             \begin{itemize}
                   \item Variable $y_1$: $f_1(x_1)=x_1$; variable $y_2$: $f_2(x_1,x_2)=x_1 \land x_2$
             \end{itemize}

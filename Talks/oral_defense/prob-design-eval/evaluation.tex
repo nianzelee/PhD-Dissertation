@@ -7,31 +7,24 @@
               \pause
               \begin{itemize}
                   \item SSAT formulation (MPPE and PPE)
-                        \pause
                         \begin{itemize}
                             \item \bddsp: \texttt{C} language using \cudd~\cite{CUDD} inside \abc~\cite{ABC}
-                                  \pause
                             \item \bddspnr: \bddsp without variable reordering
-                                  \pause
                             \item \dcssat: state-of-the-art CNF-based solver
-                                  \pause
                         \end{itemize}
-                  \item Model-counting formulation (PPE)
                         \pause
+                  \item Model-counting formulation (PPE)
                         \begin{itemize}
                             \item \cachet: exact weighted model counter
-                                  \pause
                             \item \approxmc: epsilon=$0.99$ and delta=$0.01$
-                                  \pause
                         \end{itemize}
+                        \pause
               \end{itemize}
         \item Experimental setup
               \pause
               \begin{itemize}
                   \item A machine with~\machineSpec
-                        \pause
                   \item \osInfo
-                        \pause
                   \item CPU time: \timelimit; memory: \memlimit
               \end{itemize}
     \end{itemize}
@@ -44,19 +37,16 @@
               \pause
               \begin{itemize}
                   \item Average case (PEC): uniform distribution over PIs
-                        \pause
                   \item Worst case (MPEC): find a maximizing assignment for PIs
-                        \pause
               \end{itemize}
+              \pause
         \item ISCAS\,'85~\cite{ISCAS85-benchmark}
               and EPFL~\cite{EPFL-benchmark} benchmark suites
               \pause
               \begin{itemize}
                   \item And-inverter graphs (AIGs)
                   \item \ncircuit~circuits with sizes from 100 to 100K gates
-                        \pause
                   \item Error rate: $\er=0.125$
-                        \pause
                   \item Defect rate: $\dr=0.01$ and $0.1$
               \end{itemize}
     \end{itemize}
@@ -138,7 +128,9 @@
     \frametitle{Implications from the Results}
     \begin{itemize}
         \item \bddsp performs the best for small- and medium-sized circuits
+              \pause
         \item \approxmc uniquely solves large instances
+              \pause
         \item \cachet and \dcssat do not scale well
     \end{itemize}
 \end{frame}

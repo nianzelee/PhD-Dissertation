@@ -10,28 +10,20 @@
     \frametitle{Evaluation}
     \begin{itemize}
         \item Compared solvers
-              \pause
               \begin{itemize}
                   \item \erssat: \texttt{C++} language inside~\abc~\cite{ABC}
-                        \pause
                         \begin{itemize}
                             \item SAT solver: \minisat-2.2~\cite{Een2003Solver}
-                                  \pause
                             \item Weighted model counter: \cachet~\cite{Sang2004} and \cudd~\cite{Darwiche2002KnowledgeCompilation}
-                                  \pause
                         \end{itemize}
                   \item \erssatb: \erssat without heuristics to strengthen learnt clauses
-                        \pause
                   \item \dcssat: state-of-the-art DPLL-based SSAT solver
-                        \pause
               \end{itemize}
-        \item Experimental setup
               \pause
+        \item Experimental setup
               \begin{itemize}
                   \item A machine with~\machineSpec
-                        \pause
                   \item \osInfo
-                        \pause
                   \item CPU time: \timelimit; memory: \memlimit
               \end{itemize}
     \end{itemize}
@@ -41,17 +33,13 @@
     \frametitle{Benchmark Set}
     \begin{itemize}
         \item Random $k$-CNF formulas (by \cnfgen~\cite{Lauria2017CNFgen})
-              \pause
               \begin{itemize}
                   \item $k\in\{3,\ldots,9\},n\in\{10,20,\ldots,50\},\frac{m}{n}=\{k-1,k,k+1,k+2\}$
-                        \pause
                   \item Quantify half variables existentially and others randomly
-                        \pause
                   \item \num{5} samples per configuration: \nrandom~formulas
-                        \pause
               \end{itemize}
-        \item Application formulas: \napplication~formulas
               \pause
+        \item Application formulas: \napplication~formulas
               \begin{table}[ht]
                   \centering
                   \small
@@ -69,7 +57,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{CPU-Time Quantile Plot for Random Formulas}
+    \frametitle{Quantile Plot for Random Formulas}
     \begin{figure}
         \centering
         \includegraphics{fig/exist-random-ssat/quantile-cputime-Random.pdf}
@@ -77,10 +65,10 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Memory Quantile Plot for Random Formulas}
+    \frametitle{Quantile Plot for Application Formulas}
     \begin{figure}
         \centering
-        \includegraphics{fig/exist-random-ssat/quantile-memory-Random.pdf}
+        \includegraphics{fig/exist-random-ssat/quantile-cputime-Application.pdf}
     \end{figure}
 \end{frame}
 
@@ -126,64 +114,26 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{CPU-Time Quantile Plot for Application Formulas}
-    \begin{figure}
-        \centering
-        \includegraphics{fig/exist-random-ssat/quantile-cputime-Application.pdf}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Memory Quantile Plot for Application Formulas}
-    \begin{figure}
-        \centering
-        \includegraphics{fig/exist-random-ssat/quantile-memory-Application.pdf}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{CPU-Time Scatter Plot: \erssat vs. \erssatb}
-    \begin{figure}
-        \centering
-        \includegraphics{fig/exist-random-ssat/scatter-erssat.pdf}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{CPU-Time Scatter Plot: \erssat vs. \dcssat}
-    \begin{figure}
-        \centering
-        \includegraphics{fig/exist-random-ssat/scatter-dcssat.pdf}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
     \frametitle{Case Study: \textit{Sand-Castle}}
     \begin{itemize}
         \item An agent wants to build a sand castle within finite stages
-              \pause
               \begin{itemize}
                   \item At each stage: either dig a moat or erect a castle
-                        \pause
               \end{itemize}
-        \item Conformant planning: E-MAJSAT
               \pause
+        \item Conformant planning: E-MAJSAT
               \begin{itemize}
                   \item Existentially quantified variables: policy selection
-                        \pause
                   \item Randomly quantified variables: probabilistic mechanism
-                        \pause
               \end{itemize}
-        \item \textit{Sand-Castle} formula with $n$ stages: $\pf=\bigwedge_{i=1}^n \pf_d^{(i)}\land\pf_e^{(i)}$
               \pause
+        \item \textit{Sand-Castle} formula with $n$ stages: $\pf=\bigwedge_{i=1}^n \pf_d^{(i)}\land\pf_e^{(i)}$
               \begin{itemize}
                   \item $\pf_d^{(i)}$ (resp. $\pf_e^{(i)}$) selected iff dig (resp. erect) at stage~$i$
-                        \pause
                   \item Each policy selects a distinct set of clauses
-                        \pause
                   \item Clause-containment learning degenerates to brute-force search
-                        \pause
               \end{itemize}
+              \pause
         \item \textit{Sand-Castle} favors \dcssat: same subformulas  across the stages
     \end{itemize}
 \end{frame}
@@ -234,13 +184,45 @@
         \item \erssat performs similarly as \dcssat on random formulas
               \pause
         \item \erssat is not suitable for certain application formulas
-              \pause
               \begin{itemize}
                   \item Clause-containment learning might degenerate to brute-force search
-                        \pause
                   \item Overhead incurred by the heuristics to strengthen learnt clauses
-                        \pause
               \end{itemize}
+              \pause
         \item \erssat is good at deriving tight lower bounds for large formulas
     \end{itemize}
 \end{frame}
+
+\iffalse
+    \begin{frame}
+        \frametitle{Memory Quantile Plot for Random Formulas}
+        \begin{figure}
+            \centering
+            \includegraphics{fig/exist-random-ssat/quantile-memory-Random.pdf}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Memory Quantile Plot for Application Formulas}
+        \begin{figure}
+            \centering
+            \includegraphics{fig/exist-random-ssat/quantile-memory-Application.pdf}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{CPU-Time Scatter Plot: \erssat vs. \erssatb}
+        \begin{figure}
+            \centering
+            \includegraphics{fig/exist-random-ssat/scatter-erssat.pdf}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{CPU-Time Scatter Plot: \erssat vs. \dcssat}
+        \begin{figure}
+            \centering
+            \includegraphics{fig/exist-random-ssat/scatter-dcssat.pdf}
+        \end{figure}
+    \end{frame}
+\fi

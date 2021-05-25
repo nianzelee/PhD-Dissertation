@@ -2,23 +2,17 @@
     \frametitle{Decision Procedure}
     \begin{itemize}
         \item Given $\Qf=\exists X,\random{} Y.\pf(X,Y)$, $\spb{\Qf}$ equals
-              \pause
               \begin{itemize}
                   \item The maximum conditional satisfying probability $\spb{\pcf{\Qf}{\as^*}}$
-                        \pause
                   \item $(\pcf{\pf}{\as_2}\models\pcf{\pf}{\as_1})\limply\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}$
-                        \pause
               \end{itemize}
-        \item Clause-containment learning
               \pause
+        \item Clause-containment learning
               \begin{itemize}
                   \item Prune assignments that select a superset of the selected clauses
-                        \pause
                         \begin{itemize}
                             \item An assignments $\as_1$ selects a set of clauses $\pcf{\pf}{\as_1}$
-                                  \pause
                             \item Avoid such $\as_2$: $\pcf{\pf}{\as_1}\subseteq\pcf{\pf}{\as_2}\limply(\pcf{\pf}{\as_2}\models\pcf{\pf}{\as_1})$
-                                  \pause
                             \item Learnt clause: $\bigvee\limits_{C\in\pcf{\pf}{\as_1}}\lnot\sv{C}$
                         \end{itemize}
               \end{itemize}
@@ -33,7 +27,6 @@
             \item[] $C_1: (e_1 \lor r_1 \lor r_2)$ $C_2: (e_1 \lor e_2 \lor r_1 \lor r_2 \lor \lnot r_3)$
             \item[] $C_3: (\lnot e_2 \lor \lnot e_3 \lor r_2 \lor \lnot r_3)$ $C_4: (\lnot e_1 \lor e_3 \lor r_3)$
         \end{itemize}
-        \pause
         \begin{table}[t]
             \centering
             \small
@@ -41,17 +34,12 @@
                 Assignment                            & Selected Clauses & $\spb{\pcf{\Qf}{\as}}$ & Learnt Clause                \\
                 \hline
                 $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ & $\{C_1,C_2\}$    & $0.75$                 & $(\lnot s_1 \lor \lnot s_2)$ \\
-                \pause
                 $\as_2=\lnot e_1 e_2 \lnot e_3$       & $\{C_1\}$        & $0.75$                 & $(\lnot s_1)$                \\
-                \pause
                 $\as_3=e_1 e_2 \lnot e_3$             & $\{C_4\}$        & $0.5$                  & $(\lnot s_4)$                \\
-                \pause
                 $\as_4=e_1 e_2 e_3$                   & $\{C_3\}$        & $0.75$                 & $(\lnot s_3)$                \\
-                \pause
                 $\as_5=e_1 \lnot e_2 e_3$             & $\{\}$           & $1$                    & $()$
             \end{tabular}
         \end{table}
-        \pause
         \begin{itemize}
             \item $\spb{\Qf}=1$ with $\as^*=\as_5$
         \end{itemize}
@@ -62,15 +50,12 @@
     \frametitle{Heuristics to Strengthen Learnt Clauses}
     \begin{itemize}
         \item A shorter learnt clause prunes more search space
-              \pause
               \begin{itemize}
                   \item Minimal clause selection: SAT solving
-                        \pause
                   \item Induced clause subsumption: syntax checking
-                        \pause
                   \item Partial assignment pruning: model counting
-                        \pause
               \end{itemize}
+              \pause
         \item Extra reasoning effort vs. Effectiveness of strengthened learnt clauses
     \end{itemize}
 \end{frame}
@@ -89,10 +74,8 @@
         \item $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ selects $\{C_1,C_2\}$
               \pause
         \item Solve $\select\land(\lnot s_1\lor\lnot s_2)$ under assumptions $s_3\land s_4$
-              \pause
               \begin{itemize}
                   \item $\as_2=\lnot e_1 e_2 \lnot e_3$, which only selects $\{C_1\}$
-                        \pause
                   \item Replace an expensive model-counting call with a SAT call
               \end{itemize}
     \end{itemize}
@@ -114,11 +97,10 @@
         \item $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ selects $\{C_1,C_2\}$
               \pause
         \item $C_1^Y$ subsumes $C_2^Y$: remove $C_2$ from the set of selected clauses
-              \pause
               \begin{itemize}
                   \item Strengthen the learnt clause to $(\lnot s_1)$
-                        \pause
               \end{itemize}
+              \pause
         \item Subsumption among $\cy$ clauses is \textit{induced} by clause selection
     \end{itemize}
 \end{frame}
@@ -137,13 +119,11 @@
               \end{itemize}
               \pause
         \item $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$: $C_L=(\lnot s_1\lor\lnot s_2)=(e_1\lor e_2),\spb{\pcf{\Qf}{\as_1}}=0.75$
-              \pause
               \begin{itemize}
                   \item Can we discard $e_2$ from $C_L$?
-                        \pause
                   \item $(e_1)$ blocks $\as$ that selects $C_1$: $\spb{\pcf{\Qf}{\as}}\leq\spb{C_1}=0.75\leq\spb{\pcf{\Qf}{\as_1}}$
-                        \pause
               \end{itemize}
+              \pause
         \item Count weight of selected clauses and compare to current maximum
     \end{itemize}
 \end{frame}

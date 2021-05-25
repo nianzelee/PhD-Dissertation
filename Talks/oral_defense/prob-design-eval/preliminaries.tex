@@ -2,38 +2,14 @@
   \frametitle{Preliminaries}
   \begin{block}{Definition: Combinational Boolean Network}
     A directed acyclic graph $G=(V,E)$ with:
-    \pause
     \begin{itemize}
       \item Primary inputs and outputs: $V_I$ and $V_O$
-            \pause
       \item The Boolean function of an internal vertex $v$: $f_v$
-            \pause
-    \end{itemize}
-  \end{block}
-  \begin{block}{Example: Boolean Network}
-    A Boolean network with $V_I=\{x_1,x_2,x_3\}$ and $V_O=\{o\}$:
-    \begin{figure}
-      \centering
-      \input{prob-design-eval/boolntk.tex}
-    \end{figure}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Preliminaries}
-  \begin{block}{Definition: Random Variables and Probability Mass Function (PMF)}
-    Given an experiment with sample space $S$ and probability measure $\Pr[\cdot]$:
-    \pause
-    \begin{itemize}
-      \item Random variable: $X:S\mapsto\mathbb{R}$
-            \pause
-      \item PMF: $P_X(x)=\Pr[\{s \mid X(s)=x\}]$
     \end{itemize}
   \end{block}
   \pause
-  \begin{block}{Definition: Bernoulli Random Variables (Binary Outcomes)}
+  \begin{block}{Definition: Bernoulli Random Variables}
     $X\sim\textit{Bernoulli}(p)$ with $p\in[0,1]$:
-    \pause
     \begin{align*}
       P_X(x)=
       \left\{
@@ -44,12 +20,9 @@
       \end{array}
       \right.
     \end{align*}
-    \pause
     In a Boolean network:
-    \pause
     \begin{itemize}
       \item An edge: \false ($x=0$) or \true ($x=1$)
-            \pause
       \item A gate: correct ($x=0$) or erroneous ($x=1$)
     \end{itemize}
   \end{block}
