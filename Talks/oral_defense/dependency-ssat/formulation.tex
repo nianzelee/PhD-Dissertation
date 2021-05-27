@@ -3,47 +3,27 @@
   \begin{block}{Definition: Dependency Stochastic Boolean Satisfiability (DSSAT)}
     $\Qf=\random{p_1} x_1, \ldots, \random{p_n} x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf$
     \begin{itemize}
-      \item $D_{y_j} \subseteq \{x_1,\ldots,x_n\}$: the \alert{dependency set} of $y_j$
-      \item $\skf=\{f_1,\ldots,f_m\}$: a set of Boolean functions
-            \begin{itemize}
-              \item $f_j$ over variables in $D_{y_j}$ for each $y_j$
-            \end{itemize}
-      \item Satisfying probability of $\Qf$ with respect to $\skf$
+      \item Satisfying probability of $\Qf$ with respect to $\skf=\{f_1,\ldots,f_m\}$
             \begin{align*}
               \spb{\pcf{\Qf}{\skf}}=\Pr[\random{p_1} x_1, \ldots, \random{p_n} x_n.\pf|_{\skf}]
             \end{align*}
-      \item Decision version: given $\Qf$ and $\theta$ decide if $\spb{\pcf{\Qf}{\skf}} \geq \theta$ for some $\skf$
-      \item Optimization version: find $\skf$ to maximize $\spb{\pcf{\Qf}{\skf}}$
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Formulation}
-  \begin{block}{Example: Rewriting SSAT into DSSAT}
-    \abovedisplayskip=0pt
-    \belowdisplayskip=0pt
-    \begin{align*}
-      \Qf_1  & = \random{0.5} x_1, \exists y_1, \random{0.5} x_2, \exists y_2. \pf                              \\
-      \pf    & = (x_1 \lor \lnot y_1)
-      (\lnot x_1 \lor y_1)
-      (\lnot x_1 \lor \lnot x_2 \lor y_2)
-      (x_1 \lor \lnot y_2)
-      (x_2 \lor \lnot y_2)                                                                                      \\
-      \Qf_1' & = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_1,x_2}\}).\pf
-    \end{align*}
-    \begin{itemize}
-      \item Skolem functions: $\skf^*=\{f^*_1(x_1)=x_1,f^*_2(x_1,x_2)=x_1 \land x_2\}$
-      \item Satisfying probability: $\spb{\pcf{\Qf_1'}{\skf^*}}=1$
     \end{itemize}
   \end{block}
   \pause
-  \begin{block}{Example: Satisfying Probability of DSSAT}
+  \begin{block}{Example: DSSAT}
     \abovedisplayskip=0pt
-    $\Qf_2 = \random{0.5} x_1, \random{0.5} x_2, \exists y_1(\{x_1\}), \exists y_2(\{\alert{x_2}\}).\pf$
+    \belowdisplayskip=0pt
+    \begin{align*}
+      \Qf  & = \random{0.5} x_1,\random{0.5} x_2,\exists y_1(\{x_1\}),\exists y_2(\{\alert{x_2}\}).\pf \\
+      \pf  & = (x_1 \lor \lnot y_1)
+      (\lnot x_1 \lor y_1)
+      (\lnot x_1 \lor \lnot x_2 \lor y_2)
+      (x_1 \lor \lnot y_2)
+      (x_2 \lor \lnot y_2)                                                                             \\
+      \skf & =\{f_1(x_1)=x_1,f_2(x_2)=x_2\}
+    \end{align*}
     \begin{itemize}
-      \item $\skf=\{f_1(x_1)=x_1,f_2(x_2)=x_2\},\spb{\pcf{\Qf_2}{\skf}}=0.75$
-      \item $\skf'=\{f_1'(x_1)=x_1,f_2'(x_2)=\neg x_2\},\spb{\pcf{\Qf_2}{\skf'}}=0.25$
+      \item $\spb{\pcf{\Qf}{\skf}}=\spb{\random{0.5} x_1,\random{0.5} x_2.(x_1\lor\lnot x_2)}=0.75$
     \end{itemize}
   \end{block}
 \end{frame}

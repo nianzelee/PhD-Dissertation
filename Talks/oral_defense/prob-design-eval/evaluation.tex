@@ -4,7 +4,6 @@
     \frametitle{Evaluation}
     \begin{itemize}
         \item Compared approaches
-              \pause
               \begin{itemize}
                   \item SSAT formulation (MPPE and PPE)
                         \begin{itemize}
@@ -12,16 +11,14 @@
                             \item \bddspnr: \bddsp without variable reordering
                             \item \dcssat: state-of-the-art CNF-based solver
                         \end{itemize}
-                        \pause
                   \item Model-counting formulation (PPE)
                         \begin{itemize}
                             \item \cachet: exact weighted model counter
-                            \item \approxmc: epsilon=$0.99$ and delta=$0.01$
+                            \item \approxmc-4.0.1: epsilon=$0.99$ and delta=$0.01$
                         \end{itemize}
-                        \pause
               \end{itemize}
-        \item Experimental setup
               \pause
+        \item Experimental setup
               \begin{itemize}
                   \item A machine with~\machineSpec
                   \item \osInfo
@@ -33,16 +30,14 @@
 \begin{frame}
     \frametitle{Benchmark Set}
     \begin{itemize}
-        \item Equivalence checking: probabilistic design vs. error-free version
-              \pause
+        \item Probabilistic equivalence checking
               \begin{itemize}
-                  \item Average case (PEC): uniform distribution over PIs
-                  \item Worst case (MPEC): find a maximizing assignment for PIs
+                  \item Average case: PEC
+                  \item Worst case: MPEC
               \end{itemize}
               \pause
         \item ISCAS\,'85~\cite{ISCAS85-benchmark}
               and EPFL~\cite{EPFL-benchmark} benchmark suites
-              \pause
               \begin{itemize}
                   \item And-inverter graphs (AIGs)
                   \item \ncircuit~circuits with sizes from 100 to 100K gates

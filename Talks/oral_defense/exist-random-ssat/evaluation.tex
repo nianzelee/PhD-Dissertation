@@ -127,9 +127,9 @@
                   \item Randomly quantified variables: probabilistic mechanism
               \end{itemize}
               \pause
-        \item \textit{Sand-Castle} formula with $n$ stages: $\pf=\bigwedge_{i=1}^n \pf_d^{(i)}\land\pf_e^{(i)}$
+        \item Two-stage formula: $(\lnot d_1\lor \pf_d^{(1)})(\lnot e_1\lor \pf_e^{(1)})(\lnot d_2\lor \pf_d^{(2)})(\lnot e_2\lor \pf_e^{(2)})$
               \begin{itemize}
-                  \item $\pf_d^{(i)}$ (resp. $\pf_e^{(i)}$) selected iff dig (resp. erect) at stage~$i$
+                  \item Dig at stage~$1$ and erect at stage~$2$: $\pf_d^{(1)}\land\pf_e^{(2)}$
                   \item Each policy selects a distinct set of clauses
                   \item Clause-containment learning degenerates to brute-force search
               \end{itemize}

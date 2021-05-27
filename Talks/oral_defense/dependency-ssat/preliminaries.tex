@@ -9,7 +9,22 @@
                               \item A Boolean function $f_j$ over variables in $D_{y_j}$ exists for each $y_j$
                               \item $\pf$ becomes a tautology over $\{x_1,\ldots,x_n\}$ after substituting $y_j$ with $f_j$
                         \end{enumerate}
-                  \item $\skf=\{f_1,\ldots,f_m\}$: a set of Skolem functions for $\Qf$
+            \end{itemize}
+      \end{block}
+      \pause
+      \begin{block}{Example: DQBF}
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
+            \begin{align*}
+                  \Qf & = \forall x_1,\forall x_2,\exists y_1(\{x_1\}),\exists y_2(\{x_1,x_2\}).\pf \\
+                  \pf & = (x_1 \lor \lnot y_1)
+                  (\lnot x_1 \lor y_1)
+                  (\lnot x_1 \lor \lnot x_2 \lor y_2)
+                  (x_1 \lor \lnot y_2)
+                  (x_2 \lor \lnot y_2)
+            \end{align*}
+            \begin{itemize}
+                  \item $\Qf$ is satisfiable: $f_1(x_1)=x_1;f_2(x_1,x_2)=x_1 \land x_2$
             \end{itemize}
       \end{block}
 \end{frame}

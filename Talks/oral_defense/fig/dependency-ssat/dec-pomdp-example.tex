@@ -1,0 +1,14 @@
+\usetikzlibrary{automata}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4cm,semithick]
+    \tikzstyle{every node}=[font=\scriptsize]
+    \node[state,inner sep=1pt,minimum size=0pt] (P) {$s_p$};
+    \node[state,inner sep=1pt,minimum size=0pt] (Q) [right of=P] {$s_q$};
+
+    \path
+    (P) edge [bend left] node {$(a_p,a_p,1)$} (Q)
+    edge [loop above] node {$(a_p,a_p,1)$} (P)
+    edge [loop below] node[align=left] {$(a_q,A_2,-1)$\\$(A_1,a_q,-1)$} (P)
+    (Q) edge [bend left] node {$(a_q,a_q,1)$} (P)
+    edge [loop above] node {$(a_q,a_q,1)$} (Q)
+    edge [loop below] node[align=left] {$(a_p,A_2,-1)$\\$(A_1,a_p,-1)$} (Q);
+\end{tikzpicture}

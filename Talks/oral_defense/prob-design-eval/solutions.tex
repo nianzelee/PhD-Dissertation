@@ -1,27 +1,55 @@
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation (PPE)}
+  \frametitle{Probabilistic Property Evaluation}
   \begin{block}{Definition: Property Violation Probability}
     \begin{figure}
       \centering
-      \includegraphics[scale=0.8]{fig/prob-design-eval/prob-spbn-miter.pdf}
+      \includegraphics[scale=0.6]{fig/prob-design-eval/prob-spbn-miter.pdf}
     \end{figure}
     \begin{itemize}
       \item PPE: the average violation probability under $\pi:X\mapsto[0,1]$
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
+            \begin{align*}
+              \alert{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
+              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
+              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+              \exists y_1,\ldots,\exists y_m.
+              \pf_M
+            \end{align*}
       \item MPPE: the maximum violation probability
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
+            \begin{align*}
+              \alert{\exists x_1,\ldots,\exists x_n},
+              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+              \exists y_1,\ldots,\exists y_m.
+              \pf_M
+            \end{align*}
     \end{itemize}
   \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation (PPE)}
+  \frametitle{Probabilistic Property Evaluation}
   \begin{block}{Example: Probabilistic Equivalence Checking}
     \begin{figure}
       \centering
       \input{prob-design-eval/pec-miter.tex}
     \end{figure}
     \begin{itemize}
-      \item PEC: the average difference probability under $\pi(x)=0.5$
+      \item PEC: the average difference probability under $\pi:X\mapsto[0,1]$
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
+            \begin{align*}
+              \random{} X,\random{} Z,\exists Y.(F(X,Z) \not\equiv G(X))
+            \end{align*}
+            \abovedisplayskip=0pt
+            \belowdisplayskip=0pt
       \item MPEC: the maximum difference probability
+            \begin{align*}
+              \exists X,\random{} Z,\exists Y.(F(X,Z) \not\equiv G(X))
+            \end{align*}
     \end{itemize}
   \end{block}
 \end{frame}
@@ -38,37 +66,12 @@
           \begin{itemize}
             \item Weighted model counting
             \item Unweighted model counting with formula rewriting
+                  \begin{itemize}
+                    \item Approximate model counting mostly focuses on unweighted instances
+                    \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
+                  \end{itemize}
           \end{itemize}
   \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Solving PPE and MPPE via SSAT}
-  \begin{block}{Theorem: SSAT Encodings of PPE and MPPE}
-    Given a miter SPBN $G_M$ and its CNF formula $\pf_M$:
-    \begin{itemize}
-      \item PPE (average case)
-            \abovedisplayskip=0pt
-            \belowdisplayskip=0pt
-            \begin{align*}
-              \alert<2>{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
-              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
-              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-              \exists y_1,\ldots,\exists y_m.
-              \pf_M
-            \end{align*}
-      \item MPPE (worst case)
-            \abovedisplayskip=0pt
-            \belowdisplayskip=0pt
-            \begin{align*}
-              \alert<2>{\exists x_1,\ldots,\exists x_n},
-              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
-              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-              \exists y_1,\ldots,\exists y_m.
-              \pf_M
-            \end{align*}
-    \end{itemize}
-  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -92,60 +95,6 @@
       \STATE $\nodevisit{N} := \true$
       \ENDIF
       \RETURN $\nodesp{N}$
-    \end{algorithmic}
-  }
-\end{frame}
-
-\begin{frame}
-  \frametitle{Rewriting WMC into Unweighted MC}
-  \begin{itemize}
-    \item Approximate model counting mostly focuses on unweighted instances
-          \pause
-    \item A rewriting technique to enjoy the advancements of approximate MC
-          \pause
-    \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Rewriting WMC into Unweighted MC}
-  \begin{block}{Example: WMC Rewriting}
-    Express $p_{z_1}=0.25$ with $z_1\equiv z_2\land z_3$:
-    \begin{figure}
-      \centering
-      \input{prob-design-eval/rewriting.tex}
-    \end{figure}
-    \begin{itemize}
-      \item Unweighted: $p_{x_1}=p_{x_2}=p_{x_3}=p_{z_2}=p_{z_3}=0.5$
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{WMC Rewriting Procedure}
-  {
-    \scriptsize
-    \begin{algorithmic}[1]
-      \REQUIRE A formula $\pf$, a base set $\base$ for $\pf$,
-      a wt. func. $\wt$ s.t. $\forall x\in\base.\wt(x)=\frac{k}{2^n}$
-      \ENSURE A formula $\pf'$, a base set $\base'$ for $\pf'$,
-      a wt. func. $\wt'$ s.t. $\forall x\in\base'.\wt'(x)=\frac{1}{2}$
-      \STATE $\pf':=\pf,\base':=\base$
-      \FORALL{($x\in\base$)}
-      \STATE $var:=x,wt:=\wt(x)$
-      \WHILE{($wt\neq\frac{1}{2}$)}
-      \STATE $inv:=\bot$
-      \IF{($wt>\frac{1}{2}$)}
-      \STATE $wt:=1-wt,inv:=\top$
-      \ENDIF
-      \STATE $\pf':=\pf'\land((inv \oplus var) \equiv (y_{var} \land z_{var}))$
-      \STATE $\base':=\base'\setminus\{var\}\cup\{y_{var}\}$
-      \STATE $\wt'(y_{var})=\frac{1}{2}$
-      \STATE $var=z_{var},wt=2 \cdot wt$
-      \ENDWHILE
-      \STATE $\base':=\base'\cup\{var\},\wt'(var)=\frac{1}{2}$
-      \ENDFOR
-      \RETURN $(\pf',\base',\wt')$
     \end{algorithmic}
   }
 \end{frame}

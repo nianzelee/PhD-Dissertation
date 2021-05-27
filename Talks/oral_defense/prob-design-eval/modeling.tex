@@ -1,38 +1,15 @@
 \begin{frame}
   \frametitle{Modeling Probabilistic Design}
-  \begin{block}{Definition: Probabilistic Boolean Network (PBN)}
-    A Boolean network with independent $B_v\sim\textit{Bernoulli}(p_v)$ for each $v$:
-    \begin{itemize}
-      \item Primary inputs: $p_v=\Pr[v=\top]$
-      \item Other vertices: $p_v$ is the error rate of $v$
-    \end{itemize}
-  \end{block}
-  \pause
-  \begin{block}{Example: PBN}
+  \begin{block}{Definition: Probabilistic Boolean Network and Standardization}
     A PBN with $V_I=\{x_1,x_2,x_3\}$ and $V_O=\{o\}$:
     \begin{figure}
       \centering
       \input{prob-design-eval/prob-boolntk.tex}
     \end{figure}
     \begin{itemize}
-      \item $p_{x_1}=p_{x_2}=p_{x_3}=0.5$
-      \item $p_{y_1}=0.25;p_{y_2}=p_{o}=0$
+      \item $p_{x_1}=p_{x_2}=p_{x_3}=0.5;p_{y_1}=0.25;p_{y_2}=p_{o}=0$
     \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Modeling Probabilistic Design}
-  \begin{block}{Definition: Standardized Probabilistic Boolean Network (SPBN)}
-    A PBN can be standardized by the following \textit{distillation operation}:
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.8]{fig/prob-design-eval/prob-distillation.pdf}
-    \end{figure}
-  \end{block}
-  \pause
-  \begin{block}{Example: SPBN}
-    A standardized PBN with $V_I=\{x_1,x_2,x_3\}$ and $V_O=\{o\}$:
+    After standardization:
     \begin{figure}
       \centering
       \input{prob-design-eval/std-prob-boolntk.tex}
