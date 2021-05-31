@@ -1,100 +1,76 @@
 \begin{frame}
-  \frametitle{Probabilistic Property Evaluation}
-  \begin{block}{Definition: Property Violation Probability}
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.6]{fig/prob-design-eval/prob-spbn-miter.pdf}
-    \end{figure}
+    \frametitle{Probabilistic Property Evaluation}
+    \begin{block}{Definition: Property Violation Probability}
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.6]{fig/prob-design-eval/prob-spbn-miter.pdf}
+        \end{figure}
+        \begin{itemize}
+            \item PPE: the average violation probability under $\pi:X\mapsto[0,1]$
+                  \abovedisplayskip=0pt
+                  \belowdisplayskip=0pt
+                  \begin{align*}
+                      \alert{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
+                      \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
+                      \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+                      \exists y_1,\ldots,\exists y_m.
+                      \pf_M
+                  \end{align*}
+            \item MPPE: the maximum violation probability
+                  \abovedisplayskip=0pt
+                  \belowdisplayskip=0pt
+                  \begin{align*}
+                      \alert{\exists x_1,\ldots,\exists x_n},
+                      \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
+                      \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
+                      \exists y_1,\ldots,\exists y_m.
+                      \pf_M
+                  \end{align*}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Probabilistic Property Evaluation}
+    \begin{block}{Example: Probabilistic Equivalence Checking}
+        \begin{figure}
+            \centering
+            \input{prob-design-eval/pec-miter.tex}
+        \end{figure}
+        \begin{itemize}
+            \item PEC: the average difference probability under $\pi:X\mapsto[0,1]$
+                  \abovedisplayskip=0pt
+                  \belowdisplayskip=0pt
+                  \begin{align*}
+                      \random{} X,\random{} Z,\exists Y.(F(X,Z) \not\equiv G(X))
+                  \end{align*}
+                  \abovedisplayskip=0pt
+                  \belowdisplayskip=0pt
+            \item MPEC: the maximum difference probability
+                  \begin{align*}
+                      \exists X,\random{} Z,\exists Y.(F(X,Z) \not\equiv G(X))
+                  \end{align*}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Solving MPPE and PPE}
     \begin{itemize}
-      \item PPE: the average violation probability under $\pi:X\mapsto[0,1]$
-            \abovedisplayskip=0pt
-            \belowdisplayskip=0pt
-            \begin{align*}
-              \alert{\random{\pi(x_1)}x_1,\ldots,\random{\pi(x_n)}x_n},
-              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l, \\
-              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-              \exists y_1,\ldots,\exists y_m.
-              \pf_M
-            \end{align*}
-      \item MPPE: the maximum violation probability
-            \abovedisplayskip=0pt
-            \belowdisplayskip=0pt
-            \begin{align*}
-              \alert{\exists x_1,\ldots,\exists x_n},
-              \random{p_{z_1}}z_1,\ldots,\random{p_{z_l}}z_l,
-              \random{p_{w_1}}w_1,\ldots,\random{p_{w_q}}w_q,
-              \exists y_1,\ldots,\exists y_m.
-              \pf_M
-            \end{align*}
+        \item MPPE: SSAT
+              \begin{itemize}
+                  \item CNF-based
+                  \item BDD-based: graph traversal
+              \end{itemize}
+              \pause
+        \item PPE: model counting
+              \begin{itemize}
+                  \item Weighted model counting
+                  \item Unweighted model counting with formula rewriting
+                        \begin{itemize}
+                            \item Approximate model counting mostly focuses on unweighted instances
+                            \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
+                        \end{itemize}
+              \end{itemize}
     \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Probabilistic Property Evaluation}
-  \begin{block}{Example: Probabilistic Equivalence Checking}
-    \begin{figure}
-      \centering
-      \input{prob-design-eval/pec-miter.tex}
-    \end{figure}
-    \begin{itemize}
-      \item PEC: the average difference probability under $\pi:X\mapsto[0,1]$
-            \abovedisplayskip=0pt
-            \belowdisplayskip=0pt
-            \begin{align*}
-              \random{} X,\random{} Z,\exists Y.(F(X,Z) \not\equiv G(X))
-            \end{align*}
-            \abovedisplayskip=0pt
-            \belowdisplayskip=0pt
-      \item MPEC: the maximum difference probability
-            \begin{align*}
-              \exists X,\random{} Z,\exists Y.(F(X,Z) \not\equiv G(X))
-            \end{align*}
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Solving MPPE and PPE}
-  \begin{itemize}
-    \item MPPE
-          \begin{itemize}
-            \item CNF-/BDD-based SSAT solving
-          \end{itemize}
-          \pause
-    \item PPE
-          \begin{itemize}
-            \item Weighted model counting
-            \item Unweighted model counting with formula rewriting
-                  \begin{itemize}
-                    \item Approximate model counting mostly focuses on unweighted instances
-                    \item Express a weight of the form $\frac{k}{2^n}$ with additional variables and clauses
-                  \end{itemize}
-          \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{BDD-Based SSAT Solving}
-  {
-    \small
-    \begin{algorithmic}[1]
-      \REQUIRE An ROBDD node $N$ and a prefix $Q$
-      \ENSURE $\spb{N=\top}$ under $Q$
-      \IF{($N$ is a terminal node)}\label{code:bddssat-recursive-constant-start}
-      \RETURN $\nodesp{N}$\label{code:bddssat-recursive-constant-end}
-      \ENDIF
-      \IF{($\nodevisit{N}=\false$)}
-      \IF{($Q(\nodevar{N})=\random{p}$)}
-      \alert{\STATE $\nodesp{N}:=(1-p)\cdot\texttt{BddSsatRecur}(\nodeelse{N},Q)+p\cdot\texttt{BddSsatRecur}(\nodethen{N},Q)$}
-      \label{code:bddssat-recursive-random}
-      \ELSE
-      \alert{\STATE $\nodesp{N}:=\max\{\texttt{BddSsatRecur}(\nodeelse{N},Q),\texttt{BddSsatRecur}(\nodethen{N},Q)\}$}
-      \label{code:bddssat-recursive-exist}
-      \ENDIF
-      \STATE $\nodevisit{N} := \true$
-      \ENDIF
-      \RETURN $\nodesp{N}$
-    \end{algorithmic}
-  }
 \end{frame}

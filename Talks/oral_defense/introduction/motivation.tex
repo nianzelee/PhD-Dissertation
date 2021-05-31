@@ -1,4 +1,16 @@
 \begin{frame}
+      \frametitle{Satisfiability Solving: A Success Story}
+      \begin{itemize}
+            \item Satisfiability solvers~\cite{SATHandbook} have succeeded in various fields
+                  \begin{itemize}
+                        \item Artificial intelligence~\cite{Nilsson2014,Russell2020}
+                        \item Electronic design automation~\cite{Marques2000,Wang2009}
+                        \item Formal verification~\cite{Berard2013,Jhala2009}
+                  \end{itemize}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
       \frametitle{Satisfiability beyond Propositional Logic}
       \begin{figure}
             \centering
@@ -11,15 +23,11 @@
       \begin{itemize}
             \item Stochastic Boolean satisfiability (SSAT)
                   \begin{itemize}
-                        \item First proposed by Papadimitriou~\cite{Papadimitriou1985} as \emph{games against nature}
+                        \item \emph{Games against nature}~\cite{Papadimitriou1985}
                         \item Randomized quantifier $\random{p}x$: $\spb{x=\true}=p$
                         \item Logical formalism for problems with uncertainty
                               \begin{itemize}
-                                    \item Probabilistic planning~\cite{Majercik1998,
-                                                Majercik2003,
-                                                Majercik2005}
-                                    \item Partially observable Markov decision process (POMDP)~\cite{Salmon2020}
-                                    \item Quantitative information flow~\cite{Fremont2017}
+                                    \item Probabilistic planning~\cite{Majercik1998,Majercik2003,Majercik2005} and POMDP~\cite{Salmon2020}
                               \end{itemize}
                   \end{itemize}
                   \pause
@@ -92,7 +100,7 @@
                         \item \complan~\cite{Huang2006}: deterministic, decomposable NNF (d-DNNF)~\cite{Darwiche2001,Darwiche2002dDNNF}
                   \end{itemize}
                   \pause
-            \item Closely related to model counting and QBF
+            \item Closely related to model counting (MAJSAT) and QBF
                   \begin{itemize}
                         \item Randomized quantifier: weighted summation of satisfying assignments
                         \item PSPACE-complete~\cite{Stockmeyer1973}: the same as QBF
@@ -103,53 +111,6 @@
                         \item Leverage advancements of other formalisms
                   \end{itemize}
       \end{itemize}
-\end{frame}
-
-\begin{frame}
-      \frametitle{Model Counting (MAJSAT)}
-      \begin{itemize}
-            \item Exact: find the precise count
-                  \begin{itemize}
-                        \item \cachet~\cite{Sang2004,Sang2005ModelCounting}: DPLL search plus subformula caching
-                        \item \ctwod~\cite{Darwiche2001,Darwiche2002dDNNF}: CNF-to-d-DNNF compilation
-                        \item \dpmc~\cite{Dudek2020}: project-join tree and arithmetic decision diagrams
-                  \end{itemize}
-                  \pause
-            \item Approximate: bounds with guarantee
-                  \begin{itemize}
-                        \item \approxmc~\cite{Chakraborty2013,Chakraborty2016}: $\Pr[(1+\epsilon)^{-1}\#\pf \leq A \leq (1+\epsilon)\#\pf] \geq 1-\delta$
-                  \end{itemize}
-                  \pause
-            \item Variants: expressible by SSAT
-                  \begin{itemize}
-                        \item Weighted model counting~\cite{Sang2005BayesianInference,Chavira2008}
-                        \item Projected model counting~\cite{Aziz2015}
-                        \item Maximum model counting~\cite{Fremont2017}
-                        \item Weighted projected model counting
-                              \begin{itemize}
-                                    \item \procount~\cite{Dudek2021}: ordering of projected and non-projected variables
-                              \end{itemize}
-                  \end{itemize}
-                  \pause
-            \item Model Counting Competition~\cite{MC-COMP2020}
-      \end{itemize}
-\end{frame}
-
-\begin{frame}
-      \frametitle{Express Model-Counting Variants with SSAT}
-      \begin{table}[t]
-            \centering
-            \begin{tabular}{c|c}
-                  Variant            & SSAT encoding                                                               \\
-                  \hline
-                  Unweighted         & $\random{0.5}x_1,\ldots,\random{0.5}x_n.\pf$                                \\
-                  Weighted           & $\random{p_1}x_1,\ldots,\random{p_n}x_n.\pf$                                \\
-                  Projected          & $\random{0.5}x_1,\ldots,\random{0.5}x_n,\exists y_1,\ldots,\exists y_m.\pf$ \\
-                  Maximum            & $\exists x_1,\ldots,\exists x_n,\random{0.5}y_1,\ldots,\random{0.5}y_m.\pf$ \\
-                  Weighted projected & $\random{p_1}x_1,\ldots,\random{p_n}x_n,\exists y_1,\ldots,\exists y_m.\pf$ \\
-                  Maximum weighted   & $\exists x_1,\ldots,\exists x_n,\random{p_1}y_1,\ldots,\random{p_m}y_m.\pf$ \\
-            \end{tabular}
-      \end{table}
 \end{frame}
 
 \begin{frame}

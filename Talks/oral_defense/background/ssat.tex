@@ -1,6 +1,6 @@
 \begin{frame}
-      \frametitle{Background}
-      \begin{block}{Definition: Stochastic Boolean Satisfiability (SSAT)}
+      \frametitle{Stochastic Boolean Satisfiability}
+      \begin{block}{Definition: SSAT}
             Given a quantified formula $\Qf=Q_1 x_1,\ldots,Q_n x_n.\pf$:
             \begin{itemize}
                   \item $Q_1 x_1,\ldots,Q_n x_n$: quantification structure, $Q_i \in \{\random{p},\exists\}$ (\emph{prefix})
@@ -9,18 +9,18 @@
       \end{block}
       \pause
       \begin{block}{Definition: Satisfying Probability of SSAT}
-            Let $x$ be the outermost variable in the prefix:
+            Given an SSAT formula $\Qf$, $\spb{\Qf}$ is computed by:
             \begin{enumerate}
-                  \item[a)] $\spb{\top}=1$,
-                  \item[b)] $\spb{\bot}=0$,
-                  \item[c)] $\spb{\Qf}=\max\{\spb{\ncf{\Qf}{x}},\spb{\pcf{\Qf}{x}}\}$, if $x$ is quantified by $\exists$,
-                  \item[d)] $\spb{\Qf}=(1-p)\spb{\ncf{\Qf}{x}}+p\spb{\pcf{\Qf}{x}}$, if $x$ is quantified by $\random{p}$.
+                  \item $\spb{\top}=1$
+                  \item $\spb{\bot}=0$
+                  \item $\spb{\Qf}=\max\{\spb{\ncf{\Qf}{x}},\spb{\pcf{\Qf}{x}}\}$, if $x$ is quantified by $\exists$
+                  \item $\spb{\Qf}=(1-p)\spb{\ncf{\Qf}{x}}+p\spb{\pcf{\Qf}{x}}$, if $x$ is quantified by $\random{p}$
             \end{enumerate}
       \end{block}
 \end{frame}
 
 \begin{frame}
-      \frametitle{Background}
+      \frametitle{Stochastic Boolean Satisfiability}
       \begin{block}{Example: Satisfying Probability of SSAT}
             \abovedisplayskip=0pt
             \begin{align*}

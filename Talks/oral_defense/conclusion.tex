@@ -1,20 +1,20 @@
 \begin{frame}
       \frametitle{Conclusion}
       \begin{itemize}
-            \item An SSAT-based framework to analyze probabilistic design
+            \item Probabilistic property evaluation
                   \begin{itemize}
-                        \item Average case: random-exist quantified SSAT
-                        \item Worst case: exist-random quantified SSAT
+                        \item Average case: RE-SSAT
+                        \item Worst case: ER-SSAT
                   \end{itemize}
                   \pause
-            \item Novel algorithms for random-exist and exist-random quantified SSAT
+            \item Novel algorithms for RE/ER-SSAT
                   \begin{itemize}
                         \item Model counting
-                        \item Random-exist: minterm generalization from SAT
-                        \item Exist-random: clause selection from QBF
+                        \item Minterm generalization from SAT
+                        \item Clause selection from QBF
                   \end{itemize}
                   \pause
-            \item Dependency SSAT formulation
+            \item Dependency SSAT
                   \begin{itemize}
                         \item NEXPTIME-completeness
                         \item Applications to probabilistic partial design and Dec-POMDP
@@ -22,6 +22,14 @@
                   \pause
             \item Open-source solvers and instances
       \end{itemize}
+\end{frame}
+
+\begin{frame}
+      \frametitle{Conclusion}
+      \begin{figure}
+            \centering
+            \input{fig/conclusion/complexity.tex}
+      \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -40,13 +48,12 @@
                   \pause
             \item Tighter integration of model-counting component
                   \begin{itemize}
-                        \item Incremental model counting
                         \item More advanced data structure, e.g., d-DNNF~\cite{Darwiche2002dDNNF}
+                        \item Incremental model counting
                   \end{itemize}
                   \pause
             \item Approximate SSAT solving
                   \begin{itemize}
-                        \item Inspired by $(\epsilon,\delta)$ approximate model counting
                         \item Trade inexactness for scalability
                   \end{itemize}
                   \pause

@@ -41,18 +41,18 @@
         \begin{table}[t]
             \centering
             \small
-            \begin{tabular}{c|c|c|c}
-                Assignment                            & Selected Clauses & $\spb{\pcf{\Qf}{\as}}$ & Learnt Clause                \\
+            \begin{tabular}{c|c|c|c|c}
+                Assignment                            & Selected Clauses & $\spb{\pcf{\Qf}{\as}}$ & Learnt Clause                & LB     \\
                 \hline
-                $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ & $\{C_1,C_2\}$    & $0.75$                 & $(\lnot s_1 \lor \lnot s_2)$ \\
+                $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ & $\{C_1,C_2\}$    & $0.75$                 & $(\lnot s_1 \lor \lnot s_2)$ & $0.75$ \\
                 \pause
-                $\as_2=\lnot e_1 e_2 \lnot e_3$       & $\{C_1\}$        & $0.75$                 & $(\lnot s_1)$                \\
+                $\as_2=\lnot e_1 e_2 \lnot e_3$       & $\{C_1\}$        & $0.75$                 & $(\lnot s_1)$                & $0.75$ \\
                 \pause
-                $\as_3=e_1 e_2 \lnot e_3$             & $\{C_4\}$        & $0.5$                  & $(\lnot s_4)$                \\
+                $\as_3=e_1 e_2 \lnot e_3$             & $\{C_4\}$        & $0.5$                  & $(\lnot s_4)$                & $0.75$ \\
                 \pause
-                $\as_4=e_1 e_2 e_3$                   & $\{C_3\}$        & $0.75$                 & $(\lnot s_3)$                \\
+                $\as_4=e_1 e_2 e_3$                   & $\{C_3\}$        & $0.75$                 & $(\lnot s_3)$                & $0.75$ \\
                 \pause
-                \alert<8>{$\as_5=e_1 \lnot e_2 e_3$}  & $\{\}$           & $1$                    & $()$
+                \alert<8>{$\as_5=e_1 \lnot e_2 e_3$}  & $\{\}$           & \alert<8>{$1$}         & $()$                         & $1$
             \end{tabular}
         \end{table}
     \end{block}
@@ -70,31 +70,4 @@
               \pause
         \item Extra reasoning effort vs. Effectiveness of strengthened learnt clauses
     \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Decision Procedure}
-    {\scriptsize
-        \begin{algorithmic}[1]
-            \REQUIRE $\Qf=\exists X,\random{} Y.\pf(X,Y)$
-            \ENSURE $\spb{\Qf}$
-            \STATE $\select(X,S) := \bigwedge\limits_{C\in\pf}(\sv{C}\equiv\lnot\cx)\land\bigwedge\limits_{\text{pure }l: \vl{l}\in X}l$\label{code:erssat-init-select}
-            \STATE $prob := 0$
-            \STATE $\texttt{s-table} := \texttt{BuildSubsumptionTable}(\pf)$\label{code:erssat-subsume-table}
-            \WHILE{($\sat{\select}$)}
-            \STATE $\as := \model{\select}$ (discarding the selection variables)
-            \IF{($\sat{\pcf{\pf}{\as}}$)}
-            \STATE $\as' := \texttt{SelectMinimalClauses}(\pf,\select)$\label{code:erssat-minimal-clauses}
-            \STATE $\varphi := \texttt{RemoveSubsumedClauses}(\pcf{\pf}{\as'},\texttt{s-table})$\label{code:erssat-subsume-clauses}
-            \STATE $prob := \max\{prob,\texttt{ComputeWeight}(\random{} Y.\varphi)\}$\label{code:erssat-wmc}
-            \STATE $C_S := \bigvee\limits_{C\in\varphi}\lnot\sv{C}$
-            \STATE $C_L := \texttt{DiscardLiterals}(\pf,C_S,prob)$\label{code:erssat-discard-literals}
-            \ELSE
-            \STATE $C_L := \texttt{MinimalConflicting}(\pf,\as)$
-            \ENDIF
-            \STATE $\select := \select \land C_L$
-            \ENDWHILE
-            \RETURN $prob$
-        \end{algorithmic}
-    }
 \end{frame}

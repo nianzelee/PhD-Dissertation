@@ -1,6 +1,6 @@
 \begin{frame}
   \frametitle{Formulation}
-  \begin{block}{Definition: Dependency Stochastic Boolean Satisfiability (DSSAT)}
+  \begin{block}{Definition: Dependency SSAT (DSSAT)}
     $\Qf=\random{p_1} x_1, \ldots, \random{p_n} x_n, \exists y_1(D_{y_1}), \ldots, \exists y_m(D_{y_m}).\pf$
     \begin{itemize}
       \item Satisfying probability of $\Qf$ with respect to $\skf=\{f_1,\ldots,f_m\}$
@@ -8,8 +8,15 @@
               \spb{\pcf{\Qf}{\skf}}=\Pr[\random{p_1} x_1, \ldots, \random{p_n} x_n.\pf|_{\skf}]
             \end{align*}
     \end{itemize}
+    \begin{itemize}
+      \item Decision version: given $\Qf$ and $\theta$ decide if $\spb{\pcf{\Qf}{\skf}} \geq \theta$ for some $\skf$
+      \item Optimization version: find $\skf$ to maximize $\spb{\pcf{\Qf}{\skf}}$
+    \end{itemize}
   \end{block}
-  \pause
+\end{frame}
+
+\begin{frame}
+  \frametitle{Formulation}
   \begin{block}{Example: DSSAT}
     \abovedisplayskip=0pt
     \belowdisplayskip=0pt

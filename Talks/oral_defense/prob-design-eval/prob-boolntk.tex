@@ -1,7 +1,7 @@
 \begin{circuitikz}[scale=0.7, transform shape]
   % Logic gates
-  \node[and port] (y1) {$y_1$};
-  \node[or port,right = of y1, anchor=in 1] (y2) {$y_2$};
+  \node[color=red, and port] (y1) {$y_1$};
+  \node[or port, right = of y1, anchor=in 1] (y2) {$y_2$};
   % Wires
   \draw (y1.out) -- (y2.in 1);
   % Labels
