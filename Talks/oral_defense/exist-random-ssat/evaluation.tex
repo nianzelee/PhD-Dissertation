@@ -57,6 +57,21 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Implications from the Results}
+    \begin{itemize}
+        \item \erssat performs similarly as \dcssat on random formulas
+              \pause
+        \item \erssat is not suitable for certain application formulas
+              \begin{itemize}
+                  \item Clause-containment learning might degenerate to brute-force search
+                  \item Overhead incurred by the heuristics to strengthen learnt clauses
+              \end{itemize}
+              \pause
+        \item \erssat is good at deriving tight lower bounds for large formulas
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{Quantile Plot for Random Formulas}
     \begin{figure}
         \centering
@@ -147,6 +162,8 @@
             every head row/.style={before row={\toprule
                             & \multicolumn{4}{c}{\dcssat} & \multicolumn{8}{c}{\erssat}\\},after row=\midrule},
             every last row/.style={after row=\bottomrule},
+            every row no 0/.style={before row={\rowcolor{yellow}}},
+            every row no 8/.style={before row={\rowcolor{yellow}}},
             empty cells with={--},
             formula column/.list={0},
             time column/.list={1,3},
@@ -157,52 +174,3 @@
         {exist-random-ssat/parsed-MPEC-erssat.csv}
     \end{table}
 \end{frame}
-
-\begin{frame}
-    \frametitle{Implications from the Results}
-    \begin{itemize}
-        \item \erssat performs similarly as \dcssat on random formulas
-              \pause
-        \item \erssat is not suitable for certain application formulas
-              \begin{itemize}
-                  \item Clause-containment learning might degenerate to brute-force search
-                  \item Overhead incurred by the heuristics to strengthen learnt clauses
-              \end{itemize}
-              \pause
-        \item \erssat is good at deriving tight lower bounds for large formulas
-    \end{itemize}
-\end{frame}
-
-\iffalse
-    \begin{frame}
-        \frametitle{Memory Quantile Plot for Random Formulas}
-        \begin{figure}
-            \centering
-            \includegraphics{fig/exist-random-ssat/quantile-memory-Random.pdf}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Memory Quantile Plot for Application Formulas}
-        \begin{figure}
-            \centering
-            \includegraphics{fig/exist-random-ssat/quantile-memory-Application.pdf}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{CPU-Time Scatter Plot: \erssat vs. \erssatb}
-        \begin{figure}
-            \centering
-            \includegraphics{fig/exist-random-ssat/scatter-erssat.pdf}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{CPU-Time Scatter Plot: \erssat vs. \dcssat}
-        \begin{figure}
-            \centering
-            \includegraphics{fig/exist-random-ssat/scatter-dcssat.pdf}
-        \end{figure}
-    \end{frame}
-\fi

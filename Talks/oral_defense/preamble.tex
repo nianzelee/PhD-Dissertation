@@ -7,6 +7,7 @@
 \usecolortheme{default}
 
 % packages
+\usepackage{colortbl}
 \usepackage{etoolbox}
 \usepackage[square,numbers,sort&compress]{natbib}
 \usepackage{algorithm}
@@ -174,7 +175,7 @@
             },
       time column/.style={
                   /pgfplots/table/display columns/#1/.style={
-                              string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
+                              string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=T (s)
                         }
             },
       prob column/.style={
@@ -194,12 +195,12 @@
             },
       ubtime column/.style={
                   /pgfplots/table/display columns/#1/.style={
-                              string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-UB (s)
+                              string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=T-UB (s)
                         }
             },
       lbtime column/.style={
                   /pgfplots/table/display columns/#1/.style={
-                              string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-LB (s)
+                              string replace={nan}{},sci,sci zerofill,sci sep align,precision=2,sci e,column name=T-LB (s)
                         }
             }
 }

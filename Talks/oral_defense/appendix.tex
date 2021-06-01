@@ -260,6 +260,26 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Approximate E-MAJSAT Solving: \erssatb on \textit{MPEC}}
+    \begin{table}[ht]
+        \centering
+        \scriptsize
+        \pgfplotstabletypeset[
+            every head row/.style={before row={\toprule
+                            & \multicolumn{4}{c}{\dcssat} & \multicolumn{8}{c}{\erssatb}\\},after row=\midrule},
+            every last row/.style={after row=\bottomrule},
+            empty cells with={--},
+            formula column/.list={0},
+            time column/.list={1,3},
+            prob column/.list={2,4},
+            lbound column/.list={5},
+            lbtime column/.list={6}
+        ]
+        {exist-random-ssat/parsed-MPEC-erssatb.csv}
+    \end{table}
+\end{frame}
+
+\begin{frame}
     \frametitle{Computational Complexity of DSSAT}
     \begin{block}{Theorem: NEXPTIME-Completeness of DSSAT}
         The decision version of DSSAT is NEXPTIME-complete
@@ -284,26 +304,6 @@
                   Claim: $\Qf_Q$ is satisfiable if and only if $\spb{\pcf{\Qf_S}{\skf}} \geq 1$ for some $\skf$
         \end{itemize}
     \end{block}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Approximate E-MAJSAT Solving: \erssatb on \textit{MPEC}}
-    \begin{table}[ht]
-        \centering
-        \scriptsize
-        \pgfplotstabletypeset[
-            every head row/.style={before row={\toprule
-                            & \multicolumn{4}{c}{\dcssat} & \multicolumn{8}{c}{\erssatb}\\},after row=\midrule},
-            every last row/.style={after row=\bottomrule},
-            empty cells with={--},
-            formula column/.list={0},
-            time column/.list={1,3},
-            prob column/.list={2,4},
-            lbound column/.list={5},
-            lbtime column/.list={6}
-        ]
-        {exist-random-ssat/parsed-MPEC-erssatb.csv}
-    \end{table}
 \end{frame}
 
 \begin{frame}
