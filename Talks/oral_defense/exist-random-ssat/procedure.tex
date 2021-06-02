@@ -4,7 +4,6 @@
         \item Given $\Qf=\exists X,\random{} Y.\pf(X,Y)$, $\spb{\Qf}$ equals
               \begin{itemize}
                   \item The maximum conditional satisfying probability $\spb{\pcf{\Qf}{\as^*}}$
-                  \item $(\pcf{\pf}{\as_2}\limply\pcf{\pf}{\as_1})\Longrightarrow\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}$
               \end{itemize}
               \pause
         \item Clause-containment learning
@@ -12,7 +11,7 @@
                   \item Prune assignments that select a superset of the selected clauses
                         \begin{itemize}
                             \item An assignments $\as_1$ selects a set of clauses $\pcf{\pf}{\as_1}$
-                            \item Avoid such $\as_2$: $\pcf{\pf}{\as_1}\subseteq\pcf{\pf}{\as_2}\Longrightarrow(\pcf{\pf}{\as_2}\limply\pcf{\pf}{\as_1})$
+                            \item $\pcf{\pf}{\as_1}\subseteq\pcf{\pf}{\as_2}\Longrightarrow(\pcf{\pf}{\as_2}\limply\pcf{\pf}{\as_1})\Longrightarrow\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}$
                             \item Learnt clause: $\bigvee\limits_{C\in\pcf{\pf}{\as_1}}\lnot\sv{C}$
                         \end{itemize}
               \end{itemize}
