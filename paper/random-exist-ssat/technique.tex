@@ -17,8 +17,9 @@ Through the generalization analysis, multiple minterms can be collected in a sin
 enhancing the efficiency to enumerate all possible assignments over $X$.
 As will be shown in Section~\ref{sect:ressat-evaluation},
 the minterm-generalization techniques are essential to the efficiency of the proposed algorithm.
-However, the weight of each collected cube cannot be summed up directly due to the potential overlapping between generalized cubes.
-This difficulty will be overcome by applying weighted model counting to evaluate the weight of the collected cubes.
+However, the weight of each collected cube cannot be summed up directly due to the potential overlap between generalized cubes.
+This difficulty is overcome by applying weighted model counting,
+which aggregates the total weight of the collected cubes correctly, taking the overlap into account.
 
 \begin{algorithm}[p]
     \caption{Solving random-exist quantified SSAT formulas}
@@ -135,8 +136,8 @@ which gives rise to the memory efficiency.
 In our empirical evaluation,
 the proposed algorithm consumed two orders of magnitude less memory than the state-of-the-art DPLL-based solver.
 
-The following example illustrates how~\cref{alg:ressat} solves a random-exist quantified SSAT formula.
 \begin{example}
+    \label{ex:ressat-solve}
     Consider a random-exist quantified SSAT formula
     \begin{align*}
         \Qf=\random{0.5}r_1,\random{0.5}r_2,\random{0.5}r_3,\exists e_1,\exists e_2,\exists e_3.\pf,
@@ -149,35 +150,50 @@ The following example illustrates how~\cref{alg:ressat} solves a random-exist qu
         \item[] $C_4: (r_3 \lor e_3)$
         \item[] $C_5: (r_3 \lor \lnot e_3)$
     \end{itemize}
+    \begin{table}[t]
+        \centering
+        \caption{Solving process of~\cref{alg:ressat} on~\cref{ex:ressat-solve}}
+        \label{tbl:ressat-solve-example}
+        \small
+        \begin{tabular}{c|c|c|c|c}
+            Assignment                            & Minterm Type & Generalization                & UB      & LB      \\
+            \hline
+            $\as_1=\lnot r_1 \lnot r_2 \lnot r_3$ & UNSAT        & $\as_1^+=\lnot r_3$           & $0.5$   & $0$     \\
+            $\as_2=\lnot r_1 \lnot r_2 r_3$       & UNSAT        & $\as_2^+=\lnot r_1 \lnot r_2$ & $0.375$ & $0$     \\
+            $\as_3=\lnot r_1 r_2 r_3$             & SAT          & $\as_3^+=r_2r_3$              & $0.375$ & $0.25$  \\
+            $\as_4=r_1 \lnot r_2 r_3$             & SAT          & $\as_4^+=r_1r_3$              & $0.375$ & $0.375$
+        \end{tabular}
+    \end{table}
+    The solving process is summarized in~\cref{tbl:ressat-solve-example}.
     In the beginning, the selector $\select(r_1,r_2,r_3)$ is initialized without clauses,
     and the sets $C_\top$ and $C_\bot$ to collect SAT and UNSAT cubes are empty.
-    Suppose $\select$ first selects an assignment $\as_0=\lnot r_1 \lnot r_2 \lnot r_3$.
-    Since $\pcf{\pf}{\as_0}$ is unsatisfiable due to the conflict between $C_4$ and $C_5$,
-    the subroutine \texttt{MinimalConflicting} returns $\as_0^+=\lnot r_3$,
+    Suppose $\select$ first selects an assignment $\as_1=\lnot r_1 \lnot r_2 \lnot r_3$.
+    Since $\pcf{\pf}{\as_1}$ is unsatisfiable due to the conflict between $C_4$ and $C_5$,
+    the subroutine \texttt{MinimalConflicting} returns $\as_1^+=\lnot r_3$,
     which is the minimal conflicting assignment responsible for this conflict.
-    Note that this minimal conflicting assignment $\as_0^+$ reflects an upper bound of $0.5$ for $\spb{\Qf}$.
-    The selector $\select$ is then strengthened through conjunction with the negation of $\as_0^+$ to block the searched subspace.
-    Next, suppose $\as_1=\lnot r_1 \lnot r_2 r_3$ is selected.
-    Under $\as_1$,
-    formula $\pcf{\pf}{\as_1}$ is unsatisfiable due to the conflict among clauses $C_1$, $C_2$, and $C_3$,
-    and the minimal conflicting assignment $\as_1^+$ equals $\lnot r_1 \lnot r_2$.
-    After conjoining $\select$ with $\lnot \as_1^+$, suppose $\as_2=\lnot r_1 r_2 r_3$ is chosen.
-    Formula $\pcf{\pf}{\as_2}$ is satisfiable through the assignment $\mu_2=\lnot e_1 e_2 \lnot e_3$.
-    The subroutine \texttt{MinimalSatisfying} is invoked to generalize $\as_2$ to $\as_2^+=r_2r_3$,
+    Note that this minimal conflicting assignment $\as_1^+$ reflects an upper bound of $0.5$ for $\spb{\Qf}$.
+    The selector $\select$ is then strengthened through conjunction with the negation of $\as_1^+$ to block the searched subspace.
+    Next, suppose $\as_2=\lnot r_1 \lnot r_2 r_3$ is selected.
+    Under $\as_2$,
+    formula $\pcf{\pf}{\as_2}$ is unsatisfiable due to the conflict among clauses $C_1$, $C_2$, and $C_3$,
+    and the minimal conflicting assignment $\as_2^+$ equals $\lnot r_1 \lnot r_2$.
+    After conjoining $\select$ with $\lnot \as_2^+$, suppose $\as_3=\lnot r_1 r_2 r_3$ is chosen.
+    Formula $\pcf{\pf}{\as_3}$ is satisfiable through the assignment $\mu_3=\lnot e_1 e_2 \lnot e_3$.
+    The subroutine \texttt{MinimalSatisfying} is invoked to generalize $\as_3$ to $\as_3^+=r_2r_3$,
     which reflects a lower bound of $0.25$ for $\spb{\Qf}$.
-    Similarly, the negation of $\as_2^+$ is conjoined with $\select$.
-    Next, let the assignment chosen by $\select$ be $\as_3=r_1 \lnot r_2 r_3$.
-    Since $\pcf{\pf}{\as_3}$ is satisfiable through the assignment $\mu_3=\lnot e_1 \lnot e_2 \lnot e_3$,
-    assignment $\as_3$ is generalized to $\as_3^+=r_1r_3$ by \texttt{MinimalSatisfying}.
-    After conjoined with $\lnot \as_3^+$,
+    Similarly, the negation of $\as_3^+$ is conjoined with $\select$.
+    Next, let the assignment chosen by $\select$ be $\as_4=r_1 \lnot r_2 r_3$.
+    Since $\pcf{\pf}{\as_4}$ is satisfiable through the assignment $\mu_4=\lnot e_1 \lnot e_2 \lnot e_3$,
+    assignment $\as_4$ is generalized to $\as_4^+=r_1r_3$ by \texttt{MinimalSatisfying}.
+    After conjoined with $\lnot \as_4^+$,
     formula $\select$ becomes unsatisfiable,
     which indicates the Boolean space over $\{r_1,r_2,r_3\}$ has been explored exhaustively.
     At the end, we have
-    $C_\bot=\{\as_0^+,\as_1^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$ and
-    $C_\top=\{\as_2^+,\as_3^+\}=\{r_2r_3,r_1r_3\}$.
+    $C_\bot=\{\as_1^+,\as_2^+\}=\{\lnot r_3,\lnot r_1 \lnot r_2\}$ and
+    $C_\top=\{\as_3^+,\as_4^+\}=\{r_2r_3,r_1r_3\}$.
     The subroutine \texttt{ComputeWeight} is finally invoked and returns $0.375$ as the satisfying probability of $\Qf$.
 
-    For approximate SSAT solving, suppose the procedure is forced to terminate right after $\as_2^+$ is collected.
+    For approximate SSAT solving, suppose the procedure is forced to terminate right after $\as_3^+$ is collected.
     The subroutine \texttt{ComputeWeight} will be invoked over $C_\top=\{r_2r_3\}$ and $C_\bot=\{\lnot r_3,\lnot r_1 \lnot r_2\}$.
     The cubes in $C_\top$ or $C_\bot$ are negated into CNF formulas for weighted model counting.
     To compute an upper bound,

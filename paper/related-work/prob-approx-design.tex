@@ -8,15 +8,16 @@ pose serious challenges on the continuation of the law.
 
 New computational paradigms are proposed in response to the challenges in the post-Moore's era.
 Among many other efforts,
-along the direction of \textit{approximate design},
-circuit architectures for
-reconfigurable adders whose accuracy can be adjusted based on application scenarios~\cite{Kahng2012,Ye2013}
-and energy-efficient adders with a moderate error rate~\cite{Kim2013} are proposed.
+\textit{approximate design} allows deterministic deviation of an implemented circuit from its specification.
+A real-world example of approximate design is the deployment of neural networks to edge devices.
+Quantization is often applied to convert floating-point parameters to fixed-point ones to reduce hardware cost.
+Along this direction, circuit architectures for reconfigurable adders whose accuracy can be adjusted based on application scenarios~\cite{Kahng2012,Ye2013} and energy-efficient adders with a moderate error rate~\cite{Kim2013} are proposed.
 The automatic synthesis and analysis of approximate circuits have also been studied~\cite{Venkatesan2011ApproxDesign,Venkataramani2012,Miao2013,Miao2014,Li2014,Mrazek2016,Rehman2016}.
-On the other hand, for \textit{probabilistic design},
+On the other hand, \textit{probabilistic design} allows nondeterministic deviation from the specification.
+It can be applied to, for example, low-power video decoding, where correctness can be sacrificed for power efficiency.
 Chakrapani et al.~\cite{Chakrapani2006ProbDesign} consider CMOS devices with probabilistic behavior,
 establish the relation between energy consumption and probability of correct switching,
-and exploit it to trade energy against correctness.
+and exploit it to trade power efficiency against correctness.
 
 Despite the advancements made by prior endeavors, most of them focus on approximate design.
 The analysis and synthesis of probabilistic design have gained relatively less attention.
@@ -38,7 +39,6 @@ Probabilistic behavior of a design has also been studied along the research of c
 which focuses on analyzing the robustness of a circuit against permanent defects or transient faults.
 The reliability of a circuit is characterized by the probability of the occurrence of an error at the primary outputs.
 Therefore, the study of circuit reliability is very related to the evaluation of probabilistic design.
-
 Classical approaches to reliability analysis apply fault injection and Monte Carlo simulation~\cite{Mohanram2003}.
 Symbolic analysis methods exploiting mathematical tools,
 such as Markov random fields~\cite{Bahar2003},
@@ -47,6 +47,7 @@ Bayesian networks~\cite{Rejimon2005},
 and algebraic decision diagrams~\cite{Miskov-Zivanov2006},
 have also been investigated.
 Choudhury and Mohanram~\cite{Choudhury2009} propose three accurate and scalable algorithms to address the scalability issue of symbolic methods.
+
 However, prior methods for circuit reliability analysis are inadequate to probabilistic circuits
 for the following two reasons.
 First, most prior approaches assume single-gate failures.
@@ -55,4 +56,4 @@ where multiple probabilistic gates may be commonly present.
 Second, most prior efforts consider only the average error rate of a design.
 The necessity of analyzing the maximum error rate comes from the increasing demand of safety-centric systems,
 e.g., utilized in health care or automotive industries~\cite{Lingasubramanian2007,Lingasubramanian2011}.
-However, its computational scalability is much limited due to the underlying symbolic modeling via Bayesian network~\cite{Jensen1996}.
+Unfortunately, its computational scalability is much limited due to the underlying symbolic modeling via Bayesian network~\cite{Jensen1996}.

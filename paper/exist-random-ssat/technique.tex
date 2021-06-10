@@ -100,16 +100,32 @@ it indicates that the space spanned by variables $X$ has been completely searche
 The algorithm will return the encountered maximum conditional satisfying probability,
 which equals the satisfying probability of the input E-MAJSAT formula.
 
-We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following example.
-\begin{example}\label{ex:erssat-basic}
+\begin{example}
+    \label{ex:erssat-basic}
+    \begin{table}[t]
+        \centering
+        \caption{Solving process of~\cref{alg:erssat} on~\cref{ex:erssat-basic}}
+        \label{tbl:erssat-solve-example}
+        \small
+        \begin{tabular}{c|c|c|c|c}
+            Assignment                            & Selected Clauses & $\spb{\pcf{\Qf}{\as}}$ & Learnt Clause                & LB     \\
+            \hline
+            $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ & $\{C_1,C_2\}$    & $0.75$                 & $(\lnot s_1 \lor \lnot s_2)$ & $0.75$ \\
+            $\as_2=\lnot e_1 e_2 \lnot e_3$       & $\{C_1\}$        & $0.75$                 & $(\lnot s_1)$                & $0.75$ \\
+            $\as_3=e_1 e_2 \lnot e_3$             & $\{C_4\}$        & $0.5$                  & $(\lnot s_4)$                & $0.75$ \\
+            $\as_4=e_1 e_2 e_3$                   & $\{C_3\}$        & $0.75$                 & $(\lnot s_3)$                & $0.75$ \\
+            $\as_5=e_1 \lnot e_2 e_3$             & $\{\}$           & $1$                    & $()$                         & $1$
+        \end{tabular}
+    \end{table}
+
     Continuing~\cref{ex:erssat-select},
     we show how~\cref{alg:erssat} (without the clause-strengthening heuristics) solves the E-MAJSAT instance
     \begin{align*}
         \Qf=\exists e_1,\exists e_2,\exists e_3,\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pf.
     \end{align*}
 
-    Let the first explored assignment $\as_1$ be $\lnot e_1 \lnot e_2 \lnot e_3$,
-    which selects $C_1$ and $C_2$.
+    The solving process is summarized in~\cref{tbl:erssat-solve-example}.
+    We first explore $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$, which selects $C_1$ and $C_2$.
     The algorithm derives $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_1}}=0.75$ by invoking a weighted model counter in~\cref{code:erssat-wmc}.
     The learnt clause $C_L=(\lnot s_1 \lor \lnot s_2)$ is conjoined with $\select$ to prevent $C_1$ and $C_2$ being selected simultaneously again.
 
@@ -136,6 +152,10 @@ We illustrate the working of algorithm $\mathtt{SolveEMAJSAT}$ in the following 
     and the selection relation becomes unsatisfiable after being conjoined with an empty clause.
     The unsatisfiability of the selection relation reveals that the space spanned by variables $X$ has been exhaustively searched,
     and the algorithm returns the satisfying probability, which equals $1$, of the E-MAJSAT instance.
+
+    For approximate SSAT solving, suppose the procedure is forced to terminate right after $\as_3^+$ is explored.
+    Although the space spanned by variables $X$ has not been fully searched yet,
+    we can conclude that the satisfying probability is at least $0.75$ because $\as_1$ or $\as_2$ is a witness.
 \end{example}
 
 \subsection{Clause-strengthening heuristics}

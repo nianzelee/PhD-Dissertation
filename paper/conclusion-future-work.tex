@@ -46,13 +46,18 @@ It is also extended to DQBF~\cite{Tentrup2019},
 which might provide a promising framework for DSSAT solving.
 From the view of practical implementation,
 SSAT solvers will benefit from a tight integration with model-counting components.
+More advanced data structures, e.g., d-DNNF~\cite{Darwiche2001,Darwiche2002dDNNF}, could be also integrated.
 In particular, \textit{incremental} model counting might be a key step to boost the performance of SSAT solvers
 if the computational efforts among different counting queries can be effectively shared.
-More advanced data structures, e.g., d-DNNF~\cite{Darwiche2001,Darwiche2002dDNNF}, could be also integrated.
 Motivated by approximate model counting,
-we hope to pursue a similar formulation for SSAT solving.
+we also hope to pursue a similar formulation for SSAT solving.
 Specifically, we envisage a unified SSAT framework that allows users to control the solution precision,
 in order to trade inexactness for better scalability.
+Finally, we would like to bring SSAT to different research fields, especially to machine-learning applications.
+The SSAT solvers developed in this dissertation have been applied to verify the fairness of supervised-learning algorithms~\cite{Ghosh2021}.
+According to the reported data~\cite{Ghosh2021},
+using the proposed SSAT solvers achieves several orders of magnitude improvement over the state-of-the-art tools.
+This success shows the great potential and benefit of SSAT solving.
 
 \iffalse
     We have proposed a formal framework to probabilistic property

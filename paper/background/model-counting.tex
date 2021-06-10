@@ -3,13 +3,16 @@
 
 \subsection{Exact/Approximate model counting}
 The \textit{model counting}~\cite{SATHandbook-ModelCounting} problem asks to find the number of the satisfying assignments of a Boolean formula $\pf$.
-Model-counting algorithms can be classified into two categories:
-\textit{exact} algorithms and \textit{approximate} algorithms.
-The former computes the exact number of the satisfying assignments of a formula;
-the latter computes upper or lower bounds of the number of the satisfying assignments with a confidence level.
+The exact algorithms compute the precise count $\#\pf$ of the satisfying assignments.
+The approximate algorithms compute bounds of the precise count $\#\pf$ with a confidence level.
+One common formulation is the $(\epsilon,\delta)$ approximate model counting,
+which asks to find an answer that is sufficiently close to the precise count with high enough probability.
+This formulation can be characterized by the inequality
+$\spb{(1+\epsilon)^{-1}\#\pf\leq A\leq (1+\epsilon)\#\pf}\geq 1-\delta$,
+where the parameters $\epsilon$ and $\delta$ can be configured to trade precision against scalability.
 
 \subsection{Weighted model counting}
-The \textit{weighted model counting} problem asks to compute the weight of a formula $\pf$ given a weighting function $\wt:\vf{\pf}\mapsto[0,1]$.
+The weighted version asks to compute the weight of a formula $\pf$ given a weighting function $\wt:\vf{\pf}\mapsto[0,1]$.
 The weight of a positive literal $x$ (resp. a negative literal $\lnot x$) is defined to be $\wt(x)$ (resp. $1-\wt(x)$).
 The weight of an assignment $\as$, denoted as $\wt(\as)$, equals the product of the weights of its individual literals.
 The weight of the formula $\pf$, denoted as $\wt(\pf)$, is the summation of the weights of its satisfying assignments.

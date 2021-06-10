@@ -24,3 +24,23 @@ The \textit{decision version} of SSAT is stated as follows.
 Given an SSAT formula $\Qf$ and a threshold $\theta\in[0,1]$, decide whether $\spb{\Qf}\geq\theta$.
 On the other hand, the \textit{optimization version} asks to compute the exact value of $\spb{\Qf}$.
 The decision version of SSAT is PSPACE-complete~\cite{Papadimitriou1985}.
+
+An SSAT formula can also be interpreted from a game-theoretical viewpoint.
+The randomized quantifiers represent the nondeterministic factors in a stochastic game.
+The existential quantifiers model the moves of an agent who plays under such uncertainty.
+The satisfying probability of the SSAT formula corresponds to the maximum winning probability of the agent.
+A \textit{Skolem function} for an existentially quantified variable is the agent's strategy to assign this variable.
+Note that the Skolem function for a variable can only depend on its preceding variables in the prefix.
+A set of optimal Skolem functions achieves the maximum winning probability.
+
+\begin{example}
+    Consider an SSAT formula $\Qf$:
+    \begin{align*}
+        \random{0.5}x_1,\exists y_1,\random{0.5}x_2,\exists y_2.
+        (x_1\lor\lnot y_1)(\lnot x_1\lor y_1)
+        (\lnot x_1\lor\lnot x_2\lor y_2)(x_1\lor\lnot y_2)(x_2\lor\lnot y_2).
+    \end{align*}
+    According to the computational rules for the satisfying probability of SSAT, we have $\spb{\Qf}=1$.
+    The maximum winning probability can be achieved by assigning $y_1$ to $f_1(x_1)=x_1$ and $y_2$ to $f_2(x_1,x_2)=x_1\land x_2$.
+    The set of functions $\{f_1,f_2\}$ is a set of optimal Skolem functions for $\Qf$.
+\end{example}

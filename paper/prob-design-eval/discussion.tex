@@ -4,13 +4,20 @@
 We discuss potential applications, extensions, and connections of probabilistic property evaluation in the following.
 
 \subsection{Probabilistic equivalence checking}
-Given two PBNs, their equivalence checking can be easily formulated under PPE and MPPE framework.
+\begin{figure}[t]
+    \centering
+    \includegraphics{fig/build/pec-miter.pdf}
+    \caption{A miter SPBN for probabilistic equivalence checking}
+    \label{fig:prob-PEC}
+\end{figure}
+Given two SPBNs, their equivalence checking can be easily formulated under PPE and MPPE framework,
+as depicted in~\cref{fig:prob-PEC}.
 The property network corresponds to a miter circuit
-that asserts the equivalence of corresponding outputs of the two PBNs,
+that asserts the equivalence of corresponding outputs of the two SPBNs,
 same as in the equivalence checking of deterministic designs.
 With the proposed framework,
 we can analyze the average (resp. maximum) probability
-that the two PBNs are functionally different through PPE (resp. MPPE).
+that the two SPBNs are functionally different through PPE (resp. MPPE).
 We refer to the equivalence checking problem as
 \textit{probabilistic equivalence checking} (PEC) for the average-case analysis and
 \textit{maximum probabilistic equivalence checking} (MPEC) for the worst-case analysis.

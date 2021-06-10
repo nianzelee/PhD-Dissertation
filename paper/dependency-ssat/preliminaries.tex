@@ -54,6 +54,29 @@ the probability to receive observation $\vec{o}$ after taking actions $\vec{a}$ 
 the probability for the initial state $s^0$ being state $s$,
 and $h$ is a planning horizon, which we assume finite in this work.
 
+\begin{figure}[t]
+    \centering
+    \includegraphics{fig/build/dec-pomdp-example.pdf}
+    \caption{A two-agent Dec-POMDP example}
+    \label{fig:dssat-dec-pomdp-state-graph}
+\end{figure}
+
+\begin{example}
+    An example Dec-POMDP $\mathcal{M}$ with two agents is shown in~\cref{fig:dssat-dec-pomdp-state-graph}.
+    The Dec-POMDP has two states $s_p$ and $s_q$.
+    The goal for the agents is to make a correct agreement on the current state,
+    using action $a_p$ (resp. $a_q$) to guess that the current state is $s_p$ (resp. $s_q$).
+    Under partial observation, the agents cannot access the current state of $\mathcal{M}$.
+    Instead, the agents have two different observations $o_p$ and $o_q$.
+    An agent will receive $o_p$ (resp. $o_q$) after the current state transits to $s_p$ (resp. $s_q$) with probability $\Omega(s_p,o_p)$ (resp. $\Omega(s_q,o_q)$).
+    If both agents guess correctly, they will receive a reward of $1$,
+    and the Dec-POMDP transits to a next state with equal probability.
+    On the other hand, if one of the agents makes a wrong guess, they will receive a reward of $-1$,
+    and the Dec-POMDP stays in the current state.
+    Note that the agents cannot communicate with each other.
+    Their actions must be solely based on their own observations.
+\end{example}
+
 Given a Dec-POMDP $\mathcal{M}$,
 we aim at maximizing the expected cumulative reward $\mathbb{E}[\sum_{t=0}^{h-1}\rho(s^t,\vec{a}^t)]$ through searching an optimal \textit{joint policy} for a team of agents.
 Specifically, a \textit{policy} $\pi_i$ of Agent $i$ is a mapping from the agent's \textit{observation history},

@@ -9,10 +9,12 @@ software verification~\cite{Jhala2009, Berard2013}, etc.
 The tremendous benefits have encouraged the development of more advanced decision procedures
 for satisfiability with respect to more complex logics beyond pure propositional.
 For example,
-solvers of the satisfiability modulo theories (SMT)~\cite{Moura2011,HBMC-SMT} accommodate first order logic fragments;
+solvers for majority SAT (MAJSAT) decide whether the majority of the assignments satisfy a propositional formula,
+and its functional problem is known as model counting~\cite{SATHandbook-ModelCounting};
 quantified Boolean formula (QBF)~\cite{Narizzano2006,SATHandbook-QBF} allows both existential and universal quantifiers;
-stochastic Boolean satisfiability (SSAT)~\cite{Littman2001,SATHandbook-SSAT} models uncertainty with random quantification;
-and dependency QBF (DQBF)~\cite{Balabanov2014,Scholl2018} equips Henkin quantifiers to describe multi-player games with partial information.
+stochastic Boolean satisfiability (SSAT)~\cite{Littman2001,SATHandbook-SSAT} models uncertainty with randomized quantification;
+dependency QBF (DQBF)~\cite{Balabanov2014,Scholl2018} equips Henkin quantifiers to describe multi-player games with partial information;
+and solvers of the satisfiability modulo theories (SMT)~\cite{Moura2011,HBMC-SMT} accommodate first order logic fragments.
 Due to their simplicity and generality,
 various satisfiability formulations are under active investigation.
 
@@ -27,11 +29,11 @@ A Boolean variable $x$ can be randomly quantified with a probability $p\in[0,1]$
 by a randomized quantifier $\random{p}$ that requires $x$ to take the Boolean value
 \true with probability $p$ and
 \false with probability $1-p$.
-Taking advantage of randomized quantifiers,
+Via randomized quantifiers,
 a variety of computational problems inherent with uncertainty can be encoded into SSAT formulas,
 such as propositional probabilistic planning~\cite{Littman1998},
 Bayesian-network inference~\cite{Cooper1990,Jensen1996,Bacchus2003},
-and the analysis of partially observable Markov decision process~\cite{Majercik2003}.
+and the analysis of partially observable Markov decision process (POMDP)~\cite{Majercik2003}.
 
 While SSAT has been employed to solve various AI problems,
 to the best of our knowledge,
@@ -97,7 +99,19 @@ which hinder the understanding of the algorithmic details and empirical solver c
 Consequently, \textbf{there is a need to provide open-source implementations and databases of SSAT instances to facilitate convenient evaluation of different algorithms and drive further advancements.}
 
 \section{Our contributions}
+\begin{figure}[t]
+      \centering
+      \includegraphics{fig/build/nutshell.pdf}
+      \caption{The contributions of this dissertation in a nutshell}
+      \label{fig:intro-nutshell}
+\end{figure}
+
 This dissertation aims at contributing to the aforementioned research needs.
+Our achievements positioned in the hierarchy of various complexity classes beyond NP are visualized in~\cref{fig:intro-nutshell}.
+In a nutshell, we investigate the application of SSAT to VLSI analysis,
+leverage the advancements of SAT, MAJSAT, and QBF to design new decision procedures for SSAT,
+and combine SSAT and DQBF to propose a new formulation, called DSSAT, for NEXPTIME problems with uncertainty.
+In the following, we will explain each contribution in more detail.
 
 First, we approach the analysis of probabilistic design by
 formalizing the problem of \textit{probabilistic property evaluation}.
@@ -105,7 +119,7 @@ Different computational solutions are provided for the problem.
 Particularly, random-exist and exist-random quantified SSAT formulas are exploited
 to solve the average-case and worst-case analyses, respectively.
 To the best of our knowledge,
-this is the first attempt that applies SSAT to the analyze VLSI systems.
+this is the first attempt that analyzes VLSI systems with SSAT.
 (In the following,
 the terms ``analysis'' and ``evaluation'' are used interchangeably as general terms
 referring to the process of determining qualitative or quantitative properties of a design.
@@ -136,7 +150,7 @@ the proposed algorithm may directly benefit from the advancement of the solvers 
 The exist-random quantified SSAT formulas has the form $\Qf=\exists X,\random{}Y.\pf$,
 which is also known as \textit{E-MAJSAT}~\cite{Littman1998}.
 Computational problems, such as computing a maximum-a-posteriori (MAP) hypothesis or
-a maximum expected utility (MEU) solution~\cite{Dechter1998} in Bayesian networks,
+a maximum-expected-utility (MEU) solution~\cite{Dechter1998} in Bayesian networks,
 and searching an optimal plan for probabilistic conformant planning domains~\cite{Littman1998},
 can be formulated with E-MAJSAT.
 Inspired by the \textit{clause-selection}~\cite{Janota2015,Rabe2015} technique,
@@ -147,7 +161,7 @@ this is the first attempt to adopt QBF approaches for SSAT solving.
 
 Moreover, the proposed algorithms solve an SSAT formula in a gradual manner
 that converges from approximate bounds of the satisfying probability to the exact answer.
-Therefore, they are able to provide useful information even if the exact answer is unavailable.
+Therefore, they are able to provide useful information even if the exact answer is unavailable (e.g., due to limited computational resources).
 
 Third, to provide a logical formalism for more complex problems with uncertainty,
 we extend \textit{dependency QBF} (DQBF)~\cite{Balabanov2014,Scholl2018} to the stochastic domain
@@ -160,9 +174,10 @@ and therefore it can succinctly encode decision problems with uncertainty in the
 We demonstrate the potential applications of DSSAT to the synthesis of probabilistic and approximate design and the encoding of decentralized POMDP (Dec-POMDP)~\cite{Oliehoek2016} problems.
 Our theoretical results would encourage the solver development.
 
-Fourth, our implementation of the proposed SSAT algorithms is open-source,
-which helps other researchers to understand the details of the approaches and
-serves as a reference for the empirical evaluation of different algorithms.
+Fourth, our implementation of the proposed SSAT algorithms
+and formula instances used in the experiments are open-source,
+which will help other researchers to understand the details of the approaches and
+facilitate convenient empirical evaluation of different algorithms.
 
 \section{An overview of the dissertation}
 The structure of this dissertation is outlined as follows.
@@ -175,7 +190,7 @@ The structure of this dissertation is outlined as follows.
       \item
             In~\cref{chap:prob-design-eval}, a formal framework to evaluate properties of probabilistic design is proposed.
             Especially, random-exist and exist-random quantified SSAT formulas are exploited to solve the formulation.
-            This chapter is based on our journal paper~\cite{LeeTC18ProbDesign} published in IEEE Transactions on Computers.
+            This chapter is based on our conference paper~\cite{LeeICCAD14ProbDesign} published at ICCAD\,'14 and journal paper~\cite{LeeTC18ProbDesign} published in IEEE Transactions on Computers.
       \item
             In~\cref{chap:random-exist-ssat}, modern SAT-solving and model-counting techniques are combined to solve random-exist quantified SSAT formulas.
             This chapter is based on our conference paper~\cite{LeeIJCAI17RESSAT} published at IJCAI\,'17.

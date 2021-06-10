@@ -24,6 +24,13 @@ where $\pcf{\pf}{\skf}$ denotes the formula obtained by substituting existential
 In other words, the satisfying probability of $\Qf$ with respect to $\skf$ equals
 the satisfying probability of the SSAT formula $\random{p_1}x_1,\ldots,\random{p_n}x_n.\pcf{\pf}{\skf}$.
 
+\begin{example}
+    Given a DSSAT formula $\Qf=\random{0.5}x_1,\random{0.5}x_2,\exists y_1(\{x_1\}),\exists y_2(\{x_2\}).\pf$
+    and $\pf=(x_1\lor\lnot y_1)(\lnot x_1\lor y_1)(\lnot x_1\lor\lnot x_2\lor y_2)(x_1\lor\lnot y_2)(x_2\lor\lnot y_2)$,
+    the satisfying probability of $\Qf$ with respect to $\skf=\{f_1(x_1)=x_1,f_2(x_2)=x_2\}$
+    equals $\spb{\random{0.5} x_1,\random{0.5} x_2.\pcf{\pf}{\skf}}=\spb{\random{0.5} x_1,\random{0.5} x_2.(x_1\lor\lnot x_2)}=0.75$.
+\end{example}
+
 The \textit{decision version} of DSSAT is stated as follows.
 Given a DSSAT formula $\Qf$ and a threshold $\theta\in[0,1]$,
 decide whether there exists a set $\skf$ of Skolem functions such that $\spb{\pcf{\Qf}{\skf}}\geq\theta$.
