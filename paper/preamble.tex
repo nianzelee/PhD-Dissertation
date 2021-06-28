@@ -128,6 +128,7 @@
 \newcommand{\compiler}{\texttt{g++ 9.3.0}}
 \newcommand{\timelimit}{\SI{15}{min}}
 \newcommand{\memlimit}{\SI{15}{GB}}
+\newcommand{\measurement}{the maximum measurement error for run-times is 1\,\%, which corresponds to 2 significant digits}
 \newcommand{\ssatABCRevision}{commit \texttt{2ff8e74} of branch \texttt{master}\xspace}
 \newcommand{\ssatBenchRevision}{commit \texttt{ea9fbae} of branch \texttt{master}\xspace}
 
@@ -207,7 +208,7 @@
         },
     time column/.style={
             /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T (s)
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,fixed relative,precision=2,column name=T (s)
                 }
         },
     prob column/.style={
@@ -227,12 +228,12 @@
         },
     ubtime column/.style={
             /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-UB (s)
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,fixed relative,precision=2,column name=T-UB (s)
                 }
         },
     lbtime column/.style={
             /pgfplots/table/display columns/#1/.style={
-                    string replace={nan}{},fixed,fixed zerofill,dec sep align,precision=2,column name=T-LB (s)
+                    string replace={nan}{},fixed,fixed zerofill,dec sep align,fixed relative,precision=2,column name=T-LB (s)
                 }
         }
 }

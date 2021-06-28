@@ -15,7 +15,8 @@ A version of \bddsp without variable reordering during the BDD construction
 is called \bddspnr in the experiments.
 We used \ssatABCRevision in the experiments.
 For the CNF-based SSAT approach,
-we employ the state-of-the-art DPLL-based SSAT solver \dcssat~\cite{Majercik2005}.
+we employ the state-of-the-art DPLL-based SSAT solver \dcssat~\cite{Majercik2005},
+which was kindly provided by its author Majercik.
 
 For the average-case analysis (i.e., PEC),
 in addition to the above two SSAT-based solutions,
@@ -158,16 +159,15 @@ Therefore, a circuit would have more AIs if the specified defection rate is larg
 \end{table}
 
 \subsection{Experimental setup}
-Our experiments were performed on a machine with
-one 2.2\,GHz CPU (Intel Xeon Silver 4210) with 40~processing units and 134616\,MB of RAM.
-The operating system was Ubuntu~20.04 (64~bit),
-using Linux~5.4.
-The programs were compiled with \texttt{g++ 9.3.0}.
+Our experiments were performed on a machine with~\machineSpec.
+The operating system was~\osInfo.
+The programs were compiled with~\compiler.
 Each PEC or MPEC task was limited to a CPU core,
-a CPU time of \SI{15}{min},
-and a memory usage of \SI{15}{GB}.
+a CPU time of~\timelimit,
+and a memory usage of~\memlimit.
 To achieve reliable benchmarking,
-we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchexecurl}}~\cite{Benchmarking-STTT}.
+we used a benchmarking framework \benchexec\footnote{Available at: \url{\benchexecurl}}~\cite{Benchmarking-STTT},
+and assumed~\measurement.
 
 \subsection{Results}
 
