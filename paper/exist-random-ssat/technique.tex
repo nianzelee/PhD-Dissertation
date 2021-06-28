@@ -16,7 +16,7 @@ The proposed learning technique is based on the following key observation.
     Given an E-MAJSAT formula $\Qf=\exists X,\random{} Y.\pf(X,Y)$ and two assignments $\as_1,\as_2$ over $X$,
     we have:
     \begin{align*}
-        (\pcf{\pf}{\as_2}\models\pcf{\pf}{\as_1})\limply\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}.
+        (\pcf{\pf}{\as_2}\limply\pcf{\pf}{\as_1})\limply\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}.
     \end{align*}
 \end{proposition}
 
@@ -26,7 +26,7 @@ After cofactoring $\pf$ with an arbitrary assignment $\as_1$ over $X$,
 a set of clauses $\pcf{\pf}{\as_1}$ is selected.
 For any other assignment $\as_2$ selecting all clauses from $\pcf{\pf}{\as_1}$,
 i.e., $\pcf{\pf}{\as_1}\subseteq\pcf{\pf}{\as_2}$,
-we have $\pcf{\pf}{\as_2} \models \pcf{\pf}{\as_1}$.
+we have $\pcf{\pf}{\as_2}\limply\pcf{\pf}{\as_1}$.
 Therefore, $\spb{\pcf{\Qf}{\as_2}}\leq\spb{\pcf{\Qf}{\as_1}}$ holds according to~\cref{prop:erssat-contain}.
 Since the satisfying probability $\spb{\pcf{\Qf}{\as_2}}$ is not greater than $\spb{\pcf{\Qf}{\as_1}}$,
 the assignment $\as_2$ is not worth trying.
