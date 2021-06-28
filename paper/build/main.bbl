@@ -1,0 +1,1701 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{114}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Amar{\'u}, Gaillardon, and Micheli}{Amar{\'u}
+  et~al\mbox{.}}{2015}]%
+        {EPFL-benchmark}
+\bibfield{author}{\bibinfo{person}{L. Amar{\'u}}, \bibinfo{person}{P.-E.
+  Gaillardon}, {and} \bibinfo{person}{G.~De Micheli}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{The {EPFL} combinational benchmark suite}. In
+  \bibinfo{booktitle}{\emph{Proc.\ IWLS}}.
+\newblock
+\urldef\tempurl%
+\url{https://www.epfl.ch/labs/lsi/page-102566-en-html/benchmarks/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Aziz, Chu, Muise, and Stuckey}{Aziz
+  et~al\mbox{.}}{2015}]%
+        {Aziz2015}
+\bibfield{author}{\bibinfo{person}{R.~A. Aziz}, \bibinfo{person}{G. Chu},
+  \bibinfo{person}{C.~J. Muise}, {and} \bibinfo{person}{P.~J. Stuckey}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{{\#}{\(\exists\)}{SAT}: {Projected} model
+  counting}. In \bibinfo{booktitle}{\emph{Proc.\ SAT}}
+  \emph{(\bibinfo{series}{LNCS~9340})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{121--137}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-24318-4\_10}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bacchus, Dalmao, and Pitassi}{Bacchus
+  et~al\mbox{.}}{2003}]%
+        {Bacchus2003}
+\bibfield{author}{\bibinfo{person}{F. Bacchus}, \bibinfo{person}{S. Dalmao},
+  {and} \bibinfo{person}{T. Pitassi}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Algorithms and complexity results for {\#}{SAT} and
+  {Bayesian} inference}. In \bibinfo{booktitle}{\emph{Proc.\ FOCS}}.
+  \bibinfo{publisher}{{IEEE} Computer Society}, \bibinfo{pages}{340--351}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/SFCS.2003.1238208}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bahar, Mundy, and Chen}{Bahar
+  et~al\mbox{.}}{2003}]%
+        {Bahar2003}
+\bibfield{author}{\bibinfo{person}{R.~I. Bahar}, \bibinfo{person}{J.~L. Mundy},
+  {and} \bibinfo{person}{J. Chen}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{A probabilistic-based design methodology for
+  nanoscale computation}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{IEEE} Computer Society / {ACM}},
+  \bibinfo{pages}{480--486}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2003.1257854}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Balabanov, Chiang, and Jiang}{Balabanov
+  et~al\mbox{.}}{2014}]%
+        {Balabanov2014}
+\bibfield{author}{\bibinfo{person}{V. Balabanov}, \bibinfo{person}{H.-J.~K.
+  Chiang}, {and} \bibinfo{person}{J.-H.~R. Jiang}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Henkin quantifiers and {Boolean} formulae: {A}
+  certification perspective of {DQBF}}.
+\newblock \bibinfo{journal}{\emph{Theoretical Computer Science}}
+  \bibinfo{volume}{523} (\bibinfo{year}{2014}), \bibinfo{pages}{86--100}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.tcs.2013.12.020}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Barrett and Tinelli}{Barrett and
+  Tinelli}{2018}]%
+        {HBMC-SMT}
+\bibfield{author}{\bibinfo{person}{C.~W. Barrett} {and} \bibinfo{person}{C.
+  Tinelli}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Satisfiability modulo theories}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook of Model Checking}}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{305--343}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-10575-8\_11}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{B{\'e}rard, Bidoit, Finkel, Laroussinie,
+  Petit, Petrucci, and Schnoebelen}{B{\'e}rard et~al\mbox{.}}{2013}]%
+        {Berard2013}
+\bibfield{author}{\bibinfo{person}{B. B{\'e}rard}, \bibinfo{person}{M. Bidoit},
+  \bibinfo{person}{A. Finkel}, \bibinfo{person}{F. Laroussinie},
+  \bibinfo{person}{A. Petit}, \bibinfo{person}{L. Petrucci}, {and}
+  \bibinfo{person}{P. Schnoebelen}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Systems and Software Verification:
+  Model-Checking Techniques and Tools} (\bibinfo{edition}{1st} ed.)}.
+\newblock \bibinfo{publisher}{Springer}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-662-04558-9}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Bernstein, Givan, Immerman, and
+  Zilberstein}{Bernstein et~al\mbox{.}}{2002}]%
+        {Bernstein2002}
+\bibfield{author}{\bibinfo{person}{D.~S. Bernstein}, \bibinfo{person}{R.
+  Givan}, \bibinfo{person}{N. Immerman}, {and} \bibinfo{person}{S.
+  Zilberstein}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{The complexity of decentralized control of {Markov}
+  decision processes}.
+\newblock \bibinfo{journal}{\emph{Mathematics of Operations Research}}
+  \bibinfo{volume}{27}, \bibinfo{number}{4} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{819--840}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1287/moor.27.4.819.297}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Beyer, L{\"{o}}we, and Wendler}{Beyer
+  et~al\mbox{.}}{2019}]%
+        {Benchmarking-STTT}
+\bibfield{author}{\bibinfo{person}{D. Beyer}, \bibinfo{person}{S. L{\"{o}}we},
+  {and} \bibinfo{person}{P. Wendler}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Reliable benchmarking: {R}equirements and
+  solutions}.
+\newblock \bibinfo{journal}{\emph{International Journal on Software Tools for
+  Technology Transfer}} \bibinfo{volume}{21}, \bibinfo{number}{1}
+  (\bibinfo{year}{2019}), \bibinfo{pages}{1--29}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/s10009-017-0469-y}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Biere, Heule, van Maaren, and Walsh}{Biere
+  et~al\mbox{.}}{2009}]%
+        {SATHandbook}
+\bibfield{editor}{\bibinfo{person}{A. Biere}, \bibinfo{person}{M. Heule},
+  \bibinfo{person}{H. van Maaren}, {and} \bibinfo{person}{T. Walsh}} (Eds.).
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Handbook of Satisfiability}}.
+  \bibinfo{series}{Frontiers in Artificial Intelligence and Applications},
+  Vol.~\bibinfo{volume}{185}. \bibinfo{publisher}{{IOS} Press}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Brayton and Mishchenko}{Brayton and
+  Mishchenko}{2010}]%
+        {ABC}
+\bibfield{author}{\bibinfo{person}{R.~K. Brayton} {and} \bibinfo{person}{A.
+  Mishchenko}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{{ABC:} {An} academic industrial-strength
+  verification tool}. In \bibinfo{booktitle}{\emph{Proc.\ CAV}}
+  \emph{(\bibinfo{series}{LNCS~6174})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{24--40}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-642-14295-6\_5}
+\showDOI{\tempurl}
+\newblock
+\shownote{Available at: \url{https://github.com/berkeley-abc/abc}.}
+
+
+\bibitem[\protect\citeauthoryear{Brglez and Fujiwara}{Brglez and
+  Fujiwara}{1985}]%
+        {ISCAS85-benchmark}
+\bibfield{author}{\bibinfo{person}{F. Brglez} {and} \bibinfo{person}{H.
+  Fujiwara}.} \bibinfo{year}{1985}\natexlab{}.
+\newblock \showarticletitle{A neutral netlist of 10 combinational benchmark
+  circuits}. In \bibinfo{booktitle}{\emph{Proc.\ ISCAS}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{695--698}.
+\newblock
+\urldef\tempurl%
+\url{https://people.engr.ncsu.edu/brglez/CBL/benchmarks/index.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{B{\"{u}}ning and Bubeck}{B{\"{u}}ning and
+  Bubeck}{2009}]%
+        {SATHandbook-QBF}
+\bibfield{author}{\bibinfo{person}{H.~K. B{\"{u}}ning} {and}
+  \bibinfo{person}{U. Bubeck}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Theory of quantified {Boolean} formulas}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook of Satisfiability}}.
+  \bibinfo{publisher}{{IOS} Press}, \bibinfo{pages}{735--760}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3233/978-1-58603-929-5-735}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Cadoli, Eiter, and Gottlob}{Cadoli
+  et~al\mbox{.}}{1997}]%
+        {Cadoli1997}
+\bibfield{author}{\bibinfo{person}{M. Cadoli}, \bibinfo{person}{T. Eiter},
+  {and} \bibinfo{person}{G. Gottlob}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{Default logic as a query language}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Knowledge and Data
+  Engineering}} \bibinfo{volume}{9}, \bibinfo{number}{3}
+  (\bibinfo{year}{1997}), \bibinfo{pages}{448--463}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/69.599933}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chakraborty, Meel, and Vardi}{Chakraborty
+  et~al\mbox{.}}{2013}]%
+        {Chakraborty2013}
+\bibfield{author}{\bibinfo{person}{S. Chakraborty}, \bibinfo{person}{K.~S.
+  Meel}, {and} \bibinfo{person}{M.~Y. Vardi}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{A scalable approximate model counter}. In
+  \bibinfo{booktitle}{\emph{Proc.\ CP}} \emph{(\bibinfo{series}{LNCS~8124})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{200--216}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-642-40627-0\_18}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chakraborty, Meel, and Vardi}{Chakraborty
+  et~al\mbox{.}}{2016}]%
+        {Chakraborty2016}
+\bibfield{author}{\bibinfo{person}{S. Chakraborty}, \bibinfo{person}{K.~S.
+  Meel}, {and} \bibinfo{person}{M.~Y. Vardi}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Algorithmic improvements in approximate counting
+  for probabilistic inference: {From} linear to logarithmic {SAT} calls}. In
+  \bibinfo{booktitle}{\emph{Proc.\ IJCAI}}. \bibinfo{publisher}{{IJCAI/AAAI}
+  Press}, \bibinfo{pages}{3569--3576}.
+\newblock
+\urldef\tempurl%
+\url{http://www.ijcai.org/Abstract/16/503}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chakrapani, George, Marr, Akgul, and
+  Palem}{Chakrapani et~al\mbox{.}}{2006}]%
+        {Chakrapani2006ProbDesign}
+\bibfield{author}{\bibinfo{person}{L.~N.~B. Chakrapani}, \bibinfo{person}{J.
+  George}, \bibinfo{person}{B. Marr}, \bibinfo{person}{B.~E.~S. Akgul}, {and}
+  \bibinfo{person}{K.~V. Palem}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Probabilistic design: {A} survey of probabilistic
+  {CMOS} technology and future directions for terascale {IC} design}. In
+  \bibinfo{booktitle}{\emph{Proc.\ VLSI-SoC}}
+  \emph{(\bibinfo{series}{{IFIP}~249})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{101--118}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-0-387-74909-9\_7}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chavira and Darwiche}{Chavira and
+  Darwiche}{2008}]%
+        {Chavira2008}
+\bibfield{author}{\bibinfo{person}{M. Chavira} {and} \bibinfo{person}{A.
+  Darwiche}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{On probabilistic inference by weighted model
+  counting}.
+\newblock \bibinfo{journal}{\emph{Artificial Intelligence}}
+  \bibinfo{volume}{172}, \bibinfo{number}{6-7} (\bibinfo{year}{2008}),
+  \bibinfo{pages}{772--799}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.artint.2007.11.002}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chen, Huang, and Jiang}{Chen
+  et~al\mbox{.}}{2021}]%
+        {Chen2021}
+\bibfield{author}{\bibinfo{person}{P.-W. Chen}, \bibinfo{person}{Y.-C. Huang},
+  {and} \bibinfo{person}{J.-H.~R. Jiang}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{A sharp leap from quantified {Boolean} formula to
+  stochastic {Boolean} satisfiability solving}. In
+  \bibinfo{booktitle}{\emph{Proc.\ AAAI}}. \bibinfo{publisher}{{AAAI} Press},
+  \bibinfo{pages}{3697--3706}.
+\newblock
+\urldef\tempurl%
+\url{https://ojs.aaai.org/index.php/AAAI/article/view/16486}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Choudhury and Mohanram}{Choudhury and
+  Mohanram}{2009}]%
+        {Choudhury2009}
+\bibfield{author}{\bibinfo{person}{M.~R. Choudhury} {and} \bibinfo{person}{K.
+  Mohanram}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Reliability analysis of logic circuits}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Computer-Aided Design of
+  Integrated Circuits and Systems}} \bibinfo{volume}{28}, \bibinfo{number}{3}
+  (\bibinfo{year}{2009}), \bibinfo{pages}{392--405}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TCAD.2009.2012530}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Clarke, Biere, Raimi, and Zhu}{Clarke
+  et~al\mbox{.}}{2001}]%
+        {Clarke2001}
+\bibfield{author}{\bibinfo{person}{E.~M. Clarke}, \bibinfo{person}{A. Biere},
+  \bibinfo{person}{R. Raimi}, {and} \bibinfo{person}{Y. Zhu}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Bounded model checking using satisfiability
+  solving}.
+\newblock \bibinfo{journal}{\emph{Formal Methods in System Design}}
+  \bibinfo{volume}{19}, \bibinfo{number}{1} (\bibinfo{year}{2001}),
+  \bibinfo{pages}{7--34}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1023/A:1011276507260}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Constantinescu}{Constantinescu}{2003}]%
+        {Constantinescu2003}
+\bibfield{author}{\bibinfo{person}{C. Constantinescu}.}
+  \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Trends and challenges in {VLSI} circuit
+  reliability}.
+\newblock \bibinfo{journal}{\emph{{IEEE} Micro}} \bibinfo{volume}{23},
+  \bibinfo{number}{4} (\bibinfo{year}{2003}), \bibinfo{pages}{14--19}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/MM.2003.1225959}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Cook}{Cook}{1971}]%
+        {Cook1971}
+\bibfield{author}{\bibinfo{person}{S.~A. Cook}.}
+  \bibinfo{year}{1971}\natexlab{}.
+\newblock \showarticletitle{The complexity of theorem-proving procedures}. In
+  \bibinfo{booktitle}{\emph{Proc.\ STOC}}. \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{151--158}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/800157.805047}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Cooper}{Cooper}{1990}]%
+        {Cooper1990}
+\bibfield{author}{\bibinfo{person}{G.~F. Cooper}.}
+  \bibinfo{year}{1990}\natexlab{}.
+\newblock \showarticletitle{The computational complexity of probabilistic
+  inference using {Bayesian} belief networks}.
+\newblock \bibinfo{journal}{\emph{Artificial Intelligence}}
+  \bibinfo{volume}{42}, \bibinfo{number}{2-3} (\bibinfo{year}{1990}),
+  \bibinfo{pages}{393--405}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/0004-3702(90)90060-D}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Darwiche}{Darwiche}{2001}]%
+        {Darwiche2001}
+\bibfield{author}{\bibinfo{person}{A. Darwiche}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Decomposable negation normal form}.
+\newblock \bibinfo{journal}{\emph{J. ACM}} \bibinfo{volume}{48},
+  \bibinfo{number}{4} (\bibinfo{year}{2001}), \bibinfo{pages}{608--647}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/502090.502091}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Darwiche}{Darwiche}{2002}]%
+        {Darwiche2002dDNNF}
+\bibfield{author}{\bibinfo{person}{A. Darwiche}.}
+  \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{A compiler for deterministic, decomposable negation
+  normal form}. In \bibinfo{booktitle}{\emph{Proc.\ AAAI}}.
+  \bibinfo{publisher}{{AAAI} Press / The {MIT} Press},
+  \bibinfo{pages}{627--634}.
+\newblock
+\urldef\tempurl%
+\url{http://www.aaai.org/Library/AAAI/2002/aaai02-094.php}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Darwiche and Marquis}{Darwiche and
+  Marquis}{2002}]%
+        {Darwiche2002KnowledgeCompilation}
+\bibfield{author}{\bibinfo{person}{A. Darwiche} {and} \bibinfo{person}{P.
+  Marquis}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{A knowledge compilation map}.
+\newblock \bibinfo{journal}{\emph{Journal of Artificial Intelligence Research}}
+   \bibinfo{volume}{17} (\bibinfo{year}{2002}), \bibinfo{pages}{229--264}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1613/jair.989}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Davis, Logemann, and Loveland}{Davis
+  et~al\mbox{.}}{1962}]%
+        {Davis1962}
+\bibfield{author}{\bibinfo{person}{M. Davis}, \bibinfo{person}{G. Logemann},
+  {and} \bibinfo{person}{D.~W. Loveland}.} \bibinfo{year}{1962}\natexlab{}.
+\newblock \showarticletitle{A machine program for theorem-proving}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{5},
+  \bibinfo{number}{7} (\bibinfo{year}{1962}), \bibinfo{pages}{394--397}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/368273.368557}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{de~Moura and Bj{\o}rner}{de~Moura and
+  Bj{\o}rner}{2011}]%
+        {Moura2011}
+\bibfield{author}{\bibinfo{person}{L.~M. de Moura} {and} \bibinfo{person}{N.
+  Bj{\o}rner}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Satisfiability modulo theories: {Introduction} and
+  applications}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{54},
+  \bibinfo{number}{9} (\bibinfo{year}{2011}), \bibinfo{pages}{69--77}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1995376.1995394}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dechter}{Dechter}{1998}]%
+        {Dechter1998}
+\bibfield{author}{\bibinfo{person}{R. Dechter}.}
+  \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Bucket elimination: {A} unifying framework for
+  probabilistic inference}.
+\newblock In \bibinfo{booktitle}{\emph{Learning in Graphical Models}}.
+  \bibinfo{series}{{NATO} {ASI} Series}, Vol.~\bibinfo{volume}{89}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{75--104}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-94-011-5014-9\_4}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dudek, Phan, and Vardi}{Dudek
+  et~al\mbox{.}}{2020}]%
+        {Dudek2020}
+\bibfield{author}{\bibinfo{person}{J.~M. Dudek}, \bibinfo{person}{V.~H.~N.
+  Phan}, {and} \bibinfo{person}{M.~Y. Vardi}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{DPMC:} {Weighted} model counting by dynamic
+  programming on project-join trees}. In \bibinfo{booktitle}{\emph{Proc.\ CP}}
+  \emph{(\bibinfo{series}{LNCS~12333})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{211--230}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-030-58475-7\_13}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Dudek, Phan, and Vardi}{Dudek
+  et~al\mbox{.}}{2021}]%
+        {Dudek2021}
+\bibfield{author}{\bibinfo{person}{J.~M. Dudek}, \bibinfo{person}{V.~H.~N.
+  Phan}, {and} \bibinfo{person}{M.~Y. Vardi}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{ProCount:} {Weighted} projected model counting
+  with graded project-join trees}. In \bibinfo{booktitle}{\emph{Proc.\ SAT}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{E{\'{e}}n and S{\"{o}}rensson}{E{\'{e}}n and
+  S{\"{o}}rensson}{2003a}]%
+        {Een2003Solver}
+\bibfield{author}{\bibinfo{person}{N. E{\'{e}}n} {and} \bibinfo{person}{N.
+  S{\"{o}}rensson}.} \bibinfo{year}{2003}\natexlab{a}.
+\newblock \showarticletitle{An extensible {SAT}-solver}. In
+  \bibinfo{booktitle}{\emph{Proc.\ SAT}} \emph{(\bibinfo{series}{LNCS~2919})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{502--518}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-540-24605-3\_37}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{E{\'{e}}n and S{\"{o}}rensson}{E{\'{e}}n and
+  S{\"{o}}rensson}{2003b}]%
+        {Een2003Incremental}
+\bibfield{author}{\bibinfo{person}{N. E{\'{e}}n} {and} \bibinfo{person}{N.
+  S{\"{o}}rensson}.} \bibinfo{year}{2003}\natexlab{b}.
+\newblock \showarticletitle{Temporal induction by incremental {SAT} solving}.
+\newblock \bibinfo{journal}{\emph{Electronic Notes in Theoretical Computer
+  Science}} \bibinfo{volume}{89}, \bibinfo{number}{4} (\bibinfo{year}{2003}),
+  \bibinfo{pages}{543--560}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/S1571-0661(05)82542-3}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Faber and Ricca}{Faber and Ricca}{2005}]%
+        {Faber2005}
+\bibfield{author}{\bibinfo{person}{W. Faber} {and} \bibinfo{person}{F. Ricca}.}
+  \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Solving hard {ASP} programs efficiently}. In
+  \bibinfo{booktitle}{\emph{Proc.\ LPNMR}}
+  \emph{(\bibinfo{series}{LNCS~3662})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{240--252}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/11546207\_19}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Fichte, Hecher, and Hamiti}{Fichte
+  et~al\mbox{.}}{2020}]%
+        {MC-COMP2020}
+\bibfield{author}{\bibinfo{person}{J.~K. Fichte}, \bibinfo{person}{M. Hecher},
+  {and} \bibinfo{person}{F. Hamiti}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{The model counting competition 2020}.
+\newblock \bibinfo{journal}{\emph{CoRR}}  \bibinfo{volume}{abs/2012.01323}
+  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2012.01323}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2012.01323}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Fremont, Rabe, and Seshia}{Fremont
+  et~al\mbox{.}}{2017}]%
+        {Fremont2017}
+\bibfield{author}{\bibinfo{person}{D.~J. Fremont}, \bibinfo{person}{M.~N.
+  Rabe}, {and} \bibinfo{person}{S.~A. Seshia}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Maximum model counting}. In
+  \bibinfo{booktitle}{\emph{Proc.\ AAAI}}. \bibinfo{publisher}{{AAAI} Press},
+  \bibinfo{pages}{3885--3892}.
+\newblock
+\urldef\tempurl%
+\url{http://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14968}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Ghosh, Basu, and S.Meel}{Ghosh
+  et~al\mbox{.}}{2021}]%
+        {Ghosh2021}
+\bibfield{author}{\bibinfo{person}{B. Ghosh}, \bibinfo{person}{D. Basu}, {and}
+  \bibinfo{person}{K. S.Meel}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Justicia: {A} stochastic {SAT} approach to formally
+  verify fairness}. In \bibinfo{booktitle}{\emph{Proc.\ AAAI}}.
+  \bibinfo{publisher}{{AAAI} Press}, \bibinfo{pages}{7554--7563}.
+\newblock
+\urldef\tempurl%
+\url{https://ojs.aaai.org/index.php/AAAI/article/view/16925}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Gitina, Reimer, Sauer, Wimmer, Scholl, and
+  Becker}{Gitina et~al\mbox{.}}{2013}]%
+        {Gitina2013}
+\bibfield{author}{\bibinfo{person}{K. Gitina}, \bibinfo{person}{S. Reimer},
+  \bibinfo{person}{M. Sauer}, \bibinfo{person}{R. Wimmer}, \bibinfo{person}{C.
+  Scholl}, {and} \bibinfo{person}{B. Becker}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Equivalence checking of partial designs using
+  dependency quantified {Boolean} formulae}. In
+  \bibinfo{booktitle}{\emph{Proc.\ ICCD}}. \bibinfo{pages}{396--403}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCD.2013.6657071}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Gomes, Hoffmann, Sabharwal, and Selman}{Gomes
+  et~al\mbox{.}}{2007}]%
+        {Gomes2007}
+\bibfield{author}{\bibinfo{person}{C.~P. Gomes}, \bibinfo{person}{J. Hoffmann},
+  \bibinfo{person}{A. Sabharwal}, {and} \bibinfo{person}{B. Selman}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{From sampling to model counting}. In
+  \bibinfo{booktitle}{\emph{Proc.\ IJCAI}}. \bibinfo{publisher}{Morgan
+  Kaufmann}, \bibinfo{pages}{2293--2299}.
+\newblock
+\urldef\tempurl%
+\url{http://ijcai.org/Proceedings/07/Papers/369.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Gomes, Sabharwal, and Selman}{Gomes
+  et~al\mbox{.}}{2006}]%
+        {Gomes2006}
+\bibfield{author}{\bibinfo{person}{C.~P. Gomes}, \bibinfo{person}{A.
+  Sabharwal}, {and} \bibinfo{person}{B. Selman}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Model counting: {A} new strategy for obtaining good
+  bounds}. In \bibinfo{booktitle}{\emph{Proc.\ AAAI}}.
+  \bibinfo{publisher}{{AAAI} Press}, \bibinfo{pages}{54--61}.
+\newblock
+\urldef\tempurl%
+\url{http://www.aaai.org/Library/AAAI/2006/aaai06-009.php}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Gomes, Sabharwal, and Selman}{Gomes
+  et~al\mbox{.}}{2009}]%
+        {SATHandbook-ModelCounting}
+\bibfield{author}{\bibinfo{person}{C.~P. Gomes}, \bibinfo{person}{A.
+  Sabharwal}, {and} \bibinfo{person}{B. Selman}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Model counting}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook of Satisfiability}}.
+  \bibinfo{publisher}{{IOS} Press}, \bibinfo{pages}{633--654}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3233/978-1-58603-929-5-633}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Hansson and Jonsson}{Hansson and
+  Jonsson}{1989}]%
+        {Hansson1989}
+\bibfield{author}{\bibinfo{person}{H. Hansson} {and} \bibinfo{person}{B.
+  Jonsson}.} \bibinfo{year}{1989}\natexlab{}.
+\newblock \showarticletitle{A framework for reasoning about time and
+  reliability}. In \bibinfo{booktitle}{\emph{Proc.\ RTSS}}.
+  \bibinfo{publisher}{{IEEE} Computer Society}, \bibinfo{pages}{102--111}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/REAL.1989.63561}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Hnich, Rossi, Tarim, and Prestwich}{Hnich
+  et~al\mbox{.}}{2011}]%
+        {Hnich2011}
+\bibfield{author}{\bibinfo{person}{B. Hnich}, \bibinfo{person}{R. Rossi},
+  \bibinfo{person}{S.~A. Tarim}, {and} \bibinfo{person}{S. Prestwich}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{A survey on {CP-AI-OR} hybrids for decision making
+  under uncertainty}.
+\newblock In \bibinfo{booktitle}{\emph{Hybrid Optimization: The Ten Years of
+  CPAIOR}}. \bibinfo{publisher}{Springer}, \bibinfo{pages}{227--270}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-1-4419-1644-0_7}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Huang}{Huang}{2006}]%
+        {Huang2006}
+\bibfield{author}{\bibinfo{person}{J. Huang}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Combining knowledge compilation and search for
+  conformant probabilistic planning}. In \bibinfo{booktitle}{\emph{Proc.\
+  ICAPS}}. \bibinfo{publisher}{{AAAI}}, \bibinfo{pages}{253--262}.
+\newblock
+\urldef\tempurl%
+\url{http://www.aaai.org/Library/ICAPS/2006/icaps06-026.php}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Janota and Marques-Silva}{Janota and
+  Marques-Silva}{2015}]%
+        {Janota2015}
+\bibfield{author}{\bibinfo{person}{M. Janota} {and} \bibinfo{person}{J.~P.
+  Marques-Silva}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Solving {QBF} by clause selection}. In
+  \bibinfo{booktitle}{\emph{Proc.\ IJCAI}}. \bibinfo{publisher}{{AAAI} Press},
+  \bibinfo{pages}{325--331}.
+\newblock
+\urldef\tempurl%
+\url{http://ijcai.org/Abstract/15/052}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Jensen}{Jensen}{1996}]%
+        {Jensen1996}
+\bibfield{author}{\bibinfo{person}{F.~V. Jensen}.}
+  \bibinfo{year}{1996}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{An Introduction to Bayesian Networks}}.
+\newblock \bibinfo{publisher}{Taylor {\&} Francis}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jhala and Majumdar}{Jhala and
+  Majumdar}{2009}]%
+        {Jhala2009}
+\bibfield{author}{\bibinfo{person}{R. Jhala} {and} \bibinfo{person}{R.
+  Majumdar}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Software model checking}.
+\newblock \bibinfo{journal}{\emph{Comput. Surveys}} \bibinfo{volume}{41},
+  \bibinfo{number}{4} (\bibinfo{year}{2009}), \bibinfo{pages}{21:1--21:54}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1592434.1592438}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Jiang, Kravets, and Lee}{Jiang
+  et~al\mbox{.}}{2020}]%
+        {JiangDATE20ECOSurvey}
+\bibfield{author}{\bibinfo{person}{J.-H.~R. Jiang}, \bibinfo{person}{V.~N.
+  Kravets}, {and} \bibinfo{person}{N.-Z. Lee}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Engineering change order for combinational and
+  sequential design rectification}. In \bibinfo{booktitle}{\emph{Proc.\ DATE}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{726--731}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.23919/DATE48585.2020.9116504}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kahng and Kang}{Kahng and Kang}{2012}]%
+        {Kahng2012}
+\bibfield{author}{\bibinfo{person}{A.~B. Kahng} {and} \bibinfo{person}{S.
+  Kang}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Accuracy-configurable adder for approximate
+  arithmetic designs}. In \bibinfo{booktitle}{\emph{Proc.\ DAC}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{820--825}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2228360.2228509}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kim, Zhang, and Li}{Kim et~al\mbox{.}}{2013}]%
+        {Kim2013}
+\bibfield{author}{\bibinfo{person}{Y. Kim}, \bibinfo{person}{Y. Zhang}, {and}
+  \bibinfo{person}{P. Li}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{An energy efficient approximate adder with carry
+  skip for error resilient neuromorphic {VLSI} systems}. In
+  \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}. \bibinfo{publisher}{{IEEE}},
+  \bibinfo{pages}{130--137}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2013.6691108}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kravets, Lee, and Jiang}{Kravets
+  et~al\mbox{.}}{2019}]%
+        {KravetsDAC19ECOSampling}
+\bibfield{author}{\bibinfo{person}{V.~N. Kravets}, \bibinfo{person}{N.-Z. Lee},
+  {and} \bibinfo{person}{J.-H.~R. Jiang}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Comprehensive search for {ECO} rectification using
+  symbolic sampling}. In \bibinfo{booktitle}{\emph{Proc.\ DAC}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{71:1--71:6}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3316781.3317790}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Krishnaswamy, Viamontes, Markov, and
+  Hayes}{Krishnaswamy et~al\mbox{.}}{2005}]%
+        {Krishnaswamy2005}
+\bibfield{author}{\bibinfo{person}{S. Krishnaswamy}, \bibinfo{person}{G.~F.
+  Viamontes}, \bibinfo{person}{I.~L. Markov}, {and} \bibinfo{person}{J.~P.
+  Hayes}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Accurate reliability evaluation and enhancement via
+  probabilistic transfer matrices}. In \bibinfo{booktitle}{\emph{Proc.\ DATE}}.
+  \bibinfo{publisher}{{IEEE} Computer Society}, \bibinfo{pages}{282--287}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/DATE.2005.47}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kuehlmann and Krohm}{Kuehlmann and
+  Krohm}{1997}]%
+        {Kuehlmann1997}
+\bibfield{author}{\bibinfo{person}{A. Kuehlmann} {and} \bibinfo{person}{F.
+  Krohm}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{Equivalence checking using cuts and heaps}. In
+  \bibinfo{booktitle}{\emph{Proc.\ DAC}}. \bibinfo{publisher}{{ACM} Press},
+  \bibinfo{pages}{263--268}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/266021.266090}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kushmerick, Hanks, and Weld}{Kushmerick
+  et~al\mbox{.}}{1995}]%
+        {Kushmerick1995}
+\bibfield{author}{\bibinfo{person}{N. Kushmerick}, \bibinfo{person}{S. Hanks},
+  {and} \bibinfo{person}{D.~S. Weld}.} \bibinfo{year}{1995}\natexlab{}.
+\newblock \showarticletitle{An algorithm for probabilistic planning}.
+\newblock \bibinfo{journal}{\emph{Artificial Intelligence}}
+  \bibinfo{volume}{76}, \bibinfo{number}{1-2} (\bibinfo{year}{1995}),
+  \bibinfo{pages}{239--286}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/0004-3702(94)00087-H}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kwiatkowska, Norman, and Parker}{Kwiatkowska
+  et~al\mbox{.}}{2002}]%
+        {Kwiatkowska2002PRISM}
+\bibfield{author}{\bibinfo{person}{M.~Z. Kwiatkowska}, \bibinfo{person}{G.
+  Norman}, {and} \bibinfo{person}{D. Parker}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{{PRISM:} {Probabilistic} symbolic model checker}.
+  In \bibinfo{booktitle}{\emph{Proc.\ TOOLS}}
+  \emph{(\bibinfo{series}{LNCS~2324})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{200--204}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/3-540-46029-2\_13}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lauria, Elffers, Nordstr{\"{o}}m, and
+  Vinyals}{Lauria et~al\mbox{.}}{2017}]%
+        {Lauria2017CNFgen}
+\bibfield{author}{\bibinfo{person}{M. Lauria}, \bibinfo{person}{J. Elffers},
+  \bibinfo{person}{J. Nordstr{\"{o}}m}, {and} \bibinfo{person}{M. Vinyals}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{CNFgen: {A} generator of crafted benchmarks}. In
+  \bibinfo{booktitle}{\emph{Proc.\ SAT}} \emph{(\bibinfo{series}{LNCS~10491})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{464--473}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-66263-3\_30}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lee and Jiang}{Lee and Jiang}{2014}]%
+        {LeeICCAD14ProbDesign}
+\bibfield{author}{\bibinfo{person}{N.-Z. Lee} {and} \bibinfo{person}{J.-H.~R.
+  Jiang}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Towards formal evaluation and verification of
+  probabilistic design}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{340--347}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2014.7001372}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lee and Jiang}{Lee and Jiang}{2018}]%
+        {LeeTC18ProbDesign}
+\bibfield{author}{\bibinfo{person}{N.-Z. Lee} {and} \bibinfo{person}{J.-H.~R.
+  Jiang}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Towards formal evaluation and verification of
+  probabilistic design}.
+\newblock \bibinfo{journal}{\emph{IEEE Trans. Comput.}} \bibinfo{volume}{67},
+  \bibinfo{number}{8} (\bibinfo{year}{2018}), \bibinfo{pages}{1202--1216}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TC.2018.2807431}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lee and Jiang}{Lee and Jiang}{2021}]%
+        {LeeAAAI21DSSAT}
+\bibfield{author}{\bibinfo{person}{N.-Z. Lee} {and} \bibinfo{person}{J.-H.~R.
+  Jiang}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Dependency stochastic {Boolean} satisfiability: {A}
+  logical formalism for {NEXPTIME} decision problems with uncertainty}. In
+  \bibinfo{booktitle}{\emph{Proc.\ AAAI}}. \bibinfo{publisher}{{AAAI} Press},
+  \bibinfo{pages}{3877--3885}.
+\newblock
+\urldef\tempurl%
+\url{https://ojs.aaai.org/index.php/AAAI/article/view/16506}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lee, Wang, and Jiang}{Lee
+  et~al\mbox{.}}{2017}]%
+        {LeeIJCAI17RESSAT}
+\bibfield{author}{\bibinfo{person}{N.-Z. Lee}, \bibinfo{person}{Y.-S. Wang},
+  {and} \bibinfo{person}{J.-H.~R. Jiang}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Solving stochastic {Boolean} satisfiability under
+  random-exist quantification}. In \bibinfo{booktitle}{\emph{Proc.\ IJCAI}}.
+  \bibinfo{publisher}{IJCAI Organization}, \bibinfo{pages}{688--694}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.24963/ijcai.2017/96}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lee, Wang, and Jiang}{Lee
+  et~al\mbox{.}}{2018}]%
+        {LeeIJCAI18ERSSAT}
+\bibfield{author}{\bibinfo{person}{N.-Z. Lee}, \bibinfo{person}{Y.-S. Wang},
+  {and} \bibinfo{person}{J.-H.~R. Jiang}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Solving exist-random quantified stochastic
+  {Boolean} satisfiability via clause selection}. In
+  \bibinfo{booktitle}{\emph{Proc.\ IJCAI}}. \bibinfo{publisher}{IJCAI
+  Organization}, \bibinfo{pages}{1339--1345}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.24963/ijcai.2018/186}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Leone, Pfeifer, Faber, Eiter, Gottlob, Perri,
+  and Scarcello}{Leone et~al\mbox{.}}{2006}]%
+        {Leone2006}
+\bibfield{author}{\bibinfo{person}{N. Leone}, \bibinfo{person}{G. Pfeifer},
+  \bibinfo{person}{W. Faber}, \bibinfo{person}{T. Eiter}, \bibinfo{person}{G.
+  Gottlob}, \bibinfo{person}{S. Perri}, {and} \bibinfo{person}{F. Scarcello}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{The {DLV} system for knowledge representation and
+  reasoning}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Computational Logic}}
+  \bibinfo{volume}{7}, \bibinfo{number}{3} (\bibinfo{year}{2006}),
+  \bibinfo{pages}{499--562}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1149114.1149117}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Li and Zhou}{Li and Zhou}{2014}]%
+        {Li2014}
+\bibfield{author}{\bibinfo{person}{L. Li} {and} \bibinfo{person}{H. Zhou}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{On error modeling and analysis of approximate
+  adders}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{511--518}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2014.7001399}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lingasubramanian, Alam, and
+  Bhanja}{Lingasubramanian et~al\mbox{.}}{2011}]%
+        {Lingasubramanian2011}
+\bibfield{author}{\bibinfo{person}{K. Lingasubramanian}, \bibinfo{person}{S.~M.
+  Alam}, {and} \bibinfo{person}{S. Bhanja}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Maximum error modeling for fault-tolerant
+  computation using maximum \textit{a posteriori} {(MAP)} hypothesis}.
+\newblock \bibinfo{journal}{\emph{Microelectronics Reliability}}
+  \bibinfo{volume}{51}, \bibinfo{number}{2} (\bibinfo{year}{2011}),
+  \bibinfo{pages}{485--501}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.microrel.2010.07.156}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Lingasubramanian and Bhanja}{Lingasubramanian
+  and Bhanja}{2007}]%
+        {Lingasubramanian2007}
+\bibfield{author}{\bibinfo{person}{K. Lingasubramanian} {and}
+  \bibinfo{person}{S. Bhanja}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Probabilistic maximum error modeling for unreliable
+  logic circuits}. In \bibinfo{booktitle}{\emph{Proc.\ GLSVLSI}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{223--226}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1228784.1228842}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Littman, Goldsmith, and Mundhenk}{Littman
+  et~al\mbox{.}}{1998}]%
+        {Littman1998}
+\bibfield{author}{\bibinfo{person}{M.~L. Littman}, \bibinfo{person}{J.
+  Goldsmith}, {and} \bibinfo{person}{M. Mundhenk}.}
+  \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{The computational complexity of probabilistic
+  planning}.
+\newblock \bibinfo{journal}{\emph{Journal of Artificial Intelligence Research}}
+   \bibinfo{volume}{9} (\bibinfo{year}{1998}), \bibinfo{pages}{1--36}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1613/jair.505}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Littman, Majercik, and Pitassi}{Littman
+  et~al\mbox{.}}{2001}]%
+        {Littman2001}
+\bibfield{author}{\bibinfo{person}{M.~L. Littman}, \bibinfo{person}{S.~M.
+  Majercik}, {and} \bibinfo{person}{T. Pitassi}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Stochastic {Boolean} satisfiability}.
+\newblock \bibinfo{journal}{\emph{Journal of Automated Reasoning}}
+  \bibinfo{volume}{27}, \bibinfo{number}{3} (\bibinfo{year}{2001}),
+  \bibinfo{pages}{251--296}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1023/A:1017584715408}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Majercik}{Majercik}{2004}]%
+        {Majercik2004}
+\bibfield{author}{\bibinfo{person}{S.~M. Majercik}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{Nonchronological backtracking in stochastic
+  {Boolean} satisfiability}. In \bibinfo{booktitle}{\emph{Proc.\ ICTAI}}.
+  \bibinfo{publisher}{{IEEE} Computer Society}, \bibinfo{pages}{498--507}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICTAI.2004.94}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Majercik}{Majercik}{2007}]%
+        {Majercik2007}
+\bibfield{author}{\bibinfo{person}{S.~M. Majercik}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{{APPSSAT:} {Approximate} probabilistic planning
+  using stochastic satisfiability}.
+\newblock \bibinfo{journal}{\emph{International Journal of Approximate
+  Reasoning}} \bibinfo{volume}{45}, \bibinfo{number}{2} (\bibinfo{year}{2007}),
+  \bibinfo{pages}{402--419}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.ijar.2006.06.016}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Majercik}{Majercik}{2009}]%
+        {SATHandbook-SSAT}
+\bibfield{author}{\bibinfo{person}{S.~M. Majercik}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Stochastic {Boolean} satisfiability}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook of Satisfiability}}.
+  \bibinfo{publisher}{{IOS} Press}, \bibinfo{pages}{887--925}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3233/978-1-58603-929-5-887}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Majercik and Boots}{Majercik and
+  Boots}{2005}]%
+        {Majercik2005}
+\bibfield{author}{\bibinfo{person}{S.~M. Majercik} {and} \bibinfo{person}{B.
+  Boots}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{{DC-SSAT:} {A} divide-and-conquer approach to
+  solving stochastic satisfiability problems efficiently}. In
+  \bibinfo{booktitle}{\emph{Proc.\ AAAI}}. \bibinfo{publisher}{{AAAI} Press /
+  The {MIT} Press}, \bibinfo{pages}{416--422}.
+\newblock
+\urldef\tempurl%
+\url{http://www.aaai.org/Library/AAAI/2005/aaai05-066.php}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Majercik and Littman}{Majercik and
+  Littman}{1998}]%
+        {Majercik1998}
+\bibfield{author}{\bibinfo{person}{S.~M. Majercik} {and} \bibinfo{person}{M.~L.
+  Littman}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{{MAXPLAN:} {A} new approach to probabilistic
+  planning}. In \bibinfo{booktitle}{\emph{Proc.\ AIPS}}.
+  \bibinfo{publisher}{{AAAI}}, \bibinfo{pages}{86--93}.
+\newblock
+\urldef\tempurl%
+\url{http://www.aaai.org/Library/AIPS/1998/aips98-011.php}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Majercik and Littman}{Majercik and
+  Littman}{2003}]%
+        {Majercik2003}
+\bibfield{author}{\bibinfo{person}{S.~M. Majercik} {and} \bibinfo{person}{M.~L.
+  Littman}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Contingent planning under uncertainty via
+  stochastic satisfiability}.
+\newblock \bibinfo{journal}{\emph{Artificial Intelligence}}
+  \bibinfo{volume}{147}, \bibinfo{number}{1-2} (\bibinfo{year}{2003}),
+  \bibinfo{pages}{119--162}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/S0004-3702(02)00379-X}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Marculescu, Marculescu, and Pedram}{Marculescu
+  et~al\mbox{.}}{1998}]%
+        {Marculescu1998}
+\bibfield{author}{\bibinfo{person}{D. Marculescu}, \bibinfo{person}{R.
+  Marculescu}, {and} \bibinfo{person}{M. Pedram}.}
+  \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Trace-driven steady-state probability estimation in
+  {FSM}s with application to power estimation}. In
+  \bibinfo{booktitle}{\emph{Proc.\ DATE}}. \bibinfo{publisher}{{IEEE} Computer
+  Society}, \bibinfo{pages}{774--779}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/DATE.1998.655946}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Marques-Silva and Sakallah}{Marques-Silva and
+  Sakallah}{2000}]%
+        {Marques2000}
+\bibfield{author}{\bibinfo{person}{J.~P. Marques-Silva} {and}
+  \bibinfo{person}{K.~A. Sakallah}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{{Boolean} satisfiability in electronic design
+  automation}. In \bibinfo{booktitle}{\emph{Proc.\ DAC}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{675--680}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/337292.337611}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Miao, Gerstlauer, and Orshansky}{Miao
+  et~al\mbox{.}}{2013}]%
+        {Miao2013}
+\bibfield{author}{\bibinfo{person}{J. Miao}, \bibinfo{person}{A. Gerstlauer},
+  {and} \bibinfo{person}{M. Orshansky}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Approximate logic synthesis under general error
+  magnitude and frequency constraints}. In \bibinfo{booktitle}{\emph{Proc.\
+  ICCAD}}. \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{779--786}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2013.6691202}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Miao, Gerstlauer, and Orshansky}{Miao
+  et~al\mbox{.}}{2014}]%
+        {Miao2014}
+\bibfield{author}{\bibinfo{person}{J. Miao}, \bibinfo{person}{A. Gerstlauer},
+  {and} \bibinfo{person}{M. Orshansky}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Multi-level approximate logic synthesis under
+  general error constraints}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{504--510}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2014.7001398}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Mishchenko, Chatterjee, Brayton, and
+  E{\'{e}}n}{Mishchenko et~al\mbox{.}}{2006}]%
+        {Mishchenko2006}
+\bibfield{author}{\bibinfo{person}{A. Mishchenko}, \bibinfo{person}{S.
+  Chatterjee}, \bibinfo{person}{R.~K. Brayton}, {and} \bibinfo{person}{N.
+  E{\'{e}}n}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Improvements to combinational equivalence
+  checking}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{836--843}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1233501.1233679}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Miskov-Zivanov and Marculescu}{Miskov-Zivanov
+  and Marculescu}{2008}]%
+        {Miskov-Zivanov2008}
+\bibfield{author}{\bibinfo{person}{N. Miskov-Zivanov} {and} \bibinfo{person}{D.
+  Marculescu}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Modeling and optimization for soft-error
+  reliability of sequential circuits}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Computer-Aided Design of
+  Integrated Circuits and Systems}} \bibinfo{volume}{27}, \bibinfo{number}{5}
+  (\bibinfo{year}{2008}), \bibinfo{pages}{803--816}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TCAD.2008.917591}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Miskov.Zivanov and Marculescu}{Miskov.Zivanov
+  and Marculescu}{2006}]%
+        {Miskov-Zivanov2006}
+\bibfield{author}{\bibinfo{person}{N. Miskov.Zivanov} {and} \bibinfo{person}{D.
+  Marculescu}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Circuit reliability analysis using symbolic
+  techniques}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Computer-Aided Design of
+  Integrated Circuits and Systems}} \bibinfo{volume}{25}, \bibinfo{number}{12}
+  (\bibinfo{year}{2006}), \bibinfo{pages}{2638--2649}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TCAD.2006.882592}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Mitra, Zhang, Waqas, Seifert, Gill, and
+  Kim}{Mitra et~al\mbox{.}}{2006}]%
+        {Mitra2006}
+\bibfield{author}{\bibinfo{person}{S. Mitra}, \bibinfo{person}{M. Zhang},
+  \bibinfo{person}{S. Waqas}, \bibinfo{person}{N. Seifert},
+  \bibinfo{person}{B.~S. Gill}, {and} \bibinfo{person}{K.~S. Kim}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Combinational logic soft error correction}. In
+  \bibinfo{booktitle}{\emph{Proc.\ ITC}}. \bibinfo{publisher}{{IEEE} Computer
+  Society}, \bibinfo{pages}{1--9}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TEST.2006.297681}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Mohanram and Touba}{Mohanram and
+  Touba}{2003}]%
+        {Mohanram2003}
+\bibfield{author}{\bibinfo{person}{K. Mohanram} {and} \bibinfo{person}{N.~A.
+  Touba}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Cost-effective approach for reducing soft error
+  failure rate in logic circuits}. In \bibinfo{booktitle}{\emph{Proc.\ ITC}}.
+  \bibinfo{publisher}{{IEEE} Computer Society}, \bibinfo{pages}{893--901}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TEST.2003.1271075}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Moore}{Moore}{1965}]%
+        {Moore1965}
+\bibfield{author}{\bibinfo{person}{G.~E. Moore}.}
+  \bibinfo{year}{1965}\natexlab{}.
+\newblock \showarticletitle{Cramming more components onto integrated circuits}.
+\newblock \bibinfo{journal}{\emph{Electronics}} \bibinfo{volume}{38},
+  \bibinfo{number}{8} (\bibinfo{year}{1965}), \bibinfo{pages}{114--117}.
+\newblock
+\urldef\tempurl%
+\url{https://newsroom.intel.com/wp-content/uploads/sites/11/2018/05/moores-law-electronics.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Mrazek, Sarwar, Sekanina, Vas{\'{\i}}cek, and
+  Roy}{Mrazek et~al\mbox{.}}{2016}]%
+        {Mrazek2016}
+\bibfield{author}{\bibinfo{person}{V. Mrazek}, \bibinfo{person}{S.~S. Sarwar},
+  \bibinfo{person}{L. Sekanina}, \bibinfo{person}{Z. Vas{\'{\i}}cek}, {and}
+  \bibinfo{person}{K. Roy}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Design of power-efficient approximate multipliers
+  for approximate artificial neural networks}. In
+  \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}. \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{81:1--81:7}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2966986.2967021}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Najm}{Najm}{1994}]%
+        {Najm1994}
+\bibfield{author}{\bibinfo{person}{F.~N. Najm}.}
+  \bibinfo{year}{1994}\natexlab{}.
+\newblock \showarticletitle{A survey of power estimation techniques in {VLSI}
+  circuits}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Very Large Scale
+  Integration (VLSI) Systems}} \bibinfo{volume}{2}, \bibinfo{number}{4}
+  (\bibinfo{year}{1994}), \bibinfo{pages}{446--455}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/92.335013}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Narizzano, Pulina, and Tacchella}{Narizzano
+  et~al\mbox{.}}{2006}]%
+        {Narizzano2006}
+\bibfield{author}{\bibinfo{person}{M. Narizzano}, \bibinfo{person}{L. Pulina},
+  {and} \bibinfo{person}{A. Tacchella}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{The {QBFEVAL} web portal}. In
+  \bibinfo{booktitle}{\emph{Proc.\ JELIA}}
+  \emph{(\bibinfo{series}{LNCS~4160})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{494--497}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/11853886\_45}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Nilsson}{Nilsson}{2014}]%
+        {Nilsson2014}
+\bibfield{author}{\bibinfo{person}{N.~J. Nilsson}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Principles of Artificial Intelligence}}.
+\newblock \bibinfo{publisher}{Morgan Kaufmann}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Oliehoek and Amato}{Oliehoek and
+  Amato}{2016}]%
+        {Oliehoek2016}
+\bibfield{author}{\bibinfo{person}{F.~A. Oliehoek} {and} \bibinfo{person}{C.
+  Amato}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{A Concise Introduction to Decentralized
+  POMDPs}}.
+\newblock \bibinfo{publisher}{Springer}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-28929-8}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Oliehoek, Spaan, and Vlassis}{Oliehoek
+  et~al\mbox{.}}{2008}]%
+        {Oliehoek2008}
+\bibfield{author}{\bibinfo{person}{F.~A. Oliehoek}, \bibinfo{person}{M.~T.~J.
+  Spaan}, {and} \bibinfo{person}{N.~A. Vlassis}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Optimal and approximate {Q}-value functions for
+  decentralized {POMDP}s}.
+\newblock \bibinfo{journal}{\emph{Journal of Artificial Intelligence Research}}
+   \bibinfo{volume}{32} (\bibinfo{year}{2008}), \bibinfo{pages}{289--353}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1613/jair.2447}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Papadimitriou}{Papadimitriou}{1985}]%
+        {Papadimitriou1985}
+\bibfield{author}{\bibinfo{person}{C.~H. Papadimitriou}.}
+  \bibinfo{year}{1985}\natexlab{}.
+\newblock \showarticletitle{Games against nature}.
+\newblock \bibinfo{journal}{\emph{J. Comput. System Sci.}}
+  \bibinfo{volume}{31}, \bibinfo{number}{2} (\bibinfo{year}{1985}),
+  \bibinfo{pages}{288--301}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/0022-0000(85)90045-5}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Peterson and Reif}{Peterson and Reif}{1979}]%
+        {Peterson1979}
+\bibfield{author}{\bibinfo{person}{G.~L. Peterson} {and} \bibinfo{person}{J.~H.
+  Reif}.} \bibinfo{year}{1979}\natexlab{}.
+\newblock \showarticletitle{Multiple-person alternation}. In
+  \bibinfo{booktitle}{\emph{Proc.\ FOCS}}. \bibinfo{publisher}{{IEEE} Computer
+  Society}, \bibinfo{pages}{348--363}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/SFCS.1979.25}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Peterson, Reif, and Azhar}{Peterson
+  et~al\mbox{.}}{2001}]%
+        {Peterson2001}
+\bibfield{author}{\bibinfo{person}{G.~L. Peterson}, \bibinfo{person}{J.~H.
+  Reif}, {and} \bibinfo{person}{S. Azhar}.} \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Lower bounds for multiplayer noncooperative games
+  of incomplete information}.
+\newblock \bibinfo{journal}{\emph{Computers {\&} Mathematics with
+  Applications}} \bibinfo{volume}{41}, \bibinfo{number}{7}
+  (\bibinfo{year}{2001}), \bibinfo{pages}{957--992}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/S0898-1221(00)00333-3}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Pipatsrisawat and Darwiche}{Pipatsrisawat and
+  Darwiche}{2009}]%
+        {Pipatsrisawat2009}
+\bibfield{author}{\bibinfo{person}{K. Pipatsrisawat} {and} \bibinfo{person}{A.
+  Darwiche}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{A new d-{DNNF}-based bound computation algorithm
+  for functional {E-MAJSAT}}. In \bibinfo{booktitle}{\emph{Proc.\ IJCAI}}.
+  \bibinfo{publisher}{{AAAI} Press}, \bibinfo{pages}{590--595}.
+\newblock
+\urldef\tempurl%
+\url{http://ijcai.org/Proceedings/09/Papers/104.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Rabe and Tentrup}{Rabe and Tentrup}{2015}]%
+        {Rabe2015}
+\bibfield{author}{\bibinfo{person}{M.~N. Rabe} {and} \bibinfo{person}{L.
+  Tentrup}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{{CAQE:} {A} certifying {QBF} solver}. In
+  \bibinfo{booktitle}{\emph{Proc.\ FMCAD}}. \bibinfo{publisher}{{IEEE}},
+  \bibinfo{pages}{136--143}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/FMCAD.2015.7542263}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Rehman, El-Harouni, Shafique, Kumar, and
+  Henkel}{Rehman et~al\mbox{.}}{2016}]%
+        {Rehman2016}
+\bibfield{author}{\bibinfo{person}{S. Rehman}, \bibinfo{person}{W. El-Harouni},
+  \bibinfo{person}{M. Shafique}, \bibinfo{person}{A. Kumar}, {and}
+  \bibinfo{person}{J. Henkel}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Architectural-space exploration of approximate
+  multipliers}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{80:1--80:8}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2966986.2967005}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Rejimon and Bhanja}{Rejimon and
+  Bhanja}{2005}]%
+        {Rejimon2005}
+\bibfield{author}{\bibinfo{person}{T. Rejimon} {and} \bibinfo{person}{S.
+  Bhanja}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Scalable probabilistic computing models using
+  {Bayesian} networks}. In \bibinfo{booktitle}{\emph{Proc.\ MWSCAS}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{712--715}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/MWSCAS.2005.1594200}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Russell and Norvig}{Russell and
+  Norvig}{2020}]%
+        {Russell2020}
+\bibfield{author}{\bibinfo{person}{S.~J. Russell} {and} \bibinfo{person}{P.
+  Norvig}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Artificial Intelligence: A Modern Approach}
+  (\bibinfo{edition}{4th} ed.)}.
+\newblock \bibinfo{publisher}{Pearson}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Salmon and Poupart}{Salmon and
+  Poupart}{2020}]%
+        {Salmon2020}
+\bibfield{author}{\bibinfo{person}{R. Salmon} {and} \bibinfo{person}{P.
+  Poupart}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{On the relationship between stochastic
+  satisfiability and {Markov} decision processes}. In
+  \bibinfo{booktitle}{\emph{Proc.\ UAI}}. \bibinfo{publisher}{{PMLR}},
+  \bibinfo{pages}{1105--1115}.
+\newblock
+\urldef\tempurl%
+\url{http://proceedings.mlr.press/v115/salmon20a.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Sang, Bacchus, Beame, Kautz, and Pitassi}{Sang
+  et~al\mbox{.}}{2004}]%
+        {Sang2004}
+\bibfield{author}{\bibinfo{person}{T. Sang}, \bibinfo{person}{F. Bacchus},
+  \bibinfo{person}{P. Beame}, \bibinfo{person}{H.~A. Kautz}, {and}
+  \bibinfo{person}{T. Pitassi}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{Combining component caching and clause learning for
+  effective model counting}. In \bibinfo{booktitle}{\emph{Proc.\ SAT}}.
+  \bibinfo{pages}{20--28}.
+\newblock
+\urldef\tempurl%
+\url{http://www.satisfiability.org/SAT04/programme/21.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Sang, Beame, and Kautz}{Sang
+  et~al\mbox{.}}{2005a}]%
+        {Sang2005ModelCounting}
+\bibfield{author}{\bibinfo{person}{T. Sang}, \bibinfo{person}{P. Beame}, {and}
+  \bibinfo{person}{H.~A. Kautz}.} \bibinfo{year}{2005}\natexlab{a}.
+\newblock \showarticletitle{Heuristics for fast exact model counting}. In
+  \bibinfo{booktitle}{\emph{Proc.\ SAT}} \emph{(\bibinfo{series}{LNCS~3569})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{226--240}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/11499107\_17}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Sang, Beame, and Kautz}{Sang
+  et~al\mbox{.}}{2005b}]%
+        {Sang2005BayesianInference}
+\bibfield{author}{\bibinfo{person}{T. Sang}, \bibinfo{person}{P. Beame}, {and}
+  \bibinfo{person}{H.~A. Kautz}.} \bibinfo{year}{2005}\natexlab{b}.
+\newblock \showarticletitle{Performing {Bayesian} inference by weighted model
+  counting}. In \bibinfo{booktitle}{\emph{Proc.\ AAAI}}.
+  \bibinfo{publisher}{{AAAI} Press / The {MIT} Press},
+  \bibinfo{pages}{475--482}.
+\newblock
+\urldef\tempurl%
+\url{http://www.aaai.org/Library/AAAI/2005/aaai05-075.php}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Scholl and Wimmer}{Scholl and Wimmer}{2018}]%
+        {Scholl2018}
+\bibfield{author}{\bibinfo{person}{C. Scholl} {and} \bibinfo{person}{R.
+  Wimmer}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Dependency quantified {Boolean} formulas: {An}
+  overview of solution methods and applications}. In
+  \bibinfo{booktitle}{\emph{Proc.\ SAT}} \emph{(\bibinfo{series}{LNCS~10929})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{3--16}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-94144-8\_1}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Schultz}{Schultz}{2003}]%
+        {Schultz2003}
+\bibfield{author}{\bibinfo{person}{R. Schultz}.}
+  \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Stochastic programming with integer variables}.
+\newblock \bibinfo{journal}{\emph{Mathematical Programming}}
+  \bibinfo{volume}{97}, \bibinfo{number}{1-2} (\bibinfo{year}{2003}),
+  \bibinfo{pages}{285--309}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/s10107-003-0445-z}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Sinha, Mishchenko, and Brayton}{Sinha
+  et~al\mbox{.}}{2002}]%
+        {Sinha2002}
+\bibfield{author}{\bibinfo{person}{S. Sinha}, \bibinfo{person}{A. Mishchenko},
+  {and} \bibinfo{person}{R.~K. Brayton}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Topologically constrained logic synthesis}. In
+  \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}. \bibinfo{publisher}{{ACM} / {IEEE}
+  Computer Society}, \bibinfo{pages}{679--686}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/774572.774672}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Somenzi}{Somenzi}{1998}]%
+        {CUDD}
+\bibfield{author}{\bibinfo{person}{F. Somenzi}.}
+  \bibinfo{year}{1998}\natexlab{}.
+\newblock \bibinfo{title}{{CUDD: {CU} decision diagram package}}.
+\newblock
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Stockmeyer and Meyer}{Stockmeyer and
+  Meyer}{1973}]%
+        {Stockmeyer1973}
+\bibfield{author}{\bibinfo{person}{L.~J. Stockmeyer} {and}
+  \bibinfo{person}{A.~R. Meyer}.} \bibinfo{year}{1973}\natexlab{}.
+\newblock \showarticletitle{Word problems requiring exponential time:
+  {Preliminary} report}. In \bibinfo{booktitle}{\emph{Proc.\ STOC}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{1--9}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/800125.804029}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Teige and Fr{\"{a}}nzle}{Teige and
+  Fr{\"{a}}nzle}{2010}]%
+        {Teige2010}
+\bibfield{author}{\bibinfo{person}{T. Teige} {and} \bibinfo{person}{M.
+  Fr{\"{a}}nzle}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Resolution for stochastic {Boolean}
+  satisfiability}. In \bibinfo{booktitle}{\emph{Proc.\ LPAR}}
+  \emph{(\bibinfo{series}{LNCS~6397})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{625--639}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-642-16242-8\_44}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Tentrup and Rabe}{Tentrup and Rabe}{2019}]%
+        {Tentrup2019}
+\bibfield{author}{\bibinfo{person}{L. Tentrup} {and} \bibinfo{person}{M.~N.
+  Rabe}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Clausal abstraction for {DQBF}}. In
+  \bibinfo{booktitle}{\emph{Proc.\ SAT}} \emph{(\bibinfo{series}{LNCS~11628})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{388--405}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-030-24258-9\_27}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Tseitin}{Tseitin}{1983}]%
+        {Tseitin1983}
+\bibfield{author}{\bibinfo{person}{G.~S. Tseitin}.}
+  \bibinfo{year}{1983}\natexlab{}.
+\newblock \showarticletitle{On the complexity of derivation in propositional
+  calculus}.
+\newblock In \bibinfo{booktitle}{\emph{Automation of Reasoning}}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{466--483}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-642-81955-1_28}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Venkataramani, Sabne, Kozhikkottu, Roy, and
+  Raghunathan}{Venkataramani et~al\mbox{.}}{2012}]%
+        {Venkataramani2012}
+\bibfield{author}{\bibinfo{person}{S. Venkataramani}, \bibinfo{person}{A.
+  Sabne}, \bibinfo{person}{V.~J. Kozhikkottu}, \bibinfo{person}{K. Roy}, {and}
+  \bibinfo{person}{A. Raghunathan}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{SALSA:} {Systematic} logic synthesis of
+  approximate circuits}. In \bibinfo{booktitle}{\emph{Proc.\ DAC}}.
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{796--801}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2228360.2228504}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Venkatesan, Agarwal, Roy, and
+  Raghunathan}{Venkatesan et~al\mbox{.}}{2011}]%
+        {Venkatesan2011ApproxDesign}
+\bibfield{author}{\bibinfo{person}{R. Venkatesan}, \bibinfo{person}{A.
+  Agarwal}, \bibinfo{person}{K. Roy}, {and} \bibinfo{person}{A. Raghunathan}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{{MACACO:} {Modeling} and analysis of circuits for
+  approximate computing}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{IEEE} Computer Society}, \bibinfo{pages}{667--673}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2011.6105401}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Wang, Chang, and Cheng}{Wang
+  et~al\mbox{.}}{2009}]%
+        {Wang2009}
+\bibfield{author}{\bibinfo{person}{L.-T. Wang}, \bibinfo{person}{Y.-W. Chang},
+  {and} \bibinfo{person}{K.-T.~T. Cheng}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Electronic Design Automation: Synthesis,
+  Verification, and Test} (\bibinfo{edition}{1st} ed.)}.
+\newblock \bibinfo{publisher}{Morgan Kaufmann}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ye, Wang, Yuan, Kumar, and Xu}{Ye
+  et~al\mbox{.}}{2013}]%
+        {Ye2013}
+\bibfield{author}{\bibinfo{person}{R. Ye}, \bibinfo{person}{T. Wang},
+  \bibinfo{person}{F. Yuan}, \bibinfo{person}{R. Kumar}, {and}
+  \bibinfo{person}{Q. Xu}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{On reconfiguration-oriented approximate adder
+  design and its application}. In \bibinfo{booktitle}{\emph{Proc.\ ICCAD}}.
+  \bibinfo{publisher}{{IEEE}}, \bibinfo{pages}{48--54}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICCAD.2013.6691096}
+\showDOI{\tempurl}
+
+
+\end{thebibliography}
