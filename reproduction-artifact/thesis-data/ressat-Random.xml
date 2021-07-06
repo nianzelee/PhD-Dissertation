@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.10//EN" "http://www.sosy-lab.org/benchexec/table-1.10.dtd">
+
+<table>
+    <result filename="dcssat-re.2021-04-24_12-18-42.results.default.Random.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Pr[SAT]</column>
+    </result>
+    
+    <result filename="ressat.2021-04-23_21-45-25.results.minimize-Cachet.Random.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Satisfying probability</column>
+        <column title="UB" numberOfDigits="7" relevantForDiff="true">Best upper bound</column>
+    </result>
+    
+    <result filename="ressat.2021-04-23_21-45-25.results.bare-Cachet.Random.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Satisfying probability</column>
+        <column title="UB" numberOfDigits="7" relevantForDiff="true">Best upper bound</column>
+    </result>
+</table>

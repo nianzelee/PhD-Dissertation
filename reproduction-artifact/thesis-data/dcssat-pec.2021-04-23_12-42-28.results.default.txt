@@ -1,0 +1,106 @@
+   BENCHMARK INFORMATION
+benchmark definition:    test/test-sets/dissertation/dcssat-pec.xml
+name:                    dcssat-pec
+run sets:                default
+date:                    Fri, 2021-04-23 12:42:28 CST
+tool:                    DC-SSAT
+tool executable:         bin/dcssat
+options:
+parallel runs:           8
+resource limits:
+- memory:                15000.0 MB
+- time:                  900 s
+- cpu cores:             1
+hardware requirements:
+- cpu cores:             1
+- memory:                15000.0 MB
+------------------------------------------------------------
+
+   SYSTEM INFORMATION
+host:                    alcom-PowerEdge-T440
+os:                      Linux-5.4.0-58-generic-x86_64-with-glibc2.29
+cpu:                     Intel Xeon Silver 4210 CPU @ 2.20GHz
+- cores:                 40
+- max frequency:         3200.0 MHz
+- turbo boost enabled:   False
+ram:                     134616.424448 MB
+------------------------------------------------------------
+
+
+
+default
+Run set 1 of 1 with options '' and propertyfile 'None'
+
+inputfile                    status                       cpu time   wall time        host
+------------------------------------------------------------------------------------------
+adder-0.125-0.10.pec         OUT OF MEMORY                  472.72      472.77        None
+arbiter-0.125-0.10.pec       OUT OF MEMORY                  535.18      535.24        None
+bar-0.125-0.10.pec           OUT OF MEMORY                  704.32      704.34        None
+c1355-0.125-0.10.pec         OUT OF MEMORY                  690.58      690.60        None
+c1908-0.125-0.10.pec         OUT OF MEMORY                  697.27      697.30        None
+c2670-0.125-0.10.pec         OUT OF MEMORY                  508.90      508.92        None
+c3540-0.125-0.10.pec         OUT OF MEMORY                  591.39      591.41        None
+c432-0.125-0.10.pec          OUT OF MEMORY                  285.67      285.68        None
+c499-0.125-0.10.pec          OUT OF MEMORY                  657.59      657.60        None
+c5315-0.125-0.10.pec         OUT OF MEMORY                  604.29      604.35        None
+c6288-0.125-0.10.pec         TIMEOUT                        901.59      901.63        None
+c7552-0.125-0.10.pec         OUT OF MEMORY                  389.18      389.23        None
+c880-0.125-0.10.pec          OUT OF MEMORY                  334.27      334.28        None
+cavlc-0.125-0.10.pec         OUT OF MEMORY                  388.79      388.80        None
+ctrl-0.125-0.10.pec          done                             0.05        0.05        None
+dec-0.125-0.10.pec           done                           184.36      184.36        None
+div-0.125-0.10.pec           SEGMENTATION FAULT               3.04        3.22        None
+hyp-0.125-0.10.pec           SEGMENTATION FAULT              13.97       14.15        None
+i2c-0.125-0.10.pec           OUT OF MEMORY                  538.16      538.17        None
+int2float-0.125-0.10.pec     done                             4.30        4.31        None
+log2-0.125-0.10.pec          SEGMENTATION FAULT               5.30        5.49        None
+max-0.125-0.10.pec           OUT OF MEMORY                  891.46      891.48        None
+mem_ctrl-0.125-0.10.pec      SEGMENTATION FAULT               3.60        3.79        None
+multiplier-0.125-0.10.pec    SEGMENTATION FAULT               4.02        4.21        None
+priority-0.125-0.10.pec      TIMEOUT                        901.72      901.82        None
+router-0.125-0.10.pec        OUT OF MEMORY                  413.68      413.69        None
+sin-0.125-0.10.pec           TIMEOUT                        901.66      901.68        None
+sqrt-0.125-0.10.pec          SEGMENTATION FAULT               3.31        3.49        None
+square-0.125-0.10.pec        OUT OF MEMORY                  595.48      595.49        None
+voter-0.125-0.10.pec         TIMEOUT                        901.61      901.69        None
+adder-0.125-0.01.pec         OUT OF MEMORY                  556.96      556.98        None
+arbiter-0.125-0.01.pec       OUT OF MEMORY                  316.64      316.65        None
+bar-0.125-0.01.pec           OUT OF MEMORY                  776.71      776.74        None
+c1355-0.125-0.01.pec         OUT OF MEMORY                  446.64      446.65        None
+c1908-0.125-0.01.pec         OUT OF MEMORY                  733.33      733.35        None
+c2670-0.125-0.01.pec         TIMEOUT                        901.42      901.44        None
+c3540-0.125-0.01.pec         TIMEOUT                        901.01      901.03        None
+c432-0.125-0.01.pec          TIMEOUT                        901.41      901.51        None
+c499-0.125-0.01.pec          OUT OF MEMORY                  392.85      392.86        None
+c5315-0.125-0.01.pec         OUT OF MEMORY                  560.43      560.48        None
+c6288-0.125-0.01.pec         OUT OF MEMORY                  789.01      789.02        None
+c7552-0.125-0.01.pec         OUT OF MEMORY                  574.13      574.15        None
+c880-0.125-0.01.pec          TIMEOUT                        901.34      901.35        None
+cavlc-0.125-0.01.pec         done                             0.15        0.15        None
+ctrl-0.125-0.01.pec          done                             0.01        0.01        None
+dec-0.125-0.01.pec           done                             0.01        0.01        None
+div-0.125-0.01.pec           SEGMENTATION FAULT               2.03        2.21        None
+hyp-0.125-0.01.pec           SEGMENTATION FAULT               8.84        9.02        None
+i2c-0.125-0.01.pec           OUT OF MEMORY                  408.58      408.60        None
+int2float-0.125-0.01.pec     done                             0.01        0.01        None
+log2-0.125-0.01.pec          SEGMENTATION FAULT               1.29        1.47        None
+max-0.125-0.01.pec           TIMEOUT                        901.22      901.31        None
+mem_ctrl-0.125-0.01.pec      SEGMENTATION FAULT               2.13        2.32        None
+multiplier-0.125-0.01.pec    TIMEOUT                        901.26      901.29        None
+priority-0.125-0.01.pec      OUT OF MEMORY                  492.50      492.51        None
+router-0.125-0.01.pec        TIMEOUT                        901.05      901.14        None
+sin-0.125-0.01.pec           TIMEOUT                        901.59      901.62        None
+sqrt-0.125-0.01.pec          TIMEOUT                        901.15      901.18        None
+square-0.125-0.01.pec        TIMEOUT                        901.52      901.54        None
+voter-0.125-0.01.pec         TIMEOUT                        901.02      901.06        None
+------------------------------------------------------------------------------------------
+Run set 1                    done                         29105.80     4042.14           -
+
+Statistics:             60 Files
+  correct:               0
+    correct true:        0
+    correct false:       0
+  incorrect:             0
+    incorrect true:      0
+    incorrect false:     0
+  unknown:              53

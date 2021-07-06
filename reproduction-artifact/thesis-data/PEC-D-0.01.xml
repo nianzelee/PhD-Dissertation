@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.10//EN" "http://www.sosy-lab.org/benchexec/table-1.10.dtd">
+
+<table>
+    <result filename="bddsp-pec.2021-04-23_11-27-14.results.default.D-0.01.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">prob</column>
+    </result>
+    
+    <result filename="dcssat-pec.2021-04-23_12-42-28.results.default.D-0.01.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Pr[SAT]</column>
+    </result>
+    
+    <result filename="cachet-pec.2021-04-23_13-49-50.results.default.D-0.01.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Satisfying probability</column>
+    </result>
+
+    <result filename="approxmc-pec.2021-04-23_15-32-34.results.tight.D-0.01.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sampling vars" numberOfDigits="7" relevantForDiff="true">Sampling set size</column>
+        <column title="models" numberOfDigits="7" relevantForDiff="true">Number of solutions is</column>
+    </result>
+</table>

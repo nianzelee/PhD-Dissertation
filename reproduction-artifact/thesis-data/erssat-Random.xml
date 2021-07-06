@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.10//EN" "http://www.sosy-lab.org/benchexec/table-1.10.dtd">
+
+<table>
+    <result filename="dcssat-er.2021-04-25_20-57-51.results.default.Random.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Pr[SAT]</column>
+    </result>
+    
+    <result filename="erssat.2021-04-24_21-58-07.results.default-BDD.Random.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Satisfying probability</column>
+        <column title="LB" numberOfDigits="7" relevantForDiff="true">Best lower bound</column>
+        <column title="T-LB" numberOfDigits="7" relevantForDiff="true">Time elapsed for best lower bound</column>
+    </result>
+    
+    <result filename="erssat.2021-04-24_21-58-07.results.bare-BDD.Random.xml.bz2">
+        <column title="status"/>
+        <column title="cputime"/>
+        <column title="memory" sourceUnit="B" displayUnit="MB"/>
+        <column title="sat. prob." numberOfDigits="7" relevantForDiff="true">Satisfying probability</column>
+        <column title="LB" numberOfDigits="7" relevantForDiff="true">Best lower bound</column>
+        <column title="T-LB" numberOfDigits="7" relevantForDiff="true">Time elapsed for best lower bound</column>
+    </result>
+</table>
