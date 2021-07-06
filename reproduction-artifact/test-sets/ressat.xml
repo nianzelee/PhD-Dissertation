@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 1.18//EN" "https://www.sosy-lab.org/benchexec/benchmark-1.18.dtd">
+<benchmark tool="abc" timelimit="900 s" hardtimelimit="1000 s" memlimit="15 GB" cpuCores="1">
+  <resultfiles></resultfiles>
+  <rundefinition name="minimize-Cachet">
+      <option name="-c">ssat -bvt</option>
+  </rundefinition>
+
+  <rundefinition name="bare-Cachet">
+      <option name="-c">ssat -bmvt</option>
+  </rundefinition>
+
+  <tasks name="Random">
+      <include>../ssat-benchmarks/re-random-k-CNF/*.sdimacs</include>
+  </tasks>
+
+  <tasks name="Strategic">
+      <include>../ssat-benchmarks/re-strategic-company/*.sdimacs</include>
+  </tasks>
+
+  <tasks name="PEC">
+      <include>../ssat-benchmarks/re-PEC/*.sdimacs</include>
+  </tasks>
+</benchmark>

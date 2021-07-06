@@ -1,0 +1,573 @@
+# PBN ISCAS/c880_distill_ISCAS/c880_miter written by probABC
+.model ISCAS/c880_distill_ISCAS/c880_miter
+# .numpi 60
+# .prob pi00 0.500000
+# .prob pi01 0.500000
+# .prob pi02 0.500000
+# .prob pi03 0.500000
+# .prob pi04 0.500000
+# .prob pi05 0.500000
+# .prob pi06 0.500000
+# .prob pi07 0.500000
+# .prob pi08 0.500000
+# .prob pi09 0.500000
+# .prob pi10 0.500000
+# .prob pi11 0.500000
+# .prob pi12 0.500000
+# .prob pi13 0.500000
+# .prob pi14 0.500000
+# .prob pi15 0.500000
+# .prob pi16 0.500000
+# .prob pi17 0.500000
+# .prob pi18 0.500000
+# .prob pi19 0.500000
+# .prob pi20 0.500000
+# .prob pi21 0.500000
+# .prob pi22 0.500000
+# .prob pi23 0.500000
+# .prob pi24 0.500000
+# .prob pi25 0.500000
+# .prob pi26 0.500000
+# .prob pi27 0.500000
+# .prob pi28 0.500000
+# .prob pi29 0.500000
+# .prob pi30 0.500000
+# .prob pi31 0.500000
+# .prob pi32 0.500000
+# .prob pi33 0.500000
+# .prob pi34 0.500000
+# .prob pi35 0.500000
+# .prob pi36 0.500000
+# .prob pi37 0.500000
+# .prob pi38 0.500000
+# .prob pi39 0.500000
+# .prob pi40 0.500000
+# .prob pi41 0.500000
+# .prob pi42 0.500000
+# .prob pi43 0.500000
+# .prob pi44 0.500000
+# .prob pi45 0.500000
+# .prob pi46 0.500000
+# .prob pi47 0.500000
+# .prob pi48 0.500000
+# .prob pi49 0.500000
+# .prob pi50 0.500000
+# .prob pi51 0.500000
+# .prob pi52 0.500000
+# .prob pi53 0.500000
+# .prob pi54 0.500000
+# .prob pi55 0.500000
+# .prob pi56 0.500000
+# .prob pi57 0.500000
+# .prob pi58 0.500000
+# .prob pi59 0.500000
+# .prob pi60 0.125000
+# .prob pi61 0.125000
+# .prob pi62 0.125000
+.inputs pi00
+.inputs pi01
+.inputs pi02
+.inputs pi03
+.inputs pi04
+.inputs pi05
+.inputs pi06
+.inputs pi07
+.inputs pi08
+.inputs pi09
+.inputs pi10
+.inputs pi11
+.inputs pi12
+.inputs pi13
+.inputs pi14
+.inputs pi15
+.inputs pi16
+.inputs pi17
+.inputs pi18
+.inputs pi19
+.inputs pi20
+.inputs pi21
+.inputs pi22
+.inputs pi23
+.inputs pi24
+.inputs pi25
+.inputs pi26
+.inputs pi27
+.inputs pi28
+.inputs pi29
+.inputs pi30
+.inputs pi31
+.inputs pi32
+.inputs pi33
+.inputs pi34
+.inputs pi35
+.inputs pi36
+.inputs pi37
+.inputs pi38
+.inputs pi39
+.inputs pi40
+.inputs pi41
+.inputs pi42
+.inputs pi43
+.inputs pi44
+.inputs pi45
+.inputs pi46
+.inputs pi47
+.inputs pi48
+.inputs pi49
+.inputs pi50
+.inputs pi51
+.inputs pi52
+.inputs pi53
+.inputs pi54
+.inputs pi55
+.inputs pi56
+.inputs pi57
+.inputs pi58
+.inputs pi59
+.inputs pi60
+.inputs pi61
+.inputs pi62
+.outputs miter
+.names pi10 pi39 65
+11 1
+.names pi03 pi07 66
+11 1
+.names pi00 pi04 67
+11 1
+.names pi08 67 68
+11 1
+.names pi03 pi07 69
+00 1
+.names 65 66 70
+10 1
+.names 69 70 71
+01 1
+.names 68 71 72
+11 1
+.names pi00 pi01 73
+11 1
+.names pi07 pi10 74
+11 1
+.names pi15 74 75
+11 1
+.names pi03 pi08 76
+11 1
+.names 73 76 77
+11 1
+.names 75 77 78
+01 1
+.names 72 78 79
+00 1
+.names pi24 79 80
+10 1
+.names pi08 pi33 81
+11 1
+.names 65 68 82
+01 1
+.names pi09 82 83
+11 1
+.names pi35 83 84
+11 1
+.names pi05 pi15 85
+11 1
+.names pi16 85 86
+11 1
+.names 68 86 87
+11 1
+.names pi03 pi59 88
+10 1
+.names 87 88 89
+11 1
+.names 81 89 90
+00 1
+.names 84 90 91
+01 1
+.names 80 91 92
+01 1
+.names pi41 92 93
+01 1
+.names pi41 92 94
+10 1
+.names 93 94 95
+00 1
+.names pi25 79 96
+10 1
+.names pi03 pi33 97
+11 1
+.names pi36 83 98
+11 1
+.names 89 97 99
+00 1
+.names 98 99 100
+01 1
+.names 96 100 101
+01 1
+.names pi42 101 102
+01 1
+.names pi26 79 103
+10 1
+.names pi33 pi37 104
+11 1
+.names pi38 83 105
+11 1
+.names 89 104 106
+00 1
+.names 105 106 107
+01 1
+.names 103 107 108
+01 1
+.names pi43 108 109
+01 1
+.names pi03 82 110
+11 1
+.names pi00 110 111
+10 1
+.names pi34 111 112
+10 1
+.names pi27 79 113
+10 1
+.names pi09 pi59 114
+10 1
+.names 87 114 115
+11 1
+.names 112 115 116
+00 1
+.names 113 116 117
+01 1
+.names pi44 117 118
+10 1
+.names pi44 117 119
+01 1
+.names pi30 79 120
+10 1
+.names pi38 111 121
+10 1
+.names 115 120 122
+00 1
+.names 121 122 123
+01 1
+.names pi47 123 124
+10 1
+.names pi57 124 125
+00 1
+.names pi28 79 126
+10 1
+.names pi35 111 127
+10 1
+.names 115 126 128
+00 1
+.names 127 128 129
+01 1
+.names pi45 129 130
+01 1
+.names pi36 111 131
+10 1
+.names pi29 79 132
+10 1
+.names 115 131 133
+00 1
+.names 132 133 134
+01 1
+.names pi46 134 135
+01 1
+.names pi47 123 136
+01 1
+.names 130 135 137
+00 1
+.names 136 137 138
+01 1
+.names 125 138 139
+01 1
+.names pi45 129 140
+10 1
+.names pi46 134 141
+10 1
+.names 130 141 142
+01 1
+.names 140 142 143
+00 1
+.names 139 143 144
+01 1
+.names 119 144 145
+00 1
+.names pi61 145 146
+10 1
+.names pi61 145 147
+01 1
+.names 118 146 148
+00 1
+.names 147 148 149
+01 1
+.names 102 109 150
+00 1
+.names 149 150 151
+01 1
+.names pi42 101 152
+10 1
+.names pi43 108 153
+10 1
+.names 152 153 154
+00 1
+.names 102 154 155
+00 1
+.names 151 155 156
+00 1
+.names 95 156 157
+10 1
+.names 95 156 158
+01 1
+.names pi50 157 159
+10 1
+.names 158 159 160
+01 1
+.names pi02 pi09 161
+11 1
+.names pi11 pi12 162
+11 1
+.names pi13 162 163
+11 1
+.names 73 161 164
+11 1
+.names 74 164 165
+11 1
+.names 163 165 166
+11 1
+.names pi41 166 167
+11 1
+.names pi62 167 168
+01 1
+.names pi51 95 169
+11 1
+.names pi52 94 170
+11 1
+.names 169 170 171
+00 1
+.names pi23 pi49 172
+11 1
+.names pi62 167 173
+10 1
+.names pi53 92 174
+10 1
+.names 168 172 175
+00 1
+.names 173 175 176
+01 1
+.names 174 176 177
+01 1
+.names 171 177 178
+11 1
+.names 160 178 179
+01 1
+.names 118 145 180
+00 1
+.names 109 180 181
+00 1
+.names 102 181 182
+01 1
+.names 155 182 183
+00 1
+.names 95 183 184
+10 1
+.names 95 183 185
+01 1
+.names pi50 184 186
+10 1
+.names 185 186 187
+01 1
+.names 167 172 188
+00 1
+.names 174 188 189
+01 1
+.names 171 189 190
+11 1
+.names 187 190 191
+01 1
+.names 179 191 192
+00 1
+.names 179 191 193
+11 1
+.names 192 193 194
+00 1
+.names pi23 79 195
+10 1
+.names pi01 pi33 196
+11 1
+.names pi34 83 197
+11 1
+.names 89 196 198
+00 1
+.names 197 198 199
+01 1
+.names 195 199 200
+01 1
+.names pi52 200 201
+10 1
+.names 166 201 202
+00 1
+.names pi40 202 203
+10 1
+.names 93 155 204
+01 1
+.names 94 204 205
+00 1
+.names 93 182 206
+01 1
+.names 205 206 207
+10 1
+.names 93 151 208
+01 1
+.names 207 208 209
+11 1
+.names 205 208 210
+10 1
+.names 207 210 211
+01 1
+.names 209 211 212
+00 1
+.names pi53 200 213
+10 1
+.names pi40 200 214
+10 1
+.names pi40 200 215
+01 1
+.names 214 215 216
+00 1
+.names pi51 216 217
+11 1
+.names pi49 pi59 218
+11 1
+.names pi50 218 219
+10 1
+.names 213 219 220
+01 1
+.names 203 220 221
+01 1
+.names 217 221 222
+01 1
+.names 212 222 223
+01 1
+.names 206 210 224
+11 1
+.names 209 224 225
+00 1
+.names 216 225 226
+10 1
+.names pi43 pi52 227
+11 1
+.names pi53 227 228
+00 1
+.names 108 228 229
+00 1
+.names pi25 pi49 230
+11 1
+.names pi43 166 231
+11 1
+.names pi51 109 232
+10 1
+.names 153 232 233
+01 1
+.names pi50 pi61 234
+11 1
+.names 230 234 235
+01 1
+.names 231 235 236
+01 1
+.names 229 236 237
+01 1
+.names 118 237 238
+01 1
+.names 233 238 239
+01 1
+.names pi53 123 240
+10 1
+.names pi29 pi49 241
+11 1
+.names pi54 pi58 242
+11 1
+.names pi47 166 243
+11 1
+.names 124 136 244
+00 1
+.names pi57 244 245
+00 1
+.names pi57 244 246
+11 1
+.names pi50 245 247
+10 1
+.names 246 247 248
+01 1
+.names pi60 241 249
+10 1
+.names 242 249 250
+01 1
+.names 243 250 251
+01 1
+.names 240 251 252
+01 1
+.names 248 252 253
+01 1
+.names pi42 166 254
+11 1
+.names pi42 pi52 255
+11 1
+.names pi53 255 256
+00 1
+.names 101 256 257
+00 1
+.names pi24 pi49 258
+11 1
+.names 102 152 259
+00 1
+.names pi51 259 260
+11 1
+.names 254 258 261
+00 1
+.names 257 261 262
+01 1
+.names 260 262 263
+01 1
+.names 109 149 264
+00 1
+.names 153 264 265
+00 1
+.names 259 265 266
+10 1
+.names 259 265 267
+01 1
+.names pi50 266 268
+10 1
+.names 267 268 269
+01 1
+.names 263 269 270
+10 1
+.names 153 181 271
+00 1
+.names 259 271 272
+10 1
+.names 259 271 273
+01 1
+.names pi50 272 274
+10 1
+.names 273 274 275
+01 1
+.names 263 275 276
+10 1
+.names 270 276 277
+00 1
+.names 270 276 278
+11 1
+.names 277 278 279
+00 1
+.names 239 253 280
+00 1
+.names 223 280 281
+01 1
+.names 226 281 282
+01 1
+.names 194 282 283
+01 1
+.names 279 283 284
+01 1
+.names 284 miter
+0 1
+.end

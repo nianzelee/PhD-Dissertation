@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+# This file is part of BenchExec, a framework for reliable benchmarking:
+# https://github.com/sosy-lab/benchexec
+#
+# SPDX-FileCopyrightText: 2019-2020 Dirk Beyer <https://www.sosy-lab.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export PYBUILD_NAME=benchexec
+
+# Our tests need some additional files in {build_dir} to execute succesfully
+export PYBUILD_BEFORE_TEST=cp -r {dir}/bin {dir}/doc {build_dir}/
+export PYBUILD_AFTER_TEST=rm -r {build_dir}/bin {build_dir}/doc
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+	python3 setup.py build
+
+override_dh_auto_install:
+	dh_auto_install
+	python3 setup.py install --root=$(CURDIR)/debian/$(DEB_SOURCE) --install-layout=deb
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGELOG.md
+
+override_dh_installsystemd:
+	dh_installsystemd --name=benchexec-cgroup
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build
+	rm -rf *.egg-info

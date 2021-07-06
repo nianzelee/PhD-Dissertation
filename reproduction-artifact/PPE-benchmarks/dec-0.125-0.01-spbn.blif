@@ -1,0 +1,53 @@
+# PBN EPFL/random_control/dec_distill_EPFL/random_control/dec_miter written by probABC
+.model EPFL/random_control/dec_distill_EPFL/random_control/dec_miter
+# .numpi 8
+# .prob pi00 0.500000
+# .prob pi01 0.500000
+# .prob pi02 0.500000
+# .prob pi03 0.500000
+# .prob pi04 0.500000
+# .prob pi05 0.500000
+# .prob pi06 0.500000
+# .prob pi07 0.500000
+# .prob pi08 0.125000
+# .prob pi09 0.125000
+# .prob pi10 0.125000
+# .prob pi11 0.125000
+# .prob pi12 0.125000
+# .prob pi13 0.125000
+# .prob pi14 0.125000
+# .prob pi15 0.125000
+.inputs pi00
+.inputs pi01
+.inputs pi02
+.inputs pi03
+.inputs pi04
+.inputs pi05
+.inputs pi06
+.inputs pi07
+.inputs pi08
+.inputs pi09
+.inputs pi10
+.inputs pi11
+.inputs pi12
+.inputs pi13
+.inputs pi14
+.inputs pi15
+.outputs miter
+.names pi08 pi09 18
+00 1
+.names pi10 pi11 19
+00 1
+.names pi12 pi13 20
+00 1
+.names pi14 pi15 21
+00 1
+.names 20 21 22
+11 1
+.names 18 19 23
+11 1
+.names 22 23 24
+11 1
+.names 24 miter
+0 1
+.end

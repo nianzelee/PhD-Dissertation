@@ -1,0 +1,89 @@
+# PBN EPFL/random_control/ctrl_distill_EPFL/random_control/ctrl_miter written by probABC
+.model EPFL/random_control/ctrl_distill_EPFL/random_control/ctrl_miter
+# .numpi 7
+# .prob pi0 0.500000
+# .prob pi1 0.500000
+# .prob pi2 0.500000
+# .prob pi3 0.500000
+# .prob pi4 0.500000
+# .prob pi5 0.500000
+# .prob pi6 0.500000
+# .prob pi7 0.125000
+# .prob pi8 0.125000
+# .prob pi9 0.125000
+.inputs pi0
+.inputs pi1
+.inputs pi2
+.inputs pi3
+.inputs pi4
+.inputs pi5
+.inputs pi6
+.inputs pi7
+.inputs pi8
+.inputs pi9
+.outputs miter
+.names pi3 pi4 12
+00 1
+.names pi3 pi4 13
+11 1
+.names 12 13 14
+00 1
+.names pi0 14 15
+10 1
+.names pi7 15 16
+01 1
+.names pi0 12 17
+01 1
+.names pi7 15 18
+10 1
+.names 16 17 19
+00 1
+.names 18 19 20
+01 1
+.names pi1 15 21
+01 1
+.names 20 21 22
+11 1
+.names pi0 pi1 23
+11 1
+.names pi6 pi8 24
+11 1
+.names 23 24 25
+11 1
+.names 22 25 26
+00 1
+.names pi2 26 27
+00 1
+.names pi0 13 28
+11 1
+.names 12 28 29
+00 1
+.names pi1 pi2 30
+11 1
+.names pi1 pi2 31
+00 1
+.names 30 31 32
+00 1
+.names 29 32 33
+10 1
+.names 20 33 34
+01 1
+.names pi2 pi8 35
+01 1
+.names 23 35 36
+11 1
+.names 29 30 37
+01 1
+.names 20 37 38
+11 1
+.names pi9 36 39
+00 1
+.names 34 39 40
+01 1
+.names 38 40 41
+01 1
+.names 27 41 42
+01 1
+.names 42 miter
+0 1
+.end
