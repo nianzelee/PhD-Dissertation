@@ -15,32 +15,32 @@ the raw data generated from the experiments,
 and instructions for reproducing the tables and figures in the dissertation.
 
 A full reproduction of the experiments requires 16 GB of memory and several weeks of CPU time,
-but a limited subset of the benchmark tasks can be used for demonstration purposes
-if at least 4 GB of memory are available.
+but demonstrative runs can be executed if at least 4 GB of memory are available.
 
 This artifact is published at _TODO_.
-In the following, we shall assume the users of this artifact to have basic knowledge about Linux command-line interface and virtual machines.
+
+In the following, we shall assume the users of this artifact having basic knowledge about Linux command-line interface and virtual machines.
 
 ## Content
 
 This artifact contains the following items:
 
-- `README.*`: this documentation
+- `README.md`: this documentation
 - `LICENSE`: license information of the artifact
-- `Nian-Ze.Lee.Dissertation.pdf`: a preprint of the dissertation
-- `bin`: a directory containing the following binaries
-  - `abc`: the proposed [SSAT solvers](https://github.com/NTU-ALComLab/ssatABC)
-    at commit [`master:2ff8e74`](https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44)
-  - [`cachet`](https://www.cs.rochester.edu/users/faculty/kautz/Cachet/index.htm): a classic weighted model counter
-  - [`dcssat`](https://www.aaai.org/Papers/AAAI/2005/AAAI05-066.pdf): a state-of-the-art DPLL-based SSAT solver
-- `abc.rc`: a file that defines aliases used by `abc`
-- `benchexec`: a directory containing a development version of [BenchExec](https://github.com/sosy-lab/benchexec), including the tool-info modules for `approxmc`, `cachet`, and `dc-ssat`
-- `ssat-benchmarks`: a directory containing the SSAT benchmark suite used in our evaluation (at commit [`main:ea9fbae`](https://github.com/NTU-ALComLab/ssat-benchmarks/commit/ea9fbaeaeca42fc77d2b1385c94ae68273e7f7e0) of the repository [NTU-ALComLab/ssat-benchmarks](https://github.com/NTU-ALComLab/ssat-benchmarks))
-- `PPE-benchmarks`: a directory containing the PEC and MPEC benchmark suites used in our evaluation (at commit [`master:2ff8e74`](https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44) of the repository [NTU-ALComLab/ssatABC](https://github.com/NTU-ALComLab/ssatABC))
-- `test-sets`: a directory containing the XML benchmark definitions of the experiments for [BenchExec](https://github.com/sosy-lab/benchexec)
-- `thesis-data`: a directory containing the raw data generated from our experiments, XML table-definitions, and HTML tables
-- `results`: a directory where BenchExec will put the benchmarking results (the directory is empty initially)
+  dissertation
+- `Nian-Ze.Lee.Dissertation.pdf`: a preprint of the
 - `Makefile`: a file to execute the commands
+- `abc.rc`: a file that defines the aliases used by `abc`
+- `ssatABC/`: a directory containing the source code for the proposed SSAT solvers at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo]
+- `bin/`: a directory containing the following binaries
+  - `abc`: the proposed SSAT solvers BDDsp, reSSAT, and erSSAT
+  - `dcssat`: a state-of-the-art DPLL-based SSAT solver [DC-SSAT][dc-ssat]
+  - `cachet`: a classic weighted model counter [Cachet][cachet]
+- `ssat-benchmarks/`: a directory containing the SSAT benchmark suite used in our evaluation (at commit [`main:ea9fbae`][benchmark-commit] of the repository [NTU-ALComLab/ssat-benchmarks][benchmark-repo])
+- `PPE-benchmarks`: a directory containing the PEC and MPEC benchmark suites used in our evaluation (at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo])
+- `tool-info/`: a directory containing the tool-info modules for [DC-SSAT][dc-ssat], [Cachet][cachet], and [ApproxMC][approxmc]
+- `test-sets/`: a directory containing the XML benchmark definitions of the experiments for [BenchExec][benchexec]
+- `thesis-data/`: a directory containing the raw data generated from our experiments, XML table-definitions, and HTML tables
 
 This readme file will guide you through the following steps:
 
@@ -48,11 +48,11 @@ This readme file will guide you through the following steps:
 2. Performing experiments in the dissertation
 3. Analyzing the experimental data
 
-## 1. Setup
+## 1. Environmental Setup
 
 This artifact requires Linux and was tested and works best with Ubuntu 20.04.
 You could create such an environment using a virtual machine.
-In the following, we will use [Ubuntu 20.04.2](https://releases.ubuntu.com/20.04/) and [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox).
+In the following, we will use [Ubuntu 20.04.2][ubuntu] and [VirtualBox][virtualbox].
 
 ### Hardware
 
@@ -83,7 +83,7 @@ An internet connection is necessary to install other dependencies.
 
 - Git
 
-  We will use Git to download other tools, e.g., ApproxMC.
+  We will use Git to download ApproxMC.
   Please install Git with the following command:
 
   ```shell
@@ -132,17 +132,17 @@ An internet connection is necessary to install other dependencies.
   sudo swapoff -a
   ```
 
-  To benchmark `dc-ssat`, `cachet`, and `approxmc`, additional tool-info modules are required.
-  Please append the path to the provided development version of BenchExec to the environment variable `PYTHONPATH`:
+  To benchmark `dcssat`, `cachet`, and `approxmc`, additional tool-info modules are required.
+  Please append the path to the parent directory of `tool-info/` (i.e., the root directory of this artifact) to the environment variable `PYTHONPATH`:
 
   ```shell
-  export PYTHONPATH=$PYTHONPATH:`pwd`/benchexec
+  export PYTHONPATH=$PYTHONPATH:`pwd`
   ```
 
 - ApproxMC
 
   Please install ApproxMC-4.0.1 following its [instructions](https://github.com/meelgroup/approxmc#how-to-build).
-  The crucial steps are as follows:
+  The crucial steps are summarized as follows:
 
   ```
   sudo apt install build-essential cmake
@@ -162,25 +162,25 @@ An internet connection is necessary to install other dependencies.
   sudo make install
   ```
 
-  Do NOT put the directories `cryptominisat` and `approxmc` in the shared folder.
-  Otherwise, the installation will fail because of symbolic links.
+  Do NOT put the directories `cryptominisat/` and `approxmc/` in the shared folder.
+  Otherwise, the installation will fail because of missing symbolic links.
 
 ## 2. Performing Experiments
 
-We provide binaries for the following tools, either pre-compiled or contained in commit `2ff8e74` from the [NTU-ALComLab/ssatABC](https://github.com/NTU-ALComLab/ssatABC) repository:
+We provide binaries for the following tools, either pre-compiled or contained in commit [`master:2ff8e74`][code-commit] from the repository [NTU-ALComLab/ssatABC][code-repo]:
 
-- `abc`: `bddsp`, `reSSAT`, and `erSSAT`
-- `cachet`
+- `abc`: BDDsp, reSSAT, and erSSAT
 - `dcssat`
+- `cachet`
 
-The above tools should work out-of-the-box if the environment has been correctly setup.
-We leave the installation of `approxmc` to the readers.
+The above tools should work out-of-the-box if the environment has been setup correctly.
+We leave the installation of ApproxMC to the readers.
 
 Before you execute any experiment, please make sure that:
 
-- cgroup permission is correctly configured
-- Swap memory is turned off
-- PYTHONPATH is correctly configured
+1. The cgroup permission is correctly configured
+2. The swap memory is turned off
+3. The environmental variable `PYTHONPATH` is appended by the path to the parent directory of `tool-info/`
 
 ### Experimental Settings
 
@@ -188,14 +188,12 @@ The experiments in the dissertation were performed on a machine with one 2.2 GHz
 Each task was limited to a CPU core, a CPU time of 15 min, and a memory usage of 15 GB.
 To reduce the elapsed wall-clock time, the tasks were executed in parallel on 8 threads, achieved by BenchExec's command-line option `--numOfThreads <n>`.
 
-Considering the limited computational resources,
-we will use a CPU time limit of 60 sec, a memory usage of 3 GB, and a subset of the SSAT/PPE instances for demonstration purposes.
-
-It is possible to override the default settings of the time and memory limits.
-For example, suppose you want to use a time limit of 10 sec and a memory limit of 1 GB, please run:
+Given the limited computational resources,
+one may consider overriding the default settings of the time and memory limits.
+We recommend to use a CPU time limit of 60 sec and a memory usage of 3 GB for demonstration purposes:
 
 ```shell
-make timelimit=10s memlimit=1GB <Makefile target>
+make timelimit=60s memlimit=3GB <Makefile target>
 ```
 
 The raw data generated from your runs will be stored in directory `results/`.
@@ -206,61 +204,35 @@ You can type `make clean` to delete them.
 The full experiments can be reproduced by running:
 
 ```shell
-make ppe-full
+make ppe-experiments
 ```
 
-This command will invoke `bddsp`, `dcssat`, `cachet`, and `approxmc` over all PEC tasks, and `bddsp` and `dcssat` over all MPEC tasks.
-
-The demo experiments can be executed by running:
-
-```shell
-make ppe-demo
-```
+This command will invoke BDDsp, DC-SSAT, Cachet, and ApproxMC over all PEC tasks, and BDDsp and DC-SSAT over all MPEC tasks.
 
 ### RE-SSAT Experiments (Chapter 5)
 
 The full experiments can be reproduced by running:
 
 ```shell
-make ressat-full
+make ressat-experiments
 ```
 
-This command will invoke `dcssat`, `reSSAT`, and `reSSAT-b` over all RE-SSAT tasks, including `Random`, `Strategic`, and `PEC` families.
-
-The demo experiments can be executed by running:
-
-```shell
-make ressat-demo
-```
+This command will invoke DC-SSAT, reSSAT, and reSSAT-b over all RE-SSAT tasks, including `Random`, `Strategic`, and `PEC` families.
 
 ### ER-SSAT Experiments (Chapter 6)
 
 The full experiments can be reproduced by running:
 
 ```shell
-make erssat-full
+make erssat-experiments
 ```
 
-This command will invoke `dcssat`, `erSSAT`, and `erSSAT-b` over all ER-SSAT tasks, including `Random` and `Application` families.
+This command will invoke DC-SSAT, erSSAT, and erSSAT-b over all ER-SSAT tasks, including `Random` and `Application` families.
 
-The demo experiments can be executed by running:
+## 3. Analyzing Data
 
-```shell
-make erssat-demo
-```
-
-## 3. Analyzing the Experimental Data
-
-The directory `thesis-data/` contains all the raw data collected from the experiments in the dissertation.
-We can use the `table-generator` of BenchExec to plot the tables and figures in the dissertation.
-
-To generate HTML tables from your own runs, please modify the table-definition XML files in directory `thesis-data/` (via changing the filename fields) and run:
-
-```shell
-table-generator -f html --no-diff -x <path to the modified XML file>
-```
-
-The generated HTML tables can be viewed by a web browser, e.g., Firefox.
+The directory `thesis-data/` contains all of the raw data collected from the experiments and HTML tables corresponding to the figures and tables in the dissertation.
+The HTML tables were generated by the `table-generator` of BenchExec.
 
 ### PPE Experiments (Chapter 4)
 
@@ -285,3 +257,22 @@ For Figures 6.1, 6.2, 6.3 and Tables 6.4, 6.5, 6.6 in the thesis, please run:
 ```shell
 make erssat-tables
 ```
+
+To generate HTML tables from your own runs, please modify the table-definition XML files in directory `thesis-data/` (via changing the filename fields) and run:
+
+```shell
+table-generator -f html --no-diff -x <path to the modified XML file>
+```
+
+The generated HTML tables can be viewed by a web browser, e.g., Firefox.
+
+[code-repo]: https://github.com/NTU-ALComLab/ssatABC
+[code-commit]: https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44
+[benchmark-repo]: https://github.com/NTU-ALComLab/ssat-benchmarks
+[benchmark-commit]: https://github.com/NTU-ALComLab/ssat-benchmarks/commit/ea9fbaeaeca42fc77d2b1385c94ae68273e7f7e0
+[dc-ssat]: https://www.aaai.org/Papers/AAAI/2005/AAAI05-066.pdf
+[cachet]: https://www.cs.rochester.edu/users/faculty/kautz/Cachet/index.htm
+[approxmc]: https://github.com/meelgroup/approxmc
+[benchexec]: https://github.com/sosy-lab/benchexec
+[ubuntu]: https://releases.ubuntu.com/20.04/
+[virtualbox]: https://www.virtualbox.org/wiki/VirtualBox
