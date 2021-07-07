@@ -52,12 +52,12 @@ This readme file will guide you through the following steps:
 
 This artifact requires Linux and was tested and works best with Ubuntu 20.04.
 You could create such an environment using a virtual machine.
-In the following, we use [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox) and [Ubuntu 20.04.2](https://releases.ubuntu.com/20.04/).
+In the following, we will use [Ubuntu 20.04.2](https://releases.ubuntu.com/20.04/) and [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox).
 
 ### Hardware
 
-Please provide at least 4 GB of memory for the demo experiment.
-The full experiment needs 16 GB of memory.
+Please provide at least 4 GB of memory for the demo experiments.
+The full experiments need 16 GB of memory.
 A disk space of 10 GB is recommended.
 An internet connection is necessary to install other dependencies.
 
@@ -75,15 +75,15 @@ An internet connection is necessary to install other dependencies.
   sudo apt install linux-headers-`uname -r`
   ```
 
-  After restarting the VM and setting the path to the shared folder in the host OS and its name (identifier in the mount command), use the following command to mount the shared folder in the guest OS:
+  After restarting the VM and setting the path to the shared folder in the host OS and its name (an identifier used by the mount command, `shared` for example), use the following command to mount the shared folder (`~/Shared/` for example) in the guest OS:
 
   ```shell
-  sudo mount -t vboxsf -o uid=1000,gid=1000 <name> <shared folder path in guest OS>
+  sudo mount -t vboxsf -o uid=1000,gid=1000 shared ~/Shared/
   ```
 
 - Git
 
-  We will use Git to download other tools, e.g., `ApproxMC`.
+  We will use Git to download other tools, e.g., ApproxMC.
   Please install Git with the following command:
 
   ```shell
@@ -109,7 +109,7 @@ An internet connection is necessary to install other dependencies.
   sudo apt install benchexec
   ```
 
-  After the installation, add your user to the `benchexec` group:
+  After the installation, add your user account to the `benchexec` group:
 
   ```
   sudo adduser `whoami` benchexec
@@ -132,27 +132,12 @@ An internet connection is necessary to install other dependencies.
   sudo swapoff -a
   ```
 
-  To benchmark `DC-SSAT`, `Cachet`, and `ApproxMC`, additional tool-info modules are required.
-  Please append the path to the provided development version of BenchExec to the environment variable PYTHONPATH:
+  To benchmark `dc-ssat`, `cachet`, and `approxmc`, additional tool-info modules are required.
+  Please append the path to the provided development version of BenchExec to the environment variable `PYTHONPATH`:
 
   ```shell
-  export PYTHONPATH=$PYTHONPATH:/path/to/your/local/benchexec
+  export PYTHONPATH=$PYTHONPATH:`pwd`/benchexec
   ```
-
-- ABC (containing SSAT solvers `bddsp`, `reSSAT`, and `erSSAT`)
-
-  The provided binary is compiled at commit `2ff8e74` from the [ssatABC](https://github.com/NTU-ALComLab/ssatABC) repository.
-  It should work out-of-the-box.
-
-- DC-SSAT
-
-  The provided binary is contained in commit `2ff8e74` from the [ssatABC](https://github.com/NTU-ALComLab/ssatABC) repository.
-  It should work out-of-the-box.
-
-- Cachet
-
-  The provided binary is contained in commit `2ff8e74` from the [ssatABC](https://github.com/NTU-ALComLab/ssatABC) repository.
-  It should work out-of-the-box.
 
 - ApproxMC
 
@@ -182,10 +167,121 @@ An internet connection is necessary to install other dependencies.
 
 ## 2. Performing Experiments
 
+We provide binaries for the following tools, either pre-compiled or contained in commit `2ff8e74` from the [NTU-ALComLab/ssatABC](https://github.com/NTU-ALComLab/ssatABC) repository:
+
+- `abc`: `bddsp`, `reSSAT`, and `erSSAT`
+- `cachet`
+- `dcssat`
+
+The above tools should work out-of-the-box if the environment has been correctly setup.
+We leave the installation of `approxmc` to the readers.
+
+Before you execute any experiment, please make sure that:
+
+- cgroup permission is correctly configured
+- Swap memory is turned off
+- PYTHONPATH is correctly configured
+
 ### Experimental Settings
 
-### Demo Run
+The experiments in the dissertation were performed on a machine with one 2.2 GHz CPU (Intel Xeon Silver 4210) with 40 processing units and 134,616 MB of RAM.
+Each task was limited to a CPU core, a CPU time of 15 min, and a memory usage of 15 GB.
+To reduce the elapsed wall-clock time, the tasks were executed in parallel on 8 threads, achieved by BenchExec's command-line option `--numOfThreads <n>`.
 
-### Full Run
+Considering the limited computational resources,
+we will use a CPU time limit of 60 sec, a memory usage of 3 GB, and a subset of the SSAT/PPE instances for demonstration purposes.
+
+It is possible to override the default settings of the time and memory limits.
+For example, suppose you want to use a time limit of 10 sec and a memory limit of 1 GB, please run:
+
+```shell
+make timelimit=10s memlimit=1GB <Makefile target>
+```
+
+The raw data generated from your runs will be stored in directory `results/`.
+You can type `make clean` to delete them.
+
+### PPE Experiments (Chapter 4)
+
+The full experiments can be reproduced by running:
+
+```shell
+make ppe-full
+```
+
+This command will invoke `bddsp`, `dcssat`, `cachet`, and `approxmc` over all PEC tasks, and `bddsp` and `dcssat` over all MPEC tasks.
+
+The demo experiments can be executed by running:
+
+```shell
+make ppe-demo
+```
+
+### RE-SSAT Experiments (Chapter 5)
+
+The full experiments can be reproduced by running:
+
+```shell
+make ressat-full
+```
+
+This command will invoke `dcssat`, `reSSAT`, and `reSSAT-b` over all RE-SSAT tasks, including `Random`, `Strategic`, and `PEC` families.
+
+The demo experiments can be executed by running:
+
+```shell
+make ressat-demo
+```
+
+### ER-SSAT Experiments (Chapter 6)
+
+The full experiments can be reproduced by running:
+
+```shell
+make erssat-full
+```
+
+This command will invoke `dcssat`, `erSSAT`, and `erSSAT-b` over all ER-SSAT tasks, including `Random` and `Application` families.
+
+The demo experiments can be executed by running:
+
+```shell
+make erssat-demo
+```
 
 ## 3. Analyzing the Experimental Data
+
+The directory `thesis-data/` contains all the raw data collected from the experiments in the dissertation.
+We can use the `table-generator` of BenchExec to plot the tables and figures in the dissertation.
+
+To generate HTML tables from your own runs, please modify the table-definition XML files in directory `thesis-data/` (via changing the filename fields) and run:
+
+```shell
+table-generator -f html --no-diff -x <path to the modified XML file>
+```
+
+The generated HTML tables can be viewed by a web browser, e.g., Firefox.
+
+### PPE Experiments (Chapter 4)
+
+For Tables 4.7, 4.8, 4.9, 4.10 in the thesis, please run:
+
+```shell
+make ppe-tables
+```
+
+### RE-SSAT Experiments (Chapter 5)
+
+For Figures 5.1, 5.2, 5.3 and Tables 5.4, 5.5 in the thesis, please run:
+
+```shell
+make ressat-tables
+```
+
+### ER-SSAT Experiments (Chapter 6)
+
+For Figures 6.1, 6.2, 6.3 and Tables 6.4, 6.5, 6.6 in the thesis, please run:
+
+```shell
+make erssat-tables
+```
