@@ -8,10 +8,10 @@ This artifact is a reproduction package for Nian-Ze Lee's Ph.D. dissertation
 "Stochastic Boolean Satisfiability: Decision Procedures, Generalization, and Applications".
 
 It contains code and data used in the experiments of the dissertation,
-including the evaluated tools described in the paper,
-the benchmark suite used for the evaluation,
-the raw data from the experiments,
-scripts to run the experiments,
+including the evaluated tools,
+the benchmark suites,
+the scripts to run the experiments,
+the raw data generated from the experiments,
 and instructions for reproducing the tables and figures in the dissertation.
 
 A full reproduction of the experiments requires 16 GB of memory and several weeks of CPU time,
@@ -19,15 +19,34 @@ but a limited subset of the benchmark tasks can be used for demonstration purpos
 if at least 4 GB of memory are available.
 
 This artifact is published at _TODO_.
+In the following, we shall assume the users of this artifact to have basic knowledge about Linux command-line interface and virtual machines.
 
 ## Content
 
+This artifact contains the following items:
+
+- `README.*`: this documentation
+- `LICENSE`: license information of the artifact
+- `Nian-Ze.Lee.Dissertation.pdf`: a preprint of the dissertation
+- `bin`: a directory containing the following binaries
+  - `abc`: the proposed [SSAT solvers](https://github.com/NTU-ALComLab/ssatABC)
+    at commit [`master:2ff8e74`](https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44)
+  - [`cachet`](https://www.cs.rochester.edu/users/faculty/kautz/Cachet/index.htm): a classic weighted model counter
+  - [`dcssat`](https://www.aaai.org/Papers/AAAI/2005/AAAI05-066.pdf): a state-of-the-art DPLL-based SSAT solver
+- `abc.rc`: a file that defines aliases used by `abc`
+- `benchexec`: a directory containing a development version of [BenchExec](https://github.com/sosy-lab/benchexec), including the tool-info modules for `approxmc`, `cachet`, and `dc-ssat`
+- `ssat-benchmarks`: a directory containing the SSAT benchmark suite used in our evaluation (at commit [`main:ea9fbae`](https://github.com/NTU-ALComLab/ssat-benchmarks/commit/ea9fbaeaeca42fc77d2b1385c94ae68273e7f7e0) of the repository [NTU-ALComLab/ssat-benchmarks](https://github.com/NTU-ALComLab/ssat-benchmarks))
+- `PPE-benchmarks`: a directory containing the PEC and MPEC benchmark suites used in our evaluation (at commit [`master:2ff8e74`](https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44) of the repository [NTU-ALComLab/ssatABC](https://github.com/NTU-ALComLab/ssatABC))
+- `test-sets`: a directory containing the XML benchmark definitions of the experiments for [BenchExec](https://github.com/sosy-lab/benchexec)
+- `thesis-data`: a directory containing the raw data generated from our experiments, XML table-definitions, and HTML tables
+- `results`: a directory where BenchExec will put the benchmarking results (the directory is empty initially)
+- `Makefile`: a file to execute the commands
+
 This readme file will guide you through the following steps:
 
-1. Setup of CPAchecker and BenchExec
-2. Running the example tasks
-3. Performing experiments over a selected category and the complete benchmark suite
-4. Analyzing the experimental data
+1. Setup of the environment
+2. Performing experiments in the dissertation
+3. Analyzing the experimental data
 
 ## 1. Setup
 
@@ -161,9 +180,7 @@ An internet connection is necessary to install other dependencies.
   Do NOT put the directories `cryptominisat` and `approxmc` in the shared folder.
   Otherwise, the installation will fail because of symbolic links.
 
-## 2. Example Tasks
-
-## 3. Performing Experiments
+## 2. Performing Experiments
 
 ### Experimental Settings
 
@@ -171,4 +188,4 @@ An internet connection is necessary to install other dependencies.
 
 ### Full Run
 
-## 4. Analyzing the Experimental Data
+## 3. Analyzing the Experimental Data
