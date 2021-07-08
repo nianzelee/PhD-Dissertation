@@ -1,0 +1,112 @@
+<h1 id="reproduction-package">Reproduction Package</h1>
+<h2 id="stochastic-boolean-satisfiability-decision-procedures-generalization-and-applications">Stochastic Boolean Satisfiability: Decision Procedures, Generalization, and Applications</h2>
+<h2 id="abstract">Abstract</h2>
+<p>This artifact is a reproduction package for Nian-Ze Lee’s Ph.D. dissertation “Stochastic Boolean Satisfiability: Decision Procedures, Generalization, and Applications”.</p>
+<p>It contains code and data used in the experiments of the dissertation, including the evaluated tools, the benchmark suites, the scripts to run the experiments, the raw data generated from the experiments, and instructions for reproducing the tables and figures in the dissertation.</p>
+<p>A full reproduction of the experiments requires 16 GB of memory and several weeks of CPU time, but demonstrative runs can be executed if at least 4 GB of memory are available.</p>
+<p>This artifact is published at <em>TODO</em>.</p>
+<p>In the following, we shall assume the users of this artifact having basic knowledge about Linux command-line interface and virtual machines.</p>
+<h2 id="content">Content</h2>
+<p>This artifact contains the following items:</p>
+<ul>
+<li><code>README.*</code>: this documentation</li>
+<li><code>LICENSE</code>: license information of the artifact dissertation</li>
+<li><code>Nian-Ze.Lee.Dissertation.pdf</code>: a preprint of the dissertation</li>
+<li><code>Makefile</code>: a file to execute the commands</li>
+<li><code>ssatABC/</code>: a directory containing the source code for the proposed SSAT solvers at commit <a href="https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44"><code>master:2ff8e74</code></a> of the repository <a href="https://github.com/NTU-ALComLab/ssatABC">NTU-ALComLab/ssatABC</a></li>
+<li><code>bin/</code>: a directory containing the following binaries
+<ul>
+<li><code>abc</code>: the proposed SSAT solvers BDDsp, reSSAT, and erSSAT</li>
+<li><code>dcssat</code>: a state-of-the-art DPLL-based SSAT solver <a href="https://www.aaai.org/Papers/AAAI/2005/AAAI05-066.pdf">DC-SSAT</a></li>
+<li><code>cachet</code>: a classic weighted model counter <a href="https://www.cs.rochester.edu/users/faculty/kautz/Cachet/index.htm">Cachet</a></li>
+<li><code>approxmc</code>: <a href="https://github.com/meelgroup/approxmc/releases/tag/4.0.1">version 4.0.1</a> of a state-of-the-art approximate model counter <a href="https://github.com/meelgroup/approxmc">ApproxMC</a></li>
+</ul></li>
+<li><code>ssat-benchmarks/</code>: a directory containing the SSAT benchmark suite used in our evaluation (at commit <a href="https://github.com/NTU-ALComLab/ssat-benchmarks/commit/ea9fbaeaeca42fc77d2b1385c94ae68273e7f7e0"><code>main:ea9fbae</code></a> of the repository <a href="https://github.com/NTU-ALComLab/ssat-benchmarks">NTU-ALComLab/ssat-benchmarks</a>)</li>
+<li><code>PPE-benchmarks</code>: a directory containing the PEC and MPEC benchmark suites used in our evaluation (at commit <a href="https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44"><code>master:2ff8e74</code></a> of the repository <a href="https://github.com/NTU-ALComLab/ssatABC">NTU-ALComLab/ssatABC</a>)</li>
+<li><code>tool-info/</code>: a directory containing the tool-info modules for <a href="https://www.aaai.org/Papers/AAAI/2005/AAAI05-066.pdf">DC-SSAT</a>, <a href="https://www.cs.rochester.edu/users/faculty/kautz/Cachet/index.htm">Cachet</a>, and <a href="https://github.com/meelgroup/approxmc">ApproxMC</a></li>
+<li><code>test-sets/</code>: a directory containing the XML benchmark definitions of the experiments for <a href="https://github.com/sosy-lab/benchexec">BenchExec</a></li>
+<li><code>thesis-data/</code>: a directory containing the raw data generated from our experiments, XML table-definitions, and HTML tables</li>
+</ul>
+<p>This readme file will guide you through the following steps:</p>
+<ol type="1">
+<li>Setup of the environment</li>
+<li>Performing experiments in the dissertation</li>
+<li>Analyzing the experimental data</li>
+</ol>
+<h2 id="environmental-setup">1. Environmental Setup</h2>
+<p>This artifact requires Linux and was tested and works best with Ubuntu 20.04. You could create such an environment using a virtual machine. In the following, we will use <a href="https://releases.ubuntu.com/20.04/">Ubuntu 20.04.2</a> and <a href="https://www.virtualbox.org/wiki/VirtualBox">VirtualBox</a>, and all the listed commands are executed in the root directory of this artifact.</p>
+<h3 id="hardware">Hardware</h3>
+<p>Please provide at least 4 GB of memory for the demo experiments. The full experiments need 16 GB of memory. A disk space of 10 GB is recommended. An internet connection is necessary to install other dependencies.</p>
+<h3 id="software">Software</h3>
+<ul>
+<li><p>BenchExec</p>
+<p>To install BenchExec, please follow its <a href="https://github.com/sosy-lab/benchexec/blob/master/doc/INSTALL.md">installation instructions</a>. The critical steps are listed below:</p>
+<pre class="shell"><code>sudo add-apt-repository ppa:sosy-lab/benchmarking
+sudo apt install benchexec</code></pre>
+<p>After the installation, add your user account to the <code>benchexec</code> group:</p>
+<pre><code>sudo adduser `whoami` benchexec</code></pre>
+<p>For the operation of adding a user to take effect, please <strong>reboot</strong> the system afterwards. To test if the permission of cgroup needed by BenchExec is correctly configured, please run:</p>
+<pre class="shell"><code>python3 -m benchexec.check_cgroups</code></pre>
+<p>No warnings or error messages should be printed if the permission is correctly configured. If there are still permission problems, please have a look at the <a href="https://github.com/sosy-lab/benchexec/blob/master/doc/INSTALL.md">BenchExec installation documents</a>.</p>
+<p>Additional preparation for BenchExec is <strong>required after each reboot</strong>. Please turn off the swap memory using the following command:</p>
+<pre class="shell"><code>sudo swapoff -a</code></pre>
+<p>To benchmark <code>dcssat</code>, <code>cachet</code>, and <code>approxmc</code>, additional tool-info modules are required. Please append the path to the parent directory of <code>tool-info/</code> (i.e., the root directory of this artifact) to the environment variable <code>PYTHONPATH</code>:</p>
+<pre class="shell"><code>export PYTHONPATH=$PYTHONPATH:`pwd`</code></pre></li>
+<li><p>Makefile</p>
+<p>We will use Makefile to execute the scripts for experiments. Please install Makefile with the following command:</p>
+<pre class="shell"><code>sudo apt install make</code></pre></li>
+<li><p>VirtualBox Guest Additions (optional)</p>
+<p>We recommend to install VirtualBox guest additions to resize the VM window and to enable shared folders between the host and guest OS.</p>
+<p>Before installing the guest additions, please download the following packages to compile the external kernel modules:</p>
+<pre class="shell"><code>sudo apt update
+sudo apt install build-essential
+sudo apt install linux-headers-`uname -r`</code></pre>
+<p>After restarting the VM and setting the path to the shared folder in the host OS and its name (an identifier used by the mount command, <code>shared</code> for example), use the following command to mount the shared folder (<code>~/Shared/</code> for example) in the guest OS:</p>
+<pre class="shell"><code>sudo mount -t vboxsf -o uid=1000,gid=1000 shared ~/Shared/</code></pre></li>
+</ul>
+<h2 id="performing-experiments">2. Performing Experiments</h2>
+<p>We provide binaries for the following tools, either pre-compiled or contained in commit <a href="https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44"><code>master:2ff8e74</code></a> from the repository <a href="https://github.com/NTU-ALComLab/ssatABC">NTU-ALComLab/ssatABC</a>:</p>
+<ul>
+<li><code>abc</code>: BDDsp, reSSAT, and erSSAT</li>
+<li><code>dcssat</code></li>
+<li><code>cachet</code></li>
+<li><code>approxmc</code></li>
+</ul>
+<p>The above tools should work out-of-the-box if the environment has been setup correctly.</p>
+<p>Before you execute any experiment, please make sure that:</p>
+<ol type="1">
+<li>The cgroup permission is correctly configured</li>
+<li>The swap memory is turned off</li>
+<li>The environmental variable <code>PYTHONPATH</code> is appended by the path to the parent directory of <code>tool-info/</code></li>
+</ol>
+<h3 id="experimental-settings">Experimental Settings</h3>
+<p>The experiments in the dissertation were performed on a machine with one 2.2 GHz CPU (Intel Xeon Silver 4210) with 40 processing units and 134,616 MB of RAM. Each task was limited to a CPU core, a CPU time of 15 min, and a memory usage of 15 GB. To reduce the elapsed wall-clock time, the tasks were executed in parallel on 8 threads, achieved by BenchExec’s command-line option <code>--numOfThreads &lt;n&gt;</code>.</p>
+<p>Given the limited computational resources, one may consider overriding the default settings of the time and memory limits. We recommend to use a CPU time limit of 60 sec and a memory usage of 3 GB for demonstration purposes:</p>
+<pre class="shell"><code>make timelimit=60s memlimit=3GB &lt;Makefile target&gt;</code></pre>
+<p>The raw data generated from your runs will be stored in directory <code>results/</code>. You can type <code>make clean</code> to delete them.</p>
+<h3 id="ppe-experiments-chapter-4">PPE Experiments (Chapter 4)</h3>
+<p>The full experiments can be reproduced by running:</p>
+<pre class="shell"><code>make ppe-experiments</code></pre>
+<p>This command will invoke BDDsp, DC-SSAT, Cachet, and ApproxMC over all PEC tasks, and BDDsp and DC-SSAT over all MPEC tasks.</p>
+<h3 id="re-ssat-experiments-chapter-5">RE-SSAT Experiments (Chapter 5)</h3>
+<p>The full experiments can be reproduced by running:</p>
+<pre class="shell"><code>make ressat-experiments</code></pre>
+<p>This command will invoke DC-SSAT, reSSAT, and reSSAT-b over all RE-SSAT tasks, including <code>Random</code>, <code>Strategic</code>, and <code>PEC</code> families.</p>
+<h3 id="er-ssat-experiments-chapter-6">ER-SSAT Experiments (Chapter 6)</h3>
+<p>The full experiments can be reproduced by running:</p>
+<pre class="shell"><code>make erssat-experiments</code></pre>
+<p>This command will invoke DC-SSAT, erSSAT, and erSSAT-b over all ER-SSAT tasks, including <code>Random</code> and <code>Application</code> families.</p>
+<h2 id="analyzing-data">3. Analyzing Data</h2>
+<p>The directory <code>thesis-data/</code> contains all of the raw data collected from the experiments and HTML tables corresponding to the figures and tables in the dissertation. The HTML tables were generated by the <code>table-generator</code> of BenchExec.</p>
+<h3 id="ppe-experiments-chapter-4-1">PPE Experiments (Chapter 4)</h3>
+<p>For Tables 4.7, 4.8, 4.9, 4.10 in the thesis, please run:</p>
+<pre class="shell"><code>make ppe-tables</code></pre>
+<h3 id="re-ssat-experiments-chapter-5-1">RE-SSAT Experiments (Chapter 5)</h3>
+<p>For Figures 5.1, 5.2, 5.3 and Tables 5.4, 5.5 in the thesis, please run:</p>
+<pre class="shell"><code>make ressat-tables</code></pre>
+<h3 id="er-ssat-experiments-chapter-6-1">ER-SSAT Experiments (Chapter 6)</h3>
+<p>For Figures 6.1, 6.2, 6.3 and Tables 6.4, 6.5, 6.6 in the thesis, please run:</p>
+<pre class="shell"><code>make erssat-tables</code></pre>
+<p>To generate HTML tables from your own runs, please modify the table-definition XML files in directory <code>thesis-data/</code> (via changing the filename fields) and run:</p>
+<pre class="shell"><code>table-generator -f html --no-diff -x &lt;path to the modified XML file&gt;</code></pre>
+<p>The generated HTML tables can be viewed by a web browser, e.g., Firefox.</p>

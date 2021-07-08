@@ -19,7 +19,7 @@ class Tool(benchexec.tools.template.BaseTool2):
     """
 
     def executable(self, tool_locator):
-        return tool_locator.find_executable("approxmc")
+        return tool_locator.find_executable("approxmc", subdir="bin")
 
     def name(self):
         return "ApproxMC"

@@ -25,17 +25,17 @@ In the following, we shall assume the users of this artifact having basic knowle
 
 This artifact contains the following items:
 
-- `README.md`: this documentation
+- `README.*`: this documentation
 - `LICENSE`: license information of the artifact
   dissertation
-- `Nian-Ze.Lee.Dissertation.pdf`: a preprint of the
+- `Nian-Ze.Lee.Dissertation.pdf`: a preprint of the dissertation
 - `Makefile`: a file to execute the commands
-- `abc.rc`: a file that defines the aliases used by `abc`
 - `ssatABC/`: a directory containing the source code for the proposed SSAT solvers at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo]
 - `bin/`: a directory containing the following binaries
   - `abc`: the proposed SSAT solvers BDDsp, reSSAT, and erSSAT
   - `dcssat`: a state-of-the-art DPLL-based SSAT solver [DC-SSAT][dc-ssat]
   - `cachet`: a classic weighted model counter [Cachet][cachet]
+  - `approxmc`: [version 4.0.1][approxmc-4.0.1] of a state-of-the-art approximate model counter [ApproxMC][approxmc]
 - `ssat-benchmarks/`: a directory containing the SSAT benchmark suite used in our evaluation (at commit [`main:ea9fbae`][benchmark-commit] of the repository [NTU-ALComLab/ssat-benchmarks][benchmark-repo])
 - `PPE-benchmarks`: a directory containing the PEC and MPEC benchmark suites used in our evaluation (at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo])
 - `tool-info/`: a directory containing the tool-info modules for [DC-SSAT][dc-ssat], [Cachet][cachet], and [ApproxMC][approxmc]
@@ -52,7 +52,7 @@ This readme file will guide you through the following steps:
 
 This artifact requires Linux and was tested and works best with Ubuntu 20.04.
 You could create such an environment using a virtual machine.
-In the following, we will use [Ubuntu 20.04.2][ubuntu] and [VirtualBox][virtualbox].
+In the following, we will use [Ubuntu 20.04.2][ubuntu] and [VirtualBox][virtualbox], and all the listed commands are executed in the root directory of this artifact.
 
 ### Hardware
 
@@ -62,42 +62,6 @@ A disk space of 10 GB is recommended.
 An internet connection is necessary to install other dependencies.
 
 ### Software
-
-- VirtualBox Guest Additions (optional)
-
-  We recommend to install VirtualBox guest additions to enable shared folders between the host and guest OS.
-
-  Before installing the guest additions, please download the following packages to compile the external kernel modules:
-
-  ```shell
-  sudo apt update
-  sudo apt install build-essential
-  sudo apt install linux-headers-`uname -r`
-  ```
-
-  After restarting the VM and setting the path to the shared folder in the host OS and its name (an identifier used by the mount command, `shared` for example), use the following command to mount the shared folder (`~/Shared/` for example) in the guest OS:
-
-  ```shell
-  sudo mount -t vboxsf -o uid=1000,gid=1000 shared ~/Shared/
-  ```
-
-- Git
-
-  We will use Git to download ApproxMC.
-  Please install Git with the following command:
-
-  ```shell
-  sudo apt install git
-  ```
-
-- Makefile
-
-  We will use Makefile to execute the scripts for experiments.
-  Please install Makefile with the following command:
-
-  ```shell
-  sudo apt install make
-  ```
 
 - BenchExec
 
@@ -139,31 +103,32 @@ An internet connection is necessary to install other dependencies.
   export PYTHONPATH=$PYTHONPATH:`pwd`
   ```
 
-- ApproxMC
+- Makefile
 
-  Please install ApproxMC-4.0.1 following its [instructions](https://github.com/meelgroup/approxmc#how-to-build).
-  The crucial steps are summarized as follows:
+  We will use Makefile to execute the scripts for experiments.
+  Please install Makefile with the following command:
 
-  ```
-  sudo apt install build-essential cmake
-  sudo apt install zlib1g-dev libboost-program-options-dev libm4ri-dev libgmp-dev
-  git clone https://github.com/msoos/cryptominisat
-  cd cryptominisat
-  mkdir build && cd build
-  cmake ..
-  make
-  sudo make install
-  cd ../..
-  git clone https://github.com/meelgroup/approxmc/
-  cd approxmc
-  mkdir build && cd build
-  cmake ..
-  make
-  sudo make install
+  ```shell
+  sudo apt install make
   ```
 
-  Do NOT put the directories `cryptominisat/` and `approxmc/` in the shared folder.
-  Otherwise, the installation will fail because of missing symbolic links.
+- VirtualBox Guest Additions (optional)
+
+  We recommend to install VirtualBox guest additions to resize the VM window and to enable shared folders between the host and guest OS.
+
+  Before installing the guest additions, please download the following packages to compile the external kernel modules:
+
+  ```shell
+  sudo apt update
+  sudo apt install build-essential
+  sudo apt install linux-headers-`uname -r`
+  ```
+
+  After restarting the VM and setting the path to the shared folder in the host OS and its name (an identifier used by the mount command, `shared` for example), use the following command to mount the shared folder (`~/Shared/` for example) in the guest OS:
+
+  ```shell
+  sudo mount -t vboxsf -o uid=1000,gid=1000 shared ~/Shared/
+  ```
 
 ## 2. Performing Experiments
 
@@ -172,9 +137,9 @@ We provide binaries for the following tools, either pre-compiled or contained in
 - `abc`: BDDsp, reSSAT, and erSSAT
 - `dcssat`
 - `cachet`
+- `approxmc`
 
 The above tools should work out-of-the-box if the environment has been setup correctly.
-We leave the installation of ApproxMC to the readers.
 
 Before you execute any experiment, please make sure that:
 
@@ -273,6 +238,7 @@ The generated HTML tables can be viewed by a web browser, e.g., Firefox.
 [dc-ssat]: https://www.aaai.org/Papers/AAAI/2005/AAAI05-066.pdf
 [cachet]: https://www.cs.rochester.edu/users/faculty/kautz/Cachet/index.htm
 [approxmc]: https://github.com/meelgroup/approxmc
+[approxmc-4.0.1]: https://github.com/meelgroup/approxmc/releases/tag/4.0.1
 [benchexec]: https://github.com/sosy-lab/benchexec
 [ubuntu]: https://releases.ubuntu.com/20.04/
 [virtualbox]: https://www.virtualbox.org/wiki/VirtualBox
