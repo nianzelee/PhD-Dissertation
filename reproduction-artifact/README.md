@@ -4,20 +4,20 @@
 
 ## Abstract
 
-This artifact is a reproduction package for Nian-Ze Lee's Ph.D. dissertation
+This artifact is a reproduction package for Nian-Ze Lee's doctoral dissertation
 "Stochastic Boolean Satisfiability: Decision Procedures, Generalization, and Applications".
 
 It contains code and data used in the experiments of the dissertation,
 including the evaluated tools,
-the benchmark suites,
+the benchmark sets,
 the scripts to run the experiments,
-the raw data generated from the experiments,
+the raw data collected from the experiments,
 and instructions for reproducing the tables and figures in the dissertation.
 
 A full reproduction of the experiments requires 16 GB of memory and several weeks of CPU time,
 but demonstrative runs can be executed if at least 4 GB of memory are available.
 
-This artifact is published at _TODO_.
+This artifact is published on Zenodo ([DOI 10.5281/zenodo.5084147][artifact-doi]).
 
 In the following, we shall assume the users of this artifact having basic knowledge about Linux command-line interface and virtual machines.
 
@@ -27,7 +27,6 @@ This artifact contains the following items:
 
 - `README.*`: this documentation
 - `LICENSE`: license information of the artifact
-  dissertation
 - `Nian-Ze.Lee.Dissertation.pdf`: a preprint of the dissertation
 - `Makefile`: a file to execute the commands
 - `ssatABC/`: a directory containing the source code for the proposed SSAT solvers at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo]
@@ -36,9 +35,9 @@ This artifact contains the following items:
   - `dcssat`: a state-of-the-art DPLL-based SSAT solver [DC-SSAT][dc-ssat]
   - `cachet`: a classic weighted model counter [Cachet][cachet]
   - `approxmc`: [version 4.0.1][approxmc-4.0.1] of a state-of-the-art approximate model counter [ApproxMC][approxmc]
-- `ssat-benchmarks/`: a directory containing the SSAT benchmark suite used in our evaluation (at commit [`main:ea9fbae`][benchmark-commit] of the repository [NTU-ALComLab/ssat-benchmarks][benchmark-repo])
-- `PPE-benchmarks`: a directory containing the PEC and MPEC benchmark suites used in our evaluation (at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo])
-- `tool-info/`: a directory containing the tool-info modules for [DC-SSAT][dc-ssat], [Cachet][cachet], and [ApproxMC][approxmc]
+- `ssat-benchmarks/`: a directory containing the SSAT benchmark set used in our evaluation (at commit [`main:ea9fbae`][benchmark-commit] of the repository [NTU-ALComLab/ssat-benchmarks][benchmark-repo])
+- `PPE-benchmarks/`: a directory containing the PEC and MPEC benchmark sets used in our evaluation (at commit [`master:2ff8e74`][code-commit] of the repository [NTU-ALComLab/ssatABC][code-repo])
+- `tool-info/`: a directory containing the tool-info modules used by [BenchExec][benchexec] for the evaluated tools
 - `test-sets/`: a directory containing the XML benchmark definitions of the experiments for [BenchExec][benchexec]
 - `thesis-data/`: a directory containing the raw data generated from our experiments, XML table-definitions, and HTML tables
 
@@ -59,7 +58,7 @@ In the following, we will use [Ubuntu 20.04.2][ubuntu] and [VirtualBox][virtualb
 Please provide at least 4 GB of memory for the demo experiments.
 The full experiments need 16 GB of memory.
 A disk space of 10 GB is recommended.
-An internet connection is necessary to install other dependencies.
+An internet connection is necessary to install required dependencies.
 
 ### Software
 
@@ -89,14 +88,14 @@ An internet connection is necessary to install other dependencies.
   No warnings or error messages should be printed if the permission is correctly configured.
   If there are still permission problems, please have a look at the [BenchExec installation documents](https://github.com/sosy-lab/benchexec/blob/master/doc/INSTALL.md).
 
-  Additional preparation for BenchExec is **required after each reboot**.
+  Extra preparation for BenchExec is **required after each reboot**.
   Please turn off the swap memory using the following command:
 
   ```shell
   sudo swapoff -a
   ```
 
-  To benchmark `dcssat`, `cachet`, and `approxmc`, additional tool-info modules are required.
+  Additional tool-info modules are required to perform the experiments.
   Please append the path to the parent directory of `tool-info/` (i.e., the root directory of this artifact) to the environment variable `PYTHONPATH`:
 
   ```shell
@@ -114,7 +113,7 @@ An internet connection is necessary to install other dependencies.
 
 - VirtualBox Guest Additions (optional)
 
-  We recommend to install VirtualBox guest additions to resize the VM window and to enable shared folders between the host and guest OS.
+  We recommend to install VirtualBox guest additions to have some convenient features, including resizable VM windows and shared folders/clipboards between the host and guest OS.
 
   Before installing the guest additions, please download the following packages to compile the external kernel modules:
 
@@ -197,7 +196,10 @@ This command will invoke DC-SSAT, erSSAT, and erSSAT-b over all ER-SSAT tasks, i
 ## 3. Analyzing Data
 
 The directory `thesis-data/` contains all of the raw data collected from the experiments and HTML tables corresponding to the figures and tables in the dissertation.
-The HTML tables were generated by the `table-generator` of BenchExec.
+The HTML tables were generated by the `table-generator` of BenchExec and can be viewed by a web browser, e.g., Firefox.
+
+To read the log file of a task, please click on the status of that task.
+If the log file cannot be displayed, please configure your browser as suggested by the HTML table.
 
 ### PPE Experiments (Chapter 4)
 
@@ -229,8 +231,7 @@ To generate HTML tables from your own runs, please modify the table-definition X
 table-generator -f html --no-diff -x <path to the modified XML file>
 ```
 
-The generated HTML tables can be viewed by a web browser, e.g., Firefox.
-
+[artifact-doi]: https://doi.org/10.5281/zenodo.5084147
 [code-repo]: https://github.com/NTU-ALComLab/ssatABC
 [code-commit]: https://github.com/NTU-ALComLab/ssatABC/commit/2ff8e7436222695679e17a769d515143507cea44
 [benchmark-repo]: https://github.com/NTU-ALComLab/ssat-benchmarks
