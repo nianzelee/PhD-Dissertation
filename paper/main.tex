@@ -28,20 +28,32 @@
 % Double-line spacing for the rest (default)
 \renewcommand{\baselinestretch}{2.0}
 
+\includepdf[offset=2.8cm -2cm]{dissertation-approval.pdf}
+
 \frontmatter
-\begin{abstracten}{\myenglishkeywords}
-  \input{abstract-en.tex}
-\end{abstracten}
-\begin{abstractzh}{\mychinesekeywords}
-  \input{abstract-zh.tex}
-\end{abstractzh}
 \begin{acknowledgements}
   \input{acknowledge.tex}
 \end{acknowledgements}
+\begin{abstractzh}{\mychinesekeywords}
+  \input{abstract-zh.tex}
+\end{abstractzh}
+\begin{abstracten}{\myenglishkeywords}
+  \input{abstract-en.tex}
+\end{abstracten}
 
 %---------------------------------------------------
 
 \tableofcontents
+% Add list of figures (handled by package tocbibind)
+\listoffigures
+% Add list of tables (handled by package tocbibind)
+\listoftables
+% Add list of algorithms (manually register this list to ToC)
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+
 \mainmatter
 \input{introduction.tex}
 \input{related-work.tex}
@@ -54,15 +66,6 @@
 
 %---------------------------------------------------
 
-% Add list of figures (handled by package tocbibind)
-\listoffigures
-% Add list of tables (handled by package tocbibind)
-\listoftables
-% Add list of algorithms (manually register this list to ToC)
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Algorithms}
-\listofalgorithms
 % Add bibliography (handled by package tocbibind)
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{nzlee,prob}

@@ -207,7 +207,7 @@
 % frontmatter environments
 \newenvironment{acknowledgements}
 {
-  \addcontentsline{toc}{chapter}{\numberline{}\ackname@toc}
+  \addcontentsline{toc}{chapter}{\ackname@toc}
 
   \begin{center}
     {\Large\bf \ackname@title}
@@ -231,7 +231,7 @@
 \newcommand{\abstract@zh@keywords}{}
 \newenvironment{abstractzh}[1]
 {
-  \addcontentsline{toc}{chapter}{\numberline{}Chinese Abstract}
+  \addcontentsline{toc}{chapter}{Chinese Abstract}
   \renewcommand{\abstract@zh@keywords}{#1}
 
   \begin{CJK}{UTF8}{bkai}
@@ -264,7 +264,7 @@
 \newcommand{\abstract@en@keywords}{}
 \newenvironment{abstracten}[1]
 {
-  \addcontentsline{toc}{chapter}{\numberline{}Abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
   \renewcommand{\abstract@en@keywords}{#1}
 
   \begin{center}\Large\bf
