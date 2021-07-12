@@ -46,13 +46,13 @@ and the rest are randomly quantified with probability $0.37$.
     \caption{The families of the application formulas}
     \label{tbl:exist-random-ssat-families}
     \begin{tabular}{c|c|c}
-        Family               & Description                                            & Number       \\
+        Family               & Description                                               & Number       \\
         \hline
-        \textit{Toilet-A}    & Adapted from exist-forall QBFs~\cite{Narizzano2006}    & \ntoilet     \\
-        \textit{Conformant}  & Adapted from exist-forall QBFs~\cite{Narizzano2006}    & \nconformant \\
-        \textit{Sand-Castle} & A probabilistic planning problem~\cite{Majercik1998}   & \nsandcastle \\
-        \textit{Max-Count}   & Adapted from maximum model counting~\cite{Fremont2017} & \nmaxcount   \\
-        \textit{MPEC}        & Maximum probabilistic equivalence checking             & \nmpec       \\
+        \textit{Toilet-A}    & Adapted from exist-forall-exist QBFs~\cite{Narizzano2006} & \ntoilet     \\
+        \textit{Conformant}  & Adapted from exist-forall-exist QBFs~\cite{Narizzano2006} & \nconformant \\
+        \textit{Sand-Castle} & A probabilistic planning problem~\cite{Majercik1998}      & \nsandcastle \\
+        \textit{Max-Count}   & Adapted from maximum model counting~\cite{Fremont2017}    & \nmaxcount   \\
+        \textit{MPEC}        & Maximum probabilistic equivalence checking                & \nmpec       \\
     \end{tabular}
 \end{table}
 
@@ -85,6 +85,19 @@ and assumed~\measurement.
 
 \subsubsection{Random $k$-CNF formulas}
 
+\cref{fig:erssat-quantile-random} shows the quantile plots regarding CPU time and memory usage
+of the SSAT instances derived from the random $k$-CNF formulas.
+A data point $(x,y)$ in a quantile plot indicates that
+there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
+In~\cref{fig:erssat-quantile-cputime-random},
+we observe that \erssat solved a similar amount of formulas as \dcssat did.
+Moreover, the clause-strengthening heuristics improve the performance of \erssat a lot,
+as can be seen from the huge difference between \erssat and \erssatb.
+On the other hand,
+\cref{fig:erssat-quantile-memory-random} shows that \dcssat used much more memory than \erssat.
+This can be attributed to the subformula caching of \dcssat.
+Instead, \erssat only builds BDDs for cofactored formulas, which confined its memory footprint.
+
 \begin{figure*}[hp]
     \centering
     \subfloat[CPU time]{
@@ -98,19 +111,6 @@ and assumed~\measurement.
     \caption{Quantile plots of random $k$-CNF formulas}
     \label{fig:erssat-quantile-random}
 \end{figure*}
-
-\cref{fig:erssat-quantile-random} shows the quantile plots regarding CPU time and memory usage
-of the SSAT instances derived from the random $k$-CNF formulas.
-A data point $(x,y)$ in a quantile plot indicates that
-there are $x$ formulas processed by the respective algorithm within a resource constraint of $y$.
-In~\cref{fig:erssat-quantile-cputime-random},
-we observe that \erssat solved a similar amount of formulas as \dcssat did.
-Moreover, the clause-strengthening heuristics improve the performance of \erssat a lot,
-as can be seen from the huge difference between \erssat and \erssatb.
-On the other hand,
-\cref{fig:erssat-quantile-memory-random} shows that \dcssat used much more memory than \erssat.
-This can be attributed to the subformula caching of \dcssat.
-Instead, \erssat only builds BDDs for cofactored formulas, which confined its memory footprint.
 
 \subsubsection{Application formulas}
 
@@ -240,7 +240,7 @@ when the agent chooses to \textit{dig} a moat or \textit{erect} a castle, respec
 As the state-transition mechanism is the same for every stage except for the variables recording the internal state,
 we use the superscripts to indicate the stage indices.
 We found that the \textit{Sand-Castle} problem has the following property:
-the set of clauses $\pf_d^{(i)}$ (resp. $\pf_e^{(i)}$) will be selected
+the clause set $\pf_d^{(i)}$ (resp. $\pf_e^{(i)}$) will be selected
 if and only if the agent chooses to dig a moat (resp. erect a castle) at stage~$i$.
 In other words, each strategy of the agent (i.e., an assignment to the existentially quantified variables)
 will select a distinct set of clauses.
@@ -257,7 +257,7 @@ because it had an additional trial but always ended in vain.
 
 On the other hand, recall that \dcssat is tailored to exploit the structural characteristics of planning problems.
 The \textit{Sand-Castle} formulas favors \dcssat, as the subformulas are essentially the same across the stages.
-It is not surprising the formula caching and divide-and-conquer method work well with these formulas.
+It is not surprising the formula caching and divide-and-conquer method works well with these formulas.
 
 \subsubsection{Approximate solving}
 
@@ -352,4 +352,4 @@ The above results on the random and application formulas suggest that:
     \item The proposed solver \erssat is not as good as \dcssat at exactly solving the application formulas, which can be attributed to the overhead caused by the clause-strengthening heuristics.
     \item The proposed solver \erssat is good at deriving tight lower bounds for large formulas. This approximation ability is especially valuable when the size of a formula is beyond the capability of the state-of-the-art exact solver.
 \end{itemize}
-To sum up, our evaluation results demonstrate the unique value of the proposed clause-containment learning.
+To sum up, our experimental results demonstrate the unique value of the proposed clause-containment learning.

@@ -14,8 +14,7 @@ where each $\dep{y_j}\subseteq\{x_1,\ldots,x_n\}$ denotes the set of variables t
 and Boolean formula $\pf$ over $V$ is quantifier-free.
 We denote the set $\{x_1,\ldots,x_n\}$ (resp. $\{y_1,\ldots,y_m\}$) of randomly (resp. existentially) quantified variables of $\Qf$ by $\rvs$ (resp. $\evs$).
 
-Given a DSSAT formula $\Qf$ and a set of Skolem functions
-$\skf=\{f_j:\av{\dep{y_j}}\mapsto\booldom\ |\ j=1,\ldots,m\}$,
+Given a DSSAT formula $\Qf$ and a set $\skf=\{f_j:\av{\dep{y_j}}\mapsto\booldom\ |\ j=1,\ldots,m\}$ of Skolem functions,
 the satisfying probability $\spb{\pcf{\Qf}{\skf}}$ of $\Qf$ with respect to $\skf$ is defined as follows:
 \begin{align}\label{eq:dssat-probability}
     \spb{\pcf{\Qf}{\skf}}=\spb{\random{p_1}x_1,\ldots,\random{p_n}x_n.\pcf{\pf}{\skf}},
@@ -42,7 +41,7 @@ which subsumes both QBF and SSAT.
 In the extended SSAT,
 besides the four rules discussed in~\cref{sect:background-ssat} to calculate the satisfying probability of an SSAT formula $\Qf$,
 the following rule is added:
-$\spb{\Qf}=\min\{\spb{\ncf{\Qf}{x}},\spb{\pcf{\Qf}{x}}\}$, if $x$ is universally quantified.
+$\spb{\Qf}=\min\{\spb{\ncf{\Qf}{x}},\spb{\pcf{\Qf}{x}}\}$, if the outermost variable $x$ is universally quantified.
 
 Similarly, an \textit{extended} DSSAT (XDSSAT) formula $\Qf$ over a set of variables
 $\{x_1,\ldots,x_n,y_1,\ldots,y_m,z_1,\ldots,z_l\}$ is of the form:
@@ -52,12 +51,12 @@ $\{x_1,\ldots,x_n,y_1,\ldots,y_m,z_1,\ldots,z_l\}$ is of the form:
 where $Q_i v_i$ equals either $\random{p_k} x_k$ or $\forall z_k$ for some $k$ with $v_i \neq v_j$ for $i \neq j$,
 and each $\dep{y_j}\subseteq\{x_1,\ldots,x_n,z_1,\ldots,z_l\}$ denotes the set of randomly and universally quantified variables that variable $y_j$ depends on.
 
-The satisfying probability of an XDSSAT formula $\Qf$ with respect to a set of Skolem functions
-$\skf=\{f_j:\av{\dep{y_j}}\mapsto\booldom\ |\ j=1,\ldots,m\}$,
+The satisfying probability of an XDSSAT formula $\Qf$
+with respect to a set $\skf=\{f_j:\av{\dep{y_j}}\mapsto\booldom\ |\ j=1,\ldots,m\}$ of Skolem functions,
 denoted by $\spb{\pcf{\Qf}{\skf}}$,
 equals the satisfying probability of the XSSAT formula $Q_1 v_1,\ldots,Q_{n+l} v_{n+l}.\pcf{\pf}{\skf}$.
 This satisfiability definition subsumes those for DQBF (\cref{eq:dssat-dqbf-satisfiable}) and DSSAT (\cref{eq:dssat-probability}),
-where the variables preceding the existential quantifiers in the prefixes are solely universally or randomly quantified.
+where the variables preceding the existential quantifiers in the prefixes are solely universally or randomly quantified, respectively.
 
 Note that in the above extension the Henkin-type quantifiers are only defined for the existential variables.
 Although the extended formulation increases practical expressive succinctness,

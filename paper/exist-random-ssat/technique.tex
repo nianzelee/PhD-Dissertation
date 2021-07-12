@@ -23,7 +23,7 @@ The proposed learning technique is based on the following key observation.
 Inspired by~\cref{prop:erssat-contain},
 we propose clause-containment learning based on clause selection.
 After cofactoring $\pf$ with an arbitrary assignment $\as_1$ over $X$,
-a set of clauses $\pcf{\pf}{\as_1}$ is selected.
+a set $\pcf{\pf}{\as_1}$ of clauses is selected.
 For any other assignment $\as_2$ selecting all clauses from $\pcf{\pf}{\as_1}$,
 i.e., $\pcf{\pf}{\as_1}\subseteq\pcf{\pf}{\as_2}$,
 we have $\pcf{\pf}{\as_2}\limply\pcf{\pf}{\as_1}$.
@@ -38,7 +38,7 @@ To block the assignment $\as_2$,
 we enforce at least one of the clauses in $\pcf{\pf}{\as_1}$ to be deselected.
 Recall that the selection variable $\sv{C}$ of clause $C$ valuates to $\bot$ if and only if $C$ is deselected.
 Therefore, the disjunction of the negation of the selection variables for the clauses in $\pcf{\pf}{\as_1}$ is deduced as a learnt clause to record this information.
-The above idea gives rise to~\cref{alg:erssat} for E-MAJSAT formulas.
+The above idea gives rise to~\cref{alg:erssat} for solving E-MAJSAT formulas.
 (\Cref{code:erssat-subsume-table,code:erssat-minimal-clauses,code:erssat-subsume-clauses,code:erssat-discard-literals} describe the clause-strengthening heuristics of the proposed algorithm, which will be discussed later.)
 
 \begin{algorithm}[p]
@@ -76,12 +76,12 @@ If a variable $e$ in $X$ is pure in $\pf$,
 assigning the literals of $e$ to $\top$ deselects the clauses containing $e$,
 and does not affect other clauses.
 Because the conditional satisfying probability is greater if less clauses are selected,
-we can safely assert pure $X$ variables without missing the optimizing solution.
+we can safely assert pure $X$ variables without missing the optimal solution.
 
 The selection relation is used to select different assignments $\as$ over $X$.
 If $\pcf{\pf}{\as}$ is satisfiable,
 a weighted model counter is called to compute the conditional satisfying probability $\spb{\random{} Y.\pcf{\pf}{\as}}$.
-The blocking clause $C_L$ derived from the containment-learning technique is then conjoined with $\select$ to prevent clauses in $\pcf{\pf}{\as}$ being simultaneously selected again.
+The blocking clause $C_L$ derived from the containment-learning technique is then conjoined with $\select$ to prevent clauses in $\pcf{\pf}{\as}$ from being simultaneously selected again.
 
 On the other hand, suppose $\pcf{\pf}{\as}$ is unsatisfiable.
 We can deduce a conjunction of literals from $\as$ responsible for the conflict by using a SAT solver to analyze the conflict~\cite{Een2003Solver,Een2003Incremental}.
@@ -127,22 +127,22 @@ which equals the satisfying probability of the input E-MAJSAT formula.
     The solving process is summarized in~\cref{tbl:erssat-solve-example}.
     We first explore $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$, which selects $C_1$ and $C_2$.
     The algorithm derives $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_1}}=0.75$ by invoking a weighted model counter in~\cref{code:erssat-wmc}.
-    The learnt clause $C_L=(\lnot s_1 \lor \lnot s_2)$ is conjoined with $\select$ to prevent $C_1$ and $C_2$ being selected simultaneously again.
+    The learnt clause $C_L=(\lnot s_1 \lor \lnot s_2)$ is conjoined with $\select$ to prevent $C_1$ and $C_2$ from being selected simultaneously again.
 
     Suppose the second explored assignment $\as_2$ is $\lnot e_1 e_2 \lnot e_3$,
     which selects $C_1$.
     The weighted model counter returns $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_2}}=0.75$,
-    and the learnt clause $C_L=(\lnot s_1)$ is conjoined with $\select$ to prevent $C_1$ being selected again.
+    and the learnt clause $C_L=(\lnot s_1)$ is conjoined with $\select$ to prevent $C_1$ from being selected again.
 
     Let the third tried assignment $\as_3$ be $e_1 e_2 \lnot e_3$,
     which selects $C_4$.
     The weighted model counter gives $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_3}}=0.5$,
-    and the learnt clause $C_L=(\lnot s_4)$ is conjoined with $\select$ to prevent $C_4$ being selected again.
+    and the learnt clause $C_L=(\lnot s_4)$ is conjoined with $\select$ to prevent $C_4$ from being selected again.
 
     Let the fourth tried assignment $\as_4$ be $e_1 e_2 e_3$,
     which selects $C_3$.
     The conditional satisfying probability $\spb{\random{0.5} r_1,\random{0.5} r_2,\random{0.5} r_3.\pcf{\pf}{\as_4}}$ equals $0.75$,
-    and the learnt clause $C_L=(\lnot s_3)$ is conjoined with $\select$ to prevent $C_3$ being selected again.
+    and the learnt clause $C_L=(\lnot s_3)$ is conjoined with $\select$ to prevent $C_3$ from being selected again.
 
     Suppose the fifth tried assignment $\as_5$ is $e_1 \lnot e_2 e_3$,
     which deselects every clause, making $\pcf{\pf}{\as_5}=\top$ and
@@ -183,11 +183,11 @@ Notice that the length of a learnt clause equals the number of selected clauses.
 Therefore, selecting fewer clauses gives a stronger learnt clause,
 as well as a higher conditional satisfying probability.
 
-Starting from a set of initially selected clauses $\pcf{\pf}{\as}$,
+Starting from a set $\pcf{\pf}{\as}$ of initially selected clauses,
 the first heuristic \textit{minimal clause selection} decreases the number of selected clauses by making the set of initially selected clauses minimal as follows.
-A learnt clause $C_S=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}$ is conjoined with the selection relation $\select(X,S)$ to avoid clauses in $\pcf{\pf}{\as}$ being selected simultaneously again.
+A learnt clause $C_S=\bigvee\limits_{C\in\pcf{\pf}{\as}}\lnot\sv{C}$ is conjoined with the selection relation $\select(X,S)$ to avoid clauses in $\pcf{\pf}{\as}$ from being selected simultaneously again.
 A SAT solver is invoked to solve $\select\land C_S$ under an assumption $\mu=\bigwedge\limits_{C\notin\pcf{\pf}{\as}}\lnot\sv{C}$.
-The assumption $\mu$ prevents originally deselected clauses being selected.
+The assumption $\mu$ prevents originally deselected clauses from being selected.
 If $\select\land C_S$ under the assumption $\mu$ is satisfied by some assignment $\as'$ over $X$,
 the set of clauses selected by $\as'$ must be a proper subset of that selected by $\as$.
 On the other hand, if $\select\land C_S$ under the assumption $\mu$ is unsatisfiable,
@@ -220,9 +220,9 @@ The following example illustrates how this technique improves the solving effici
     The first tried assignment $\as_1=\lnot e_1 \lnot e_2 \lnot e_3$ selects $C_1$ and $C_2$.
     The set of selected clauses is made minimal as follows.
     The subroutine $\texttt{SelectMinimalClauses}$ conjoins the selection relation with a learnt clause $(\lnot \sv{1} \lor \lnot \sv{2})$,
-    which prevents clauses $C_1$ and $C_2$ being simultaneously selected again.
+    which prevents clauses $C_1$ and $C_2$ from being simultaneously selected again.
     The satisfiability of the selection relation $\select\land(\lnot \sv{1} \lor \lnot \sv{2})$ is tested under an assumption $\lnot \sv{3} \lnot \sv{4}$,
-    which avoids the originally deselected clause $C_3$ and $C_4$ being selected.
+    which avoids the originally deselected clause $C_3$ and $C_4$ from being selected.
     The formula is satisfied by the assignment $\as_2=\lnot e_1 e_2 \lnot e_3$, which only selects $C_1$.
     By repeating the above operation again,
     the assignment $\as_5=e_1 \lnot e_2 e_3$ is found,
@@ -230,7 +230,8 @@ The following example illustrates how this technique improves the solving effici
     The conditional satisfying probability under $\as_5$, which equals $1$,
     is derived without invoking a weighted model counter.
     Compared to~\ref{ex:erssat-basic} where five assignments over $X$ were explored,
-    the algorithm with the minimal clause selection technique finds the optimal assignment $\as_5$ with at most two SAT calls,
+    the algorithm with the minimal clause selection technique
+    finds the optimal assignment from $\as_1$ with two additional SAT calls,
     thus greatly improves the computation efficiency.
 \end{example}
 
@@ -242,8 +243,8 @@ Consider a CNF formula $C_1 \land C_2$ with $C_2$ subsumed by $C_1$.
 It can be simplified to $C_1$ because $C_2$ is implied by $C_1$ due to the subsumption relation.
 
 The subsumption relation among sub-clauses consisting of variables in $Y$ is constructed as a lookup table by the subroutine $\mathtt{BuildSubsumeTable}$.
-The subroutine $\texttt{RemoveSubsumedClauses}$ simplifies the set of selected clauses $\pcf{\pf}{\as}$ by removing subsumed clauses.
-A clause $C$ is removed from the set of selected clauses $\pcf{\pf}{\as}$ if $C^Y$ is subsumed by other selected sub-clauses.
+The subroutine $\texttt{RemoveSubsumedClauses}$ simplifies the set $\pcf{\pf}{\as}$ of selected clauses by removing subsumed clauses.
+A clause $C$ is removed from the set $\pcf{\pf}{\as}$ of selected clauses if $C^Y$ is subsumed by other selected sub-clauses.
 We emphasize that, without cofactoring $\pf$ with the assignment $\as$,
 the original clauses may not have the subsumption relation.
 Cofactoring $\pf$ with the assignment $\as$ over variables in $X$ induces the subsumption relation between sub-clauses consisting of variables in $Y$.
@@ -277,7 +278,7 @@ The following example explains how the subsumption relation shortens a learnt cl
     Because $C_1^Y$ subsumes $C_2^Y$,
     $C_2$ is removed from $\pcf{\pf}{\as_1}$, yielding $\varphi=C_1$.
     A weighted model counter computes $\spb{\random{0.5}Y.\varphi}=0.75$,
-    and the learnt clause $C_L=(\lnot \sv{1})$ is conjoined with $\select$ to prevent $C_1$ being selected again.
+    and the learnt clause $C_L=(\lnot \sv{1})$ is conjoined with $\select$ to prevent $C_1$ from being selected again.
     Compared to~\cref{ex:erssat-basic}, with the help of clause subsumption,
     the learnt clause $(\lnot s_1)$ deduced from $\as_1$ is stronger than its counterpart $(\lnot s_1 \lor \lnot s_2)$ in~\cref{ex:erssat-basic},
     and therefore avoids a fruitless trail of the assignment $\as_2=\lnot e_1 e_2 \lnot e_3$.
@@ -336,7 +337,7 @@ If the probability is no greater, discard literal $l$;
 otherwise, keep $l$ in the learnt clause.
 Fourth, repeat the above steps for other literals.
 
-The subroutine $\texttt{DiscardLiterals}$ of the technique to discard literals from a learnt clause is outlined in~\cref{alg:erssat-partial}.
+The subroutine $\texttt{DiscardLiterals}$ for the technique to discard literals from a learnt clause is outlined in~\cref{alg:erssat-partial}.
 It substitutes selection variables in a learnt clause $C_S$ by their definitions in~\cref{code:erssat-partial-replace}.
 Then it iterates through each literal $l \in C_L$ and invokes a weighted model counter to check whether literal $l$ can be discarded in~\crefrange{code:erssat-partial-drop-start}{code:erssat-partial-drop-end}.
 Notice that the current maximum satisfying probability is \textit{not} updated by the value obtained by weighted model counting,
@@ -380,15 +381,11 @@ First, during the computation,
 the proposed algorithm keeps deriving lower bounds for the satisfying probability,
 and the bounds gradually converge to the final answer.
 Therefore, in contrast to previous DPLL-based methods~\cite{Majercik1998,Majercik2003,Majercik2005},
-the proposed algorithm can be easily modified to solve \textit{approximate SSAT} by returning the greatest encountered lower bound upon timeout.
+the proposed algorithm can be easily modified to solve \textit{approximate SSAT} by returning the greatest encountered lower bound upon timeout, as explained in~\cref{ex:erssat-basic}.
 Second, the proposed algorithm is efficient in memory usage,
 since it stores the learnt information compactly via selection variables,
 and the weighted model counting is invoked on selected clauses,
-whose sizes are typically much smaller than that of original matrix.
-%In our empirical evaluation, the selected clauses on average account for less than $20\%$ of the entire CNF formula.
-%As will be clear from our experimental data, the proposed algorithm improves memory efficiency by more than one order of magnitude compared to previous approaches.
-
-%We emphasize that, the proposed three clause-strengthening heuristics are orthogonal to each other. Simultaneously enabling all of them gives the enhanced algorithm in Figure~\ref{fig:enhance}.
+whose sizes are typically much smaller than that of the original matrix.
 
 \subsection{Implementation details}
 We discuss some details about our implementation of the proposed algorithm.
@@ -407,13 +404,12 @@ instead of treating it as a black box.
 However, we resort to \textit{binary decision diagram} (BDD) for our weighted model counting to achieve the \textit{formula caching} effect.
 
 The selected clauses in a formula are first transformed into a two-level circuit by \disjoin-ing literals in each clause and \conjoin-ing the outputs of each \disjoin gate.
-A BDD is then constructed based on the resulted circuit.
-Weighted model counting of the original formula is done by traversing the BDD~\cite{LeeTC18ProbDesign}.
-We use the well-developed BDD package \texttt{CUDD}~\cite{CUDD},
+A BDD is then constructed based on the resultant circuit.
+Weighted model counting of the original formula is done by traversing the BDD~\cite{Darwiche2002KnowledgeCompilation}.
+We use the well-developed BDD package \cudd~\cite{CUDD},
 which caches BDD nodes during building BDDs for different formulas.
-Thus the formula caching effect,
-as well as garbage collection which removes unreferenced nodes,
-is automatically achieved by \cudd.
+Thus the formula caching effect as well as garbage collection,
+which removes unreferenced nodes, is automatically achieved by \cudd.
 
-Our implementation was integrated in the \abc~\cite{ABC}environment,
+Our implementation was integrated in the \abc~\cite{ABC} environment,
 which provides all the facilities including SAT solving, circuit construction, and BDD computation mentioned above.

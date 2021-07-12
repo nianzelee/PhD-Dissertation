@@ -22,12 +22,12 @@ Consider a Boolean network $G$,
 and let $X$ denote the set of PI variables of $G$.
 During Tseitin transformation,
 new variables will be introduced for every vertex $v\in V\setminus V_I$.
-Let $Z$ denote the set of these fresh variables.
-The resultant formula $\pf_G(X,Z)$ obtained from Tseitin transformation encodes the behavior of the Boolean network $G$.
+Let $Y$ denote the set of these fresh variables.
+The resultant formula $\pf_G(X,Y)$ obtained from Tseitin transformation encodes the behavior of the Boolean network $G$.
 Observe that $X$ is a base set for $\pf_G$.
 This is because once the PI variables are decided by an assignment $\as^+$ over $X$,
 the values for the other variables will be propagated according to the behavior of the Boolean network.
-Therefore, at most one assignment $\mu$ over $Z$ (the one with the consistent variable evaluation to the Boolean network) is able to satisfy $\pf_G$.
+Therefore, at most one assignment $\mu$ over $Y$ (the one with the consistent variable evaluation to the Boolean network) is able to satisfy $\pf_G$.
 
 \subsection{Probability and random variables}
 \label{sect:prob-preliminaries-random-variable}

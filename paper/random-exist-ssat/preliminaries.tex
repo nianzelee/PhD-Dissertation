@@ -22,7 +22,7 @@ while maintaining the satisfiability of $\pcf{\pf(X,Y)}{\as^+}$ the same as $\pc
     is an UNSAT cube of $\pf$ as $\pcf{\pf}{\as^+}$ is unsatisfiable.
 \end{example}
 
-\subsubsection{Minimum Satisfying Assignment}
+\subsubsection{Minimum satisfying assignment}
 For a CNF formula $\pf(X,Y)$,
 let $\as$ be a SAT minterm over $X$ and let $\mu$ be a satisfying complete assignment for the induced formula $\pcf{\pf(X,Y)}{\as}$ over $Y$.
 To generalize $\as$ into a cube, one can find a subset of literals from $\as$ and $\mu$ that are able to satisfy all clauses in $\pf$ while the number of literals taken from $\as$ is as few as possible.
@@ -31,7 +31,7 @@ they can be dropped from $\as$, thus expanding $\as$ to a SAT cube $\as^+$.
 The generalized cube $\as^+$ is called a \textit{minimum satisfying assignment} if the number of literals taken from $\as$ is minimized.
 The process of finding a minimum satisfying assignment is also known as finding a \textit{minimum hitting set}.
 
-\subsubsection{Minimum Conflicting Assignment}
+\subsubsection{Minimum conflicting assignment}
 Given an UNSAT minterm $\as$ of a formula $\pf$,
 modern SAT solvers, e.g., \minisat~\cite{Een2003Solver,Een2003Incremental},
 are able to compute a conjunction of literals from $\as$ that is responsible for the conflict.

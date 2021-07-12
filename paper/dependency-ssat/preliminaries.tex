@@ -21,7 +21,7 @@ A DQBF $\Qf$ is satisfiable if for each variable $y_j$,
 there exists a Boolean function $f_j:\av{\dep{y_j}}\mapsto\booldom$,
 such that matrix $\pf$ becomes a tautology over $\uvs$
 after substituting variables in $\evs$ with their respective Boolean functions.
-The set of Boolean functions $\skf=\{f_1,\ldots,f_m\}$ is called a set of \textit{Skolem} functions for $\Qf$.
+The set $\skf=\{f_1,\ldots,f_m\}$ of Boolean functions is called a set of \textit{Skolem} functions for $\Qf$.
 In other words, $\Qf$ is satisfied by $\skf$ if the following QBF valuates to $\top$:
 \begin{align}
     \label{eq:dssat-dqbf-satisfiable}
@@ -56,23 +56,37 @@ and $h$ is a planning horizon, which we assume finite in this work.
 
 \begin{figure}[t]
     \centering
-    \includegraphics{fig/build/dec-pomdp-example.pdf}
+    \includegraphics[scale=1.5]{fig/build/dec-pomdp-example.pdf}
     \caption{A two-agent Dec-POMDP example}
     \label{fig:dssat-dec-pomdp-state-graph}
 \end{figure}
 
 \begin{example}
-    An example Dec-POMDP $\mathcal{M}$ with two agents is shown in~\cref{fig:dssat-dec-pomdp-state-graph}.
-    The Dec-POMDP has two states $s_p$ and $s_q$.
-    The goal for the agents is to make a correct agreement on the current state,
-    using action $a_p$ (resp. $a_q$) to guess that the current state is $s_p$ (resp. $s_q$).
-    Under partial observation, the agents cannot access the current state of $\mathcal{M}$.
-    Instead, the agents have two different observations $o_p$ and $o_q$.
-    An agent will receive $o_p$ (resp. $o_q$) after the current state transits to $s_p$ (resp. $s_q$) with probability $\Omega(s_p,o_p)$ (resp. $\Omega(s_q,o_q)$).
+    An example Dec-POMDP $\mathcal{M}$ with two agents and two states $s_p,s_q$
+    is shown in~\cref{fig:dssat-dec-pomdp-state-graph}.
+    The goal of the agents is to make a correct agreement on the current state.
+    They have an action set $A_1=A_2=\{a_p,a_q\}$,
+    where $a_p$ (resp. $a_q$) is used to guess that the current state is $s_p$ (resp. $s_q$).
+
+    Under the assumption of partial observation, the agents cannot access the current state of $\mathcal{M}$.
+    Instead, they have two different observations $o_p$ and $o_q$.
+    We assume that an agent will receive $o_p$ (resp. $o_q$) after the current state transits to $s_p$ (resp. $s_q$) with probability $\Omega(s_p,o_p)$ (resp. $\Omega(s_q,o_q)$).
+
     If both agents guess correctly, they will receive a reward of $1$,
-    and the Dec-POMDP transits to a next state with equal probability.
-    On the other hand, if one of the agents makes a wrong guess, they will receive a reward of $-1$,
-    and the Dec-POMDP stays in the current state.
+    and $\mathcal{M}$ will transit to a next state with equal probability.
+    In the state-transition graph, observe that in state $s_p$ (resp. $s_q$),
+    there are two outgoing edges labeled with a tuple $(a_p,a_p,1)$ (resp. $(a_q,a_q,1)$),
+    which describes the agents' actions and the reward.
+    These two edges will be taken with probability $0.5$ if the preconditions are met.
+
+    On the other hand, if one of the agents makes a wrong guess,
+    they will receive a reward of $-1$, and $\mathcal{M}$ will stay in the current state.
+    In the state-transition graph, observe that in state $s_p$ (resp. $s_q$),
+    there is a self-loop labeled with tuples $(a_q,A_2,-1)$ and $(A_1,a_q,-1)$
+    (resp. $(a_p,A_2,-1)$ and $(A_1,a_p,-1)$).
+    These tuples indicate that if one of the agent makes a wrong guess,
+    they will receive a reward of $-1$ regardless of the guess of the other agent.
+
     Note that the agents cannot communicate with each other.
     Their actions must be solely based on their own observations.
 \end{example}

@@ -22,12 +22,14 @@
   分散式部份可觀察馬可夫決策過程
 }
 
+\afterpage{\blankpage}
 % Single-line spacing for the cover page
 \renewcommand{\baselinestretch}{1.0}
 \input{cover.tex}
 % Double-line spacing for the rest (default)
 \renewcommand{\baselinestretch}{2.0}
 
+\afterpage{\blankpage}
 \includepdf[offset=2.8cm -2cm]{dissertation-approval.pdf}
 
 \frontmatter
@@ -43,8 +45,10 @@
 
 %---------------------------------------------------
 
+\afterpage{\blankpage}
 \tableofcontents
 % Add list of figures (handled by package tocbibind)
+\afterpage{\blankpage}
 \listoffigures
 % Add list of tables (handled by package tocbibind)
 \listoftables
@@ -54,20 +58,25 @@
 \addcontentsline{toc}{chapter}{List of Algorithms}
 \listofalgorithms
 
+\afterpage{\blankpage}
 \mainmatter
 \input{introduction.tex}
 \input{related-work.tex}
+\afterpage{\blankpage}
 \input{background.tex}
 \input{prob-design-eval.tex}
+\afterpage{\blankpage}
 \input{random-exist-ssat.tex}
 \input{exist-random-ssat.tex}
 \input{dependency-ssat.tex}
+\afterpage{\blankpage}
 \input{conclusion-future-work.tex}
 
 %---------------------------------------------------
 
 % Add bibliography (handled by package tocbibind)
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{nzlee,prob}
+\afterpage{\blankpage}
+\bibliography{nzlee-full,prob-full}
 
 \end{document}

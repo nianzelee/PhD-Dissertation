@@ -107,7 +107,7 @@ Our reduction is an extension of that from POMDP to SSAT proposed by Salmon and 
 In essence, given a Dec-POMDP $\mathcal{M}$,
 we will construct in polynomial time a DSSAT formula $\Qf$
 such that there is a joint policy $\vec{\pi}$ for $\mathcal{M}$ with value $V(\vec{\pi})$
-if and only if there is a set of Skolem functions $\skf$ for $\Qf$
+if and only if there is a set $\skf$ of Skolem functions for $\Qf$
 with satisfying probability $\spb{\pcf{\Qf}{\skf}}$, and $V(\vec{\pi})=\spb{\pcf{\Qf}{\skf}}$.
 
 First we introduce the variables used in construction of the DSSAT formula and their domains.
@@ -119,7 +119,7 @@ We also define a scaled reward function:
     r(s,\vec{a})=\frac{\rho(s,\vec{a})-\min\limits_{s',\vec{a}'}\rho(s',\vec{a}')}{\sum\limits_{s'',\vec{a}''}[\rho(s'',\vec{a}'')-\min\limits_{s',\vec{a}'}\rho(s',\vec{a}')]}
 \end{align*}
 such that $r(s,\vec{a})$ forms a distribution over all pairs of $s$ and $\vec{a}$,
-i.e., $\forall s,\vec{a}.r(s,\vec{a})\geq 0$ and $\sum\limits_{s,\vec{a}}r(s,\vec{a})=1$.
+i.e., $\forall s,\forall \vec{a}.r(s,\vec{a})\geq 0$ and $\sum\limits_{s,\vec{a}}r(s,\vec{a})=1$.
 We will use the following variables:
 \begin{itemize}
     \item $x_s^t\in S$: the state at stage $t$,
@@ -174,8 +174,7 @@ an agent's policy selection is encoded by the following prefix (use Agent~$i$ as
 \end{align*}
 In the above quantification,
 variable $x_p^t$ is introduced to sum up rewards earned at different stages.
-It takes values from $\booldom$,
-and follows a uniform distribution,
+It takes values from $\booldom$ and follows a uniform distribution,
 i.e., $\Pr[x_p^t\equiv\top]=\Pr[x_p^t\equiv\bot]=0.5$.
 When $x_p^t\equiv\bot$,
 the process is stopped and the reward at stage $t$ is earned;
@@ -238,7 +237,7 @@ The following theorem states the correctness of the reduction.
 \begin{theorem}\label{thm:dssat-dec-pomdp-reduction}
     The above reduction maps a Dec-POMDP $\mathcal{M}$ to a DSSAT formula $\Phi$,
     such that a joint policy $\vec{\pi}$ exists for $\mathcal{M}$ if and only if
-    a set of Skolem functions $\skf$ exists for $\Qf$, with $V(\vec{\pi})=\spb{\pcf{\Qf}{\skf}}$.
+    a set $\skf$ of Skolem functions exists for $\Qf$, with $V(\vec{\pi})=\spb{\pcf{\Qf}{\skf}}$.
 \end{theorem}
 \begin{proof}
     Given an arbitrary Dec-POMDP $\mathcal{M}$,
@@ -251,7 +250,7 @@ The following theorem states the correctness of the reduction.
     For this joint policy,
     the value is computed as $V(\vec{\pi})=\sum_{s \in S}\Delta_0(s)r(s,\vec{a})$.
     Based on $\vec{\pi}$,
-    we construct a set of Skolem functions $\skf$ where $x_a^{i,0}=a_i$ for each $i\in I$.
+    we construct a set $\skf$ of Skolem functions where $x_a^{i,0}=a_i$ for each $i\in I$.
     To compute $\spb{\pcf{\Qf}{\skf}}$,
     we cofactor the matrix with $\skf$ and arrive at the following CNF formula:
     \begin{align*}

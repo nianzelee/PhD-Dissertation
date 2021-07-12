@@ -99,16 +99,16 @@ we have the following proposition on parameter assignments that maximize signal 
     such that $\pi(u)$ equals either probability 0 or 1 for any $u \in V_I$.
 \end{proposition}
 \begin{proof}
-    Assume there exists an optimizing parameter assignment $\pi$ not in such a form.
+    Assume there exists an optimal parameter assignment $\pi$ not in such a form.
     That is, there exists some $u \in V_I$ such that $0<\pi(u)<1$.
     Denote the signal probabilities of $v$ under $\pi(u)=0$ and $\pi(u)=1$ by $p_0$ and $p_1$, respectively.
     Note that $\Pr[v=\top]$ under $\pi$ equals $(1-\pi(u)) \times p_0 + \pi(u) \times p_1$,
     and $\min\{p_0,p_1\}\leq\Pr[v=\top]\leq\max\{p_0,p_1\}$.
     If $p_0 \neq p_1$,
     there is a contradiction since $\Pr[v=\top]<\max\{p_0,p_1\}$,
-    and $\pi$ is not an optimizing assignment.
+    and $\pi$ is not an optimal assignment.
     If $p_0=p_1$, W.L.O.G., set $\pi(u)=0$.
-    So the optimizing assignment must be in the stated form.
+    So the optimal assignment must be in the stated form.
 \end{proof}
 
 \begin{figure}[t]

@@ -7,6 +7,7 @@
 % packages
 %%% nzlee: use command \input if you don't need to compile a chapter alone
 %\usepackage{subfiles}
+\usepackage{afterpage}
 \usepackage{pdfpages}
 \usepackage{booktabs}
 \usepackage{rotating}
@@ -47,8 +48,7 @@
 \setstudent{李念澤}{Nian-Ze Lee}
 \setadvisor{江介宏}{Jie-Hong Roland Jiang}
 \setwatermarkfile{./fig/watermark.pdf}
-%%% TODO: update the DOI
-%\setdoi{doi:10.6342/NTU201902986}
+\setdoi{doi: 10.6342/NTU202101397}
 \ackname{Acknowledgements}
 
 \addwatermark
@@ -245,3 +245,6 @@
 \@addtoreset{ALC@line}{algorithm}
 \@addtoreset{ALC@unique}{algorithm}
 \makeatother % Undo the change to '@'
+
+% Command to add a blank page
+\newcommand{\blankpage}{\null\thispagestyle{empty}\newpage}

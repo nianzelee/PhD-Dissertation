@@ -55,7 +55,7 @@ The businessman would prefer selling out a non-strategic company.
 The problem becomes more complicated if the \textit{controlling relations} are taken into account.
 If a company is \textit{controlled} by some other companies,
 the company can be sold out only if some of its controlling companies is also sold out.
-The problem to decide whether a company is strategic can be encoded as a forall-exist quantified QBF~\cite{Faber2005,Leone2006}.
+The problem to decide whether a company is strategic can be encoded as a forall-exist QBF~\cite{Faber2005,Leone2006}.
 
 We modify the QBFs encoding the strategic-company problem
 to their SSAT variants by replacing the universal quantifiers in the original QBFs
@@ -96,6 +96,20 @@ and assumed~\measurement.
 
 \subsubsection{Random $k$-CNF formulas}
 
+\begin{figure*}[hp]
+    \centering
+    \subfloat[CPU time]{
+        \includegraphics{random-exist-ssat/evaluation/plots/quantile-cputime-Random.pdf}
+        \label{fig:ressat-quantile-cputime-random}
+    }\\
+    \subfloat[Memory usage]{
+        \includegraphics{random-exist-ssat/evaluation/plots/quantile-memory-Random.pdf}
+        \label{fig:ressat-quantile-memory-random}
+    }
+    \caption{Quantile plots of random $k$-CNF formulas}
+    \label{fig:ressat-quantile-random}
+\end{figure*}
+
 \cref{fig:ressat-quantile-random} shows the quantile plots regarding CPU time and memory usage
 of the SSAT instances derived from the random $k$-CNF formulas.
 A data point $(x,y)$ in a quantile plot indicates that
@@ -110,20 +124,6 @@ On the other hand,
 This can be attributed to the subformula caching of \dcssat.
 Instead, \ressat stores information as SAT or UNSAT cubes,
 which are more compact than subformulas.
-
-\begin{figure*}[hp]
-    \centering
-    \subfloat[CPU time]{
-        \includegraphics{random-exist-ssat/evaluation/plots/quantile-cputime-Random.pdf}
-        \label{fig:ressat-quantile-cputime-random}
-    }\\
-    \subfloat[Memory usage]{
-        \includegraphics{random-exist-ssat/evaluation/plots/quantile-memory-Random.pdf}
-        \label{fig:ressat-quantile-memory-random}
-    }
-    \caption{Quantile plots of random $k$-CNF formulas}
-    \label{fig:ressat-quantile-random}
-\end{figure*}
 
 \subsubsection{Application formulas}
 
@@ -157,13 +157,6 @@ Observe that \ressat successfully solved all formulas in this family,
 while \dcssat and \ressatb only solved \num{28} and \num{12} formulas, respectively.
 The results show that \ressat also works well over structured instances from AI applications.
 
-\cref{fig:ressat-quantile-strategic} shows the quantile plots for the \textit{Strategic-Company} family.
-The quantile plots show that \ressat is not only effective but also efficient
-in terms of CPU time and memory usage.
-The performance gap between \ressat and \ressatb again confirms the importance of the minterm-generalization technique.
-\cref{fig:ressat-scatter-strategic} shows the scatter plots,
-which indicate the great improvement for the run-time efficiency of \ressat.
-
 \begin{figure*}[hp]
     \centering
     \subfloat[CPU time]{
@@ -192,13 +185,12 @@ which indicate the great improvement for the run-time efficiency of \ressat.
     \label{fig:ressat-scatter-strategic}
 \end{figure*}
 
-The solving results for the \textit{PEC} family are summarized in~\cref{tbl:random-exist-ssat-pec}.
-Note that all the evaluated SSAT solvers failed to exactly solve most formulas in this family.
-This phenomenon is similar to a concluding remark from~\cref{chap:prob-design-eval}
-that states CNF-based SSAT solvers do not scale nicely when the circuit size grows.
-Nevertheless, recall that the proposed~\cref{alg:ressat} is able to derive upper and lower bounds
-of the satisfying probability even if it could not exactly solve a large instance.
-We will investigate the approximation ability of \ressat in the following.
+\cref{fig:ressat-quantile-strategic} shows the quantile plots for the \textit{Strategic-Company} family.
+The quantile plots show that \ressat is not only effective but also efficient
+in terms of CPU time and memory usage.
+The performance gap between \ressat and \ressatb again confirms the importance of the minterm-generalization technique.
+\cref{fig:ressat-scatter-strategic} shows the scatter plots,
+which indicate the great improvement for the run-time efficiency of \ressat.
 
 \begin{table}[ht]
     \centering
@@ -224,6 +216,14 @@ We will investigate the approximation ability of \ressat in the following.
     \end{tabular}
 \end{table}
 
+The solving results for the \textit{PEC} family are summarized in~\cref{tbl:random-exist-ssat-pec}.
+Note that all the evaluated SSAT solvers failed to exactly solve most formulas in this family.
+This phenomenon is similar to a concluding remark from~\cref{chap:prob-design-eval}
+that states CNF-based SSAT solvers do not scale nicely when the circuit size grows.
+Nevertheless, recall that the proposed~\cref{alg:ressat} is able to derive upper and lower bounds
+of the satisfying probability even if it could not exactly solve a large instance.
+We will investigate the approximation ability of \ressat in the following.
+
 \Cref{tbl:random-exist-ssat-pec-0.01,tbl:random-exist-ssat-pec-0.10}
 show the results of solving PEC formulas with $\dr$ equal to $0.01$ and $0.1$, respectively.
 As \benchexec sends a timeout signal to \ressat after~\timelimit,
@@ -241,7 +241,7 @@ and it should not be misunderstood as the proposed~\cref{alg:ressat} cannot deri
 
 \begin{table}[ht]
     \centering
-    \scriptsize
+    \footnotesize
     \caption{Results of solving the PEC formulas ($\dr=0.01$)}
     \label{tbl:random-exist-ssat-pec-0.01}
     \pgfplotstabletypeset[
@@ -259,7 +259,7 @@ and it should not be misunderstood as the proposed~\cref{alg:ressat} cannot deri
 
 \begin{table}[ht]
     \centering
-    \scriptsize
+    \footnotesize
     \caption{Results of solving the PEC formulas ($\dr=0.1$)}
     \label{tbl:random-exist-ssat-pec-0.10}
     \pgfplotstabletypeset[

@@ -105,7 +105,7 @@ Because a weighted model counter takes CNF formulas as input,
 \texttt{ComputeWeight} first negates each collected cube to turn it into a clause,
 and conjoins the resulting clauses into a CNF formula.
 As the CNF formula is the negation of the disjunction of the cubes,
-the weight of the cubes equals one minus the weight of the CNF formula,
+the weight of the cubes equals $1$ minus the weight of the CNF formula,
 which is computed by a weighted model counter.
 
 \subsection{Modification for approximate SSAT}
@@ -120,8 +120,6 @@ The early termination can be triggered by imposing a run-time limit for~\cref{al
 Compared to previous DPLL-based approaches that branch on a single variable,
 the proposed algorithm considers all randomly quantified variables together and exploits the concept of SAT and UNSAT cubes over the Boolean space spanned by randomly quantified variables,
 making the intermediate collected SAT and UNSAT cubes convey useful information about the upper and lower bounds of the exact satisfying probability.
-As will be seen in our experiments over formulas arising from VLSI circuit analysis,
-the proposed algorithm is able to find tight bounds even with a short run-time limit.
 Compared to the DPLL-based state-of-the-art methods,
 which cannot be easily modified for approximate SSAT,
 the proposed method enjoys the flexibility of solving SSAT approximately or exactly,
@@ -207,7 +205,7 @@ the proposed algorithm consumed two orders of magnitude less memory than the sta
 In this section, we discuss several applications of random-exist quantified SSAT formulas.
 
 \subsection{Probability of success in planning}
-Many planning problems can be formulated in terms of forall-exist quantified QBFs,
+Many planning problems can be formulated in terms of forall-exist QBFs,
 i.e., QBFs of the form $\Qf=\forall X,\exists Y.\pf(X,Y)$.
 Changing the universal quantifiers of these QBFs to randomized ones yields random-exist quantified SSAT formulas.
 Under the game interpretation of QBFs,
@@ -222,10 +220,3 @@ The second application is the formal verification of \textit{probabilistic desig
 As probabilistic errors are becoming more common in advanced nanometer technology,
 the \textit{probabilistic equivalence checking} (PEC) problem asks to compute the probability for a probabilistic circuit to produce different outputs from its faultless specification.
 PEC can be encoded into a random-exist quantified SSAT formula~\cite{LeeTC18ProbDesign}.
-
-\iffalse
-    \subsection{Circuit Power Optimization}
-    SSAT is potentially capable of analyzing and optimizing the power dissipation in VLSI circuits. This argument is supported by the following observation for power estimation techniques in VLSI circuits~\cite{Najm94}. One estimate for power dissipation relies on the computation of \textit{signal probability}~\cite{cirit1987estimating}. Let $x$ denote a signal in a logic circuit. Its signal probability $\mathrm{P_s}[x]$ is defined to be the probability of $v$ valuating to logic \textsc{true}. Under the \textit{temporal independence assumption} in~\cite{Najm94}, which states that the values of one signal in two consecutive clock periods are independent, the \textit{transition probability} $\mathrm{P_t}[v]$ of $v$ can be derived easily from the signal probability by the equation $\mathrm{P_t}[v]=2\mathrm{P_s}[v](1-\mathrm{P_s}[v])$. Since the transition probability is positively correlated with the dynamic power dissipation in VLSI circuits, the computation of signal probability is essential to the estimation of power consumption. As pointed out in~\cite{Lee14}, signal probability can be computed by solving SSAT formulas.
-
-    For the optimization of power dissipation, we illustrate the idea by the following scenario. Suppose we have a block of circuits in a large VLSI system which would stay idle during some period of its operation. In its idle period, we would like to minimize the power dissipation of this block of circuits by minimizing the transition probability of signals in it, while the other parts of the system might still inject signals into this block. Suppose the block of circuits has a set of \textit{controlling inputs} designed to control the reaction of the signals in it under the environment of the system. Let the CNF formula for a signal $v$ be $\phi_v$. The minimization of transition probability of the signal $v$ under environmental inputs $X$ (from other parts of circuits) using the controlling inputs $Y$ can be encoded into the random-exist quantified SSAT formula $\invR X \exists Y. \phi_v$, where environmental inputs are randomly quantified to model the average situation in the system. Note that the transition probability $\mathrm{P_t}[v]$ is minimized when $\mathrm{P_s}[v]=1$. This can be achieved by the operation of the existentially quantified controlling inputs, which tries to maximize the signal probability of $\mathrm{P_s}[v]$ under the fluctuating environment.
-\fi

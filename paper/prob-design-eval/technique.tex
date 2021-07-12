@@ -27,7 +27,7 @@ $\wt(w_k)=p_{w_k}$ for all
 $x_i \in X$,
 $y_j \in Y$, and
 $w_k \in W$.
-The weight assignment $\wt$ will be used throughout our discussion.
+The weighting function $\wt$ will be used throughout our discussion.
 
 \begin{theorem}
     \label{thm:prob-ppe-ssat}
@@ -82,7 +82,7 @@ The weight assignment $\wt$ will be used throughout our discussion.
     computes the satisfying probability of the miter under the assignment $\as_X$.
     According to the SSAT semantics,
     the outermost existential quantification of primary inputs $X$
-    ensures to find an optimum assignment $\as_X^*$
+    ensures to find an optimal assignment $\as_X^*$
     such that the satisfying probability of $\Qf_\mathrm{MPPE}(\as_X^*)$ is maximized.
     Hence the SSAT formula $\Qf_\mathrm{MPPE}$ computes the maximum satisfying probability of the miter.
 \end{proof}
@@ -148,7 +148,7 @@ $\nodevisit{N}$ is a flag initialized to \false and records whether $N$ has been
 $\nodevar{N}$ and $\nodesp{N}$ denote the control variable and the satisfying probability of node $N$, respectively.
 In~\cref{alg:bddssat-recursive},
 \crefrange{code:bddssat-recursive-constant-start}{code:bddssat-recursive-constant-end} implement the first and second computation rules of SSAT in~\cref{sect:background-ssat};
-\Cref{code:bddssat-recursive-random} and \cref{code:bddssat-recursive-exist} implement the third and fourth rules corresponding to the random and existential quantification of the variable, respectively.
+\Cref{code:bddssat-recursive-random} and \cref{code:bddssat-recursive-exist} implement the third and fourth rules corresponding to the randomized and existential quantification of the variable, respectively.
 
 Note that \texttt{BddSsatSolve} runs in time linear to the number of BDD nodes (as each node is processed only once).
 Therefore the computation complexity is dominated by constructing the ROBDD of $\pf$.
@@ -162,7 +162,7 @@ the assignment to an outermost existential variable $\nodevar{N}$ can be derived
 \texttt{BddSsatRecur}($\nodethen{N},Q$)
 contributes to the maximum probability in~\cref{code:bddssat-recursive-exist} of~\cref{alg:bddssat-recursive}.
 
-\subsubsection{Signal Probability with BDD-based SSAT}
+\subsubsection{Signal probability with BDD-based SSAT}
 We exploit the developed BDD-based SSAT solver to compute signal probabilities as defined in~\cref{def:prob-signal-prob,def:prob-signal-prob-max}.
 Given an SPBN $G=(V,E)$,
 the satisfying probability of any $v \in V$ can be obtained by first encoding the problem into an SSAT instance
@@ -192,14 +192,13 @@ On the other hand,
 since we established the connections of MPPE and PPE to SSAT formulations,
 SSAT solvers can also be applied to calculate the maximum signal probability as well as signal probability.
 
-BDD is a well-studied data structure,
-but known for its memory limitation.
+BDD is a well-studied data structure but known for its memory limitation.
 Techniques have been highly developed in the 1990s to extend its scalability.
 Practical experience suggests that BDD-based computation remains competitive to other formulations
 due to the fact that other tools,
 such as SSAT and model counting,
 are still in their early development.
-In our experiments over \texttt{ISCAS} and \texttt{ITC} benchmark suits,
+In our experiments over ISCAS\,'85~\cite{ISCAS85-benchmark} and EPFL~\cite{EPFL-benchmark} benchmark suites,
 the BDD-based approach stands as the most scalable one over other formulations to be discussed.
 
 \subsubsection{Generalization to dependent random variables}
@@ -432,7 +431,7 @@ the procedure to compute the signal probability of an arbitrary vertex with \pri
               \pi(v):(x_v'=1 \enskip\&\enskip y_v'=1)+
               1-\pi(v):(x_v'=0 \enskip\&\enskip y_v'=1)$''
           to the module of $v$.
-    \item If $v\in V\setminus V_I$, add command:
+    \item If $v\in V\setminus V_I$, add a command:
           ``$(y_u=1 \enskip\&\enskip y_v=0) \rightarrow
               p_v:(x_v'=\neg f_v \enskip\&\enskip y_v'=1)+
               1-p_v:(x_v'=f_v \enskip\&\enskip y_v'=1)$''
